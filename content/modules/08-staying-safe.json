@@ -1,0 +1,323 @@
+{
+  "id": "staying-safe",
+  "order": 8,
+  "icon": "shield",
+  "accent": "berry",
+  "title": "Staying Safe",
+  "shortTitle": "Safety",
+  "levels": {
+    "level-1": {
+      "title": "Keeping your money safe",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Keep your money in one safe place.",
+        "Do not show your money to people you do not know.",
+        "If a stranger asks for your money, say no and find a trusted adult.",
+        "Nobody should ever ask you to keep a money secret from your parents.",
+        "It is always alright to ask an adult for help."
+      ],
+      "keyWords": [
+        "safe",
+        "stranger",
+        "trusted adult",
+        "secret",
+        "help"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A stranger asks for your money. What do you do?",
+            "image": {
+              "icon": "warning",
+              "alt": "A stranger holding out a hand"
+            },
+            "options": [
+              {
+                "icon": "shield",
+                "label": "Say no and tell a trusted adult"
+              },
+              {
+                "icon": "handcoin",
+                "label": "Give the money"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "You never have to give your money to a stranger."
+          },
+          {
+            "id": "q2",
+            "prompt": "Someone says: keep this money a secret from your parents.",
+            "image": {
+              "icon": "lock",
+              "alt": "A finger held to lips"
+            },
+            "options": [
+              {
+                "icon": "check",
+                "label": "That is fine"
+              },
+              {
+                "icon": "warning",
+                "label": "That is a warning sign. Tell an adult."
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Safe adults do not ask children to keep money secrets."
+          },
+          {
+            "id": "q3",
+            "prompt": "Where is the safest place for your money?",
+            "image": {
+              "icon": "shield",
+              "alt": "A locked box and a bank"
+            },
+            "options": [
+              {
+                "icon": "bank",
+                "label": "A bank or a safe place at home"
+              },
+              {
+                "icon": "bus",
+                "label": "Loose in your pocket at school"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Loose money is easy to lose."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "Spotting money tricks",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+        "durationLabel": "4 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "A scam is a trick to take your money.",
+        "A message saying you won a prize you never entered is a scam.",
+        "Never share a PIN or an OTP. A real bank will never ask for it.",
+        "Scams push you to act fast. Slow down and check with an adult.",
+        "If an offer sounds too good to be true, it is not true."
+      ],
+      "keyWords": [
+        "scam",
+        "OTP",
+        "PIN",
+        "prize",
+        "check first"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A message says you won ₹50,000. You never entered. What is it?",
+            "image": {
+              "icon": "phone",
+              "alt": "A phone showing a prize message"
+            },
+            "options": [
+              {
+                "icon": "warning",
+                "label": "A scam"
+              },
+              {
+                "icon": "gift",
+                "label": "Real good luck"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "You cannot win a competition you did not enter."
+          },
+          {
+            "id": "q2",
+            "prompt": "A caller asks for your OTP. What do you do?",
+            "image": {
+              "icon": "lock",
+              "alt": "A phone showing a one time password"
+            },
+            "options": [
+              {
+                "icon": "cross",
+                "label": "Never share it"
+              },
+              {
+                "icon": "check",
+                "label": "Share it if they sound official"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "A real bank never asks for your OTP."
+          },
+          {
+            "id": "q3",
+            "prompt": "A message says: pay in 5 minutes or lose your account.",
+            "image": {
+              "icon": "warning",
+              "alt": "An urgent warning message"
+            },
+            "options": [
+              {
+                "icon": "shield",
+                "label": "Stop. Check with a trusted adult."
+              },
+              {
+                "icon": "phone",
+                "label": "Pay quickly"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Rushing you is how a scam works."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Online money safety",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Phishing means a fake message that copies a real company.",
+        "Check the sender address and the web address closely before you tap.",
+        "In UPI, you enter your PIN only to send money, never to receive it.",
+        "If an app asks for your PIN to give you a refund, it is a scam.",
+        "Report fraud in India on the cybercrime helpline number 1930."
+      ],
+      "keyWords": [
+        "phishing",
+        "UPI",
+        "fraud",
+        "two factor",
+        "report",
+        "helpline 1930"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "In UPI, when do you enter your PIN?",
+            "image": {
+              "icon": "phone",
+              "alt": "A UPI payment screen"
+            },
+            "options": [
+              {
+                "icon": "handcoin",
+                "label": "Only when sending money"
+              },
+              {
+                "icon": "gift",
+                "label": "When receiving money"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Receiving money never needs a PIN."
+          },
+          {
+            "id": "q2",
+            "prompt": "An email copies your bank's logo and asks you to log in. This is...",
+            "image": {
+              "icon": "warning",
+              "alt": "An email that looks like a bank message"
+            },
+            "options": [
+              {
+                "icon": "warning",
+                "label": "Phishing"
+              },
+              {
+                "icon": "bank",
+                "label": "A normal bank email"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Fake messages copy real logos on purpose."
+          },
+          {
+            "id": "q3",
+            "prompt": "Which number reports cyber fraud in India?",
+            "image": {
+              "icon": "shield",
+              "alt": "A helpline card"
+            },
+            "options": [
+              {
+                "icon": "shield",
+                "label": "1930"
+              },
+              {
+                "icon": "phone",
+                "label": "1234"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "It is the national cybercrime helpline."
+          }
+        ]
+      }
+    }
+  }
+}

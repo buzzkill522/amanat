@@ -1,0 +1,21 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# Per-machine Claude Code tool permissions. `*.local` above does not match
+# this — that pattern only catches names ending in ".local".
+.claude/settings.local.json
+
+# Recorded ISL clips. Kept out of git deliberately: they are video, they are
+# large, and some are used under a permission that covers this site rather
+# than redistribution from a public repository. The .gitkeep and the manifest
+# are tracked so the folder and the wiring survive.
+public/sign/*
+!public/sign/.gitkeep

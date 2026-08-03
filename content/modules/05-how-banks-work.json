@@ -1,0 +1,197 @@
+{
+  "id": "how-banks-work",
+  "order": 5,
+  "icon": "bank",
+  "accent": "brand",
+  "title": "Why Open a Bank Account",
+  "shortTitle": "Banks",
+  "levels": {
+    "level-1": {
+      "title": "What a bank does with your money",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "A bank is a safe place to keep money. Safer than a pocket, a box, or under a bed.",
+        "Money in a pocket can be lost or taken. Money in a bank cannot.",
+        "The bank writes down every rupee that is yours. That written record is your account.",
+        "You can put money in and take money out when you need it. It stays yours the whole time.",
+        "The bank pays you a small extra amount for keeping your money there. A box pays you nothing."
+      ],
+      "keyWords": ["bank", "account", "safe", "deposit", "record"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Where is money safest?",
+            "image": { "icon": "bank", "alt": "A bank building with a strong door" },
+            "options": [
+              { "icon": "bank", "label": "In a bank account" },
+              { "icon": "wallet", "label": "Loose in a school bag" },
+              { "icon": "house", "label": "Under a bed" }
+            ],
+            "correctIndex": 0,
+            "hint": "Which one keeps a written record of every rupee?"
+          },
+          {
+            "id": "q2",
+            "prompt": "You put ₹100 into the bank. Whose money is it now?",
+            "image": { "icon": "handcoin", "alt": "A hand placing money at a bank counter" },
+            "options": [
+              { "icon": "check", "label": "Still yours. You can take it back." },
+              { "icon": "bank", "label": "The bank's money now" },
+              { "icon": "cross", "label": "Nobody's money" }
+            ],
+            "correctIndex": 0,
+            "hint": "The bank looks after it for you. It does not keep it."
+          },
+          {
+            "id": "q3",
+            "prompt": "₹100 in a box for a year, or ₹100 in a bank for a year. Which is bigger at the end?",
+            "image": { "icon": "growth", "alt": "A box beside a bank, with a small plant growing from the bank" },
+            "options": [
+              { "icon": "bank", "label": "The bank one. It pays a little extra." },
+              { "icon": "house", "label": "The box one" },
+              { "icon": "question", "label": "Exactly the same" }
+            ],
+            "correctIndex": 0,
+            "hint": "A box pays you nothing at all."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "Opening an account in your own name",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
+        "durationLabel": "4 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "You can hold a bank account in your own name from the age of 10. An adult helps manage it until you are 18, but the account is yours.",
+        "A basic account needs no minimum balance. You can open it with nothing in it, and leaving it empty costs you nothing.",
+        "It comes with a debit card, so you can pay and withdraw without asking anyone for permission.",
+        "The account is where your own money lives — pocket money, gifts, and anything you earn later.",
+        "Check the exact rules at the bank before you go. Schemes change, and different banks ask for different papers."
+      ],
+      "keyWords": ["account", "zero balance", "debit card", "guardian", "deposit", "withdrawal"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "How old must you be to hold a bank account in your own name?",
+            "image": { "icon": "calendar", "alt": "A calendar with a birthday marked" },
+            "options": [
+              { "icon": "check", "label": "10" },
+              { "icon": "calendar", "label": "18" },
+              { "icon": "cross", "label": "21" }
+            ],
+            "correctIndex": 0,
+            "hint": "An adult manages it with you until 18, but your name is on it well before that."
+          },
+          {
+            "id": "q2",
+            "prompt": "A basic account sits at ₹0 for three months. What happens?",
+            "image": { "icon": "wallet", "alt": "An empty account passbook" },
+            "options": [
+              { "icon": "check", "label": "Nothing. A basic account has no minimum balance." },
+              { "icon": "warning", "label": "The bank charges a fine" },
+              { "icon": "cross", "label": "The account closes at once" }
+            ],
+            "correctIndex": 0,
+            "hint": "That is the whole point of a basic account."
+          },
+          {
+            "id": "q3",
+            "prompt": "Why have your own account instead of using a relative's?",
+            "image": { "icon": "shield", "alt": "A single name written on an account card" },
+            "options": [
+              { "icon": "shield", "label": "The money is recorded as yours, and you control it" },
+              { "icon": "gift", "label": "The bank gives you a present" },
+              { "icon": "star", "label": "It looks better" }
+            ],
+            "correctIndex": 0,
+            "hint": "Think about who is allowed to take money out of an account in someone else's name."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "The account as a foundation, and your right to one",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "The account is not the goal. It is what everything else plugs into — a salary, a scholarship, a pension, a fund held in your name.",
+        "Money you are owed is normally paid only into an account in your own name. Without one, somebody else receives it on your behalf.",
+        "That is the real argument for holding your own: it is the difference between managing your money and being managed.",
+        "A savings account pays roughly 4% a year while prices rise around 6%. Money parked there quietly loses ground — an account is for safety and access, not for growth.",
+        "The law is behind you when you open one. The Rights of Persons with Disabilities Act, 2016 requires service providers, banks included, to make their services accessible.",
+        "A bank that refuses you, or insists a hearing relative speaks for you, is not following the rules. Ask for the branch manager, then the bank's grievance officer, then the RBI ombudsman."
+      ],
+      "keyWords": ["financial independence", "RPwD Act 2016", "accessibility", "real return", "grievance", "ombudsman"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A savings account pays 4%. Prices rise 6%. What is really happening to money left in it?",
+            "image": { "icon": "chart", "alt": "Two arrows, one rising faster than the other" },
+            "options": [
+              { "icon": "warning", "label": "It is slowly losing buying power, by about 2% a year" },
+              { "icon": "growth", "label": "It is growing nicely at 4% a year" },
+              { "icon": "check", "label": "It is exactly keeping up with prices" }
+            ],
+            "correctIndex": 0,
+            "hint": "Compare the two rates. Which one is larger?"
+          },
+          {
+            "id": "q2",
+            "prompt": "A clerk says you cannot open an account because you are Deaf and cannot speak to them. What is true?",
+            "image": { "icon": "shield", "alt": "A law book beside a bank counter" },
+            "options": [
+              { "icon": "shield", "label": "They are breaking the law. Banks must make services accessible." },
+              { "icon": "cross", "label": "They are right. You need a hearing relative." },
+              { "icon": "question", "label": "It depends on the branch" }
+            ],
+            "correctIndex": 0,
+            "hint": "The RPwD Act, 2016 puts the duty on the bank, not on you."
+          },
+          {
+            "id": "q3",
+            "prompt": "Why does the account come before any scheme or fund?",
+            "image": { "icon": "bank", "alt": "An account at the centre with arrows leading into it" },
+            "options": [
+              { "icon": "handcoin", "label": "Money owed to you can only be paid into an account in your name" },
+              { "icon": "gift", "label": "Banks give better rates to fund holders" },
+              { "icon": "star", "label": "You cannot take a job without one" }
+            ],
+            "correctIndex": 0,
+            "hint": "Think about where a scholarship, or money taken out of a fund, actually lands."
+          }
+        ]
+      }
+    }
+  }
+}

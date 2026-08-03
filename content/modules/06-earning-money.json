@@ -1,0 +1,331 @@
+{
+  "id": "earning-money",
+  "order": 6,
+  "icon": "handcoin",
+  "accent": "sun",
+  "title": "Earning Money",
+  "shortTitle": "Earning",
+  "levels": {
+    "level-1": {
+      "title": "Where money comes from",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "People earn money by doing work.",
+        "A teacher teaches. A farmer grows food. A driver drives a bus.",
+        "The money paid for work is called pay.",
+        "Money does not appear on its own. Someone worked for every rupee.",
+        "Children can earn small amounts by helping at home."
+      ],
+      "keyWords": [
+        "work",
+        "job",
+        "earn",
+        "pay",
+        "help"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "How do most adults get money?",
+            "image": {
+              "icon": "handcoin",
+              "alt": "A hand giving money for work done"
+            },
+            "options": [
+              {
+                "icon": "handcoin",
+                "label": "They do work and get paid"
+              },
+              {
+                "icon": "gift",
+                "label": "It appears in their pocket"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Money is paid in exchange for work."
+          },
+          {
+            "id": "q2",
+            "prompt": "Which of these is a job?",
+            "image": {
+              "icon": "bus",
+              "alt": "A bus driver at the wheel"
+            },
+            "options": [
+              {
+                "icon": "toy",
+                "label": "Playing with toys"
+              },
+              {
+                "icon": "bus",
+                "label": "Driving a bus"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "A job is work someone pays you to do."
+          },
+          {
+            "id": "q3",
+            "prompt": "How can a child earn a little money?",
+            "image": {
+              "icon": "house",
+              "alt": "A child helping to tidy a room"
+            },
+            "options": [
+              {
+                "icon": "house",
+                "label": "By helping with jobs at home"
+              },
+              {
+                "icon": "cross",
+                "label": "By taking it from someone"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Earning always means doing something useful."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "Ways people earn",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+        "durationLabel": "4 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "A salary is a fixed amount paid every month.",
+        "A wage is paid for each hour or each day of work.",
+        "A business owner earns profit. Profit is sales minus costs.",
+        "Skills raise your pay. A skilled worker is paid more than an untrained one.",
+        "Deaf adults work in every field, including design, teaching, and computers."
+      ],
+      "keyWords": [
+        "salary",
+        "wage",
+        "profit",
+        "skill",
+        "business"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A fixed amount paid every month is called a...",
+            "image": {
+              "icon": "calendar",
+              "alt": "A calendar with payday marked"
+            },
+            "options": [
+              {
+                "icon": "calendar",
+                "label": "Salary"
+              },
+              {
+                "icon": "shop",
+                "label": "Profit"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "It arrives on the same day each month."
+          },
+          {
+            "id": "q2",
+            "prompt": "You sell items for ₹500. Your costs were ₹300. What is the profit?",
+            "image": {
+              "icon": "shop",
+              "alt": "A small stall with items for sale"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹200"
+              },
+              {
+                "icon": "coin",
+                "label": "₹800"
+              },
+              {
+                "icon": "coin",
+                "label": "₹500"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Profit is sales minus costs."
+          },
+          {
+            "id": "q3",
+            "prompt": "What usually raises how much a person earns?",
+            "image": {
+              "icon": "book",
+              "alt": "Books and tools for learning a skill"
+            },
+            "options": [
+              {
+                "icon": "book",
+                "label": "Learning more skills"
+              },
+              {
+                "icon": "star",
+                "label": "Waiting quietly"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Employers pay more for skills they need."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Earning, taxes and take-home pay",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Gross pay is the full amount you earn. Net pay is what reaches your account.",
+        "The difference is deductions, such as income tax and provident fund.",
+        "Tax money pays for roads, hospitals and government schools.",
+        "Freelance work has no fixed salary. You are paid per project.",
+        "Always ask for the net amount before accepting a job."
+      ],
+      "keyWords": [
+        "gross pay",
+        "net pay",
+        "deduction",
+        "income tax",
+        "freelance",
+        "provident fund"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Which amount actually reaches your bank account?",
+            "image": {
+              "icon": "list",
+              "alt": "A payslip showing two totals"
+            },
+            "options": [
+              {
+                "icon": "list",
+                "label": "Net pay"
+              },
+              {
+                "icon": "chart",
+                "label": "Gross pay"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "It is the smaller number, after deductions."
+          },
+          {
+            "id": "q2",
+            "prompt": "What does income tax pay for?",
+            "image": {
+              "icon": "bank",
+              "alt": "A hospital and a road"
+            },
+            "options": [
+              {
+                "icon": "bank",
+                "label": "Roads, hospitals and schools"
+              },
+              {
+                "icon": "gift",
+                "label": "Gifts for shop owners"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Tax funds services everyone uses."
+          },
+          {
+            "id": "q3",
+            "prompt": "Gross pay is ₹20,000. Deductions are ₹3,000. What is net pay?",
+            "image": {
+              "icon": "list",
+              "alt": "A payslip with a deduction line"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹17,000"
+              },
+              {
+                "icon": "coin",
+                "label": "₹23,000"
+              },
+              {
+                "icon": "coin",
+                "label": "₹3,000"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Take the deductions away from gross pay."
+          }
+        ]
+      }
+    }
+  }
+}

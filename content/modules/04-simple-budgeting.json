@@ -1,0 +1,340 @@
+{
+  "id": "simple-budgeting",
+  "order": 4,
+  "icon": "list",
+  "accent": "sun",
+  "title": "Simple Budgeting",
+  "shortTitle": "Budgeting",
+  "levels": {
+    "level-1": {
+      "title": "Making a money plan",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "A budget is a plan for your money.",
+        "First write down how much money you have.",
+        "Then write down what you want to buy and the price.",
+        "Add the prices. If the total is more than your money, take one thing off the list.",
+        "A budget stops you running out of money."
+      ],
+      "keyWords": [
+        "budget",
+        "plan",
+        "total",
+        "left over"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "What is a budget?",
+            "image": {
+              "icon": "list",
+              "alt": "A short list with prices written on it"
+            },
+            "options": [
+              {
+                "icon": "list",
+                "label": "A plan for your money"
+              },
+              {
+                "icon": "toy",
+                "label": "A kind of toy"
+              },
+              {
+                "icon": "bank",
+                "label": "A big building"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "A budget is written before you spend."
+          },
+          {
+            "id": "q2",
+            "prompt": "You have ₹50. A snack is ₹20 and a pen is ₹20. Can you buy both?",
+            "image": {
+              "icon": "wallet",
+              "alt": "A wallet with fifty rupees"
+            },
+            "options": [
+              {
+                "icon": "check",
+                "label": "Yes"
+              },
+              {
+                "icon": "cross",
+                "label": "No"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "20 plus 20 is 40. You have 50."
+          },
+          {
+            "id": "q3",
+            "prompt": "You have ₹50 and spend ₹40. How much is left?",
+            "image": {
+              "icon": "coin",
+              "alt": "Coins on a table"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹10"
+              },
+              {
+                "icon": "coin",
+                "label": "₹90"
+              },
+              {
+                "icon": "coin",
+                "label": "₹0"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Take 40 away from 50."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "Building your first budget",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+        "durationLabel": "4 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "A budget has two sides. Money in, and money out.",
+        "Money in is called income. Pocket money is income.",
+        "Money out is called expenses. Snacks and bus fare are expenses.",
+        "Income minus expenses is what you have left.",
+        "If the answer is below zero, your plan does not work. Change it before you spend."
+      ],
+      "keyWords": [
+        "income",
+        "expense",
+        "balance",
+        "monthly budget"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Pocket money of ₹300 a month is called what?",
+            "image": {
+              "icon": "handcoin",
+              "alt": "A hand giving money to another hand"
+            },
+            "options": [
+              {
+                "icon": "handcoin",
+                "label": "Income"
+              },
+              {
+                "icon": "shop",
+                "label": "Expense"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Income is money coming in."
+          },
+          {
+            "id": "q2",
+            "prompt": "Income ₹300. Expenses ₹250. What is left?",
+            "image": {
+              "icon": "list",
+              "alt": "A budget sheet with two columns"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹50"
+              },
+              {
+                "icon": "coin",
+                "label": "₹550"
+              },
+              {
+                "icon": "coin",
+                "label": "₹0"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Take 250 away from 300."
+          },
+          {
+            "id": "q3",
+            "prompt": "Income ₹300. Expenses ₹350. What must you do?",
+            "image": {
+              "icon": "warning",
+              "alt": "A warning sign on a budget sheet"
+            },
+            "options": [
+              {
+                "icon": "cross",
+                "label": "Remove ₹50 of expenses"
+              },
+              {
+                "icon": "check",
+                "label": "Nothing, the plan is fine"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "You cannot spend money you do not have."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Budgeting with the 50-30-20 plan",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "The 50-30-20 plan splits income into three parts.",
+        "Half goes to needs. Three tenths goes to wants. Two tenths goes to savings.",
+        "With ₹1000 income that is ₹500 needs, ₹300 wants, and ₹200 savings.",
+        "Track what you actually spend for one month. Compare it to your plan.",
+        "Adjust the plan to fit your life. The split is a guide, not a rule."
+      ],
+      "keyWords": [
+        "50-30-20",
+        "tracking",
+        "income",
+        "allocation",
+        "review"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "In the 50-30-20 plan, what gets 20 percent?",
+            "image": {
+              "icon": "chart",
+              "alt": "A circle split into three parts"
+            },
+            "options": [
+              {
+                "icon": "food",
+                "label": "Needs"
+              },
+              {
+                "icon": "piggy",
+                "label": "Savings"
+              },
+              {
+                "icon": "toy",
+                "label": "Wants"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "The smallest part is for the future."
+          },
+          {
+            "id": "q2",
+            "prompt": "Income is ₹1000. How much goes to needs?",
+            "image": {
+              "icon": "chart",
+              "alt": "A budget split diagram"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹500"
+              },
+              {
+                "icon": "coin",
+                "label": "₹300"
+              },
+              {
+                "icon": "coin",
+                "label": "₹200"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Needs take half of the income."
+          },
+          {
+            "id": "q3",
+            "prompt": "Why should you track spending for a month?",
+            "image": {
+              "icon": "list",
+              "alt": "A notebook with daily amounts written down"
+            },
+            "options": [
+              {
+                "icon": "question",
+                "label": "To see where money really goes"
+              },
+              {
+                "icon": "gift",
+                "label": "To get a prize"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "A plan only works if it matches real life."
+          }
+        ]
+      }
+    }
+  }
+}

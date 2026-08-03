@@ -1,0 +1,5 @@
+Recorded ISL dictionary clips go in this folder, one per term, named after the
+term's id — money.mp4, savings-goal.mp4, and so on.
+
+See content/ISL-CLIPS.md for the shot list and the recording brief.
+After adding files, run: npm run sign:sync

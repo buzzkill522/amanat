@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Layout is built in rem so browser zoom and larger default font sizes
+       reflow instead of clipping (WCAG 1.4.4 Resize Text). */
+    -webkit-text-size-adjust: 100%;
+    /* For the cover's "Start learning" jump to the age chooser. Switched off
+       again for reduced-motion users at the bottom of this file. */
+    scroll-behavior: smooth;
+    /* The cover breaks out to 100vw. `clip` (not `hidden`) absorbs the
+       scrollbar-width difference without creating a scroll container. */
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+  }
+
+  /* --------------------------------------------------------------------------
+     Background. Two fixed layers behind everything, both pointer-events:none
+     and both deliberately faint — this is paper texture, not decoration
+     competing with the lesson.
+
+     They are kept under about 7% alpha for a measurable reason: the contrast
+     audit reads computed background *colour*, which cannot see a background
+     image, so anything strong enough to shift a ratio would be invisible to
+     the check that guards this site. Faint keeps the measured numbers honest.
+     -------------------------------------------------------------------------- */
+
+  /* Grain. Fractal noise, tiled, so the beige reads as paper rather than fill. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  /* Warm washes. Fixed rather than scrolling, so the page feels lit from a
+     constant source instead of dragging a gradient down with it. */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(60rem 32rem at 50% -8%, rgba(168, 69, 28, 0.07), transparent 68%),
+      radial-gradient(45rem 28rem at 100% 12%, rgba(138, 100, 19, 0.055), transparent 70%),
+      radial-gradient(40rem 30rem at 0% 55%, rgba(35, 122, 99, 0.04), transparent 70%);
+  }
+
+  /* Headings carry the display face; everything else stays in Mukta, which is
+     the one meant to be read in quantity. Set here rather than on each
+     component so a new page cannot forget it. */
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    /* Baloo 2 is drawn with tall Devanagari ascenders in mind, so headings get
+       a little more room than a Latin-only face would need. */
+    line-height: 1.25;
+  }
+
+  /* A single, always-visible focus style. Never remove the outline without
+     replacing it (WCAG 2.4.7 Focus Visible, 2.4.11 Focus Not Obscured). */
+  /* The accent doubles as the focus colour: on a page this quiet, rust is the
+     most visible thing available, and it clears 3:1 against both paper and the
+     dark panels. */
+  :focus-visible {
+    @apply outline-none ring-4 ring-clay-500 ring-offset-2 ring-offset-paper rounded-lg;
+  }
+
+  /* Some browsers still paint a thin default ring on mouse click. */
+  :focus:not(:focus-visible) {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  /* Every interactive element uses one of these, so the 44x44px minimum
+     target size (WCAG 2.5.8) is guaranteed by construction. */
+  .tap-target {
+    @apply min-h-tap min-w-tap inline-flex items-center justify-center;
+  }
+
+  .btn {
+    @apply tap-target gap-2 rounded-2xl px-5 py-3 font-display font-bold tracking-wide transition
+           disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  /* Near-black rather than a brand hue: in a neutral scheme the primary action
+     earns its weight from being the darkest thing on the page. */
+  .btn-primary {
+    @apply btn bg-ink text-surface hover:bg-brand-700 active:bg-brand-800;
+  }
+
+  .btn-secondary {
+    /* brand-400, not 300: this border is the main thing marking the button out
+       from the page, so it is a UI boundary and owes 3:1 (WCAG 1.4.11).
+       brand-300 measured 2.56:1 against surface. */
+    @apply btn border border-brand-400 bg-surface text-ink hover:bg-brand-50;
+  }
+
+  .btn-success {
+    @apply btn bg-grow-500 text-white hover:bg-grow-600;
+  }
+
+  .card {
+    @apply rounded-3xl border-2 border-brand-100 bg-surface shadow-sm;
+  }
+
+  /* A native checkbox cannot be padded out to 44px, so the box itself is 28px
+     (comfortably over the 24px AA floor) and the whole label row is the target,
+     which clicking also toggles. */
+  .checkbox-lg {
+    @apply h-7 w-7 shrink-0 cursor-pointer accent-brand-600;
+  }
+
+  .checkbox-row {
+    @apply flex min-h-tap cursor-pointer items-center gap-3;
+  }
+
+  .skip-link {
+    @apply absolute left-4 top-4 z-50 -translate-y-24 rounded-xl bg-brand-700 px-5 py-3
+           font-bold text-white transition-transform focus:translate-y-0;
+  }
+}
+
+@layer utilities {
+  /* Visible only to screen readers. */
+  .sr-only-focusable:not(:focus):not(:focus-within) {
+    @apply sr-only;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Print. Scroll reveals start at opacity 0 and are un-hidden by an
+   IntersectionObserver — which never fires in a print context, so a printed
+   page would come out with blank sections where the content should be.
+   Teachers print these pages for class, so force everything visible.
+   --------------------------------------------------------------------------- */
+@media print {
+  *,
+  *::before,
+  *::after {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion. Anything decorative stops; nothing that carries meaning
+   depends on the animation running (WCAG 2.3.3 Animation from Interactions).
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

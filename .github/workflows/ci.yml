@@ -1,0 +1,43 @@
+name: CI
+
+# Everything here is a guard on something that has already gone wrong once, or
+# would go wrong silently. None of it needs a browser or a network call, so it
+# runs in well under a minute.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      # Icon names, quiz answers in range, ids unique, relatedModules resolving.
+      # An educator editing a lesson JSON gets told here, not in a classroom.
+      - name: Content
+        run: npm run check:content
+
+      # Contrast against WCAG 1.4.3 and 1.4.11, plus colour-vision-deficiency
+      # separation on the one pair that means right-vs-wrong in the quiz.
+      # Reads the palette out of tailwind.config.js, so it cannot drift.
+      - name: Accessibility
+        run: npm run check:a11y
+
+      - name: Build
+        run: npm run build
+
+      # Not yet enforced: the recorded ISL clips. `npm run sign:check` exits
+      # non-zero while any of the thirty are missing, which is true today, so
+      # it is reported rather than failed. Turn it into a real step once the
+      # clips are in.
+      - name: ISL clip coverage (informational)
+        run: npm run sign:check || true

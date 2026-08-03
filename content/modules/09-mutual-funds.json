@@ -1,0 +1,199 @@
+{
+  "id": "mutual-funds",
+  "order": 9,
+  "icon": "chart",
+  "accent": "brand",
+  "title": "Mutual Funds and SIPs",
+  "shortTitle": "Funds",
+  "levels": {
+    "level-1": {
+      "title": "Money can grow in different places",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "Money in a box stays the same. Money in a bank grows a little.",
+        "There are other places money can go where it may grow more.",
+        "But those places can also go down. Some months your money is worth less.",
+        "Safe places grow slowly and never fall. Risky places may grow fast or fall.",
+        "Nobody can promise you what will happen. Anyone who promises is not telling the truth."
+      ],
+      "keyWords": ["grow", "safe", "risk", "up", "down"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A bank account grows slowly and never falls. What is that called?",
+            "image": { "icon": "bank", "alt": "A bank building with a small plant beside it" },
+            "options": [
+              { "icon": "shield", "label": "Safe" },
+              { "icon": "warning", "label": "Risky" },
+              { "icon": "question", "label": "Free" }
+            ],
+            "correctIndex": 0,
+            "hint": "Safe means it will not fall."
+          },
+          {
+            "id": "q2",
+            "prompt": "Someone says: 'Give me money and it will double every month.' What should you do?",
+            "image": { "icon": "warning", "alt": "A bright poster promising to double money" },
+            "options": [
+              { "icon": "cross", "label": "Say no and tell a trusted adult" },
+              { "icon": "handcoin", "label": "Give them the money" },
+              { "icon": "star", "label": "Tell your friends to join" }
+            ],
+            "correctIndex": 0,
+            "hint": "Nobody can promise money will grow. That promise is a warning sign."
+          },
+          {
+            "id": "q3",
+            "prompt": "Which one can go DOWN as well as up?",
+            "image": { "icon": "chart", "alt": "A wiggly line going up and down" },
+            "options": [
+              { "icon": "chart", "label": "A risky place" },
+              { "icon": "piggy", "label": "A piggy bank" },
+              { "icon": "bank", "label": "A savings account" }
+            ],
+            "correctIndex": 0,
+            "hint": "Only the risky one falls."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "What a mutual fund actually is",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+        "durationLabel": "4 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "A mutual fund pools money from many people. A manager buys shares in many companies with it.",
+        "You own a small slice of the whole pool, so one company doing badly does not sink you.",
+        "A SIP puts a fixed amount in every month — ₹500, say — instead of one lump sum.",
+        "A bank deposit or PPF promises you a number. A mutual fund promises nothing at all.",
+        "That is the whole difference. Higher possible growth is paid for with the chance of going down.",
+        "Money you need soon should not go in a fund. Money you will not touch for years might."
+      ],
+      "keyWords": ["mutual fund", "pooled money", "SIP", "risk", "return", "no guarantee"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "What is a mutual fund?",
+            "image": { "icon": "hands", "alt": "Many hands putting coins into one pot" },
+            "options": [
+              { "icon": "hands", "label": "Many people's money pooled and invested together" },
+              { "icon": "bank", "label": "A special kind of bank account" },
+              { "icon": "gift", "label": "Money the government gives you" }
+            ],
+            "correctIndex": 0,
+            "hint": "The word 'mutual' is the clue. It is shared."
+          },
+          {
+            "id": "q2",
+            "prompt": "You need the money for school fees in three months. Where should it go?",
+            "image": { "icon": "calendar", "alt": "A calendar with three months marked" },
+            "options": [
+              { "icon": "bank", "label": "A savings account — you can reach it and it will not fall" },
+              { "icon": "chart", "label": "A mutual fund, to grow it fast" },
+              { "icon": "lock", "label": "A scheme locked for 15 years" }
+            ],
+            "correctIndex": 0,
+            "hint": "A fund can be worth less in three months than you put in."
+          },
+          {
+            "id": "q3",
+            "prompt": "An advertisement says a fund gave 20% last year, so it will give 20% next year. Is that right?",
+            "image": { "icon": "warning", "alt": "An advertisement showing a big number" },
+            "options": [
+              { "icon": "cross", "label": "No. What happened before does not decide what happens next." },
+              { "icon": "check", "label": "Yes, funds repeat their results" },
+              { "icon": "star", "label": "Yes, if the manager is good" }
+            ],
+            "correctIndex": 0,
+            "hint": "This is why every fund advertisement carries a warning."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Risk, time and a fund in your own name",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "Every place for money trades three things: how much it might grow, how likely you are to lose some, and how fast you can get it back.",
+        "A savings account is instant and safe at about 4%. PPF is locked for years at about 7%. A fund could beat both, or lose money — nothing is promised.",
+        "Since prices rise around 6% a year, money sitting at 4% is quietly shrinking in what it can buy. Safety is not free either.",
+        "A SIP of ₹500 a month is ₹6,000 a year. Its value is whatever the units are worth on the day you sell, which may be more or less than you paid.",
+        "A minor can hold a fund. The child is the sole owner and an adult only operates it — no joint holding is allowed.",
+        "Two traps worth knowing: the folio FREEZES on your eighteenth birthday until you convert it yourself, and money taken out is paid only into a bank account in your own name.",
+        "So the account comes first, the emergency savings come second, and the fund comes third. In that order, never reversed."
+      ],
+      "keyWords": ["risk and return", "liquidity", "SIP", "real return", "folio freeze", "sole holder"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A savings account pays 4% while prices rise 6%. What is happening?",
+            "image": { "icon": "chart", "alt": "Two arrows, one rising faster than the other" },
+            "options": [
+              { "icon": "warning", "label": "The money is losing buying power, even though it is safe" },
+              { "icon": "check", "label": "It is growing at 4%, so it is fine" },
+              { "icon": "growth", "label": "It is beating prices" }
+            ],
+            "correctIndex": 0,
+            "hint": "Safety has a cost too. Compare the two rates."
+          },
+          {
+            "id": "q2",
+            "prompt": "Your SIP is in your name and you turn 18 today. What happens?",
+            "image": { "icon": "lock", "alt": "A calendar with an eighteenth birthday circled" },
+            "options": [
+              { "icon": "lock", "label": "The folio freezes until you convert it to an adult account" },
+              { "icon": "check", "label": "Nothing changes" },
+              { "icon": "handcoin", "label": "The money is sent to you automatically" }
+            ],
+            "correctIndex": 0,
+            "hint": "The guardian's authority ends that day, and nobody sends a reminder."
+          },
+          {
+            "id": "q3",
+            "prompt": "In what order should these be set up?",
+            "image": { "icon": "list", "alt": "Three numbered steps" },
+            "options": [
+              { "icon": "bank", "label": "Bank account, then emergency savings, then a fund" },
+              { "icon": "chart", "label": "Fund first, because it grows fastest" },
+              { "icon": "piggy", "label": "Emergency savings only, never a fund" }
+            ],
+            "correctIndex": 0,
+            "hint": "A fund cannot even pay you out without an account in your name."
+          }
+        ]
+      }
+    }
+  }
+}

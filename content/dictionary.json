@@ -1,0 +1,321 @@
+{
+  "language": "isl",
+  "languageLabel": "Indian Sign Language",
+  "note": "Drop clips in public/sign/ named after each entry id and run `npm run sign:sync`. Until a clip exists the entry shows a clearly labelled placeholder. See content/ISL-CLIPS.md.",
+
+  "signVideoCredit": {
+    "text": "Sign videos from Spread the Sign, © European Sign Language Centre. Used with permission.",
+    "href": "https://spreadthesign.com/en.in/",
+    "note": "Shown under every clip that does not set its own credit. Record the permission itself in content/ISL-CLIPS.md — who granted it, when, and what it covers. If a clip comes from a different source, set `credit` on that entry instead; it wins over this. If you film your own and need no attribution, set appliesToUnattributed to false.",
+    "appliesToUnattributed": true
+  },
+
+  "categories": [
+    { "id": "basics", "label": "Money basics", "accent": "grow" },
+    { "id": "banking", "label": "Banking", "accent": "brand" },
+    { "id": "planning", "label": "Planning", "accent": "sun" },
+    { "id": "safety", "label": "Safety", "accent": "berry" }
+  ],
+  "entries": [
+    {
+      "id": "money",
+      "term": "Money",
+      "category": "basics",
+      "icon": "coin",
+      "definition": "What people use to buy things. In India we use rupees.",
+      "example": "A snack costs ₹20. You give the shop ₹20 in money.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "rupee",
+      "term": "Rupee",
+      "category": "basics",
+      "icon": "note",
+      "definition": "The money used in India. Its sign is ₹.",
+      "example": "A ₹100 note is one hundred rupees.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "coin",
+      "term": "Coin",
+      "category": "basics",
+      "icon": "coin",
+      "definition": "Money made of metal. It is round and small.",
+      "example": "India has ₹1, ₹2, ₹5, ₹10 and ₹20 coins.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "note",
+      "term": "Note",
+      "category": "basics",
+      "icon": "note",
+      "definition": "Money made of paper.",
+      "example": "A ₹500 note is worth more than a ₹10 coin.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "price",
+      "term": "Price",
+      "category": "basics",
+      "icon": "shop",
+      "definition": "How much money a thing costs.",
+      "example": "The price of the notebook is ₹40.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money", "needs-vs-wants"]
+    },
+    {
+      "id": "spend",
+      "term": "Spend",
+      "category": "basics",
+      "icon": "shop",
+      "definition": "To use money to buy something.",
+      "example": "She spent ₹20 on a snack.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["saving-vs-spending"]
+    },
+    {
+      "id": "save",
+      "term": "Save",
+      "category": "basics",
+      "icon": "piggy",
+      "definition": "To keep money now so you can use it later.",
+      "example": "He saves ₹10 every week for a cricket ball.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["saving-vs-spending"]
+    },
+    {
+      "id": "need",
+      "term": "Need",
+      "category": "planning",
+      "icon": "food",
+      "definition": "Something you must have to stay well, like food or a home.",
+      "example": "Clean water is a need.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["needs-vs-wants"]
+    },
+    {
+      "id": "want",
+      "term": "Want",
+      "category": "planning",
+      "icon": "toy",
+      "definition": "Something nice to have, but you can live without it.",
+      "example": "A new toy is a want.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["needs-vs-wants"]
+    },
+    {
+      "id": "budget",
+      "term": "Budget",
+      "category": "planning",
+      "icon": "list",
+      "definition": "A written plan for your money. It shows money in and money out.",
+      "example": "Her budget gives ₹100 to snacks each month.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["simple-budgeting"]
+    },
+    {
+      "id": "income",
+      "term": "Income",
+      "category": "planning",
+      "icon": "handcoin",
+      "definition": "Money that comes to you, usually from work.",
+      "example": "His income is ₹300 of pocket money each month.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["simple-budgeting", "earning-money"]
+    },
+    {
+      "id": "expense",
+      "term": "Expense",
+      "category": "planning",
+      "icon": "shop",
+      "definition": "Money that goes out when you buy something.",
+      "example": "Bus fare of ₹15 is a daily expense.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["simple-budgeting"]
+    },
+    {
+      "id": "savings-goal",
+      "term": "Savings goal",
+      "category": "planning",
+      "icon": "target",
+      "definition": "A thing you are saving for, with a price and a date.",
+      "example": "My goal is ₹4000 for a bicycle by next June.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["saving-vs-spending"]
+    },
+    {
+      "id": "bank",
+      "term": "Bank",
+      "category": "banking",
+      "icon": "bank",
+      "definition": "A safe place that keeps your money and records how much is yours.",
+      "example": "She keeps her savings at a bank near school.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["how-banks-work"]
+    },
+    {
+      "id": "account",
+      "term": "Account",
+      "category": "banking",
+      "icon": "book",
+      "definition": "Your own record at a bank. It shows the money that belongs to you.",
+      "example": "He opened an account with his mother.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["how-banks-work"]
+    },
+    {
+      "id": "deposit",
+      "term": "Deposit",
+      "category": "banking",
+      "icon": "bank",
+      "definition": "Putting money into your bank account.",
+      "example": "She made a deposit of ₹500.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["how-banks-work"]
+    },
+    {
+      "id": "withdrawal",
+      "term": "Withdrawal",
+      "category": "banking",
+      "icon": "handcoin",
+      "definition": "Taking money out of your bank account.",
+      "example": "He made a withdrawal of ₹200 at the ATM.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["how-banks-work"]
+    },
+    {
+      "id": "balance",
+      "term": "Balance",
+      "category": "banking",
+      "icon": "list",
+      "definition": "The amount of money in your account right now.",
+      "example": "Her balance is ₹1,250.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["how-banks-work"]
+    },
+    {
+      "id": "atm",
+      "term": "ATM",
+      "category": "banking",
+      "icon": "lock",
+      "definition": "A machine that gives you cash from your account. You need a card and a PIN.",
+      "example": "He took ₹500 from the ATM.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["how-banks-work"]
+    },
+    {
+      "id": "interest",
+      "term": "Interest",
+      "category": "banking",
+      "icon": "growth",
+      "definition": "Extra money. A bank pays you interest on savings. You pay interest when you borrow.",
+      "example": "₹1000 at 5 percent earns ₹50 of interest in one year.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["interest-and-growth"]
+    },
+    {
+      "id": "compound-interest",
+      "term": "Compound interest",
+      "category": "banking",
+      "icon": "chart",
+      "definition": "Interest paid on your money and on the interest you already earned.",
+      "example": "Money left for many years grows faster with compound interest.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["interest-and-growth"]
+    },
+    {
+      "id": "salary",
+      "term": "Salary",
+      "category": "planning",
+      "icon": "calendar",
+      "definition": "A fixed amount of money paid for work, every month.",
+      "example": "His salary arrives on the first day of the month.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["earning-money"]
+    },
+    {
+      "id": "profit",
+      "term": "Profit",
+      "category": "planning",
+      "icon": "chart",
+      "definition": "The money left after you take costs away from sales.",
+      "example": "Sales ₹500 minus costs ₹300 is ₹200 profit.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["earning-money"]
+    },
+    {
+      "id": "tax",
+      "term": "Tax",
+      "category": "planning",
+      "icon": "bank",
+      "definition": "Money paid to the government. It pays for roads, hospitals and schools.",
+      "example": "Income tax is taken out before your salary reaches you.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["earning-money"]
+    },
+    {
+      "id": "pin",
+      "term": "PIN",
+      "category": "safety",
+      "icon": "lock",
+      "definition": "A secret number that proves a card or account is yours. Never share it.",
+      "example": "She types her PIN at the ATM, hiding the keypad.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["how-banks-work", "staying-safe"]
+    },
+    {
+      "id": "otp",
+      "term": "OTP",
+      "category": "safety",
+      "icon": "phone",
+      "definition": "A one time password sent to your phone. A real bank will never ask you for it.",
+      "example": "A caller asked for his OTP. He refused and hung up.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["staying-safe"]
+    },
+    {
+      "id": "scam",
+      "term": "Scam",
+      "category": "safety",
+      "icon": "warning",
+      "definition": "A trick used to take your money.",
+      "example": "A message about a prize she never entered was a scam.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["staying-safe"]
+    },
+    {
+      "id": "phishing",
+      "term": "Phishing",
+      "category": "safety",
+      "icon": "warning",
+      "definition": "A fake message that copies a real company to steal your details.",
+      "example": "The email used the bank's logo, but the address was wrong.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["staying-safe"]
+    },
+    {
+      "id": "upi",
+      "term": "UPI",
+      "category": "safety",
+      "icon": "phone",
+      "definition": "A way to send money from a phone in India. You enter a PIN only to send money.",
+      "example": "He paid the shop ₹60 using UPI.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money", "staying-safe"]
+    },
+    {
+      "id": "inflation",
+      "term": "Inflation",
+      "category": "basics",
+      "icon": "growth",
+      "definition": "Prices slowly going up over time. Each rupee buys a little less.",
+      "example": "A snack was ₹20 last year. Now it is ₹24.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    }
+  ]
+}

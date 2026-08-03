@@ -1,0 +1,197 @@
+{
+  "id": "what-is-money",
+  "order": 1,
+  "icon": "coin",
+  "accent": "grow",
+  "title": "What is Money?",
+  "shortTitle": "Money",
+  "levels": {
+    "level-1": {
+      "title": "What money is",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "Money is what people use to buy things. In India we use rupees, written ₹.",
+        "Money can be a metal coin, a paper note, or a number on a phone.",
+        "You give money to the shop. The shop gives you the thing. This is a swap.",
+        "After the swap the money is gone. You cannot spend the same ₹20 twice.",
+        "Money does not appear on its own. Someone did work to get it."
+      ],
+      "keyWords": ["money", "rupee", "coin", "note", "swap", "work"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Which one is money?",
+            "image": { "icon": "shop", "alt": "A small shop with a shelf of things to buy" },
+            "options": [
+              { "icon": "coin", "label": "A coin" },
+              { "icon": "toy", "label": "A toy car" },
+              { "icon": "book", "label": "A book" }
+            ],
+            "correctIndex": 0,
+            "hint": "Money is what you give the shop. The toy and the book are things you buy."
+          },
+          {
+            "id": "q2",
+            "prompt": "You have ₹50. You buy a snack for ₹20. How much is left?",
+            "image": { "icon": "icecream", "alt": "An ice cream on a stick beside a fifty rupee note" },
+            "options": [
+              { "icon": "coin", "label": "₹30" },
+              { "icon": "coin", "label": "₹50" },
+              { "icon": "coin", "label": "₹70" }
+            ],
+            "correctIndex": 0,
+            "hint": "Money goes away when you spend it. Take ₹20 off your ₹50."
+          },
+          {
+            "id": "q3",
+            "prompt": "Where does a family's money come from?",
+            "image": { "icon": "handcoin", "alt": "A hand giving money to another hand" },
+            "options": [
+              { "icon": "handcoin", "label": "Someone does work and is paid" },
+              { "icon": "gift", "label": "It appears in the cupboard" },
+              { "icon": "star", "label": "It grows in the garden" }
+            ],
+            "correctIndex": 0,
+            "hint": "Every rupee started as somebody's work."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "Why money works at all",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+        "durationLabel": "4 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "Before money, people swapped goods. A farmer with rice had to find someone who had cloth and who also wanted rice. That is two matches, not one.",
+        "Money removes the second match. Sell rice to anyone, then buy cloth from anyone.",
+        "For that to work, money must be hard to copy, easy to carry, and countable.",
+        "Only the Reserve Bank of India may print rupee notes. If anyone could print them, nobody would trust them.",
+        "Digital money is the same idea with no object at all. A UPI payment moves a number between two accounts."
+      ],
+      "keyWords": ["trade", "barter", "value", "scarce", "Reserve Bank of India", "UPI"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A farmer has rice and wants cloth. Why is swapping harder than using money?",
+            "image": { "icon": "food", "alt": "A bowl of rice next to folded cloth" },
+            "options": [
+              { "icon": "question", "label": "He must find someone with cloth who also wants rice" },
+              { "icon": "bus", "label": "Rice is heavy to carry" },
+              { "icon": "calendar", "label": "Cloth takes a long time to make" }
+            ],
+            "correctIndex": 0,
+            "hint": "Think about how many things have to line up at the same time."
+          },
+          {
+            "id": "q2",
+            "prompt": "Why does it matter that only one bank may print notes?",
+            "image": { "icon": "bank", "alt": "A large bank building with pillars" },
+            "options": [
+              { "icon": "shield", "label": "If anyone could print money, nobody would trust it" },
+              { "icon": "star", "label": "Their printers are the fastest" },
+              { "icon": "gift", "label": "They give the notes away free" }
+            ],
+            "correctIndex": 0,
+            "hint": "Money only works while people believe it is real and limited."
+          },
+          {
+            "id": "q3",
+            "prompt": "You pay ₹200 by UPI. What actually moved?",
+            "image": { "icon": "phone", "alt": "A phone showing a payment screen" },
+            "options": [
+              { "icon": "chart", "label": "A number moved from your account to the shop's account" },
+              { "icon": "note", "label": "A ₹200 note travelled through the phone" },
+              { "icon": "cross", "label": "It vanished and the bank made a new one" }
+            ],
+            "correctIndex": 0,
+            "hint": "No object moved anywhere. Two records changed."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "What gives money its value",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "A ₹500 note costs a few rupees to make. The rest of its value is trust — everyone accepts it because everyone else does.",
+        "Money does three jobs: it pays for things now, it stores value for later, and it measures what things are worth against each other.",
+        "That third job is why prices exist. Without money you could not say a bicycle is worth about 200 snacks.",
+        "Inflation is the storing job leaking. At 6% a year, ₹100 left in a drawer buys about ₹94 of goods twelve months later.",
+        "Keep it ten years at that rate and it buys roughly half of what it buys today. The note never changes; what it commands does.",
+        "So saving is not the same as putting notes in a box. The rate your money earns matters as much as the number you can see."
+      ],
+      "keyWords": ["trust", "store of value", "unit of account", "inflation", "purchasing power", "legal tender"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Most of a ₹500 note's value is made of what?",
+            "image": { "icon": "note", "alt": "A rupee note held in a hand" },
+            "options": [
+              { "icon": "shield", "label": "Trust that other people will accept it" },
+              { "icon": "note", "label": "The cost of the paper and the ink" },
+              { "icon": "star", "label": "Gold kept in a vault for that note" }
+            ],
+            "correctIndex": 0,
+            "hint": "The paper costs a few rupees. Ask where the rest of the value comes from."
+          },
+          {
+            "id": "q2",
+            "prompt": "Which of money's three jobs does inflation damage most?",
+            "image": { "icon": "growth", "alt": "A line chart rising from left to right" },
+            "options": [
+              { "icon": "piggy", "label": "Storing value for later" },
+              { "icon": "shop", "label": "Paying for something right now" },
+              { "icon": "chart", "label": "Measuring what things are worth" }
+            ],
+            "correctIndex": 0,
+            "hint": "Inflation barely touches a payment made this minute. It eats money you hold."
+          },
+          {
+            "id": "q3",
+            "prompt": "Prices rise about 6% in a year. You keep ₹1000 in a drawer for that year. What can it buy at the end?",
+            "image": { "icon": "wallet", "alt": "A thousand rupees in a drawer beside a calendar" },
+            "options": [
+              { "icon": "coin", "label": "About ₹940 of goods — same note, less shopping" },
+              { "icon": "coin", "label": "₹1000 of goods — nothing about the note changed" },
+              { "icon": "coin", "label": "About ₹1060 of goods — money grows by itself" }
+            ],
+            "correctIndex": 0,
+            "hint": "The number printed on the note never moves. What it will buy does."
+          }
+        ]
+      }
+    }
+  }
+}

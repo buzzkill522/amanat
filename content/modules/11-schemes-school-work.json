@@ -1,0 +1,200 @@
+{
+  "id": "schemes-school-work",
+  "order": 11,
+  "icon": "book",
+  "accent": "sun",
+  "title": "Schemes for School, Skills and Work",
+  "shortTitle": "Study & Work",
+  "levels": {
+    "level-1": {
+      "title": "Help with school things",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "School costs money. Books, uniforms, bus fare and hostel fees all cost money.",
+        "The government gives money to Deaf students to help pay for these things.",
+        "This money is called a scholarship. It is not a loan. You never pay it back.",
+        "You do not have to be top of the class. It is because you are Deaf, not because of marks.",
+        "A trusted adult applies for it with you, using your UDID card."
+      ],
+      "keyWords": ["school", "scholarship", "books", "help", "free"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Do you pay a scholarship back?",
+            "image": { "icon": "book", "alt": "A stack of school books" },
+            "options": [
+              { "icon": "check", "label": "No. It is a gift for study." },
+              { "icon": "cross", "label": "Yes, when you finish school" },
+              { "icon": "coin", "label": "Yes, with extra money on top" }
+            ],
+            "correctIndex": 0,
+            "hint": "A loan is paid back. A scholarship is not."
+          },
+          {
+            "id": "q2",
+            "prompt": "What can scholarship money help pay for?",
+            "image": { "icon": "shirt", "alt": "A uniform, books and a bus" },
+            "options": [
+              { "icon": "book", "label": "Books, uniform and travel to school" },
+              { "icon": "toy", "label": "Toys and games" },
+              { "icon": "icecream", "label": "Snacks every day" }
+            ],
+            "correctIndex": 0,
+            "hint": "It is for the things school needs."
+          },
+          {
+            "id": "q3",
+            "prompt": "Which card do you need to ask for it?",
+            "image": { "icon": "shield", "alt": "An identity card" },
+            "options": [
+              { "icon": "shield", "label": "The UDID card" },
+              { "icon": "bank", "label": "A bank card" },
+              { "icon": "phone", "label": "A phone card" }
+            ],
+            "correctIndex": 0,
+            "hint": "It is the same card from the lesson before."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "Scholarships, training and a job",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "Pre-Matric scholarships cover Classes IX and X. Post-Matric covers Class XI upward — school, diploma, degree and postgraduate study.",
+        "They can pay tuition, hostel and book costs, and add a disability allowance on top.",
+        "They usually need 40% disability, a valid UDID and a family income under a set limit.",
+        "After school there is more. PM-DAKSH gives free vocational training and helps with placement. A free coaching scheme pays for exam coaching — UPSC, SSC, banking, state exams.",
+        "For research there is a National Fellowship covering M.Phil. and Ph.D. study, with a monthly amount.",
+        "In government jobs, 4% of posts are reserved for disabled candidates, and 1% of that is held for deaf and hard-of-hearing people alone. There is also age relaxation and lower exam fees.",
+        "Every one of these needs an application, a deadline and papers. Missing the deadline is the commonest way this money is lost."
+      ],
+      "keyWords": ["Pre-Matric", "Post-Matric", "PM-DAKSH", "free coaching", "reservation", "deadline"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "You are in Class XII. Which scholarship applies?",
+            "image": { "icon": "book", "alt": "A school certificate" },
+            "options": [
+              { "icon": "check", "label": "Post-Matric" },
+              { "icon": "cross", "label": "Pre-Matric" },
+              { "icon": "star", "label": "The National Fellowship" }
+            ],
+            "correctIndex": 0,
+            "hint": "Pre-Matric stops at Class X. 'Matric' is the dividing line."
+          },
+          {
+            "id": "q2",
+            "prompt": "In government jobs, how much is held for deaf and hard-of-hearing candidates?",
+            "image": { "icon": "list", "alt": "A list of posts with one marked" },
+            "options": [
+              { "icon": "check", "label": "1%, for that group alone" },
+              { "icon": "star", "label": "4%, shared with every disability" },
+              { "icon": "cross", "label": "Nothing is reserved" }
+            ],
+            "correctIndex": 0,
+            "hint": "The total is 4%, divided into separate 1% shares."
+          },
+          {
+            "id": "q3",
+            "prompt": "You want free training for a job after school. Which scheme?",
+            "image": { "icon": "target", "alt": "Tools and a training certificate" },
+            "options": [
+              { "icon": "check", "label": "PM-DAKSH" },
+              { "icon": "medicine", "label": "ADIP" },
+              { "icon": "bank", "label": "IGNDPS" }
+            ],
+            "correctIndex": 0,
+            "hint": "ADIP is equipment and IGNDPS is a pension. Only one is training."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Turning entitlements into income",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "Put together, these schemes are a route: study paid for, skills trained, a reserved share of jobs, and tax relief once you earn.",
+        "Scholarship and fellowship money is paid into a bank account in your own name — which is why the account came first in this course.",
+        "NHFDC lends at concessional rates for study or for starting your own business, for people who want to work for themselves rather than be hired.",
+        "States add their own: marriage assistance, self-employment loans, free laptops, housing support, free bus travel. These vary enormously, so check your own state rather than assuming.",
+        "Scholarship money is income you did not have to earn. Treated as spending money it disappears; put into savings or a SIP it becomes the start of something.",
+        "That is where this whole course meets: budget it, bank it, grow it, and know what you are owed.",
+        "Amounts, income limits and deadlines change every year. Verify on the official portal before relying on any figure taught here."
+      ],
+      "keyWords": ["NHFDC", "self-employment", "state schemes", "compounding", "financial independence"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Where is scholarship money paid?",
+            "image": { "icon": "bank", "alt": "A bank passbook with a name on it" },
+            "options": [
+              { "icon": "bank", "label": "Into a bank account in your own name" },
+              { "icon": "handcoin", "label": "As cash at the school office" },
+              { "icon": "house", "label": "To any relative who asks" }
+            ],
+            "correctIndex": 0,
+            "hint": "This is why the account is the first step in the whole course."
+          },
+          {
+            "id": "q2",
+            "prompt": "You want a loan to start a small business. Which one is for that?",
+            "image": { "icon": "shop", "alt": "A small stall being set up" },
+            "options": [
+              { "icon": "check", "label": "NHFDC" },
+              { "icon": "book", "label": "Post-Matric Scholarship" },
+              { "icon": "medicine", "label": "ADIP" }
+            ],
+            "correctIndex": 0,
+            "hint": "Only one of these lends money for work."
+          },
+          {
+            "id": "q3",
+            "prompt": "Your scholarship arrives as a lump sum. What turns it into more than a one-off?",
+            "image": { "icon": "growth", "alt": "A coin with a plant growing from it" },
+            "options": [
+              { "icon": "piggy", "label": "Budget it, keep some, and put part where it can grow" },
+              { "icon": "shop", "label": "Spend it before it goes" },
+              { "icon": "gift", "label": "Give it all away" }
+            ],
+            "correctIndex": 0,
+            "hint": "Every earlier lesson in this course is the answer to this question."
+          }
+        ]
+      }
+    }
+  }
+}

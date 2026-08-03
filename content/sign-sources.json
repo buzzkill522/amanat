@@ -1,0 +1,108 @@
+{
+  "_comment": "Resolved Spread the Sign (en.in — Indian Sign Language) pages for each dictionary term, checked one by one against their search. Used by `npm run sign:links`. Hand-maintained; the sync script never rewrites this file.",
+  "_source": "https://spreadthesign.com/en.in/",
+  "_confidence": {
+    "direct": "The word's own entry, meaning matches. Still worth an eyeball.",
+    "sense": "Several entries share the spelling, or the money sense sits under a compound. Pick deliberately — the wrong one teaches the wrong sign.",
+    "none": "No entry in the Indian Sign Language section. Source from ISLRTC or film it. `nearest` is a related word, NOT a substitute."
+  },
+
+  "money": { "url": "https://spreadthesign.com/en.in/word/1018/money/", "confidence": "direct" },
+  "coin": { "url": "https://spreadthesign.com/en.in/word/6401/coin/", "confidence": "direct" },
+  "price": { "url": "https://spreadthesign.com/en.in/word/1094/price/", "confidence": "direct" },
+  "spend": { "url": "https://spreadthesign.com/en.in/word/11617/spend/", "confidence": "direct" },
+  "want": { "url": "https://spreadthesign.com/en.in/word/458/want/", "confidence": "direct" },
+  "budget": { "url": "https://spreadthesign.com/en.in/word/5529/budget/", "confidence": "direct" },
+  "income": { "url": "https://spreadthesign.com/en.in/word/5448/income/", "confidence": "direct" },
+  "expense": { "url": "https://spreadthesign.com/en.in/word/5444/expense/", "confidence": "direct" },
+  "bank": { "url": "https://spreadthesign.com/en.in/word/627/bank/", "confidence": "direct" },
+  "atm": { "url": "https://spreadthesign.com/en.in/word/6486/atm/", "confidence": "direct" },
+  "salary": { "url": "https://spreadthesign.com/en.in/word/1760/salary/", "confidence": "direct" },
+  "tax": { "url": "https://spreadthesign.com/en.in/word/1811/tax/", "confidence": "direct" },
+  "inflation": { "url": "https://spreadthesign.com/en.in/word/5447/inflation/", "confidence": "direct" },
+  "phishing": { "url": "https://spreadthesign.com/en.in/word/5337/phishing/", "confidence": "direct" },
+
+  "note": {
+    "url": "https://spreadthesign.com/en.in/word/25618/banknote/",
+    "confidence": "sense",
+    "note": "Use BANKNOTE. The plain 'note' entries (7632, 16094, 21415) are note-as-in-write-something-down, which is a different sign and the wrong lesson."
+  },
+  "account": {
+    "url": "https://spreadthesign.com/en.in/word/31059/bank-account/",
+    "confidence": "sense",
+    "note": "BANK ACCOUNT matches the definition. Plain 'account' (12326) can mean an online login or a narrative."
+  },
+  "deposit": {
+    "url": "https://spreadthesign.com/en.in/word/25112/bank-deposit/",
+    "confidence": "sense",
+    "note": "BANK DEPOSIT. Plain 'deposit' (8238, 15708) also covers a rental deposit and a geological one."
+  },
+  "withdrawal": {
+    "url": "https://spreadthesign.com/en.in/word/5780/withdraw/",
+    "confidence": "sense",
+    "note": "Only the verb WITHDRAW exists. Every noun 'withdrawal' entry is medical — withdrawal symptom, drug withdrawal. Check the verb is the money sense before using it."
+  },
+  "need": {
+    "url": "https://spreadthesign.com/en.in/word/9553/need/",
+    "confidence": "sense",
+    "note": "The noun (9553), not the verb (515). The entry teaches need-as-a-thing-you-must-have."
+  },
+  "profit": {
+    "url": "https://spreadthesign.com/en.in/word/5421/profit/",
+    "confidence": "sense",
+    "note": "The noun (5421), not the verb (12166)."
+  },
+  "save": {
+    "url": "https://spreadthesign.com/en.in/word/8088/save/",
+    "confidence": "sense",
+    "note": "Two verb entries, 8088 and 25727. Watch both: one is likely save-money, the other save-a-life or save-a-file."
+  },
+  "interest": {
+    "url": "https://spreadthesign.com/en.in/word/15833/interest/",
+    "confidence": "sense",
+    "note": "Three entries — 576 is the verb (to interest someone), 15833 and 25156 are nouns. INTEREST RATE (5511) may be the clearer money sense for this lesson."
+  },
+  "balance": {
+    "url": "https://spreadthesign.com/en.in/word/5460/balance/",
+    "confidence": "sense",
+    "note": "Four entries. 5460 and 20628 are nouns, 12369 and 20627 verbs (to balance / stay steady). Only one means money-in-the-account."
+  },
+
+  "rupee": {
+    "url": null,
+    "confidence": "none",
+    "nearest": "https://spreadthesign.com/en.in/word/3266/currency/",
+    "note": "No entry. CURRENCY is generic, not the rupee. This one probably has a well-known local sign — ask a Deaf ISL user first."
+  },
+  "savings-goal": {
+    "url": null,
+    "confidence": "none",
+    "note": "No entry. A compound phrase; likely signed as SAVE + GOAL rather than a single sign."
+  },
+  "compound-interest": {
+    "url": null,
+    "confidence": "none",
+    "note": "No entry. Likely INTEREST plus an explanation rather than one sign."
+  },
+  "pin": {
+    "url": null,
+    "confidence": "none",
+    "note": "Entries exist but all are the sewing/bowling kind. Nothing for a card PIN — usually fingerspelled."
+  },
+  "otp": {
+    "url": null,
+    "confidence": "none",
+    "note": "No entry. Usually fingerspelled."
+  },
+  "upi": {
+    "url": null,
+    "confidence": "none",
+    "note": "No entry. India-specific and recent; usually fingerspelled."
+  },
+  "scam": {
+    "url": null,
+    "confidence": "none",
+    "nearest": "https://spreadthesign.com/en.in/word/7720/fraud/",
+    "note": "No entry for 'scam'. FRAUD is close but more formal than what a child would be taught."
+  }
+}

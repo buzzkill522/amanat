@@ -1,0 +1,325 @@
+{
+  "id": "interest-and-growth",
+  "order": 7,
+  "icon": "growth",
+  "accent": "berry",
+  "title": "Interest & Growing Savings",
+  "shortTitle": "Interest",
+  "levels": {
+    "level-1": {
+      "title": "Money that grows",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "When you keep money in a bank, the bank pays you extra money.",
+        "This extra money is called interest.",
+        "The bank pays you because it can use your money for a while.",
+        "The longer you leave it, the more interest you get.",
+        "Money in a piggy bank does not grow. Money in a bank does."
+      ],
+      "keyWords": [
+        "interest",
+        "grow",
+        "bank",
+        "wait"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "What is the extra money the bank pays you called?",
+            "image": {
+              "icon": "growth",
+              "alt": "A small plant growing from a coin"
+            },
+            "options": [
+              {
+                "icon": "growth",
+                "label": "Interest"
+              },
+              {
+                "icon": "gift",
+                "label": "A present"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "The bank pays it for keeping your money."
+          },
+          {
+            "id": "q2",
+            "prompt": "Which money grows on its own?",
+            "image": {
+              "icon": "question",
+              "alt": "A piggy bank next to a bank building"
+            },
+            "options": [
+              {
+                "icon": "piggy",
+                "label": "Money in a piggy bank"
+              },
+              {
+                "icon": "bank",
+                "label": "Money in a bank account"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Only the bank pays interest."
+          },
+          {
+            "id": "q3",
+            "prompt": "To get more interest, what should you do?",
+            "image": {
+              "icon": "calendar",
+              "alt": "A calendar showing many months"
+            },
+            "options": [
+              {
+                "icon": "calendar",
+                "label": "Leave the money for longer"
+              },
+              {
+                "icon": "shop",
+                "label": "Take it out quickly"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Interest builds up over time."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "How interest is worked out",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+        "durationLabel": "4 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "The interest rate is written as a percent for one year.",
+        "5 percent means the bank adds ₹5 for every ₹100 you keep.",
+        "If you keep ₹1000 at 5 percent, after one year you have ₹1050.",
+        "Interest also works the other way. If you borrow, you pay interest.",
+        "A higher rate is good when you save. A higher rate is bad when you borrow."
+      ],
+      "keyWords": [
+        "interest rate",
+        "percent",
+        "per year",
+        "borrow",
+        "principal"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "₹1000 at 5 percent for one year becomes...",
+            "image": {
+              "icon": "growth",
+              "alt": "A bar growing slightly taller"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹1050"
+              },
+              {
+                "icon": "coin",
+                "label": "₹1500"
+              },
+              {
+                "icon": "coin",
+                "label": "₹5000"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "5 percent of 1000 is 50. Add it on."
+          },
+          {
+            "id": "q2",
+            "prompt": "You borrow money. A higher interest rate is...",
+            "image": {
+              "icon": "warning",
+              "alt": "A loan document with a large percent sign"
+            },
+            "options": [
+              {
+                "icon": "check",
+                "label": "Good for you"
+              },
+              {
+                "icon": "warning",
+                "label": "Bad for you"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "When you borrow, interest is money you pay out."
+          },
+          {
+            "id": "q3",
+            "prompt": "The money you first put in is called the...",
+            "image": {
+              "icon": "coin",
+              "alt": "A starting stack of coins"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "Principal"
+              },
+              {
+                "icon": "growth",
+                "label": "Interest"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Interest is added on top of it."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Compound interest and time",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Simple interest is paid only on the money you first put in.",
+        "Compound interest is paid on your money and on the interest already earned.",
+        "₹10,000 at 8 percent compound becomes about ₹21,600 after ten years.",
+        "Starting early matters more than starting with a large amount.",
+        "Credit cards charge compound interest too. Unpaid balances grow quickly."
+      ],
+      "keyWords": [
+        "simple interest",
+        "compound interest",
+        "rule of 72",
+        "credit card",
+        "long term"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Compound interest is paid on what?",
+            "image": {
+              "icon": "growth",
+              "alt": "A curve rising faster over time"
+            },
+            "options": [
+              {
+                "icon": "growth",
+                "label": "Your money and the interest already earned"
+              },
+              {
+                "icon": "coin",
+                "label": "Only the money you first put in"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Interest starts earning its own interest."
+          },
+          {
+            "id": "q2",
+            "prompt": "Two people save the same amount. Who ends with more?",
+            "image": {
+              "icon": "calendar",
+              "alt": "Two timelines, one longer than the other"
+            },
+            "options": [
+              {
+                "icon": "calendar",
+                "label": "The one who started earlier"
+              },
+              {
+                "icon": "star",
+                "label": "The one who started later"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Compounding needs time to do its work."
+          },
+          {
+            "id": "q3",
+            "prompt": "You do not pay your credit card bill. What happens?",
+            "image": {
+              "icon": "warning",
+              "alt": "A card bill with a rising amount"
+            },
+            "options": [
+              {
+                "icon": "warning",
+                "label": "The amount owed grows with compound interest"
+              },
+              {
+                "icon": "gift",
+                "label": "The bank forgets about it"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Compounding works against you when you owe money."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "id": "udid-and-benefits",
+  "order": 10,
+  "icon": "shield",
+  "accent": "berry",
+  "title": "Your UDID Card and What It Unlocks",
+  "shortTitle": "UDID",
+  "levels": {
+    "level-1": {
+      "title": "A card that helps",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "There is a special card for Deaf and hard-of-hearing people in India. It is called a UDID card.",
+        "It shows, anywhere in India, that you are Deaf. You do not have to explain again and again.",
+        "The card helps your family get money for school books, hearing aids and travel.",
+        "It is free to ask for one. A trusted adult and a government doctor help you get it.",
+        "Ask a grown-up at home if you have a UDID card. Many families do not know about it."
+      ],
+      "keyWords": ["UDID", "card", "help", "school", "hearing aid"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "What does the UDID card show?",
+            "image": { "icon": "shield", "alt": "An identity card with a shield on it" },
+            "options": [
+              { "icon": "shield", "label": "That you are Deaf, anywhere in India" },
+              { "icon": "bank", "label": "How much money you have" },
+              { "icon": "shop", "label": "Which shop you like" }
+            ],
+            "correctIndex": 0,
+            "hint": "It is an identity card, not a money card."
+          },
+          {
+            "id": "q2",
+            "prompt": "How much does it cost to ask for a UDID card?",
+            "image": { "icon": "coin", "alt": "An empty hand" },
+            "options": [
+              { "icon": "check", "label": "Nothing. It is free." },
+              { "icon": "coin", "label": "₹500" },
+              { "icon": "note", "label": "₹1000" }
+            ],
+            "correctIndex": 0,
+            "hint": "Anyone asking you to pay for it is not telling the truth."
+          },
+          {
+            "id": "q3",
+            "prompt": "Who helps you get the card?",
+            "image": { "icon": "handcoin", "alt": "An adult and a child at a counter" },
+            "options": [
+              { "icon": "house", "label": "A trusted adult and a government doctor" },
+              { "icon": "phone", "label": "A stranger who messages your phone" },
+              { "icon": "cross", "label": "Nobody, you do it in secret" }
+            ],
+            "correctIndex": 0,
+            "hint": "A stranger messaging about money or cards is a warning sign."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "The card, the hearing aid and the pension",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "The UDID card is the gateway. Almost every other scheme asks for it first, so nothing else starts until you have one.",
+        "To get it you need a disability certificate from a government medical board, usually showing 40% or more — what the law calls a benchmark disability.",
+        "ADIP is the scheme that pays for equipment: hearing aids, and cochlear implants for people who qualify. It depends on family income and is run through government hospitals, ALIMCO and approved NGOs.",
+        "Most states pay a monthly disability pension. The amount is different in every state, and usually needs 40% disability plus income and residence rules.",
+        "For families below the poverty line there is also a central pension, IGNDPS, which some states top up.",
+        "Travel costs less too — Indian Railways and many state buses give concessions to disabled passengers.",
+        "None of this arrives on its own. Somebody has to apply. That is the single most useful thing in this lesson."
+      ],
+      "keyWords": ["UDID", "benchmark disability", "ADIP", "disability pension", "IGNDPS", "travel concession"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Why is the UDID card called a gateway?",
+            "image": { "icon": "lock", "alt": "A gate with several paths behind it" },
+            "options": [
+              { "icon": "shield", "label": "Most other schemes ask for it before anything else" },
+              { "icon": "bank", "label": "It works as a bank card" },
+              { "icon": "bus", "label": "It is only for travel" }
+            ],
+            "correctIndex": 0,
+            "hint": "Think about what has to happen first."
+          },
+          {
+            "id": "q2",
+            "prompt": "Which scheme pays for a hearing aid?",
+            "image": { "icon": "medicine", "alt": "A hearing aid in a case" },
+            "options": [
+              { "icon": "check", "label": "ADIP" },
+              { "icon": "bank", "label": "IGNDPS" },
+              { "icon": "book", "label": "Post-Matric Scholarship" }
+            ],
+            "correctIndex": 0,
+            "hint": "ADIP is the scheme for aids and appliances — equipment, not cash."
+          },
+          {
+            "id": "q3",
+            "prompt": "Your family has never applied for anything. What is true about the pension and the schemes?",
+            "image": { "icon": "warning", "alt": "An unopened envelope" },
+            "options": [
+              { "icon": "list", "label": "They are not automatic. Somebody must apply." },
+              { "icon": "gift", "label": "They arrive by themselves when you turn 18" },
+              { "icon": "check", "label": "The school applies for every child" }
+            ],
+            "correctIndex": 0,
+            "hint": "This is why so much of this money goes unclaimed."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Claiming it: tax, health and the paperwork",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+        ],
+        "signInterpreter": { "src": null, "language": "isl" }
+      },
+      "summary": [
+        "Section 80U lets a person with a disability take a flat deduction from taxable income — ₹75,000 at 40–79%, and ₹1,25,000 where the disability is severe. It needs no bills or receipts.",
+        "Section 80DD does the same for a family member supporting a dependant with a disability. One household usually claims one or the other, not both for the same person.",
+        "Over a working life these deductions are worth a large sum, and they are among the most commonly missed.",
+        "Health cover: eligible families may come under Ayushman Bharat or a state health scheme, which pays for hospital treatment.",
+        "Some support is routed through National Trust registered organisations — caregiver help, community living, rehabilitation — but eligibility depends on which disability category applies, so check before relying on it.",
+        "Everything above is a right attached to paperwork. The order is: disability certificate, then UDID, then each scheme separately.",
+        "Rules, amounts and income limits change. Confirm the current position on the official portal or with the district social welfare office before you count on a figure.",
+        "None of this is charity. It exists because being Deaf costs money that hearing people never have to spend."
+      ],
+      "keyWords": ["Section 80U", "Section 80DD", "deduction", "Ayushman Bharat", "National Trust", "entitlement"],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Under Section 80U, what does a person with a 50% disability deduct from taxable income?",
+            "image": { "icon": "list", "alt": "A tax form with a line filled in" },
+            "options": [
+              { "icon": "coin", "label": "₹75,000" },
+              { "icon": "coin", "label": "₹1,25,000" },
+              { "icon": "cross", "label": "Nothing" }
+            ],
+            "correctIndex": 0,
+            "hint": "₹1,25,000 is the higher figure, for severe disability."
+          },
+          {
+            "id": "q2",
+            "prompt": "Do you need receipts to claim the Section 80U deduction?",
+            "image": { "icon": "question", "alt": "A pile of bills beside a form" },
+            "options": [
+              { "icon": "check", "label": "No. It is a flat deduction." },
+              { "icon": "list", "label": "Yes, every medical bill" },
+              { "icon": "warning", "label": "Yes, bills plus a doctor's letter each month" }
+            ],
+            "correctIndex": 0,
+            "hint": "It does not depend on what you actually spent."
+          },
+          {
+            "id": "q3",
+            "prompt": "What is the right order?",
+            "image": { "icon": "list", "alt": "Three numbered steps" },
+            "options": [
+              { "icon": "check", "label": "Disability certificate, then UDID, then each scheme" },
+              { "icon": "cross", "label": "Apply for schemes first, get the card later" },
+              { "icon": "question", "label": "Any order works" }
+            ],
+            "correctIndex": 0,
+            "hint": "Each step is the paperwork the next one asks for."
+          }
+        ]
+      }
+    }
+  }
+}

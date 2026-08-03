@@ -1,0 +1,341 @@
+{
+  "id": "saving-vs-spending",
+  "order": 2,
+  "icon": "piggy",
+  "accent": "grow",
+  "title": "Saving vs Spending",
+  "shortTitle": "Save or Spend",
+  "levels": {
+    "level-1": {
+      "title": "Saving and spending",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+        "durationLabel": "3 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Spending means you use money now.",
+        "Saving means you keep money for later.",
+        "You can put saved money in a piggy bank.",
+        "If you save ₹10 every week, you will have ₹40 after four weeks.",
+        "Saving helps you buy something bigger later."
+      ],
+      "keyWords": [
+        "save",
+        "spend",
+        "piggy bank",
+        "later",
+        "goal"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Which picture shows saving?",
+            "image": {
+              "icon": "coin",
+              "alt": "A coin held above a slot"
+            },
+            "options": [
+              {
+                "icon": "piggy",
+                "label": "Putting a coin in a piggy bank"
+              },
+              {
+                "icon": "shop",
+                "label": "Buying a snack right now"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Saving means the money stays with you for later."
+          },
+          {
+            "id": "q2",
+            "prompt": "You save ₹10 each week. How much after 4 weeks?",
+            "image": {
+              "icon": "calendar",
+              "alt": "A calendar with four weeks marked"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹10"
+              },
+              {
+                "icon": "coin",
+                "label": "₹40"
+              },
+              {
+                "icon": "coin",
+                "label": "₹100"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Count ten, four times. 10, 20, 30, 40."
+          },
+          {
+            "id": "q3",
+            "prompt": "You want a cricket ball for ₹150. You have ₹50. What helps?",
+            "image": {
+              "icon": "cricket",
+              "alt": "A cricket ball"
+            },
+            "options": [
+              {
+                "icon": "piggy",
+                "label": "Save more money first"
+              },
+              {
+                "icon": "icecream",
+                "label": "Buy ice cream today"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "You need ₹100 more. Saving gets you there."
+          }
+        ]
+      }
+    },
+    "level-2": {
+      "title": "Choosing to save or to spend",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+        "durationLabel": "4 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Every rupee you spend is a rupee you cannot save.",
+        "A savings goal is a thing you are saving for, with a price and a date.",
+        "Write the goal down. A bicycle costs ₹4000. You save ₹200 each month.",
+        "₹4000 divided by ₹200 is 20. So the goal takes 20 months.",
+        "Small spends add up. ₹20 a day is ₹600 in one month."
+      ],
+      "keyWords": [
+        "savings goal",
+        "trade-off",
+        "monthly",
+        "total",
+        "spending habit"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A bicycle costs ₹4000. You save ₹200 a month. How long?",
+            "image": {
+              "icon": "bicycle",
+              "alt": "A bicycle with a price tag"
+            },
+            "options": [
+              {
+                "icon": "calendar",
+                "label": "20 months"
+              },
+              {
+                "icon": "calendar",
+                "label": "4 months"
+              },
+              {
+                "icon": "calendar",
+                "label": "40 months"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Divide 4000 by 200."
+          },
+          {
+            "id": "q2",
+            "prompt": "You spend ₹20 every day. How much in 30 days?",
+            "image": {
+              "icon": "icecream",
+              "alt": "A daily snack"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹200"
+              },
+              {
+                "icon": "coin",
+                "label": "₹600"
+              },
+              {
+                "icon": "coin",
+                "label": "₹60"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Multiply 20 by 30."
+          },
+          {
+            "id": "q3",
+            "prompt": "Which is a good savings goal?",
+            "image": {
+              "icon": "target",
+              "alt": "A target with an arrow in the centre"
+            },
+            "options": [
+              {
+                "icon": "target",
+                "label": "₹4000 for a bicycle by next June"
+              },
+              {
+                "icon": "question",
+                "label": "Some money for something one day"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "A good goal has an amount and a date."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Saving, spending and opportunity cost",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Opportunity cost is what you give up when you choose.",
+        "If you spend ₹500 on headphones, the opportunity cost is the game you did not buy.",
+        "Pay yourself first means you save before you spend.",
+        "A common plan is to save 20 rupees out of every 100 you receive.",
+        "An emergency fund is money kept only for surprise problems."
+      ],
+      "keyWords": [
+        "opportunity cost",
+        "pay yourself first",
+        "emergency fund",
+        "savings rate"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "You spend ₹500 on headphones. What is the opportunity cost?",
+            "image": {
+              "icon": "phone",
+              "alt": "Headphones next to a game box"
+            },
+            "options": [
+              {
+                "icon": "gift",
+                "label": "The other thing you could have bought"
+              },
+              {
+                "icon": "coin",
+                "label": "The ₹500 note itself"
+              },
+              {
+                "icon": "shop",
+                "label": "The shop's profit"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Opportunity cost is the choice you gave up."
+          },
+          {
+            "id": "q2",
+            "prompt": "What does pay yourself first mean?",
+            "image": {
+              "icon": "piggy",
+              "alt": "Money going into a savings jar"
+            },
+            "options": [
+              {
+                "icon": "shop",
+                "label": "Spend first, save what is left"
+              },
+              {
+                "icon": "piggy",
+                "label": "Save first, spend what is left"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Saving happens at the start, not the end."
+          },
+          {
+            "id": "q3",
+            "prompt": "What is an emergency fund for?",
+            "image": {
+              "icon": "shield",
+              "alt": "A shield protecting a stack of coins"
+            },
+            "options": [
+              {
+                "icon": "gift",
+                "label": "Birthday presents"
+              },
+              {
+                "icon": "shield",
+                "label": "Surprise problems, like a broken phone"
+              },
+              {
+                "icon": "icecream",
+                "label": "Snacks every day"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "It is only for things you did not plan for."
+          }
+        ]
+      }
+    }
+  }
+}
