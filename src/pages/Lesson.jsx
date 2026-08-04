@@ -38,13 +38,30 @@ export default function Lesson() {
 
   // A locked lesson is not hidden — the child is told plainly why, and given
   // the one link that fixes it.
+  //
+  // The level is named on purpose. Progress is per level, so someone who
+  // finished "What is Money?" in Level 1 and then opened Level 2 sees a lock
+  // pointing at a lesson they believe they have already done. Saying only
+  // "finish the lesson before this one" is true but reads as broken. Naming
+  // the level, and saying outright that levels do not carry across, is the
+  // difference between a confusing dead end and an instruction.
   if (!isUnlocked(levelId, moduleId)) {
     return (
       <div className="mx-auto max-w-lg space-y-5 text-center">
         <ConceptIcon name="lock" className="mx-auto h-24 w-24 text-brand-500" title="A padlock" />
         <h1 className="text-3xl font-extrabold text-ink">This lesson is not open yet</h1>
-        <p className="text-lg text-muted">
-          Finish the lesson before this one first. Then this one will open.
+        {previous && (
+          <p className="text-lg text-muted">
+            Finish <strong className="text-ink">{previous.moduleTitle}</strong> in{' '}
+            <strong className="text-ink">
+              {level.label} — {level.name}
+            </strong>{' '}
+            first. Then this one will open.
+          </p>
+        )}
+        <p className="text-base text-muted">
+          Every level has its own path. Finishing a lesson in one level does not open it in
+          another.
         </p>
         {previous && (
           <Link to={`/path/${levelId}/lesson/${previous.id}`} className="btn-primary">
