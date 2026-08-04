@@ -1,0 +1,17 @@
+# Build settings committed to the repo rather than left only in Netlify's
+# dashboard, so a fresh "netlify init" (or a teammate's own account) picks up
+# the same configuration automatically instead of guessing at prompts.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# The same single-page-app fallback public/_redirects already provides.
+# Kept here too because it is the form Netlify's own docs and `netlify init`
+# expect, and having it in both places means whichever one Netlify reads first
+# still resolves every deep link (e.g. /path/level-2) to index.html instead of
+# a 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

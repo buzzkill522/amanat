@@ -19,3 +19,6 @@ dist-ssr
 # are tracked so the folder and the wiring survive.
 public/sign/*
 !public/sign/.gitkeep
+
+# Local Netlify folder
+.netlify
