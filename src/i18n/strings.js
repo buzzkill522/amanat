@@ -107,6 +107,16 @@ const en = {
   'home.topics.lead':
     'The same topic at each level, from coins in a hand to compound interest and what you can claim.',
 
+  // ------------------------------------------------------------ resume card
+  'home.resume.eyebrow': 'Welcome back',
+  'home.resume.heading': 'Carry on where you stopped',
+  'home.resume.lesson': 'Lesson {n} · {title}',
+  'home.resume.progress': '{done} of {total} done in {level}',
+  'home.resume.cta': 'Continue this lesson',
+  'home.resume.done.heading': 'You have finished {level}',
+  'home.resume.done.text': 'Every lesson here is complete. Try a harder level, or go over any lesson again.',
+  'home.resume.done.cta': 'See these lessons again',
+
   // --------------------------------------------------------- featured lesson
   'home.featured.eyebrow': 'Start here',
   'home.featured.heading': 'Lesson 1 · What is Money?',
@@ -250,6 +260,16 @@ const hi = {
   'home.topics.heading': '{count} विषय, तीन-तीन बार लिखे गए',
   'home.topics.lead':
     'हर स्तर पर वही विषय — हाथ में रखे सिक्कों से लेकर चक्रवृद्धि ब्याज और आपके अधिकारों तक।',
+
+  // ------------------------------------------------------------ resume card
+  'home.resume.eyebrow': 'वापस स्वागत है',
+  'home.resume.heading': 'जहाँ रुके थे, वहीं से आगे बढ़िए',
+  'home.resume.lesson': 'पाठ {n} · {title}',
+  'home.resume.progress': '{level} में {total} में से {done} पूरे',
+  'home.resume.cta': 'यह पाठ जारी रखिए',
+  'home.resume.done.heading': 'आपने {level} पूरा कर लिया',
+  'home.resume.done.text': 'यहाँ के सभी पाठ पूरे हो चुके हैं। कोई कठिन स्तर आज़माइए, या किसी भी पाठ को दोबारा देखिए।',
+  'home.resume.done.cta': 'ये पाठ दोबारा देखिए',
 
   // --------------------------------------------------------- featured lesson
   'home.featured.eyebrow': 'यहाँ से शुरू करें',

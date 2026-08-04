@@ -154,6 +154,51 @@ export function ProgressProvider({ children }) {
           percent: list.length ? Math.round((done / list.length) * 100) : 0,
         }
       },
+
+      /**
+       * Where a returning learner should pick up: the level they were last
+       * active in, and the first lesson there they have not finished.
+       *
+       * "Last active" is the most recent completedAt across every level, not
+       * simply the first level with any progress — someone who did three
+       * lessons at Level 1 and then moved up to Level 2 should come back to
+       * Level 2, which is where they actually were.
+       *
+       * ISO-8601 strings sort lexicographically in timestamp order, so they
+       * can be compared directly without parsing to Date.
+       *
+       * Returns null when nothing has been completed anywhere. That is the
+       * honest answer for a first visit, and the caller shows the normal
+       * "start here" path instead of an empty resume card.
+       */
+      resumePoint: () => {
+        let levelId = null
+        let latest = null
+
+        for (const [id, modules] of Object.entries(state.levels || {})) {
+          for (const record of Object.values(modules || {})) {
+            if (record?.completed && record.completedAt && record.completedAt > (latest ?? '')) {
+              latest = record.completedAt
+              levelId = id
+            }
+          }
+        }
+        if (!levelId) return null
+
+        const list = getModulesForLevel(levelId)
+        const done = list.filter((m) => state.levels[levelId]?.[m.id]?.completed).length
+        // The first unfinished lesson, which is also the only unlocked one.
+        const nextIndex = list.findIndex((m) => !state.levels[levelId]?.[m.id]?.completed)
+
+        return {
+          levelId,
+          completedAt: latest,
+          done,
+          total: list.length,
+          // null once every lesson in this level is finished.
+          next: nextIndex === -1 ? null : { ...list[nextIndex], number: nextIndex + 1 },
+        }
+      },
     }),
     [state, storageBlocked, markComplete, clearModule, resetLevel, resetAll, setSetting],
   )

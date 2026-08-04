@@ -15,8 +15,9 @@ import Reveal from '@/components/Reveal.jsx'
 import CountUp from '@/components/CountUp.jsx'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
 import usePageTitle from '@/hooks/usePageTitle.js'
+import { useProgress } from '@/hooks/useProgress.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
-import { levels, signLabel, signShort } from '@/config/site.js'
+import { getLevel, levels, signLabel, signShort } from '@/config/site.js'
 import { dictionary, modules, moduleMeta } from '@content/index.js'
 
 /**
@@ -94,6 +95,12 @@ function SectionHead({ eyebrow, heading, lead, id, tone = 'text-clay-600' }) {
 export default function Home() {
   usePageTitle(null)
   const { t, lang, isHindi } = useLanguage()
+  const { resumePoint } = useProgress()
+
+  // null on a first visit, which is the whole point — a resume card with
+  // nothing to resume is worse than no card.
+  const resume = resumePoint()
+  const resumeLevel = resume ? getLevel(resume.levelId) : null
 
   const featured = modules[0]
   // A sample of the glossary, not the whole thing — enough to show what an
@@ -121,6 +128,90 @@ export default function Home() {
           scroll listener — the same visual read, with no JS and nothing to
           break under prefers-reduced-motion because nothing here moves. */}
       <div className="space-y-24 bg-gradient-to-b from-paper to-brand-100 sm:space-y-32">
+      {/* -------------------------------------------------------------- resume */}
+      {/* Only for someone who has actually finished something, and placed
+          directly under the cover so it is the first thing a returning
+          learner meets. Nothing auto-redirects — being thrown into a lesson
+          you did not ask for is worse than one extra tap. */}
+      {resume && resumeLevel && (
+        <section aria-labelledby="resume-heading" className="-mt-10 sm:-mt-14">
+          <Reveal>
+            {resume.next ? (
+              <Link
+                to={`/path/${resume.levelId}/lesson/${resume.next.id}`}
+                className="group flex flex-col gap-5 rounded-3xl border-2 border-grow-500 bg-surface p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:items-center sm:p-8"
+              >
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-grow-100">
+                  <ConceptIcon name={resume.next.icon} className="h-10 w-10 text-grow-600" />
+                </span>
+
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-bold uppercase tracking-[0.14em] text-grow-600">
+                    {t('home.resume.eyebrow')}
+                  </span>
+                  <h2 id="resume-heading" className="mt-1 text-2xl font-extrabold text-ink">
+                    {t('home.resume.heading')}
+                  </h2>
+                  <span className="mt-2 block text-lg text-ink">
+                    {t('home.resume.lesson', {
+                      n: resume.next.number,
+                      title: resume.next.moduleTitle,
+                    })}
+                  </span>
+                  <span className="mt-1 block text-sm text-muted">
+                    {t('home.resume.progress', {
+                      done: resume.done,
+                      total: resume.total,
+                      level: `${resumeLevel.label} — ${resumeLevel.name}`,
+                    })}
+                  </span>
+
+                  {/* Progress is stated in words just above, so this bar is
+                      decoration and hidden from assistive tech. */}
+                  <span
+                    aria-hidden="true"
+                    className="mt-3 block h-2 w-full overflow-hidden rounded-full bg-brand-100"
+                  >
+                    <span
+                      className="block h-full rounded-full bg-grow-500"
+                      style={{ width: `${Math.round((resume.done / resume.total) * 100)}%` }}
+                    />
+                  </span>
+                </span>
+
+                <span className="btn-success shrink-0 sm:text-lg">
+                  {t('home.resume.cta')}
+                  <ArrowRight
+                    className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </span>
+              </Link>
+            ) : (
+              // Every lesson in that level is done — congratulate, and point
+              // back rather than leaving a card with nowhere to go.
+              <div className="rounded-3xl border-2 border-grow-500 bg-surface p-6 text-center sm:p-8">
+                <ConceptIcon name="trophy" className="mx-auto h-12 w-12 text-grow-600" />
+                <h2 id="resume-heading" className="mt-3 text-2xl font-extrabold text-ink">
+                  {t('home.resume.done.heading', {
+                    level: `${resumeLevel.label} — ${resumeLevel.name}`,
+                  })}
+                </h2>
+                <p className="mx-auto mt-2 max-w-xl text-base text-muted">
+                  {t('home.resume.done.text')}
+                </p>
+                <p className="mt-5">
+                  <Link to={`/path/${resume.levelId}`} className="btn-secondary">
+                    {t('home.resume.done.cta')}
+                    <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                  </Link>
+                </p>
+              </div>
+            )}
+          </Reveal>
+        </section>
+      )}
+
       {/* ------------------------------------------------------------ numbers */}
       {/* Four facts, no container. A single hairline underneath is enough to
           close the band off. */}
