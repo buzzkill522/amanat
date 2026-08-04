@@ -157,7 +157,9 @@ const en = {
 
   // ------------------------------------------------------------------ notes
   'lang.lessonNote':
-    'The lesson videos, captions and transcripts are in English for now. The buttons and menus are in Hindi.',
+    'Some lessons are written in Hindi already. The rest are still in English — each one says so before it starts.',
+  'lesson.notTranslated':
+    'This lesson has not been written in Hindi yet. It will show in English below.',
 }
 
 const hi = {
@@ -299,7 +301,9 @@ const hi = {
 
   // ------------------------------------------------------------------ notes
   'lang.lessonNote':
-    'पाठ के वीडियो, कैप्शन और लिखित पाठ अभी अंग्रेज़ी में हैं। बटन और मेन्यू हिन्दी में हैं।',
+    'कुछ पाठ पहले से हिन्दी में लिखे जा चुके हैं। बाकी अभी अंग्रेज़ी में हैं — हर पाठ शुरू होने से पहले यह बता देता है।',
+  'lesson.notTranslated':
+    'यह पाठ अभी हिन्दी में नहीं लिखा गया है। नीचे यह अंग्रेज़ी में दिखेगा।',
 }
 
 export const strings = { en, hi }

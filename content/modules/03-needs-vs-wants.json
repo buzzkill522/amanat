@@ -13,22 +13,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
         "durationLabel": "3 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "A need is something you must have to stay well.",
@@ -37,83 +25,43 @@
         "Toys, sweets and games are wants.",
         "Pay for your needs first. Then use the money that is left for wants."
       ],
-      "keyWords": [
-        "need",
-        "want",
-        "food",
-        "home",
-        "toy"
-      ],
+      "keyWords": ["need", "want", "food", "home", "toy"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "Which one is a need?",
-            "image": {
-              "icon": "question",
-              "alt": "A question mark"
-            },
+            "prompt": "You already have shoes that fit and are not broken. A new pair you just like the look of is a...",
+            "image": { "icon": "question", "alt": "An old pair of shoes beside a new pair" },
             "options": [
-              {
-                "icon": "toy",
-                "label": "A toy car"
-              },
-              {
-                "icon": "food",
-                "label": "Food"
-              },
-              {
-                "icon": "icecream",
-                "label": "Ice cream"
-              }
+              { "icon": "star", "label": "Want — your current shoes already meet the need" },
+              { "icon": "shirt", "label": "Need — you must always have new shoes" }
             ],
-            "correctIndex": 1,
-            "hint": "A need keeps your body well."
+            "correctIndex": 0,
+            "hint": "Ask whether the OLD shoes still do the job."
           },
           {
             "id": "q2",
-            "prompt": "Which one is a want?",
-            "image": {
-              "icon": "question",
-              "alt": "A question mark"
-            },
+            "prompt": "You have ₹100. Lunch costs ₹60 and a comic costs ₹60. You cannot buy both. What should you do?",
+            "image": { "icon": "wallet", "alt": "A wallet with a hundred rupee note, beside lunch and a comic" },
             "options": [
-              {
-                "icon": "water",
-                "label": "Clean water"
-              },
-              {
-                "icon": "house",
-                "label": "A home"
-              },
-              {
-                "icon": "toy",
-                "label": "A new toy"
-              }
+              { "icon": "food", "label": "Buy lunch, skip the comic — needs come before wants" },
+              { "icon": "book", "label": "Buy the comic, skip lunch" },
+              { "icon": "question", "label": "Buy half of each" }
             ],
-            "correctIndex": 2,
-            "hint": "You can be healthy without it."
+            "correctIndex": 0,
+            "hint": "Which one keeps you well if you skip it versus if you don't?"
           },
           {
             "id": "q3",
-            "prompt": "You have ₹100. What do you buy first?",
-            "image": {
-              "icon": "wallet",
-              "alt": "A wallet with a hundred rupee note"
-            },
+            "prompt": "Your friend says: 'Water is boring, buy juice instead — you still get to drink something.' Is juice a fair swap for water as a need?",
+            "image": { "icon": "water", "alt": "A glass of water beside a bottle of juice" },
             "options": [
-              {
-                "icon": "food",
-                "label": "Lunch"
-              },
-              {
-                "icon": "toy",
-                "label": "A toy"
-              }
+              { "icon": "water", "label": "No — plain water meets the need; juice is the want version of it" },
+              { "icon": "gift", "label": "Yes, any drink meets the need" }
             ],
             "correctIndex": 0,
-            "hint": "Needs come before wants."
+            "hint": "A need can usually be met simply and cheaply. Ask what the cheapest way to meet it is."
           }
         ]
       }
@@ -125,22 +73,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
         "durationLabel": "4 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "Some things are needs for one person and wants for another.",
@@ -149,75 +85,44 @@
         "Ask two questions. What happens if I do not buy this? Can I wait?",
         "Advertisements try to make wants feel like needs."
       ],
-      "keyWords": [
-        "need",
-        "want",
-        "advertisement",
-        "priority",
-        "decide"
-      ],
+      "keyWords": ["need", "want", "advertisement", "priority", "decide"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "You must travel far to school. A bus pass is a...",
-            "image": {
-              "icon": "bus",
-              "alt": "A school bus"
-            },
+            "prompt": "You already own a working umbrella. A shop advertises a 'must-have' new umbrella. Using the two questions from the lesson, what should you ask first?",
+            "image": { "icon": "warning", "alt": "An advertisement for an umbrella beside an old working umbrella" },
             "options": [
-              {
-                "icon": "bus",
-                "label": "Need"
-              },
-              {
-                "icon": "toy",
-                "label": "Want"
-              }
+              { "icon": "question", "label": "What happens if I don't buy this, and can I wait?" },
+              { "icon": "shop", "label": "How much does the shop want me to spend?" },
+              { "icon": "star", "label": "Will my friends like the new umbrella?" }
             ],
             "correctIndex": 0,
-            "hint": "Without it you cannot reach school."
+            "hint": "The lesson gives you exactly two questions to ask before any purchase."
           },
           {
             "id": "q2",
-            "prompt": "You already have five shirts. A sixth shirt is a...",
-            "image": {
-              "icon": "shirt",
-              "alt": "A row of shirts on hangers"
-            },
+            "prompt": "You live 10 minutes' walk from school, but a friend has a bicycle you could buy to get there faster. Applying the two questions, is the bicycle a need?",
+            "image": { "icon": "bicycle", "alt": "A short walking path to school beside a bicycle" },
             "options": [
-              {
-                "icon": "shirt",
-                "label": "Need"
-              },
-              {
-                "icon": "gift",
-                "label": "Want"
-              }
+              { "icon": "cross", "label": "No — you can already reach school on foot, so it fails 'what happens if I don't buy it'" },
+              { "icon": "bicycle", "label": "Yes — anything that helps you get to school is a need" }
             ],
-            "correctIndex": 1,
-            "hint": "You already have enough shirts to wear."
+            "correctIndex": 0,
+            "hint": "Ask what happens if you do NOT buy it. Can you still get to school?"
           },
           {
             "id": "q3",
-            "prompt": "An advertisement says you must buy new shoes now. What do you do?",
-            "image": {
-              "icon": "warning",
-              "alt": "A bright advertisement board"
-            },
+            "prompt": "An advertisement says 'Buy these shoes now, offer ends today!' and you already have shoes that fit well. What is really happening?",
+            "image": { "icon": "warning", "alt": "A bright advertisement board with a countdown" },
             "options": [
-              {
-                "icon": "question",
-                "label": "Ask if you really need them"
-              },
-              {
-                "icon": "shop",
-                "label": "Buy them straight away"
-              }
+              { "icon": "warning", "label": "The ad is using urgency to turn a want into a fake emergency" },
+              { "icon": "check", "label": "It genuinely is a need because the offer will end" },
+              { "icon": "calendar", "label": "You must decide within the hour" }
             ],
             "correctIndex": 0,
-            "hint": "Advertisements want you to spend. Stop and think first."
+            "hint": "A real need does not depend on a shop's clock."
           }
         ]
       }
@@ -229,22 +134,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
         "durationLabel": "5 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "Adults sort spending into fixed costs and flexible costs.",
@@ -253,83 +146,45 @@
         "When money is short, cut flexible costs first.",
         "The 24 hour rule helps. Wait one day before buying a want over ₹500."
       ],
-      "keyWords": [
-        "fixed cost",
-        "flexible cost",
-        "priority",
-        "impulse buying",
-        "24 hour rule"
-      ],
+      "keyWords": ["fixed cost", "flexible cost", "priority", "impulse buying", "24 hour rule"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "Which one is a fixed cost?",
-            "image": {
-              "icon": "house",
-              "alt": "A house with a rent bill"
-            },
+            "prompt": "Rent is ₹5000 a month. This month you only have ₹4700 left after all your flexible spending. What went wrong?",
+            "image": { "icon": "house", "alt": "A house with a rent bill and an empty wallet" },
             "options": [
-              {
-                "icon": "house",
-                "label": "Monthly rent"
-              },
-              {
-                "icon": "icecream",
-                "label": "Weekend ice cream"
-              }
+              { "icon": "icecream", "label": "Flexible spending should have been cut before it ate into money needed for the fixed rent" },
+              { "icon": "house", "label": "Rent should be paid late instead" },
+              { "icon": "check", "label": "Nothing went wrong, this is normal" }
             ],
             "correctIndex": 0,
-            "hint": "A fixed cost is the same amount every month."
+            "hint": "Fixed costs like rent cannot shrink. Flexible costs can — and should, before it's too late."
           },
           {
             "id": "q2",
-            "prompt": "Money is short this month. What do you cut first?",
-            "image": {
-              "icon": "wallet",
-              "alt": "An almost empty wallet"
-            },
+            "prompt": "Money is short this month. Which of these should you cut FIRST: school fees, weekend outings, or medicine?",
+            "image": { "icon": "wallet", "alt": "An almost empty wallet beside school fees, outings, and medicine" },
             "options": [
-              {
-                "icon": "medicine",
-                "label": "Medicine"
-              },
-              {
-                "icon": "icecream",
-                "label": "Snacks and outings"
-              },
-              {
-                "icon": "house",
-                "label": "Rent"
-              }
+              { "icon": "icecream", "label": "Weekend outings — the only flexible one of the three" },
+              { "icon": "medicine", "label": "Medicine, because it is optional" },
+              { "icon": "book", "label": "School fees, because they are the biggest" }
             ],
-            "correctIndex": 1,
-            "hint": "Cut the flexible costs, not the needs."
+            "correctIndex": 0,
+            "hint": "Only one of the three can safely shrink without hurting you."
           },
           {
             "id": "q3",
-            "prompt": "What is the 24 hour rule?",
-            "image": {
-              "icon": "calendar",
-              "alt": "A clock showing one day passing"
-            },
+            "prompt": "You see a ₹450 want and a ₹600 want on the same day. To which one does the 24 hour rule apply?",
+            "image": { "icon": "calendar", "alt": "Two price tags, one below and one above five hundred rupees" },
             "options": [
-              {
-                "icon": "calendar",
-                "label": "Wait one day before buying a big want"
-              },
-              {
-                "icon": "shop",
-                "label": "Shop for 24 hours"
-              },
-              {
-                "icon": "piggy",
-                "label": "Save for 24 months"
-              }
+              { "icon": "calendar", "label": "Only the ₹600 one — the rule is for wants over ₹500" },
+              { "icon": "shop", "label": "Both, the rule applies to every purchase" },
+              { "icon": "food", "label": "Neither, the rule is only for needs" }
             ],
             "correctIndex": 0,
-            "hint": "Waiting stops you buying on a sudden feeling."
+            "hint": "Check the rule's exact price cutoff from the lesson."
           }
         ]
       }

@@ -3,12 +3,14 @@ import { AlertTriangle, Download, RotateCcw, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
+import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { levels, signLanguage, site } from '@/config/site.js'
-import { modules, signClipCoverage } from '@content/index.js'
+import { modules, signClipCoverage, moduleMeta } from '@content/index.js'
 
 export default function Teachers() {
   usePageTitle('For parents and teachers')
 
+  const { lang } = useLanguage()
   const { levelStats, resetAll, settings, setSetting, state } = useProgress()
   const [confirmingReset, setConfirmingReset] = useState(false)
   const clips = signClipCoverage()
@@ -87,7 +89,7 @@ export default function Teachers() {
               {modules.map((m) => (
                 <tr key={m.id} className="border-b-2 border-brand-100">
                   <th scope="row" className="p-3 text-base font-bold text-ink">
-                    {m.order}. {m.title}
+                    {m.order}. {moduleMeta(m, lang).title}
                   </th>
                   {levels.map((t) => (
                     <td key={t.id} className="p-3 text-base text-ink">

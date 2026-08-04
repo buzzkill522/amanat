@@ -31,39 +31,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "Where is money safest?",
-            "image": { "icon": "bank", "alt": "A bank building with a strong door" },
+            "prompt": "Your friend keeps ₹500 loose in a school bag. You keep ₹500 in a bank account. Whose money is more at risk of being lost or taken, and why?",
+            "image": { "icon": "bank", "alt": "A school bag beside a bank building" },
             "options": [
-              { "icon": "bank", "label": "In a bank account" },
-              { "icon": "wallet", "label": "Loose in a school bag" },
-              { "icon": "house", "label": "Under a bed" }
+              { "icon": "wallet", "label": "Your friend's — a bank keeps a written record, a school bag does not" },
+              { "icon": "bank", "label": "Yours — banks can lose records too" },
+              { "icon": "question", "label": "Both are equally at risk" }
             ],
             "correctIndex": 0,
-            "hint": "Which one keeps a written record of every rupee?"
+            "hint": "Think about what a bank does that a bag cannot."
           },
           {
             "id": "q2",
-            "prompt": "You put ₹100 into the bank. Whose money is it now?",
-            "image": { "icon": "handcoin", "alt": "A hand placing money at a bank counter" },
+            "prompt": "You deposit ₹200 in the bank on Monday. On Friday you want it back. What happens?",
+            "image": { "icon": "handcoin", "alt": "A hand placing money at a bank counter on a calendar" },
             "options": [
-              { "icon": "check", "label": "Still yours. You can take it back." },
-              { "icon": "bank", "label": "The bank's money now" },
-              { "icon": "cross", "label": "Nobody's money" }
+              { "icon": "check", "label": "You can withdraw it — it was always yours, the bank was only keeping it" },
+              { "icon": "lock", "label": "You cannot get it back until a year passes" },
+              { "icon": "cross", "label": "You must ask the bank's permission every time" }
             ],
             "correctIndex": 0,
-            "hint": "The bank looks after it for you. It does not keep it."
+            "hint": "The bank keeps your money, but never takes ownership of it."
           },
           {
             "id": "q3",
-            "prompt": "₹100 in a box for a year, or ₹100 in a bank for a year. Which is bigger at the end?",
+            "prompt": "Your cousin keeps ₹100 in a box for a year. You keep ₹100 in a bank for a year, and neither of you adds or removes money. Who ends the year with more, and why?",
             "image": { "icon": "growth", "alt": "A box beside a bank, with a small plant growing from the bank" },
             "options": [
-              { "icon": "bank", "label": "The bank one. It pays a little extra." },
-              { "icon": "house", "label": "The box one" },
-              { "icon": "question", "label": "Exactly the same" }
+              { "icon": "bank", "label": "You do — the bank pays a little extra for keeping your money there" },
+              { "icon": "house", "label": "Your cousin does — boxes are safer" },
+              { "icon": "question", "label": "You will have exactly the same amount" }
             ],
             "correctIndex": 0,
-            "hint": "A box pays you nothing at all."
+            "hint": "Only one of the two places pays anything extra at all."
           }
         ]
       }
@@ -93,39 +93,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "How old must you be to hold a bank account in your own name?",
-            "image": { "icon": "calendar", "alt": "A calendar with a birthday marked" },
+            "prompt": "Your cousin is 9 years old and wants a bank account fully in their own name. What is true?",
+            "image": { "icon": "calendar", "alt": "A calendar with a ninth and tenth birthday marked" },
             "options": [
-              { "icon": "check", "label": "10" },
-              { "icon": "calendar", "label": "18" },
-              { "icon": "cross", "label": "21" }
+              { "icon": "check", "label": "They must wait until they are 10 — that is the earliest age allowed" },
+              { "icon": "cross", "label": "They can open one today, no age limit applies" },
+              { "icon": "house", "label": "Only their parents can ever have an account" }
             ],
             "correctIndex": 0,
-            "hint": "An adult manages it with you until 18, but your name is on it well before that."
+            "hint": "Recall the exact minimum age given in the lesson."
           },
           {
             "id": "q2",
-            "prompt": "A basic account sits at ₹0 for three months. What happens?",
-            "image": { "icon": "wallet", "alt": "An empty account passbook" },
+            "prompt": "You are deciding between an account that needs a ₹500 minimum balance and a basic account with none. You only have ₹80. Which suits you, and why?",
+            "image": { "icon": "wallet", "alt": "Two account passbooks with different minimum balance rules" },
             "options": [
-              { "icon": "check", "label": "Nothing. A basic account has no minimum balance." },
-              { "icon": "warning", "label": "The bank charges a fine" },
-              { "icon": "cross", "label": "The account closes at once" }
+              { "icon": "check", "label": "The basic account — no minimum balance means ₹80 or even ₹0 is fine" },
+              { "icon": "warning", "label": "The ₹500-minimum one — more rules mean more safety" },
+              { "icon": "cross", "label": "Neither works with only ₹80" }
             ],
             "correctIndex": 0,
-            "hint": "That is the whole point of a basic account."
+            "hint": "One of the two options has no floor at all."
           },
           {
             "id": "q3",
-            "prompt": "Why have your own account instead of using a relative's?",
-            "image": { "icon": "shield", "alt": "A single name written on an account card" },
+            "prompt": "Your birthday money is kept in your uncle's bank account instead of your own. Six months later you want to spend some, but your uncle is travelling and unreachable. What does this show?",
+            "image": { "icon": "shield", "alt": "A single name written on an account card, with a traveller far away" },
             "options": [
-              { "icon": "shield", "label": "The money is recorded as yours, and you control it" },
-              { "icon": "gift", "label": "The bank gives you a present" },
-              { "icon": "star", "label": "It looks better" }
+              { "icon": "shield", "label": "Money in someone else's name is not fully under your control, even if it is meant for you" },
+              { "icon": "check", "label": "This is not a problem, since the money is still technically yours" },
+              { "icon": "cross", "label": "Uncles cannot legally hold money for nephews" }
             ],
             "correctIndex": 0,
-            "hint": "Think about who is allowed to take money out of an account in someone else's name."
+            "hint": "Ask who can actually walk into the bank and access the money right now."
           }
         ]
       }
@@ -156,39 +156,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "A savings account pays 4%. Prices rise 6%. What is really happening to money left in it?",
-            "image": { "icon": "chart", "alt": "Two arrows, one rising faster than the other" },
+            "prompt": "A savings account pays 4% a year. Prices rise 6% a year. You keep ₹2000 in the account for one year, adding nothing. Roughly how much buying power do you lose?",
+            "image": { "icon": "chart", "alt": "Two arrows, one rising faster than the other, beside two thousand rupees" },
             "options": [
-              { "icon": "warning", "label": "It is slowly losing buying power, by about 2% a year" },
-              { "icon": "growth", "label": "It is growing nicely at 4% a year" },
-              { "icon": "check", "label": "It is exactly keeping up with prices" }
+              { "icon": "warning", "label": "About ₹40 of buying power" },
+              { "icon": "growth", "label": "About ₹120 of buying power gained" },
+              { "icon": "check", "label": "No change at all" }
             ],
             "correctIndex": 0,
-            "hint": "Compare the two rates. Which one is larger?"
+            "hint": "Find the gap between the two percentages, then apply it to ₹2000."
           },
           {
             "id": "q2",
-            "prompt": "A clerk says you cannot open an account because you are Deaf and cannot speak to them. What is true?",
-            "image": { "icon": "shield", "alt": "A law book beside a bank counter" },
+            "prompt": "A bank clerk refuses to open your account because you are Deaf. You calmly object but they still refuse. What is the correct next step, in order?",
+            "image": { "icon": "shield", "alt": "A law book beside a bank counter with three escalation steps" },
             "options": [
-              { "icon": "shield", "label": "They are breaking the law. Banks must make services accessible." },
-              { "icon": "cross", "label": "They are right. You need a hearing relative." },
-              { "icon": "question", "label": "It depends on the branch" }
+              { "icon": "shield", "label": "Ask for the branch manager; if that fails, the bank's grievance officer; if that fails, the RBI ombudsman" },
+              { "icon": "warning", "label": "Go straight to the RBI ombudsman first" },
+              { "icon": "cross", "label": "Accept the refusal, since the clerk has final say" }
             ],
             "correctIndex": 0,
-            "hint": "The RPwD Act, 2016 puts the duty on the bank, not on you."
+            "hint": "The lesson gives three steps, and they have a specific order — start local, escalate outward."
           },
           {
             "id": "q3",
-            "prompt": "Why does the account come before any scheme or fund?",
-            "image": { "icon": "bank", "alt": "An account at the centre with arrows leading into it" },
+            "prompt": "Your grandmother is owed a monthly government pension, but she has no bank account of her own — it is currently paid into her son's account. What risk does this create?",
+            "image": { "icon": "bank", "alt": "A pension payment landing in someone else's account" },
             "options": [
-              { "icon": "handcoin", "label": "Money owed to you can only be paid into an account in your name" },
-              { "icon": "gift", "label": "Banks give better rates to fund holders" },
-              { "icon": "star", "label": "You cannot take a job without one" }
+              { "icon": "handcoin", "label": "She does not fully control money that is legally hers, the same problem as with a scholarship paid to someone else" },
+              { "icon": "check", "label": "No risk — pensions are always safe wherever they land" },
+              { "icon": "star", "label": "This is required by law and cannot be changed" }
             ],
             "correctIndex": 0,
-            "hint": "Think about where a scholarship, or money taken out of a fund, actually lands."
+            "hint": "Apply the same reasoning used earlier about scholarships and funds needing your own name."
           }
         ]
       }

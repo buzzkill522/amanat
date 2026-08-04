@@ -31,39 +31,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "A bank account grows slowly and never falls. What is that called?",
-            "image": { "icon": "bank", "alt": "A bank building with a small plant beside it" },
+            "prompt": "You put ₹100 in a box and your friend puts ₹100 in a risky place, for one year. Whose amount is CERTAIN to still be ₹100 or more, and whose is not?",
+            "image": { "icon": "chart", "alt": "A box beside a wiggly risky chart, both starting at a hundred rupees" },
             "options": [
-              { "icon": "shield", "label": "Safe" },
-              { "icon": "warning", "label": "Risky" },
-              { "icon": "question", "label": "Free" }
+              { "icon": "shield", "label": "Yours (the box) is certain to stay ₹100; your friend's could be more OR less" },
+              { "icon": "growth", "label": "Both are certain to grow" },
+              { "icon": "question", "label": "Both could go up or down equally" }
             ],
             "correctIndex": 0,
-            "hint": "Safe means it will not fall."
+            "hint": "Only one of the two options can ever fall below what was put in."
           },
           {
             "id": "q2",
-            "prompt": "Someone says: 'Give me money and it will double every month.' What should you do?",
-            "image": { "icon": "warning", "alt": "A bright poster promising to double money" },
+            "prompt": "A poster says: 'Invest ₹500 today, guaranteed ₹2000 by next month — no risk at all!' What single lesson rule tells you this cannot be trusted?",
+            "image": { "icon": "warning", "alt": "A poster promising a guaranteed quick return" },
             "options": [
-              { "icon": "cross", "label": "Say no and tell a trusted adult" },
-              { "icon": "handcoin", "label": "Give them the money" },
-              { "icon": "star", "label": "Tell your friends to join" }
+              { "icon": "warning", "label": "Nobody can promise what will happen with money that is meant to grow — a guarantee like this is a warning sign" },
+              { "icon": "check", "label": "It is trustworthy because it gives an exact date" },
+              { "icon": "coin", "label": "It is safe since the amount is small" }
             ],
             "correctIndex": 0,
-            "hint": "Nobody can promise money will grow. That promise is a warning sign."
+            "hint": "The lesson gives one clear rule about promises and growing money."
           },
           {
             "id": "q3",
-            "prompt": "Which one can go DOWN as well as up?",
-            "image": { "icon": "chart", "alt": "A wiggly line going up and down" },
+            "prompt": "Of a piggy bank, a savings account, and a risky investment, which ONE is capable of ending the year with LESS money than you started with, and why?",
+            "image": { "icon": "chart", "alt": "Three places for money, one shown falling" },
             "options": [
-              { "icon": "chart", "label": "A risky place" },
-              { "icon": "piggy", "label": "A piggy bank" },
-              { "icon": "bank", "label": "A savings account" }
+              { "icon": "chart", "label": "Only the risky investment — it can grow fast or fall, unlike the other two" },
+              { "icon": "bank", "label": "The savings account, because banks can lose money too" },
+              { "icon": "piggy", "label": "All three can lose money equally" }
             ],
             "correctIndex": 0,
-            "hint": "Only the risky one falls."
+            "hint": "Two of the three never fall below what was put in. Only one can."
           }
         ]
       }
@@ -94,39 +94,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "What is a mutual fund?",
-            "image": { "icon": "hands", "alt": "Many hands putting coins into one pot" },
+            "prompt": "A mutual fund invests in 50 different companies. One of those companies goes out of business completely. What is the most likely effect on someone who owns a slice of the whole fund?",
+            "image": { "icon": "hands", "alt": "Many hands putting coins into one pot invested across many companies" },
             "options": [
-              { "icon": "hands", "label": "Many people's money pooled and invested together" },
-              { "icon": "bank", "label": "A special kind of bank account" },
-              { "icon": "gift", "label": "Money the government gives you" }
+              { "icon": "hands", "label": "A small effect — losing one company out of fifty does not sink the whole fund" },
+              { "icon": "warning", "label": "They lose all their money immediately" },
+              { "icon": "check", "label": "Nothing changes at all, funds are immune to company failures" }
             ],
             "correctIndex": 0,
-            "hint": "The word 'mutual' is the clue. It is shared."
+            "hint": "Recall why owning a slice of MANY companies protects you, compared to owning just one."
           },
           {
             "id": "q2",
-            "prompt": "You need the money for school fees in three months. Where should it go?",
-            "image": { "icon": "calendar", "alt": "A calendar with three months marked" },
+            "prompt": "You need ₹20,000 for a family wedding expense in 4 months. Someone suggests putting it in a mutual fund to 'grow it a bit first.' What is the risk in this specific plan?",
+            "image": { "icon": "calendar", "alt": "A calendar with four months marked beside a fund that can rise or fall" },
             "options": [
-              { "icon": "bank", "label": "A savings account — you can reach it and it will not fall" },
-              { "icon": "chart", "label": "A mutual fund, to grow it fast" },
-              { "icon": "lock", "label": "A scheme locked for 15 years" }
+              { "icon": "chart", "label": "The fund's value could be lower than ₹20,000 exactly when you need it for the wedding" },
+              { "icon": "check", "label": "There is no risk, since 4 months is plenty of time for any fund" },
+              { "icon": "growth", "label": "The only risk is missing out on extra growth" }
             ],
             "correctIndex": 0,
-            "hint": "A fund can be worth less in three months than you put in."
+            "hint": "Ask what happens if the fund's value happens to be down on the exact day you need the money."
           },
           {
             "id": "q3",
-            "prompt": "An advertisement says a fund gave 20% last year, so it will give 20% next year. Is that right?",
-            "image": { "icon": "warning", "alt": "An advertisement showing a big number" },
+            "prompt": "Fund A grew 25% last year. Fund B grew only 5% last year. A friend says Fund A is definitely the better choice going forward. What does the lesson say about this reasoning?",
+            "image": { "icon": "warning", "alt": "Two funds with very different growth last year" },
             "options": [
-              { "icon": "cross", "label": "No. What happened before does not decide what happens next." },
-              { "icon": "check", "label": "Yes, funds repeat their results" },
-              { "icon": "star", "label": "Yes, if the manager is good" }
+              { "icon": "cross", "label": "It is flawed — past growth does not decide future growth for either fund" },
+              { "icon": "check", "label": "It is correct — the fund that grew more before will always grow more again" },
+              { "icon": "warning", "label": "Fund B is guaranteed to fail next year" }
             ],
             "correctIndex": 0,
-            "hint": "This is why every fund advertisement carries a warning."
+            "hint": "The lesson specifically warns against judging future performance by past results."
           }
         ]
       }
@@ -158,39 +158,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "A savings account pays 4% while prices rise 6%. What is happening?",
-            "image": { "icon": "chart", "alt": "Two arrows, one rising faster than the other" },
+            "prompt": "PPF pays about 7% but locks your money for years. A savings account pays about 4% but you can withdraw any day. For money you might need within 6 months, which is more suitable, and why?",
+            "image": { "icon": "lock", "alt": "A locked scheme beside an instantly accessible account" },
             "options": [
-              { "icon": "warning", "label": "The money is losing buying power, even though it is safe" },
-              { "icon": "check", "label": "It is growing at 4%, so it is fine" },
-              { "icon": "growth", "label": "It is beating prices" }
+              { "icon": "bank", "label": "The savings account — instant access matters more than a higher rate you cannot legally reach in time" },
+              { "icon": "growth", "label": "PPF — the higher rate always wins regardless of when you need the money" },
+              { "icon": "question", "label": "Both are equally suitable" }
             ],
             "correctIndex": 0,
-            "hint": "Safety has a cost too. Compare the two rates."
+            "hint": "A better rate is worthless if the money is locked away exactly when you need it."
           },
           {
             "id": "q2",
-            "prompt": "Your SIP is in your name and you turn 18 today. What happens?",
-            "image": { "icon": "lock", "alt": "A calendar with an eighteenth birthday circled" },
+            "prompt": "You are 17, hold a SIP in your own name with your mother operating it, and plan to withdraw the money the week after your 18th birthday. What TWO facts affect whether this plan works smoothly?",
+            "image": { "icon": "lock", "alt": "A calendar with an eighteenth birthday circled beside a SIP folio" },
             "options": [
-              { "icon": "lock", "label": "The folio freezes until you convert it to an adult account" },
-              { "icon": "check", "label": "Nothing changes" },
-              { "icon": "handcoin", "label": "The money is sent to you automatically" }
+              { "icon": "lock", "label": "The folio freezes at 18 until converted by you, AND the money can only be paid into an account in your own name" },
+              { "icon": "check", "label": "Only your mother's signature is needed, nothing else changes at 18" },
+              { "icon": "question", "label": "Turning 18 has no effect on a SIP at all" }
             ],
             "correctIndex": 0,
-            "hint": "The guardian's authority ends that day, and nobody sends a reminder."
+            "hint": "Two separate rules both apply exactly at the moment you turn 18."
           },
           {
             "id": "q3",
-            "prompt": "In what order should these be set up?",
-            "image": { "icon": "list", "alt": "Three numbered steps" },
+            "prompt": "A 16-year-old with ₹5000 and no bank account yet wants to put all of it straight into a mutual fund because 'it grows faster.' What is wrong with this plan?",
+            "image": { "icon": "list", "alt": "Three numbered steps, with the fund step attempted first" },
             "options": [
-              { "icon": "bank", "label": "Bank account, then emergency savings, then a fund" },
-              { "icon": "chart", "label": "Fund first, because it grows fastest" },
-              { "icon": "piggy", "label": "Emergency savings only, never a fund" }
+              { "icon": "bank", "label": "A fund cannot even be set up or pay out properly without a bank account in the child's name first" },
+              { "icon": "chart", "label": "Nothing is wrong, funds should always come first for maximum growth" },
+              { "icon": "check", "label": "The plan is fine as long as an adult approves it" }
             ],
             "correctIndex": 0,
-            "hint": "A fund cannot even pay you out without an account in your name."
+            "hint": "Recall the exact three-step order given at the end of the lesson, and what has to exist before a fund can work at all."
           }
         ]
       }

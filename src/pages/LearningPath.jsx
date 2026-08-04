@@ -5,6 +5,7 @@ import ProgressMap from '@/components/ProgressMap.jsx'
 import LessonCard from '@/components/LessonCard.jsx'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
+import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { getLevel, levels, LEGACY_TIER_IDS } from '@/config/site.js'
 import { getModulesForLevel } from '@content/index.js'
 
@@ -13,6 +14,7 @@ export default function LearningPath() {
   const level = getLevel(levelId)
   const [view, setView] = useState('map')
   const { isCompleted, isUnlocked, levelStats, settings, setSetting } = useProgress()
+  const { lang } = useLanguage()
 
   usePageTitle(level ? `${level.label} — ${level.name}` : 'Lessons')
 
@@ -21,7 +23,7 @@ export default function LearningPath() {
   if (legacyId) return <Navigate to={`/path/${legacyId}`} replace />
   if (!level) return <Navigate to="/" replace />
 
-  const modules = getModulesForLevel(levelId)
+  const modules = getModulesForLevel(levelId, lang)
   const stats = levelStats(levelId)
 
   const stateOf = (moduleId) => {

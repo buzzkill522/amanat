@@ -13,22 +13,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
         "durationLabel": "3 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "People earn money by doing work.",
@@ -37,75 +25,44 @@
         "Money does not appear on its own. Someone worked for every rupee.",
         "Children can earn small amounts by helping at home."
       ],
-      "keyWords": [
-        "work",
-        "job",
-        "earn",
-        "pay",
-        "help"
-      ],
+      "keyWords": ["work", "job", "earn", "pay", "help"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "How do most adults get money?",
-            "image": {
-              "icon": "handcoin",
-              "alt": "A hand giving money for work done"
-            },
+            "prompt": "Your neighbour pays you ₹50 for washing their car. Is this earning money, and why?",
+            "image": { "icon": "handcoin", "alt": "A hand giving money for washing a car" },
             "options": [
-              {
-                "icon": "handcoin",
-                "label": "They do work and get paid"
-              },
-              {
-                "icon": "gift",
-                "label": "It appears in their pocket"
-              }
+              { "icon": "handcoin", "label": "Yes — you did work and were paid for it" },
+              { "icon": "cross", "label": "No — only adults with real jobs earn money" },
+              { "icon": "bank", "label": "No — money only comes from banks" }
             ],
             "correctIndex": 0,
-            "hint": "Money is paid in exchange for work."
+            "hint": "Check whether work happened and whether payment followed it."
           },
           {
             "id": "q2",
-            "prompt": "Which of these is a job?",
-            "image": {
-              "icon": "bus",
-              "alt": "A bus driver at the wheel"
-            },
+            "prompt": "You play cricket for fun every day. Your friend delivers newspapers every morning and is paid for it. Which one is a job, and why?",
+            "image": { "icon": "cricket", "alt": "A cricket bat beside a bundle of newspapers" },
             "options": [
-              {
-                "icon": "toy",
-                "label": "Playing with toys"
-              },
-              {
-                "icon": "bus",
-                "label": "Driving a bus"
-              }
+              { "icon": "handcoin", "label": "Delivering newspapers — someone pays for that work; playing cricket for fun is not paid work" },
+              { "icon": "check", "label": "Both are jobs, since both take effort" },
+              { "icon": "cross", "label": "Neither is a job unless you are an adult" }
             ],
-            "correctIndex": 1,
-            "hint": "A job is work someone pays you to do."
+            "correctIndex": 0,
+            "hint": "A job is specifically work that is paid for, not just effort."
           },
           {
             "id": "q3",
-            "prompt": "How can a child earn a little money?",
-            "image": {
-              "icon": "house",
-              "alt": "A child helping to tidy a room"
-            },
+            "prompt": "Your parent gives you ₹20 for tidying your own room, and separately ₹20 for painting a fence. Are both of these examples of a child earning money?",
+            "image": { "icon": "house", "alt": "A tidy room beside a freshly painted fence" },
             "options": [
-              {
-                "icon": "house",
-                "label": "By helping with jobs at home"
-              },
-              {
-                "icon": "cross",
-                "label": "By taking it from someone"
-              }
+              { "icon": "check", "label": "Yes — both involve doing a task and receiving payment, even if the tasks differ in size" },
+              { "icon": "cross", "label": "No — only big tasks like painting count as earning" }
             ],
             "correctIndex": 0,
-            "hint": "Earning always means doing something useful."
+            "hint": "Size of the task does not decide whether it counts as earning; payment for work does."
           }
         ]
       }
@@ -117,22 +74,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
         "durationLabel": "4 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "A salary is a fixed amount paid every month.",
@@ -141,79 +86,45 @@
         "Skills raise your pay. A skilled worker is paid more than an untrained one.",
         "Deaf adults work in every field, including design, teaching, and computers."
       ],
-      "keyWords": [
-        "salary",
-        "wage",
-        "profit",
-        "skill",
-        "business"
-      ],
+      "keyWords": ["salary", "wage", "profit", "skill", "business"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "A fixed amount paid every month is called a...",
-            "image": {
-              "icon": "calendar",
-              "alt": "A calendar with payday marked"
-            },
+            "prompt": "One worker is paid the same ₹15,000 every month no matter how many days they work. Another is paid ₹500 for each day they show up. Which one earns a salary, and which a wage?",
+            "image": { "icon": "calendar", "alt": "A fixed monthly payslip beside a daily wage counter" },
             "options": [
-              {
-                "icon": "calendar",
-                "label": "Salary"
-              },
-              {
-                "icon": "shop",
-                "label": "Profit"
-              }
+              { "icon": "calendar", "label": "The first earns a salary; the second earns a wage" },
+              { "icon": "coin", "label": "Both earn a salary" },
+              { "icon": "coin", "label": "Both earn a wage" }
             ],
             "correctIndex": 0,
-            "hint": "It arrives on the same day each month."
+            "hint": "A salary does not change with the number of days worked; a wage does."
           },
           {
             "id": "q2",
-            "prompt": "You sell items for ₹500. Your costs were ₹300. What is the profit?",
-            "image": {
-              "icon": "shop",
-              "alt": "A small stall with items for sale"
-            },
+            "prompt": "You sell handmade cards for ₹40 each. You sell 20 cards. Your total costs for materials were ₹300. What is your profit?",
+            "image": { "icon": "shop", "alt": "A stall of handmade cards with a cost sheet" },
             "options": [
-              {
-                "icon": "coin",
-                "label": "₹200"
-              },
-              {
-                "icon": "coin",
-                "label": "₹800"
-              },
-              {
-                "icon": "coin",
-                "label": "₹500"
-              }
+              { "icon": "coin", "label": "₹500" },
+              { "icon": "coin", "label": "₹800" },
+              { "icon": "coin", "label": "₹300" }
             ],
             "correctIndex": 0,
-            "hint": "Profit is sales minus costs."
+            "hint": "First find total sales, then subtract the total costs."
           },
           {
             "id": "q3",
-            "prompt": "What usually raises how much a person earns?",
-            "image": {
-              "icon": "book",
-              "alt": "Books and tools for learning a skill"
-            },
+            "prompt": "Two drivers apply for the same job. One has a special licence for driving large trucks; the other does not. Who is more likely to be offered higher pay, and why?",
+            "image": { "icon": "book", "alt": "A special driving licence beside an ordinary one" },
             "options": [
-              {
-                "icon": "book",
-                "label": "Learning more skills"
-              },
-              {
-                "icon": "star",
-                "label": "Waiting quietly"
-              }
+              { "icon": "book", "label": "The one with the special licence — skills raise how much you are paid" },
+              { "icon": "cross", "label": "Neither — pay never depends on skills" },
+              { "icon": "coin", "label": "The one without the licence, since they are cheaper to hire" }
             ],
             "correctIndex": 0,
-            "hint": "Employers pay more for skills they need."
+            "hint": "Recall what the lesson says about skilled versus untrained workers."
           }
         ]
       }
@@ -225,22 +136,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
         "durationLabel": "5 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "Gross pay is the full amount you earn. Net pay is what reaches your account.",
@@ -249,80 +148,45 @@
         "Freelance work has no fixed salary. You are paid per project.",
         "Always ask for the net amount before accepting a job."
       ],
-      "keyWords": [
-        "gross pay",
-        "net pay",
-        "deduction",
-        "income tax",
-        "freelance",
-        "provident fund"
-      ],
+      "keyWords": ["gross pay", "net pay", "deduction", "income tax", "freelance", "provident fund"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "Which amount actually reaches your bank account?",
-            "image": {
-              "icon": "list",
-              "alt": "A payslip showing two totals"
-            },
+            "prompt": "Your gross pay is ₹25,000. Income tax takes ₹2,000 and provident fund takes ₹1,500. What is your net pay?",
+            "image": { "icon": "list", "alt": "A payslip showing gross pay and two separate deductions" },
             "options": [
-              {
-                "icon": "list",
-                "label": "Net pay"
-              },
-              {
-                "icon": "chart",
-                "label": "Gross pay"
-              }
+              { "icon": "coin", "label": "₹21,500" },
+              { "icon": "coin", "label": "₹28,500" },
+              { "icon": "coin", "label": "₹23,500" }
             ],
             "correctIndex": 0,
-            "hint": "It is the smaller number, after deductions."
+            "hint": "Subtract both deductions from the gross pay, not just one."
           },
           {
             "id": "q2",
-            "prompt": "What does income tax pay for?",
-            "image": {
-              "icon": "bank",
-              "alt": "A hospital and a road"
-            },
+            "prompt": "A job offer says 'salary ₹30,000.' You do not ask whether that is gross or net. Why could this cause a problem later?",
+            "image": { "icon": "question", "alt": "A job offer letter with an unclear pay figure" },
             "options": [
-              {
-                "icon": "bank",
-                "label": "Roads, hospitals and schools"
-              },
-              {
-                "icon": "gift",
-                "label": "Gifts for shop owners"
-              }
+              { "icon": "warning", "label": "The actual amount reaching your account could be noticeably less than ₹30,000 after deductions" },
+              { "icon": "check", "label": "There is no possible problem, ₹30,000 always means ₹30,000" },
+              { "icon": "coin", "label": "Net and gross are always the same number" }
             ],
             "correctIndex": 0,
-            "hint": "Tax funds services everyone uses."
+            "hint": "Recall the difference between the number an offer states and the number that actually lands in an account."
           },
           {
             "id": "q3",
-            "prompt": "Gross pay is ₹20,000. Deductions are ₹3,000. What is net pay?",
-            "image": {
-              "icon": "list",
-              "alt": "A payslip with a deduction line"
-            },
+            "prompt": "A salaried worker gets the same ₹20,000 every month. A freelancer earns ₹35,000 one month and ₹5,000 the next, depending on projects. What is the key difference in what each can rely on?",
+            "image": { "icon": "chart", "alt": "A steady salary line beside an up-and-down freelance income line" },
             "options": [
-              {
-                "icon": "coin",
-                "label": "₹17,000"
-              },
-              {
-                "icon": "coin",
-                "label": "₹23,000"
-              },
-              {
-                "icon": "coin",
-                "label": "₹3,000"
-              }
+              { "icon": "calendar", "label": "The salaried worker has a predictable amount each month; the freelancer's income varies and is less certain" },
+              { "icon": "growth", "label": "The freelancer always earns more overall" },
+              { "icon": "question", "label": "There is no real difference between the two" }
             ],
             "correctIndex": 0,
-            "hint": "Take the deductions away from gross pay."
+            "hint": "Think about which one you could plan a fixed monthly budget around more easily."
           }
         ]
       }

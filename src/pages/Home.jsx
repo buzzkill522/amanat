@@ -17,7 +17,7 @@ import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { levels, signLabel, signShort } from '@/config/site.js'
-import { dictionary, modules } from '@content/index.js'
+import { dictionary, modules, moduleMeta } from '@content/index.js'
 
 /**
  * The home page.
@@ -265,31 +265,36 @@ export default function Home() {
         {/* The picture is the point: a child who cannot yet read the titles can
             still see what the course covers. */}
         <ol className="mx-auto mt-14 grid max-w-5xl gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {modules.map((m, i) => (
-            <Reveal
-              as="li"
-              key={m.id}
-              // Small steps across a grid of eleven: the last card lands about
-              // half a second after the first, which reads as one movement
-              // rather than eleven separate ones.
-              delay={Math.min(i * 45, 360)}
-              className="group flex items-start gap-4"
-            >
-              <ConceptIcon
-                name={m.icon}
-                className="h-9 w-9 shrink-0 text-brand-600 transition-colors duration-300 group-hover:text-clay-600"
-              />
-              <div className="min-w-0">
-                <span
-                  aria-hidden="true"
-                  className="block text-xs font-extrabold uppercase tracking-[0.14em] text-clay-600"
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span className="mt-1 block font-extrabold leading-snug text-ink">{m.title}</span>
-              </div>
-            </Reveal>
-          ))}
+          {modules.map((m, i) => {
+            const meta = moduleMeta(m, lang)
+            return (
+              <Reveal
+                as="li"
+                key={m.id}
+                // Small steps across a grid of eleven: the last card lands about
+                // half a second after the first, which reads as one movement
+                // rather than eleven separate ones.
+                delay={Math.min(i * 45, 360)}
+                className="group flex items-start gap-4"
+              >
+                <ConceptIcon
+                  name={m.icon}
+                  className="h-9 w-9 shrink-0 text-brand-600 transition-colors duration-300 group-hover:text-clay-600"
+                />
+                <div className="min-w-0">
+                  <span
+                    aria-hidden="true"
+                    className="block text-xs font-extrabold uppercase tracking-[0.14em] text-clay-600"
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="mt-1 block font-extrabold leading-snug text-ink">
+                    {meta.title}
+                  </span>
+                </div>
+              </Reveal>
+            )
+          })}
         </ol>
       </section>
 

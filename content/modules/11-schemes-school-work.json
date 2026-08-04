@@ -31,39 +31,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "Do you pay a scholarship back?",
-            "image": { "icon": "book", "alt": "A stack of school books" },
+            "prompt": "Your cousin took a bank loan for a laptop and now repays some money every month. You received a scholarship for your school books. What is the key difference in what happens next?",
+            "image": { "icon": "book", "alt": "A loan repayment beside a scholarship for books" },
             "options": [
-              { "icon": "check", "label": "No. It is a gift for study." },
-              { "icon": "cross", "label": "Yes, when you finish school" },
-              { "icon": "coin", "label": "Yes, with extra money on top" }
+              { "icon": "check", "label": "Your cousin must keep repaying the loan; you never have to repay the scholarship" },
+              { "icon": "cross", "label": "Both of you must repay eventually" },
+              { "icon": "coin", "label": "Neither of you ever has to repay anything" }
             ],
             "correctIndex": 0,
-            "hint": "A loan is paid back. A scholarship is not."
+            "hint": "Only one of the two — a loan or a scholarship — is ever paid back."
           },
           {
             "id": "q2",
-            "prompt": "What can scholarship money help pay for?",
-            "image": { "icon": "shirt", "alt": "A uniform, books and a bus" },
+            "prompt": "A classmate says 'you only got the scholarship because you're the top student.' Based on the lesson, is this true?",
+            "image": { "icon": "question", "alt": "A classmate comparing exam marks to a scholarship letter" },
             "options": [
-              { "icon": "book", "label": "Books, uniform and travel to school" },
-              { "icon": "toy", "label": "Toys and games" },
-              { "icon": "icecream", "label": "Snacks every day" }
+              { "icon": "check", "label": "No — it is because of being Deaf, not because of exam marks" },
+              { "icon": "star", "label": "Yes, only top students ever qualify" },
+              { "icon": "book", "label": "It depends on which subject you are best at" }
             ],
             "correctIndex": 0,
-            "hint": "It is for the things school needs."
+            "hint": "The lesson is specific about what qualifies a student, and it is not about being top of the class."
           },
           {
             "id": "q3",
-            "prompt": "Which card do you need to ask for it?",
-            "image": { "icon": "shield", "alt": "An identity card" },
+            "prompt": "A trusted adult is helping you apply for the school scholarship, but they cannot find your ID card anywhere. Which specific card do they need to find first?",
+            "image": { "icon": "shield", "alt": "An adult searching for a specific identity card" },
             "options": [
               { "icon": "shield", "label": "The UDID card" },
-              { "icon": "bank", "label": "A bank card" },
-              { "icon": "phone", "label": "A phone card" }
+              { "icon": "book", "label": "A library card" },
+              { "icon": "gift", "label": "A birthday card" }
             ],
             "correctIndex": 0,
-            "hint": "It is the same card from the lesson before."
+            "hint": "It is the same card the previous lesson was entirely about."
           }
         ]
       }
@@ -95,39 +95,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "You are in Class XII. Which scholarship applies?",
-            "image": { "icon": "book", "alt": "A school certificate" },
+            "prompt": "A student has just finished Class X and is about to start Class XI. Which scholarship category do they now move into?",
+            "image": { "icon": "book", "alt": "A student moving from Class X into Class XI" },
             "options": [
-              { "icon": "check", "label": "Post-Matric" },
-              { "icon": "cross", "label": "Pre-Matric" },
-              { "icon": "star", "label": "The National Fellowship" }
+              { "icon": "check", "label": "Post-Matric — Class XI is past the 'Matric' dividing line" },
+              { "icon": "cross", "label": "They stay in Pre-Matric until Class XII" },
+              { "icon": "question", "label": "Neither applies once you pass Class X" }
             ],
             "correctIndex": 0,
-            "hint": "Pre-Matric stops at Class X. 'Matric' is the dividing line."
+            "hint": "The dividing line is exactly between Class X and Class XI."
           },
           {
             "id": "q2",
-            "prompt": "In government jobs, how much is held for deaf and hard-of-hearing candidates?",
-            "image": { "icon": "list", "alt": "A list of posts with one marked" },
+            "prompt": "A student has a 45% disability and a valid UDID card, but their family's income is above the scheme's set limit. Can they receive the Post-Matric scholarship?",
+            "image": { "icon": "warning", "alt": "A qualifying disability percentage beside an income limit that is exceeded" },
             "options": [
-              { "icon": "check", "label": "1%, for that group alone" },
-              { "icon": "star", "label": "4%, shared with every disability" },
-              { "icon": "cross", "label": "Nothing is reserved" }
+              { "icon": "cross", "label": "Not under the standard rules — all conditions, including income, usually need to be met" },
+              { "icon": "check", "label": "Yes, disability percentage alone is enough" },
+              { "icon": "shield", "label": "Yes, since they have a UDID card" }
             ],
             "correctIndex": 0,
-            "hint": "The total is 4%, divided into separate 1% shares."
+            "hint": "The lesson lists three separate conditions, not just one or two."
           },
           {
             "id": "q3",
-            "prompt": "You want free training for a job after school. Which scheme?",
-            "image": { "icon": "target", "alt": "Tools and a training certificate" },
+            "prompt": "Three students want different things: one wants vocational job training, one wants coaching for a banking exam, and one wants funding for a PhD. Which scheme matches each?",
+            "image": { "icon": "target", "alt": "Three students with three different goals" },
             "options": [
-              { "icon": "check", "label": "PM-DAKSH" },
-              { "icon": "medicine", "label": "ADIP" },
-              { "icon": "bank", "label": "IGNDPS" }
+              { "icon": "target", "label": "PM-DAKSH for training, Free Coaching for the exam, National Fellowship for the PhD" },
+              { "icon": "check", "label": "All three should apply to PM-DAKSH" },
+              { "icon": "book", "label": "Free Coaching covers all three needs" }
             ],
             "correctIndex": 0,
-            "hint": "ADIP is equipment and IGNDPS is a pension. Only one is training."
+            "hint": "Each of the three schemes named in the lesson has one specific purpose."
           }
         ]
       }
@@ -159,39 +159,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "Where is scholarship money paid?",
-            "image": { "icon": "bank", "alt": "A bank passbook with a name on it" },
+            "prompt": "A scholarship officer asks for your bank account details, but you only have access to a joint account held with a relative. Why might this specifically be a problem, based on this whole course?",
+            "image": { "icon": "bank", "alt": "A joint account shared with a relative, receiving a scholarship" },
             "options": [
-              { "icon": "bank", "label": "Into a bank account in your own name" },
-              { "icon": "handcoin", "label": "As cash at the school office" },
-              { "icon": "house", "label": "To any relative who asks" }
+              { "icon": "shield", "label": "Money you are owed is meant to be paid into an account you fully control, not one you share — the same point made about bank accounts and funds" },
+              { "icon": "check", "label": "It is not a problem at all, joint accounts work identically" },
+              { "icon": "question", "label": "It is only a problem if the relative is unemployed" }
             ],
             "correctIndex": 0,
-            "hint": "This is why the account is the first step in the whole course."
+            "hint": "This connects directly to why the course insisted on your OWN account, several lessons ago."
           },
           {
             "id": "q2",
-            "prompt": "You want a loan to start a small business. Which one is for that?",
-            "image": { "icon": "shop", "alt": "A small stall being set up" },
+            "prompt": "A student wants to start a small tailoring business rather than continue studying. A friend suggests a Post-Matric scholarship. Is this the right scheme for their goal?",
+            "image": { "icon": "shop", "alt": "A tailoring business being set up, beside a scholarship form" },
             "options": [
-              { "icon": "check", "label": "NHFDC" },
-              { "icon": "book", "label": "Post-Matric Scholarship" },
-              { "icon": "medicine", "label": "ADIP" }
+              { "icon": "check", "label": "No — a scholarship is for study; NHFDC's concessional loan is designed for self-employment like this" },
+              { "icon": "book", "label": "Yes, scholarships also fund businesses" },
+              { "icon": "cross", "label": "Neither scheme applies to starting a business" }
             ],
             "correctIndex": 0,
-            "hint": "Only one of these lends money for work."
+            "hint": "One of the two schemes is specifically about study costs, and the other is about work and self-employment."
           },
           {
             "id": "q3",
-            "prompt": "Your scholarship arrives as a lump sum. What turns it into more than a one-off?",
-            "image": { "icon": "growth", "alt": "A coin with a plant growing from it" },
+            "prompt": "You receive a ₹6000 scholarship. Option A: spend all of it now. Option B: put ₹4000 into savings or a SIP and spend ₹2000. Which option leaves you with something a year from now, and why?",
+            "image": { "icon": "growth", "alt": "Two paths for the same scholarship money, one year later" },
             "options": [
-              { "icon": "piggy", "label": "Budget it, keep some, and put part where it can grow" },
-              { "icon": "shop", "label": "Spend it before it goes" },
-              { "icon": "gift", "label": "Give it all away" }
+              { "icon": "piggy", "label": "Option B — money that is saved or invested can still exist and possibly grow a year later; fully spent money is gone" },
+              { "icon": "shop", "label": "Option A — spending it all now means you enjoyed it fully" },
+              { "icon": "question", "label": "Both options leave you with exactly the same amount a year later" }
             ],
             "correctIndex": 0,
-            "hint": "Every earlier lesson in this course is the answer to this question."
+            "hint": "The lesson's very last idea is about what happens to money depending on whether it is spent or kept."
           }
         ]
       }

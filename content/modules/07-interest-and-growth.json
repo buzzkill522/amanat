@@ -13,22 +13,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
         "durationLabel": "3 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "When you keep money in a bank, the bank pays you extra money.",
@@ -37,74 +25,45 @@
         "The longer you leave it, the more interest you get.",
         "Money in a piggy bank does not grow. Money in a bank does."
       ],
-      "keyWords": [
-        "interest",
-        "grow",
-        "bank",
-        "wait"
-      ],
+      "keyWords": ["interest", "grow", "bank", "wait"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "What is the extra money the bank pays you called?",
-            "image": {
-              "icon": "growth",
-              "alt": "A small plant growing from a coin"
-            },
+            "prompt": "Why does a bank pay you interest just for keeping your money there?",
+            "image": { "icon": "growth", "alt": "A small plant growing from a coin inside a bank" },
             "options": [
-              {
-                "icon": "growth",
-                "label": "Interest"
-              },
-              {
-                "icon": "gift",
-                "label": "A present"
-              }
+              { "icon": "growth", "label": "Because the bank gets to use your money while it is there, and pays you for that" },
+              { "icon": "gift", "label": "Because banks enjoy giving away money" },
+              { "icon": "star", "label": "Because the government orders them to give gifts" }
             ],
             "correctIndex": 0,
-            "hint": "The bank pays it for keeping your money."
+            "hint": "Recall what the bank actually does with money while you are not using it."
           },
           {
             "id": "q2",
-            "prompt": "Which money grows on its own?",
-            "image": {
-              "icon": "question",
-              "alt": "A piggy bank next to a bank building"
-            },
+            "prompt": "You have ₹200. Keeping it in a piggy bank for a year, or in a bank account for a year — in which case would you have MORE than ₹200 after that year, and why?",
+            "image": { "icon": "question", "alt": "A piggy bank next to a bank building, both holding two hundred rupees" },
             "options": [
-              {
-                "icon": "piggy",
-                "label": "Money in a piggy bank"
-              },
-              {
-                "icon": "bank",
-                "label": "Money in a bank account"
-              }
+              { "icon": "bank", "label": "The bank account — only it pays interest on top of what you put in" },
+              { "icon": "piggy", "label": "The piggy bank — it is safer so it grows more" },
+              { "icon": "question", "label": "Both would have exactly ₹200" }
             ],
-            "correctIndex": 1,
-            "hint": "Only the bank pays interest."
+            "correctIndex": 0,
+            "hint": "Only one of the two options ever adds anything extra."
           },
           {
             "id": "q3",
-            "prompt": "To get more interest, what should you do?",
-            "image": {
-              "icon": "calendar",
-              "alt": "A calendar showing many months"
-            },
+            "prompt": "You could save toward a goal that needs the money back in 1 month, or a goal in 12 months, both using a bank account. In which case will interest matter more to your final total, and why?",
+            "image": { "icon": "calendar", "alt": "A calendar showing one month and twelve months side by side" },
             "options": [
-              {
-                "icon": "calendar",
-                "label": "Leave the money for longer"
-              },
-              {
-                "icon": "shop",
-                "label": "Take it out quickly"
-              }
+              { "icon": "calendar", "label": "The 12-month goal — interest needs time to add up meaningfully" },
+              { "icon": "shop", "label": "The 1-month goal — interest is always the same regardless of time" },
+              { "icon": "coin", "label": "Neither — interest only applies to goals over ₹1000" }
             ],
             "correctIndex": 0,
-            "hint": "Interest builds up over time."
+            "hint": "Interest is small over a short time and adds up over a long time."
           }
         ]
       }
@@ -116,22 +75,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
         "durationLabel": "4 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "The interest rate is written as a percent for one year.",
@@ -140,79 +87,45 @@
         "Interest also works the other way. If you borrow, you pay interest.",
         "A higher rate is good when you save. A higher rate is bad when you borrow."
       ],
-      "keyWords": [
-        "interest rate",
-        "percent",
-        "per year",
-        "borrow",
-        "principal"
-      ],
+      "keyWords": ["interest rate", "percent", "per year", "borrow", "principal"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "₹1000 at 5 percent for one year becomes...",
-            "image": {
-              "icon": "growth",
-              "alt": "A bar growing slightly taller"
-            },
+            "prompt": "You keep ₹2000 in an account at 5 percent interest for one year. How much will you have at the end?",
+            "image": { "icon": "growth", "alt": "A bar growing slightly taller, labelled two thousand rupees" },
             "options": [
-              {
-                "icon": "coin",
-                "label": "₹1050"
-              },
-              {
-                "icon": "coin",
-                "label": "₹1500"
-              },
-              {
-                "icon": "coin",
-                "label": "₹5000"
-              }
+              { "icon": "coin", "label": "₹2100" },
+              { "icon": "coin", "label": "₹2050" },
+              { "icon": "coin", "label": "₹2500" }
             ],
             "correctIndex": 0,
-            "hint": "5 percent of 1000 is 50. Add it on."
+            "hint": "5 percent of 2000 is 100. Add that to the original amount."
           },
           {
             "id": "q2",
-            "prompt": "You borrow money. A higher interest rate is...",
-            "image": {
-              "icon": "warning",
-              "alt": "A loan document with a large percent sign"
-            },
+            "prompt": "Two rates are on offer: 3% and 9%. Person A is saving money in an account. Person B is borrowing money for a loan. Which rate should each person prefer, and why?",
+            "image": { "icon": "warning", "alt": "A saver and a borrower each facing two different interest rates" },
             "options": [
-              {
-                "icon": "check",
-                "label": "Good for you"
-              },
-              {
-                "icon": "warning",
-                "label": "Bad for you"
-              }
+              { "icon": "growth", "label": "A should prefer 9% (more earned); B should prefer 3% (less owed)" },
+              { "icon": "check", "label": "Both should prefer 9%, since higher is always better" },
+              { "icon": "shield", "label": "Both should prefer 3%, since lower is always safer" }
             ],
-            "correctIndex": 1,
-            "hint": "When you borrow, interest is money you pay out."
+            "correctIndex": 0,
+            "hint": "A higher rate benefits whoever is receiving interest, and costs whoever is paying it."
           },
           {
             "id": "q3",
-            "prompt": "The money you first put in is called the...",
-            "image": {
-              "icon": "coin",
-              "alt": "A starting stack of coins"
-            },
+            "prompt": "You put ₹800 into an account. After a year at 5 percent interest, you have ₹840. What is the ₹800 called, and what is the ₹40?",
+            "image": { "icon": "coin", "alt": "A starting stack of coins beside a smaller added stack" },
             "options": [
-              {
-                "icon": "coin",
-                "label": "Principal"
-              },
-              {
-                "icon": "growth",
-                "label": "Interest"
-              }
+              { "icon": "coin", "label": "₹800 is the principal; ₹40 is the interest earned" },
+              { "icon": "growth", "label": "₹800 is the interest; ₹40 is the principal" },
+              { "icon": "question", "label": "Both amounts are called principal" }
             ],
             "correctIndex": 0,
-            "hint": "Interest is added on top of it."
+            "hint": "The principal is what you started with, before anything was added."
           }
         ]
       }
@@ -224,22 +137,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
         "durationLabel": "6 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "Simple interest is paid only on the money you first put in.",
@@ -248,75 +149,45 @@
         "Starting early matters more than starting with a large amount.",
         "Credit cards charge compound interest too. Unpaid balances grow quickly."
       ],
-      "keyWords": [
-        "simple interest",
-        "compound interest",
-        "rule of 72",
-        "credit card",
-        "long term"
-      ],
+      "keyWords": ["simple interest", "compound interest", "rule of 72", "credit card", "long term"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "Compound interest is paid on what?",
-            "image": {
-              "icon": "growth",
-              "alt": "A curve rising faster over time"
-            },
+            "prompt": "₹1000 grows at 10 percent a year. After year one it is ₹1100. If the interest is COMPOUND, what happens in year two?",
+            "image": { "icon": "growth", "alt": "A curve rising faster over two years" },
             "options": [
-              {
-                "icon": "growth",
-                "label": "Your money and the interest already earned"
-              },
-              {
-                "icon": "coin",
-                "label": "Only the money you first put in"
-              }
+              { "icon": "growth", "label": "You earn 10% of ₹1100, not just of the original ₹1000" },
+              { "icon": "coin", "label": "You earn 10% of ₹1000 again, exactly the same as year one" },
+              { "icon": "cross", "label": "No further interest is earned after year one" }
             ],
             "correctIndex": 0,
-            "hint": "Interest starts earning its own interest."
+            "hint": "Compound interest is paid on the new, larger total — not the original amount."
           },
           {
             "id": "q2",
-            "prompt": "Two people save the same amount. Who ends with more?",
-            "image": {
-              "icon": "calendar",
-              "alt": "Two timelines, one longer than the other"
-            },
+            "prompt": "Person A saves ₹500 a month starting at age 15. Person B saves ₹1000 a month but starts at age 25, and both stop at 35. Whose final amount benefits more from compounding, and why might it be closer than expected?",
+            "image": { "icon": "calendar", "alt": "Two timelines, one ten years longer than the other" },
             "options": [
-              {
-                "icon": "calendar",
-                "label": "The one who started earlier"
-              },
-              {
-                "icon": "star",
-                "label": "The one who started later"
-              }
+              { "icon": "calendar", "label": "Person A — the extra 10 years lets compounding work for far longer, even saving less each month" },
+              { "icon": "coin", "label": "Person B — saving twice as much each month always wins" },
+              { "icon": "question", "label": "They will always end with exactly the same amount" }
             ],
             "correctIndex": 0,
-            "hint": "Compounding needs time to do its work."
+            "hint": "Compounding needs TIME above almost everything else, as the lesson stresses."
           },
           {
             "id": "q3",
-            "prompt": "You do not pay your credit card bill. What happens?",
-            "image": {
-              "icon": "warning",
-              "alt": "A card bill with a rising amount"
-            },
+            "prompt": "You owe ₹5000 on a credit card at a high compound rate and pay nothing for two billing cycles in a row. What happens to the amount you owe between the first and second cycle?",
+            "image": { "icon": "warning", "alt": "A card bill with a rising amount across two cycles" },
             "options": [
-              {
-                "icon": "warning",
-                "label": "The amount owed grows with compound interest"
-              },
-              {
-                "icon": "gift",
-                "label": "The bank forgets about it"
-              }
+              { "icon": "warning", "label": "It grows faster in the second cycle, because interest is now charged on the first cycle's interest too" },
+              { "icon": "coin", "label": "It grows by the same fixed amount each cycle" },
+              { "icon": "check", "label": "It stops growing after the first cycle" }
             ],
             "correctIndex": 0,
-            "hint": "Compounding works against you when you owe money."
+            "hint": "Just like savings, compound interest builds on the previous total — but here that total is a debt."
           }
         ]
       }

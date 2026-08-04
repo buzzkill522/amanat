@@ -31,39 +31,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "What does the UDID card show?",
-            "image": { "icon": "shield", "alt": "An identity card with a shield on it" },
+            "prompt": "Your family moves to a new state. Without a UDID card, what problem might you face at a new school that the card is specifically designed to solve?",
+            "image": { "icon": "shield", "alt": "A family moving between two states with a school in the new one" },
             "options": [
-              { "icon": "shield", "label": "That you are Deaf, anywhere in India" },
-              { "icon": "bank", "label": "How much money you have" },
-              { "icon": "shop", "label": "Which shop you like" }
+              { "icon": "shield", "label": "Having to explain and prove that you are Deaf all over again in the new place" },
+              { "icon": "coin", "label": "Having to pay extra fees in the new state" },
+              { "icon": "cross", "label": "Not being allowed to enrol in a new school at all" }
             ],
             "correctIndex": 0,
-            "hint": "It is an identity card, not a money card."
+            "hint": "The card's whole purpose is to avoid repeating one particular kind of explanation."
           },
           {
             "id": "q2",
-            "prompt": "How much does it cost to ask for a UDID card?",
-            "image": { "icon": "coin", "alt": "An empty hand" },
+            "prompt": "If the UDID card is free and helps get money for books and hearing aids, why might a family still be missing out on this help?",
+            "image": { "icon": "question", "alt": "A family who has never heard of the card" },
             "options": [
-              { "icon": "check", "label": "Nothing. It is free." },
-              { "icon": "coin", "label": "₹500" },
-              { "icon": "note", "label": "₹1000" }
+              { "icon": "question", "label": "Because they may not know the card exists at all, so they never apply for it" },
+              { "icon": "coin", "label": "Because the card actually costs too much for most families" },
+              { "icon": "cross", "label": "Because only certain families are allowed to apply" }
             ],
             "correctIndex": 0,
-            "hint": "Anyone asking you to pay for it is not telling the truth."
+            "hint": "The lesson names one specific reason many families miss out, and it has nothing to do with cost."
           },
           {
             "id": "q3",
-            "prompt": "Who helps you get the card?",
-            "image": { "icon": "handcoin", "alt": "An adult and a child at a counter" },
+            "prompt": "Someone messages your family claiming they can 'fast-track' your UDID card for a fee, skipping the doctor. What TWO things about this claim contradict the lesson?",
+            "image": { "icon": "warning", "alt": "A suspicious message offering a paid shortcut, skipping a doctor" },
             "options": [
-              { "icon": "house", "label": "A trusted adult and a government doctor" },
-              { "icon": "phone", "label": "A stranger who messages your phone" },
-              { "icon": "cross", "label": "Nobody, you do it in secret" }
+              { "icon": "warning", "label": "The real process is free, and it requires a government doctor, not a shortcut from a stranger" },
+              { "icon": "check", "label": "Nothing is wrong, fast-tracking is allowed for a fee" },
+              { "icon": "coin", "label": "Only the fee is suspicious, the no-doctor part is fine" }
             ],
             "correctIndex": 0,
-            "hint": "A stranger messaging about money or cards is a warning sign."
+            "hint": "Compare this offer against both the cost and the correct people involved, from the lesson."
           }
         ]
       }
@@ -95,39 +95,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "Why is the UDID card called a gateway?",
-            "image": { "icon": "lock", "alt": "A gate with several paths behind it" },
+            "prompt": "A family has a doctor's note saying their child's hearing loss is 25%. They want to apply for a UDID card. What problem might they run into?",
+            "image": { "icon": "lock", "alt": "A medical note showing twenty-five percent beside a gateway of schemes" },
             "options": [
-              { "icon": "shield", "label": "Most other schemes ask for it before anything else" },
-              { "icon": "bank", "label": "It works as a bank card" },
-              { "icon": "bus", "label": "It is only for travel" }
+              { "icon": "lock", "label": "40% is usually the benchmark needed, so 25% may not qualify them" },
+              { "icon": "check", "label": "25% is more than enough, since any percentage qualifies" },
+              { "icon": "question", "label": "The percentage does not matter at all for a UDID card" }
             ],
             "correctIndex": 0,
-            "hint": "Think about what has to happen first."
+            "hint": "Recall the specific benchmark percentage the lesson mentions."
           },
           {
             "id": "q2",
-            "prompt": "Which scheme pays for a hearing aid?",
-            "image": { "icon": "medicine", "alt": "A hearing aid in a case" },
+            "prompt": "A family needs money to buy a hearing aid, and separately, a small amount every month for living costs. Which scheme covers which need, and why?",
+            "image": { "icon": "medicine", "alt": "A hearing aid beside a monthly pension payment" },
             "options": [
-              { "icon": "check", "label": "ADIP" },
-              { "icon": "bank", "label": "IGNDPS" },
-              { "icon": "book", "label": "Post-Matric Scholarship" }
+              { "icon": "medicine", "label": "ADIP covers the hearing aid (equipment); a disability pension covers the monthly amount (ongoing support)" },
+              { "icon": "check", "label": "ADIP covers both needs entirely on its own" },
+              { "icon": "bank", "label": "A disability pension pays for equipment, not monthly support" }
             ],
             "correctIndex": 0,
-            "hint": "ADIP is the scheme for aids and appliances — equipment, not cash."
+            "hint": "One scheme is about a one-time piece of equipment; the other is about a repeating monthly payment."
           },
           {
             "id": "q3",
-            "prompt": "Your family has never applied for anything. What is true about the pension and the schemes?",
-            "image": { "icon": "warning", "alt": "An unopened envelope" },
+            "prompt": "A family qualifies for a state disability pension and has all the right papers, but never actually submitted an application. Will the pension arrive anyway eventually?",
+            "image": { "icon": "warning", "alt": "An unopened envelope beside a pile of qualifying papers" },
             "options": [
-              { "icon": "list", "label": "They are not automatic. Somebody must apply." },
-              { "icon": "gift", "label": "They arrive by themselves when you turn 18" },
-              { "icon": "check", "label": "The school applies for every child" }
+              { "icon": "list", "label": "No — qualifying is not enough; someone must actively apply for it to ever arrive" },
+              { "icon": "check", "label": "Yes, the government tracks who qualifies and pays automatically" },
+              { "icon": "calendar", "label": "Only if they wait exactly one year" }
             ],
             "correctIndex": 0,
-            "hint": "This is why so much of this money goes unclaimed."
+            "hint": "The lesson makes a point of saying nothing here happens by itself."
           }
         ]
       }
@@ -160,39 +160,39 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "Under Section 80U, what does a person with a 50% disability deduct from taxable income?",
-            "image": { "icon": "list", "alt": "A tax form with a line filled in" },
+            "prompt": "A father supports his Deaf daughter, who has no income of her own. Whose tax return should claim the disability deduction, and under which section?",
+            "image": { "icon": "list", "alt": "A father's tax form beside his daughter's, only one with income" },
             "options": [
-              { "icon": "coin", "label": "₹75,000" },
-              { "icon": "coin", "label": "₹1,25,000" },
-              { "icon": "cross", "label": "Nothing" }
+              { "icon": "list", "label": "The father's return, under Section 80DD, since he supports a dependant with a disability" },
+              { "icon": "coin", "label": "The daughter's return, under Section 80U, regardless of who supports her" },
+              { "icon": "check", "label": "Both returns can claim the full deduction separately" }
             ],
             "correctIndex": 0,
-            "hint": "₹1,25,000 is the higher figure, for severe disability."
+            "hint": "80U is for the disabled person themselves if they have income; 80DD is for whoever supports a dependant."
           },
           {
             "id": "q2",
-            "prompt": "Do you need receipts to claim the Section 80U deduction?",
-            "image": { "icon": "question", "alt": "A pile of bills beside a form" },
+            "prompt": "Section 80U requires no bills or receipts at all, yet it is among the most commonly missed deductions. What does this suggest is the real reason people miss it?",
+            "image": { "icon": "question", "alt": "A simple form with no receipts attached, yet often left unfiled" },
             "options": [
-              { "icon": "check", "label": "No. It is a flat deduction." },
-              { "icon": "list", "label": "Yes, every medical bill" },
-              { "icon": "warning", "label": "Yes, bills plus a doctor's letter each month" }
+              { "icon": "question", "label": "People likely do not know it exists or forget to claim it — not that it is hard to prove" },
+              { "icon": "list", "label": "It is missed because the paperwork is too difficult" },
+              { "icon": "warning", "label": "It is missed because receipts get lost" }
             ],
             "correctIndex": 0,
-            "hint": "It does not depend on what you actually spent."
+            "hint": "If no receipts are needed, difficulty of proof cannot be the reason it gets missed."
           },
           {
             "id": "q3",
-            "prompt": "What is the right order?",
-            "image": { "icon": "list", "alt": "Three numbered steps" },
+            "prompt": "Someone tries to apply directly for Ayushman Bharat health cover using only their aadhaar card, without ever getting a disability certificate or a UDID card. What is likely to go wrong?",
+            "image": { "icon": "list", "alt": "An application attempted out of the usual three-step order" },
             "options": [
-              { "icon": "check", "label": "Disability certificate, then UDID, then each scheme" },
-              { "icon": "cross", "label": "Apply for schemes first, get the card later" },
-              { "icon": "question", "label": "Any order works" }
+              { "icon": "warning", "label": "Most disability-linked schemes expect the certificate and UDID first — skipping them is likely to block the application" },
+              { "icon": "check", "label": "Nothing will go wrong, aadhaar alone is always enough" },
+              { "icon": "question", "label": "The order does not matter for health schemes specifically" }
             ],
             "correctIndex": 0,
-            "hint": "Each step is the paperwork the next one asks for."
+            "hint": "Recall the exact three-step order the lesson insists on, and what usually comes first."
           }
         ]
       }

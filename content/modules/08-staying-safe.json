@@ -13,22 +13,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
         "durationLabel": "3 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "Keep your money in one safe place.",
@@ -37,75 +25,45 @@
         "Nobody should ever ask you to keep a money secret from your parents.",
         "It is always alright to ask an adult for help."
       ],
-      "keyWords": [
-        "safe",
-        "stranger",
-        "trusted adult",
-        "secret",
-        "help"
-      ],
+      "keyWords": ["safe", "stranger", "trusted adult", "secret", "help"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "A stranger asks for your money. What do you do?",
-            "image": {
-              "icon": "warning",
-              "alt": "A stranger holding out a hand"
-            },
+            "prompt": "You are holding ₹200 clearly in your hand at a bus stop, and a stranger notices and starts walking toward you. What two things from the lesson should guide what you do?",
+            "image": { "icon": "warning", "alt": "A stranger noticing money held in a hand at a bus stop" },
             "options": [
-              {
-                "icon": "shield",
-                "label": "Say no and tell a trusted adult"
-              },
-              {
-                "icon": "handcoin",
-                "label": "Give the money"
-              }
+              { "icon": "shield", "label": "Do not show money to strangers, and if asked for it, say no and find a trusted adult" },
+              { "icon": "handcoin", "label": "Offer them some money to be polite" },
+              { "icon": "cross", "label": "Run away without telling anyone" }
             ],
             "correctIndex": 0,
-            "hint": "You never have to give your money to a stranger."
+            "hint": "Two separate lesson rules both apply to this exact moment."
           },
           {
             "id": "q2",
-            "prompt": "Someone says: keep this money a secret from your parents.",
-            "image": {
-              "icon": "lock",
-              "alt": "A finger held to lips"
-            },
+            "prompt": "An adult you don't know well gives you ₹100 and says 'don't tell your parents about this.' What does the lesson say about this exact combination?",
+            "image": { "icon": "lock", "alt": "Money being handed over with a finger held to lips" },
             "options": [
-              {
-                "icon": "check",
-                "label": "That is fine"
-              },
-              {
-                "icon": "warning",
-                "label": "That is a warning sign. Tell an adult."
-              }
+              { "icon": "warning", "label": "This is a warning sign — no one should ask a child to keep money secret from parents" },
+              { "icon": "gift", "label": "It is fine, since they gave you the money as a gift" },
+              { "icon": "coin", "label": "It is only a problem if the amount is large" }
             ],
-            "correctIndex": 1,
-            "hint": "Safe adults do not ask children to keep money secrets."
+            "correctIndex": 0,
+            "hint": "The secrecy request is the warning sign, not the amount of money."
           },
           {
             "id": "q3",
-            "prompt": "Where is the safest place for your money?",
-            "image": {
-              "icon": "shield",
-              "alt": "A locked box and a bank"
-            },
+            "prompt": "You have ₹300. Which is safest: carrying it loose in your hand all day, leaving it on a desk at school, or keeping it in a safe place at home or a bank?",
+            "image": { "icon": "shield", "alt": "Three ways to keep money, one clearly locked away" },
             "options": [
-              {
-                "icon": "bank",
-                "label": "A bank or a safe place at home"
-              },
-              {
-                "icon": "bus",
-                "label": "Loose in your pocket at school"
-              }
+              { "icon": "bank", "label": "A safe place at home or a bank" },
+              { "icon": "handcoin", "label": "Carrying it loose all day, since it's with you" },
+              { "icon": "house", "label": "Leaving it on a desk, since no one usually looks" }
             ],
             "correctIndex": 0,
-            "hint": "Loose money is easy to lose."
+            "hint": "Compare all three for how easily each one could be lost or taken."
           }
         ]
       }
@@ -117,22 +75,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
         "durationLabel": "4 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "A scam is a trick to take your money.",
@@ -141,75 +87,45 @@
         "Scams push you to act fast. Slow down and check with an adult.",
         "If an offer sounds too good to be true, it is not true."
       ],
-      "keyWords": [
-        "scam",
-        "OTP",
-        "PIN",
-        "prize",
-        "check first"
-      ],
+      "keyWords": ["scam", "OTP", "PIN", "prize", "check first"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "A message says you won ₹50,000. You never entered. What is it?",
-            "image": {
-              "icon": "phone",
-              "alt": "A phone showing a prize message"
-            },
+            "prompt": "A message says 'You won ₹1,00,000! Claim within 10 minutes or lose it forever!' You never entered any competition. Name two separate warning signs in this message.",
+            "image": { "icon": "phone", "alt": "A phone showing an urgent prize message with a countdown" },
             "options": [
-              {
-                "icon": "warning",
-                "label": "A scam"
-              },
-              {
-                "icon": "gift",
-                "label": "Real good luck"
-              }
+              { "icon": "warning", "label": "You never entered, and it is rushing you to act fast — both are classic scam signs" },
+              { "icon": "gift", "label": "It is not a scam, since it mentions a specific rupee amount" },
+              { "icon": "check", "label": "It is only suspicious because of the amount, not the urgency" }
             ],
             "correctIndex": 0,
-            "hint": "You cannot win a competition you did not enter."
+            "hint": "The lesson names both an impossible win and a rush to act as separate warning signs."
           },
           {
             "id": "q2",
-            "prompt": "A caller asks for your OTP. What do you do?",
-            "image": {
-              "icon": "lock",
-              "alt": "A phone showing a one time password"
-            },
+            "prompt": "You get a call from someone claiming to be your bank, asking you to confirm your OTP to 'verify your account.' How can you be sure this is not really your bank?",
+            "image": { "icon": "lock", "alt": "A phone call beside a one time password screen" },
             "options": [
-              {
-                "icon": "cross",
-                "label": "Never share it"
-              },
-              {
-                "icon": "check",
-                "label": "Share it if they sound official"
-              }
+              { "icon": "cross", "label": "A real bank never asks for your OTP, so this alone proves it is not genuine" },
+              { "icon": "question", "label": "You cannot know unless you check their voice" },
+              { "icon": "check", "label": "It is fine if they already know your account number" }
             ],
             "correctIndex": 0,
-            "hint": "A real bank never asks for your OTP."
+            "hint": "The lesson gives one specific fact that, on its own, is enough to prove a call is fake."
           },
           {
             "id": "q3",
-            "prompt": "A message says: pay in 5 minutes or lose your account.",
-            "image": {
-              "icon": "warning",
-              "alt": "An urgent warning message"
-            },
+            "prompt": "An online post offers to turn ₹1,000 into ₹5,000 in one week if you send it to them first. What should you conclude?",
+            "image": { "icon": "warning", "alt": "An online post promising to multiply money quickly" },
             "options": [
-              {
-                "icon": "shield",
-                "label": "Stop. Check with a trusted adult."
-              },
-              {
-                "icon": "phone",
-                "label": "Pay quickly"
-              }
+              { "icon": "cross", "label": "It is not true — this is exactly the kind of offer the lesson warns is too good to be true" },
+              { "icon": "check", "label": "It could be true if enough people share the post" },
+              { "icon": "coin", "label": "It is safe as long as you only send a small amount first" }
             ],
             "correctIndex": 0,
-            "hint": "Rushing you is how a scam works."
+            "hint": "The lesson gives a simple test for offers exactly like this one."
           }
         ]
       }
@@ -221,22 +137,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
         "durationLabel": "6 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "Phishing means a fake message that copies a real company.",
@@ -245,76 +149,45 @@
         "If an app asks for your PIN to give you a refund, it is a scam.",
         "Report fraud in India on the cybercrime helpline number 1930."
       ],
-      "keyWords": [
-        "phishing",
-        "UPI",
-        "fraud",
-        "two factor",
-        "report",
-        "helpline 1930"
-      ],
+      "keyWords": ["phishing", "UPI", "fraud", "two factor", "report", "helpline 1930"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "In UPI, when do you enter your PIN?",
-            "image": {
-              "icon": "phone",
-              "alt": "A UPI payment screen"
-            },
+            "prompt": "An app message says: 'To receive your ₹500 refund, please enter your UPI PIN now.' Using what you know about when a PIN is genuinely needed, what should you conclude?",
+            "image": { "icon": "phone", "alt": "A refund message asking for a UPI PIN" },
             "options": [
-              {
-                "icon": "handcoin",
-                "label": "Only when sending money"
-              },
-              {
-                "icon": "gift",
-                "label": "When receiving money"
-              }
+              { "icon": "warning", "label": "This is a scam — a PIN is only ever needed to SEND money, never to receive it" },
+              { "icon": "check", "label": "It is genuine, since refunds are common" },
+              { "icon": "coin", "label": "It is safe because it mentions an exact amount" }
             ],
             "correctIndex": 0,
-            "hint": "Receiving money never needs a PIN."
+            "hint": "Recall exactly which direction of a UPI transaction ever needs your PIN."
           },
           {
             "id": "q2",
-            "prompt": "An email copies your bank's logo and asks you to log in. This is...",
-            "image": {
-              "icon": "warning",
-              "alt": "An email that looks like a bank message"
-            },
+            "prompt": "You get an email that looks exactly like your bank's, asking you to click a link and log in. Name two separate things the lesson tells you to check before doing anything.",
+            "image": { "icon": "warning", "alt": "An email copying a bank's look, with a sender address and a link" },
             "options": [
-              {
-                "icon": "warning",
-                "label": "Phishing"
-              },
-              {
-                "icon": "bank",
-                "label": "A normal bank email"
-              }
+              { "icon": "warning", "label": "The sender's email address and the web address of the link, both checked closely" },
+              { "icon": "bank", "label": "Only whether the logo looks correct" },
+              { "icon": "check", "label": "Only whether the email uses polite language" }
             ],
             "correctIndex": 0,
-            "hint": "Fake messages copy real logos on purpose."
+            "hint": "The lesson names two things to check closely, not just one glance at the logo."
           },
           {
             "id": "q3",
-            "prompt": "Which number reports cyber fraud in India?",
-            "image": {
-              "icon": "shield",
-              "alt": "A helpline card"
-            },
+            "prompt": "You receive a phishing message asking you to act within the hour or lose your account, and you clicked the link before realising it was fake. What should you do now?",
+            "image": { "icon": "shield", "alt": "A helpline card beside a clicked phishing link" },
             "options": [
-              {
-                "icon": "shield",
-                "label": "1930"
-              },
-              {
-                "icon": "phone",
-                "label": "1234"
-              }
+              { "icon": "shield", "label": "Report it to the cybercrime helpline 1930 and tell a trusted adult immediately" },
+              { "icon": "question", "label": "Wait and see if anything bad actually happens first" },
+              { "icon": "phone", "label": "Reply to the message asking them to stop" }
             ],
             "correctIndex": 0,
-            "hint": "It is the national cybercrime helpline."
+            "hint": "The lesson gives an exact number to call once fraud has already happened, not just to prevent it."
           }
         ]
       }

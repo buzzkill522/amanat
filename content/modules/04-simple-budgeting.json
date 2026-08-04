@@ -13,22 +13,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
         "durationLabel": "3 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "A budget is a plan for your money.",
@@ -37,82 +25,44 @@
         "Add the prices. If the total is more than your money, take one thing off the list.",
         "A budget stops you running out of money."
       ],
-      "keyWords": [
-        "budget",
-        "plan",
-        "total",
-        "left over"
-      ],
+      "keyWords": ["budget", "plan", "total", "left over"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "What is a budget?",
-            "image": {
-              "icon": "list",
-              "alt": "A short list with prices written on it"
-            },
+            "prompt": "You have ₹50. A snack is ₹15 and a pen is ₹15. If you buy both, how much money is left?",
+            "image": { "icon": "wallet", "alt": "A wallet with fifty rupees beside a snack and a pen" },
             "options": [
-              {
-                "icon": "list",
-                "label": "A plan for your money"
-              },
-              {
-                "icon": "toy",
-                "label": "A kind of toy"
-              },
-              {
-                "icon": "bank",
-                "label": "A big building"
-              }
+              { "icon": "coin", "label": "₹20" },
+              { "icon": "coin", "label": "₹35" },
+              { "icon": "coin", "label": "₹5" }
             ],
             "correctIndex": 0,
-            "hint": "A budget is written before you spend."
+            "hint": "Add the snack and pen prices together first, then subtract from ₹50."
           },
           {
             "id": "q2",
-            "prompt": "You have ₹50. A snack is ₹20 and a pen is ₹20. Can you buy both?",
-            "image": {
-              "icon": "wallet",
-              "alt": "A wallet with fifty rupees"
-            },
+            "prompt": "You have ₹50. You want a snack (₹20), a pen (₹20), and a comic (₹20). Can you buy all three?",
+            "image": { "icon": "list", "alt": "A list of three items with prices, beside fifty rupees" },
             "options": [
-              {
-                "icon": "check",
-                "label": "Yes"
-              },
-              {
-                "icon": "cross",
-                "label": "No"
-              }
+              { "icon": "cross", "label": "No — the total is ₹60, which is more than your ₹50" },
+              { "icon": "check", "label": "Yes, exactly enough" }
             ],
             "correctIndex": 0,
-            "hint": "20 plus 20 is 40. You have 50."
+            "hint": "Add all three prices before comparing to your money."
           },
           {
             "id": "q3",
-            "prompt": "You have ₹50 and spend ₹40. How much is left?",
-            "image": {
-              "icon": "coin",
-              "alt": "Coins on a table"
-            },
+            "prompt": "You wrote a budget but did not follow it, and ran out of money before the month ended. What went wrong?",
+            "image": { "icon": "warning", "alt": "A written budget sheet beside an empty wallet" },
             "options": [
-              {
-                "icon": "coin",
-                "label": "₹10"
-              },
-              {
-                "icon": "coin",
-                "label": "₹90"
-              },
-              {
-                "icon": "coin",
-                "label": "₹0"
-              }
+              { "icon": "warning", "label": "The plan was not followed — writing it is not enough, you must stick to it" },
+              { "icon": "cross", "label": "Budgets never actually help" },
+              { "icon": "list", "label": "You should have written a longer list" }
             ],
             "correctIndex": 0,
-            "hint": "Take 40 away from 50."
+            "hint": "A budget only works if the spending matches the plan."
           }
         ]
       }
@@ -124,22 +74,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
         "durationLabel": "4 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "A budget has two sides. Money in, and money out.",
@@ -148,78 +86,45 @@
         "Income minus expenses is what you have left.",
         "If the answer is below zero, your plan does not work. Change it before you spend."
       ],
-      "keyWords": [
-        "income",
-        "expense",
-        "balance",
-        "monthly budget"
-      ],
+      "keyWords": ["income", "expense", "balance", "monthly budget"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "Pocket money of ₹300 a month is called what?",
-            "image": {
-              "icon": "handcoin",
-              "alt": "A hand giving money to another hand"
-            },
+            "prompt": "You get ₹300 pocket money and earn ₹50 more helping a neighbour. Your expenses are ₹280. What is left?",
+            "image": { "icon": "handcoin", "alt": "Two sources of income beside a list of expenses" },
             "options": [
-              {
-                "icon": "handcoin",
-                "label": "Income"
-              },
-              {
-                "icon": "shop",
-                "label": "Expense"
-              }
+              { "icon": "coin", "label": "₹70" },
+              { "icon": "coin", "label": "₹20" },
+              { "icon": "coin", "label": "₹630" }
             ],
             "correctIndex": 0,
-            "hint": "Income is money coming in."
+            "hint": "Add both sources of income first, then subtract expenses."
           },
           {
             "id": "q2",
-            "prompt": "Income ₹300. Expenses ₹250. What is left?",
-            "image": {
-              "icon": "list",
-              "alt": "A budget sheet with two columns"
-            },
+            "prompt": "Income is ₹300. Expenses are ₹340. What must change for the budget to work?",
+            "image": { "icon": "warning", "alt": "A budget sheet showing expenses higher than income" },
             "options": [
-              {
-                "icon": "coin",
-                "label": "₹50"
-              },
-              {
-                "icon": "coin",
-                "label": "₹550"
-              },
-              {
-                "icon": "coin",
-                "label": "₹0"
-              }
+              { "icon": "cross", "label": "Expenses must drop by at least ₹40, or income must rise by ₹40" },
+              { "icon": "check", "label": "Nothing, ₹40 short is fine" },
+              { "icon": "coin", "label": "Income must double" }
             ],
             "correctIndex": 0,
-            "hint": "Take 250 away from 300."
+            "hint": "Find exactly how far below zero the plan is before deciding the fix."
           },
           {
             "id": "q3",
-            "prompt": "Income ₹300. Expenses ₹350. What must you do?",
-            "image": {
-              "icon": "warning",
-              "alt": "A warning sign on a budget sheet"
-            },
+            "prompt": "Your budget says income ₹300, expenses ₹250, so ₹50 should be left. But at month's end you have ₹0. What is the most likely explanation?",
+            "image": { "icon": "question", "alt": "A budget sheet that does not match an empty wallet" },
             "options": [
-              {
-                "icon": "cross",
-                "label": "Remove ₹50 of expenses"
-              },
-              {
-                "icon": "check",
-                "label": "Nothing, the plan is fine"
-              }
+              { "icon": "list", "label": "There were expenses you did not write down in the budget" },
+              { "icon": "question", "label": "Money disappears on its own sometimes" },
+              { "icon": "warning", "label": "The budget was too generous" }
             ],
             "correctIndex": 0,
-            "hint": "You cannot spend money you do not have."
+            "hint": "If the maths says ₹50 but reality says ₹0, something in the plan is missing."
           }
         ]
       }
@@ -231,22 +136,10 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
         "durationLabel": "5 minutes",
         "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
+          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
+          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
         ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
+        "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
         "The 50-30-20 plan splits income into three parts.",
@@ -255,83 +148,45 @@
         "Track what you actually spend for one month. Compare it to your plan.",
         "Adjust the plan to fit your life. The split is a guide, not a rule."
       ],
-      "keyWords": [
-        "50-30-20",
-        "tracking",
-        "income",
-        "allocation",
-        "review"
-      ],
+      "keyWords": ["50-30-20", "tracking", "income", "allocation", "review"],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
-            "prompt": "In the 50-30-20 plan, what gets 20 percent?",
-            "image": {
-              "icon": "chart",
-              "alt": "A circle split into three parts"
-            },
+            "prompt": "Using the 50-30-20 plan, how much of a ₹1500 monthly income goes to wants?",
+            "image": { "icon": "chart", "alt": "A circle split into three parts, with fifteen hundred rupees" },
             "options": [
-              {
-                "icon": "food",
-                "label": "Needs"
-              },
-              {
-                "icon": "piggy",
-                "label": "Savings"
-              },
-              {
-                "icon": "toy",
-                "label": "Wants"
-              }
+              { "icon": "coin", "label": "₹450" },
+              { "icon": "coin", "label": "₹750" },
+              { "icon": "coin", "label": "₹300" }
             ],
-            "correctIndex": 1,
-            "hint": "The smallest part is for the future."
+            "correctIndex": 0,
+            "hint": "Wants get 30 percent. Find 30 percent of 1500."
           },
           {
             "id": "q2",
-            "prompt": "Income is ₹1000. How much goes to needs?",
-            "image": {
-              "icon": "chart",
-              "alt": "A budget split diagram"
-            },
+            "prompt": "Your 50-30-20 plan says ₹200 should go to savings out of ₹1000. After tracking a real month, you only saved ₹80. What does the lesson suggest you should now do?",
+            "image": { "icon": "list", "alt": "A tracking sheet showing a gap between plan and reality" },
             "options": [
-              {
-                "icon": "coin",
-                "label": "₹500"
-              },
-              {
-                "icon": "coin",
-                "label": "₹300"
-              },
-              {
-                "icon": "coin",
-                "label": "₹200"
-              }
+              { "icon": "question", "label": "Compare where the extra ₹120 actually went, and adjust either spending or the plan" },
+              { "icon": "cross", "label": "Ignore it, tracking does not matter" },
+              { "icon": "toy", "label": "Increase the wants percentage instead" }
             ],
             "correctIndex": 0,
-            "hint": "Needs take half of the income."
+            "hint": "Tracking exists to catch exactly this kind of gap between plan and reality."
           },
           {
             "id": "q3",
-            "prompt": "Why should you track spending for a month?",
-            "image": {
-              "icon": "list",
-              "alt": "A notebook with daily amounts written down"
-            },
+            "prompt": "Someone with very high rent needs to spend 65% on needs, not 50%. According to the lesson, what should they do?",
+            "image": { "icon": "house", "alt": "A budget split diagram with the needs slice enlarged" },
             "options": [
-              {
-                "icon": "question",
-                "label": "To see where money really goes"
-              },
-              {
-                "icon": "gift",
-                "label": "To get a prize"
-              }
+              { "icon": "chart", "label": "Adjust the percentages to fit their real life — the split is a guide, not a fixed rule" },
+              { "icon": "cross", "label": "They are doing something wrong and must fit exactly 50%" },
+              { "icon": "house", "label": "They should stop paying rent" }
             ],
             "correctIndex": 0,
-            "hint": "A plan only works if it matches real life."
+            "hint": "The lesson says the numbers are a starting guide, not a law."
           }
         ]
       }

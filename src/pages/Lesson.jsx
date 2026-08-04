@@ -8,14 +8,16 @@ import Celebration from '@/components/Celebration.jsx'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
+import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { getLevel, LEGACY_TIER_IDS } from '@/config/site.js'
 import { getModule, getNeighbours, getDictionaryEntriesForModule } from '@content/index.js'
 
 export default function Lesson() {
   const { levelId, moduleId } = useParams()
+  const { lang, isHindi, t } = useLanguage()
   const legacyId = LEGACY_TIER_IDS[levelId]
   const level = getLevel(levelId)
-  const module = level ? getModule(levelId, moduleId) : null
+  const module = level ? getModule(levelId, moduleId, lang) : null
 
   const { settings, setSetting, markComplete, isCompleted, isUnlocked } = useProgress()
   const [currentTime, setCurrentTime] = useState(0)
@@ -30,7 +32,7 @@ export default function Lesson() {
   if (legacyId) return <Navigate to={`/path/${legacyId}/lesson/${moduleId}`} replace />
   if (!level || !module) return <Navigate to="/" replace />
 
-  const { previous, next } = getNeighbours(levelId, moduleId)
+  const { previous, next } = getNeighbours(levelId, moduleId, lang)
   const completed = isCompleted(levelId, moduleId)
   const words = getDictionaryEntriesForModule(moduleId)
 
@@ -98,6 +100,15 @@ export default function Lesson() {
           )}
         </div>
       </div>
+
+      {/* Said plainly, per lesson, rather than a blanket claim on the home
+          page: this lesson specifically has no Hindi text yet, so what
+          follows is English even though the interface around it is not. */}
+      {isHindi && !module.translated && (
+        <p className="rounded-2xl bg-sun-100 px-5 py-3 text-base font-bold text-sun-600">
+          {t('lesson.notTranslated')}
+        </p>
+      )}
 
       {/* ------------------------------------------- video + transcript ---- */}
       {/* min-w-0: grid children default to min-width:auto, which stops them

@@ -59,29 +59,88 @@ export function signClipCoverage() {
   return { done, total, complete: done === total }
 }
 
-/** Every module, in teaching order, with the content for one level merged in. */
-export function getModulesForLevel(levelId) {
-  return modules
-    .filter((m) => Boolean(m.levels[levelId]))
-    .map((m, index) => ({
-      id: m.id,
-      order: m.order,
-      index,
-      icon: m.icon,
-      accent: m.accent,
-      moduleTitle: m.title,
-      shortTitle: m.shortTitle,
-      ...m.levels[levelId],
-    }))
+/**
+ * A module JSON carries its English text as plain fields and, where a lesson
+ * has been translated, a sibling `"hi"` object holding only the fields that
+ * need a second language — video, icon names, ids and correctIndex are the
+ * same in every language, so they are never duplicated.
+ *
+ * Missing per-field, exactly like the UI strings in i18n/strings.js: a
+ * translated title with an untranslated summary shows the Hindi title and the
+ * English summary, never a blank. A lesson with no "hi" object at all simply
+ * renders in English under a Hindi interface — see `hasTranslation` below,
+ * which is how the reader is told that plainly instead of silently.
+ */
+function localizeLevelBlock(block, lang) {
+  const hi = lang === 'hi' ? block?.hi : null
+  if (!hi) return block
+
+  const questions = block.quiz?.questions?.map((q, i) => {
+    const hq = hi.quiz?.questions?.[i]
+    if (!hq) return q
+    return {
+      ...q,
+      prompt: hq.prompt ?? q.prompt,
+      hint: hq.hint ?? q.hint,
+      image: q.image ? { ...q.image, alt: hq.image?.alt ?? q.image.alt } : q.image,
+      options: q.options.map((o, oi) => ({ ...o, label: hq.options?.[oi]?.label ?? o.label })),
+    }
+  })
+
+  return {
+    ...block,
+    title: hi.title ?? block.title,
+    summary: hi.summary ?? block.summary,
+    keyWords: hi.keyWords ?? block.keyWords,
+    quiz: block.quiz
+      ? {
+          ...block.quiz,
+          title: hi.quiz?.title ?? block.quiz.title,
+          questions: questions ?? block.quiz.questions,
+        }
+      : block.quiz,
+  }
 }
 
-export function getModule(levelId, moduleId) {
-  return getModulesForLevel(levelId).find((m) => m.id === moduleId) || null
+/** A module's own title/shortTitle (used outside any one level — the home
+ * page grid, the teacher's coverage table), localized the same way. */
+export function moduleMeta(m, lang) {
+  const hi = lang === 'hi' ? m.translations?.hi : null
+  return { title: hi?.title ?? m.title, shortTitle: hi?.shortTitle ?? m.shortTitle }
+}
+
+/** Whether this module has any Hindi text at all for this level. */
+export function hasTranslation(m, levelId) {
+  return Boolean(m.levels[levelId]?.hi)
+}
+
+/** Every module, in teaching order, with the content for one level merged in. */
+export function getModulesForLevel(levelId, lang = 'en') {
+  return modules
+    .filter((m) => Boolean(m.levels[levelId]))
+    .map((m, index) => {
+      const meta = moduleMeta(m, lang)
+      return {
+        id: m.id,
+        order: m.order,
+        index,
+        icon: m.icon,
+        accent: m.accent,
+        moduleTitle: meta.title,
+        shortTitle: meta.shortTitle,
+        translated: hasTranslation(m, levelId),
+        ...localizeLevelBlock(m.levels[levelId], lang),
+      }
+    })
+}
+
+export function getModule(levelId, moduleId, lang = 'en') {
+  return getModulesForLevel(levelId, lang).find((m) => m.id === moduleId) || null
 }
 
 /** The module before and after this one, for lesson-to-lesson navigation. */
-export function getNeighbours(levelId, moduleId) {
-  const list = getModulesForLevel(levelId)
+export function getNeighbours(levelId, moduleId, lang = 'en') {
+  const list = getModulesForLevel(levelId, lang)
   const i = list.findIndex((m) => m.id === moduleId)
   if (i === -1) return { previous: null, next: null }
   return {
