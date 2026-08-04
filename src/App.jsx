@@ -4,6 +4,7 @@ import { ProgressProvider } from '@/hooks/useProgress.jsx'
 import ErrorBoundary from '@/components/ErrorBoundary.jsx'
 import Layout from '@/components/Layout.jsx'
 import Home from '@/pages/Home.jsx'
+import Lessons from '@/pages/Lessons.jsx'
 import LearningPath from '@/pages/LearningPath.jsx'
 import Lesson from '@/pages/Lesson.jsx'
 import Dictionary from '@/pages/Dictionary.jsx'
@@ -21,6 +22,7 @@ export default function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
+              <Route path="/lessons" element={<Lessons />} />
               <Route path="/path/:levelId" element={<LearningPath />} />
               <Route path="/path/:levelId/lesson/:moduleId" element={<Lesson />} />
               <Route path="/dictionary" element={<Dictionary />} />

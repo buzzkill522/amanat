@@ -22,6 +22,7 @@ export const DEFAULT_LANGUAGE = 'en'
 const en = {
   // ---------------------------------------------------------------- chrome
   'nav.home': 'Home',
+  'nav.lessons': 'Lessons',
   'nav.dictionary': 'Dictionary',
   'nav.teachers': 'Teachers',
   'nav.access': 'Access',
@@ -107,6 +108,17 @@ const en = {
   'home.topics.lead':
     'The same topic at each level, from coins in a hand to compound interest and what you can claim.',
 
+  // ------------------------------------------------------------ lessons page
+  'lessons.title': 'Lessons',
+  'lessons.eyebrow': 'The whole course',
+  'lessons.heading': 'Every lesson, at your level',
+  'lessons.lead':
+    'The same eleven topics are written three times over, once at each level of difficulty. Pick the level that fits, and work down the list.',
+  'lessons.levels.heading': 'Choose a level',
+  'lessons.levels.lead': 'Start at 1 if you are not sure. You can move up or down any time.',
+  'lessons.topics.heading': 'The {count} topics',
+  'lessons.topics.lead': 'Every level covers all of these, in this order.',
+
   // ------------------------------------------------------------ resume card
   'home.resume.eyebrow': 'Welcome back',
   'home.resume.heading': 'Carry on where you stopped',
@@ -175,6 +187,7 @@ const en = {
 const hi = {
   // ---------------------------------------------------------------- chrome
   'nav.home': 'होम',
+  'nav.lessons': 'पाठ',
   'nav.dictionary': 'शब्दकोश',
   'nav.teachers': 'शिक्षक',
   'nav.access': 'सुलभता',
@@ -260,6 +273,17 @@ const hi = {
   'home.topics.heading': '{count} विषय, तीन-तीन बार लिखे गए',
   'home.topics.lead':
     'हर स्तर पर वही विषय — हाथ में रखे सिक्कों से लेकर चक्रवृद्धि ब्याज और आपके अधिकारों तक।',
+
+  // ------------------------------------------------------------ lessons page
+  'lessons.title': 'पाठ',
+  'lessons.eyebrow': 'पूरा पाठ्यक्रम',
+  'lessons.heading': 'हर पाठ, आपके स्तर पर',
+  'lessons.lead':
+    'वही ग्यारह विषय तीन बार लिखे गए हैं, हर कठिनाई स्तर के लिए एक बार। जो स्तर ठीक लगे उसे चुनिए, और सूची के क्रम से आगे बढ़िए।',
+  'lessons.levels.heading': 'एक स्तर चुनिए',
+  'lessons.levels.lead': 'पक्का न हो तो स्तर 1 से शुरू कीजिए। आप कभी भी ऊपर या नीचे जा सकते हैं।',
+  'lessons.topics.heading': '{count} विषय',
+  'lessons.topics.lead': 'हर स्तर इन सभी को इसी क्रम में पढ़ाता है।',
 
   // ------------------------------------------------------------ resume card
   'home.resume.eyebrow': 'वापस स्वागत है',

@@ -1,38 +1,48 @@
 import { useEffect, useRef } from 'react'
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { BookOpen, Home, Info, Map, Users } from 'lucide-react'
+import { Link, Outlet, useLocation } from 'react-router-dom'
+import { BookOpen, GraduationCap, Home, Info, Map, Users } from 'lucide-react'
 import { site } from '@/config/site.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import LanguageToggle from '@/components/LanguageToggle.jsx'
 import { useT } from '@/i18n/LanguageProvider.jsx'
 
+// `alsoMatch` keeps a tab lit while the reader is deeper inside that section.
+// Lessons themselves live under /path/:levelId, so without it the Lessons tab
+// would go dark the moment you opened a lesson — exactly when you most want to
+// know where you are.
 const NAV = [
   { to: '/', labelKey: 'nav.home', icon: Home, end: true },
+  { to: '/lessons', labelKey: 'nav.lessons', icon: GraduationCap, alsoMatch: '/path' },
   { to: '/dictionary', labelKey: 'nav.dictionary', icon: BookOpen },
   { to: '/teachers', labelKey: 'nav.teachers', icon: Users },
   { to: '/accessibility', labelKey: 'nav.access', icon: Info },
 ]
 
-function NavItem({ to, label, icon: Icon, end, currentLabel }) {
+// A plain Link rather than NavLink, because NavLink insists on deriving
+// aria-current from its own path alone: on /path/level-1/lesson/x it would
+// strip the attribute even though the Lessons tab is the section the reader
+// is in. That would leave the tab visibly highlighted but silent to a screen
+// reader — the exact split this site is built to avoid. Owning the active
+// calculation keeps colour, text and aria-current saying the same thing.
+function NavItem({ to, label, icon: Icon, end, currentLabel, alsoMatch }) {
+  const { pathname } = useLocation()
+  const onOwnPath = end ? pathname === to : pathname === to || pathname.startsWith(`${to}/`)
+  const inSection = alsoMatch ? pathname.startsWith(alsoMatch) : false
+  const active = onOwnPath || inSection
+
   return (
-    <NavLink
+    <Link
       to={to}
-      end={end}
-      className={({ isActive }) =>
-        `tap-target flex-col gap-0.5 rounded-xl px-2 py-2 text-xs font-extrabold transition sm:flex-row sm:gap-2 sm:px-3 sm:text-sm ${
-          isActive ? 'bg-ink text-surface' : 'text-ink hover:bg-brand-100'
-        }`
-      }
+      aria-current={active ? 'page' : undefined}
+      className={`tap-target flex-col gap-0.5 rounded-xl px-2 py-2 text-xs font-extrabold transition sm:flex-row sm:gap-2 sm:px-3 sm:text-sm ${
+        active ? 'bg-ink text-surface' : 'text-ink hover:bg-brand-100'
+      }`}
     >
-      {({ isActive }) => (
-        <>
-          <Icon className="h-6 w-6" aria-hidden="true" />
-          <span>{label}</span>
-          {/* Current page is marked in text as well as by colour. */}
-          {isActive && <span className="sr-only">{currentLabel}</span>}
-        </>
-      )}
-    </NavLink>
+      <Icon className="h-6 w-6" aria-hidden="true" />
+      <span>{label}</span>
+      {/* Current page is marked in text as well as by colour. */}
+      {active && <span className="sr-only">{currentLabel}</span>}
+    </Link>
   )
 }
 
