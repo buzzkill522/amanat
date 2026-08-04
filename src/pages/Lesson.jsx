@@ -65,6 +65,20 @@ export default function Lesson() {
     setCelebrating(true)
   }
 
+  // The quiz itself is what unlocks the next lesson — finishing it calls
+  // markComplete directly, so there is no separate button standing between
+  // "I answered every question" and "the next lesson is open". A module with
+  // no quiz questions (none exist today, but nothing enforces that) still has
+  // the manual button below as a fallback, since nothing else would ever mark
+  // it done otherwise.
+  function handleQuizFinish(result) {
+    setQuizResult(result)
+    if (!completed) {
+      markComplete(levelId, moduleId, result)
+      setCelebrating(true)
+    }
+  }
+
   return (
     <div className="space-y-10">
       <Celebration
@@ -191,36 +205,58 @@ export default function Lesson() {
       <VisualQuiz
         title={module.quiz.title}
         questions={module.quiz.questions}
-        onFinish={setQuizResult}
+        onFinish={handleQuizFinish}
       />
 
       {/* --------------------------------------------------------- complete */}
-      <section className="card border-4 border-grow-500 p-6 text-center" aria-labelledby="complete-heading">
-        <h2 id="complete-heading" className="text-2xl font-extrabold text-ink">
-          Finished this lesson?
-        </h2>
-        <p className="mt-2 text-lg text-muted">
-          {completed
-            ? 'You have already finished this lesson. You can watch it again any time.'
-            : 'Press the button when you are done. The next lesson will open.'}
-        </p>
-
-        <button
-          type="button"
-          onClick={handleComplete}
-          disabled={completed}
-          className="btn-success mx-auto mt-5 text-lg"
-        >
-          <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
-          {completed ? 'Already complete' : 'Mark as complete'}
-        </button>
-
-        {quizResult && (
-          <p className="mt-3 text-base text-muted">
-            Quiz: {quizResult.score} of {quizResult.total} right on the first try.
+      {module.quiz.questions?.length > 0 ? (
+        // The quiz already marked this done — this is a confirmation, not a
+        // gate, and only appears once there is something to confirm.
+        completed && (
+          <section
+            className="card border-4 border-grow-500 p-6 text-center"
+            aria-labelledby="complete-heading"
+          >
+            <h2
+              id="complete-heading"
+              className="flex items-center justify-center gap-2 text-2xl font-extrabold text-ink"
+            >
+              <CheckCircle2 className="h-7 w-7 text-grow-600" aria-hidden="true" />
+              Lesson complete
+            </h2>
+            <p className="mt-2 text-lg text-muted">
+              Finishing the quiz opened the next lesson. You can watch this one again any time.
+            </p>
+            {quizResult && (
+              <p className="mt-3 text-base text-muted">
+                Quiz: {quizResult.score} of {quizResult.total} right on the first try.
+              </p>
+            )}
+          </section>
+        )
+      ) : (
+        // Fallback for a module with no quiz questions. None exist today, but
+        // if one ever did, nothing else would ever mark it complete.
+        <section className="card border-4 border-grow-500 p-6 text-center" aria-labelledby="complete-heading">
+          <h2 id="complete-heading" className="text-2xl font-extrabold text-ink">
+            Finished this lesson?
+          </h2>
+          <p className="mt-2 text-lg text-muted">
+            {completed
+              ? 'You have already finished this lesson. You can watch it again any time.'
+              : 'Press the button when you are done. The next lesson will open.'}
           </p>
-        )}
-      </section>
+          <button
+            type="button"
+            onClick={handleComplete}
+            disabled={completed}
+            className="btn-success mx-auto mt-5 text-lg"
+          >
+            <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
+            {completed ? 'Already complete' : 'Mark as complete'}
+          </button>
+        </section>
+      )}
 
       {/* --------------------------------------------------------- nav ---- */}
       <nav aria-label="Move between lessons" className="flex flex-wrap justify-between gap-4">

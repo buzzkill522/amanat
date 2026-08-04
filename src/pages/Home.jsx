@@ -112,6 +112,15 @@ export default function Home() {
       {/* The cover carries the <h1>, so this page runs at <h2> from here. */}
       <CoverHero />
 
+      {/* A slow gradient across the whole body of the page: paper at the top,
+          easing toward brand-100 by the time you reach the closing band —
+          one step up the existing warm-stone ramp, not a new colour. Kept
+          deliberately subtle: brand-200, the next step after that, drops
+          muted text below the 4.5:1 floor, so this stops one tier short of
+          costing anything. Pure background-image on a tall wrapper, not a
+          scroll listener — the same visual read, with no JS and nothing to
+          break under prefers-reduced-motion because nothing here moves. */}
+      <div className="space-y-24 bg-gradient-to-b from-paper to-brand-100 sm:space-y-32">
       {/* ------------------------------------------------------------ numbers */}
       {/* Four facts, no container. A single hairline underneath is enough to
           close the band off. */}
@@ -394,6 +403,7 @@ export default function Home() {
           ))}
         </ul>
       </section>
+      </div>
 
       {/* ------------------------------------------------------- closing ask */}
       <section
