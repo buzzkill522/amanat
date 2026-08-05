@@ -504,7 +504,7 @@ export default function Home() {
         // than leaving a strip of paper between two dark blocks. It needs the
         // `!` because `space-y-*` on the parent sets margin-bottom:0 on every
         // child at a higher specificity, which silently eats a plain -mb-8.
-        className="relative !-mb-8 mx-[calc(50%-50vw)] overflow-hidden bg-brand-900 px-6 py-20 text-center sm:py-24"
+        className="relative !-mb-8 mx-[calc(50%-50vw)] overflow-hidden bg-stage-deep px-6 py-20 text-center sm:py-24"
       >
         {/* A single warm glow off one corner, so the dark band has a light
             source rather than reading as a flat rectangle. Faint enough that
@@ -514,15 +514,19 @@ export default function Home() {
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              'radial-gradient(40rem 22rem at 85% -10%, rgba(196,100,58,0.22), transparent 65%), radial-gradient(32rem 20rem at 0% 110%, rgba(138,100,19,0.14), transparent 65%)',
+              // clay-400 and sun-500, through the palette rather than copied as
+              // rgba. The band underneath is `stage`, which is dark in both
+              // themes, so the glow needs no per-theme adjustment — but saying
+              // it in tokens means a palette change reaches it.
+              'radial-gradient(40rem 22rem at 85% -10%, rgb(var(--c-clay-400) / 0.22), transparent 65%), radial-gradient(32rem 20rem at 0% 110%, rgb(var(--c-sun-500) / 0.14), transparent 65%)',
           }}
         />
 
         <Reveal className="relative mx-auto max-w-2xl space-y-6">
-          <h2 id="cta-heading" className="text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 id="cta-heading" className="text-3xl font-extrabold text-stage-ink sm:text-4xl">
             {t('home.cta.heading')}
           </h2>
-          <p className="text-lg text-brand-100">{t('home.cta.text')}</p>
+          <p className="text-lg text-stage-ink">{t('home.cta.text')}</p>
           <p>
             <a
               href="#levels"
@@ -535,7 +539,7 @@ export default function Home() {
               />
             </a>
           </p>
-          <p className="text-sm text-brand-200">{t('home.free')}</p>
+          <p className="text-sm text-stage-muted">{t('home.free')}</p>
         </Reveal>
       </section>
     </div>

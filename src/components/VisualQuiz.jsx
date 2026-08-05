@@ -85,7 +85,7 @@ export default function VisualQuiz({
         <div className={`mx-auto mb-4 w-fit ${reduceMotion ? '' : 'animate-bounceIn'}`}>
           <ConceptIcon
             name={allFirstTry ? 'trophy' : 'star'}
-            className="h-20 w-20 text-grow-500"
+            className="h-20 w-20 text-grow-600"
             title={allFirstTry ? 'A trophy' : 'A star'}
           />
         </div>
@@ -161,10 +161,10 @@ export default function VisualQuiz({
             const chosenWrong = chosen && i !== question.correctIndex
             const settled = isCorrect
 
-            let tone = 'border-brand-200 bg-white hover:border-brand-500 hover:bg-brand-50'
+            let tone = 'border-brand-200 bg-surface hover:border-brand-500 hover:bg-brand-50'
             if (chosenRight) tone = 'border-grow-500 bg-grow-100'
             else if (chosenWrong) tone = 'border-alert-500 bg-alert-100'
-            else if (settled) tone = 'border-brand-100 bg-white opacity-60'
+            else if (settled) tone = 'border-brand-100 bg-surface opacity-60'
 
             let motion = ''
             if (!reduceMotion && chosenRight) motion = 'animate-bounceIn'
@@ -219,7 +219,7 @@ export default function VisualQuiz({
                 <p className="text-lg font-bold text-ink">Not this one. Try again.</p>
                 {question.hint && (
                   <p className="mt-1 flex items-start gap-2 text-base text-ink">
-                    <Lightbulb className="mt-1 h-5 w-5 shrink-0 text-sun-500" aria-hidden="true" />
+                    <Lightbulb className="mt-1 h-5 w-5 shrink-0 text-sun-600" aria-hidden="true" />
                     <span>{question.hint}</span>
                   </p>
                 )}

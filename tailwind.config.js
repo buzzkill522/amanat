@@ -1,86 +1,81 @@
 /** @type {import('tailwindcss').Config} */
 
-// Every colour pairing used for text in this palette has been checked against
-// WCAG 2.2 AA. The measured ratio sits in a comment beside each colour below.
+import plugin from 'tailwindcss/plugin'
+import { themes, flatten, varName, channels } from './palette.js'
+
+// ---------------------------------------------------------------------------
+// The colours themselves live in palette.js, both themes together, with the
+// reasoning for each. This file turns them into two things:
+//
+//   1. Colour utilities that point at CSS custom properties rather than at
+//      hexes — so `bg-surface` resolves through `--c-surface` and means the
+//      right thing in whichever theme is active. Components never say which
+//      theme they are in, because they cannot know; a teacher can switch it
+//      under them at any moment.
+//
+//   2. The custom properties themselves, for both themes, emitted into base.
+//
+// One consequence worth stating: the utility class list is the same size as it
+// was before dark mode existed. There is no `dark:` variant of anything, so the
+// CSS does not double and no component can be half-converted — the failure
+// mode where one forgotten panel stays beige on a dark page is not reachable.
+//
+// The palette is warm all the way down and stays that way in both themes:
+// माटी terracotta, हल्दी turmeric, गेंदा marigold, मेहंदी henna, जामुन, सिंदूर,
+// on unbleached khadi paper. There is no blue in it, and no grey — the neutrals
+// are browns. The dark theme is a dark brown page, not a slate one.
+//
+// Every ratio is measured rather than estimated, in both themes, by
+// `npm run check:a11y`. Text pairings clear 4.5:1 (AA 1.4.3) and icon-only
+// pairings clear 3:1 (AA 1.4.11).
+//
+// What is allowed to collide, and why: sun/alert and grow/berry stay close
+// under deuteranopia. Neither pair ever distinguishes one meaning from another
+// — every state in this UI is carried by an icon and a word as well
+// (WCAG 1.4.1). The pair that does carry meaning, grow against alert — right
+// against wrong in the quiz — is held to a floor by the audit, in both themes.
+// ---------------------------------------------------------------------------
+
+/** Mirror the palette's shape, but with every leaf pointing at its variable. */
+function toVarRefs(theme) {
+  const out = {}
+  for (const [family, value] of Object.entries(theme)) {
+    if (typeof value === 'string') {
+      out[family] = `rgb(var(${varName(family)}) / <alpha-value>)`
+      continue
+    }
+    out[family] = {}
+    for (const step of Object.keys(value)) {
+      const token = step === 'DEFAULT' ? family : `${family}.${step}`
+      out[family][step] = `rgb(var(${varName(token)}) / <alpha-value>)`
+    }
+  }
+  return out
+}
+
+/**
+ * { "--c-brand-600": "74 66 55", ..., colorScheme: "dark" }
+ *
+ * `color-scheme` is not decoration. It is what tells the browser to paint its
+ * own furniture — scrollbars, the video element's default controls, checkbox
+ * and radio chrome, form autofill, the space beyond an overscroll — to match.
+ * Without it a dark page keeps a bright white scrollbar down its edge and
+ * light native controls inside dark panels.
+ */
+function toVarBlock(theme, scheme) {
+  return {
+    ...Object.fromEntries(
+      Object.entries(flatten(theme)).map(([token, hex]) => [varName(token), channels(hex)]),
+    ),
+    colorScheme: scheme,
+  }
+}
+
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
-      // The palette is drawn from pigments and dyes rather than from a generic
-      // UI ramp, and it is warm all the way down: माटी terracotta, हल्दी
-      // turmeric, गेंदा marigold, मेहंदी henna, जामुन, सिंदूर, on unbleached
-      // khadi paper. There is no blue in it, and no grey — the neutrals are
-      // browns.
-      //
-      // Every ratio below was measured with a WCAG contrast function, not
-      // estimated. Text pairings clear 4.5:1 (AA 1.4.3) and the icon-only
-      // pairings clear 3:1 (AA 1.4.11).
-      // ---------------------------------------------------------------------
-      // नील and हल्दी — indigo and turmeric, on unbleached khadi.
-      //
-      // The hues were not chosen for how they feel. Colour-psychology claims
-      // ("blue reads as trustworthy") are weakly evidenced and do not survive
-      // replication, so the palette was decided on three things that can be
-      // measured instead:
-      //
-      //   1. Contrast. Every ratio below is measured, not estimated.
-      //   2. Colour-vision deficiency. Around 1 man in 12 has some CVD, and
-      //      deuteranopia alone is ~5%. The previous all-warm palette put
-      //      terracotta, marigold and vermilion within dE 3.6–4.5 of each other
-      //      under deuteranopia — three different meanings, one colour. Blue
-      //      against orange is the axis that survives every CVD type, which is
-      //      also, conveniently, indigo dye against turmeric.
-      //   3. The signing panel. Guidance on sign-language video asks for a
-      //      solid dark ground behind the signer; brand-800/900 is that ground.
-      //
-      // The warmth lives in the surfaces and the accents rather than the
-      // primary: khadi paper, brown-black ink, marigold, terracotta.
-      //
-      // What still collides, and why it is allowed: sun/alert and grow/berry
-      // stay close under deuteranopia. Neither pair ever distinguishes one
-      // meaning from another — every state in this UI is carried by an icon
-      // and a word as well (WCAG 1.4.1). The pair that does carry meaning,
-      // grow against alert — right against wrong in the quiz — is separated by
-      // dE 30.7 at its worst, up from 8.0 before.
-      colors: {
-        // Page + surfaces — unbleached beige, and a near-white for cards
-        paper: '#f6f1e8', //  the page itself
-        surface: '#fffdf8', //  cards and panels, a half-step lighter
-        // Text
-        ink: '#1c1815', //  15.7:1 on paper — warm near-black, never grey-blue
-        muted: '#6b6155', //   5.4:1 on paper
-        // Primary is a warm stone ramp rather than a hue: in a neutral scheme
-        // the "brand colour" is the paper and the ink, and the one accent gets
-        // to be loud precisely because nothing else is.
-        brand: {
-          50: '#f3efe6',
-          100: '#e8e1d4',
-          200: '#d3c9b8', //  11.0:1 on brand-900
-          300: '#ab9f8c',
-          400: '#847868', //  decorative fills only
-          500: '#63594a', //   6.9:1 with white text
-          600: '#4a4237', //   9.9:1 with white text
-          700: '#372f27', //  13.1:1 with white, 11.7:1 on paper
-          800: '#26201a', //  16.1:1 with white
-          900: '#1a1613', //  18.0:1 with white — the dark panels
-        },
-        // The single accent. Rust, and the only saturated colour on a normal
-        // page: eyebrow labels, icons, the play control. Used sparingly on
-        // purpose — one loud colour in a quiet scheme reads as emphasis, and
-        // three read as noise.
-        clay: { 100: '#f8e7dc', 400: '#c4643a', 500: '#a8451c', 600: '#8a3818' }, // 5.9:1 with white, 7.0:1 on paper
-        // ------------------------------------------------------------------
-        // State colours. Muted to match, but not so far that they stop working
-        // — desaturating costs colour-blind separation, so these were tuned
-        // against a CVD simulation rather than picked by eye. grow against
-        // alert is right-against-wrong in the quiz and holds at dE 28 under the
-        // worst CVD type; the green is pulled to teal and the red pushed dark
-        // to buy that separation back.
-        grow: { 100: '#dcece5', 500: '#237a63', 600: '#1a5e4b' }, // 5.2:1 / 7.4:1 with white
-        sun: { 100: '#f8eccc', 500: '#8a6413', 600: '#6f4f0c' }, // 6.4:1 on sun-100
-        berry: { 100: '#f1e3ee', 500: '#71355f', 600: '#59284a' }, // 8.8:1 with white
-        alert: { 100: '#fbe3e2', 500: '#8a1018', 600: '#6d0c12' }, // 9.7:1 with white
-      },
+      colors: toVarRefs(themes.light),
       borderRadius: {
         xl: '1rem',
         '2xl': '1.5rem',
@@ -139,5 +134,32 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addBase }) => {
+      addBase({
+        // The light theme is the default, so it needs no attribute. A reader
+        // who has never touched the control, on a device with no preference,
+        // gets the page the site was designed in.
+        ':root': toVarBlock(themes.light, 'light'),
+
+        // Honoured before any JavaScript runs and without anybody choosing:
+        // a device set to dark opens dark. `:not([data-theme])` is what makes
+        // an explicit choice win over the system — once the reader has picked,
+        // the attribute is present and this rule stops applying.
+        //
+        // This is also the whole no-JavaScript story. The themes are CSS
+        // custom properties, so a reader with scripting off still gets the
+        // theme their device asks for; only the manual toggle needs JS.
+        '@media (prefers-color-scheme: dark)': {
+          ':root:not([data-theme])': toVarBlock(themes.dark, 'dark'),
+        },
+
+        '[data-theme="dark"]': toVarBlock(themes.dark, 'dark'),
+        // Spelled out rather than left to the default, so that switching back
+        // to light on a dark-set device actually returns to light instead of
+        // falling through to the media query above.
+        '[data-theme="light"]': toVarBlock(themes.light, 'light'),
+      })
+    }),
+  ],
 }

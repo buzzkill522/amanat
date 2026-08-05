@@ -30,7 +30,34 @@
      the check that guards this site. Faint keeps the measured numbers honest.
      -------------------------------------------------------------------------- */
 
-  /* Grain. Fractal noise, tiled, so the beige reads as paper rather than fill. */
+  /* The two texture layers are the only place the page paints a colour that is
+     not a palette token, so they get theme knobs of their own. Both are
+     deliberately faint; see the note above about keeping them under ~7% so the
+     contrast audit's numbers stay honest. */
+  :root {
+    --grain-filter: none;
+    /* The washes are barely perceptible over dark brown at the alpha that
+       suits beige, and a wash nobody can see is just bytes. Scaled rather than
+       re-specified so there is still one number per wash to reason about. */
+    --wash-strength: 1;
+  }
+
+  [data-theme='dark'] {
+    /* The noise is dark specks. On a dark page that is subtraction from
+       something already near the floor — invisible. Inverting makes them light
+       specks, which is what grain on a dark ground has to be. */
+    --grain-filter: invert(1);
+    --wash-strength: 2.4;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --grain-filter: invert(1);
+      --wash-strength: 2.4;
+    }
+  }
+
+  /* Grain. Fractal noise, tiled, so the page reads as paper rather than fill. */
   body::before {
     content: '';
     position: fixed;
@@ -38,12 +65,18 @@
     z-index: -2;
     pointer-events: none;
     opacity: 0.5;
+    filter: var(--grain-filter);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
     background-size: 160px 160px;
   }
 
   /* Warm washes. Fixed rather than scrolling, so the page feels lit from a
-     constant source instead of dragging a gradient down with it. */
+     constant source instead of dragging a gradient down with it.
+
+     These used to be three hardcoded rgba() values that happened to equal
+     clay-500, sun-500 and grow-500. They now say so, through the same custom
+     properties every utility class resolves through — so they follow the theme
+     without anyone maintaining a second copy of the palette down here. */
   body::after {
     content: '';
     position: fixed;
@@ -51,9 +84,21 @@
     z-index: -1;
     pointer-events: none;
     background-image:
-      radial-gradient(60rem 32rem at 50% -8%, rgba(168, 69, 28, 0.07), transparent 68%),
-      radial-gradient(45rem 28rem at 100% 12%, rgba(138, 100, 19, 0.055), transparent 70%),
-      radial-gradient(40rem 30rem at 0% 55%, rgba(35, 122, 99, 0.04), transparent 70%);
+      radial-gradient(
+        60rem 32rem at 50% -8%,
+        rgb(var(--c-clay-500) / calc(0.07 * var(--wash-strength))),
+        transparent 68%
+      ),
+      radial-gradient(
+        45rem 28rem at 100% 12%,
+        rgb(var(--c-sun-500) / calc(0.055 * var(--wash-strength))),
+        transparent 70%
+      ),
+      radial-gradient(
+        40rem 30rem at 0% 55%,
+        rgb(var(--c-grow-500) / calc(0.04 * var(--wash-strength))),
+        transparent 70%
+      );
   }
 
   /* Headings carry the display face; everything else stays in Mukta, which is
@@ -109,7 +154,7 @@
   }
 
   .btn-success {
-    @apply btn bg-grow-500 text-white hover:bg-grow-600;
+    @apply btn bg-grow-500 text-white hover:bg-grow-700;
   }
 
   .card {
@@ -129,7 +174,7 @@
 
   .skip-link {
     @apply absolute left-4 top-4 z-50 -translate-y-24 rounded-xl bg-brand-700 px-5 py-3
-           font-bold text-white transition-transform focus:translate-y-0;
+           font-bold text-surface transition-transform focus:translate-y-0;
   }
 }
 
@@ -138,6 +183,18 @@
   .sr-only-focusable:not(:focus):not(:focus-within) {
     @apply sr-only;
   }
+}
+
+/* ---------------------------------------------------------------------------
+   Set for one style flush while the theme changes, so the page swaps instead
+   of cross-fading. See the note in ThemeProvider for why that matters. Outside
+   @layer so it beats the utilities that set these transitions.
+   --------------------------------------------------------------------------- */
+[data-theme-switching],
+[data-theme-switching] *,
+[data-theme-switching] *::before,
+[data-theme-switching] *::after {
+  transition: none !important;
 }
 
 /* ---------------------------------------------------------------------------

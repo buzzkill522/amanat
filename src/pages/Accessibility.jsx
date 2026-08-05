@@ -27,9 +27,10 @@ const MET = [
     group: 'Contrast and text size',
     criteria: '1.4.3 Contrast (Minimum), 1.4.4 Resize Text, 1.4.10 Reflow, 1.4.12 Text Spacing',
     points: [
-      'Body text is #16202e on #fdfbf7, a contrast ratio of about 15:1. The minimum for AA is 4.5:1.',
-      'Muted text is #475467 on white, about 7.5:1.',
-      'Every button colour was picked to clear 4.5:1 against its own text.',
+      'The page comes in light and dark. You can switch at the top of any page, and the site starts in whichever one your device already asks for.',
+      'Body text is #1c1815 on #f6f1e8 in the light theme, a contrast ratio of about 15.7:1, and #f4efe5 on #16130f in the dark one, about 16.2:1. The minimum for AA is 4.5:1.',
+      'Muted text is about 5.4:1 in the light theme and 7.6:1 in the dark one.',
+      'Every button colour was picked to clear 4.5:1 against its own text, in both themes. 110 colour pairings are measured automatically, and a pairing that fails in either theme stops the site being published.',
       'Layout is built in relative units, so 200% browser zoom reflows instead of clipping. At 400% the page becomes a single column with no sideways scrolling.',
     ],
   },
@@ -38,7 +39,7 @@ const MET = [
     criteria: '2.1.1 Keyboard, 2.4.3 Focus Order, 2.4.7 Focus Visible, 2.4.11 Focus Not Obscured',
     points: [
       'Everything works from the keyboard alone. There is no mouse-only control and no keyboard trap.',
-      'A thick blue focus ring is always visible and is never removed.',
+      'A thick rust-coloured focus ring is always visible and is never removed. It clears 3:1 against the page in both themes.',
       'A "skip to the main part of the page" link is the first thing the keyboard reaches.',
       'When the page changes, focus moves to the top of the new page, because a single-page app does not do this on its own.',
       'Inside a quiz, focus moves to the next question heading when the child presses Next.',
@@ -122,7 +123,7 @@ export default function Accessibility() {
           <ul className="mt-4 space-y-3">
             {section.points.map((point, i) => (
               <li key={i} className="flex gap-3 text-lg leading-relaxed text-ink">
-                <Check className="mt-1 h-6 w-6 shrink-0 text-grow-500" aria-hidden="true" />
+                <Check className="mt-1 h-6 w-6 shrink-0 text-grow-600" aria-hidden="true" />
                 {point}
               </li>
             ))}
@@ -140,7 +141,7 @@ export default function Accessibility() {
         <ul className="mt-4 space-y-3">
           {KNOWN_GAPS.map((gap, i) => (
             <li key={i} className="flex gap-3 text-lg leading-relaxed text-ink">
-              <CircleDot className="mt-1 h-6 w-6 shrink-0 text-sun-500" aria-hidden="true" />
+              <CircleDot className="mt-1 h-6 w-6 shrink-0 text-sun-600" aria-hidden="true" />
               {gap}
             </li>
           ))}

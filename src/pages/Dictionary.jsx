@@ -41,7 +41,7 @@ export default function Dictionary() {
 
       {/* ------------------------------------------------------------ search */}
       <div className="card space-y-4 p-5">
-        <div className="flex items-center gap-3 rounded-2xl border-2 border-brand-200 bg-white px-4">
+        <div className="flex items-center gap-3 rounded-2xl border-2 border-brand-200 bg-surface px-4">
           <Search className="h-6 w-6 shrink-0 text-muted" aria-hidden="true" />
           <label htmlFor="dict-search" className="sr-only">
             Search for a money word

@@ -191,7 +191,7 @@ export default function Lesson() {
         {module.keyWords?.length > 0 && (
           <div className="mt-6 border-t-2 border-brand-100 pt-5">
             <h3 className="flex items-center gap-2 text-lg font-extrabold text-ink">
-              <BookOpen className="h-6 w-6 text-berry-500" aria-hidden="true" />
+              <BookOpen className="h-6 w-6 text-berry-600" aria-hidden="true" />
               New words in this lesson
             </h3>
             <ul className="mt-3 flex flex-wrap gap-2">

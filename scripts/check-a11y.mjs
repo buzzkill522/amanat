@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 // ---------------------------------------------------------------------------
 // Checks the palette against WCAG contrast and against colour-vision
-// deficiency.
+// deficiency — in every theme the site can be in.
 //
 //   npm run check:a11y
 //
-// The colours are read out of tailwind.config.js rather than copied here, so
-// this can never drift from what the site actually ships. Changing a hex and
-// forgetting to re-check is exactly the failure this exists to catch.
+// The colours are read out of palette.js rather than copied here, so this can
+// never drift from what the site actually ships. Changing a hex and forgetting
+// to re-check is exactly the failure this exists to catch.
+//
+// Every pairing below is measured against BOTH themes. That is deliberate and
+// it is the whole reason dark mode is allowed to exist in this project: a dark
+// theme that had not been through this gate would be a guess, and the light
+// one was not a guess. If a pairing is legible in one theme and not the other,
+// this fails — there is no "mostly accessible".
 //
 // Two separate things are graded, because they fail differently:
 //
@@ -24,21 +30,7 @@
 // Exits non-zero on any failure, so it can gate CI.
 // ---------------------------------------------------------------------------
 
-import { fileURLToPath, pathToFileURL } from 'node:url'
-import { dirname, join } from 'node:path'
-
-const root = join(dirname(fileURLToPath(import.meta.url)), '..')
-const config = (await import(pathToFileURL(join(root, 'tailwind.config.js')).href)).default
-const C = config.theme.extend.colors
-
-/** "brand.600" / "paper" / "#ffffff" -> hex */
-function hex(token) {
-  if (token.startsWith('#')) return token
-  const [family, step] = token.split('.')
-  const value = step ? C[family]?.[step] : C[family]
-  if (typeof value !== 'string') throw new Error(`No colour for "${token}" in tailwind.config.js`)
-  return value
-}
+import { themes, flatten } from '../palette.js'
 
 // --- colour maths ----------------------------------------------------------
 const toLin = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4)
@@ -83,20 +75,47 @@ const deltaE = (a, b, type) => {
 
 // --- what the site actually uses -------------------------------------------
 // Add a row here whenever a new colour pairing appears in a component.
+//
+// `surface` appears as a foreground on every fill. That is not a typo for
+// white: fills carry `text-surface` precisely so the label reflects with the
+// theme. Auditing it as a foreground is auditing what actually renders.
 const TEXT = [
+  // Body text on the three things it sits on.
   ['ink', 'paper'], ['ink', 'surface'], ['ink', 'brand.50'],
   ['muted', 'paper'], ['muted', 'surface'], ['muted', 'brand.50'],
-  ['#ffffff', 'brand.500'], ['#ffffff', 'brand.600'], ['#ffffff', 'brand.700'],
-  ['#ffffff', 'brand.800'], ['#ffffff', 'brand.900'],
-  ['brand.100', 'brand.900'], ['brand.200', 'brand.900'], ['brand.100', 'brand.800'],
-  ['brand.700', 'paper'], ['brand.700', 'surface'], ['brand.800', 'paper'],
-  ['surface', 'brand.900'],
+
+  // Labels on neutral fills — buttons, chips, the skip link.
+  ['surface', 'brand.500'], ['surface', 'brand.600'], ['surface', 'brand.700'],
+
+  // Neutral text on the page.
+  ['brand.600', 'paper'], ['brand.600', 'surface'],
+  ['brand.700', 'paper'], ['brand.700', 'surface'],
+  ['brand.800', 'paper'], ['brand.800', 'brand.100'],
+
+  // The dark bands, which stay dark in both themes.
+  ['stage.ink', 'stage'], ['stage.muted', 'stage'], ['stage.ink', 'stage.deep'],
+  ['stage.muted', 'stage.deep'],
+
+  // The accent. clay-500 is not here on purpose: it is the focus ring and the
+  // logo mark, never a background with text on it, so it is graded at 3:1
+  // below rather than given a text pairing it never has to satisfy.
   ['clay.600', 'paper'], ['clay.600', 'surface'], ['clay.600', 'brand.50'],
-  ['clay.600', 'clay.100'], ['#ffffff', 'clay.500'],
-  ['#ffffff', 'grow.500'], ['grow.600', 'grow.100'],
-  ['sun.600', 'sun.100'], ['sun.500', 'sun.100'],
-  ['berry.600', 'berry.100'], ['#ffffff', 'berry.500'],
-  ['alert.600', 'alert.100'], ['#ffffff', 'alert.500'],
+  ['clay.600', 'clay.100'],
+
+  // State colours: text step on its own tint, and on the page.
+  ['grow.600', 'grow.100'], ['grow.600', 'paper'], ['grow.600', 'surface'],
+  ['sun.600', 'sun.100'], ['sun.600', 'paper'], ['sun.600', 'surface'],
+  ['berry.600', 'berry.100'], ['berry.600', 'paper'], ['berry.600', 'surface'],
+  ['alert.600', 'alert.100'], ['alert.600', 'paper'], ['alert.600', 'surface'],
+
+  // Labels on the state fills, resting and pressed. White rather than
+  // `surface` because these fills deliberately do not reflect — see the note
+  // in palette.js. A white label on a fill that is dark in both themes is the
+  // one case where not reflecting is the correct answer.
+  ['#ffffff', 'grow.500'], ['#ffffff', 'grow.700'],
+  ['#ffffff', 'berry.500'], ['#ffffff', 'berry.700'],
+  ['#ffffff', 'alert.500'], ['#ffffff', 'alert.700'],
+  ['#ffffff', 'sun.500'], ['#ffffff', 'sun.700'],
 ]
 
 // Icons, and borders that mark out a control: non-text, so the floor is 3:1.
@@ -109,14 +128,20 @@ const TEXT = [
 // listing it here would put a permanent false failure in CI, and a check that
 // always fails is a check everybody learns to ignore.
 const GRAPHICS = [
-  ['clay.500', 'paper'], ['brand.600', 'surface'], ['brand.600', 'paper'],
-  ['grow.600', 'surface'], ['berry.600', 'surface'], ['sun.600', 'surface'],
+  // The accent, which is also the focus ring — the one graphic on the page
+  // that a keyboard user cannot afford to lose.
+  ['clay.500', 'paper'], ['clay.500', 'surface'],
+  ['brand.600', 'surface'], ['brand.600', 'paper'],
   // The secondary button's outline — the main cue that it is a button at all.
   ['brand.400', 'surface'], ['brand.400', 'paper'],
+  ['brand.500', 'surface'],
+  // State borders: these mark a card as done, locked or in progress.
+  ['grow.500', 'surface'], ['grow.500', 'paper'],
+  ['sun.500', 'surface'], ['berry.500', 'surface'], ['alert.500', 'surface'],
 ]
 
 // The only pairing where one colour has to be told apart from another to know
-// whether an answer was right. 20 is conservative; it currently sits near 28.
+// whether an answer was right. 20 is conservative.
 const CVD_CRITICAL = [
   ['grow.500', 'alert.500', 20],
   ['grow.600', 'alert.600', 20],
@@ -124,35 +149,51 @@ const CVD_CRITICAL = [
 
 // --- run -------------------------------------------------------------------
 const failures = []
-const check = (pairs, floor, label) => {
-  console.log(`\n${label} (floor ${floor}:1)`)
-  for (const [fg, bg] of pairs) {
-    const r = ratio(hex(fg), hex(bg))
-    const ok = r >= floor
-    if (!ok) failures.push(`${fg} on ${bg} is ${r.toFixed(2)}:1, needs ${floor}:1`)
-    console.log(`  ${ok ? 'ok  ' : 'FAIL'} ${(fg + ' on ' + bg).padEnd(28)} ${r.toFixed(2).padStart(6)}`)
+
+function auditTheme(themeName, theme) {
+  const C = flatten(theme)
+  const hex = (token) => {
+    if (token.startsWith('#')) return token
+    const value = C[token]
+    if (typeof value !== 'string') throw new Error(`No colour for "${token}" in palette.js (${themeName})`)
+    return value
+  }
+
+  console.log(`\n${'='.repeat(66)}\n  ${themeName.toUpperCase()} THEME\n${'='.repeat(66)}`)
+
+  const check = (pairs, floor, label) => {
+    console.log(`\n${label} (floor ${floor}:1)`)
+    for (const [fg, bg] of pairs) {
+      const r = ratio(hex(fg), hex(bg))
+      const ok = r >= floor
+      if (!ok) failures.push(`[${themeName}] ${fg} on ${bg} is ${r.toFixed(2)}:1, needs ${floor}:1`)
+      console.log(`  ${ok ? 'ok  ' : 'FAIL'} ${(fg + ' on ' + bg).padEnd(28)} ${r.toFixed(2).padStart(6)}`)
+    }
+  }
+
+  check(TEXT, 4.5, 'Text — WCAG 1.4.3')
+  check(GRAPHICS, 3, 'Graphics — WCAG 1.4.11')
+
+  console.log('\nColour-vision deficiency — pairs that carry meaning')
+  for (const [a, b, floor] of CVD_CRITICAL) {
+    for (const type of Object.keys(MAT)) {
+      const d = deltaE(hex(a), hex(b), type)
+      const ok = d >= floor
+      if (!ok) failures.push(`[${themeName}] ${a} vs ${b} under ${type} is dE ${d.toFixed(1)}, needs ${floor}`)
+      console.log(
+        `  ${ok ? 'ok  ' : 'FAIL'} ${(a + ' vs ' + b).padEnd(24)} ${type.padEnd(13)} dE ${d.toFixed(1).padStart(5)}`,
+      )
+    }
   }
 }
 
-check(TEXT, 4.5, 'Text — WCAG 1.4.3')
-check(GRAPHICS, 3, 'Graphics — WCAG 1.4.11')
+for (const [name, theme] of Object.entries(themes)) auditTheme(name, theme)
 
-console.log('\nColour-vision deficiency — pairs that carry meaning')
-for (const [a, b, floor] of CVD_CRITICAL) {
-  for (const type of Object.keys(MAT)) {
-    const d = deltaE(hex(a), hex(b), type)
-    const ok = d >= floor
-    if (!ok) failures.push(`${a} vs ${b} under ${type} is dE ${d.toFixed(1)}, needs ${floor}`)
-    console.log(
-      `  ${ok ? 'ok  ' : 'FAIL'} ${(a + ' vs ' + b).padEnd(24)} ${type.padEnd(13)} dE ${d.toFixed(1).padStart(5)}`,
-    )
-  }
-}
-
+const pairCount = (TEXT.length + GRAPHICS.length) * Object.keys(themes).length
 if (failures.length) {
   console.log(`\n${failures.length} failure(s):`)
   for (const f of failures) console.log(`  x ${f}`)
   console.log('')
   process.exit(1)
 }
-console.log('\nAll pairs pass.\n')
+console.log(`\nAll pairs pass — ${pairCount} contrast pairs across ${Object.keys(themes).length} themes.\n`)

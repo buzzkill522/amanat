@@ -4,6 +4,7 @@ import { BookOpen, GraduationCap, Home, Info, Map, Users } from 'lucide-react'
 import { site } from '@/config/site.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import LanguageToggle from '@/components/LanguageToggle.jsx'
+import ThemeToggle from '@/components/ThemeToggle.jsx'
 import { useT } from '@/i18n/LanguageProvider.jsx'
 
 // `alsoMatch` keeps a tab lit while the reader is deeper inside that section.
@@ -87,8 +88,15 @@ export default function Layout() {
 
           {/* Language sits in the header on every page, not buried in settings:
               a reader who cannot follow the English needs it before they need
-              anything else. */}
-          <LanguageToggle />
+              anything else. Page colours sit beside it for the same reason —
+              a reader who finds the light page painful to look at needs that
+              fixed before they can read anything, and hiding it on a settings
+              screen assumes they will go looking. Both wrap onto their own row
+              on a narrow screen rather than shrinking below the tap target. */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
 
           {/* The nav takes the full width and wraps on a narrow screen, so the
               page still reflows to 320px with no sideways scrolling. */}
@@ -126,7 +134,7 @@ export default function Layout() {
       {/* No top margin: a page that ends in a full-bleed dark band butts
           straight onto the footer, and every other page already has its own
           breathing room from the padding on <main>. */}
-      <footer className="bg-brand-800 text-brand-100">
+      <footer className="bg-stage text-stage-ink">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm">{t('footer.blurb')}</p>
           <ul className="flex flex-wrap gap-4 text-sm font-bold">

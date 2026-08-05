@@ -4,7 +4,7 @@ import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
 
 const NODE_TONE = {
   locked: 'border-brand-200 bg-brand-50 text-muted',
-  open: 'border-brand-600 bg-white text-brand-700 hover:bg-brand-50',
+  open: 'border-brand-600 bg-surface text-brand-700 hover:bg-brand-50',
   completed: 'border-grow-500 bg-grow-100 text-grow-600 hover:bg-grow-100',
 }
 
@@ -28,7 +28,7 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
             {stats.done} of {stats.total} lessons done
           </p>
           <div
-            className="h-5 w-40 overflow-hidden rounded-full border-2 border-brand-200 bg-white"
+            className="h-5 w-40 overflow-hidden rounded-full border-2 border-brand-200 bg-surface"
             role="progressbar"
             aria-valuenow={stats.done}
             aria-valuemin={0}
@@ -76,7 +76,7 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
                         ? 'bg-brand-100 text-muted'
                         : state === 'completed'
                           ? 'bg-grow-500 text-white'
-                          : 'bg-brand-600 text-white'
+                          : 'bg-brand-600 text-surface'
                     }`}
                   >
                     {locked ? (
@@ -96,7 +96,7 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
             )
 
             const rowClass = `relative flex items-center gap-4 rounded-3xl border-2 p-3 md:w-[calc(50%-2rem)] ${
-              locked ? 'border-transparent' : 'border-transparent hover:border-brand-200 hover:bg-white'
+              locked ? 'border-transparent' : 'border-transparent hover:border-brand-200 hover:bg-surface'
             } ${side ? 'md:ml-auto md:flex-row-reverse md:text-right' : ''}`
 
             return (

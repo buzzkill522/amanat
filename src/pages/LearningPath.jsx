@@ -68,7 +68,7 @@ export default function LearningPath() {
           </button>
         </div>
 
-        <label className="checkbox-row ml-auto rounded-2xl border-2 border-brand-200 bg-white px-4 py-2">
+        <label className="checkbox-row ml-auto rounded-2xl border-2 border-brand-200 bg-surface px-4 py-2">
           <input
             type="checkbox"
             checked={settings.unlockAll}

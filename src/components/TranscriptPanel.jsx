@@ -72,7 +72,7 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
               id="transcript-track"
               value={trackIndex}
               onChange={(e) => setTrackIndex(Number(e.target.value))}
-              className="tap-target rounded-xl border-2 border-brand-200 bg-white px-3 py-2 text-sm font-bold"
+              className="tap-target rounded-xl border-2 border-brand-200 bg-surface px-3 py-2 text-sm font-bold"
             >
               {tracks.map((t, i) => (
                 <option key={t.src + i} value={i}>
@@ -83,7 +83,7 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
           </div>
         )}
 
-        <div className="flex items-center gap-2 rounded-xl border-2 border-brand-200 bg-white px-3">
+        <div className="flex items-center gap-2 rounded-xl border-2 border-brand-200 bg-surface px-3">
           <Search className="h-5 w-5 shrink-0 text-muted" aria-hidden="true" />
           <label htmlFor="transcript-search" className="sr-only">
             Find a word in the transcript

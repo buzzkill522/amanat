@@ -51,7 +51,7 @@ export default function Teachers() {
             'Finish with "Mark as complete". This opens the next lesson on that device.',
           ].map((step, i) => (
             <li key={i} className="flex gap-4">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-600 font-extrabold text-white">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-600 font-extrabold text-surface">
                 {i + 1}
               </span>
               <span className="text-lg leading-relaxed text-ink">{step}</span>
@@ -190,7 +190,7 @@ export default function Teachers() {
                     resetAll()
                     setConfirmingReset(false)
                   }}
-                  className="btn bg-alert-500 text-white hover:bg-alert-600"
+                  className="btn bg-alert-500 text-white hover:bg-alert-700"
                 >
                   <Trash2 className="h-5 w-5" aria-hidden="true" />
                   Yes, erase it
@@ -204,7 +204,7 @@ export default function Teachers() {
               <button
                 type="button"
                 onClick={() => setConfirmingReset(true)}
-                className="btn border-2 border-alert-500 bg-white text-alert-600 hover:bg-alert-100"
+                className="btn border-2 border-alert-500 bg-surface text-alert-600 hover:bg-alert-100"
               >
                 <Trash2 className="h-5 w-5" aria-hidden="true" />
                 Erase all progress

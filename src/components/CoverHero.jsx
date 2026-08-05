@@ -48,7 +48,10 @@ export default function CoverHero() {
         className="pointer-events-none absolute inset-0 opacity-[0.5]"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(-45deg, rgba(107,97,85,0.05) 0 1px, transparent 1px 11px)',
+            // `muted` at 5%, said through the palette variable rather than
+            // copied as an rgba — so the hatch is dark strokes on a light page
+            // and light strokes on a dark one, without a second definition.
+            'repeating-linear-gradient(-45deg, rgb(var(--c-muted) / 0.05) 0 1px, transparent 1px 11px)',
           maskImage: 'linear-gradient(to bottom, #000 0%, transparent 72%)',
           WebkitMaskImage: 'linear-gradient(to bottom, #000 0%, transparent 72%)',
         }}

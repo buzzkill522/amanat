@@ -2,7 +2,20 @@ import { useEffect, useMemo, useRef } from 'react'
 import { PartyPopper } from 'lucide-react'
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion.js'
 
-const COLORS = ['#0f7a52', '#2a63ad', '#b45309', '#6b21a8', '#b42318']
+// The site's own colours, through the palette variables, so the confetti
+// follows the theme instead of staying at light-theme darkness on a dark page.
+//
+// These were five hardcoded hexes, one of which (#2a63ad) was a blue — in a
+// palette whose one standing rule is that it contains no blue and no grey. It
+// predates the beige scheme and was never revisited; the accent and the four
+// state colours are the honest set.
+const COLORS = [
+  'rgb(var(--c-clay-500))',
+  'rgb(var(--c-sun-500))',
+  'rgb(var(--c-grow-500))',
+  'rgb(var(--c-berry-500))',
+  'rgb(var(--c-alert-500))',
+]
 
 /**
  * The reward for finishing a lesson.
@@ -61,11 +74,11 @@ export default function Celebration({ show, message = 'Lesson complete', onDone 
         ref={panelRef}
         tabIndex={-1}
         role="status"
-        className={`fixed inset-x-4 bottom-6 z-50 mx-auto flex max-w-md items-center gap-4 rounded-3xl border-4 border-grow-500 bg-white p-5 shadow-2xl ${
+        className={`fixed inset-x-4 bottom-6 z-50 mx-auto flex max-w-md items-center gap-4 rounded-3xl border-4 border-grow-500 bg-surface p-5 shadow-2xl ${
           reduceMotion ? '' : 'animate-bounceIn'
         }`}
       >
-        <PartyPopper className="h-12 w-12 shrink-0 text-grow-500" aria-hidden="true" />
+        <PartyPopper className="h-12 w-12 shrink-0 text-grow-600" aria-hidden="true" />
         <div>
           <p className="text-xl font-extrabold text-ink">{message}</p>
           <p className="text-base text-muted">The next lesson is now open.</p>

@@ -40,7 +40,7 @@ export default function SignDictionaryEntry({ entry, headingLevel = 2 }) {
       <div className="shrink-0 sm:w-52">
         {clipSrc ? (
           <video
-            className="aspect-square w-full rounded-2xl border-2 border-brand-200 bg-brand-900 object-cover"
+            className="aspect-square w-full rounded-2xl border-2 border-brand-200 bg-stage-deep object-cover"
             src={clipSrc}
             poster={entry.signVideo?.poster || undefined}
             controls
@@ -119,7 +119,7 @@ export default function SignDictionaryEntry({ entry, headingLevel = 2 }) {
               <Link
                 key={moduleId}
                 to={`/path/10-12/lesson/${moduleId}`}
-                className="tap-target rounded-xl bg-white px-3 py-1 font-bold text-brand-700 underline decoration-2 underline-offset-2 hover:bg-brand-50"
+                className="tap-target rounded-xl bg-surface px-3 py-1 font-bold text-brand-700 underline decoration-2 underline-offset-2 hover:bg-brand-50"
               >
                 {moduleId.replace(/-/g, ' ')}
               </Link>

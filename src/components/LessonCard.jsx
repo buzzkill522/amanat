@@ -30,15 +30,15 @@ export default function LessonCard({ module, levelId, state = 'open', stepNumber
     locked
       ? 'cursor-not-allowed border-brand-100 bg-brand-50'
       : completed
-        ? 'border-grow-500 bg-white hover:bg-grow-100'
-        : `${accent.ring} bg-white hover:-translate-y-0.5 hover:shadow-lg`
+        ? 'border-grow-500 bg-surface hover:bg-grow-100'
+        : `${accent.ring} bg-surface hover:-translate-y-0.5 hover:shadow-lg`
   }`
 
   const inner = (
     <>
       <span
         className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl ${
-          locked ? 'bg-white text-muted' : completed ? 'bg-grow-100 text-grow-600' : accent.chip
+          locked ? 'bg-surface text-muted' : completed ? 'bg-grow-100 text-grow-600' : accent.chip
         }`}
       >
         <ConceptIcon name={module.icon} className="h-10 w-10" />
@@ -58,7 +58,7 @@ export default function LessonCard({ module, levelId, state = 'open', stepNumber
 
       <span
         className={`flex shrink-0 flex-col items-center gap-1 rounded-2xl px-3 py-2 text-xs font-extrabold uppercase ${
-          locked ? 'bg-white text-muted' : completed ? 'bg-grow-500 text-white' : 'bg-brand-600 text-white'
+          locked ? 'bg-surface text-muted' : completed ? 'bg-grow-500 text-white' : 'bg-brand-600 text-surface'
         }`}
       >
         <StatusIcon className="h-6 w-6" aria-hidden="true" />

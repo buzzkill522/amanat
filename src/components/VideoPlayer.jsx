@@ -121,10 +121,16 @@ export default function VideoPlayer({
   return (
     <section className="card overflow-hidden" aria-label={`Video: ${title}`}>
       {/* ---------------- Video stage ---------------- */}
-      <div className="relative bg-brand-900">
+      <div className="relative bg-stage-deep">
         <video
           ref={videoRef}
-          className="aspect-video w-full bg-black"
+          /* `text-stage-ink` is for the fallback line below, which a browser
+             that cannot play the video renders in place of it — against the
+             black box, where the inherited `ink` would have been dark-on-dark
+             and unreadable in the light theme. It is the message aimed at the
+             oldest, least capable devices, so it is the one that has to be
+             legible without anyone checking. */
+          className="aspect-video w-full bg-black text-stage-ink"
           poster={video.poster || undefined}
           preload="metadata"
           playsInline
@@ -162,7 +168,7 @@ export default function VideoPlayer({
           >
             {interpreterSrc ? (
               <video
-                className="aspect-square w-full bg-brand-800 object-cover"
+                className="aspect-square w-full bg-stage object-cover"
                 src={interpreterSrc}
                 muted
                 playsInline
@@ -170,12 +176,12 @@ export default function VideoPlayer({
                 aria-label={`${signLanguage.label} interpreter`}
               />
             ) : (
-              <div className="flex aspect-square w-full flex-col items-center justify-center gap-1 bg-brand-800 p-2 text-center">
-                <Hand className="h-7 w-7 text-white" aria-hidden="true" />
-                <p className="text-xs font-bold leading-tight text-white">
+              <div className="flex aspect-square w-full flex-col items-center justify-center gap-1 bg-stage p-2 text-center">
+                <Hand className="h-7 w-7 text-stage-ink" aria-hidden="true" />
+                <p className="text-xs font-bold leading-tight text-stage-ink">
                   {signLanguage.short} video
                 </p>
-                <p className="text-[0.65rem] leading-tight text-brand-100">coming soon</p>
+                <p className="text-[0.65rem] leading-tight text-stage-muted">coming soon</p>
               </div>
             )}
           </div>
@@ -193,7 +199,7 @@ export default function VideoPlayer({
 
       {/* ---------------- Controls ----------------
           Always visible. Icon plus word on every button. */}
-      <div className="space-y-4 border-t-2 border-brand-100 bg-white p-4">
+      <div className="space-y-4 border-t-2 border-brand-100 bg-surface p-4">
         {/* Seek bar */}
         <div className="flex items-center gap-3">
           <span className="w-12 shrink-0 text-sm font-bold tabular-nums text-muted">
@@ -262,8 +268,8 @@ export default function VideoPlayer({
             aria-pressed={captionsOn}
             className={
               captionsOn
-                ? 'btn bg-grow-500 text-white hover:bg-grow-600'
-                : 'btn border-2 border-muted bg-white text-ink hover:bg-brand-50'
+                ? 'btn bg-grow-500 text-white hover:bg-grow-700'
+                : 'btn border-2 border-muted bg-surface text-ink hover:bg-brand-50'
             }
           >
             {captionsOn ? (
@@ -283,7 +289,7 @@ export default function VideoPlayer({
                 id={trackId}
                 value={activeTrack}
                 onChange={(e) => setActiveTrack(Number(e.target.value))}
-                className="tap-target max-w-full rounded-xl border-2 border-brand-200 bg-white px-3 py-2 font-bold text-ink"
+                className="tap-target max-w-full rounded-xl border-2 border-brand-200 bg-surface px-3 py-2 font-bold text-ink"
               >
                 {tracks.map((t, i) => (
                   <option key={t.src + i} value={i}>
@@ -303,7 +309,7 @@ export default function VideoPlayer({
               id={speedId}
               value={playbackRate}
               onChange={(e) => onPlaybackRateChange(Number(e.target.value))}
-              className="tap-target rounded-xl border-2 border-brand-200 bg-white px-3 py-2 font-bold text-ink"
+              className="tap-target rounded-xl border-2 border-brand-200 bg-surface px-3 py-2 font-bold text-ink"
             >
               {SPEEDS.map((s) => (
                 <option key={s} value={s}>
@@ -319,8 +325,8 @@ export default function VideoPlayer({
             aria-pressed={showSign}
             className={
               showSign
-                ? 'btn bg-berry-500 text-white hover:bg-berry-600'
-                : 'btn border-2 border-muted bg-white text-ink hover:bg-brand-50'
+                ? 'btn bg-berry-500 text-white hover:bg-berry-700'
+                : 'btn border-2 border-muted bg-surface text-ink hover:bg-brand-50'
             }
           >
             <Hand className="h-6 w-6" aria-hidden="true" />
