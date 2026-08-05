@@ -1,0 +1,38 @@
+{
+  // Cloudflare Workers deployment config.
+  //
+  // The site is static - React built by Vite, no server code - so this Worker
+  // does nothing but serve the contents of dist/. Cloudflare now recommends
+  // Workers over Pages for new projects, and a Worker with static assets and
+  // no script is the supported way to host a plain SPA.
+  //
+  // "name" must match the Worker that already exists in the dashboard, or a
+  // deploy creates a second one alongside it.
+  "name": "amanat",
+
+  // Pins the runtime's behaviour to how it worked on this date, so a future
+  // change to Cloudflare's defaults cannot alter how an already-shipped site
+  // behaves. Raise it deliberately, not by habit.
+  "compatibility_date": "2026-08-05",
+
+  "assets": {
+    "directory": "./dist",
+
+    // The whole SPA routing story, in one line.
+    //
+    // React Router owns every path (/schemes, /lessons, /path/level-1/...),
+    // but none of those exist as files on disk. Without this, a reader who
+    // refreshes on /schemes, or opens a link to it directly, gets a 404 -
+    // the site would only work if you always entered through "/" and clicked.
+    //
+    // "single-page-application" serves index.html for any path that is not a
+    // real file, and returns 200 rather than 404 so the page is not treated
+    // as an error by browsers, crawlers or screen readers.
+    //
+    // This is the Workers equivalent of the `/*  /index.html  200` line in
+    // public/_redirects, which Netlify used. That file is left in place: it
+    // is harmless here, and it keeps the project deployable to Netlify or
+    // Cloudflare Pages without another config change.
+    "not_found_handling": "single-page-application"
+  }
+}
