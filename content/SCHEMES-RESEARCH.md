@@ -81,7 +81,7 @@ A minor **can** hold mutual fund units:
 - The guardian must be **KYC-compliant**; the minor may use the guardian's PAN.
 - A **SIP** runs until the minor turns 18, then stops automatically.
 - On the eighteenth birthday the folio **freezes** until it is converted to
-  major status - a real trap for families who do not know it is coming.
+  major status - worth knowing in advance, since families are often not told.
 - Redemption money goes **only to the minor's verified bank account**, which is
   another reason the bank account comes first.
 - Sources: [SEBI circular on investment for minors through a guardian](https://www.sebi.gov.in/legal/circulars/may-2023/investment-in-units-of-mutual-funds-in-the-name-of-minor-through-guardian_71148.html),

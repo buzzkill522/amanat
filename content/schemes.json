@@ -31,7 +31,7 @@
         "url": "https://www.swavlambancard.gov.in/"
       },
       "caveats": [
-        "The card follows the certificate. If the certificate is refused or the percentage looks wrong, that is the thing to appeal, not the card."
+        "The card follows the certificate. If the certificate does not come through, or the percentage looks lower than expected, that is the part to ask about - the card follows once that is settled."
       ],
       "sources": [
         { "label": "UDID / Swavlamban Card portal", "url": "https://www.swavlambancard.gov.in/" },
@@ -57,7 +57,7 @@
         "url": "https://scholarships.gov.in/"
       },
       "caveats": [
-        "There is a closing date every year and it is not extended. Missing it means waiting a full year."
+        "There is a closing date each year, so it helps to start early. The next round comes round a year later."
       ],
       "sources": [
         { "label": "National Scholarship Portal", "url": "https://scholarships.gov.in/" },
@@ -153,8 +153,8 @@
         "40% disability or more.",
         "Household income up to ₹22,500 a month: the device is paid for in full.",
         "Household income ₹22,501 to ₹30,000 a month: half the cost is paid.",
-        "Above ₹30,000 a month: not eligible.",
-        "You must not have had the same help from any source in the last 3 years."
+        "Above ₹30,000 a month: this scheme does not apply.",
+        "The same help can be claimed again once 3 years have passed."
       ],
       "amount": "Full cost or half the cost of the device, within the scheme's ceiling for that device type.",
       "apply": {
@@ -162,7 +162,7 @@
         "url": "https://adip.depwd.gov.in/"
       },
       "caveats": [
-        "The 3-year rule matters for a growing child. A hearing aid fitted at eight may not suit at eleven, and the replacement is not automatic.",
+        "The 3-year gap is worth planning around for a growing child. A hearing aid fitted at eight may not suit at eleven, and the replacement is asked for rather than sent automatically.",
         "There is a price ceiling per device type. A device costing more than the ceiling is not fully covered - confirm the current ceiling before choosing one."
       ],
       "sources": [
@@ -177,7 +177,7 @@
       "group": "devices",
       "icon": "medicine",
       "oneLine": "The implant, the surgery and the therapy afterwards, paid for by the government.",
-      "why": "This is by far the largest amount of money on this page, and it is strictly age-limited, so knowing about it late is the same as not knowing about it.",
+      "why": "This is by far the largest amount of money on this page, and it is tied to age - so it is worth looking into early rather than later.",
       "who": [
         "Children with hearing loss from before they learned to speak, aged 1 to 5.",
         "Children with hearing loss acquired later, aged 5 to 18.",
@@ -190,7 +190,7 @@
       },
       "caveats": [
         "A cochlear implant is a decision for the family and the Deaf person, not a default. Many Deaf people do not want one, and a signing life is not a lesser outcome. This page lists it because families have a right to know it exists and is funded - not as a recommendation.",
-        "The age windows are hard limits. Past 18, this route closes."
+        "The age windows are firm, so this one is worth asking about while there is time. It is open up to 18."
       ],
       "sources": [
         { "label": "ADIP cochlear implant eligibility", "url": "https://www.adipcochlearimplant.in/ADIP_PDF/Eligibility%20criteria%20Revised%20scheme%20English%20(4).pdf" },
@@ -265,7 +265,7 @@
         "url": "https://nhfdc.nic.in/"
       },
       "caveats": [
-        "This is borrowed money. It is paid back with interest, and not paying it back has consequences. It belongs in a different mental box from the scholarships.",
+        "This is borrowed money rather than a grant. It is paid back with interest, so it is worth being sure of the repayments before taking one. It sits in a different box from the scholarships above, which are never paid back.",
         "Confirm the current rate and ceiling with NHFDC directly - the published range is wide and the rate depends on the loan size."
       ],
       "sources": [
@@ -290,7 +290,7 @@
         "url": "https://www.incometax.gov.in/"
       },
       "caveats": [
-        "This only helps someone who actually pays income tax. It is worth nothing to a family below the tax threshold - which is most of the families this site is written for."
+        "This one only helps someone who already pays income tax. Plenty of families are below that threshold, and for them there is simply nothing to claim here - nothing is being missed."
       ],
       "sources": [
         { "label": "Disability tax provisions", "url": "https://indiaautismcenter.org/blog/list-of-government-schemes-for-disabled-persons-in-india/" }
@@ -303,9 +303,9 @@
       "fullName": "IGNDPS and state pensions",
       "group": "money",
       "icon": "handcoin",
-      "oneLine": "A monthly payment - but the national rules are strict, and the state rules are the ones that usually matter.",
+      "oneLine": "A monthly payment. The national scheme is narrow, so the state one is usually the one to ask about.",
       "who": [
-        "The national scheme (IGNDPS) needs 80% disability or more, AND a Below Poverty Line household, AND the scheme's age range.",
+        "The national scheme (IGNDPS) asks for 80% disability or more, a Below Poverty Line household, and the scheme's age range.",
         "Most states run their own pension with their own rules, often easier to meet than the national one."
       ],
       "amount": "The national part is ₹300 a month (₹500 from age 80). States add their own on top, commonly bringing it to somewhere between ₹500 and ₹1,500 a month depending on the state.",
@@ -314,8 +314,8 @@
         "url": "https://nsap.nic.in/"
       },
       "caveats": [
-        "Read the 80% rule carefully before hoping for the national scheme. Many Deaf people are certified below 80% and will not qualify for it, even though they qualify for everything else on this page. The state scheme is the more realistic route and is worth asking about by name.",
-        "State amounts and rules vary enormously. The figure above is a range, not a promise."
+        "The 80% figure is worth checking on the certificate first. Many Deaf people are certified below 80%, which does not affect anything else on this page - only this one scheme. The state pension is usually the better route, and is worth asking about by name.",
+        "State amounts and rules vary a great deal. The figure above is a range rather than a promise."
       ],
       "sources": [
         { "label": "NSAP, national social assistance", "url": "https://nsap.nic.in/" },
