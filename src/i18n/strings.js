@@ -48,8 +48,13 @@ const en = {
   'cover.badge': 'Made with {sign} first',
   'cover.title1': 'Money lessons',
   'cover.title2': 'you can see',
+  // No age number here on purpose — see the levels array in config/site.js.
+  // Sorted by difficulty and not by age for the same reason: reading level and
+  // age come apart often among Deaf and Hard-of-Hearing children, and a number
+  // in the very first line a reader sees would undo that before they ever
+  // reach the level picker.
   'cover.lead':
-    'Watch. Read. Answer picture questions. Amanat teaches Deaf and Hard-of-Hearing children, ages 7 to 15, how money works — with sign language, captions and pictures on every single lesson.',
+    'Watch. Read. Answer picture questions. Amanat teaches Deaf and Hard-of-Hearing children how money works — with sign language, captions and pictures on every single lesson. Start at your own level and move up whenever you are ready.',
   'cover.promise.sign': '{signShort} video',
   'cover.promise.captions': 'Captions on every lesson',
   'cover.promise.sound': 'No sound needed',
@@ -217,7 +222,7 @@ const hi = {
   'cover.title1': 'पैसे के पाठ,',
   'cover.title2': 'जो आप देख सकते हैं',
   'cover.lead':
-    'देखिए। पढ़िए। तस्वीर वाले सवालों के जवाब दीजिए। अमानत 7 से 15 साल के बहरे और कम सुनने वाले बच्चों को सिखाता है कि पैसा कैसे काम करता है — हर पाठ में सांकेतिक भाषा, कैप्शन और तस्वीरें।',
+    'देखिए। पढ़िए। तस्वीर वाले सवालों के जवाब दीजिए। अमानत बहरे और कम सुनने वाले बच्चों को सिखाता है कि पैसा कैसे काम करता है — हर पाठ में सांकेतिक भाषा, कैप्शन और तस्वीरें। अपने स्तर से शुरू कीजिए, और जब तैयार हों तब आगे बढ़िए।',
   'cover.promise.sign': '{signShort} वीडियो',
   'cover.promise.captions': 'हर पाठ में कैप्शन',
   'cover.promise.sound': 'सुनने की ज़रूरत नहीं',
