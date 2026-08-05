@@ -142,20 +142,35 @@ export default function Layout() {
           straight onto the footer, and every other page already has its own
           breathing room from the padding on <main>. */}
       <footer className="bg-stage text-stage-ink">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm">{t('footer.blurb')}</p>
-          <ul className="flex flex-wrap gap-4 text-sm font-bold">
-            <li>
-              <Link to="/accessibility" className="tap-target underline decoration-2 underline-offset-4 hover:text-white">
-                {t('footer.accessibility')}
-              </Link>
-            </li>
-            <li>
-              <Link to="/teachers" className="tap-target underline decoration-2 underline-offset-4 hover:text-white">
-                {t('footer.teachers')}
-              </Link>
-            </li>
-          </ul>
+        <div className="mx-auto max-w-6xl px-4 py-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm">{t('footer.blurb')}</p>
+            <ul className="flex flex-wrap gap-4 text-sm font-bold">
+              <li>
+                <Link to="/accessibility" className="tap-target underline decoration-2 underline-offset-4 hover:text-white">
+                  {t('footer.accessibility')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/teachers" className="tap-target underline decoration-2 underline-offset-4 hover:text-white">
+                  {t('footer.teachers')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Sits in the layout, so it is on every page including 404 without
+              any page having to remember it.
+
+              The year is read from the clock rather than typed, so it cannot
+              quietly go stale - a hardcoded "2026" is only right until January,
+              and nobody comes back to a footer to fix it. The name comes from
+              site.js for the same reason: the site was called Paisa Path until
+              August 2026, and a second hardcoded copy is a second thing to
+              miss at the next rename. */}
+          <p className="mt-6 border-t border-stage-muted/25 pt-5 text-sm text-stage-muted">
+            © {new Date().getFullYear()} {site.name}
+          </p>
         </div>
       </footer>
     </div>
