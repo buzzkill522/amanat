@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------------
 
 export const site = {
-  // अमानत — something entrusted to you for safekeeping, to be returned whole.
+  // अमानत - something entrusted to you for safekeeping, to be returned whole.
   // It is the ordinary banking word for a deposit and, in everyday speech, the
   // word for anything precious placed in your care.
   name: 'Amanat',
@@ -61,7 +61,7 @@ export function signShort(lang) {
 // ---------------------------------------------------------------------------
 // The three levels of the programme, ordered by difficulty.
 //
-// These were age bands — 7-9, 10-12, 13-15 — and are deliberately not any more.
+// These were age bands - 7-9, 10-12, 13-15 - and are deliberately not any more.
 // Reading level and chronological age come apart often among Deaf and
 // Hard-of-Hearing children, so an age label either puts a child somewhere they
 // cannot follow, or tells a fourteen-year-old that the lessons they can read

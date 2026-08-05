@@ -40,7 +40,7 @@
             "prompt": "You give the shop ₹20 for a toy. What just happened?",
             "image": { "icon": "shop", "alt": "A toy at a shop counter, money being handed over in return" },
             "options": [
-              { "icon": "handcoin", "label": "A swap — you gave money, you got the toy" },
+              { "icon": "handcoin", "label": "A swap - you gave money, you got the toy" },
               { "icon": "gift", "label": "The shop gave you free money" },
               { "icon": "cross", "label": "You lost your ₹20 for nothing" }
             ],
@@ -64,7 +64,7 @@
             "prompt": "A shopkeeper says money 'just appears' in his till every day. Is that true?",
             "image": { "icon": "coin", "alt": "A till full of coins" },
             "options": [
-              { "icon": "handcoin", "label": "No — every rupee came from someone paying for work or goods" },
+              { "icon": "handcoin", "label": "No - every rupee came from someone paying for work or goods" },
               { "icon": "star", "label": "Yes, money makes itself" },
               { "icon": "calendar", "label": "Only on festival days" }
             ],
@@ -90,7 +90,7 @@
               "prompt": "आप दुकान को एक खिलौने के लिए ₹20 देते हैं। असल में क्या हुआ?",
               "image": { "alt": "एक खिलौना दुकान के काउंटर पर, बदले में पैसे दिए जा रहे हैं" },
               "options": [
-                { "label": "एक अदला-बदली — आपने पैसा दिया, आपको खिलौना मिला" },
+                { "label": "एक अदला-बदली - आपने पैसा दिया, आपको खिलौना मिला" },
                 { "label": "दुकान ने आपको मुफ़्त पैसा दिया" },
                 { "label": "आपने अपने ₹20 बिना किसी वजह खो दिए" }
               ],
@@ -110,7 +110,7 @@
               "prompt": "एक दुकानदार कहता है कि पैसा उसके गल्ले में 'अपने आप' हर दिन आ जाता है। क्या यह सच है?",
               "image": { "alt": "सिक्कों से भरा एक गल्ला" },
               "options": [
-                { "label": "नहीं — हर रुपया किसी के काम या सामान के भुगतान से आया था" },
+                { "label": "नहीं - हर रुपया किसी के काम या सामान के भुगतान से आया था" },
                 { "label": "हाँ, पैसा अपने आप बन जाता है" },
                 { "label": "सिर्फ़ त्योहारों के दिन" }
               ],
@@ -172,7 +172,7 @@
             "prompt": "You pay ₹200 by UPI, and the shop's account shows +₹200 at the same moment your account shows -₹200. What does this prove?",
             "image": { "icon": "phone", "alt": "Two accounts changing together on a phone screen" },
             "options": [
-              { "icon": "chart", "label": "No physical money moved — only two account records changed together" },
+              { "icon": "chart", "label": "No physical money moved - only two account records changed together" },
               { "icon": "bank", "label": "The bank created ₹200 out of nothing" },
               { "icon": "note", "label": "The ₹200 note was scanned digitally" }
             ],
@@ -218,7 +218,7 @@
               "prompt": "आप UPI से ₹200 का भुगतान करते हैं, और उसी पल दुकान के खाते में +₹200 और आपके खाते में -₹200 दिखता है। यह क्या साबित करता है?",
               "image": { "alt": "एक साथ बदलते दो खाते, एक फ़ोन स्क्रीन पर" },
               "options": [
-                { "label": "कोई असली पैसा नहीं चला — सिर्फ़ दो खातों के रिकॉर्ड एक साथ बदले" },
+                { "label": "कोई असली पैसा नहीं चला - सिर्फ़ दो खातों के रिकॉर्ड एक साथ बदले" },
                 { "label": "बैंक ने ₹200 कहीं से बना दिए" },
                 { "label": "₹200 का नोट डिजिटल रूप से स्कैन हुआ" }
               ],
@@ -241,7 +241,7 @@
         "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
-        "A ₹500 note costs a few rupees to make. The rest of its value is trust — everyone accepts it because everyone else does.",
+        "A ₹500 note costs a few rupees to make. The rest of its value is trust - everyone accepts it because everyone else does.",
         "Money does three jobs: it pays for things now, it stores value for later, and it measures what things are worth against each other.",
         "That third job is why prices exist. Without money you could not say a bicycle is worth about 200 snacks.",
         "Inflation is the storing job leaking. At 6% a year, ₹100 left in a drawer buys about ₹94 of goods twelve months later.",
@@ -254,10 +254,10 @@
         "questions": [
           {
             "id": "q1",
-            "prompt": "A ₹500 note costs a few rupees to print, yet it buys ₹500 worth of goods. If people suddenly stopped trusting it, what would happen to its usefulness — even though the paper itself is unchanged?",
+            "prompt": "A ₹500 note costs a few rupees to print, yet it buys ₹500 worth of goods. If people suddenly stopped trusting it, what would happen to its usefulness - even though the paper itself is unchanged?",
             "image": { "icon": "note", "alt": "A rupee note held in a hand, with trust fading around it" },
             "options": [
-              { "icon": "shield", "label": "It would stop working as money, because trust — not the paper — is what gives it value" },
+              { "icon": "shield", "label": "It would stop working as money, because trust - not the paper - is what gives it value" },
               { "icon": "check", "label": "It would still work exactly the same" },
               { "icon": "star", "label": "The government would have to make it heavier" }
             ],
@@ -269,8 +269,8 @@
             "prompt": "Money is meant to store value for later AND measure what things are worth. During high inflation, which of these two jobs breaks down first, and why?",
             "image": { "icon": "growth", "alt": "A line chart rising from left to right, with a savings jar losing value" },
             "options": [
-              { "icon": "piggy", "label": "Storing value — money sitting still loses buying power while measuring still works day to day" },
-              { "icon": "chart", "label": "Measuring value — prices become meaningless" },
+              { "icon": "piggy", "label": "Storing value - money sitting still loses buying power while measuring still works day to day" },
+              { "icon": "chart", "label": "Measuring value - prices become meaningless" },
               { "icon": "question", "label": "Both break down at exactly the same speed" }
             ],
             "correctIndex": 0,
@@ -293,7 +293,7 @@
       "hi": {
         "title": "पैसे को उसकी क़ीमत कौन देता है",
         "summary": [
-          "₹500 का नोट बनाने में सिर्फ़ कुछ रुपये ख़र्च होते हैं। इसकी बाकी क़ीमत भरोसा है — हर कोई इसे स्वीकार करता है क्योंकि बाकी सब भी करते हैं।",
+          "₹500 का नोट बनाने में सिर्फ़ कुछ रुपये ख़र्च होते हैं। इसकी बाकी क़ीमत भरोसा है - हर कोई इसे स्वीकार करता है क्योंकि बाकी सब भी करते हैं।",
           "पैसा तीन काम करता है: यह अभी चीज़ों के लिए भुगतान करता है, यह बाद के लिए मूल्य जमा रखता है, और यह बताता है कि चीज़ें एक-दूसरे के मुक़ाबले कितनी क़ीमती हैं।",
           "यह तीसरा काम ही है जिसकी वजह से क़ीमतें होती हैं। पैसे के बिना आप यह नहीं कह सकते कि एक साइकिल की क़ीमत लगभग 200 नाश्तों जितनी है।",
           "महँगाई इस जमा रखने वाले काम में रिसाव है। साल में 6% की दर से, दराज़ में रखे ₹100 बारह महीने बाद लगभग ₹94 का सामान ख़रीद पाते हैं।",
@@ -305,7 +305,7 @@
           "title": "आप क्या जानते हैं, दिखाइए",
           "questions": [
             {
-              "prompt": "₹500 का नोट छापने में सिर्फ़ कुछ रुपये ख़र्च होते हैं, फिर भी यह ₹500 का सामान ख़रीद पाता है। अगर लोग अचानक इस पर भरोसा करना बंद कर दें, तो इसका काम करना बंद क्यों हो जाएगा — जबकि काग़ज़ बिल्कुल वैसा ही रहता है?",
+              "prompt": "₹500 का नोट छापने में सिर्फ़ कुछ रुपये ख़र्च होते हैं, फिर भी यह ₹500 का सामान ख़रीद पाता है। अगर लोग अचानक इस पर भरोसा करना बंद कर दें, तो इसका काम करना बंद क्यों हो जाएगा - जबकि काग़ज़ बिल्कुल वैसा ही रहता है?",
               "image": { "alt": "हाथ में पकड़ा एक रुपये का नोट, बदलता हुआ भरोसा" },
               "options": [
                 { "label": "यह पैसे की तरह काम करना बंद कर देगा, क्योंकि क़ीमत काग़ज़ नहीं, भरोसा देता है" },
@@ -318,8 +318,8 @@
               "prompt": "पैसे को बाद के लिए मूल्य जमा रखना है, और यह भी बताना है कि चीज़ें कितनी क़ीमती हैं। बहुत महँगाई के दौरान, इन दो कामों में से कौन सा पहले टूटता है, और क्यों?",
               "image": { "alt": "बाईं से दाईं ओर बढ़ता एक लाइन चार्ट, महँगाई के साथ" },
               "options": [
-                { "label": "मूल्य जमा रखना — क्योंकि रखा हुआ पैसा ख़रीद क्षमता खोता है, जबकि मापना रोज़ काम करता रहता है" },
-                { "label": "मूल्य मापना — क़ीमतें बेमानी हो जाती हैं" },
+                { "label": "मूल्य जमा रखना - क्योंकि रखा हुआ पैसा ख़रीद क्षमता खोता है, जबकि मापना रोज़ काम करता रहता है" },
+                { "label": "मूल्य मापना - क़ीमतें बेमानी हो जाती हैं" },
                 { "label": "दोनों ठीक एक ही रफ़्तार से टूटते हैं" }
               ],
               "hint": "क़ीमत आज की क़ीमत बता ही देती है। जो पैसा आज ख़र्च नहीं हो रहा, उसका क्या होता है?"

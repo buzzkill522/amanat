@@ -9,6 +9,7 @@ import Lessons from '@/pages/Lessons.jsx'
 import LearningPath from '@/pages/LearningPath.jsx'
 import Lesson from '@/pages/Lesson.jsx'
 import Dictionary from '@/pages/Dictionary.jsx'
+import Schemes from '@/pages/Schemes.jsx'
 import Teachers from '@/pages/Teachers.jsx'
 import Accessibility from '@/pages/Accessibility.jsx'
 import NotFound from '@/pages/NotFound.jsx'
@@ -29,6 +30,10 @@ export default function App() {
                 <Route path="/path/:levelId" element={<LearningPath />} />
                 <Route path="/path/:levelId/lesson/:moduleId" element={<Lesson />} />
                 <Route path="/dictionary" element={<Dictionary />} />
+                {/* Outside /path, and therefore outside the unlock sequence:
+                    a family needing to know about a funded implant before a
+                    birthday cannot be asked to finish nine lessons first. */}
+                <Route path="/schemes" element={<Schemes />} />
                 <Route path="/teachers" element={<Teachers />} />
                 <Route path="/accessibility" element={<Accessibility />} />
                 {/* Old shape kept working in case a teacher bookmarked it. */}

@@ -43,10 +43,10 @@
           },
           {
             "id": "q2",
-            "prompt": "A poster says: 'Invest ₹500 today, guaranteed ₹2000 by next month — no risk at all!' What single lesson rule tells you this cannot be trusted?",
+            "prompt": "A poster says: 'Invest ₹500 today, guaranteed ₹2000 by next month - no risk at all!' What single lesson rule tells you this cannot be trusted?",
             "image": { "icon": "warning", "alt": "A poster promising a guaranteed quick return" },
             "options": [
-              { "icon": "warning", "label": "Nobody can promise what will happen with money that is meant to grow — a guarantee like this is a warning sign" },
+              { "icon": "warning", "label": "Nobody can promise what will happen with money that is meant to grow - a guarantee like this is a warning sign" },
               { "icon": "check", "label": "It is trustworthy because it gives an exact date" },
               { "icon": "coin", "label": "It is safe since the amount is small" }
             ],
@@ -58,7 +58,7 @@
             "prompt": "Of a piggy bank, a savings account, and a risky investment, which ONE is capable of ending the year with LESS money than you started with, and why?",
             "image": { "icon": "chart", "alt": "Three places for money, one shown falling" },
             "options": [
-              { "icon": "chart", "label": "Only the risky investment — it can grow fast or fall, unlike the other two" },
+              { "icon": "chart", "label": "Only the risky investment - it can grow fast or fall, unlike the other two" },
               { "icon": "bank", "label": "The savings account, because banks can lose money too" },
               { "icon": "piggy", "label": "All three can lose money equally" }
             ],
@@ -83,7 +83,7 @@
       "summary": [
         "A mutual fund pools money from many people. A manager buys shares in many companies with it.",
         "You own a small slice of the whole pool, so one company doing badly does not sink you.",
-        "A SIP puts a fixed amount in every month — ₹500, say — instead of one lump sum.",
+        "A SIP puts a fixed amount in every month - ₹500, say - instead of one lump sum.",
         "A bank deposit or PPF promises you a number. A mutual fund promises nothing at all.",
         "That is the whole difference. Higher possible growth is paid for with the chance of going down.",
         "Money you need soon should not go in a fund. Money you will not touch for years might."
@@ -97,7 +97,7 @@
             "prompt": "A mutual fund invests in 50 different companies. One of those companies goes out of business completely. What is the most likely effect on someone who owns a slice of the whole fund?",
             "image": { "icon": "hands", "alt": "Many hands putting coins into one pot invested across many companies" },
             "options": [
-              { "icon": "hands", "label": "A small effect — losing one company out of fifty does not sink the whole fund" },
+              { "icon": "hands", "label": "A small effect - losing one company out of fifty does not sink the whole fund" },
               { "icon": "warning", "label": "They lose all their money immediately" },
               { "icon": "check", "label": "Nothing changes at all, funds are immune to company failures" }
             ],
@@ -121,8 +121,8 @@
             "prompt": "Fund A grew 25% last year. Fund B grew only 5% last year. A friend says Fund A is definitely the better choice going forward. What does the lesson say about this reasoning?",
             "image": { "icon": "warning", "alt": "Two funds with very different growth last year" },
             "options": [
-              { "icon": "cross", "label": "It is flawed — past growth does not decide future growth for either fund" },
-              { "icon": "check", "label": "It is correct — the fund that grew more before will always grow more again" },
+              { "icon": "cross", "label": "It is flawed - past growth does not decide future growth for either fund" },
+              { "icon": "check", "label": "It is correct - the fund that grew more before will always grow more again" },
               { "icon": "warning", "label": "Fund B is guaranteed to fail next year" }
             ],
             "correctIndex": 0,
@@ -145,10 +145,10 @@
       },
       "summary": [
         "Every place for money trades three things: how much it might grow, how likely you are to lose some, and how fast you can get it back.",
-        "A savings account is instant and safe at about 4%. PPF is locked for years at about 7%. A fund could beat both, or lose money — nothing is promised.",
+        "A savings account is instant and safe at about 4%. PPF is locked for years at about 7%. A fund could beat both, or lose money - nothing is promised.",
         "Since prices rise around 6% a year, money sitting at 4% is quietly shrinking in what it can buy. Safety is not free either.",
         "A SIP of ₹500 a month is ₹6,000 a year. Its value is whatever the units are worth on the day you sell, which may be more or less than you paid.",
-        "A minor can hold a fund. The child is the sole owner and an adult only operates it — no joint holding is allowed.",
+        "A minor can hold a fund. The child is the sole owner and an adult only operates it - no joint holding is allowed.",
         "Two traps worth knowing: the folio FREEZES on your eighteenth birthday until you convert it yourself, and money taken out is paid only into a bank account in your own name.",
         "So the account comes first, the emergency savings come second, and the fund comes third. In that order, never reversed."
       ],
@@ -161,8 +161,8 @@
             "prompt": "PPF pays about 7% but locks your money for years. A savings account pays about 4% but you can withdraw any day. For money you might need within 6 months, which is more suitable, and why?",
             "image": { "icon": "lock", "alt": "A locked scheme beside an instantly accessible account" },
             "options": [
-              { "icon": "bank", "label": "The savings account — instant access matters more than a higher rate you cannot legally reach in time" },
-              { "icon": "growth", "label": "PPF — the higher rate always wins regardless of when you need the money" },
+              { "icon": "bank", "label": "The savings account - instant access matters more than a higher rate you cannot legally reach in time" },
+              { "icon": "growth", "label": "PPF - the higher rate always wins regardless of when you need the money" },
               { "icon": "question", "label": "Both are equally suitable" }
             ],
             "correctIndex": 0,

@@ -4,7 +4,7 @@ import { Component } from 'react'
  * Catches a render crash so one bad lesson cannot take down the whole site.
  *
  * Without this, a single malformed entry in content/modules/ white-screens
- * everything — no header, no nav, no way back. That happened twice while this
+ * everything - no header, no nav, no way back. That happened twice while this
  * site was being built, and an educator editing a JSON file by hand is exactly
  * who it will happen to next.
  *

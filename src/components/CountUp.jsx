@@ -5,7 +5,7 @@ import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion.js'
 /**
  * Counts a number up when it scrolls into view.
  *
- * Only used on the stats band, and only on the values that are numbers — the
+ * Only used on the stats band, and only on the values that are numbers - the
  * "Free" tile is passed straight through, because animating a word is a trick
  * rather than an effect.
  *

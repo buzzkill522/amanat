@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
-// Fonts are bundled from node_modules, never fetched from a CDN — the site
+// Fonts are bundled from node_modules, never fetched from a CDN - the site
 // promises that opening it sends nothing to a third party. Each file carries a
 // `unicode-range` per script, so a reader in English never downloads the
 // Devanagari and a reader in Hindi never downloads the Vietnamese.

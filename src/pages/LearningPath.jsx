@@ -16,7 +16,7 @@ export default function LearningPath() {
   const { isCompleted, isUnlocked, levelStats, settings, setSetting } = useProgress()
   const { lang } = useLanguage()
 
-  usePageTitle(level ? `${level.label} — ${level.name}` : 'Lessons')
+  usePageTitle(level ? `${level.label} - ${level.name}` : 'Lessons')
 
   // An old age-band bookmark lands on the level that replaced it.
   const legacyId = LEGACY_TIER_IDS[levelId]
@@ -40,7 +40,7 @@ export default function LearningPath() {
 
       <header>
         <h1 className="text-4xl font-extrabold text-ink">
-          {level.label} — {level.name}
+          {level.label} - {level.name}
         </h1>
         <p className="mt-2 text-lg text-muted">{level.blurb}</p>
       </header>
@@ -87,7 +87,7 @@ export default function LearningPath() {
       ) : (
         <section aria-labelledby="list-heading">
           <h2 id="list-heading" className="mb-4 text-2xl font-extrabold text-ink">
-            All lessons — {stats.done} of {stats.total} done
+            All lessons - {stats.done} of {stats.total} done
           </h2>
           <ol className="space-y-4">
             {modules.map((module, i) => (
@@ -104,14 +104,14 @@ export default function LearningPath() {
         </section>
       )}
 
-      {/* Changing level mid-way should be one tap, not a trip home — and it
+      {/* Changing level mid-way should be one tap, not a trip home - and it
           should read as a normal thing to do, not as being moved down a set. */}
       <section aria-labelledby="switch-heading" className="rounded-3xl bg-brand-50 p-6">
         <h2 id="switch-heading" className="text-lg font-extrabold text-ink">
           Too easy, or too hard?
         </h2>
         <p className="mt-1 text-base text-muted">
-          Move up or down. The eight topics are the same at every level.
+          Move up or down. The eleven topics are the same at every level.
         </p>
         <ul className="mt-4 flex flex-wrap gap-3">
           {levels
@@ -119,7 +119,7 @@ export default function LearningPath() {
             .map((l) => (
               <li key={l.id}>
                 <Link to={`/path/${l.id}`} className="btn-secondary">
-                  {l.step < level.step ? '↓' : '↑'} {l.label} — {l.name}
+                  {l.step < level.step ? '↓' : '↑'} {l.label} - {l.name}
                 </Link>
               </li>
             ))}

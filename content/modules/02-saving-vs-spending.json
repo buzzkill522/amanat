@@ -5,6 +5,12 @@
   "accent": "grow",
   "title": "Saving vs Spending",
   "shortTitle": "Save or Spend",
+  "translations": {
+    "hi": {
+      "title": "बचत बनाम ख़र्च",
+      "shortTitle": "बचत या ख़र्च"
+    }
+  },
   "levels": {
     "level-1": {
       "title": "Saving and spending",
@@ -182,8 +188,8 @@
             "prompt": "Your phone screen cracks and repair costs ₹800. You also want a new game worth ₹800. Which one should the emergency fund pay for, and why?",
             "image": { "icon": "shield", "alt": "A shield protecting a stack of coins, beside a cracked phone and a game" },
             "options": [
-              { "icon": "shield", "label": "The phone repair — it is an unplanned problem, not a want you chose" },
-              { "icon": "gift", "label": "The game — because you want it more" },
+              { "icon": "shield", "label": "The phone repair - it is an unplanned problem, not a want you chose" },
+              { "icon": "gift", "label": "The game - because you want it more" },
               { "icon": "coin", "label": "Both, since they cost the same" }
             ],
             "correctIndex": 0,

@@ -43,11 +43,11 @@
           },
           {
             "id": "q2",
-            "prompt": "You have ₹200. Keeping it in a piggy bank for a year, or in a bank account for a year — in which case would you have MORE than ₹200 after that year, and why?",
+            "prompt": "You have ₹200. Keeping it in a piggy bank for a year, or in a bank account for a year - in which case would you have MORE than ₹200 after that year, and why?",
             "image": { "icon": "question", "alt": "A piggy bank next to a bank building, both holding two hundred rupees" },
             "options": [
-              { "icon": "bank", "label": "The bank account — only it pays interest on top of what you put in" },
-              { "icon": "piggy", "label": "The piggy bank — it is safer so it grows more" },
+              { "icon": "bank", "label": "The bank account - only it pays interest on top of what you put in" },
+              { "icon": "piggy", "label": "The piggy bank - it is safer so it grows more" },
               { "icon": "question", "label": "Both would have exactly ₹200" }
             ],
             "correctIndex": 0,
@@ -58,9 +58,9 @@
             "prompt": "You could save toward a goal that needs the money back in 1 month, or a goal in 12 months, both using a bank account. In which case will interest matter more to your final total, and why?",
             "image": { "icon": "calendar", "alt": "A calendar showing one month and twelve months side by side" },
             "options": [
-              { "icon": "calendar", "label": "The 12-month goal — interest needs time to add up meaningfully" },
-              { "icon": "shop", "label": "The 1-month goal — interest is always the same regardless of time" },
-              { "icon": "coin", "label": "Neither — interest only applies to goals over ₹1000" }
+              { "icon": "calendar", "label": "The 12-month goal - interest needs time to add up meaningfully" },
+              { "icon": "shop", "label": "The 1-month goal - interest is always the same regardless of time" },
+              { "icon": "coin", "label": "Neither - interest only applies to goals over ₹1000" }
             ],
             "correctIndex": 0,
             "hint": "Interest is small over a short time and adds up over a long time."
@@ -163,15 +163,15 @@
               { "icon": "cross", "label": "No further interest is earned after year one" }
             ],
             "correctIndex": 0,
-            "hint": "Compound interest is paid on the new, larger total — not the original amount."
+            "hint": "Compound interest is paid on the new, larger total - not the original amount."
           },
           {
             "id": "q2",
             "prompt": "Person A saves ₹500 a month starting at age 15. Person B saves ₹1000 a month but starts at age 25, and both stop at 35. Whose final amount benefits more from compounding, and why might it be closer than expected?",
             "image": { "icon": "calendar", "alt": "Two timelines, one ten years longer than the other" },
             "options": [
-              { "icon": "calendar", "label": "Person A — the extra 10 years lets compounding work for far longer, even saving less each month" },
-              { "icon": "coin", "label": "Person B — saving twice as much each month always wins" },
+              { "icon": "calendar", "label": "Person A - the extra 10 years lets compounding work for far longer, even saving less each month" },
+              { "icon": "coin", "label": "Person B - saving twice as much each month always wins" },
               { "icon": "question", "label": "They will always end with exactly the same amount" }
             ],
             "correctIndex": 0,
@@ -187,7 +187,7 @@
               { "icon": "check", "label": "It stops growing after the first cycle" }
             ],
             "correctIndex": 0,
-            "hint": "Just like savings, compound interest builds on the previous total — but here that total is a debt."
+            "hint": "Just like savings, compound interest builds on the previous total - but here that total is a debt."
           }
         ]
       }

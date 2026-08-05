@@ -1,0 +1,364 @@
+{
+  "_comment": "The schemes directory behind /schemes. Kept as data rather than markup so the page, the check script and content/SCHEMES-RESEARCH.md cannot drift apart. EVERY figure carries its own source and the month it was checked, because most of these move: scholarship income limits, pension top-ups and device ceilings are all revised. A stale number taught as fact is worse than no number. Nothing here is financial or legal advice.",
+
+  "checkedOn": "August 2026",
+
+  "groups": [
+    { "id": "start", "label": "Start here", "accent": "clay" },
+    { "id": "school", "label": "Money for school and college", "accent": "grow" },
+    { "id": "devices", "label": "Hearing aids and devices", "accent": "berry" },
+    { "id": "work", "label": "Work and training", "accent": "sun" },
+    { "id": "money", "label": "Money help", "accent": "brand" },
+    { "id": "travel", "label": "Travel", "accent": "brand" }
+  ],
+
+  "schemes": [
+    {
+      "id": "udid",
+      "name": "UDID card",
+      "fullName": "Unique Disability ID",
+      "group": "start",
+      "icon": "shield",
+      "oneLine": "One free card that proves you are Deaf, anywhere in India.",
+      "why": "Almost every other scheme on this page asks for it first. Getting this is step one, and it is the step most families do not know about.",
+      "who": [
+        "Anyone with a disability certificate from a government medical board.",
+        "For schemes, the certificate normally needs to show 40% disability or more."
+      ],
+      "amount": "Free.",
+      "apply": {
+        "text": "Apply online at the national UDID portal, then attend the medical board appointment it gives you.",
+        "url": "https://www.swavlambancard.gov.in/"
+      },
+      "caveats": [
+        "The card follows the certificate. If the certificate is refused or the percentage looks wrong, that is the thing to appeal, not the card."
+      ],
+      "sources": [
+        { "label": "UDID / Swavlamban Card portal", "url": "https://www.swavlambancard.gov.in/" },
+        { "label": "How the UDID works", "url": "https://nayi-disha.org/article/certificates-schemes/udid-for-people-with-disabilities/" }
+      ]
+    },
+
+    {
+      "id": "pre-matric",
+      "name": "Pre-Matric Scholarship",
+      "group": "school",
+      "icon": "book",
+      "oneLine": "Money for school, up to Class 10.",
+      "why": "A scholarship is not a loan. It is never paid back.",
+      "who": [
+        "40% disability or more.",
+        "Family income not more than ₹2,50,000 a year.",
+        "Normally up to two disabled children from one family."
+      ],
+      "amount": "Covers fees, a book grant and a maintenance allowance. Exact amounts are set each year. About 46,000 of these are given out a year, and half are kept for girls.",
+      "apply": {
+        "text": "Apply on the National Scholarship Portal. Applications usually open around the middle of the year.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "caveats": [
+        "There is a closing date every year and it is not extended. Missing it means waiting a full year."
+      ],
+      "sources": [
+        { "label": "National Scholarship Portal", "url": "https://scholarships.gov.in/" },
+        { "label": "Pre-Matric scheme details", "url": "https://www.govtschemes.in/pre-matric-scholarship-students-disabilities" }
+      ]
+    },
+
+    {
+      "id": "post-matric",
+      "name": "Post-Matric Scholarship",
+      "group": "school",
+      "icon": "book",
+      "oneLine": "Money for study after Class 10.",
+      "why": "The income limit is much higher than the school one, so families who did not qualify before often do now.",
+      "who": [
+        "40% disability or more.",
+        "Family income not more than ₹8,00,000 a year.",
+        "For study after Class 10, including college."
+      ],
+      "amount": "Covers fees, a book grant and a maintenance allowance. About 17,000 a year, half kept for girls.",
+      "apply": {
+        "text": "Apply on the National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "caveats": [
+        "Check the income limit before assuming you earn too much. ₹8 lakh a year is a high bar and many families clear it."
+      ],
+      "sources": [
+        { "label": "National Scholarship Portal", "url": "https://scholarships.gov.in/" },
+        { "label": "Post-Matric scheme details", "url": "https://www.govtschemes.in/post-matric-scholarship-students-disabilities" }
+      ]
+    },
+
+    {
+      "id": "top-class",
+      "name": "Top Class Education Scholarship",
+      "group": "school",
+      "icon": "star",
+      "oneLine": "For studying at a top listed college or institute.",
+      "why": "This is the largest single education payment on this page, and only 300 are given a year.",
+      "who": [
+        "40% disability or more.",
+        "Admitted to one of the institutes on the government's notified list."
+      ],
+      "amount": "Tuition and non-refundable fees up to ₹2,00,000 a year. Plus ₹3,000 a month if living in a hostel, or ₹1,500 a month otherwise. Plus ₹2,000 a month for disability-related help such as a reader or escort, and ₹5,000 a year for books.",
+      "apply": {
+        "text": "Apply on the National Scholarship Portal after getting admission.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "caveats": [
+        "Only 300 a year across the whole country, so it is competitive.",
+        "The institute has to be on the notified list. Check the list before counting on it."
+      ],
+      "sources": [
+        { "label": "Top Class scheme details", "url": "https://www.buddy4study.com/article/scholarships-for-top-class-education-for-students-with-disabilities" },
+        { "label": "National Scholarship Portal", "url": "https://scholarships.gov.in/" }
+      ]
+    },
+
+    {
+      "id": "fellowship-coaching",
+      "name": "Fellowship and free coaching",
+      "group": "school",
+      "icon": "lightbulb",
+      "oneLine": "Two more parts of the same scholarship scheme: research funding, and coaching for competitive exams.",
+      "why": "Both are easy to miss because they sit inside the same scheme as the school scholarships rather than having their own name.",
+      "who": [
+        "40% disability or more.",
+        "Fellowship: for M.Phil. and Ph.D. study.",
+        "Free coaching: for people preparing for exams such as UPSC, SSC, banking and state services."
+      ],
+      "amount": "The fellowship pays a monthly amount plus a contingency grant. Free coaching pays the coaching fee, and a stipend in some cases. Amounts are set each year.",
+      "apply": {
+        "text": "Both run through the same scholarships scheme for students with disabilities.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "caveats": [
+        "Amounts change year to year. Check the current notification before planning around a figure."
+      ],
+      "sources": [
+        { "label": "Scholarships for students with disabilities", "url": "https://www.india.gov.in/scheme-national-scholarships-persons-disabilities" }
+      ]
+    },
+
+    {
+      "id": "adip-hearing-aid",
+      "name": "ADIP - hearing aids",
+      "fullName": "Assistance to Disabled Persons for Purchase/Fitting of Aids and Appliances",
+      "group": "devices",
+      "icon": "medicine",
+      "oneLine": "Hearing aids and other devices, free or half price, depending on income.",
+      "who": [
+        "40% disability or more.",
+        "Household income up to ₹22,500 a month: the device is paid for in full.",
+        "Household income ₹22,501 to ₹30,000 a month: half the cost is paid.",
+        "Above ₹30,000 a month: not eligible.",
+        "You must not have had the same help from any source in the last 3 years."
+      ],
+      "amount": "Full cost or half the cost of the device, within the scheme's ceiling for that device type.",
+      "apply": {
+        "text": "Through the ADIP portal, or at an assessment camp run by a government centre near you.",
+        "url": "https://adip.depwd.gov.in/"
+      },
+      "caveats": [
+        "The 3-year rule matters for a growing child. A hearing aid fitted at eight may not suit at eleven, and the replacement is not automatic.",
+        "There is a price ceiling per device type. A device costing more than the ceiling is not fully covered - confirm the current ceiling before choosing one."
+      ],
+      "sources": [
+        { "label": "ADIP scheme, DEPwD", "url": "https://depwd.gov.in/en/adip/" },
+        { "label": "ADIP eligibility and income slabs", "url": "https://divyangkalyan.maharashtra.gov.in/scheme/7-scheme-of-assistance-to-disabled-persons-for-purchase-fitting-of-aids-appliances-adip-scheme/" }
+      ]
+    },
+
+    {
+      "id": "adip-cochlear",
+      "name": "ADIP - cochlear implant",
+      "group": "devices",
+      "icon": "medicine",
+      "oneLine": "The implant, the surgery and the therapy afterwards, paid for by the government.",
+      "why": "This is by far the largest amount of money on this page, and it is strictly age-limited, so knowing about it late is the same as not knowing about it.",
+      "who": [
+        "Children with hearing loss from before they learned to speak, aged 1 to 5.",
+        "Children with hearing loss acquired later, aged 5 to 18.",
+        "Same income rules as the rest of ADIP."
+      ],
+      "amount": "Up to ₹7,00,000 for the 1-to-5 group, and up to ₹6,00,000 for the 5-to-18 group. Covers the implant, the surgery, the mapping and therapy afterwards, travel, and the assessment before it.",
+      "apply": {
+        "text": "Through the ADIP cochlear implant programme, at an empanelled hospital.",
+        "url": "https://adip.depwd.gov.in/"
+      },
+      "caveats": [
+        "A cochlear implant is a decision for the family and the Deaf person, not a default. Many Deaf people do not want one, and a signing life is not a lesser outcome. This page lists it because families have a right to know it exists and is funded - not as a recommendation.",
+        "The age windows are hard limits. Past 18, this route closes."
+      ],
+      "sources": [
+        { "label": "ADIP cochlear implant eligibility", "url": "https://www.adipcochlearimplant.in/ADIP_PDF/Eligibility%20criteria%20Revised%20scheme%20English%20(4).pdf" },
+        { "label": "ADIP scheme, DEPwD", "url": "https://depwd.gov.in/en/adip/" }
+      ]
+    },
+
+    {
+      "id": "reservation",
+      "name": "1% of government jobs",
+      "group": "work",
+      "icon": "target",
+      "oneLine": "Government jobs keep 4% of posts for disabled people. Deaf and hard-of-hearing people have their own 1%.",
+      "why": "The 1% is not shared with other disabilities. It is a separate slice, which is what makes it worth applying under.",
+      "who": [
+        "40% disability or more (this is what \"benchmark disability\" means).",
+        "The reservation applies to government posts and to public sector jobs that follow the same rules."
+      ],
+      "amount": "1% of vacancies, from the 4% total set aside for disabled people.",
+      "apply": {
+        "text": "Apply under the PwBD category when the job is advertised, and attach the disability certificate.",
+        "url": "https://depwd.gov.in/"
+      },
+      "caveats": [
+        "There are usually also concessions on the age limit and the examination fee. Ask about those separately - they are not automatic and are often not mentioned in the advertisement."
+      ],
+      "sources": [
+        { "label": "RPwD Act employment provisions", "url": "https://blog.ipleaders.in/disability-employment-detailed-guide-rpwd-act-2016/" },
+        { "label": "RPwD Act 2016 summary", "url": "https://wecapable.com/rights-of-persons-with-disabilities-act-2016-india/" }
+      ]
+    },
+
+    {
+      "id": "pm-daksh",
+      "name": "PM-DAKSH",
+      "group": "work",
+      "icon": "growth",
+      "oneLine": "Free skill training, and a job portal that goes with it.",
+      "who": [
+        "Registration uses the UDID card, so get that first.",
+        "Open to disabled people looking for training or work."
+      ],
+      "amount": "Training is free. Over 250 courses. The same portal has a jobs section that connects to employers.",
+      "apply": {
+        "text": "Register on the PM-DAKSH portal for people with disabilities.",
+        "url": "https://pmdaksh.depwd.gov.in/"
+      },
+      "caveats": [
+        "Course availability depends on which training partners operate in your district. Check what is actually offered near you before planning around a course."
+      ],
+      "sources": [
+        { "label": "PM-DAKSH portal for PwDs, DEPwD", "url": "https://depwd.gov.in/en/pm-daksh-depwd-lanuched/" }
+      ]
+    },
+
+    {
+      "id": "nhfdc",
+      "name": "NHFDC loan",
+      "fullName": "Divyangjan Swavalamban Yojana",
+      "group": "work",
+      "icon": "bank",
+      "oneLine": "A cheap loan to start your own work.",
+      "why": "The interest is well below a normal business loan. But it is a loan - it is paid back, unlike everything in the school section.",
+      "who": [
+        "40% disability or more.",
+        "Aged 18 or over.",
+        "For self-employment or an income-generating activity."
+      ],
+      "amount": "Up to ₹50,00,000, at roughly 5% to 9% a year. Women with disabilities get 1% off the rate on smaller loans.",
+      "apply": {
+        "text": "Through NHFDC, usually via the state channelising agency for your state.",
+        "url": "https://nhfdc.nic.in/"
+      },
+      "caveats": [
+        "This is borrowed money. It is paid back with interest, and not paying it back has consequences. It belongs in a different mental box from the scholarships.",
+        "Confirm the current rate and ceiling with NHFDC directly - the published range is wide and the rate depends on the loan size."
+      ],
+      "sources": [
+        { "label": "NHFDC, DEPwD", "url": "https://depwd.gov.in/en/national-handicapped-finance-and-development-corporation/" }
+      ]
+    },
+
+    {
+      "id": "tax-80u",
+      "name": "Section 80U tax deduction",
+      "group": "money",
+      "icon": "chart",
+      "oneLine": "A flat cut in the income the government taxes you on.",
+      "why": "No receipts and no proof of spending is needed. It is a flat amount, which is unusual and makes it one of the simplest things on this page to claim.",
+      "who": [
+        "The disabled person themselves, if they pay income tax.",
+        "If it is a dependant who is disabled, Section 80DD does the same job for the person supporting them."
+      ],
+      "amount": "₹75,000 off taxable income at 40% to 79% disability. ₹1,25,000 at 80% or more.",
+      "apply": {
+        "text": "Claim it in the income tax return, with the disability certificate.",
+        "url": "https://www.incometax.gov.in/"
+      },
+      "caveats": [
+        "This only helps someone who actually pays income tax. It is worth nothing to a family below the tax threshold - which is most of the families this site is written for."
+      ],
+      "sources": [
+        { "label": "Disability tax provisions", "url": "https://indiaautismcenter.org/blog/list-of-government-schemes-for-disabled-persons-in-india/" }
+      ]
+    },
+
+    {
+      "id": "pension",
+      "name": "Disability pension",
+      "fullName": "IGNDPS and state pensions",
+      "group": "money",
+      "icon": "handcoin",
+      "oneLine": "A monthly payment - but the national rules are strict, and the state rules are the ones that usually matter.",
+      "who": [
+        "The national scheme (IGNDPS) needs 80% disability or more, AND a Below Poverty Line household, AND the scheme's age range.",
+        "Most states run their own pension with their own rules, often easier to meet than the national one."
+      ],
+      "amount": "The national part is ₹300 a month (₹500 from age 80). States add their own on top, commonly bringing it to somewhere between ₹500 and ₹1,500 a month depending on the state.",
+      "apply": {
+        "text": "Through the social welfare office for your state or district.",
+        "url": "https://nsap.nic.in/"
+      },
+      "caveats": [
+        "Read the 80% rule carefully before hoping for the national scheme. Many Deaf people are certified below 80% and will not qualify for it, even though they qualify for everything else on this page. The state scheme is the more realistic route and is worth asking about by name.",
+        "State amounts and rules vary enormously. The figure above is a range, not a promise."
+      ],
+      "sources": [
+        { "label": "NSAP, national social assistance", "url": "https://nsap.nic.in/" },
+        { "label": "IGNDPS details", "url": "https://www.govtschemes.in/indira-gandhi-national-disability-pension-scheme" }
+      ]
+    },
+
+    {
+      "id": "railway",
+      "name": "Railway concession",
+      "group": "travel",
+      "icon": "bus",
+      "oneLine": "Cheaper train tickets, for the disabled person and often for one person travelling with them.",
+      "who": [
+        "For hearing disability, the rule asks for 40% or more in both ears.",
+        "The concession is written around needing someone to travel with you."
+      ],
+      "amount": "Around 50% off sleeper, second class, chair car and AC 3-tier. Around 75% off first class and AC 2-tier, with smaller reductions on Rajdhani, Shatabdi and Duronto trains.",
+      "apply": {
+        "text": "Apply online for a rail travel concession ID, then book using it.",
+        "url": "https://divyangjanid.indianrail.gov.in/"
+      },
+      "caveats": [
+        "The exact percentages differ by class and train type and are revised from time to time. Treat the numbers above as the shape of it, and check the current rule when booking.",
+        "Many state road transport services run their own bus concession. Ask locally - it is not covered by the railway card."
+      ],
+      "sources": [
+        { "label": "Rail concession ID portal", "url": "https://divyangjanid.indianrail.gov.in/" },
+        { "label": "Indian Railways concession rules", "url": "https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,2,1491" }
+      ]
+    }
+  ],
+
+  "notCovered": [
+    {
+      "name": "Niramaya health insurance",
+      "reason": "Widely mis-listed as available to Deaf people. It is a National Trust Act scheme, and that Act covers autism, cerebral palsy, intellectual disability and multiple disabilities. Hearing impairment on its own is not included. It is listed here so that a family who reads about it elsewhere knows why it is missing.",
+      "source": { "label": "Niramaya, The National Trust", "url": "https://nationaltrust.nic.in/niramaya/" }
+    },
+    {
+      "name": "State schemes",
+      "reason": "Every state runs its own pensions, scholarships, bus passes, marriage assistance, device grants and self-employment help, and they differ enormously. They are often the most generous thing available and the least well known. Ask your state's social welfare department by name - this page cannot list them all honestly.",
+      "source": null
+    }
+  ]
+}

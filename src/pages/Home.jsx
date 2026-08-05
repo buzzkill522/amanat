@@ -9,7 +9,6 @@ import {
   Trophy,
   Users,
 } from 'lucide-react'
-import LevelSelector from '@/components/LevelSelector.jsx'
 import CoverHero from '@/components/CoverHero.jsx'
 import Reveal from '@/components/Reveal.jsx'
 import CountUp from '@/components/CountUp.jsx'
@@ -24,7 +23,7 @@ import { dictionary, modules, moduleMeta } from '@content/index.js'
  * The home page.
  *
  * The page is full, but it is filled with the course rather than with
- * decoration — a featured first lesson, the eleven topics, the entitlements
+ * decoration - a featured first lesson, the eleven topics, the entitlements
  * the curriculum teaches, and a sample of the glossary. Mayer's coherence
  * principle (extraneous material removed beats extraneous material added, in
  * 23 of 23 tests) is about material that does no work; real content that helps
@@ -33,7 +32,7 @@ import { dictionary, modules, moduleMeta } from '@content/index.js'
  * The rule that keeps it from becoming noise: **a border means you can click
  * it.** Read-only blocks sit on the page separated by space and type size;
  * anything with a box around it is a target. The one exception is the
- * entitlements band, which is a tinted full-bleed strip — a change of ground
+ * entitlements band, which is a tinted full-bleed strip - a change of ground
  * rather than a box, used once, to mark the part of the page most likely to
  * matter to a family.
  *
@@ -97,13 +96,13 @@ export default function Home() {
   const { t, lang, isHindi } = useLanguage()
   const { resumePoint } = useProgress()
 
-  // null on a first visit, which is the whole point — a resume card with
+  // null on a first visit, which is the whole point - a resume card with
   // nothing to resume is worse than no card.
   const resume = resumePoint()
   const resumeLevel = resume ? getLevel(resume.levelId) : null
 
   const featured = modules[0]
-  // A sample of the glossary, not the whole thing — enough to show what an
+  // A sample of the glossary, not the whole thing - enough to show what an
   // entry looks like without turning the home page into the dictionary.
   const sampleWords = dictionary.entries.slice(0, 12)
 
@@ -120,18 +119,18 @@ export default function Home() {
       <CoverHero />
 
       {/* A slow gradient across the whole body of the page: paper at the top,
-          easing toward brand-100 by the time you reach the closing band —
+          easing toward brand-100 by the time you reach the closing band -
           one step up the existing warm-stone ramp, not a new colour. Kept
           deliberately subtle: brand-200, the next step after that, drops
           muted text below the 4.5:1 floor, so this stops one tier short of
           costing anything. Pure background-image on a tall wrapper, not a
-          scroll listener — the same visual read, with no JS and nothing to
+          scroll listener - the same visual read, with no JS and nothing to
           break under prefers-reduced-motion because nothing here moves. */}
       <div className="space-y-24 bg-gradient-to-b from-paper to-brand-100 sm:space-y-32">
       {/* -------------------------------------------------------------- resume */}
       {/* Only for someone who has actually finished something, and placed
           directly under the cover so it is the first thing a returning
-          learner meets. Nothing auto-redirects — being thrown into a lesson
+          learner meets. Nothing auto-redirects - being thrown into a lesson
           you did not ask for is worse than one extra tap. */}
       {resume && resumeLevel && (
         <section aria-labelledby="resume-heading" className="-mt-10 sm:-mt-14">
@@ -162,7 +161,7 @@ export default function Home() {
                     {t('home.resume.progress', {
                       done: resume.done,
                       total: resume.total,
-                      level: `${resumeLevel.label} — ${resumeLevel.name}`,
+                      level: `${resumeLevel.label} - ${resumeLevel.name}`,
                     })}
                   </span>
 
@@ -188,13 +187,13 @@ export default function Home() {
                 </span>
               </Link>
             ) : (
-              // Every lesson in that level is done — congratulate, and point
+              // Every lesson in that level is done - congratulate, and point
               // back rather than leaving a card with nowhere to go.
               <div className="rounded-3xl border-2 border-grow-500 bg-surface p-6 text-center sm:p-8">
                 <ConceptIcon name="trophy" className="mx-auto h-12 w-12 text-grow-600" />
                 <h2 id="resume-heading" className="mt-3 text-2xl font-extrabold text-ink">
                   {t('home.resume.done.heading', {
-                    level: `${resumeLevel.label} — ${resumeLevel.name}`,
+                    level: `${resumeLevel.label} - ${resumeLevel.name}`,
                   })}
                 </h2>
                 <p className="mx-auto mt-2 max-w-xl text-base text-muted">
@@ -291,8 +290,8 @@ export default function Home() {
           {STEPS.map(({ key, icon: Icon, tone }, i) => (
             <Reveal as="li" key={key} delay={i * 110} className="space-y-3 text-center md:text-left">
               <Icon className={`mx-auto h-8 w-8 md:mx-0 ${tone}`} aria-hidden="true" />
-              {/* Hidden from assistive tech — the ordered list already announces
-                  the position — but dark enough that a low-vision reader can
+              {/* Hidden from assistive tech - the ordered list already announces
+                  the position - but dark enough that a low-vision reader can
                   still read the order off the page. */}
               <p
                 aria-hidden="true"
@@ -309,20 +308,13 @@ export default function Home() {
         </ol>
       </section>
 
-      {/* ------------------------------------------------------ level chooser */}
-      {/* The one place boxes stay: these are the main thing to click. */}
-      <section aria-labelledby="level-heading">
-        <SectionHead
-          id="level-heading"
-          eyebrow={t('home.level.eyebrow')}
-          heading={t('home.level.heading')}
-          lead={t('home.level.lead')}
-          tone="text-berry-600"
-        />
-        <div className="mt-12 scroll-mt-24" id="levels">
-          <LevelSelector headingId="level-heading" />
-        </div>
-      </section>
+      {/* Choosing a level used to happen here too, in a full card grid
+          identical to the one on /lessons. Research on children's site
+          usability (Nielsen Norman Group) finds that multiple paths to the
+          same choice confuse children noticeably more than adults - so now
+          there is exactly one page where "which level?" gets answered, and
+          every link that used to jump to this section points at /lessons
+          instead. See CoverHero.jsx and the CTA band below. */}
 
       {/* ----------------------------------------------------- built this way */}
       <section aria-labelledby="built-heading">
@@ -399,7 +391,7 @@ export default function Home() {
       </section>
 
       {/* -------------------------------------------------- what you can claim */}
-      {/* A tinted full-bleed band — the one change of ground on the page, spent
+      {/* A tinted full-bleed band - the one change of ground on the page, spent
           on the section most likely to change something in a real household. */}
       <section
         aria-labelledby="claim-heading"
@@ -430,7 +422,12 @@ export default function Home() {
           </ul>
 
           <Reveal className="mt-12 text-center">
-            <Link to="/path/level-2/lesson/udid-and-benefits" className="btn-primary sm:text-lg">
+            {/* Pointed at /path/level-2/lesson/udid-and-benefits, which is
+                lesson 10 of Level 2 and therefore locked until the nine before
+                it are finished. A family sent here from "money you may already
+                be entitled to" met a padlock. It goes to the open reference
+                page now; the lesson is still there, still in sequence. */}
+            <Link to="/schemes" className="btn-primary sm:text-lg">
               {t('home.claim.cta')}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
@@ -516,7 +513,7 @@ export default function Home() {
             backgroundImage:
               // clay-400 and sun-500, through the palette rather than copied as
               // rgba. The band underneath is `stage`, which is dark in both
-              // themes, so the glow needs no per-theme adjustment — but saying
+              // themes, so the glow needs no per-theme adjustment - but saying
               // it in tokens means a palette change reaches it.
               'radial-gradient(40rem 22rem at 85% -10%, rgb(var(--c-clay-400) / 0.22), transparent 65%), radial-gradient(32rem 20rem at 0% 110%, rgb(var(--c-sun-500) / 0.14), transparent 65%)',
           }}
@@ -528,8 +525,8 @@ export default function Home() {
           </h2>
           <p className="text-lg text-stage-ink">{t('home.cta.text')}</p>
           <p>
-            <a
-              href="#levels"
+            <Link
+              to="/lessons"
               className="btn group bg-surface text-ink hover:bg-brand-100 sm:text-lg"
             >
               {t('home.cta.button')}
@@ -537,7 +534,7 @@ export default function Home() {
                 className="h-5 w-5 transition-transform group-hover:translate-x-1"
                 aria-hidden="true"
               />
-            </a>
+            </Link>
           </p>
           <p className="text-sm text-stage-muted">{t('home.free')}</p>
         </Reveal>

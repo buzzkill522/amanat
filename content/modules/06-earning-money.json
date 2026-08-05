@@ -34,9 +34,9 @@
             "prompt": "Your neighbour pays you ₹50 for washing their car. Is this earning money, and why?",
             "image": { "icon": "handcoin", "alt": "A hand giving money for washing a car" },
             "options": [
-              { "icon": "handcoin", "label": "Yes — you did work and were paid for it" },
-              { "icon": "cross", "label": "No — only adults with real jobs earn money" },
-              { "icon": "bank", "label": "No — money only comes from banks" }
+              { "icon": "handcoin", "label": "Yes - you did work and were paid for it" },
+              { "icon": "cross", "label": "No - only adults with real jobs earn money" },
+              { "icon": "bank", "label": "No - money only comes from banks" }
             ],
             "correctIndex": 0,
             "hint": "Check whether work happened and whether payment followed it."
@@ -46,7 +46,7 @@
             "prompt": "You play cricket for fun every day. Your friend delivers newspapers every morning and is paid for it. Which one is a job, and why?",
             "image": { "icon": "cricket", "alt": "A cricket bat beside a bundle of newspapers" },
             "options": [
-              { "icon": "handcoin", "label": "Delivering newspapers — someone pays for that work; playing cricket for fun is not paid work" },
+              { "icon": "handcoin", "label": "Delivering newspapers - someone pays for that work; playing cricket for fun is not paid work" },
               { "icon": "check", "label": "Both are jobs, since both take effort" },
               { "icon": "cross", "label": "Neither is a job unless you are an adult" }
             ],
@@ -58,8 +58,8 @@
             "prompt": "Your parent gives you ₹20 for tidying your own room, and separately ₹20 for painting a fence. Are both of these examples of a child earning money?",
             "image": { "icon": "house", "alt": "A tidy room beside a freshly painted fence" },
             "options": [
-              { "icon": "check", "label": "Yes — both involve doing a task and receiving payment, even if the tasks differ in size" },
-              { "icon": "cross", "label": "No — only big tasks like painting count as earning" }
+              { "icon": "check", "label": "Yes - both involve doing a task and receiving payment, even if the tasks differ in size" },
+              { "icon": "cross", "label": "No - only big tasks like painting count as earning" }
             ],
             "correctIndex": 0,
             "hint": "Size of the task does not decide whether it counts as earning; payment for work does."
@@ -119,8 +119,8 @@
             "prompt": "Two drivers apply for the same job. One has a special licence for driving large trucks; the other does not. Who is more likely to be offered higher pay, and why?",
             "image": { "icon": "book", "alt": "A special driving licence beside an ordinary one" },
             "options": [
-              { "icon": "book", "label": "The one with the special licence — skills raise how much you are paid" },
-              { "icon": "cross", "label": "Neither — pay never depends on skills" },
+              { "icon": "book", "label": "The one with the special licence - skills raise how much you are paid" },
+              { "icon": "cross", "label": "Neither - pay never depends on skills" },
               { "icon": "coin", "label": "The one without the licence, since they are cheaper to hire" }
             ],
             "correctIndex": 0,

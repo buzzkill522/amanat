@@ -5,7 +5,7 @@ import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion.js'
 // The site's own colours, through the palette variables, so the confetti
 // follows the theme instead of staying at light-theme darkness on a dark page.
 //
-// These were five hardcoded hexes, one of which (#2a63ad) was a blue — in a
+// These were five hardcoded hexes, one of which (#2a63ad) was a blue - in a
 // palette whose one standing rule is that it contains no blue and no grey. It
 // predates the beige scheme and was never revisited; the accent and the four
 // state colours are the honest set.

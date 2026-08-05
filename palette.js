@@ -11,13 +11,13 @@
 //
 // That matters because the failure this project guards against is a hex being
 // changed and the contrast check not being re-run. With one source and a CI
-// gate reading it, that drift cannot happen quietly — and dark mode doubles
+// gate reading it, that drift cannot happen quietly - and dark mode doubles
 // the surface area for exactly that mistake.
 //
 // ---------------------------------------------------------------------------
 // HOW DARK MODE WORKS HERE
 //
-// Not a second design. The same design, reflected — because the token names
+// Not a second design. The same design, reflected - because the token names
 // were already roles rather than colours. `paper` is "the page", `ink` is
 // "text on the page", `surface` is "a card". A role survives the reflection;
 // a colour name would not have.
@@ -50,15 +50,15 @@
 
 /**
  * The light theme. These values are unchanged from the beige palette that
- * shipped — introducing dark mode was not licence to restyle the light one,
+ * shipped - introducing dark mode was not licence to restyle the light one,
  * and every measured ratio in the old audit still holds.
  */
 const light = {
-  // Page + surfaces — unbleached beige, and a near-white for cards.
+  // Page + surfaces - unbleached beige, and a near-white for cards.
   paper: '#f6f1e8',
   surface: '#fffdf8',
   // Text.
-  ink: '#1c1815', //  15.7:1 on paper — warm near-black, never grey-blue
+  ink: '#1c1815', //  15.7:1 on paper - warm near-black, never grey-blue
   muted: '#6b6155', //   5.4:1 on paper
 
   // Primary is a warm stone ramp rather than a hue: in a neutral scheme the
@@ -69,7 +69,7 @@ const light = {
     100: '#e8e1d4',
     200: '#d3c9b8',
     300: '#ab9f8c',
-    400: '#847868', //  the secondary button's outline — owes 3:1
+    400: '#847868', //  the secondary button's outline - owes 3:1
     500: '#63594a',
     600: '#4a4237',
     700: '#372f27',
@@ -91,7 +91,7 @@ const light = {
   // The single accent. Rust, and the only saturated colour on a normal page.
   clay: { 100: '#f8e7dc', 400: '#c4643a', 500: '#a8451c', 600: '#8a3818' },
 
-  // State colours. One job per step — see rule 2 above.
+  // State colours. One job per step - see rule 2 above.
   //   100 tint background · 500 fill · 600 text · 700 pressed fill
   grow: { 100: '#dcece5', 500: '#237a63', 600: '#1a5e4b', 700: '#164e3e' },
   sun: { 100: '#f8eccc', 500: '#8a6413', 600: '#6f4f0c', 700: '#5a3f09' },
@@ -103,14 +103,14 @@ const light = {
  * The dark theme.
  *
  * Still brown. Desaturating to grey is the obvious way to build a dark theme
- * and it would have thrown away the one thing this palette is about — there is
+ * and it would have thrown away the one thing this palette is about - there is
  * no blue and no grey in the light theme, and there is none here either. The
  * page is a dark warm brown, the text a warm off-white, and the neutrals stay
  * on the same stone axis rather than sliding to slate.
  *
  * The page is #16130f rather than #000. Pure black against near-white text is
  * the highest contrast available and, for extended reading, a common cause of
- * halation — text appearing to bleed into its background. Children reading
+ * halation - text appearing to bleed into its background. Children reading
  * paragraphs are the case that suffers most.
  */
 const dark = {
@@ -169,7 +169,7 @@ const dark = {
   // clear 3:1 against the page to read as an object at all (WCAG 1.4.11), and
   // hold a white label at 4.5:1 (1.4.3). Against this page those two pull in
   // opposite directions and leave a band of roughly 0.136 to 0.183 relative
-  // luminance. Every value below sits inside it — which is why they look like
+  // luminance. Every value below sits inside it - which is why they look like
   // oddly specific hexes rather than round ones.
   grow: { 100: '#14291f', 500: '#26826c', 600: '#6fd9b4', 700: '#1d6650' },
   sun: { 100: '#2e2410', 500: '#96701a', 600: '#dcb055', 700: '#6f4f0c' },

@@ -9,9 +9,9 @@ const NODE_TONE = {
 }
 
 /**
- * The journey map: the eight lessons drawn as a path with a stop at each one.
+ * The journey map: the eleven lessons drawn as a path with a stop at each one.
  *
- * It is a real ordered list underneath, so a screen reader hears "1 of 8" and
+ * It is a real ordered list underneath, so a screen reader hears "1 of 11" and
  * keyboard users tab through it in teaching order. The zig-zag and the joining
  * line are decoration layered on top and are hidden from assistive tech.
  */

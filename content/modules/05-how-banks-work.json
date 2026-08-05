@@ -34,8 +34,8 @@
             "prompt": "Your friend keeps ₹500 loose in a school bag. You keep ₹500 in a bank account. Whose money is more at risk of being lost or taken, and why?",
             "image": { "icon": "bank", "alt": "A school bag beside a bank building" },
             "options": [
-              { "icon": "wallet", "label": "Your friend's — a bank keeps a written record, a school bag does not" },
-              { "icon": "bank", "label": "Yours — banks can lose records too" },
+              { "icon": "wallet", "label": "Your friend's - a bank keeps a written record, a school bag does not" },
+              { "icon": "bank", "label": "Yours - banks can lose records too" },
               { "icon": "question", "label": "Both are equally at risk" }
             ],
             "correctIndex": 0,
@@ -46,7 +46,7 @@
             "prompt": "You deposit ₹200 in the bank on Monday. On Friday you want it back. What happens?",
             "image": { "icon": "handcoin", "alt": "A hand placing money at a bank counter on a calendar" },
             "options": [
-              { "icon": "check", "label": "You can withdraw it — it was always yours, the bank was only keeping it" },
+              { "icon": "check", "label": "You can withdraw it - it was always yours, the bank was only keeping it" },
               { "icon": "lock", "label": "You cannot get it back until a year passes" },
               { "icon": "cross", "label": "You must ask the bank's permission every time" }
             ],
@@ -58,8 +58,8 @@
             "prompt": "Your cousin keeps ₹100 in a box for a year. You keep ₹100 in a bank for a year, and neither of you adds or removes money. Who ends the year with more, and why?",
             "image": { "icon": "growth", "alt": "A box beside a bank, with a small plant growing from the bank" },
             "options": [
-              { "icon": "bank", "label": "You do — the bank pays a little extra for keeping your money there" },
-              { "icon": "house", "label": "Your cousin does — boxes are safer" },
+              { "icon": "bank", "label": "You do - the bank pays a little extra for keeping your money there" },
+              { "icon": "house", "label": "Your cousin does - boxes are safer" },
               { "icon": "question", "label": "You will have exactly the same amount" }
             ],
             "correctIndex": 0,
@@ -84,7 +84,7 @@
         "You can hold a bank account in your own name from the age of 10. An adult helps manage it until you are 18, but the account is yours.",
         "A basic account needs no minimum balance. You can open it with nothing in it, and leaving it empty costs you nothing.",
         "It comes with a debit card, so you can pay and withdraw without asking anyone for permission.",
-        "The account is where your own money lives — pocket money, gifts, and anything you earn later.",
+        "The account is where your own money lives - pocket money, gifts, and anything you earn later.",
         "Check the exact rules at the bank before you go. Schemes change, and different banks ask for different papers."
       ],
       "keyWords": ["account", "zero balance", "debit card", "guardian", "deposit", "withdrawal"],
@@ -96,7 +96,7 @@
             "prompt": "Your cousin is 9 years old and wants a bank account fully in their own name. What is true?",
             "image": { "icon": "calendar", "alt": "A calendar with a ninth and tenth birthday marked" },
             "options": [
-              { "icon": "check", "label": "They must wait until they are 10 — that is the earliest age allowed" },
+              { "icon": "check", "label": "They must wait until they are 10 - that is the earliest age allowed" },
               { "icon": "cross", "label": "They can open one today, no age limit applies" },
               { "icon": "house", "label": "Only their parents can ever have an account" }
             ],
@@ -108,8 +108,8 @@
             "prompt": "You are deciding between an account that needs a ₹500 minimum balance and a basic account with none. You only have ₹80. Which suits you, and why?",
             "image": { "icon": "wallet", "alt": "Two account passbooks with different minimum balance rules" },
             "options": [
-              { "icon": "check", "label": "The basic account — no minimum balance means ₹80 or even ₹0 is fine" },
-              { "icon": "warning", "label": "The ₹500-minimum one — more rules mean more safety" },
+              { "icon": "check", "label": "The basic account - no minimum balance means ₹80 or even ₹0 is fine" },
+              { "icon": "warning", "label": "The ₹500-minimum one - more rules mean more safety" },
               { "icon": "cross", "label": "Neither works with only ₹80" }
             ],
             "correctIndex": 0,
@@ -143,10 +143,10 @@
         "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
-        "The account is not the goal. It is what everything else plugs into — a salary, a scholarship, a pension, a fund held in your name.",
+        "The account is not the goal. It is what everything else plugs into - a salary, a scholarship, a pension, a fund held in your name.",
         "Money you are owed is normally paid only into an account in your own name. Without one, somebody else receives it on your behalf.",
         "That is the real argument for holding your own: it is the difference between managing your money and being managed.",
-        "A savings account pays roughly 4% a year while prices rise around 6%. Money parked there quietly loses ground — an account is for safety and access, not for growth.",
+        "A savings account pays roughly 4% a year while prices rise around 6%. Money parked there quietly loses ground - an account is for safety and access, not for growth.",
         "The law is behind you when you open one. The Rights of Persons with Disabilities Act, 2016 requires service providers, banks included, to make their services accessible.",
         "A bank that refuses you, or insists a hearing relative speaks for you, is not following the rules. Ask for the branch manager, then the bank's grievance officer, then the RBI ombudsman."
       ],
@@ -176,15 +176,15 @@
               { "icon": "cross", "label": "Accept the refusal, since the clerk has final say" }
             ],
             "correctIndex": 0,
-            "hint": "The lesson gives three steps, and they have a specific order — start local, escalate outward."
+            "hint": "The lesson gives three steps, and they have a specific order - start local, escalate outward."
           },
           {
             "id": "q3",
-            "prompt": "Your grandmother is owed a monthly government pension, but she has no bank account of her own — it is currently paid into her son's account. What risk does this create?",
+            "prompt": "Your grandmother is owed a monthly government pension, but she has no bank account of her own - it is currently paid into her son's account. What risk does this create?",
             "image": { "icon": "bank", "alt": "A pension payment landing in someone else's account" },
             "options": [
               { "icon": "handcoin", "label": "She does not fully control money that is legally hers, the same problem as with a scholarship paid to someone else" },
-              { "icon": "check", "label": "No risk — pensions are always safe wherever they land" },
+              { "icon": "check", "label": "No risk - pensions are always safe wherever they land" },
               { "icon": "star", "label": "This is required by law and cannot be changed" }
             ],
             "correctIndex": 0,

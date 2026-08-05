@@ -8,7 +8,7 @@ import { themes, flatten, varName, channels } from './palette.js'
 // reasoning for each. This file turns them into two things:
 //
 //   1. Colour utilities that point at CSS custom properties rather than at
-//      hexes — so `bg-surface` resolves through `--c-surface` and means the
+//      hexes - so `bg-surface` resolves through `--c-surface` and means the
 //      right thing in whichever theme is active. Components never say which
 //      theme they are in, because they cannot know; a teacher can switch it
 //      under them at any moment.
@@ -17,12 +17,12 @@ import { themes, flatten, varName, channels } from './palette.js'
 //
 // One consequence worth stating: the utility class list is the same size as it
 // was before dark mode existed. There is no `dark:` variant of anything, so the
-// CSS does not double and no component can be half-converted — the failure
+// CSS does not double and no component can be half-converted - the failure
 // mode where one forgotten panel stays beige on a dark page is not reachable.
 //
 // The palette is warm all the way down and stays that way in both themes:
 // माटी terracotta, हल्दी turmeric, गेंदा marigold, मेहंदी henna, जामुन, सिंदूर,
-// on unbleached khadi paper. There is no blue in it, and no grey — the neutrals
+// on unbleached khadi paper. There is no blue in it, and no grey - the neutrals
 // are browns. The dark theme is a dark brown page, not a slate one.
 //
 // Every ratio is measured rather than estimated, in both themes, by
@@ -31,9 +31,9 @@ import { themes, flatten, varName, channels } from './palette.js'
 //
 // What is allowed to collide, and why: sun/alert and grow/berry stay close
 // under deuteranopia. Neither pair ever distinguishes one meaning from another
-// — every state in this UI is carried by an icon and a word as well
-// (WCAG 1.4.1). The pair that does carry meaning, grow against alert — right
-// against wrong in the quiz — is held to a floor by the audit, in both themes.
+// - every state in this UI is carried by an icon and a word as well
+// (WCAG 1.4.1). The pair that does carry meaning, grow against alert - right
+// against wrong in the quiz - is held to a floor by the audit, in both themes.
 // ---------------------------------------------------------------------------
 
 /** Mirror the palette's shape, but with every leaf pointing at its variable. */
@@ -57,8 +57,8 @@ function toVarRefs(theme) {
  * { "--c-brand-600": "74 66 55", ..., colorScheme: "dark" }
  *
  * `color-scheme` is not decoration. It is what tells the browser to paint its
- * own furniture — scrollbars, the video element's default controls, checkbox
- * and radio chrome, form autofill, the space beyond an overscroll — to match.
+ * own furniture - scrollbars, the video element's default controls, checkbox
+ * and radio chrome, form autofill, the space beyond an overscroll - to match.
  * Without it a dark page keeps a bright white scrollbar down its edge and
  * light native controls inside dark panels.
  */
@@ -82,7 +82,7 @@ export default {
         '3xl': '2rem',
       },
       // Both faces are by Ek Type, a type foundry in Mumbai, and both were
-      // drawn for Devanagari and Latin together — so the Hindi and the English
+      // drawn for Devanagari and Latin together - so the Hindi and the English
       // are the same typeface rather than a substitution, and the two scripts
       // share a baseline and a weight. Self-hosted from node_modules; see
       // src/main.jsx. Nothing is fetched from a font CDN.
@@ -97,7 +97,7 @@ export default {
           'system-ui',
           'sans-serif',
         ],
-        // Baloo 2: rounded and heavy. Headings and buttons only — it is the
+        // Baloo 2: rounded and heavy. Headings and buttons only - it is the
         // friendly voice of the site, not something to read a paragraph of.
         display: ['"Baloo 2"', 'Mukta', 'Verdana', '"Nirmala UI"', 'sans-serif'],
       },
@@ -144,7 +144,7 @@ export default {
 
         // Honoured before any JavaScript runs and without anybody choosing:
         // a device set to dark opens dark. `:not([data-theme])` is what makes
-        // an explicit choice win over the system — once the reader has picked,
+        // an explicit choice win over the system - once the reader has picked,
         // the attribute is present and this rule stops applying.
         //
         // This is also the whole no-JavaScript story. The themes are CSS

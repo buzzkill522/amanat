@@ -46,7 +46,7 @@
             "prompt": "You have ₹50. You want a snack (₹20), a pen (₹20), and a comic (₹20). Can you buy all three?",
             "image": { "icon": "list", "alt": "A list of three items with prices, beside fifty rupees" },
             "options": [
-              { "icon": "cross", "label": "No — the total is ₹60, which is more than your ₹50" },
+              { "icon": "cross", "label": "No - the total is ₹60, which is more than your ₹50" },
               { "icon": "check", "label": "Yes, exactly enough" }
             ],
             "correctIndex": 0,
@@ -57,7 +57,7 @@
             "prompt": "You wrote a budget but did not follow it, and ran out of money before the month ended. What went wrong?",
             "image": { "icon": "warning", "alt": "A written budget sheet beside an empty wallet" },
             "options": [
-              { "icon": "warning", "label": "The plan was not followed — writing it is not enough, you must stick to it" },
+              { "icon": "warning", "label": "The plan was not followed - writing it is not enough, you must stick to it" },
               { "icon": "cross", "label": "Budgets never actually help" },
               { "icon": "list", "label": "You should have written a longer list" }
             ],
@@ -181,7 +181,7 @@
             "prompt": "Someone with very high rent needs to spend 65% on needs, not 50%. According to the lesson, what should they do?",
             "image": { "icon": "house", "alt": "A budget split diagram with the needs slice enlarged" },
             "options": [
-              { "icon": "chart", "label": "Adjust the percentages to fit their real life — the split is a guide, not a fixed rule" },
+              { "icon": "chart", "label": "Adjust the percentages to fit their real life - the split is a guide, not a fixed rule" },
               { "icon": "cross", "label": "They are doing something wrong and must fit exactly 50%" },
               { "icon": "house", "label": "They should stop paying rent" }
             ],

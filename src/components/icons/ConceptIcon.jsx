@@ -26,6 +26,30 @@ const S = {
 // A soft wash behind the linework, so icons read as friendly rather than clinical.
 const Wash = (props) => <g fill="currentColor" opacity="0.14" stroke="none" {...props} />
 
+// One tile shape, ten digits. A rounded card with the numeral itself drawn on
+// it - the same move as the ₹ on the `coin` icon above, generalised - rather
+// than ten unrelated pictures, so a child scanning the dictionary recognises
+// "this is a number entry" before they have read anything.
+const numberTile = (digit) => (
+  <>
+    <Wash>
+      <rect x="6" y="6" width="36" height="36" rx="9" />
+    </Wash>
+    <rect x="6" y="6" width="36" height="36" rx="9" {...S} />
+    <text
+      x="24"
+      y="31.5"
+      textAnchor="middle"
+      fontSize="19"
+      fontWeight="800"
+      fill="currentColor"
+      stroke="none"
+    >
+      {digit}
+    </text>
+  </>
+)
+
 const shapes = {
   coin: (
     <>
@@ -421,6 +445,16 @@ const shapes = {
       <path d="M37 42V22a3 3 0 0 0-6 0v-6a3 3 0 0 0-6 0v20" {...S} />
     </>
   ),
+  digit0: numberTile('0'),
+  digit1: numberTile('1'),
+  digit2: numberTile('2'),
+  digit3: numberTile('3'),
+  digit4: numberTile('4'),
+  digit5: numberTile('5'),
+  digit6: numberTile('6'),
+  digit7: numberTile('7'),
+  digit8: numberTile('8'),
+  digit9: numberTile('9'),
 }
 
 export const iconNames = Object.keys(shapes)

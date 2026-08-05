@@ -8,7 +8,7 @@ import { useLanguage } from '@/i18n/LanguageProvider.jsx'
  * A one-button switch has to name the language you are *not* in, which reads
  * backwards to plenty of people; showing both and marking the live one is
  * unambiguous, and the choice does not depend on reading the button label at
- * all — "हिन्दी" is written in the script it selects.
+ * all - "हिन्दी" is written in the script it selects.
  */
 export default function LanguageToggle({ className = '' }) {
   const { lang, setLang } = useLanguage()

@@ -8,7 +8,7 @@
 //   node scripts/sign-clips.mjs --links  print a lookup link per missing term
 //
 // The manifest exists so the dictionary page does not have to fire a request
-// per term to discover which clips are there. Drop a file in, run this, done —
+// per term to discover which clips are there. Drop a file in, run this, done -
 // no JSON editing per entry.
 // ---------------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ const found = terms.length - missing.length
 console.log(`\nISL dictionary clips: ${found} of ${terms.length} recorded\n`)
 
 if (missing.length) {
-  console.log(showLinks ? 'Still to source — save each one as <id>.mp4:' : 'Still to add:')
+  console.log(showLinks ? 'Still to source - save each one as <id>.mp4:' : 'Still to add:')
   for (const t of missing) {
     if (!showLinks) {
       console.log(`  ${t.id.padEnd(20)} ${t.term}`)

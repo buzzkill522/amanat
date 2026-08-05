@@ -14,6 +14,7 @@ import m10 from './modules/10-udid-and-benefits.json'
 import m11 from './modules/11-schemes-school-work.json'
 import dictionaryData from './dictionary.json'
 import signClipManifest from './sign-clips.json'
+import schemesData from './schemes.json'
 
 const rawModules = [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11]
 
@@ -21,11 +22,33 @@ export const modules = [...rawModules].sort((a, b) => a.order - b.order)
 
 export const dictionary = dictionaryData
 
+export const schemes = schemesData
+
+/**
+ * The schemes directory, grouped in the order the groups are declared.
+ *
+ * Grouped here rather than in the page so the order is a property of the
+ * content, not of the markup: "Start here" has to come first because the UDID
+ * card is what every other entry asks for, and that is a fact about the
+ * schemes rather than a layout choice.
+ */
+export function schemesByGroup() {
+  return schemes.groups
+    .map((group) => ({
+      ...group,
+      schemes: schemes.schemes.filter((s) => s.group === group.id),
+    }))
+    .filter((group) => group.schemes.length > 0)
+}
+
+/** The two modules that teach this material, for linking the page to the course. */
+export const SCHEME_MODULE_IDS = ['udid-and-benefits', 'schemes-school-work']
+
 /**
  * Where a dictionary term's ISL clip lives, or null if it has not been filmed.
  *
  * Two ways to point at a clip, and the explicit one wins:
- *   1. `signVideo.src` in dictionary.json — for a clip that lives elsewhere,
+ *   1. `signVideo.src` in dictionary.json - for a clip that lives elsewhere,
  *      or is named differently.
  *   2. A file at `public/sign/<entry id>.mp4`, picked up by
  *      `npm run sign:sync`. This is the normal path: a recording session
@@ -40,8 +63,8 @@ export function signClipSrc(entry) {
 /**
  * The credit line to show under a term's clip, or null if none is needed.
  *
- * Attribution is a licence condition for some sources — ISLRTC's dictionary,
- * for one — so it is resolved here rather than left to whoever adds a clip to
+ * Attribution is a licence condition for some sources - ISLRTC's dictionary,
+ * for one - so it is resolved here rather than left to whoever adds a clip to
  * remember. A clip may carry its own credit; otherwise the dictionary-wide one
  * applies to every clip that does not.
  */
@@ -62,13 +85,13 @@ export function signClipCoverage() {
 /**
  * A module JSON carries its English text as plain fields and, where a lesson
  * has been translated, a sibling `"hi"` object holding only the fields that
- * need a second language — video, icon names, ids and correctIndex are the
+ * need a second language - video, icon names, ids and correctIndex are the
  * same in every language, so they are never duplicated.
  *
  * Missing per-field, exactly like the UI strings in i18n/strings.js: a
  * translated title with an untranslated summary shows the Hindi title and the
  * English summary, never a blank. A lesson with no "hi" object at all simply
- * renders in English under a Hindi interface — see `hasTranslation` below,
+ * renders in English under a Hindi interface - see `hasTranslation` below,
  * which is how the reader is told that plainly instead of silently.
  */
 function localizeLevelBlock(block, lang) {
@@ -102,7 +125,7 @@ function localizeLevelBlock(block, lang) {
   }
 }
 
-/** A module's own title/shortTitle (used outside any one level — the home
+/** A module's own title/shortTitle (used outside any one level - the home
  * page grid, the teacher's coverage table), localized the same way. */
 export function moduleMeta(m, lang) {
   const hi = lang === 'hi' ? m.translations?.hi : null

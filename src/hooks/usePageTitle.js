@@ -7,6 +7,6 @@ import { site } from '@/config/site.js'
  */
 export default function usePageTitle(title) {
   useEffect(() => {
-    document.title = title ? `${title} — ${site.name}` : `${site.name} — ${site.tagline}`
+    document.title = title ? `${title} - ${site.name}` : `${site.name} - ${site.tagline}`
   }, [title])
 }

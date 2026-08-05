@@ -7,7 +7,7 @@ import useReveal from '@/hooks/useReveal.js'
  * entrances make a page feel slow to anyone who scrolls faster than the
  * designer imagined, and on a site read mostly by children that is most people.
  *
- * `delay` staggers a row of siblings. Keep it under about 300ms in total — a
+ * `delay` staggers a row of siblings. Keep it under about 300ms in total - a
  * stagger long enough to notice is a stagger long enough to wait for.
  */
 export default function Reveal({ children, delay = 0, className = '', as: Tag = 'div' }) {

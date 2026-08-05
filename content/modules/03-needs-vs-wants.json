@@ -34,8 +34,8 @@
             "prompt": "You already have shoes that fit and are not broken. A new pair you just like the look of is a...",
             "image": { "icon": "question", "alt": "An old pair of shoes beside a new pair" },
             "options": [
-              { "icon": "star", "label": "Want — your current shoes already meet the need" },
-              { "icon": "shirt", "label": "Need — you must always have new shoes" }
+              { "icon": "star", "label": "Want - your current shoes already meet the need" },
+              { "icon": "shirt", "label": "Need - you must always have new shoes" }
             ],
             "correctIndex": 0,
             "hint": "Ask whether the OLD shoes still do the job."
@@ -45,7 +45,7 @@
             "prompt": "You have ₹100. Lunch costs ₹60 and a comic costs ₹60. You cannot buy both. What should you do?",
             "image": { "icon": "wallet", "alt": "A wallet with a hundred rupee note, beside lunch and a comic" },
             "options": [
-              { "icon": "food", "label": "Buy lunch, skip the comic — needs come before wants" },
+              { "icon": "food", "label": "Buy lunch, skip the comic - needs come before wants" },
               { "icon": "book", "label": "Buy the comic, skip lunch" },
               { "icon": "question", "label": "Buy half of each" }
             ],
@@ -54,10 +54,10 @@
           },
           {
             "id": "q3",
-            "prompt": "Your friend says: 'Water is boring, buy juice instead — you still get to drink something.' Is juice a fair swap for water as a need?",
+            "prompt": "Your friend says: 'Water is boring, buy juice instead - you still get to drink something.' Is juice a fair swap for water as a need?",
             "image": { "icon": "water", "alt": "A glass of water beside a bottle of juice" },
             "options": [
-              { "icon": "water", "label": "No — plain water meets the need; juice is the want version of it" },
+              { "icon": "water", "label": "No - plain water meets the need; juice is the want version of it" },
               { "icon": "gift", "label": "Yes, any drink meets the need" }
             ],
             "correctIndex": 0,
@@ -106,8 +106,8 @@
             "prompt": "You live 10 minutes' walk from school, but a friend has a bicycle you could buy to get there faster. Applying the two questions, is the bicycle a need?",
             "image": { "icon": "bicycle", "alt": "A short walking path to school beside a bicycle" },
             "options": [
-              { "icon": "cross", "label": "No — you can already reach school on foot, so it fails 'what happens if I don't buy it'" },
-              { "icon": "bicycle", "label": "Yes — anything that helps you get to school is a need" }
+              { "icon": "cross", "label": "No - you can already reach school on foot, so it fails 'what happens if I don't buy it'" },
+              { "icon": "bicycle", "label": "Yes - anything that helps you get to school is a need" }
             ],
             "correctIndex": 0,
             "hint": "Ask what happens if you do NOT buy it. Can you still get to school?"
@@ -160,14 +160,14 @@
               { "icon": "check", "label": "Nothing went wrong, this is normal" }
             ],
             "correctIndex": 0,
-            "hint": "Fixed costs like rent cannot shrink. Flexible costs can — and should, before it's too late."
+            "hint": "Fixed costs like rent cannot shrink. Flexible costs can - and should, before it's too late."
           },
           {
             "id": "q2",
             "prompt": "Money is short this month. Which of these should you cut FIRST: school fees, weekend outings, or medicine?",
             "image": { "icon": "wallet", "alt": "An almost empty wallet beside school fees, outings, and medicine" },
             "options": [
-              { "icon": "icecream", "label": "Weekend outings — the only flexible one of the three" },
+              { "icon": "icecream", "label": "Weekend outings - the only flexible one of the three" },
               { "icon": "medicine", "label": "Medicine, because it is optional" },
               { "icon": "book", "label": "School fees, because they are the biggest" }
             ],
@@ -179,7 +179,7 @@
             "prompt": "You see a ₹450 want and a ₹600 want on the same day. To which one does the 24 hour rule apply?",
             "image": { "icon": "calendar", "alt": "Two price tags, one below and one above five hundred rupees" },
             "options": [
-              { "icon": "calendar", "label": "Only the ₹600 one — the rule is for wants over ₹500" },
+              { "icon": "calendar", "label": "Only the ₹600 one - the rule is for wants over ₹500" },
               { "icon": "shop", "label": "Both, the rule applies to every purchase" },
               { "icon": "food", "label": "Neither, the rule is only for needs" }
             ],

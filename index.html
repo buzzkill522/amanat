@@ -9,18 +9,18 @@
     />
     <!-- `surface`, the header colour. This tints the browser's own chrome, so
          it has to match the top of the page rather than any nominal "brand"
-         value — the header is a light surface with a hairline, not a filled
+         value - the header is a light surface with a hairline, not a filled
          bar. The value here is the light theme's; ThemeProvider rewrites it
          from the live stylesheet when the theme changes, so the two cannot
          drift apart. -->
     <meta name="theme-color" content="#fffdf8" />
-    <title>Amanat — Money lessons you can see</title>
+    <title>Amanat - Money lessons you can see</title>
 
     <!--
       Set the theme before the first paint.
 
       Without this the page paints light, React mounts, and only then does the
-      attribute land — a white flash on the way into a dark page. It is brief,
+      attribute land - a white flash on the way into a dark page. It is brief,
       but a bright flash is exactly what someone who chose the dark theme was
       trying to avoid, and for a light-sensitive reader it is the whole problem
       rather than a cosmetic one.

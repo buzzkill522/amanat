@@ -11,7 +11,7 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
  *
  *   - The accessible name is a whole sentence naming the action, not the state
  *     ("Switch to dark page colours"). A one-word label on a one-button switch
- *     is the genuinely ambiguous case — plenty of people read "Dark" as where
+ *     is the genuinely ambiguous case - plenty of people read "Dark" as where
  *     they are rather than where the button goes. A verb cannot be read that
  *     way, and it is what a screen reader announces.
  *   - The same sentence is the `title`, so it appears on hover and on a long
@@ -20,7 +20,7 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
  *     page is light, because pressing it makes the page dark.
  *
  * Small is visual only. `tap-target` keeps the button 44x44 whatever the icon
- * measures, so WCAG 2.5.8 still holds — shrinking the drawing is a look, and
+ * measures, so WCAG 2.5.8 still holds - shrinking the drawing is a look, and
  * shrinking the hit area would be a defect, particularly on the shared tablets
  * this is used on.
  */

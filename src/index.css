@@ -21,7 +21,7 @@
 
   /* --------------------------------------------------------------------------
      Background. Two fixed layers behind everything, both pointer-events:none
-     and both deliberately faint — this is paper texture, not decoration
+     and both deliberately faint - this is paper texture, not decoration
      competing with the lesson.
 
      They are kept under about 7% alpha for a measurable reason: the contrast
@@ -44,7 +44,7 @@
 
   [data-theme='dark'] {
     /* The noise is dark specks. On a dark page that is subtraction from
-       something already near the floor — invisible. Inverting makes them light
+       something already near the floor - invisible. Inverting makes them light
        specks, which is what grain on a dark ground has to be. */
     --grain-filter: invert(1);
     --wash-strength: 2.4;
@@ -75,7 +75,7 @@
 
      These used to be three hardcoded rgba() values that happened to equal
      clay-500, sun-500 and grow-500. They now say so, through the same custom
-     properties every utility class resolves through — so they follow the theme
+     properties every utility class resolves through - so they follow the theme
      without anyone maintaining a second copy of the palette down here. */
   body::after {
     content: '';
@@ -199,7 +199,7 @@
 
 /* ---------------------------------------------------------------------------
    Print. Scroll reveals start at opacity 0 and are un-hidden by an
-   IntersectionObserver — which never fires in a print context, so a printed
+   IntersectionObserver - which never fires in a print context, so a printed
    page would come out with blank sections where the content should be.
    Teachers print these pages for class, so force everything visible.
    --------------------------------------------------------------------------- */

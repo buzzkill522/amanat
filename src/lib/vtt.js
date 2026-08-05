@@ -3,7 +3,7 @@
  *
  * The browser already renders captions over the video. We parse the same file a
  * second time to build a readable transcript beside it, because a transcript is
- * often easier to follow than captions that disappear after two seconds — and it
+ * often easier to follow than captions that disappear after two seconds - and it
  * can be scrolled back, searched and printed.
  */
 

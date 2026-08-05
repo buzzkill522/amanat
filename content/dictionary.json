@@ -6,7 +6,7 @@
   "signVideoCredit": {
     "text": "Sign videos from Spread the Sign, © European Sign Language Centre. Used with permission.",
     "href": "https://spreadthesign.com/en.in/",
-    "note": "Shown under every clip that does not set its own credit. Record the permission itself in content/ISL-CLIPS.md — who granted it, when, and what it covers. If a clip comes from a different source, set `credit` on that entry instead; it wins over this. If you film your own and need no attribution, set appliesToUnattributed to false.",
+    "note": "Shown under every clip that does not set its own credit. Record the permission itself in content/ISL-CLIPS.md - who granted it, when, and what it covers. If a clip comes from a different source, set `credit` on that entry instead; it wins over this. If you film your own and need no attribution, set appliesToUnattributed to false.",
     "appliesToUnattributed": true
   },
 
@@ -314,6 +314,106 @@
       "icon": "growth",
       "definition": "Prices slowly going up over time. Each rupee buys a little less.",
       "example": "A snack was ₹20 last year. Now it is ₹24.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-0",
+      "term": "0",
+      "category": "basics",
+      "icon": "digit0",
+      "definition": "The number 0 (zero). Amounts with more than one digit are signed one digit at a time - ₹500 is signed 5, 0, 0.",
+      "example": "₹100, ₹500 and ₹2,000 all end in 0.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-1",
+      "term": "1",
+      "category": "basics",
+      "icon": "digit1",
+      "definition": "The number 1 (one).",
+      "example": "India has a ₹1 coin, and every banknote starts with a 1, 2 or 5 followed by zeros.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-2",
+      "term": "2",
+      "category": "basics",
+      "icon": "digit2",
+      "definition": "The number 2 (two).",
+      "example": "A ₹2 coin is worth two rupees.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-3",
+      "term": "3",
+      "category": "basics",
+      "icon": "digit3",
+      "definition": "The number 3 (three).",
+      "example": "Used when signing a price, like ₹30 or ₹300.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-4",
+      "term": "4",
+      "category": "basics",
+      "icon": "digit4",
+      "definition": "The number 4 (four).",
+      "example": "Used when signing a price, like ₹40 or ₹400.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-5",
+      "term": "5",
+      "category": "basics",
+      "icon": "digit5",
+      "definition": "The number 5 (five).",
+      "example": "A ₹5 coin is worth five rupees, and the ₹500 note starts with the same digit.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-6",
+      "term": "6",
+      "category": "basics",
+      "icon": "digit6",
+      "definition": "The number 6 (six).",
+      "example": "Used when signing a price, like ₹60 or ₹600.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-7",
+      "term": "7",
+      "category": "basics",
+      "icon": "digit7",
+      "definition": "The number 7 (seven).",
+      "example": "Used when signing a price, like ₹70 or ₹700.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-8",
+      "term": "8",
+      "category": "basics",
+      "icon": "digit8",
+      "definition": "The number 8 (eight).",
+      "example": "Used when signing a price, like ₹80 or ₹800.",
+      "signVideo": { "src": null, "language": "isl" },
+      "relatedModules": ["what-is-money"]
+    },
+    {
+      "id": "number-9",
+      "term": "9",
+      "category": "basics",
+      "icon": "digit9",
+      "definition": "The number 9 (nine).",
+      "example": "Used when signing a price, like ₹90 or ₹900.",
       "signVideo": { "src": null, "language": "isl" },
       "relatedModules": ["what-is-money"]
     }

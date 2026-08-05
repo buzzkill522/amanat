@@ -8,7 +8,7 @@ import { loadVtt, formatTime } from '@/lib/vtt.js'
  * Captions vanish. A transcript does not: it can be re-read at the reader's own
  * pace, searched, and used by a teacher to prepare. Clicking a line jumps the
  * video to that moment. The line playing right now is marked with a coloured
- * bar AND a bold left border AND the word "now" — never colour alone.
+ * bar AND a bold left border AND the word "now" - never colour alone.
  */
 export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }) {
   const [trackIndex, setTrackIndex] = useState(0)

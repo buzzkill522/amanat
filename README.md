@@ -4,7 +4,7 @@ Financial literacy for Deaf and Hard-of-Hearing children, ages 7–15.
 Video-first, picture-first, and built to WCAG 2.2 AA.
 
 Written for **Indian Sign Language (ISL)** and the **Indian rupee (₹)**.
-The interface reads in **English or Hindi** — see [Languages](#languages).
+The interface reads in **English or Hindi** - see [Languages](#languages).
 
 ## Run it
 
@@ -88,9 +88,9 @@ player can be tested. For each lesson:
 ## The ISL dictionary clips
 
 Thirty terms. **[content/ISL-CLIPS.md](content/ISL-CLIPS.md)** covers all three
-routes — sourcing from Spread the Sign (permission granted; **record its scope
+routes - sourcing from Spread the Sign (permission granted; **record its scope
 at the top of that file**), sourcing from the ISLRTC dictionary, and filming the
-rest — plus the shot list with the meaning each sign has to carry. No single
+rest - plus the shot list with the meaning each sign has to carry. No single
 collection covers all thirty, so expect to do some of each.
 
 To get a lookup link for every term still missing:
@@ -112,7 +112,7 @@ npm run sign:sync
 
 That scans the folder, updates `content/sign-clips.json`, and prints how many of
 the thirty are in place, what is still missing, and any file whose name matches
-no term. Clips go live one at a time — no JSON editing, no code change, and the
+no term. Clips go live one at a time - no JSON editing, no code change, and the
 Teachers page shows the running count so the gap is never hidden. `npm run
 sign:check` does the same without writing, and exits non-zero while any are
 missing, for CI.
@@ -130,7 +130,7 @@ with `hi`.
 
 **Translated today:** the cover, the home page, the header, the footer, the
 level chooser, and the nav. **Not translated yet:** the lesson content, the dictionary
-entries and the Teachers and Accessibility pages — these still read in English,
+entries and the Teachers and Accessibility pages - these still read in English,
 and the home page says so plainly when Hindi is on rather than letting a family
 find out three clicks in.
 
@@ -145,7 +145,7 @@ use is a language key inside each field rather than parallel files, so a lesson
 stays one file.
 
 Both typefaces carry Devanagari themselves, so Hindi needs no font substitution
-— see [Fonts](#fonts).
+- see [Fonts](#fonts).
 
 ## The cover
 
@@ -153,16 +153,16 @@ Both typefaces carry Devanagari themselves, so Hindi needs no font substitution
 drifting colour field, holding the heading, three promise chips and two buttons.
 One centred column, and nothing in it that is not read.
 
-Both animations on it — the staggered reveal and the colour sweep across the
-heading — are decorative. Nothing it says depends on motion, and `src/index.css`
+Both animations on it - the staggered reveal and the colour sweep across the
+heading - are decorative. Nothing it says depends on motion, and `src/index.css`
 reduces every animation to 0.01ms under `prefers-reduced-motion`, which lands
 them on their finished state. The tokens live in `tailwind.config.js` under
 `keyframes`/`animation`.
 
 The rest of the home page follows one rule: **a box means you can click it.**
 Everything that is only read sits on the page with no border or tint around it,
-separated by space and type size. That is Mayer's coherence principle — people
-learn more when extraneous material is removed — and it is the reason not to
+separated by space and type size. That is Mayer's coherence principle - people
+learn more when extraneous material is removed - and it is the reason not to
 reintroduce cards as "polish".
 
 ## Progress storage
@@ -174,7 +174,7 @@ file and erase it.
 ## Fonts
 
 **Mukta** for reading, **Baloo 2** for headings and buttons. Both are by
-Ek Type in Mumbai, and both were drawn for Devanagari and Latin as one design —
+Ek Type in Mumbai, and both were drawn for Devanagari and Latin as one design -
 so switching to Hindi changes the script, not the typeface, and the two scripts
 share a baseline, a weight and a colour on the page.
 
@@ -187,7 +187,7 @@ Verdana and Nirmala UI remain in the stack underneath, for a device that blocks
 web fonts entirely.
 
 This replaced Atkinson Hyperlegible, which the stylesheet used to name but which
-was never actually present in the repo — the site had been rendering in Verdana.
+was never actually present in the repo - the site had been rendering in Verdana.
 If you want Atkinson's letterform disambiguation back for the body text, put it
 first in `fontFamily.sans` and self-host it the same way; note that it has no
 Devanagari, so Hindi would fall through to Mukta and the two languages would no
@@ -201,8 +201,8 @@ than estimated, and a live audit of the rendered pages (home, dictionary,
 teachers, accessibility, a learning path and a lesson, in both languages) found
 no text below 4.5:1 and no icon below 3:1.
 
-The palette is also simulated for colour-vision deficiency — deuteranopia,
-protanopia and tritanopia, using the Machado/Oliveira/Fernandes matrices — and
+The palette is also simulated for colour-vision deficiency - deuteranopia,
+protanopia and tritanopia, using the Machado/Oliveira/Fernandes matrices - and
 graded on CIELAB separation. Roughly 1 man in 12 has some CVD, so a palette that
 only passes contrast is only half checked. Colours that carry meaning against
 each other (success against error, above all) are held apart under every CVD

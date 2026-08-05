@@ -1,9 +1,9 @@
 {
-  "_comment": "Resolved Spread the Sign (en.in — Indian Sign Language) pages for each dictionary term, checked one by one against their search. Used by `npm run sign:links`. Hand-maintained; the sync script never rewrites this file.",
+  "_comment": "Resolved Spread the Sign (en.in - Indian Sign Language) pages for each dictionary term, checked one by one against their search. Used by `npm run sign:links`. Hand-maintained; the sync script never rewrites this file.",
   "_source": "https://spreadthesign.com/en.in/",
   "_confidence": {
     "direct": "The word's own entry, meaning matches. Still worth an eyeball.",
-    "sense": "Several entries share the spelling, or the money sense sits under a compound. Pick deliberately — the wrong one teaches the wrong sign.",
+    "sense": "Several entries share the spelling, or the money sense sits under a compound. Pick deliberately - the wrong one teaches the wrong sign.",
     "none": "No entry in the Indian Sign Language section. Source from ISLRTC or film it. `nearest` is a related word, NOT a substitute."
   },
 
@@ -40,7 +40,7 @@
   "withdrawal": {
     "url": "https://spreadthesign.com/en.in/word/5780/withdraw/",
     "confidence": "sense",
-    "note": "Only the verb WITHDRAW exists. Every noun 'withdrawal' entry is medical — withdrawal symptom, drug withdrawal. Check the verb is the money sense before using it."
+    "note": "Only the verb WITHDRAW exists. Every noun 'withdrawal' entry is medical - withdrawal symptom, drug withdrawal. Check the verb is the money sense before using it."
   },
   "need": {
     "url": "https://spreadthesign.com/en.in/word/9553/need/",
@@ -60,7 +60,7 @@
   "interest": {
     "url": "https://spreadthesign.com/en.in/word/15833/interest/",
     "confidence": "sense",
-    "note": "Three entries — 576 is the verb (to interest someone), 15833 and 25156 are nouns. INTEREST RATE (5511) may be the clearer money sense for this lesson."
+    "note": "Three entries - 576 is the verb (to interest someone), 15833 and 25156 are nouns. INTEREST RATE (5511) may be the clearer money sense for this lesson."
   },
   "balance": {
     "url": "https://spreadthesign.com/en.in/word/5460/balance/",
@@ -72,7 +72,7 @@
     "url": null,
     "confidence": "none",
     "nearest": "https://spreadthesign.com/en.in/word/3266/currency/",
-    "note": "No entry. CURRENCY is generic, not the rupee. This one probably has a well-known local sign — ask a Deaf ISL user first."
+    "note": "No entry. CURRENCY is generic, not the rupee. This one probably has a well-known local sign - ask a Deaf ISL user first."
   },
   "savings-goal": {
     "url": null,
@@ -87,7 +87,7 @@
   "pin": {
     "url": null,
     "confidence": "none",
-    "note": "Entries exist but all are the sewing/bowling kind. Nothing for a card PIN — usually fingerspelled."
+    "note": "Entries exist but all are the sewing/bowling kind. Nothing for a card PIN - usually fingerspelled."
   },
   "otp": {
     "url": null,
@@ -104,5 +104,30 @@
     "confidence": "none",
     "nearest": "https://spreadthesign.com/en.in/word/7720/fraud/",
     "note": "No entry for 'scam'. FRAUD is close but more formal than what a child would be taught."
+  },
+
+  "number-0": {
+    "url": "https://spreadthesign.com/en.in/word/1856/zero/",
+    "confidence": "sense",
+    "note": "Listed as 'zero' (Noun), not tagged Numeral like the other nine digits below. May be the digit, or may be a different sense of 'zero' (e.g. a score of nothing). Check before using."
+  },
+  "number-1": { "url": "https://spreadthesign.com/en.in/word/639/one/", "confidence": "direct" },
+  "number-2": { "url": "https://spreadthesign.com/en.in/word/7396/two/", "confidence": "direct" },
+  "number-3": { "url": "https://spreadthesign.com/en.in/word/7243/three/", "confidence": "direct" },
+  "number-4": { "url": "https://spreadthesign.com/en.in/word/8995/four/", "confidence": "direct" },
+  "number-5": { "url": "https://spreadthesign.com/en.in/word/8023/five/", "confidence": "direct" },
+  "number-6": { "url": "https://spreadthesign.com/en.in/word/11524/six/", "confidence": "direct" },
+  "number-7": {
+    "url": null,
+    "confidence": "none",
+    "nearest": "https://spreadthesign.com/en.in/word/21617/seven/",
+    "note": "The entry exists at that link but carries no video for Indian Sign Language yet (checked Aug 2026) - nothing to source from there. Needs filming, or check ISLRTC."
+  },
+  "number-8": { "url": "https://spreadthesign.com/en.in/word/9036/eight/", "confidence": "direct" },
+  "number-9": {
+    "url": null,
+    "confidence": "none",
+    "nearest": "https://spreadthesign.com/en.in/word/25532/nine/",
+    "note": "The entry exists at that link but carries no video for Indian Sign Language yet (checked Aug 2026) - nothing to source from there. Needs filming, or check ISLRTC."
   }
 }

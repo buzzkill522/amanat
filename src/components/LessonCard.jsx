@@ -12,8 +12,8 @@ const ACCENTS = {
 /**
  * One lesson, shown as a card.
  *
- * Three states, each carried by THREE signals at once — an icon, a word, and a
- * colour — so no child depends on being able to tell the colours apart:
+ * Three states, each carried by THREE signals at once - an icon, a word, and a
+ * colour - so no child depends on being able to tell the colours apart:
  *   locked    padlock icon   + "Locked"    + grey
  *   open      play icon      + "Start"     + accent colour
  *   completed tick icon      + "Complete"  + green

@@ -63,7 +63,7 @@ correct one (counting from 0).
 
 `icon` must be a name from `src/components/icons/ConceptIcon.jsx`. Open that file
 to see the full list of available pictures. If you need a new picture, ask a
-developer to add it — do not invent a name, or the answer will show a blank box.
+developer to add it - do not invent a name, or the answer will show a blank box.
 
 ## Adding a new lesson
 

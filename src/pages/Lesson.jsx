@@ -10,7 +10,12 @@ import usePageTitle from '@/hooks/usePageTitle.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { getLevel, LEGACY_TIER_IDS } from '@/config/site.js'
-import { getModule, getNeighbours, getDictionaryEntriesForModule } from '@content/index.js'
+import {
+  getModule,
+  getNeighbours,
+  getDictionaryEntriesForModule,
+  SCHEME_MODULE_IDS,
+} from '@content/index.js'
 
 export default function Lesson() {
   const { levelId, moduleId } = useParams()
@@ -36,7 +41,7 @@ export default function Lesson() {
   const completed = isCompleted(levelId, moduleId)
   const words = getDictionaryEntriesForModule(moduleId)
 
-  // A locked lesson is not hidden — the child is told plainly why, and given
+  // A locked lesson is not hidden - the child is told plainly why, and given
   // the one link that fixes it.
   //
   // The level is named on purpose. Progress is per level, so someone who
@@ -54,7 +59,7 @@ export default function Lesson() {
           <p className="text-lg text-muted">
             Finish <strong className="text-ink">{previous.moduleTitle}</strong> in{' '}
             <strong className="text-ink">
-              {level.label} — {level.name}
+              {level.label} - {level.name}
             </strong>{' '}
             first. Then this one will open.
           </p>
@@ -82,7 +87,7 @@ export default function Lesson() {
     setCelebrating(true)
   }
 
-  // The quiz itself is what unlocks the next lesson — finishing it calls
+  // The quiz itself is what unlocks the next lesson - finishing it calls
   // markComplete directly, so there is no separate button standing between
   // "I answered every question" and "the next lesson is open". A module with
   // no quiz questions (none exist today, but nothing enforces that) still has
@@ -117,7 +122,7 @@ export default function Lesson() {
           </span>
           <div>
             <p className="text-sm font-extrabold uppercase tracking-wide text-muted">
-              Lesson {module.index + 1} · {level.label} — {level.name}
+              Lesson {module.index + 1} · {level.label} - {level.name}
             </p>
             <h1 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
               {module.title}
@@ -216,6 +221,26 @@ export default function Lesson() {
             )}
           </div>
         )}
+
+        {/* The two schemes lessons point at the reference page, which lists
+            every figure with its source and is open without unlocking. The
+            lesson teaches why it matters; the page is what a family actually
+            fills a form from, and they should not have to hunt for it. */}
+        {SCHEME_MODULE_IDS.includes(module.id) && (
+          <div className="mt-6 rounded-2xl border-2 border-clay-500 bg-clay-100 p-5">
+            <h3 className="text-lg font-extrabold text-ink">Every scheme, with the details</h3>
+            <p className="mt-1 text-base leading-relaxed text-ink">
+              Amounts, income limits, where to apply and what to watch out for - all on one page,
+              with the source for every figure.
+            </p>
+            <p className="mt-3">
+              <Link to="/schemes" className="btn-primary">
+                Open the schemes page
+                <ArrowRight className="h-5 w-5" aria-hidden="true" />
+              </Link>
+            </p>
+          </div>
+        )}
       </section>
 
       {/* ------------------------------------------------------------- quiz */}
@@ -227,7 +252,7 @@ export default function Lesson() {
 
       {/* --------------------------------------------------------- complete */}
       {module.quiz.questions?.length > 0 ? (
-        // The quiz already marked this done — this is a confirmation, not a
+        // The quiz already marked this done - this is a confirmation, not a
         // gate, and only appears once there is something to confirm.
         completed && (
           <section

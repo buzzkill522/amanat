@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // ---------------------------------------------------------------------------
 // Checks the palette against WCAG contrast and against colour-vision
-// deficiency — in every theme the site can be in.
+// deficiency - in every theme the site can be in.
 //
 //   npm run check:a11y
 //
@@ -13,7 +13,7 @@
 // it is the whole reason dark mode is allowed to exist in this project: a dark
 // theme that had not been through this gate would be a guess, and the light
 // one was not a guess. If a pairing is legible in one theme and not the other,
-// this fails — there is no "mostly accessible".
+// this fails - there is no "mostly accessible".
 //
 // Two separate things are graded, because they fail differently:
 //
@@ -22,8 +22,8 @@
 //
 //   CVD        Around 1 man in 12 has some colour-vision deficiency. Colours
 //              that carry meaning *against each other* must stay apart when
-//              simulated. Only one pair truly matters — grow against alert is
-//              right-against-wrong in the quiz — so that is the one held to a
+//              simulated. Only one pair truly matters - grow against alert is
+//              right-against-wrong in the quiz - so that is the one held to a
 //              threshold. Decorative pairs are allowed to converge, because
 //              every state in this UI is also carried by an icon and a word.
 //
@@ -86,7 +86,7 @@ const TEXT = [
   // The hover state of the language buttons and the theme button.
   ['ink', 'brand.100'],
 
-  // Labels on neutral fills — buttons, chips, the skip link.
+  // Labels on neutral fills - buttons, chips, the skip link.
   ['surface', 'brand.500'], ['surface', 'brand.600'], ['surface', 'brand.700'],
 
   // Neutral text on the page.
@@ -111,7 +111,7 @@ const TEXT = [
   ['alert.600', 'alert.100'], ['alert.600', 'paper'], ['alert.600', 'surface'],
 
   // Labels on the state fills, resting and pressed. White rather than
-  // `surface` because these fills deliberately do not reflect — see the note
+  // `surface` because these fills deliberately do not reflect - see the note
   // in palette.js. A white label on a fill that is dark in both themes is the
   // one case where not reflecting is the correct answer.
   ['#ffffff', 'grow.500'], ['#ffffff', 'grow.700'],
@@ -123,18 +123,18 @@ const TEXT = [
 // Icons, and borders that mark out a control: non-text, so the floor is 3:1.
 //
 // Deliberately NOT listed: brand-100. It is used only for hairlines and
-// dividers — the rule under the header, the line closing the stats band, table
+// dividers - the rule under the header, the line closing the stats band, table
 // row separators. WCAG 1.4.11 covers "visual information required to identify
 // user interface components and states", and a decorative separator is neither.
 // It measures about 1.2:1 against paper, which is the whole point of a hairline;
 // listing it here would put a permanent false failure in CI, and a check that
 // always fails is a check everybody learns to ignore.
 const GRAPHICS = [
-  // The accent, which is also the focus ring — the one graphic on the page
+  // The accent, which is also the focus ring - the one graphic on the page
   // that a keyboard user cannot afford to lose.
   ['clay.500', 'paper'], ['clay.500', 'surface'],
   ['brand.600', 'surface'], ['brand.600', 'paper'],
-  // The secondary button's outline — the main cue that it is a button at all.
+  // The secondary button's outline - the main cue that it is a button at all.
   ['brand.400', 'surface'], ['brand.400', 'paper'],
   ['brand.500', 'surface'],
   // State borders: these mark a card as done, locked or in progress.
@@ -173,10 +173,10 @@ function auditTheme(themeName, theme) {
     }
   }
 
-  check(TEXT, 4.5, 'Text — WCAG 1.4.3')
-  check(GRAPHICS, 3, 'Graphics — WCAG 1.4.11')
+  check(TEXT, 4.5, 'Text - WCAG 1.4.3')
+  check(GRAPHICS, 3, 'Graphics - WCAG 1.4.11')
 
-  console.log('\nColour-vision deficiency — pairs that carry meaning')
+  console.log('\nColour-vision deficiency - pairs that carry meaning')
   for (const [a, b, floor] of CVD_CRITICAL) {
     for (const type of Object.keys(MAT)) {
       const d = deltaE(hex(a), hex(b), type)
@@ -198,4 +198,4 @@ if (failures.length) {
   console.log('')
   process.exit(1)
 }
-console.log(`\nAll pairs pass — ${pairCount} contrast pairs across ${Object.keys(themes).length} themes.\n`)
+console.log(`\nAll pairs pass - ${pairCount} contrast pairs across ${Object.keys(themes).length} themes.\n`)

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { AlertTriangle, Download, RotateCcw, Trash2 } from 'lucide-react'
-import { useState } from 'react'
+import { AlertTriangle, Download, RotateCcw, Trash2, Upload } from 'lucide-react'
+import { useRef, useState } from 'react'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
@@ -11,8 +11,15 @@ export default function Teachers() {
   usePageTitle('For parents and teachers')
 
   const { lang } = useLanguage()
-  const { levelStats, resetAll, settings, setSetting, state } = useProgress()
+  const { levelStats, resetAll, importState, settings, setSetting, state } = useProgress()
   const [confirmingReset, setConfirmingReset] = useState(false)
+  // Holds the file's own contents and name between "a file was picked" and
+  // "the teacher confirmed replacing this device's progress with it" - nothing
+  // is written to localStorage until that confirmation, so a wrong file picked
+  // by accident costs nothing.
+  const [pendingImport, setPendingImport] = useState(null)
+  const [importError, setImportError] = useState(null)
+  const fileInputRef = useRef(null)
   const clips = signClipCoverage()
 
   function downloadProgress() {
@@ -23,6 +30,25 @@ export default function Teachers() {
     a.download = 'amanat-progress.json'
     a.click()
     URL.revokeObjectURL(url)
+  }
+
+  function handleFilePicked(e) {
+    const file = e.target.files?.[0]
+    // Cleared immediately so picking the same file again later (after
+    // cancelling, say) still fires a change event.
+    e.target.value = ''
+    if (!file) return
+    setImportError(null)
+    const reader = new FileReader()
+    reader.onload = () => setPendingImport({ raw: reader.result, name: file.name })
+    reader.onerror = () => setImportError('read')
+    reader.readAsText(file)
+  }
+
+  function confirmImport() {
+    const result = importState(pendingImport.raw)
+    setPendingImport(null)
+    if (!result.ok) setImportError(result.reason)
   }
 
   return (
@@ -44,11 +70,11 @@ export default function Teachers() {
         </h2>
         <ol className="mt-4 space-y-4">
           {[
-            'Pick a level on the home page. The eight topics stay the same at every level; the wording, the maths and how much is left for the child to work out change. A child who finishes Level 1 can climb, and one who is stuck can drop a level without being told they are in the wrong age group.',
+            'Pick a level from the Lessons tab. The eleven topics stay the same at every level; the wording, the maths and how much is left for the child to work out change. A child who finishes Level 1 can climb, and one who is stuck can drop a level without being told they are in the wrong age group.',
             'Play the video with captions on. The transcript beside the video can be projected or printed for the class.',
             'Pause after the summary and ask the class to sign back one sentence in their own words.',
             'Let each child do the picture quiz on their own device. A wrong answer gives a hint and lets them retry, so nobody is stuck.',
-            'Finish with "Mark as complete". This opens the next lesson on that device.',
+            'Finishing the quiz opens the next lesson on that device automatically - there is nothing to click afterwards.',
           ].map((step, i) => (
             <li key={i} className="flex gap-4">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-600 font-extrabold text-surface">
@@ -63,7 +89,7 @@ export default function Teachers() {
       {/* --------------------------------------------------------- coverage */}
       <section aria-labelledby="topics-heading">
         <h2 id="topics-heading" className="text-2xl font-extrabold text-ink">
-          The eight topics
+          The eleven topics
         </h2>
         <p className="mt-2 text-lg text-muted">
           Each topic is written three times, once at each level of difficulty.
@@ -127,7 +153,7 @@ export default function Teachers() {
           any of the written content.
         </p>
 
-        {/* The count, not a vague "coming soon" — a teacher deciding whether to
+        {/* The count, not a vague "coming soon" - a teacher deciding whether to
             use this with a class needs to know exactly how much is filmed. */}
         <p
           className={`mt-4 rounded-2xl p-4 text-lg font-bold ${
@@ -179,6 +205,65 @@ export default function Teachers() {
               <Download className="h-5 w-5" aria-hidden="true" />
               Save progress to a file
             </button>
+
+            {/* The other half of the button above. On a shared tablet, a
+                child's own saved file is what carries their progress onto a
+                different device - this is how it comes back. */}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="application/json,.json"
+              onChange={handleFilePicked}
+              className="sr-only"
+              aria-hidden="true"
+              tabIndex={-1}
+            />
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="btn-secondary"
+            >
+              <Upload className="h-5 w-5" aria-hidden="true" />
+              Load progress from a file
+            </button>
+
+            {pendingImport && (
+              <div
+                role="alert"
+                className="flex w-full flex-wrap items-center gap-3 rounded-2xl border-4 border-sun-500 bg-sun-100 p-3"
+              >
+                <AlertTriangle className="h-6 w-6 shrink-0 text-sun-600" aria-hidden="true" />
+                <p className="font-bold text-ink">
+                  Replace progress on this device with <strong>{pendingImport.name}</strong>?
+                  Progress currently on this device will be gone.
+                </p>
+                <button type="button" onClick={confirmImport} className="btn bg-sun-500 text-white hover:bg-sun-700">
+                  <Upload className="h-5 w-5" aria-hidden="true" />
+                  Yes, replace it
+                </button>
+                <button type="button" onClick={() => setPendingImport(null)} className="btn-secondary">
+                  <RotateCcw className="h-5 w-5" aria-hidden="true" />
+                  No, keep this device's progress
+                </button>
+              </div>
+            )}
+
+            {importError && (
+              <div
+                role="alert"
+                className="flex w-full flex-wrap items-center gap-3 rounded-2xl border-4 border-alert-500 bg-alert-100 p-3"
+              >
+                <AlertTriangle className="h-6 w-6 shrink-0 text-alert-600" aria-hidden="true" />
+                <p className="font-bold text-ink">
+                  {importError === 'parse'
+                    ? "That file isn't a progress file - it couldn't be read as one at all."
+                    : "That file doesn't match a progress file Amanat recognises. It may be from a much older version, or a different file entirely."}
+                </p>
+                <button type="button" onClick={() => setImportError(null)} className="btn-secondary">
+                  Dismiss
+                </button>
+              </div>
+            )}
 
             {confirmingReset ? (
               <div className="flex flex-wrap items-center gap-3 rounded-2xl border-4 border-alert-500 bg-alert-100 p-3">

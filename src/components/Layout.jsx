@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { BookOpen, GraduationCap, Home, Info, Map, Users } from 'lucide-react'
+import { BadgeIndianRupee, BookOpen, GraduationCap, Home, Info, Map, Users } from 'lucide-react'
 import { site } from '@/config/site.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import LanguageToggle from '@/components/LanguageToggle.jsx'
@@ -9,12 +9,16 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
 
 // `alsoMatch` keeps a tab lit while the reader is deeper inside that section.
 // Lessons themselves live under /path/:levelId, so without it the Lessons tab
-// would go dark the moment you opened a lesson — exactly when you most want to
+// would go dark the moment you opened a lesson - exactly when you most want to
 // know where you are.
 const NAV = [
   { to: '/', labelKey: 'nav.home', icon: Home, end: true },
   { to: '/lessons', labelKey: 'nav.lessons', icon: GraduationCap, alsoMatch: '/path' },
   { to: '/dictionary', labelKey: 'nav.dictionary', icon: BookOpen },
+  // In the main nav rather than inside the course, because the people who most
+  // need it are families who have not started the course and may never - an
+  // entitlement nobody claims is worth nothing.
+  { to: '/schemes', labelKey: 'nav.schemes', icon: BadgeIndianRupee },
   { to: '/teachers', labelKey: 'nav.teachers', icon: Users },
   { to: '/accessibility', labelKey: 'nav.access', icon: Info },
 ]
@@ -23,7 +27,7 @@ const NAV = [
 // aria-current from its own path alone: on /path/level-1/lesson/x it would
 // strip the attribute even though the Lessons tab is the section the reader
 // is in. That would leave the tab visibly highlighted but silent to a screen
-// reader — the exact split this site is built to avoid. Owning the active
+// reader - the exact split this site is built to avoid. Owning the active
 // calculation keeps colour, text and aria-current saying the same thing.
 function NavItem({ to, label, icon: Icon, end, currentLabel, alsoMatch }) {
   const { pathname } = useLocation()

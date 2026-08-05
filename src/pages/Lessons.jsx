@@ -12,7 +12,7 @@ import { modules, moduleMeta } from '@content/index.js'
  * The Lessons tab.
  *
  * Lessons are organised by level, so the honest landing page for "Lessons" is
- * the level chooser — the same component the home page uses, so a learner sees
+ * the level chooser - the same component the home page uses, so a learner sees
  * one consistent way of picking a level rather than two designs for one job.
  *
  * A learner mid-course gets their resume link first, because "show me the
@@ -61,7 +61,7 @@ export default function Lessons() {
               {t('home.resume.progress', {
                 done: resume.done,
                 total: resume.total,
-                level: `${resumeLevel.label} — ${resumeLevel.name}`,
+                level: `${resumeLevel.label} - ${resumeLevel.name}`,
               })}
             </span>
           </span>

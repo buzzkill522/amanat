@@ -31,7 +31,7 @@ const ACCENTS = {
  *
  * The number and the name already say it in words; this says it again without
  * any, which is the whole point on a site read by children who may be some way
- * behind their age in written English. It is decoration for a screen reader —
+ * behind their age in written English. It is decoration for a screen reader -
  * the level's name carries the same fact in the link label.
  */
 function DifficultyMeter({ step, fill }) {
@@ -70,9 +70,9 @@ export default function LevelSelector({ headingId }) {
             <Link
               to={`/path/${level.id}`}
               className={`flex h-full flex-col items-center gap-3 rounded-3xl border-2 bg-surface p-7 text-center transition hover:-translate-y-1 hover:shadow-lg ${accent.border}`}
-              aria-label={`${t('level.label', { n: level.step })} — ${name}. ${blurb} ${done}`}
+              aria-label={`${t('level.label', { n: level.step })} - ${name}. ${blurb} ${done}`}
             >
-              {/* The icon carries the accent colour on its own — a tinted tile
+              {/* The icon carries the accent colour on its own - a tinted tile
                   behind it was one container too many. */}
               <ConceptIcon name={level.icon} className={`h-16 w-16 ${accent.icon}`} />
 

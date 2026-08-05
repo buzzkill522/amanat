@@ -125,7 +125,7 @@ export default function VideoPlayer({
         <video
           ref={videoRef}
           /* `text-stage-ink` is for the fallback line below, which a browser
-             that cannot play the video renders in place of it — against the
+             that cannot play the video renders in place of it - against the
              black box, where the inherited `ink` would have been dark-on-dark
              and unreadable in the light theme. It is the message aimed at the
              oldest, least capable devices, so it is the one that has to be

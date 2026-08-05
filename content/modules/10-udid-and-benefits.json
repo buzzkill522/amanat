@@ -82,11 +82,11 @@
       },
       "summary": [
         "The UDID card is the gateway. Almost every other scheme asks for it first, so nothing else starts until you have one.",
-        "To get it you need a disability certificate from a government medical board, usually showing 40% or more — what the law calls a benchmark disability.",
+        "To get it you need a disability certificate from a government medical board, usually showing 40% or more - what the law calls a benchmark disability.",
         "ADIP is the scheme that pays for equipment: hearing aids, and cochlear implants for people who qualify. It depends on family income and is run through government hospitals, ALIMCO and approved NGOs.",
         "Most states pay a monthly disability pension. The amount is different in every state, and usually needs 40% disability plus income and residence rules.",
         "For families below the poverty line there is also a central pension, IGNDPS, which some states top up.",
-        "Travel costs less too — Indian Railways and many state buses give concessions to disabled passengers.",
+        "Travel costs less too - Indian Railways and many state buses give concessions to disabled passengers.",
         "None of this arrives on its own. Somebody has to apply. That is the single most useful thing in this lesson."
       ],
       "keyWords": ["UDID", "benchmark disability", "ADIP", "disability pension", "IGNDPS", "travel concession"],
@@ -122,7 +122,7 @@
             "prompt": "A family qualifies for a state disability pension and has all the right papers, but never actually submitted an application. Will the pension arrive anyway eventually?",
             "image": { "icon": "warning", "alt": "An unopened envelope beside a pile of qualifying papers" },
             "options": [
-              { "icon": "list", "label": "No — qualifying is not enough; someone must actively apply for it to ever arrive" },
+              { "icon": "list", "label": "No - qualifying is not enough; someone must actively apply for it to ever arrive" },
               { "icon": "check", "label": "Yes, the government tracks who qualifies and pays automatically" },
               { "icon": "calendar", "label": "Only if they wait exactly one year" }
             ],
@@ -145,11 +145,11 @@
         "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
-        "Section 80U lets a person with a disability take a flat deduction from taxable income — ₹75,000 at 40–79%, and ₹1,25,000 where the disability is severe. It needs no bills or receipts.",
+        "Section 80U lets a person with a disability take a flat deduction from taxable income - ₹75,000 at 40–79%, and ₹1,25,000 where the disability is severe. It needs no bills or receipts.",
         "Section 80DD does the same for a family member supporting a dependant with a disability. One household usually claims one or the other, not both for the same person.",
         "Over a working life these deductions are worth a large sum, and they are among the most commonly missed.",
         "Health cover: eligible families may come under Ayushman Bharat or a state health scheme, which pays for hospital treatment.",
-        "Some support is routed through National Trust registered organisations — caregiver help, community living, rehabilitation — but eligibility depends on which disability category applies, so check before relying on it.",
+        "Some support is routed through National Trust registered organisations - caregiver help, community living, rehabilitation - but eligibility depends on which disability category applies, so check before relying on it.",
         "Everything above is a right attached to paperwork. The order is: disability certificate, then UDID, then each scheme separately.",
         "Rules, amounts and income limits change. Confirm the current position on the official portal or with the district social welfare office before you count on a figure.",
         "None of this is charity. It exists because being Deaf costs money that hearing people never have to spend."
@@ -175,7 +175,7 @@
             "prompt": "Section 80U requires no bills or receipts at all, yet it is among the most commonly missed deductions. What does this suggest is the real reason people miss it?",
             "image": { "icon": "question", "alt": "A simple form with no receipts attached, yet often left unfiled" },
             "options": [
-              { "icon": "question", "label": "People likely do not know it exists or forget to claim it — not that it is hard to prove" },
+              { "icon": "question", "label": "People likely do not know it exists or forget to claim it - not that it is hard to prove" },
               { "icon": "list", "label": "It is missed because the paperwork is too difficult" },
               { "icon": "warning", "label": "It is missed because receipts get lost" }
             ],
@@ -187,7 +187,7 @@
             "prompt": "Someone tries to apply directly for Ayushman Bharat health cover using only their aadhaar card, without ever getting a disability certificate or a UDID card. What is likely to go wrong?",
             "image": { "icon": "list", "alt": "An application attempted out of the usual three-step order" },
             "options": [
-              { "icon": "warning", "label": "Most disability-linked schemes expect the certificate and UDID first — skipping them is likely to block the application" },
+              { "icon": "warning", "label": "Most disability-linked schemes expect the certificate and UDID first - skipping them is likely to block the application" },
               { "icon": "check", "label": "Nothing will go wrong, aadhaar alone is always enough" },
               { "icon": "question", "label": "The order does not matter for health schemes specifically" }
             ],

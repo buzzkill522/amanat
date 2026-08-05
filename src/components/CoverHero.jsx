@@ -11,7 +11,7 @@ import { signLabel, signShort } from '@/config/site.js'
  *
  *   1. Nothing here is carried by sound, and nothing by motion either. The
  *      only animation is a staggered fade-and-lift on each block, which is
- *      decorative — if it never runs the cover reads exactly the same, and
+ *      decorative - if it never runs the cover reads exactly the same, and
  *      index.css lands reduced-motion readers on the finished state.
  *   2. The colours come from the palette in tailwind.config.js, where each one
  *      carries its measured contrast ratio. This panel is light: ink on a
@@ -49,7 +49,7 @@ export default function CoverHero() {
         style={{
           backgroundImage:
             // `muted` at 5%, said through the palette variable rather than
-            // copied as an rgba — so the hatch is dark strokes on a light page
+            // copied as an rgba - so the hatch is dark strokes on a light page
             // and light strokes on a dark one, without a second definition.
             'repeating-linear-gradient(-45deg, rgb(var(--c-muted) / 0.05) 0 1px, transparent 1px 11px)',
           maskImage: 'linear-gradient(to bottom, #000 0%, transparent 72%)',
@@ -58,7 +58,7 @@ export default function CoverHero() {
       />
 
       <div className="relative mx-auto max-w-3xl text-center">
-        {/* The eyebrow is the one place the accent appears up here — small,
+        {/* The eyebrow is the one place the accent appears up here - small,
             rust, and the only saturated thing on the screen. */}
         <span className="inline-flex animate-riseIn items-center gap-2 text-sm font-extrabold uppercase tracking-[0.14em] text-clay-600">
           <Hand className="h-5 w-5" aria-hidden="true" />
@@ -92,8 +92,11 @@ export default function CoverHero() {
         </ul>
 
         <div className="mt-9 flex animate-riseIn flex-col items-stretch justify-center gap-3 [animation-delay:360ms] sm:flex-row">
-          <a
-            href="#level-heading"
+          {/* /lessons, not an in-page anchor: the level picker used to live on
+              this page too, which meant the same choice ("which level?") had
+              two different places to make it. One page owns it now. */}
+          <Link
+            to="/lessons"
             className="btn group bg-ink text-surface hover:bg-brand-700 sm:text-lg"
           >
             {t('cover.cta.start')}
@@ -101,7 +104,7 @@ export default function CoverHero() {
               className="h-5 w-5 transition-transform group-hover:translate-x-1"
               aria-hidden="true"
             />
-          </a>
+          </Link>
           <Link
             to="/dictionary"
             className="btn border border-brand-400 text-ink hover:bg-brand-50 sm:text-lg"

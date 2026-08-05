@@ -1,10 +1,16 @@
 # Recording the ISL dictionary clips
 
-Thirty terms, thirty short clips. This is the brief to hand to whoever films
+Forty terms, forty short clips. This is the brief to hand to whoever films
 them, and the checklist for getting them into the site afterwards.
 
-Nothing in the code is waiting on a decision — drop the files in and run one
-command. The site already shows a labelled "ISL clip — coming soon" panel in
+Ten of the forty are the digits 0–9, added because a child cannot sign a real
+amount - ₹500, an ATM PIN, an OTP - from words alone, and until now the
+dictionary had no number in it at all. Numbers with more than one digit are
+signed one digit at a time, so these ten sit behind every rupee figure
+elsewhere in this document, not apart from it.
+
+Nothing in the code is waiting on a decision - drop the files in and run one
+command. The site already shows a labelled "ISL clip - coming soon" panel in
 the exact place each clip will sit, so nothing moves on the page when they
 arrive.
 
@@ -17,7 +23,7 @@ arrive.
 >
 > - **Granted by:** _name and email at the European Sign Language Centre_
 > - **Date:** _when_
-> - **Covers:** _which clips, and what use — this site only, or wider?_
+> - **Covers:** _which clips, and what use - this site only, or wider?_
 > - **Conditions:** _attribution wording they asked for, if any_
 > - **Where the message is kept:** _who has the email_
 >
@@ -26,9 +32,9 @@ arrive.
 
 ## Three ways to get the clips
 
-**Source them from Spread the Sign** (permission now granted — see above),
+**Source them from Spread the Sign** (permission now granted - see above),
 **source them from the ISLRTC dictionary**, or **film them**. Most projects end
-up doing more than one, because no single collection covers all thirty of these
+up doing more than one, because no single collection covers all forty of these
 words.
 
 ### Sourcing from Spread the Sign
@@ -47,14 +53,14 @@ Two things to hold to:
 
 - **Save the file, do not hotlink.** Pointing `<video src>` at their server
   would make every visitor's browser call a third party, which contradicts the
-  privacy promise on `/accessibility` — and a permission to use clips is not
+  privacy promise on `/accessibility` - and a permission to use clips is not
   normally a permission to draw on someone's bandwidth.
 - **Keep within what they granted.** If the permission covers this site, it
   covers this site. Re-using the clips in a printed workbook, an app, or another
   organisation's material is a fresh conversation with them.
 
 If some clips come from Spread the Sign and others from ISLRTC or your own
-filming, set `credit` on those individual entries — see
+filming, set `credit` on those individual entries - see
 [Crediting a clip](#crediting-a-clip). Mixed sources are normal; a wrong credit
 is not.
 
@@ -72,7 +78,7 @@ research, teaching and ISL-related technology, on two conditions:
 This site is free and non-commercial, so it fits. The acknowledgement is already
 wired up: `signVideoCredit` in `dictionary.json` prints a credit line under
 every clip that does not carry its own. Leave it in place if you use their
-clips. Confirm the current terms yourself before a batch — a licence read off a
+clips. Confirm the current terms yourself before a batch - a licence read off a
 FAQ in 2026 is not a contract, and writing to ISLRTC for confirmation costs one
 email.
 
@@ -84,13 +90,13 @@ video from a third party, which contradicts the privacy promise on
 
 **Expect gaps.** The ISLRTC dictionary is strongest on academic, legal and
 everyday vocabulary. Several terms in this list are recent or specific enough
-that they may have no entry — `upi`, `otp`, `pin`, `phishing`, `scam`,
+that they may have no entry - `upi`, `otp`, `pin`, `phishing`, `scam`,
 `compound-interest`, `savings-goal`. Those will need filming, or the everyday
 fingerspelled form the local Deaf community actually uses.
 
 **Research datasets do not help here.** The INCLUDE dataset is the only large
 ISL corpus under a clean CC BY 4.0 licence, but its 263 signs are animals,
-colours, clothes, greetings and transport — no finance vocabulary at all. The
+colours, clothes, greetings and transport - no finance vocabulary at all. The
 others (FDMSE-ISL, ISL-CSLTR, ISLTranslate) are gesture-recognition corpora:
 multi-angle, multi-signer, built for training models rather than for showing one
 clear sign to a child, and mostly available on request rather than openly.
@@ -101,11 +107,11 @@ Everything below is the brief for that.
 
 ## Who should sign
 
-A **Deaf ISL signer**, and ideally the same person for all thirty, so the
+A **Deaf ISL signer**, and ideally the same person for all forty, so the
 signing space, rhythm and framing stay consistent across the dictionary.
 
 This matters more than it might look. ISL varies by region and school, and
-finance vocabulary varies most of all — several of these terms (UPI, OTP,
+finance vocabulary varies most of all - several of these terms (UPI, OTP,
 compound interest) have no long-settled sign and are commonly fingerspelled or
 signed with a local convention. A hearing signer working from a word list will
 usually produce something a Deaf child finds stiff or wrong.
@@ -113,7 +119,7 @@ usually produce something a Deaf child finds stiff or wrong.
 Before the session, agree each sign with the school's Deaf ISL teacher, and
 check it against the **ISLRTC** dictionary (Indian Sign Language Research and
 Training Centre, New Delhi), which is the closest thing to a national reference.
-Use it to *verify* signs — do not copy their video files into this site without
+Use it to *verify* signs - do not copy their video files into this site without
 checking their reuse terms first.
 
 Get a written release from the signer covering use on this site, and credit them
@@ -121,14 +127,14 @@ by name on the `/accessibility` page. Their face is in every clip.
 
 ## How to film
 
-**Framing.** Head to just below the waist, centred, with room either side —
+**Framing.** Head to just below the waist, centred, with room either side -
 signing space is wider than the body. Nothing may leave the frame, ever, at any
 point in the sign. Square (1:1) matches how the page displays it.
 
 **Face in shot, always.** Grammar in sign language lives in the eyebrows, mouth
 and head tilt as much as the hands. Never crop the face, never film from above.
 
-**Background.** Plain, matte, and mid-tone — no patterns, no bookshelves, no
+**Background.** Plain, matte, and mid-tone - no patterns, no bookshelves, no
 windows behind. It must contrast with both skin tone and clothing.
 
 **Clothing.** Plain, long-sleeved, contrasting with skin tone. No logos, no
@@ -138,12 +144,12 @@ they pull the eye off the handshape.
 **Lighting.** Even and from the front. No backlight, no hard shadow across the
 hands or face.
 
-**Performance.** Sign at a natural, unhurried pace — not slowed down, which
+**Performance.** Sign at a natural, unhurried pace - not slowed down, which
 distorts the sign. Sign it **twice** with a short rest between, hands starting
 and ending at rest. Begin and end each clip on a still frame with hands down,
 so a looping clip does not jump.
 
-**Sound.** None needed. If the camera records audio anyway, strip it — the page
+**Sound.** None needed. If the camera records audio anyway, strip it - the page
 mutes playback regardless.
 
 ## Files
@@ -153,7 +159,7 @@ mutes playback regardless.
 | Format | MP4, H.264 |
 | Frame | 1080 × 1080 (square), 30 fps |
 | Length | about 4–8 seconds, both repetitions included |
-| Size | under ~2 MB each — these load on school devices |
+| Size | under ~2 MB each - these load on school devices |
 | Audio | none |
 | Name | exactly the file name in the table below, lowercase, `.mp4` |
 
@@ -167,9 +173,9 @@ npm run sign:sync
 ```
 
 That scans `public/sign/`, updates `content/sign-clips.json`, and prints how
-many of the thirty are in place along with anything still missing. It also names
+many of the forty are in place along with anything still missing. It also names
 any file that does not match a term, which is nearly always a typo in a file
-name. Re-run it after every batch — no other step, and no JSON to edit by hand.
+name. Re-run it after every batch - no other step, and no JSON to edit by hand.
 
 To check without writing anything (useful in CI):
 
@@ -177,7 +183,7 @@ To check without writing anything (useful in CI):
 npm run sign:check
 ```
 
-A clip does not have to wait for the other twenty-nine. Each one goes live on
+A clip does not have to wait for the other thirty-nine. Each one goes live on
 its own as soon as it is synced.
 
 ## The shot list
@@ -218,12 +224,29 @@ signed form, fingerspelled if that is what people actually use.
 | phishing | **Phishing** | Safety | A fake message that copies a real company to steal your details. |
 | upi | **UPI** | Safety | A way to send money from a phone in India. You enter a PIN only to send money. |
 | inflation | **Inflation** | Money basics | Prices slowly going up over time. Each rupee buys a little less. |
+| number-0 | **0** | Money basics | The digit zero. |
+| number-1 | **1** | Money basics | The digit one. |
+| number-2 | **2** | Money basics | The digit two. |
+| number-3 | **3** | Money basics | The digit three. |
+| number-4 | **4** | Money basics | The digit four. |
+| number-5 | **5** | Money basics | The digit five. |
+| number-6 | **6** | Money basics | The digit six. |
+| number-7 | **7** | Money basics | The digit seven. |
+| number-8 | **8** | Money basics | The digit eight. |
+| number-9 | **9** | Money basics | The digit nine. |
+
+Three of the ten digits need a second look before filming: `number-0`
+(Spread the Sign lists "zero" as a plain noun, not tagged as a numeral like the
+other nine - it may not be the digit) and `number-7` and `number-9` (an entry
+exists on Spread the Sign for both, but neither carries an Indian Sign Language
+video to check against - see `sign-sources.json`). Confirm all three with the
+school's Deaf ISL teacher rather than assuming.
 
 ## Crediting a clip
 
 Every clip shows the credit line from `signVideoCredit` in `dictionary.json`
-unless it carries its own. To credit one clip differently — a signer who filmed
-only that word, say — put it on the entry:
+unless it carries its own. To credit one clip differently - a signer who filmed
+only that word, say - put it on the entry:
 
 ```json
 "signVideo": {
@@ -251,5 +274,5 @@ You can add a `"poster"` there too, for the still frame shown before play.
 
 Separate job, not covered here. Each lesson in `content/modules/` has a
 `video.signInterpreter.src` for a full-lesson interpreter track. Those are long
-clips of the whole lesson, not single words, so they are filmed differently —
+clips of the whole lesson, not single words, so they are filmed differently -
 see the README.

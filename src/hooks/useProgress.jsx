@@ -36,6 +36,19 @@ function migrateV1(parsed) {
   return { ...emptyState, levels, settings: { ...emptyState.settings, ...parsed.settings } }
 }
 
+/**
+ * Turn a parsed JSON value into a valid progress state, or `null` if it isn't
+ * one. Shared by `read()` (localStorage) and `importState()` (a file a teacher
+ * hands back to the device) so the two paths cannot silently drift apart -
+ * whatever `read()` is willing to trust off disk, an imported file is trusted
+ * to exactly the same degree, no more and no less.
+ */
+function normalize(parsed) {
+  if (parsed?.version === 1) return migrateV1(parsed)
+  if (parsed?.version !== 2) return null
+  return { ...emptyState, ...parsed, settings: { ...emptyState.settings, ...parsed.settings } }
+}
+
 function read() {
   try {
     // Current key first; only fall back to the pre-rename one, so a device that
@@ -44,10 +57,7 @@ function read() {
       window.localStorage.getItem(STORAGE_KEY) ||
       window.localStorage.getItem(LEGACY_STORAGE_KEY)
     if (!raw) return emptyState
-    const parsed = JSON.parse(raw)
-    if (parsed?.version === 1) return migrateV1(parsed)
-    if (parsed?.version !== 2) return emptyState
-    return { ...emptyState, ...parsed, settings: { ...emptyState.settings, ...parsed.settings } }
+    return normalize(JSON.parse(raw)) ?? emptyState
   } catch {
     // Private browsing, a full disk, or hand-edited JSON. Losing progress is
     // annoying but must never stop the lesson from loading.
@@ -114,6 +124,35 @@ export function ProgressProvider({ children }) {
 
   const resetAll = useCallback(() => setState({ ...emptyState }), [])
 
+  /**
+   * The other half of "Save progress to a file" on the Teachers page.
+   *
+   * A shared school tablet has one localStorage, not one per child, so the
+   * only way a device can hold *this* child's progress for *this* session is
+   * to load it in from the file "Save progress to a file" produced earlier -
+   * and to fully replace whatever is on the device now, the same way turning
+   * a save file over to a different machine does. Merging the two would leave
+   * the device carrying a mix of two children's lessons under one record,
+   * which is worse than either child's progress alone.
+   *
+   * Returns rather than throws, because the caller needs to tell a teacher
+   * *what* was wrong with a file, not just that something was - this is a
+   * teacher acting on a file they got from a child or another tablet, not a
+   * developer who can read a stack trace.
+   */
+  const importState = useCallback((raw) => {
+    let parsed
+    try {
+      parsed = JSON.parse(raw)
+    } catch {
+      return { ok: false, reason: 'parse' }
+    }
+    const normalized = normalize(parsed)
+    if (!normalized) return { ok: false, reason: 'format' }
+    setState(normalized)
+    return { ok: true }
+  }, [])
+
   const setSetting = useCallback((key, value) => {
     setState((prev) => ({ ...prev, settings: { ...prev.settings, [key]: value } }))
   }, [])
@@ -127,6 +166,7 @@ export function ProgressProvider({ children }) {
       clearModule,
       resetLevel,
       resetAll,
+      importState,
       setSetting,
 
       isCompleted: (levelId, moduleId) => Boolean(state.levels[levelId]?.[moduleId]?.completed),
@@ -160,7 +200,7 @@ export function ProgressProvider({ children }) {
        * active in, and the first lesson there they have not finished.
        *
        * "Last active" is the most recent completedAt across every level, not
-       * simply the first level with any progress — someone who did three
+       * simply the first level with any progress - someone who did three
        * lessons at Level 1 and then moved up to Level 2 should come back to
        * Level 2, which is where they actually were.
        *
@@ -200,7 +240,7 @@ export function ProgressProvider({ children }) {
         }
       },
     }),
-    [state, storageBlocked, markComplete, clearModule, resetLevel, resetAll, setSetting],
+    [state, storageBlocked, markComplete, clearModule, resetLevel, resetAll, importState, setSetting],
   )
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>

@@ -46,7 +46,7 @@
             "prompt": "An adult you don't know well gives you ₹100 and says 'don't tell your parents about this.' What does the lesson say about this exact combination?",
             "image": { "icon": "lock", "alt": "Money being handed over with a finger held to lips" },
             "options": [
-              { "icon": "warning", "label": "This is a warning sign — no one should ask a child to keep money secret from parents" },
+              { "icon": "warning", "label": "This is a warning sign - no one should ask a child to keep money secret from parents" },
               { "icon": "gift", "label": "It is fine, since they gave you the money as a gift" },
               { "icon": "coin", "label": "It is only a problem if the amount is large" }
             ],
@@ -96,7 +96,7 @@
             "prompt": "A message says 'You won ₹1,00,000! Claim within 10 minutes or lose it forever!' You never entered any competition. Name two separate warning signs in this message.",
             "image": { "icon": "phone", "alt": "A phone showing an urgent prize message with a countdown" },
             "options": [
-              { "icon": "warning", "label": "You never entered, and it is rushing you to act fast — both are classic scam signs" },
+              { "icon": "warning", "label": "You never entered, and it is rushing you to act fast - both are classic scam signs" },
               { "icon": "gift", "label": "It is not a scam, since it mentions a specific rupee amount" },
               { "icon": "check", "label": "It is only suspicious because of the amount, not the urgency" }
             ],
@@ -120,7 +120,7 @@
             "prompt": "An online post offers to turn ₹1,000 into ₹5,000 in one week if you send it to them first. What should you conclude?",
             "image": { "icon": "warning", "alt": "An online post promising to multiply money quickly" },
             "options": [
-              { "icon": "cross", "label": "It is not true — this is exactly the kind of offer the lesson warns is too good to be true" },
+              { "icon": "cross", "label": "It is not true - this is exactly the kind of offer the lesson warns is too good to be true" },
               { "icon": "check", "label": "It could be true if enough people share the post" },
               { "icon": "coin", "label": "It is safe as long as you only send a small amount first" }
             ],
@@ -158,7 +158,7 @@
             "prompt": "An app message says: 'To receive your ₹500 refund, please enter your UPI PIN now.' Using what you know about when a PIN is genuinely needed, what should you conclude?",
             "image": { "icon": "phone", "alt": "A refund message asking for a UPI PIN" },
             "options": [
-              { "icon": "warning", "label": "This is a scam — a PIN is only ever needed to SEND money, never to receive it" },
+              { "icon": "warning", "label": "This is a scam - a PIN is only ever needed to SEND money, never to receive it" },
               { "icon": "check", "label": "It is genuine, since refunds are common" },
               { "icon": "coin", "label": "It is safe because it mentions an exact amount" }
             ],

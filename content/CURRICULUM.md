@@ -1,6 +1,6 @@
 # The lesson plan
 
-Eleven modules, each written three times — once at each level of difficulty.
+Eleven modules, each written three times - once at each level of difficulty.
 The course has one spine: **earn or receive money → keep it somewhere safe →
 make it grow → know what you are already owed.** Every module is a step along
 that line, and the later ones only work because the earlier ones happened.
@@ -40,8 +40,8 @@ number with no cost attached.
 
 Module 10 covers the **money and the card**: UDID as the gateway, benchmark
 disability at 40%, ADIP for hearing aids and cochlear implants, state disability
-pensions, IGNDPS for BPL households, travel concessions, Ayushman Bharat, and —
-at Level 3 — Sections 80U and 80DD, which are among the most-missed entitlements
+pensions, IGNDPS for BPL households, travel concessions, Ayushman Bharat, and -
+at Level 3 - Sections 80U and 80DD, which are among the most-missed entitlements
 of all because they need no receipts.
 
 Module 11 covers **study and work**: Pre-Matric and Post-Matric scholarships,
@@ -64,7 +64,7 @@ over-targeted by people selling things, would be marketing rather than literacy.
 
 **Schemes are framed as offsetting a disadvantage, not granting an advantage.**
 Deafness costs money that hearing people never spend. The finding worth
-building on is that these entitlements are badly underclaimed — so the lessons
+building on is that these entitlements are badly underclaimed - so the lessons
 push towards *applying*, and repeat that nothing arrives on its own.
 
 ## Before this is taught

@@ -39,14 +39,14 @@
               { "icon": "coin", "label": "Neither of you ever has to repay anything" }
             ],
             "correctIndex": 0,
-            "hint": "Only one of the two — a loan or a scholarship — is ever paid back."
+            "hint": "Only one of the two - a loan or a scholarship - is ever paid back."
           },
           {
             "id": "q2",
             "prompt": "A classmate says 'you only got the scholarship because you're the top student.' Based on the lesson, is this true?",
             "image": { "icon": "question", "alt": "A classmate comparing exam marks to a scholarship letter" },
             "options": [
-              { "icon": "check", "label": "No — it is because of being Deaf, not because of exam marks" },
+              { "icon": "check", "label": "No - it is because of being Deaf, not because of exam marks" },
               { "icon": "star", "label": "Yes, only top students ever qualify" },
               { "icon": "book", "label": "It depends on which subject you are best at" }
             ],
@@ -81,10 +81,10 @@
         "signInterpreter": { "src": null, "language": "isl" }
       },
       "summary": [
-        "Pre-Matric scholarships cover Classes IX and X. Post-Matric covers Class XI upward — school, diploma, degree and postgraduate study.",
+        "Pre-Matric scholarships cover Classes IX and X. Post-Matric covers Class XI upward - school, diploma, degree and postgraduate study.",
         "They can pay tuition, hostel and book costs, and add a disability allowance on top.",
         "They usually need 40% disability, a valid UDID and a family income under a set limit.",
-        "After school there is more. PM-DAKSH gives free vocational training and helps with placement. A free coaching scheme pays for exam coaching — UPSC, SSC, banking, state exams.",
+        "After school there is more. PM-DAKSH gives free vocational training and helps with placement. A free coaching scheme pays for exam coaching - UPSC, SSC, banking, state exams.",
         "For research there is a National Fellowship covering M.Phil. and Ph.D. study, with a monthly amount.",
         "In government jobs, 4% of posts are reserved for disabled candidates, and 1% of that is held for deaf and hard-of-hearing people alone. There is also age relaxation and lower exam fees.",
         "Every one of these needs an application, a deadline and papers. Missing the deadline is the commonest way this money is lost."
@@ -98,7 +98,7 @@
             "prompt": "A student has just finished Class X and is about to start Class XI. Which scholarship category do they now move into?",
             "image": { "icon": "book", "alt": "A student moving from Class X into Class XI" },
             "options": [
-              { "icon": "check", "label": "Post-Matric — Class XI is past the 'Matric' dividing line" },
+              { "icon": "check", "label": "Post-Matric - Class XI is past the 'Matric' dividing line" },
               { "icon": "cross", "label": "They stay in Pre-Matric until Class XII" },
               { "icon": "question", "label": "Neither applies once you pass Class X" }
             ],
@@ -110,7 +110,7 @@
             "prompt": "A student has a 45% disability and a valid UDID card, but their family's income is above the scheme's set limit. Can they receive the Post-Matric scholarship?",
             "image": { "icon": "warning", "alt": "A qualifying disability percentage beside an income limit that is exceeded" },
             "options": [
-              { "icon": "cross", "label": "Not under the standard rules — all conditions, including income, usually need to be met" },
+              { "icon": "cross", "label": "Not under the standard rules - all conditions, including income, usually need to be met" },
               { "icon": "check", "label": "Yes, disability percentage alone is enough" },
               { "icon": "shield", "label": "Yes, since they have a UDID card" }
             ],
@@ -146,7 +146,7 @@
       },
       "summary": [
         "Put together, these schemes are a route: study paid for, skills trained, a reserved share of jobs, and tax relief once you earn.",
-        "Scholarship and fellowship money is paid into a bank account in your own name — which is why the account came first in this course.",
+        "Scholarship and fellowship money is paid into a bank account in your own name - which is why the account came first in this course.",
         "NHFDC lends at concessional rates for study or for starting your own business, for people who want to work for themselves rather than be hired.",
         "States add their own: marriage assistance, self-employment loans, free laptops, housing support, free bus travel. These vary enormously, so check your own state rather than assuming.",
         "Scholarship money is income you did not have to earn. Treated as spending money it disappears; put into savings or a SIP it becomes the start of something.",
@@ -162,7 +162,7 @@
             "prompt": "A scholarship officer asks for your bank account details, but you only have access to a joint account held with a relative. Why might this specifically be a problem, based on this whole course?",
             "image": { "icon": "bank", "alt": "A joint account shared with a relative, receiving a scholarship" },
             "options": [
-              { "icon": "shield", "label": "Money you are owed is meant to be paid into an account you fully control, not one you share — the same point made about bank accounts and funds" },
+              { "icon": "shield", "label": "Money you are owed is meant to be paid into an account you fully control, not one you share - the same point made about bank accounts and funds" },
               { "icon": "check", "label": "It is not a problem at all, joint accounts work identically" },
               { "icon": "question", "label": "It is only a problem if the relative is unemployed" }
             ],
@@ -174,7 +174,7 @@
             "prompt": "A student wants to start a small tailoring business rather than continue studying. A friend suggests a Post-Matric scholarship. Is this the right scheme for their goal?",
             "image": { "icon": "shop", "alt": "A tailoring business being set up, beside a scholarship form" },
             "options": [
-              { "icon": "check", "label": "No — a scholarship is for study; NHFDC's concessional loan is designed for self-employment like this" },
+              { "icon": "check", "label": "No - a scholarship is for study; NHFDC's concessional loan is designed for self-employment like this" },
               { "icon": "book", "label": "Yes, scholarships also fund businesses" },
               { "icon": "cross", "label": "Neither scheme applies to starting a business" }
             ],
@@ -186,8 +186,8 @@
             "prompt": "You receive a ₹6000 scholarship. Option A: spend all of it now. Option B: put ₹4000 into savings or a SIP and spend ₹2000. Which option leaves you with something a year from now, and why?",
             "image": { "icon": "growth", "alt": "Two paths for the same scholarship money, one year later" },
             "options": [
-              { "icon": "piggy", "label": "Option B — money that is saved or invested can still exist and possibly grow a year later; fully spent money is gone" },
-              { "icon": "shop", "label": "Option A — spending it all now means you enjoyed it fully" },
+              { "icon": "piggy", "label": "Option B - money that is saved or invested can still exist and possibly grow a year later; fully spent money is gone" },
+              { "icon": "shop", "label": "Option A - spending it all now means you enjoyed it fully" },
               { "icon": "question", "label": "Both options leave you with exactly the same amount a year later" }
             ],
             "correctIndex": 0,

@@ -4,11 +4,11 @@
 // ADDING A STRING
 //   1. Add the key to `en` below, in the block for the page it belongs to.
 //   2. Add the same key to `hi`. If you leave it out, the English text is used
-//      instead — a missing translation never blanks the screen.
+//      instead - a missing translation never blanks the screen.
 //
 // The Hindi here is written the same way the English is: short sentences,
 // everyday words, nothing a 7-year-old would need an adult to unpick. It is
-// written text, not a replacement for Indian Sign Language — the ISL video is
+// written text, not a replacement for Indian Sign Language - the ISL video is
 // the first language on this site and does not change with this setting.
 // ---------------------------------------------------------------------------
 
@@ -24,6 +24,7 @@ const en = {
   'nav.home': 'Home',
   'nav.lessons': 'Lessons',
   'nav.dictionary': 'Dictionary',
+  'nav.schemes': 'Schemes',
   'nav.teachers': 'Teachers',
   'nav.access': 'Access',
   'nav.label': 'Main',
@@ -33,13 +34,13 @@ const en = {
   'lang.switchToEnglish': 'Read this site in English',
   'lang.name': 'हिन्दी',
   // Named as an action rather than a state. The button is a single icon, so
-  // this sentence is its whole accessible name and its tooltip — "Dark" alone
+  // this sentence is its whole accessible name and its tooltip - "Dark" alone
   // would be read by some people as where they are and by others as where the
   // button goes, and a verb removes that.
   'theme.toDark': 'Switch to dark page colours',
   'theme.toLight': 'Switch to light page colours',
   'storage.blocked': 'This device cannot save your progress. You can still watch every lesson.',
-  'footer.blurb': 'Amanat — free money lessons for Deaf and Hard-of-Hearing children.',
+  'footer.blurb': 'Amanat - free money lessons for Deaf and Hard-of-Hearing children.',
   'footer.accessibility': 'Accessibility statement',
   'footer.teachers': 'For parents and teachers',
   'site.tagline': 'Money lessons you can see',
@@ -48,13 +49,13 @@ const en = {
   'cover.badge': 'Made with {sign} first',
   'cover.title1': 'Money lessons',
   'cover.title2': 'you can see',
-  // No age number here on purpose — see the levels array in config/site.js.
+  // No age number here on purpose - see the levels array in config/site.js.
   // Sorted by difficulty and not by age for the same reason: reading level and
   // age come apart often among Deaf and Hard-of-Hearing children, and a number
   // in the very first line a reader sees would undo that before they ever
   // reach the level picker.
   'cover.lead':
-    'Watch. Read. Answer picture questions. Amanat teaches Deaf and Hard-of-Hearing children how money works — with sign language, captions and pictures on every single lesson. Start at your own level and move up whenever you are ready.',
+    'Watch. Read. Answer picture questions. Amanat teaches Deaf and Hard-of-Hearing children how money works - with sign language, captions and pictures on every single lesson. Start at your own level and move up whenever you are ready.',
   'cover.promise.sign': '{signShort} video',
   'cover.promise.captions': 'Captions on every lesson',
   'cover.promise.sound': 'No sound needed',
@@ -62,13 +63,10 @@ const en = {
   'cover.cta.dictionary': 'See the money signs',
 
   // ------------------------------------------------------------------ home
-  'home.lessons.heading': 'Eight lessons',
-  'home.lessons.lead':
-    'Every lesson has captions, a written transcript, and a space for a video in {sign}.',
-  'home.level.eyebrow': 'Choose a level',
-  'home.level.heading': 'Where do you want to start?',
-  'home.level.lead':
-    'Pick a level. Start at 1 if you are not sure — you can move up any time.',
+  // home.lessons.* and home.level.* lived here once, for a level-picker
+  // section this page no longer has - see the note above the CTA band in
+  // Home.jsx. Removed rather than left unused, so nobody translates or edits
+  // a string that nothing reads.
   'home.more.heading': 'More on this site',
   'home.more.dictionary.title': 'Money words',
   'home.more.dictionary.text': 'Look up a word. See the sign and a picture.',
@@ -152,7 +150,7 @@ const en = {
   'home.claim.eyebrow': 'Know what you are owed',
   'home.claim.heading': 'Money you may already be entitled to',
   'home.claim.lead':
-    'Being Deaf costs money that hearing people never spend. These exist to offset that — and most go unclaimed simply because nobody knew.',
+    'Being Deaf costs money that hearing people never spend. These exist to offset that - and most go unclaimed simply because nobody knew.',
   'home.claim.udid.title': 'The UDID card',
   'home.claim.udid.text': 'Free. The card almost every other scheme asks for first.',
   'home.claim.adip.title': 'ADIP',
@@ -161,7 +159,7 @@ const en = {
   'home.claim.scholarship.text': 'School to postgraduate. Fees, hostel and books. Never repaid.',
   'home.claim.tax.title': 'Section 80U',
   'home.claim.tax.text': '₹75,000 off taxable income, or ₹1,25,000 if severe. No receipts.',
-  'home.claim.cta': 'See the schemes lessons',
+  'home.claim.cta': 'See all the schemes',
   'home.claim.note': 'Rules and amounts change. Every figure is checked before it is taught.',
 
   // ------------------------------------------------------- dictionary teaser
@@ -190,7 +188,7 @@ const en = {
 
   // ------------------------------------------------------------------ notes
   'lang.lessonNote':
-    'Some lessons are written in Hindi already. The rest are still in English — each one says so before it starts.',
+    'Some lessons are written in Hindi already. The rest are still in English - each one says so before it starts.',
   'lesson.notTranslated':
     'This lesson has not been written in Hindi yet. It will show in English below.',
 }
@@ -200,6 +198,7 @@ const hi = {
   'nav.home': 'होम',
   'nav.lessons': 'पाठ',
   'nav.dictionary': 'शब्दकोश',
+  'nav.schemes': 'योजनाएँ',
   'nav.teachers': 'शिक्षक',
   'nav.access': 'सुलभता',
   'nav.label': 'मुख्य',
@@ -212,7 +211,7 @@ const hi = {
   'theme.toLight': 'पन्ने के रंग उजले कीजिए',
   'storage.blocked':
     'यह डिवाइस आपकी प्रगति सहेज नहीं सकता। फिर भी आप हर पाठ देख सकते हैं।',
-  'footer.blurb': 'अमानत — बहरे और कम सुनने वाले बच्चों के लिए मुफ़्त पैसे के पाठ।',
+  'footer.blurb': 'अमानत - बहरे और कम सुनने वाले बच्चों के लिए मुफ़्त पैसे के पाठ।',
   'footer.accessibility': 'सुलभता वक्तव्य',
   'footer.teachers': 'माता-पिता और शिक्षकों के लिए',
   'site.tagline': 'पैसे के पाठ, जो आप देख सकते हैं',
@@ -222,7 +221,7 @@ const hi = {
   'cover.title1': 'पैसे के पाठ,',
   'cover.title2': 'जो आप देख सकते हैं',
   'cover.lead':
-    'देखिए। पढ़िए। तस्वीर वाले सवालों के जवाब दीजिए। अमानत बहरे और कम सुनने वाले बच्चों को सिखाता है कि पैसा कैसे काम करता है — हर पाठ में सांकेतिक भाषा, कैप्शन और तस्वीरें। अपने स्तर से शुरू कीजिए, और जब तैयार हों तब आगे बढ़िए।',
+    'देखिए। पढ़िए। तस्वीर वाले सवालों के जवाब दीजिए। अमानत बहरे और कम सुनने वाले बच्चों को सिखाता है कि पैसा कैसे काम करता है - हर पाठ में सांकेतिक भाषा, कैप्शन और तस्वीरें। अपने स्तर से शुरू कीजिए, और जब तैयार हों तब आगे बढ़िए।',
   'cover.promise.sign': '{signShort} वीडियो',
   'cover.promise.captions': 'हर पाठ में कैप्शन',
   'cover.promise.sound': 'सुनने की ज़रूरत नहीं',
@@ -230,13 +229,6 @@ const hi = {
   'cover.cta.dictionary': 'पैसे के संकेत देखें',
 
   // ------------------------------------------------------------------ home
-  'home.lessons.heading': 'आठ पाठ',
-  'home.lessons.lead':
-    'हर पाठ में कैप्शन हैं, लिखा हुआ पूरा पाठ है, और {sign} के वीडियो के लिए जगह है।',
-  'home.level.eyebrow': 'स्तर चुनिए',
-  'home.level.heading': 'कहाँ से शुरू करना है?',
-  'home.level.lead':
-    'एक स्तर चुनिए। पक्का न हो तो स्तर 1 से शुरू कीजिए — आप कभी भी आगे बढ़ सकते हैं।',
   'home.more.heading': 'इस साइट पर और भी',
   'home.more.dictionary.title': 'पैसे के शब्द',
   'home.more.dictionary.text': 'कोई शब्द ढूँढिए। उसका संकेत और तस्वीर देखिए।',
@@ -276,7 +268,7 @@ const hi = {
     'साथ-साथ पढ़िए, या लिखे हुए पाठ में ढूँढकर सीधे वीडियो के उसी हिस्से पर पहुँच जाइए।',
   'home.built.pictures.title': 'मतलब तस्वीरें बताती हैं',
   'home.built.pictures.text':
-    'रेखा-चित्र, फ़ोटो नहीं — इसलिए हर आकार में और 400% ज़ूम पर भी साफ़ दिखते हैं।',
+    'रेखा-चित्र, फ़ोटो नहीं - इसलिए हर आकार में और 400% ज़ूम पर भी साफ़ दिखते हैं।',
   'home.built.private.title': 'कुछ भी डिवाइस से बाहर नहीं जाता',
   'home.built.private.text':
     'कोई खाता नहीं, कोई लॉगिन नहीं, कोई निगरानी नहीं। आपकी प्रगति सिर्फ़ इसी डिवाइस पर रहती है।',
@@ -285,7 +277,7 @@ const hi = {
   'home.topics.eyebrow': 'पाठ्यक्रम',
   'home.topics.heading': '{count} विषय, तीन-तीन बार लिखे गए',
   'home.topics.lead':
-    'हर स्तर पर वही विषय — हाथ में रखे सिक्कों से लेकर चक्रवृद्धि ब्याज और आपके अधिकारों तक।',
+    'हर स्तर पर वही विषय - हाथ में रखे सिक्कों से लेकर चक्रवृद्धि ब्याज और आपके अधिकारों तक।',
 
   // ------------------------------------------------------------ lessons page
   'lessons.title': 'पाठ',
@@ -320,7 +312,7 @@ const hi = {
   'home.claim.eyebrow': 'जो आपका हक़ है, उसे जानिए',
   'home.claim.heading': 'वह पैसा जिस पर शायद पहले से आपका हक़ है',
   'home.claim.lead':
-    'बहरा होने पर वह ख़र्च आता है जो सुनने वालों को कभी नहीं करना पड़ता। ये योजनाएँ उसी की भरपाई हैं — और ज़्यादातर सिर्फ़ इसलिए बिना माँगे रह जाती हैं क्योंकि किसी को पता ही नहीं था।',
+    'बहरा होने पर वह ख़र्च आता है जो सुनने वालों को कभी नहीं करना पड़ता। ये योजनाएँ उसी की भरपाई हैं - और ज़्यादातर सिर्फ़ इसलिए बिना माँगे रह जाती हैं क्योंकि किसी को पता ही नहीं था।',
   'home.claim.udid.title': 'UDID कार्ड',
   'home.claim.udid.text': 'मुफ़्त। लगभग हर दूसरी योजना सबसे पहले यही माँगती है।',
   'home.claim.adip.title': 'ADIP',
@@ -329,14 +321,14 @@ const hi = {
   'home.claim.scholarship.text': 'स्कूल से स्नातकोत्तर तक। फ़ीस, हॉस्टल और किताबें। कभी लौटानी नहीं।',
   'home.claim.tax.title': 'धारा 80U',
   'home.claim.tax.text': 'कर योग्य आय में ₹75,000 की छूट, गंभीर दिव्यांगता पर ₹1,25,000। कोई रसीद नहीं।',
-  'home.claim.cta': 'योजनाओं के पाठ देखिए',
+  'home.claim.cta': 'सभी योजनाएँ देखिए',
   'home.claim.note': 'नियम और रक़में बदलती रहती हैं। हर आँकड़ा पढ़ाने से पहले जाँचा जाता है।',
 
   // ------------------------------------------------------- dictionary teaser
   'home.words.eyebrow': 'पैसे के शब्द',
   'home.words.heading': '{count} शब्द, हर एक के संकेत के लिए जगह',
   'home.words.lead':
-    'कोई शब्द ढूँढिए और देखिए — तस्वीर, आसान अर्थ, और रुपयों में एक असली उदाहरण।',
+    'कोई शब्द ढूँढिए और देखिए - तस्वीर, आसान अर्थ, और रुपयों में एक असली उदाहरण।',
   'home.words.cta': 'शब्दकोश खोलिए',
 
   // ------------------------------------------------------------ closing CTA
@@ -358,7 +350,7 @@ const hi = {
 
   // ------------------------------------------------------------------ notes
   'lang.lessonNote':
-    'कुछ पाठ पहले से हिन्दी में लिखे जा चुके हैं। बाकी अभी अंग्रेज़ी में हैं — हर पाठ शुरू होने से पहले यह बता देता है।',
+    'कुछ पाठ पहले से हिन्दी में लिखे जा चुके हैं। बाकी अभी अंग्रेज़ी में हैं - हर पाठ शुरू होने से पहले यह बता देता है।',
   'lesson.notTranslated':
     'यह पाठ अभी हिन्दी में नहीं लिखा गया है। नीचे यह अंग्रेज़ी में दिखेगा।',
 }

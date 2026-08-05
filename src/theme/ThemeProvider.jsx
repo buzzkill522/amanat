@@ -60,7 +60,7 @@ export function ThemeProvider({ children }) {
     // Most interactive elements carry `transition`, which covers colour and
     // background-colour. Changing the theme therefore cross-fades the entire
     // page over 150ms, and a foreground and its background interpolate
-    // *through each other* on the way — every label on the page passes through
+    // *through each other* on the way - every label on the page passes through
     // low contrast, and some through none at all, before settling. It reads as
     // a glitch rather than a transition, and it is worst for exactly the
     // reader who reached for the dark theme because bright change hurts.
@@ -74,7 +74,7 @@ export function ThemeProvider({ children }) {
     void root.offsetHeight
     root.removeAttribute('data-theme-switching')
 
-    // The browser paints its own chrome from this — the address bar on
+    // The browser paints its own chrome from this - the address bar on
     // Android, the title bar on some desktops. Left alone it would keep the
     // light theme's beige above a dark page. The value is read back out of the
     // stylesheet rather than written here, so it cannot drift from the palette.

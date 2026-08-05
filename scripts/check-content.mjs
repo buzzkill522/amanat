@@ -7,7 +7,7 @@
 // The app reads these files straight into React. A wrong icon name renders a
 // blank square, an out-of-range correctIndex makes a question unanswerable, and
 // a missing level key crashes the lesson page. None of it is caught at build
-// time, because JSON has no schema — and the people editing these files are
+// time, because JSON has no schema - and the people editing these files are
 // educators, not developers. This is the check that stands in for that.
 //
 // Exits non-zero on any error, so it can gate CI.
@@ -52,7 +52,7 @@ for (const file of files) {
   try {
     mod = JSON.parse(readFileSync(join(MODULE_DIR, file), 'utf8'))
   } catch (e) {
-    fail(file, `not valid JSON — ${e.message}`)
+    fail(file, `not valid JSON - ${e.message}`)
     continue
   }
 
@@ -77,7 +77,7 @@ for (const file of files) {
   for (const level of EXPECTED_LEVELS) {
     const block = mod.levels[level]
     if (!block) {
-      // Not fatal — the app filters modules by level — but almost always a slip.
+      // Not fatal - the app filters modules by level - but almost always a slip.
       warn(file, `no content for ${level}`)
       continue
     }
@@ -122,7 +122,7 @@ for (const file of files) {
       else if (q.correctIndex < 0 || q.correctIndex >= q.options.length) {
         fail(qAt, `correctIndex ${q.correctIndex} is outside 0..${q.options.length - 1}`)
       }
-      if (!q.hint) warn(qAt, 'no hint — a wrong answer will have nothing to offer')
+      if (!q.hint) warn(qAt, 'no hint - a wrong answer will have nothing to offer')
     })
   }
 }
@@ -132,7 +132,7 @@ let dict
 try {
   dict = JSON.parse(readFileSync(DICTIONARY, 'utf8'))
 } catch (e) {
-  fail('dictionary.json', `not valid JSON — ${e.message}`)
+  fail('dictionary.json', `not valid JSON - ${e.message}`)
 }
 
 if (dict) {
