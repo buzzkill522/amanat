@@ -3,55 +3,44 @@ import { useTheme } from '@/theme/ThemeProvider.jsx'
 import { useT } from '@/i18n/LanguageProvider.jsx'
 
 /**
- * Both themes on screen at once, for the same reason both languages are.
+ * One small button in the corner, showing the theme it would switch you to.
  *
- * A single switch has to describe the state you are *not* in — "dark mode",
- * shown while you are in light mode, is read by plenty of people as a label
- * for where they are rather than where the button would take them. Two
- * buttons with the live one marked has no such ambiguity, and each carries a
- * picture as well as a word, so it does not depend on reading at all.
+ * A single icon is a learned convention rather than a self-evident one, which
+ * is a real cost on a site read by children still learning English. Three
+ * things carry that weight instead of a visible label:
  *
- * Deliberately not an icon-only control: this site is used by children who are
- * still learning to read English *and* by teachers, and a bare crescent moon
- * is a convention you have to have been taught. The word carries the meaning
- * and the icon supports it (WCAG 1.4.1, and the same rule the rest of the UI
- * follows — never colour or picture alone).
+ *   - The accessible name is a whole sentence naming the action, not the state
+ *     ("Switch to dark page colours"). A one-word label on a one-button switch
+ *     is the genuinely ambiguous case — plenty of people read "Dark" as where
+ *     they are rather than where the button goes. A verb cannot be read that
+ *     way, and it is what a screen reader announces.
+ *   - The same sentence is the `title`, so it appears on hover and on a long
+ *     press as well as to assistive technology.
+ *   - The icon shows the destination, matching the sentence: a moon while the
+ *     page is light, because pressing it makes the page dark.
+ *
+ * Small is visual only. `tap-target` keeps the button 44x44 whatever the icon
+ * measures, so WCAG 2.5.8 still holds — shrinking the drawing is a look, and
+ * shrinking the hit area would be a defect, particularly on the shared tablets
+ * this is used on.
  */
 export default function ThemeToggle({ className = '' }) {
   const { theme, setTheme } = useTheme()
   const t = useT()
 
-  const options = [
-    { code: 'light', labelKey: 'theme.light', icon: Sun },
-    { code: 'dark', labelKey: 'theme.dark', icon: Moon },
-  ]
+  const next = theme === 'dark' ? 'light' : 'dark'
+  const Icon = next === 'dark' ? Moon : Sun
+  const label = t(next === 'dark' ? 'theme.toDark' : 'theme.toLight')
 
   return (
-    <div
-      className={`flex items-center gap-1 rounded-xl border border-brand-100 bg-brand-50 p-1 ${className}`}
-      role="group"
-      aria-label={t('theme.label')}
+    <button
+      type="button"
+      onClick={() => setTheme(next)}
+      title={label}
+      aria-label={label}
+      className={`tap-target rounded-xl border border-brand-100 bg-brand-50 text-ink transition hover:bg-brand-100 ${className}`}
     >
-      {options.map(({ code, labelKey, icon: Icon }) => {
-        const active = code === theme
-        return (
-          <button
-            key={code}
-            type="button"
-            onClick={() => setTheme(code)}
-            aria-pressed={active}
-            className={`tap-target gap-1.5 rounded-lg px-3 py-1.5 text-sm font-extrabold transition ${
-              active ? 'bg-ink text-surface' : 'text-ink hover:bg-brand-100'
-            }`}
-          >
-            <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-            {t(labelKey)}
-            {/* Marked in text as well as in colour, for anyone who cannot see
-                the highlight (WCAG 1.4.1 Use of Colour). */}
-            {active && <span className="sr-only"> ({t('theme.selected')})</span>}
-          </button>
-        )
-      })}
-    </div>
+      <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+    </button>
   )
 }

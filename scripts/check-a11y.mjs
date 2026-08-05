@@ -83,6 +83,8 @@ const TEXT = [
   // Body text on the three things it sits on.
   ['ink', 'paper'], ['ink', 'surface'], ['ink', 'brand.50'],
   ['muted', 'paper'], ['muted', 'surface'], ['muted', 'brand.50'],
+  // The hover state of the language buttons and the theme button.
+  ['ink', 'brand.100'],
 
   // Labels on neutral fills — buttons, chips, the skip link.
   ['surface', 'brand.500'], ['surface', 'brand.600'], ['surface', 'brand.700'],

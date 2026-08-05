@@ -32,13 +32,12 @@ const en = {
   'lang.switchTo': 'Read this site in Hindi',
   'lang.switchToEnglish': 'Read this site in English',
   'lang.name': 'हिन्दी',
-  // "Light" and "Dark" describe the page, not the time of day — kept to one
-  // short common word each so they fit beside the language buttons at 320px
-  // and stay readable for a child still learning English.
-  'theme.label': 'Page colours',
-  'theme.light': 'Light',
-  'theme.dark': 'Dark',
-  'theme.selected': 'selected',
+  // Named as an action rather than a state. The button is a single icon, so
+  // this sentence is its whole accessible name and its tooltip — "Dark" alone
+  // would be read by some people as where they are and by others as where the
+  // button goes, and a verb removes that.
+  'theme.toDark': 'Switch to dark page colours',
+  'theme.toLight': 'Switch to light page colours',
   'storage.blocked': 'This device cannot save your progress. You can still watch every lesson.',
   'footer.blurb': 'Amanat — free money lessons for Deaf and Hard-of-Hearing children.',
   'footer.accessibility': 'Accessibility statement',
@@ -204,10 +203,8 @@ const hi = {
   'lang.switchTo': 'इस साइट को हिन्दी में पढ़ें',
   'lang.switchToEnglish': 'इस साइट को अंग्रेज़ी में पढ़ें',
   'lang.name': 'English',
-  'theme.label': 'पन्ने के रंग',
-  'theme.light': 'उजला',
-  'theme.dark': 'गहरा',
-  'theme.selected': 'चुना हुआ',
+  'theme.toDark': 'पन्ने के रंग गहरे कीजिए',
+  'theme.toLight': 'पन्ने के रंग उजले कीजिए',
   'storage.blocked':
     'यह डिवाइस आपकी प्रगति सहेज नहीं सकता। फिर भी आप हर पाठ देख सकते हैं।',
   'footer.blurb': 'अमानत — बहरे और कम सुनने वाले बच्चों के लिए मुफ़्त पैसे के पाठ।',

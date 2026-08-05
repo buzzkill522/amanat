@@ -88,19 +88,14 @@ export default function Layout() {
 
           {/* Language sits in the header on every page, not buried in settings:
               a reader who cannot follow the English needs it before they need
-              anything else. Page colours sit beside it for the same reason —
-              a reader who finds the light page painful to look at needs that
-              fixed before they can read anything, and hiding it on a settings
-              screen assumes they will go looking. Both wrap onto their own row
-              on a narrow screen rather than shrinking below the tap target. */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <LanguageToggle />
-            <ThemeToggle />
-          </div>
+              anything else. It keeps both words on screen because picking a
+              language you cannot read from a label written in the other one is
+              the problem it exists to solve. */}
+          <LanguageToggle />
 
           {/* The nav takes the full width and wraps on a narrow screen, so the
               page still reflows to 320px with no sideways scrolling. */}
-          <nav aria-label={t('nav.label')} className="w-full sm:w-auto">
+          <nav aria-label={t('nav.label')} className="w-full sm:w-auto sm:order-none order-last">
             <ul className="flex flex-wrap items-center justify-center gap-1">
               {NAV.map((item) => (
                 <li key={item.to}>
@@ -113,6 +108,14 @@ export default function Layout() {
               ))}
             </ul>
           </nav>
+
+          {/* Last in the row, so it lands in the top corner on a wide screen
+              and stays on the first row beside the language buttons once the
+              nav wraps to its own line. Kept in the header rather than on a
+              settings page for the same reason language is: a reader who finds
+              the light page painful to look at needs that fixed before they
+              can read anything, and burying it assumes they go looking. */}
+          <ThemeToggle />
         </div>
       </header>
 
