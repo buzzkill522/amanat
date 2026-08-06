@@ -11,170 +11,179 @@
 //
 // That matters because the failure this project guards against is a hex being
 // changed and the contrast check not being re-run. With one source and a CI
-// gate reading it, that drift cannot happen quietly - and dark mode doubles
-// the surface area for exactly that mistake.
+// gate reading it, that drift cannot happen quietly.
+//
+// ---------------------------------------------------------------------------
+// WHITE GROUND, SATURATED ACCENTS
+//
+// This replaced a beige-and-rust scheme. The old one was chosen colour by
+// colour and each choice was defensible, but the result read as muted and
+// adult - which is the wrong register for a site whose readers are children.
+// The first person outside the project to look at it said so plainly.
+//
+// The page is white now and the accents are properly saturated. Liveliness
+// here comes from saturation and from the number of distinct hues, not from
+// brightness, and there is a hard reason for that:
+//
+//   A fill that carries white text must be dark enough for the text to clear
+//   4.5:1. That caps how bright any fill can be. So the fills are jewel tones
+//   - deep emerald, indigo, magenta, amber - and the light, cheerful end of
+//   each family lives in the -100 tints, which are backgrounds and carry dark
+//   text. Bright where it is free, deep where the contrast floor says so.
+//
+// Five hues, one job each, no two doing the same work:
+//   clay   indigo   the accent - eyebrows, the focus ring, the logo mark
+//   grow   emerald  correct, complete
+//   sun    amber    in progress, careful
+//   berry  magenta  the dictionary, secondary emphasis
+//   alert  red      wrong, destructive
+//
+// The neutrals are a cool slate ramp rather than warm stone. On a white page
+// a cool neutral makes saturated accents read as brighter than a warm one
+// does, which is the whole point of the change.
 //
 // ---------------------------------------------------------------------------
 // HOW DARK MODE WORKS HERE
 //
 // Not a second design. The same design, reflected - because the token names
-// were already roles rather than colours. `paper` is "the page", `ink` is
-// "text on the page", `surface` is "a card". A role survives the reflection;
-// a colour name would not have.
+// are roles rather than colours. `paper` is "the page", `ink` is "text on the
+// page", `surface` is "a card". A role survives the reflection.
 //
 // The neutral `brand` ramp reflects end for end: brand-50 is the faintest step
 // away from the page in both themes, brand-900 the furthest. So
 // `text-brand-700` is dark-on-light in the light theme and light-on-dark in
 // the dark one, and no component had to be told which theme it was in.
 //
-// Three rules make that reflection safe, and each one is why a set of classes
-// was repointed rather than left alone:
+// Three rules make that reflection safe:
 //
-//   1. Fills carry `text-surface`, never `text-white`. White cannot reflect,
-//      so a white label pins its fill to being dark forever. `text-surface` is
-//      near-white on a light page and near-black on a dark one, which is
-//      exactly what a fill that reflects needs.
-//
-//   2. Each state family splits its roles by step, with no step doing two
-//      jobs: -100 is a tint background, -500 a fill, -600 text, -700 the
-//      pressed/hover fill. Before this, -600 was both text and a hover fill,
-//      and those two want opposite things the moment the page goes dark.
-//
+//   1. Fills carry `text-surface`, never `text-white`, wherever the fill is
+//      part of the neutral ramp. White cannot reflect; `text-surface` is
+//      near-white on a light page and near-black on a dark one.
+//   2. Each state family splits its roles by step, no step doing two jobs:
+//      -100 tint background, -500 fill, -600 text, -700 pressed fill.
 //   3. Anything that must stay dark in both themes is a `stage` token, not a
 //      dark step of `brand`. The signing panel is the reason: guidance on
-//      sign-language video asks for a solid dark ground behind the signer, and
-//      that requirement does not care what theme the reader chose. Naming it
-//      `stage` puts the constraint in the token instead of in a comment
-//      somebody edits away.
+//      sign-language video asks for a solid dark ground behind the signer,
+//      and that does not care which theme the reader chose.
 // ---------------------------------------------------------------------------
 
 /**
- * The light theme. These values are unchanged from the beige palette that
- * shipped - introducing dark mode was not licence to restyle the light one,
- * and every measured ratio in the old audit still holds.
+ * The light theme. A white page, a cool slate ramp, five saturated hues.
  */
 const light = {
-  // Page + surfaces - unbleached beige, and a near-white for cards.
-  paper: '#f6f1e8',
-  surface: '#fffdf8',
-  // Text.
-  ink: '#1c1815', //  15.7:1 on paper - warm near-black, never grey-blue
-  muted: '#6b6155', //   5.4:1 on paper
+  // The page and the cards. paper is a hair off white so that a white card
+  // has something to sit on; surface is pure white.
+  paper: '#f6f8fc',
+  surface: '#ffffff',
+  // Text. Near-black with a trace of blue, to sit with the cool neutrals.
+  ink: '#151a23',
+  muted: '#5b6472',
 
-  // Primary is a warm stone ramp rather than a hue: in a neutral scheme the
-  // "brand colour" is the paper and the ink, and the one accent gets to be
-  // loud precisely because nothing else is.
+  // The neutral ramp: hairlines, borders, chips, the primary button.
   brand: {
-    50: '#f3efe6',
-    100: '#e8e1d4',
-    200: '#d3c9b8',
-    300: '#ab9f8c',
-    400: '#847868', //  the secondary button's outline - owes 3:1
-    500: '#63594a',
-    600: '#4a4237',
-    700: '#372f27',
-    800: '#26201a',
-    900: '#1a1613',
+    50: '#eef2f8',
+    100: '#dde4ef', //  hairlines and dividers
+    200: '#c3cddd',
+    300: '#9aa7bd',
+    400: '#71809a', //  the secondary button's outline - owes 3:1
+    500: '#55637c',
+    600: '#414d63',
+    700: '#313b4c',
+    800: '#232a37',
+    900: '#161b24',
   },
 
   // Bands and grounds that are dark on purpose, in either theme. The signing
   // ground is the load-bearing one; the footer and the home page's dark band
-  // use the same token so a reader never meets a bright slab mid-page after
-  // choosing dark.
+  // use the same token so a reader never meets a bright slab after choosing
+  // dark.
   stage: {
-    DEFAULT: '#26201a',
-    deep: '#1a1613', //  the ground a signer is filmed against
-    ink: '#e8e1d4', //  text on stage
-    muted: '#d3c9b8', //  secondary text on stage
+    DEFAULT: '#232a37',
+    deep: '#12161d', //  the ground a signer is filmed against
+    ink: '#e9edf4',
+    muted: '#bcc5d4',
   },
 
-  // The single accent. Rust, and the only saturated colour on a normal page.
-  clay: { 100: '#f8e7dc', 400: '#c4643a', 500: '#a8451c', 600: '#8a3818' },
+  // The accent. Indigo, and the only hue with no state meaning attached, so
+  // it can appear anywhere without implying right, wrong or in progress.
+  clay: { 100: '#e3eafe', 400: '#6b86f0', 500: '#3450c8', 600: '#283e9e' },
 
-  // State colours. One job per step - see rule 2 above.
-  //   100 tint background · 500 fill · 600 text · 700 pressed fill
-  grow: { 100: '#dcece5', 500: '#237a63', 600: '#1a5e4b', 700: '#164e3e' },
-  sun: { 100: '#f8eccc', 500: '#8a6413', 600: '#6f4f0c', 700: '#5a3f09' },
-  berry: { 100: '#f1e3ee', 500: '#71355f', 600: '#59284a', 700: '#47203b' },
-  alert: { 100: '#fbe3e2', 500: '#8a1018', 600: '#6d0c12', 700: '#56090e' },
+  // ------------------------------------------------------------------
+  // State colours. One job per step:
+  //   100 tint background - light and cheerful, carries dark text
+  //   500 fill            - deep enough to carry white text at 4.5:1
+  //   600 text            - on the tint, and on the page
+  //   700 pressed fill
+  //
+  // grow against alert is right-against-wrong in the quiz, and it is the one
+  // pair the colour-vision audit holds to a floor. Everything else may
+  // converge under simulation, because every state here is carried by an icon
+  // and a word as well as by colour (WCAG 1.4.1).
+  //
+  // The green is pulled toward teal and the red pushed dark and crimson, and
+  // neither is a taste decision. A "true" emerald against a bright red
+  // measured dE 16.8 under protanopia - close enough that a red-blind child
+  // could not reliably tell a right answer from a wrong one. Blue survives
+  // protanopia where red does not, so putting blue in the green and taking
+  // brightness out of the red is what buys the separation back.
+  grow: { 100: '#d6f3e6', 500: '#04806a', 600: '#036654', 700: '#024f41' },
+  sun: { 100: '#fdefc9', 500: '#8f6410', 600: '#73500b', 700: '#5c4008' },
+  berry: { 100: '#f8e2f4', 500: '#8f2b80', 600: '#732166', 700: '#5b1a51' },
+  alert: { 100: '#ffe0e0', 500: '#a81523', 600: '#7d0e1a', 700: '#660a15' },
 }
 
 /**
  * The dark theme.
  *
- * Still brown. Desaturating to grey is the obvious way to build a dark theme
- * and it would have thrown away the one thing this palette is about - there is
- * no blue and no grey in the light theme, and there is none here either. The
- * page is a dark warm brown, the text a warm off-white, and the neutrals stay
- * on the same stone axis rather than sliding to slate.
- *
- * The page is #16130f rather than #000. Pure black against near-white text is
+ * The page is #0e1218 rather than #000. Pure black against near-white text is
  * the highest contrast available and, for extended reading, a common cause of
  * halation - text appearing to bleed into its background. Children reading
  * paragraphs are the case that suffers most.
  */
 const dark = {
-  paper: '#16130f',
-  surface: '#201c16', //  a half-step lighter, same relationship as the light theme
-  ink: '#f4efe5',
-  muted: '#b0a494',
+  paper: '#0e1218',
+  surface: '#161c25', //  a half-step lighter, same relationship as the light theme
+  ink: '#eef1f7',
+  muted: '#98a3b4',
 
-  // The stone ramp, reflected end for end. brand-50 is still "barely off the
-  // page" and brand-900 is still "as far from it as this ramp goes".
+  // The slate ramp, reflected end for end.
   brand: {
-    50: '#262119',
-    100: '#322b22', //  hairlines and dividers
-    200: '#453d31',
-    300: '#5f5545',
-    400: '#8a7e6c', //  still the secondary button's outline, still owes 3:1
-    500: '#a2957f',
-    600: '#c0b39c',
-    700: '#d8cdb8',
-    800: '#e8dfcc',
-    900: '#f2ebdb',
+    50: '#1a2029',
+    100: '#242c37', //  hairlines and dividers
+    200: '#333d4b',
+    300: '#485465',
+    400: '#6d7b8f', //  still the secondary button's outline, still owes 3:1
+    500: '#8b98ab',
+    600: '#a9b4c4',
+    700: '#c5cddb',
+    800: '#dbe2ec',
+    900: '#edf1f7',
   },
 
-  // Barely moved: these are dark in both themes by definition. `stage` lifts a
-  // little so a band still separates from a dark page, and `deep` drops below
-  // the page so the signer's ground stays the darkest thing on screen.
+  // Barely moved: dark in both themes by definition. `stage` lifts a little
+  // so a band still separates from a dark page, and `deep` drops below the
+  // page so the signer's ground stays the darkest thing on screen.
   stage: {
-    DEFAULT: '#241f19',
-    deep: '#0f0d0a',
-    ink: '#e8e1d4',
-    muted: '#cfc5b4',
+    DEFAULT: '#1a212b',
+    deep: '#080b0f',
+    ink: '#e9edf4',
+    muted: '#c3ccda',
   },
 
-  // The accent lifts: rust at light-theme darkness disappears into a dark page,
-  // and clay-500 is the focus ring, which is not allowed to be hard to see.
-  clay: { 100: '#35211a', 400: '#c4643a', 500: '#d2703f', 600: '#eda17c' },
+  // The accent lifts so it still reads on a dark page - clay-500 is the focus
+  // ring, which is not allowed to be hard to see.
+  clay: { 100: '#1c2540', 400: '#6b86f0', 500: '#5c7ae8', 600: '#9db3ff' },
 
-  // ------------------------------------------------------------------------
-  // State colours. Only two of the four steps reflect, and the reason is the
-  // quiz.
-  //
-  //   -100 tint  reflects: it is a background, and backgrounds follow the page.
-  //   -600 text  reflects: it is text, and text follows the page.
-  //   -500 fill  does NOT reflect.
-  //   -700 fill  does NOT reflect.
-  //
-  // The fills keep their hue and their white labels because they are the pair
-  // the colour-vision audit is built around. grow-500 against alert-500 is
-  // right-against-wrong in the quiz, and the light theme buys its separation
-  // by pulling the green toward teal and pushing the red dark. Re-picking
-  // those two freely for a dark page would throw that away and have to earn it
-  // back by luck; they are lifted along their existing hue instead, and the
-  // audit re-measures the separation against the same floor in both themes.
-  //
-  // Each fill is lifted only as far as a narrow window allows. A fill has to
-  // clear 3:1 against the page to read as an object at all (WCAG 1.4.11), and
-  // hold a white label at 4.5:1 (1.4.3). Against this page those two pull in
-  // opposite directions and leave a band of roughly 0.136 to 0.183 relative
-  // luminance. Every value below sits inside it - which is why they look like
-  // oddly specific hexes rather than round ones.
-  grow: { 100: '#14291f', 500: '#26826c', 600: '#6fd9b4', 700: '#1d6650' },
-  sun: { 100: '#2e2410', 500: '#96701a', 600: '#dcb055', 700: '#6f4f0c' },
-  berry: { 100: '#2b1826', 500: '#9a5a86', 600: '#d193b9', 700: '#71355f' },
-  alert: { 100: '#2e1211', 500: '#c23b32', 600: '#e2635c', 700: '#94222a' },
+  // Tints go dark, text steps go light. The fills keep their hue and their
+  // white labels, lifted only as far as a narrow window allows: a fill has to
+  // clear 3:1 against the page to read as an object at all (WCAG 1.4.11) and
+  // hold a white label at 4.5:1 (1.4.3), and against this page those pull in
+  // opposite directions. That is why these are oddly specific hexes rather
+  // than round ones.
+  grow: { 100: '#0c2a20', 500: '#037a78', 600: '#3fdcc0', 700: '#056156' },
+  sun: { 100: '#2c2210', 500: '#8a6316', 600: '#e0b24f', 700: '#6f4f11' },
+  berry: { 100: '#2b1327', 500: '#aa3f93', 600: '#e59ad4', 700: '#78266a' },
+  alert: { 100: '#301313', 500: '#c23c39', 600: '#e8756f', 700: '#9c2b28' },
 }
 
 export const themes = { light, dark }

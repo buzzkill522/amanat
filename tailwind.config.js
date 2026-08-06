@@ -97,9 +97,15 @@ export default {
           'system-ui',
           'sans-serif',
         ],
-        // Baloo 2: rounded and heavy. Headings and buttons only - it is the
-        // friendly voice of the site, not something to read a paragraph of.
-        display: ['"Baloo 2"', 'Mukta', 'Verdana', '"Nirmala UI"', 'sans-serif'],
+        // Anek Devanagari: headings and buttons only.
+        //
+        // This replaced Baloo 2, which was rounded and bubbly and read as
+        // generic - it is the default "friendly" face on a great many
+        // template sites, and using it made an original curriculum look like
+        // one. Anek is by the Indian Type Foundry, drawn for Devanagari and
+        // Latin together like Mukta, so switching to Hindi still changes the
+        // script and not the typeface.
+        display: ['"Anek Devanagari"', 'Mukta', 'Verdana', '"Nirmala UI"', 'sans-serif'],
       },
       minHeight: { tap: '44px' },
       minWidth: { tap: '44px' },
