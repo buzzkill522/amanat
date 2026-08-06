@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { BadgeIndianRupee, BookOpen, GraduationCap, Home, Info, Map, Users } from 'lucide-react'
+import { BadgeIndianRupee, BookOpen, GraduationCap, Home, Info, Users } from 'lucide-react'
 import { site } from '@/config/site.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import LanguageToggle from '@/components/LanguageToggle.jsx'
 import ThemeToggle from '@/components/ThemeToggle.jsx'
+import Logomark from '@/components/icons/Logomark.jsx'
 import { useT } from '@/i18n/LanguageProvider.jsx'
 
 // `alsoMatch` keeps a tab lit while the reader is deeper inside that section.
@@ -75,7 +76,7 @@ export default function Layout() {
       <header className="border-b border-brand-100 bg-surface">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
           <Link to="/" className="tap-target gap-3 rounded-xl px-2 py-1 text-ink hover:bg-brand-50">
-            <Map className="h-8 w-8 text-clay-500" aria-hidden="true" />
+            <Logomark className="h-8 w-8 text-clay-500" />
             <span className="text-left">
               <span className="block text-xl font-extrabold leading-tight">
                 {site.name}

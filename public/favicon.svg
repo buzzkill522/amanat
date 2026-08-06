@@ -1,0 +1,8 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified for tab/home-screen sizes: thicker stroke, solid pupil,
+       no rupee glyph - it disappears below about 24px anyway. Colour is
+       fixed rather than theme-aware; a favicon renders in the browser's own
+       chrome, outside the page's light/dark toggle. -->
+  <path d="M4,24 Q24,6 44,24 Q24,42 4,24 Z" fill="none" stroke="#a8451c" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="24" cy="24" r="10" fill="#a8451c" />
+</svg>
