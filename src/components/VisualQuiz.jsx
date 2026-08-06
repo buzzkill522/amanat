@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { ArrowRight, Check, Lightbulb, RefreshCw, X } from 'lucide-react'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion.js'
+import { useT } from '@/i18n/LanguageProvider.jsx'
 
 /**
  * A picture quiz.
@@ -19,12 +20,9 @@ import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion.js'
  *                                lesson page, so it defaults to h2. Pass 3 if
  *                                you nest it inside another section.
  */
-export default function VisualQuiz({
-  questions = [],
-  onFinish,
-  title = 'Show what you know',
-  headingLevel = 2,
-}) {
+export default function VisualQuiz({ questions = [], onFinish, title, headingLevel = 2 }) {
+  const t = useT()
+  const heading = title || t('quiz.defaultTitle')
   const [index, setIndex] = useState(0)
   const [picked, setPicked] = useState(null)
   const [attempts, setAttempts] = useState(0)
@@ -90,18 +88,15 @@ export default function VisualQuiz({
           />
         </div>
         <Heading id="quiz-result-heading" className="text-2xl font-extrabold text-ink">
-          Quiz finished
+          {t('quiz.finishedHeading')}
         </Heading>
         <p className="mt-2 text-lg text-muted">
-          You answered <strong className="text-ink">{firstTryCount}</strong> of{' '}
-          <strong className="text-ink">{questions.length}</strong> right on the first try.
+          {t('quiz.resultSummary', { right: firstTryCount, total: questions.length })}
         </p>
-        <p className="mt-1 text-base text-muted">
-          Every question is now correct. You can try the quiz again any time.
-        </p>
+        <p className="mt-1 text-base text-muted">{t('quiz.allCorrect')}</p>
         <button type="button" onClick={restart} className="btn-secondary mt-5">
           <RefreshCw className="h-5 w-5" aria-hidden="true" />
-          Try the quiz again
+          {t('quiz.tryAgain')}
         </button>
       </section>
     )
@@ -112,10 +107,10 @@ export default function VisualQuiz({
     <section className="card overflow-hidden" aria-labelledby="quiz-heading">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b-2 border-brand-100 bg-brand-50 px-5 py-4">
         <Heading id="quiz-heading" className="text-xl font-extrabold text-brand-800">
-          {title}
+          {heading}
         </Heading>
         <p className="text-sm font-bold text-brand-700">
-          Question {index + 1} of {questions.length}
+          {t('quiz.questionOf', { n: index + 1, total: questions.length })}
         </p>
       </div>
 
@@ -191,7 +186,7 @@ export default function VisualQuiz({
                     ) : (
                       <X className="h-4 w-4" aria-hidden="true" />
                     )}
-                    {chosenRight ? 'Right' : 'No'}
+                    {chosenRight ? t('quiz.badgeRight') : t('quiz.badgeNo')}
                   </span>
                 )}
                 <ConceptIcon name={option.icon} className="h-16 w-16 text-brand-700" />
@@ -207,7 +202,7 @@ export default function VisualQuiz({
             <div className="flex items-start gap-3 rounded-2xl border-2 border-grow-500 bg-grow-100 p-4">
               <Check className="mt-0.5 h-7 w-7 shrink-0 text-grow-600" aria-hidden="true" />
               <p className="text-lg font-bold text-ink">
-                Correct. {attempts > 0 ? 'Well done for trying again.' : 'First try.'}
+                {attempts > 0 ? t('quiz.correctRetry') : t('quiz.correctFirstTry')}
               </p>
             </div>
           )}
@@ -216,7 +211,7 @@ export default function VisualQuiz({
             <div className="flex items-start gap-3 rounded-2xl border-2 border-alert-500 bg-alert-100 p-4">
               <X className="mt-0.5 h-7 w-7 shrink-0 text-alert-600" aria-hidden="true" />
               <div>
-                <p className="text-lg font-bold text-ink">Not this one. Try again.</p>
+                <p className="text-lg font-bold text-ink">{t('quiz.incorrect')}</p>
                 {question.hint && (
                   <p className="mt-1 flex items-start gap-2 text-base text-ink">
                     <Lightbulb className="mt-1 h-5 w-5 shrink-0 text-sun-600" aria-hidden="true" />
@@ -231,7 +226,7 @@ export default function VisualQuiz({
         {isCorrect && (
           <div className="mt-5 flex justify-end">
             <button type="button" onClick={next} className="btn-primary text-lg">
-              {index + 1 < questions.length ? 'Next question' : 'Finish quiz'}
+              {index + 1 < questions.length ? t('quiz.nextQuestion') : t('quiz.finishQuiz')}
               <ArrowRight className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>

@@ -30,7 +30,7 @@ export default function Lesson() {
   const [quizResult, setQuizResult] = useState(null)
   const [celebrating, setCelebrating] = useState(false)
 
-  usePageTitle(module ? module.moduleTitle : 'Lesson')
+  usePageTitle(module ? module.moduleTitle : t('lesson.pageTitleFallback'))
 
   // An old age-band bookmark lands on the level that replaced it, rather than
   // being dumped at the home page.
@@ -40,6 +40,7 @@ export default function Lesson() {
   const { previous, next } = getNeighbours(levelId, moduleId, lang)
   const completed = isCompleted(levelId, moduleId)
   const words = getDictionaryEntriesForModule(moduleId)
+  const levelName = `${t('level.label', { n: level.step })} - ${t(`level.${level.id}.name`)}`
 
   // A locked lesson is not hidden - the child is told plainly why, and given
   // the one link that fixes it.
@@ -53,29 +54,26 @@ export default function Lesson() {
   if (!isUnlocked(levelId, moduleId)) {
     return (
       <div className="mx-auto max-w-lg space-y-5 text-center">
-        <ConceptIcon name="lock" className="mx-auto h-24 w-24 text-brand-500" title="A padlock" />
-        <h1 className="text-3xl font-extrabold text-ink">This lesson is not open yet</h1>
+        <ConceptIcon
+          name="lock"
+          className="mx-auto h-24 w-24 text-brand-500"
+          title={t('lesson.padlockTitle')}
+        />
+        <h1 className="text-3xl font-extrabold text-ink">{t('lesson.lockedHeading')}</h1>
         {previous && (
           <p className="text-lg text-muted">
-            Finish <strong className="text-ink">{previous.moduleTitle}</strong> in{' '}
-            <strong className="text-ink">
-              {level.label} - {level.name}
-            </strong>{' '}
-            first. Then this one will open.
+            {t('lesson.lockedMessage', { title: previous.moduleTitle, level: levelName })}
           </p>
         )}
-        <p className="text-base text-muted">
-          Every level has its own path. Finishing a lesson in one level does not open it in
-          another.
-        </p>
+        <p className="text-base text-muted">{t('lesson.lockedNote')}</p>
         {previous && (
           <Link to={`/path/${levelId}/lesson/${previous.id}`} className="btn-primary">
-            Go to {previous.moduleTitle}
+            {t('lesson.goTo', { title: previous.moduleTitle })}
           </Link>
         )}
         <p>
           <Link to={`/path/${levelId}`} className="btn-secondary">
-            Back to all lessons
+            {t('lesson.backToAllLessons')}
           </Link>
         </p>
       </div>
@@ -105,7 +103,7 @@ export default function Lesson() {
     <div className="space-y-10">
       <Celebration
         show={celebrating}
-        message={`${module.moduleTitle} complete`}
+        message={t('lesson.celebrationMessage', { title: module.moduleTitle })}
         onDone={() => setCelebrating(false)}
       />
 
@@ -113,7 +111,7 @@ export default function Lesson() {
       <div>
         <Link to={`/path/${levelId}`} className="btn-secondary">
           <ArrowLeft className="h-5 w-5" aria-hidden="true" />
-          All lessons
+          {t('lesson.backToAll')}
         </Link>
 
         <div className="mt-5 flex flex-wrap items-center gap-4">
@@ -122,7 +120,7 @@ export default function Lesson() {
           </span>
           <div>
             <p className="text-sm font-extrabold uppercase tracking-wide text-muted">
-              Lesson {module.index + 1} · {level.label} - {level.name}
+              {t('lesson.eyebrow', { n: module.index + 1, level: levelName })}
             </p>
             <h1 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
               {module.title}
@@ -131,7 +129,7 @@ export default function Lesson() {
           {completed && (
             <span className="ml-auto inline-flex items-center gap-2 rounded-2xl bg-grow-500 px-4 py-2 font-extrabold text-white">
               <CheckCircle2 className="h-6 w-6" aria-hidden="true" />
-              Complete
+              {t('lessoncard.complete')}
             </span>
           )}
         </div>
@@ -179,7 +177,7 @@ export default function Lesson() {
       <section className="card p-6" aria-labelledby="summary-heading">
         <h2 id="summary-heading" className="flex items-center gap-2 text-2xl font-extrabold text-ink">
           <ListChecks className="h-7 w-7 text-brand-600" aria-hidden="true" />
-          What this lesson says
+          {t('lesson.whatThisSays')}
         </h2>
         <ul className="mt-4 space-y-3">
           {module.summary.map((line, i) => (
@@ -197,7 +195,7 @@ export default function Lesson() {
           <div className="mt-6 border-t-2 border-brand-100 pt-5">
             <h3 className="flex items-center gap-2 text-lg font-extrabold text-ink">
               <BookOpen className="h-6 w-6 text-berry-600" aria-hidden="true" />
-              New words in this lesson
+              {t('lesson.newWords')}
             </h3>
             <ul className="mt-3 flex flex-wrap gap-2">
               {module.keyWords.map((word) => (
@@ -215,7 +213,7 @@ export default function Lesson() {
                   to="/dictionary"
                   className="tap-target font-bold text-brand-700 underline decoration-2 underline-offset-4"
                 >
-                  See these words signed in the dictionary
+                  {t('lesson.seeWordsSigned')}
                 </Link>
               </p>
             )}
@@ -228,14 +226,11 @@ export default function Lesson() {
             fills a form from, and they should not have to hunt for it. */}
         {SCHEME_MODULE_IDS.includes(module.id) && (
           <div className="mt-6 rounded-2xl border-2 border-clay-500 bg-clay-100 p-5">
-            <h3 className="text-lg font-extrabold text-ink">Every scheme, with the details</h3>
-            <p className="mt-1 text-base leading-relaxed text-ink">
-              Amounts, income limits, where to apply and what to watch out for - all on one page,
-              with the source for every figure.
-            </p>
+            <h3 className="text-lg font-extrabold text-ink">{t('lesson.schemesHeading')}</h3>
+            <p className="mt-1 text-base leading-relaxed text-ink">{t('lesson.schemesText')}</p>
             <p className="mt-3">
               <Link to="/schemes" className="btn-primary">
-                Open the schemes page
+                {t('lesson.schemesCta')}
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </Link>
             </p>
@@ -264,14 +259,12 @@ export default function Lesson() {
               className="flex items-center justify-center gap-2 text-2xl font-extrabold text-ink"
             >
               <CheckCircle2 className="h-7 w-7 text-grow-600" aria-hidden="true" />
-              Lesson complete
+              {t('lesson.completeHeading')}
             </h2>
-            <p className="mt-2 text-lg text-muted">
-              Finishing the quiz opened the next lesson. You can watch this one again any time.
-            </p>
+            <p className="mt-2 text-lg text-muted">{t('lesson.completeText')}</p>
             {quizResult && (
               <p className="mt-3 text-base text-muted">
-                Quiz: {quizResult.score} of {quizResult.total} right on the first try.
+                {t('lesson.quizScore', { right: quizResult.score, total: quizResult.total })}
               </p>
             )}
           </section>
@@ -281,12 +274,10 @@ export default function Lesson() {
         // if one ever did, nothing else would ever mark it complete.
         <section className="card border-4 border-grow-500 p-6 text-center" aria-labelledby="complete-heading">
           <h2 id="complete-heading" className="text-2xl font-extrabold text-ink">
-            Finished this lesson?
+            {t('lesson.finishedHeading')}
           </h2>
           <p className="mt-2 text-lg text-muted">
-            {completed
-              ? 'You have already finished this lesson. You can watch it again any time.'
-              : 'Press the button when you are done. The next lesson will open.'}
+            {completed ? t('lesson.finishedAlready') : t('lesson.finishedPrompt')}
           </p>
           <button
             type="button"
@@ -295,13 +286,13 @@ export default function Lesson() {
             className="btn-success mx-auto mt-5 text-lg"
           >
             <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
-            {completed ? 'Already complete' : 'Mark as complete'}
+            {completed ? t('lesson.alreadyComplete') : t('lesson.markComplete')}
           </button>
         </section>
       )}
 
       {/* --------------------------------------------------------- nav ---- */}
-      <nav aria-label="Move between lessons" className="flex flex-wrap justify-between gap-4">
+      <nav aria-label={t('lesson.navLabel')} className="flex flex-wrap justify-between gap-4">
         {previous ? (
           <Link to={`/path/${levelId}/lesson/${previous.id}`} className="btn-secondary">
             <ArrowLeft className="h-5 w-5" aria-hidden="true" />

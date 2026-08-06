@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { PartyPopper } from 'lucide-react'
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion.js'
+import { useT } from '@/i18n/LanguageProvider.jsx'
 
 // The site's own colours, through the palette variables, so the confetti
 // follows the theme instead of staying at light-theme darkness on a dark page.
@@ -24,9 +25,11 @@ const COLORS = [
  * with prefers-reduced-motion set, or on a device that drops the animation,
  * still gets the full message. Nothing here makes a sound.
  */
-export default function Celebration({ show, message = 'Lesson complete', onDone }) {
+export default function Celebration({ show, message, onDone }) {
+  const t = useT()
   const reduceMotion = usePrefersReducedMotion()
   const panelRef = useRef(null)
+  const shownMessage = message || t('celebration.defaultMessage')
 
   const pieces = useMemo(
     () =>
@@ -80,8 +83,8 @@ export default function Celebration({ show, message = 'Lesson complete', onDone 
       >
         <PartyPopper className="h-12 w-12 shrink-0 text-grow-600" aria-hidden="true" />
         <div>
-          <p className="text-xl font-extrabold text-ink">{message}</p>
-          <p className="text-base text-muted">The next lesson is now open.</p>
+          <p className="text-xl font-extrabold text-ink">{shownMessage}</p>
+          <p className="text-base text-muted">{t('celebration.nextOpen')}</p>
         </div>
       </div>
     </>

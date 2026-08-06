@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Check, Lock, Play } from 'lucide-react'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
+import { useT } from '@/i18n/LanguageProvider.jsx'
 
 const NODE_TONE = {
   locked: 'border-brand-200 bg-brand-50 text-muted',
@@ -16,24 +17,25 @@ const NODE_TONE = {
  * line are decoration layered on top and are hidden from assistive tech.
  */
 export default function ProgressMap({ modules, levelId, stateOf, stats }) {
+  const t = useT()
+  const doneOfTotal = t('progressmap.doneOfTotal', { done: stats.done, total: stats.total })
+
   return (
     <section aria-labelledby="map-heading">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <h2 id="map-heading" className="text-2xl font-extrabold text-ink">
-          Your journey
+          {t('progressmap.heading')}
         </h2>
 
         <div className="flex items-center gap-3">
-          <p className="text-base font-bold text-ink">
-            {stats.done} of {stats.total} lessons done
-          </p>
+          <p className="text-base font-bold text-ink">{doneOfTotal}</p>
           <div
             className="h-5 w-40 overflow-hidden rounded-full border-2 border-brand-200 bg-surface"
             role="progressbar"
             aria-valuenow={stats.done}
             aria-valuemin={0}
             aria-valuemax={stats.total}
-            aria-valuetext={`${stats.done} of ${stats.total} lessons done`}
+            aria-valuetext={doneOfTotal}
           >
             <div
               className="h-full rounded-full bg-grow-500 transition-all"
@@ -68,7 +70,7 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
               <span className="min-w-0">
                 <span className="flex items-center gap-2">
                   <span className="text-sm font-extrabold uppercase tracking-wide text-muted">
-                    Stop {i + 1}
+                    {t('progressmap.stopN', { n: i + 1 })}
                   </span>
                   <span
                     className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-extrabold uppercase ${
@@ -86,7 +88,7 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
                     ) : (
                       <Play className="h-3.5 w-3.5" aria-hidden="true" />
                     )}
-                    {locked ? 'Locked' : state === 'completed' ? 'Done' : 'Open'}
+                    {locked ? t('progressmap.locked') : state === 'completed' ? t('progressmap.done') : t('progressmap.open')}
                   </span>
                 </span>
                 <span className={`block text-lg font-extrabold ${locked ? 'text-muted' : 'text-ink'}`}>
@@ -105,17 +107,17 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
                   <div className={rowClass} aria-disabled="true">
                     {node}
                     {label}
-                    <span className="sr-only">
-                      Locked. Finish stop {i} to open this lesson.
-                    </span>
+                    <span className="sr-only">{t('progressmap.lockedSr', { n: i })}</span>
                   </div>
                 ) : (
                   <Link
                     to={`/path/${levelId}/lesson/${module.id}`}
                     className={rowClass}
-                    aria-label={`Stop ${i + 1}, ${module.moduleTitle}, ${
-                      state === 'completed' ? 'done' : 'open'
-                    }`}
+                    aria-label={t('progressmap.stopAriaLabel', {
+                      n: i + 1,
+                      title: module.moduleTitle,
+                      state: state === 'completed' ? t('progressmap.done') : t('progressmap.open'),
+                    })}
                   >
                     {node}
                     {label}

@@ -14,12 +14,14 @@ export default function LearningPath() {
   const level = getLevel(levelId)
   const [view, setView] = useState('map')
   const { isCompleted, isUnlocked, levelStats, settings, setSetting } = useProgress()
-  const { lang } = useLanguage()
-
-  usePageTitle(level ? `${level.label} - ${level.name}` : 'Lessons')
+  const { lang, t } = useLanguage()
 
   // An old age-band bookmark lands on the level that replaced it.
   const legacyId = LEGACY_TIER_IDS[levelId]
+  const levelName = level ? t(`level.${level.id}.name`) : ''
+
+  usePageTitle(level ? `${t('level.label', { n: level.step })} - ${levelName}` : t('lessons.title'))
+
   if (legacyId) return <Navigate to={`/path/${legacyId}`} replace />
   if (!level) return <Navigate to="/" replace />
 
@@ -35,19 +37,19 @@ export default function LearningPath() {
     <div className="space-y-8">
       <Link to="/" className="btn-secondary">
         <ArrowLeft className="h-5 w-5" aria-hidden="true" />
-        Back to home
+        {t('path.backHome')}
       </Link>
 
       <header>
         <h1 className="text-4xl font-extrabold text-ink">
-          {level.label} - {level.name}
+          {t('level.label', { n: level.step })} - {levelName}
         </h1>
-        <p className="mt-2 text-lg text-muted">{level.blurb}</p>
+        <p className="mt-2 text-lg text-muted">{t(`level.${level.id}.blurb`)}</p>
       </header>
 
       {/* View switch. Some children read a map better; some read a list better. */}
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex gap-2" role="group" aria-label="Choose how the lessons are shown">
+        <div className="flex gap-2" role="group" aria-label={t('path.viewGroupLabel')}>
           <button
             type="button"
             onClick={() => setView('map')}
@@ -55,7 +57,7 @@ export default function LearningPath() {
             className={view === 'map' ? 'btn-primary' : 'btn-secondary'}
           >
             <MapIcon className="h-5 w-5" aria-hidden="true" />
-            Journey map
+            {t('path.viewMap')}
           </button>
           <button
             type="button"
@@ -64,7 +66,7 @@ export default function LearningPath() {
             className={view === 'list' ? 'btn-primary' : 'btn-secondary'}
           >
             <LayoutGrid className="h-5 w-5" aria-hidden="true" />
-            Simple list
+            {t('path.viewList')}
           </button>
         </div>
 
@@ -77,7 +79,7 @@ export default function LearningPath() {
           />
           <span className="flex items-center gap-2 text-sm font-bold text-ink">
             <Unlock className="h-5 w-5 text-brand-600" aria-hidden="true" />
-            Open every lesson (for teachers)
+            {t('path.unlockAll')}
           </span>
         </label>
       </div>
@@ -87,7 +89,7 @@ export default function LearningPath() {
       ) : (
         <section aria-labelledby="list-heading">
           <h2 id="list-heading" className="mb-4 text-2xl font-extrabold text-ink">
-            All lessons - {stats.done} of {stats.total} done
+            {t('path.allLessonsHeading', { done: stats.done, total: stats.total })}
           </h2>
           <ol className="space-y-4">
             {modules.map((module, i) => (
@@ -108,18 +110,17 @@ export default function LearningPath() {
           should read as a normal thing to do, not as being moved down a set. */}
       <section aria-labelledby="switch-heading" className="rounded-3xl bg-brand-50 p-6">
         <h2 id="switch-heading" className="text-lg font-extrabold text-ink">
-          Too easy, or too hard?
+          {t('path.switchHeading')}
         </h2>
-        <p className="mt-1 text-base text-muted">
-          Move up or down. The eleven topics are the same at every level.
-        </p>
+        <p className="mt-1 text-base text-muted">{t('path.switchText')}</p>
         <ul className="mt-4 flex flex-wrap gap-3">
           {levels
             .filter((l) => l.id !== levelId)
             .map((l) => (
               <li key={l.id}>
                 <Link to={`/path/${l.id}`} className="btn-secondary">
-                  {l.step < level.step ? '↓' : '↑'} {l.label} - {l.name}
+                  {l.step < level.step ? '↓' : '↑'} {t('level.label', { n: l.step })} -{' '}
+                  {t(`level.${l.id}.name`)}
                 </Link>
               </li>
             ))}

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { FileText, Search } from 'lucide-react'
 import { loadVtt, formatTime } from '@/lib/vtt.js'
+import { useT } from '@/i18n/LanguageProvider.jsx'
 
 /**
  * A full, scrollable transcript beside the video.
@@ -11,6 +12,7 @@ import { loadVtt, formatTime } from '@/lib/vtt.js'
  * bar AND a bold left border AND the word "now" - never colour alone.
  */
 export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }) {
+  const t = useT()
   const [trackIndex, setTrackIndex] = useState(0)
   const [cues, setCues] = useState([])
   const [status, setStatus] = useState('loading')
@@ -60,13 +62,13 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
       <div className="space-y-3 border-b-2 border-brand-100 bg-brand-50 p-4">
         <h2 id="transcript-heading" className="flex items-center gap-2 text-lg font-extrabold text-brand-800">
           <FileText className="h-6 w-6" aria-hidden="true" />
-          Read the words
+          {t('transcript.heading')}
         </h2>
 
         {tracks.length > 1 && (
           <div className="flex flex-wrap items-center gap-2">
             <label htmlFor="transcript-track" className="text-sm font-bold text-ink">
-              Version
+              {t('transcript.version')}
             </label>
             <select
               id="transcript-track"
@@ -86,14 +88,14 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
         <div className="flex items-center gap-2 rounded-xl border-2 border-brand-200 bg-surface px-3">
           <Search className="h-5 w-5 shrink-0 text-muted" aria-hidden="true" />
           <label htmlFor="transcript-search" className="sr-only">
-            Find a word in the transcript
+            {t('transcript.searchLabel')}
           </label>
           <input
             id="transcript-search"
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Find a word"
+            placeholder={t('transcript.searchPlaceholder')}
             className="min-h-tap w-full bg-transparent py-2 text-base outline-none"
           />
         </div>
@@ -105,21 +107,21 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
             onChange={(e) => setFollow(e.target.checked)}
             className="checkbox-lg"
           />
-          Scroll with the video
+          {t('transcript.followVideo')}
         </label>
       </div>
 
       <div className="max-h-[28rem] flex-1 overflow-y-auto p-2 lg:max-h-none">
-        {status === 'loading' && <p className="p-4 text-muted">Loading the words…</p>}
+        {status === 'loading' && <p className="p-4 text-muted">{t('transcript.loading')}</p>}
         {status === 'error' && (
           <p role="alert" className="p-4 font-bold text-alert-600">
-            The transcript could not be loaded. The lesson summary below has the same information.
+            {t('transcript.error')}
           </p>
         )}
-        {status === 'empty' && <p className="p-4 text-muted">No transcript for this video yet.</p>}
+        {status === 'empty' && <p className="p-4 text-muted">{t('transcript.empty')}</p>}
 
         {status === 'ready' && visible.length === 0 && (
-          <p className="p-4 text-muted">No line has the word “{query}”.</p>
+          <p className="p-4 text-muted">{t('transcript.noMatch', { query })}</p>
         )}
 
         {status === 'ready' && (
@@ -144,7 +146,7 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
                     <span className="flex-1 whitespace-pre-line">{cue.text}</span>
                     {isActive && (
                       <span className="shrink-0 rounded-lg bg-grow-500 px-2 py-0.5 text-xs font-extrabold uppercase text-white">
-                        now
+                        {t('transcript.now')}
                       </span>
                     )}
                   </button>

@@ -13,7 +13,8 @@ import {
   VolumeX,
 } from 'lucide-react'
 import { formatTime } from '@/lib/vtt.js'
-import { signLanguage } from '@/config/site.js'
+import { signLabel, signShort } from '@/config/site.js'
+import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 
 const SPEEDS = [0.5, 0.75, 1, 1.25, 1.5]
 
@@ -39,6 +40,7 @@ export default function VideoPlayer({
   onTimeUpdate,
   seekRequest,
 }) {
+  const { lang, t } = useLanguage()
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [muted, setMuted] = useState(false)
@@ -86,7 +88,7 @@ export default function VideoPlayer({
     const el = videoRef.current
     if (!el) return
     if (el.paused) {
-      el.play().catch(() => setError('This video could not be played. Please tell your teacher.'))
+      el.play().catch(() => setError(t('video.playError')))
     } else {
       el.pause()
     }
@@ -119,7 +121,7 @@ export default function VideoPlayer({
   const progressPercent = duration ? (currentTime / duration) * 100 : 0
 
   return (
-    <section className="card overflow-hidden" aria-label={`Video: ${title}`}>
+    <section className="card overflow-hidden" aria-label={t('video.watchLabel', { title })}>
       {/* ---------------- Video stage ---------------- */}
       <div className="relative bg-stage-deep">
         <video
@@ -141,7 +143,7 @@ export default function VideoPlayer({
           onEnded={() => setIsPlaying(false)}
           onTimeUpdate={handleTimeUpdate}
           onLoadedMetadata={(e) => setDuration(e.currentTarget.duration || 0)}
-          onError={() => setError('This video is not available yet.')}
+          onError={() => setError(t('video.notAvailable'))}
           onVolumeChange={(e) => setMuted(e.currentTarget.muted)}
         >
           <source src={video.src} type="video/mp4" />
@@ -154,7 +156,7 @@ export default function VideoPlayer({
               label={t.label}
             />
           ))}
-          Your browser cannot show this video. Please tell your teacher.
+          {t('video.unsupported')}
         </video>
 
         {/* ---------------- Sign-language interpreter region ----------------
@@ -173,15 +175,15 @@ export default function VideoPlayer({
                 muted
                 playsInline
                 preload="metadata"
-                aria-label={`${signLanguage.label} interpreter`}
+                aria-label={t('video.interpreterAria', { sign: signLabel(lang) })}
               />
             ) : (
               <div className="flex aspect-square w-full flex-col items-center justify-center gap-1 bg-stage p-2 text-center">
                 <Hand className="h-7 w-7 text-stage-ink" aria-hidden="true" />
                 <p className="text-xs font-bold leading-tight text-stage-ink">
-                  {signLanguage.short} video
+                  {t('video.signVideoLabel', { signShort: signShort(lang) })}
                 </p>
-                <p className="text-[0.65rem] leading-tight text-stage-muted">coming soon</p>
+                <p className="text-[0.65rem] leading-tight text-stage-muted">{t('video.comingSoon')}</p>
               </div>
             )}
           </div>
@@ -217,8 +219,11 @@ export default function VideoPlayer({
                 setCurrentTime(t)
                 if (videoRef.current) videoRef.current.currentTime = t
               }}
-              aria-label="Move through the video"
-              aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
+              aria-label={t('video.seekAria')}
+              aria-valuetext={t('video.seekValueText', {
+                current: formatTime(currentTime),
+                duration: formatTime(duration),
+              })}
               className="h-11 w-full cursor-pointer accent-brand-600"
             />
             <div
@@ -241,22 +246,22 @@ export default function VideoPlayer({
             ) : (
               <Play className="h-7 w-7" aria-hidden="true" />
             )}
-            {isPlaying ? 'Pause' : 'Play'}
+            {isPlaying ? t('video.pause') : t('video.play')}
           </button>
 
           <button type="button" onClick={back10} className="btn-secondary">
             <Rewind className="h-6 w-6" aria-hidden="true" />
-            Back 10s
+            {t('video.back10')}
           </button>
 
           <button type="button" onClick={replay} className="btn-secondary">
             <RotateCcw className="h-6 w-6" aria-hidden="true" />
-            Start again
+            {t('video.restart')}
           </button>
 
           {/* State is announced in text, not only by the icon swap. */}
           <p id={statusId} className="sr-only" role="status">
-            {isPlaying ? 'Video is playing' : 'Video is paused'}
+            {isPlaying ? t('video.playing') : t('video.paused')}
           </p>
         </div>
 
@@ -277,13 +282,13 @@ export default function VideoPlayer({
             ) : (
               <CaptionsOff className="h-6 w-6" aria-hidden="true" />
             )}
-            Captions {captionsOn ? 'on' : 'off'}
+            {captionsOn ? t('video.captionsOn') : t('video.captionsOff')}
           </button>
 
           {tracks.length > 1 && (
             <div className="flex min-w-0 flex-wrap items-center gap-2">
               <label htmlFor={trackId} className="text-sm font-bold text-ink">
-                Caption words
+                {t('video.captionWords')}
               </label>
               <select
                 id={trackId}
@@ -303,7 +308,7 @@ export default function VideoPlayer({
           <div className="flex min-w-0 flex-wrap items-center gap-2">
             <label htmlFor={speedId} className="flex items-center gap-1 text-sm font-bold text-ink">
               <Gauge className="h-5 w-5" aria-hidden="true" />
-              Speed
+              {t('video.speed')}
             </label>
             <select
               id={speedId}
@@ -313,7 +318,7 @@ export default function VideoPlayer({
             >
               {SPEEDS.map((s) => (
                 <option key={s} value={s}>
-                  {s === 1 ? 'Normal' : `${s}x`}
+                  {s === 1 ? t('video.speedNormal') : `${s}x`}
                 </option>
               ))}
             </select>
@@ -330,12 +335,12 @@ export default function VideoPlayer({
             }
           >
             <Hand className="h-6 w-6" aria-hidden="true" />
-            {signLanguage.short} panel {showSign ? 'on' : 'off'}
+            {t(showSign ? 'video.signPanelOn' : 'video.signPanelOff', { signShort: signShort(lang) })}
           </button>
 
           {showSign && (
             <button type="button" onClick={() => setSignLarge((v) => !v)} className="btn-secondary">
-              {signLarge ? 'Smaller panel' : 'Bigger panel'}
+              {signLarge ? t('video.smallerPanel') : t('video.biggerPanel')}
             </button>
           )}
 
@@ -353,12 +358,12 @@ export default function VideoPlayer({
             ) : (
               <Volume2 className="h-6 w-6" aria-hidden="true" />
             )}
-            Sound {muted ? 'off' : 'on'}
+            {muted ? t('video.soundOff') : t('video.soundOn')}
           </button>
 
           <button type="button" onClick={goFullscreen} className="btn-secondary">
             <Maximize className="h-6 w-6" aria-hidden="true" />
-            Full screen
+            {t('video.fullscreen')}
           </button>
         </div>
       </div>
