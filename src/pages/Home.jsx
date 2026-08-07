@@ -79,15 +79,28 @@ const SHORTCUTS = [
   },
 ]
 
-function SectionHead({ eyebrow, heading, lead, id, tone = 'text-clay-600' }) {
+/**
+ * A section's heading block.
+ *
+ * `align` exists because every section on this page used to be centred with an
+ * eyebrow above it, six times in a row. Uniform centring is one of the things
+ * that makes a page read as generated rather than designed - the eye finds no
+ * rhythm, because every block begins the same way. Left-aligned sections now
+ * alternate with centred ones, and `eyebrow` is optional so a section can start
+ * on its heading instead.
+ */
+function SectionHead({ eyebrow, heading, lead, id, tone = 'text-clay-600', align = 'center' }) {
+  const centred = align === 'center'
   return (
-    <Reveal className="mx-auto max-w-2xl space-y-3 text-center">
-      <p className={`text-sm font-bold uppercase tracking-[0.14em] ${tone}`}>{eyebrow}</p>
+    <div className={centred ? 'mx-auto max-w-2xl space-y-3 text-center' : 'max-w-2xl space-y-3'}>
+      {eyebrow && (
+        <p className={`text-sm font-bold uppercase tracking-[0.14em] ${tone}`}>{eyebrow}</p>
+      )}
       <h2 id={id} className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
         {heading}
       </h2>
       {lead && <p className="text-lg leading-relaxed text-muted">{lead}</p>}
-    </Reveal>
+    </div>
   )
 }
 
@@ -216,8 +229,8 @@ export default function Home() {
           close the band off. */}
       <section aria-label={t('home.topics.eyebrow')} className="-mt-10 sm:-mt-14">
         <dl className="grid grid-cols-2 gap-x-6 gap-y-10 border-b border-brand-100 pb-12 sm:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 90} className="text-center">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
               <dt className="sr-only">{s.label}</dt>
               <dd>
                 <span className="block font-display text-5xl font-extrabold text-ink">
@@ -227,7 +240,7 @@ export default function Home() {
                   {s.label}
                 </span>
               </dd>
-            </Reveal>
+            </div>
           ))}
         </dl>
       </section>
@@ -286,24 +299,26 @@ export default function Home() {
           lead={t('home.how.lead')}
         />
 
-        <ol className="mx-auto mt-14 grid max-w-4xl gap-12 md:grid-cols-3 md:gap-10">
+        {/* Numbered steps read better as a sequence than as three equal cards,
+            so on a wide screen this is one row with the number leading each
+            item rather than a grid of matching tiles. */}
+        <ol className="mt-12 space-y-8 md:grid md:max-w-none md:grid-cols-3 md:gap-10 md:space-y-0">
           {STEPS.map(({ key, icon: Icon, tone }, i) => (
-            <Reveal as="li" key={key} delay={i * 110} className="space-y-3 text-center md:text-left">
-              <Icon className={`mx-auto h-8 w-8 md:mx-0 ${tone}`} aria-hidden="true" />
-              {/* Hidden from assistive tech - the ordered list already announces
-                  the position - but dark enough that a low-vision reader can
-                  still read the order off the page. */}
-              <p
+            <li key={key} className="flex gap-4 md:block md:space-y-3">
+              <span
                 aria-hidden="true"
-                className="font-display text-sm font-extrabold uppercase tracking-[0.14em] text-clay-600"
+                className="font-display text-4xl font-extrabold leading-none text-brand-200 md:block md:text-5xl"
               >
                 {i + 1}
-              </p>
-              <h3 className="text-xl font-extrabold text-ink">{t(`home.how.${key}.title`)}</h3>
-              <p className="text-base leading-relaxed text-muted">
-                {t(`home.how.${key}.text`, { sign: signLabel(lang) })}
-              </p>
-            </Reveal>
+              </span>
+              <div className="min-w-0 space-y-2">
+                <Icon className={`h-8 w-8 ${tone}`} aria-hidden="true" />
+                <h3 className="text-xl font-extrabold text-ink">{t(`home.how.${key}.title`)}</h3>
+                <p className="text-base leading-relaxed text-muted">
+                  {t(`home.how.${key}.text`, { sign: signLabel(lang) })}
+                </p>
+              </div>
+            </li>
           ))}
         </ol>
       </section>
@@ -318,21 +333,25 @@ export default function Home() {
 
       {/* ----------------------------------------------------- built this way */}
       <section aria-labelledby="built-heading">
-        <SectionHead
-          id="built-heading"
-          eyebrow={t('home.built.eyebrow')}
-          heading={t('home.built.heading')}
-        />
+        {/* Left-aligned and with no eyebrow, so it does not open the same way
+            as the section above it. */}
+        <SectionHead id="built-heading" heading={t('home.built.heading')} align="start" />
 
-        <ul className="mx-auto mt-14 grid max-w-4xl gap-x-12 gap-y-12 sm:grid-cols-2">
-          {BUILT.map(({ key, icon: Icon, tone }, i) => (
-            <Reveal as="li" key={key} delay={i * 90} className="space-y-2">
-              <Icon className={`h-7 w-7 ${tone}`} aria-hidden="true" />
-              <h3 className="text-lg font-extrabold text-ink">
-                {t(`home.built.${key}.title`, { signShort: signShort(lang) })}
-              </h3>
-              <p className="text-base leading-relaxed text-muted">{t(`home.built.${key}.text`)}</p>
-            </Reveal>
+        {/* A divided list rather than a card grid: these are four statements
+            about the site, not four things to choose between. */}
+        <ul className="mt-10 divide-y divide-brand-100 border-y border-brand-100">
+          {BUILT.map(({ key, icon: Icon, tone }) => (
+            <li key={key} className="flex flex-col gap-2 py-6 sm:flex-row sm:gap-8">
+              <div className="flex items-center gap-3 sm:w-64 sm:shrink-0">
+                <Icon className={`h-7 w-7 shrink-0 ${tone}`} aria-hidden="true" />
+                <h3 className="text-lg font-extrabold text-ink">
+                  {t(`home.built.${key}.title`, { signShort: signShort(lang) })}
+                </h3>
+              </div>
+              <p className="text-base leading-relaxed text-muted sm:pt-1">
+                {t(`home.built.${key}.text`)}
+              </p>
+            </li>
           ))}
         </ul>
       </section>
@@ -356,19 +375,15 @@ export default function Home() {
 
         {/* The picture is the point: a child who cannot yet read the titles can
             still see what the course covers. */}
+        {/* No staggered entrance here. Eleven items fading in one after another
+            is the single most recognisable "generated page" gesture, and it
+            delays the one thing this section exists to show: the whole course
+            at a glance. */}
         <ol className="mx-auto mt-14 grid max-w-5xl gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {modules.map((m, i) => {
             const meta = moduleMeta(m, lang)
             return (
-              <Reveal
-                as="li"
-                key={m.id}
-                // Small steps across a grid of eleven: the last card lands about
-                // half a second after the first, which reads as one movement
-                // rather than eleven separate ones.
-                delay={Math.min(i * 45, 360)}
-                className="group flex items-start gap-4"
-              >
+              <li key={m.id} className="group flex items-start gap-4">
                 <ConceptIcon
                   name={m.icon}
                   className="h-9 w-9 shrink-0 text-brand-600 transition-colors duration-300 group-hover:text-clay-600"
@@ -384,7 +399,7 @@ export default function Home() {
                     {meta.title}
                   </span>
                 </div>
-              </Reveal>
+              </li>
             )
           })}
         </ol>
@@ -405,9 +420,9 @@ export default function Home() {
             lead={t('home.claim.lead')}
           />
 
-          <ul className="mx-auto mt-14 grid max-w-4xl gap-x-10 gap-y-10 sm:grid-cols-2">
-            {CLAIMS.map(({ key, icon }, i) => (
-              <Reveal as="li" key={key} delay={i * 90} className="flex gap-4">
+          <ul className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+            {CLAIMS.map(({ key, icon }) => (
+              <li key={key} className="flex gap-4">
                 <ConceptIcon name={icon} className="h-9 w-9 shrink-0 text-clay-600" />
                 <div className="min-w-0">
                   <h3 className="text-lg font-extrabold text-ink">
@@ -417,11 +432,11 @@ export default function Home() {
                     {t(`home.claim.${key}.text`)}
                   </p>
                 </div>
-              </Reveal>
+              </li>
             ))}
           </ul>
 
-          <Reveal className="mt-12 text-center">
+          <div className="mt-12">
             {/* Pointed at /path/level-2/lesson/udid-and-benefits, which is
                 lesson 10 of Level 2 and therefore locked until the nine before
                 it are finished. A family sent here from "money you may already
@@ -433,36 +448,39 @@ export default function Home() {
             </Link>
             {/* The honesty line the schemes research insists on. */}
             <p className="mt-4 text-sm text-muted">{t('home.claim.note')}</p>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       {/* -------------------------------------------------- glossary sample */}
       <section aria-labelledby="words-heading">
-        <SectionHead
-          id="words-heading"
-          eyebrow={t('home.words.eyebrow')}
-          heading={t('home.words.heading', { count: dictionary.entries.length })}
-          lead={t('home.words.lead')}
-        />
+        {/* Heading on the left, action on the right - the words themselves
+            then run full width underneath, rather than sitting in another
+            centred column. */}
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <SectionHead
+            id="words-heading"
+            eyebrow={t('home.words.eyebrow')}
+            heading={t('home.words.heading', { count: dictionary.entries.length })}
+            lead={t('home.words.lead')}
+            align="start"
+          />
+          <Link to="/dictionary" className="btn-secondary shrink-0">
+            <BookOpen className="h-5 w-5" aria-hidden="true" />
+            {t('home.words.cta')}
+          </Link>
+        </div>
 
-        <ul className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-3">
-          {sampleWords.map((entry, i) => (
-            <Reveal as="li" key={entry.id} delay={Math.min(i * 40, 320)}>
+        <ul className="mt-10 flex flex-wrap gap-3">
+          {sampleWords.map((entry) => (
+            <li key={entry.id}>
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-surface px-4 py-2">
                 <ConceptIcon name={entry.icon} className="h-5 w-5 text-clay-600" />
                 <span className="text-sm font-bold text-ink">{entry.term}</span>
               </span>
-            </Reveal>
+            </li>
           ))}
         </ul>
-
-        <Reveal className="mt-10 text-center">
-          <Link to="/dictionary" className="btn-secondary">
-            <BookOpen className="h-5 w-5" aria-hidden="true" />
-            {t('home.words.cta')}
-          </Link>
-        </Reveal>
       </section>
 
       {/* --------------------------------------------- dictionary + teachers */}
@@ -471,8 +489,8 @@ export default function Home() {
           {t('home.more.heading')}
         </h2>
         <ul className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
-          {SHORTCUTS.map(({ to, icon: Icon, titleKey, textKey, tone }, i) => (
-            <Reveal as="li" key={to} delay={i * 110}>
+          {SHORTCUTS.map(({ to, icon: Icon, titleKey, textKey, tone }) => (
+            <li key={to}>
               <Link
                 to={to}
                 className="group flex h-full items-center gap-4 rounded-2xl border border-brand-100 bg-surface p-5 transition duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 hover:shadow-sm"
@@ -487,7 +505,7 @@ export default function Home() {
                   aria-hidden="true"
                 />
               </Link>
-            </Reveal>
+            </li>
           ))}
         </ul>
       </section>
