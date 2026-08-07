@@ -12,6 +12,7 @@ import {
   Volume2,
   VolumeX,
 } from 'lucide-react'
+import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
 import { formatTime } from '@/lib/vtt.js'
 import { signLabel, signShort } from '@/config/site.js'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
@@ -178,8 +179,13 @@ export default function VideoPlayer({
                 aria-label={t('video.interpreterAria', { sign: signLabel(lang) })}
               />
             ) : (
+              // The drawn hands rather than the lucide glyph: this one is a
+              // picture standing in for a signer, and the site's own drawings
+              // are what every other picture on the page is. The Hand icon on
+              // the control below stays, because that is a button, not an
+              // illustration.
               <div className="flex aspect-square w-full flex-col items-center justify-center gap-1 bg-stage p-2 text-center">
-                <Hand className="h-7 w-7 text-stage-ink" aria-hidden="true" />
+                <ConceptIcon name="hands" className="h-8 w-8 text-stage-muted" />
                 <p className="text-xs font-bold leading-tight text-stage-ink">
                   {t('video.signVideoLabel', { signShort: signShort(lang) })}
                 </p>

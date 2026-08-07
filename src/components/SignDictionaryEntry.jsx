@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Hand, Video } from 'lucide-react'
+import { Video } from 'lucide-react'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
+import SignClipPlaceholder from '@/components/SignClipPlaceholder.jsx'
 import { dictionary, signClipCredit, signClipSrc } from '@content/index.js'
 import { signLanguage } from '@/config/site.js'
 
@@ -74,11 +75,7 @@ export default function SignDictionaryEntry({ entry, headingLevel = 2 }) {
         )}
 
         {!clipSrc && (
-          <div className="flex aspect-square w-full flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-brand-300 bg-brand-50 p-4 text-center">
-            <Hand className="h-10 w-10 text-brand-600" aria-hidden="true" />
-            <p className="text-sm font-extrabold text-brand-800">{signLanguage.short} clip</p>
-            <p className="text-xs font-bold text-muted">Coming soon</p>
-          </div>
+          <SignClipPlaceholder label={`${signLanguage.short} clip not filmed yet`} />
         )}
       </div>
 
