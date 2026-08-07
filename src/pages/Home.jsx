@@ -1,22 +1,12 @@
 import { Link } from 'react-router-dom'
-import {
-  ArrowRight,
-  BookOpen,
-  Hand,
-  Image as ImageIcon,
-  ShieldCheck,
-  Subtitles,
-  Trophy,
-  Users,
-} from 'lucide-react'
+import { ArrowRight, BookOpen, Hand, Subtitles, Trophy } from 'lucide-react'
 import CoverHero from '@/components/CoverHero.jsx'
 import Reveal from '@/components/Reveal.jsx'
-import CountUp from '@/components/CountUp.jsx'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
-import { getLevel, levels, signLabel, signShort } from '@/config/site.js'
+import { getLevel, levels, signLabel } from '@/config/site.js'
 import { dictionary, modules, moduleMeta } from '@content/index.js'
 
 /**
@@ -46,13 +36,6 @@ const STEPS = [
   { key: '3', icon: Trophy, tone: 'text-grow-600' },
 ]
 
-const BUILT = [
-  { key: 'sign', icon: Hand, tone: 'text-berry-600' },
-  { key: 'captions', icon: Subtitles, tone: 'text-brand-600' },
-  { key: 'pictures', icon: ImageIcon, tone: 'text-sun-600' },
-  { key: 'private', icon: ShieldCheck, tone: 'text-grow-600' },
-]
-
 // Drawn from the site's own picture set rather than a UI icon font: these four
 // are content, and the whole course is built on line drawings carrying meaning.
 const CLAIMS = [
@@ -60,23 +43,6 @@ const CLAIMS = [
   { key: 'adip', icon: 'medicine' },
   { key: 'scholarship', icon: 'book' },
   { key: 'tax', icon: 'list' },
-]
-
-const SHORTCUTS = [
-  {
-    to: '/dictionary',
-    icon: BookOpen,
-    titleKey: 'home.more.dictionary.title',
-    textKey: 'home.more.dictionary.text',
-    tone: 'text-berry-600',
-  },
-  {
-    to: '/teachers',
-    icon: Users,
-    titleKey: 'home.more.teachers.title',
-    textKey: 'home.more.teachers.text',
-    tone: 'text-sun-600',
-  },
 ]
 
 /**
@@ -233,8 +199,17 @@ export default function Home() {
             <div key={s.label} className="text-center">
               <dt className="sr-only">{s.label}</dt>
               <dd>
+                {/* Printed, not counted up.
+                    These numbers used to animate from zero when they scrolled
+                    into view, via an IntersectionObserver. When that observer
+                    did not fire - a backgrounded tab, a zero-width viewport -
+                    nothing reset the value, so the band sat reading "0 lessons,
+                    0 levels, 0 words" indefinitely while screen readers got the
+                    real figures. A decorative count that can leave the wrong
+                    number on screen is not a trade worth making for content
+                    this page exists to state. */}
                 <span className="block font-display text-5xl font-extrabold text-ink">
-                  <CountUp value={s.value} />
+                  {s.value}
                 </span>
                 <span className="mx-auto mt-2 block max-w-[10rem] text-sm leading-snug text-muted">
                   {s.label}
@@ -331,30 +306,17 @@ export default function Home() {
           every link that used to jump to this section points at /lessons
           instead. See CoverHero.jsx and the CTA band below. */}
 
-      {/* ----------------------------------------------------- built this way */}
-      <section aria-labelledby="built-heading">
-        {/* Left-aligned and with no eyebrow, so it does not open the same way
-            as the section above it. */}
-        <SectionHead id="built-heading" heading={t('home.built.heading')} align="start" />
+      {/* "Nothing here needs you to hear" - four statements about ISL,
+          captions, pictures and privacy - used to sit here, 423px of it.
+          Removed for two reasons rather than one:
 
-        {/* A divided list rather than a card grid: these are four statements
-            about the site, not four things to choose between. */}
-        <ul className="mt-10 divide-y divide-brand-100 border-y border-brand-100">
-          {BUILT.map(({ key, icon: Icon, tone }) => (
-            <li key={key} className="flex flex-col gap-2 py-6 sm:flex-row sm:gap-8">
-              <div className="flex items-center gap-3 sm:w-64 sm:shrink-0">
-                <Icon className={`h-7 w-7 shrink-0 ${tone}`} aria-hidden="true" />
-                <h3 className="text-lg font-extrabold text-ink">
-                  {t(`home.built.${key}.title`, { signShort: signShort(lang) })}
-                </h3>
-              </div>
-              <p className="text-base leading-relaxed text-muted sm:pt-1">
-                {t(`home.built.${key}.text`)}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </section>
+            - The cover already makes the same promise in three chips: ISL
+              video, captions on every lesson, no sound needed. Saying it twice
+              on one page is not emphasis, it is repetition.
+            - The long form of it is an accessibility statement, and there is a
+              whole page for that, linked from the footer of every screen.
+
+          Nothing was lost from the site, only from this page. */}
 
       {/* --------------------------------------------------------- curriculum */}
       <section aria-labelledby="topics-heading">
@@ -408,46 +370,49 @@ export default function Home() {
       {/* -------------------------------------------------- what you can claim */}
       {/* A tinted full-bleed band - the one change of ground on the page, spent
           on the section most likely to change something in a real household. */}
+      {/* Cut from 685px to a band, and kept rather than deleted.
+          The full pitch - four entitlements spelled out with a paragraph each -
+          now duplicates /schemes, which has its own tab and its own page. But
+          the reason this band exists is discovery: the research finding behind
+          the whole schemes module is that these go badly underclaimed because
+          families do not know they exist. A parent who never clicks Schemes
+          should still learn on the home page that there is something to claim.
+          So the names stay, as a row, and the explaining moves to the page
+          that is for explaining. */}
       <section
         aria-labelledby="claim-heading"
-        className="relative mx-[calc(50%-50vw)] border-y border-brand-100 bg-brand-50 px-6 py-20 sm:py-24"
+        className="relative mx-[calc(50%-50vw)] border-y border-brand-100 bg-brand-50 px-6 py-12"
       >
-        <div className="mx-auto max-w-6xl">
-          <SectionHead
-            id="claim-heading"
-            eyebrow={t('home.claim.eyebrow')}
-            heading={t('home.claim.heading')}
-            lead={t('home.claim.lead')}
-          />
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-xl">
+            <h2 id="claim-heading" className="text-2xl font-extrabold leading-tight text-ink">
+              {t('home.claim.heading')}
+            </h2>
+            <p className="mt-2 text-base leading-relaxed text-muted">{t('home.claim.lead')}</p>
 
-          <ul className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
-            {CLAIMS.map(({ key, icon }) => (
-              <li key={key} className="flex gap-4">
-                <ConceptIcon name={icon} className="h-9 w-9 shrink-0 text-clay-600" />
-                <div className="min-w-0">
-                  <h3 className="text-lg font-extrabold text-ink">
-                    {t(`home.claim.${key}.title`)}
-                  </h3>
-                  <p className="mt-1 text-base leading-relaxed text-muted">
-                    {t(`home.claim.${key}.text`)}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
+            {/* The four names only. Enough to tell a parent there is something
+                here worth their time; the amounts and the rules are one tap
+                away and change too often to repeat in two places. */}
+            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+              {CLAIMS.map(({ key, icon }) => (
+                <li key={key} className="flex items-center gap-2">
+                  <ConceptIcon name={icon} className="h-6 w-6 shrink-0 text-clay-600" />
+                  <span className="font-bold text-ink">{t(`home.claim.${key}.title`)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <div className="mt-12">
-            {/* Pointed at /path/level-2/lesson/udid-and-benefits, which is
-                lesson 10 of Level 2 and therefore locked until the nine before
-                it are finished. A family sent here from "money you may already
-                be entitled to" met a padlock. It goes to the open reference
-                page now; the lesson is still there, still in sequence. */}
+          <div className="shrink-0">
+            {/* This pointed at lesson 10 of Level 2, which stays locked until
+                the nine before it are done - so the one call to action aimed at
+                families met a padlock. It goes to the open page now. */}
             <Link to="/schemes" className="btn-primary sm:text-lg">
               {t('home.claim.cta')}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
             {/* The honesty line the schemes research insists on. */}
-            <p className="mt-4 text-sm text-muted">{t('home.claim.note')}</p>
+            <p className="mt-3 max-w-xs text-sm text-muted">{t('home.claim.note')}</p>
           </div>
         </div>
       </section>
@@ -483,32 +448,10 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* --------------------------------------------- dictionary + teachers */}
-      <section aria-labelledby="more-heading">
-        <h2 id="more-heading" className="sr-only">
-          {t('home.more.heading')}
-        </h2>
-        <ul className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
-          {SHORTCUTS.map(({ to, icon: Icon, titleKey, textKey, tone }) => (
-            <li key={to}>
-              <Link
-                to={to}
-                className="group flex h-full items-center gap-4 rounded-2xl border border-brand-100 bg-surface p-5 transition duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 hover:shadow-sm"
-              >
-                <Icon className={`h-7 w-7 shrink-0 ${tone}`} aria-hidden="true" />
-                <span className="min-w-0 flex-1">
-                  <span className="block font-extrabold text-ink">{t(titleKey)}</span>
-                  <span className="block text-sm text-muted">{t(textKey)}</span>
-                </span>
-                <ArrowRight
-                  className="h-5 w-5 shrink-0 text-brand-600 transition-transform group-hover:translate-x-1"
-                  aria-hidden="true"
-                />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* Two cards pointing at Dictionary and Teachers used to sit here. Both
+          are tabs in the header on every page, so this was a third route to a
+          place already reachable twice - and the same redundancy the level
+          picker was removed for. */}
       </div>
 
       {/* ------------------------------------------------------- closing ask */}
