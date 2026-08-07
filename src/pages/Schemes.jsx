@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
 import { AlertTriangle, ArrowRight, ExternalLink, Info } from 'lucide-react'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/Accordion.jsx'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { schemes, schemesByGroup } from '@content/index.js'
 
@@ -60,41 +66,52 @@ function SchemeCard({ scheme, accent }) {
   const tone = ACCENTS[accent] || ACCENTS.brand
 
   return (
-    <article className="card p-5 sm:p-6" aria-labelledby={`scheme-${scheme.id}`}>
-      <div className="flex flex-wrap items-start gap-4">
-        <span
-          className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 ${tone.chip}`}
-        >
-          <ConceptIcon name={scheme.icon} className="h-9 w-9" />
+    <AccordionItem
+      value={scheme.id}
+      className="card border-b-0 p-5 sm:p-6"
+      aria-labelledby={`scheme-${scheme.id}`}
+    >
+      {/* Visible collapsed: the picture, the name and the plain sentence.
+          That is the layer somebody scanning thirteen schemes needs to decide
+          "is this us?", and it stays short so the whole list can be skimmed.
+
+          Behind the trigger: the amount, eligibility, where to apply, the
+          warnings and the sources - the layer you read once you have decided a
+          scheme might apply to you. The amount was on the trigger at first and
+          moved off it: several are a paragraph long, which made the collapsed
+          rows wildly uneven and defeated the point of collapsing them. */}
+      <AccordionTrigger className="py-0 hover:bg-transparent">
+        <span className="flex min-w-0 flex-1 items-start gap-4 text-left">
+          <span
+            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 ${tone.chip}`}
+          >
+            <ConceptIcon name={scheme.icon} className="h-9 w-9" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span
+              id={`scheme-${scheme.id}`}
+              className="block text-2xl font-extrabold leading-tight text-ink"
+            >
+              {scheme.name}
+            </span>
+            {scheme.fullName && (
+              <span className="mt-0.5 block text-sm font-bold text-muted">{scheme.fullName}</span>
+            )}
+            <span className="mt-2 block text-lg font-bold leading-relaxed text-ink">
+              {scheme.oneLine}
+            </span>
+          </span>
         </span>
-        <div className="min-w-0 flex-1">
-          <h3 id={`scheme-${scheme.id}`} className="text-2xl font-extrabold leading-tight text-ink">
-            {scheme.name}
-          </h3>
-          {scheme.fullName && (
-            <p className="mt-0.5 text-sm font-bold text-muted">{scheme.fullName}</p>
-          )}
-        </div>
-      </div>
+      </AccordionTrigger>
 
-      {/* The one line a child reads. Everything below it is for whoever fills
-          in the form. */}
-      <p className="mt-4 text-lg font-bold leading-relaxed text-ink">{scheme.oneLine}</p>
+      <AccordionContent>
+        {scheme.why && (
+          <p className="mt-3 rounded-2xl bg-brand-50 p-4 text-base leading-relaxed text-ink">
+            {scheme.why}
+          </p>
+        )}
 
-      {scheme.why && (
-        <p className="mt-3 rounded-2xl bg-brand-50 p-4 text-base leading-relaxed text-ink">
-          {scheme.why}
-        </p>
-      )}
-
-      <dl className="mt-5 space-y-4">
-        <div>
-          <dt className="text-sm font-extrabold uppercase tracking-[0.14em] text-muted">
-            How much
-          </dt>
-          <dd className="mt-1 text-base leading-relaxed text-ink">{scheme.amount}</dd>
-        </div>
-
+        <dl className="mt-5 space-y-4">
         <div>
           <dt className="text-sm font-extrabold uppercase tracking-[0.14em] text-muted">Who</dt>
           <dd className="mt-1">
@@ -177,8 +194,9 @@ function SchemeCard({ scheme, accent }) {
             </li>
           ))}
         </ul>
-      </div>
-    </article>
+        </div>
+      </AccordionContent>
+    </AccordionItem>
   )
 }
 
@@ -228,11 +246,14 @@ export default function Schemes() {
           >
             {group.label}
           </h2>
-          <div className="space-y-6">
+          {/* type="multiple" rather than "single": a family comparing two
+              scholarships should not have one snap shut because they opened
+              the other. Nothing here is a mutually exclusive choice. */}
+          <Accordion type="multiple" className="space-y-6">
             {group.schemes.map((scheme) => (
               <SchemeCard key={scheme.id} scheme={scheme} accent={group.accent} />
             ))}
-          </div>
+          </Accordion>
         </section>
       ))}
 
