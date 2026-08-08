@@ -284,15 +284,16 @@
         }
       },
       "story": {
-        "title": "The golden swan",
-        "source": "A Jataka tale",
+        "title": "The rice on the chessboard",
+        "source": "An Indian legend",
         "text": [
-          "A golden swan adopted a household that had very little, returning at intervals and shedding a single gold feather each time. Sold one by one, the feathers covered what the family needed, indefinitely, for as long as the swan kept coming.",
-          "The arrangement was reliable but slow, and slowness is difficult to sit with when the whole asset is within arm's reach.",
-          "The mother took the bird and stripped it in one go.",
-          "Every feather came away white. Whatever made them gold had depended on the swan being left to give them at its own rate. It flew off and the income ended with it."
+          "A sage brought the game of chess to his king. The king was so taken with it that he offered the sage any reward he cared to name.",
+          "The sage asked for rice. One grain on the first square of the board, two on the second, four on the third, and so on - doubling on every square, to the sixty-fourth. The king thought the request almost insulting in its smallness, and agreed at once.",
+          "The first row cost him nothing worth counting. By the tenth square the pile was 512 grains, about a handful. By the twenty-first it was around ten lakh grains - a few sacks, and still nothing to a king.",
+          "Then the board turned. The thirty-second square alone needed about 215 crore grains. And thirty-two was only halfway. The sixty-fourth square needed more than nine followed by eighteen zeros, and the whole board came to roughly 461 billion tonnes - more rice than the world grows in nine hundred years.",
+          "The king could not pay. He had agreed to the shape of the thing without working out where it went."
         ],
-        "moral": "The swan is capital and the feathers are the return on it. Compounding depends on the capital staying where it is - the growth is produced by the amount, so the amount has to survive. Drawing down the principal does not just reduce it once, it removes everything it would have gone on to produce."
+        "moral": "Nothing dramatic happens for the first twenty squares, and that is exactly why doubling gets underestimated. Compound interest has the same shape: the money earns, then the earnings earn, and most of the growth arrives late. So the lever that matters most is not the rate - it is how long the money is left alone."
       },
       "summary": [
         "Simple interest is paid only on the money you first put in.",
