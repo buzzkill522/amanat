@@ -89,6 +89,18 @@ for (const file of files) {
     if (block.summary && !Array.isArray(block.summary)) fail(at, '"summary" is not a list')
     if (Array.isArray(block.summary) && block.summary.length === 0) fail(at, 'empty summary')
 
+    // Stories are optional - the administrative modules deliberately have none
+    // - but a half-written one would render as a heading over nothing.
+    if (block.story) {
+      const s = block.story
+      if (!s.title) fail(at, 'story has no title')
+      if (!s.source) fail(at, 'story has no source (which tale, and from where)')
+      if (!Array.isArray(s.text) || s.text.length === 0) fail(at, 'story has no text')
+      // The moral is what carries the principle across from the tale to the
+      // money. A story without one is a story the lesson cannot use.
+      if (!s.moral) fail(at, 'story has no moral')
+    }
+
     if (block.video && !block.video.src) fail(at, 'video has no src')
     if (block.video?.captions?.length === 0) warn(at, 'no caption tracks')
 

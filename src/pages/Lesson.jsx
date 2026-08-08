@@ -173,6 +173,46 @@ export default function Lesson() {
         </div>
       </div>
 
+      {/* ------------------------------------------------------------ story */}
+      {/* Sits between the video and the summary on purpose: the tale is the
+          hook, the summary is the same idea said plainly, and the quiz checks
+          it. The moral is printed rather than left to be inferred - children
+          reliably enjoy and remember a story without extracting the principle
+          from it, so the principle is stated and then restated in the summary
+          in the language of money.
+
+          Not every lesson has one. Modules 10 and 11 are administrative - the
+          UDID portal, income limits, closing dates - and there is no folk tale
+          about a scholarship form. Where no story exists this renders nothing
+          rather than reaching for a weak one. */}
+      {module.story && (
+        <section
+          className="rounded-3xl border-2 border-berry-500 bg-berry-100 p-6"
+          aria-labelledby="story-heading"
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.14em] text-berry-600">
+            {module.story.source}
+          </p>
+          <h2 id="story-heading" className="mt-1 text-2xl font-extrabold text-ink">
+            {module.story.title}
+          </h2>
+
+          <div className="mt-4 space-y-3">
+            {module.story.text.map((para, i) => (
+              <p key={i} className="text-xl leading-relaxed text-ink">
+                {para}
+              </p>
+            ))}
+          </div>
+
+          {module.story.moral && (
+            <p className="mt-5 border-t-2 border-berry-500 pt-4 text-lg font-bold leading-relaxed text-ink">
+              {module.story.moral}
+            </p>
+          )}
+        </section>
+      )}
+
       {/* ---------------------------------------------------------- summary */}
       <section className="card p-6" aria-labelledby="summary-heading">
         <h2 id="summary-heading" className="flex items-center gap-2 text-2xl font-extrabold text-ink">

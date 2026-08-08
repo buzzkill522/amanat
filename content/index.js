@@ -115,6 +115,11 @@ function localizeLevelBlock(block, lang) {
     title: hi.title ?? block.title,
     summary: hi.summary ?? block.summary,
     keyWords: hi.keyWords ?? block.keyWords,
+    // Whole-object, not field-by-field. A folk tale half in Hindi and half in
+    // English would be worse than one consistently in either - the reader
+    // loses the thread mid-paragraph. Either the retelling exists or the
+    // English one is shown intact.
+    story: hi.story ?? block.story,
     quiz: block.quiz
       ? {
           ...block.quiz,

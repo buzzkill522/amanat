@@ -13,10 +13,33 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
         "durationLabel": "3 minutes",
         "captions": [
-          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
-          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
         ],
-        "signInterpreter": { "src": null, "language": "isl" }
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "story": {
+        "title": "The blue jackal",
+        "source": "From the Panchatantra",
+        "text": [
+          "A jackal was running through a village and fell into a pot of blue dye. When he climbed out, he was bright blue all over.",
+          "The other animals had never seen a blue animal before. They thought he must be someone very important. They made him their king.",
+          "One night he heard other jackals howling far off. Without thinking, he lifted his head and howled back.",
+          "And then everybody knew exactly what he was."
+        ],
+        "moral": "He looked like a king, so he was treated like one. Looking official is not the same as being official."
       },
       "summary": [
         "Keep your money in one safe place.",
@@ -25,18 +48,36 @@
         "Nobody should ever ask you to keep a money secret from your parents.",
         "It is always alright to ask an adult for help."
       ],
-      "keyWords": ["safe", "stranger", "trusted adult", "secret", "help"],
+      "keyWords": [
+        "safe",
+        "stranger",
+        "trusted adult",
+        "secret",
+        "help"
+      ],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
             "prompt": "You are holding ₹200 clearly in your hand at a bus stop, and a stranger notices and starts walking toward you. What two things from the lesson should guide what you do?",
-            "image": { "icon": "warning", "alt": "A stranger noticing money held in a hand at a bus stop" },
+            "image": {
+              "icon": "warning",
+              "alt": "A stranger noticing money held in a hand at a bus stop"
+            },
             "options": [
-              { "icon": "shield", "label": "Do not show money to strangers, and if asked for it, say no and find a trusted adult" },
-              { "icon": "handcoin", "label": "Offer them some money to be polite" },
-              { "icon": "cross", "label": "Run away without telling anyone" }
+              {
+                "icon": "shield",
+                "label": "Do not show money to strangers, and if asked for it, say no and find a trusted adult"
+              },
+              {
+                "icon": "handcoin",
+                "label": "Offer them some money to be polite"
+              },
+              {
+                "icon": "cross",
+                "label": "Run away without telling anyone"
+              }
             ],
             "correctIndex": 0,
             "hint": "Two separate lesson rules both apply to this exact moment."
@@ -44,11 +85,23 @@
           {
             "id": "q2",
             "prompt": "An adult you don't know well gives you ₹100 and says 'don't tell your parents about this.' What does the lesson say about this exact combination?",
-            "image": { "icon": "lock", "alt": "Money being handed over with a finger held to lips" },
+            "image": {
+              "icon": "lock",
+              "alt": "Money being handed over with a finger held to lips"
+            },
             "options": [
-              { "icon": "warning", "label": "This is a warning sign - no one should ask a child to keep money secret from parents" },
-              { "icon": "gift", "label": "It is fine, since they gave you the money as a gift" },
-              { "icon": "coin", "label": "It is only a problem if the amount is large" }
+              {
+                "icon": "warning",
+                "label": "This is a warning sign - no one should ask a child to keep money secret from parents"
+              },
+              {
+                "icon": "gift",
+                "label": "It is fine, since they gave you the money as a gift"
+              },
+              {
+                "icon": "coin",
+                "label": "It is only a problem if the amount is large"
+              }
             ],
             "correctIndex": 0,
             "hint": "The secrecy request is the warning sign, not the amount of money."
@@ -56,11 +109,23 @@
           {
             "id": "q3",
             "prompt": "You have ₹300. Which is safest: carrying it loose in your hand all day, leaving it on a desk at school, or keeping it in a safe place at home or a bank?",
-            "image": { "icon": "shield", "alt": "Three ways to keep money, one clearly locked away" },
+            "image": {
+              "icon": "shield",
+              "alt": "Three ways to keep money, one clearly locked away"
+            },
             "options": [
-              { "icon": "bank", "label": "A safe place at home or a bank" },
-              { "icon": "handcoin", "label": "Carrying it loose all day, since it's with you" },
-              { "icon": "house", "label": "Leaving it on a desk, since no one usually looks" }
+              {
+                "icon": "bank",
+                "label": "A safe place at home or a bank"
+              },
+              {
+                "icon": "handcoin",
+                "label": "Carrying it loose all day, since it's with you"
+              },
+              {
+                "icon": "house",
+                "label": "Leaving it on a desk, since no one usually looks"
+              }
             ],
             "correctIndex": 0,
             "hint": "Compare all three for how easily each one could be lost or taken."
@@ -75,10 +140,34 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
         "durationLabel": "4 minutes",
         "captions": [
-          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
-          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
         ],
-        "signInterpreter": { "src": null, "language": "isl" }
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "story": {
+        "title": "The blue jackal",
+        "source": "From the Panchatantra",
+        "text": [
+          "A jackal, chased through a village, fell into a dyer's vat and came out a deep, startling blue. Nothing else in the forest was that colour.",
+          "The other animals could not place him. Something that looked like nothing they had ever seen must, they reasoned, be something greater than they were. He did not correct them. He told them the gods had sent him to rule, and they believed it and served him.",
+          "He kept it up for a long time - long enough to be comfortable.",
+          "Then one night a pack of jackals howled in the distance, and he answered them before he could stop himself. The disguise was over in a second.",
+          "Nothing about him had changed in all that time. Only what the others had assumed."
+        ],
+        "moral": "He never actually proved anything. He simply looked unfamiliar and official at once, and let everyone fill the gap themselves. A message can carry a real bank's logo and colours and still have been sent by anyone."
       },
       "summary": [
         "A scam is a trick to take your money.",
@@ -87,18 +176,36 @@
         "Scams push you to act fast. Slow down and check with an adult.",
         "If an offer sounds too good to be true, it is not true."
       ],
-      "keyWords": ["scam", "OTP", "PIN", "prize", "check first"],
+      "keyWords": [
+        "scam",
+        "OTP",
+        "PIN",
+        "prize",
+        "check first"
+      ],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
             "prompt": "A message says 'You won ₹1,00,000! Claim within 10 minutes or lose it forever!' You never entered any competition. Name two separate warning signs in this message.",
-            "image": { "icon": "phone", "alt": "A phone showing an urgent prize message with a countdown" },
+            "image": {
+              "icon": "phone",
+              "alt": "A phone showing an urgent prize message with a countdown"
+            },
             "options": [
-              { "icon": "warning", "label": "You never entered, and it is rushing you to act fast - both are classic scam signs" },
-              { "icon": "gift", "label": "It is not a scam, since it mentions a specific rupee amount" },
-              { "icon": "check", "label": "It is only suspicious because of the amount, not the urgency" }
+              {
+                "icon": "warning",
+                "label": "You never entered, and it is rushing you to act fast - both are classic scam signs"
+              },
+              {
+                "icon": "gift",
+                "label": "It is not a scam, since it mentions a specific rupee amount"
+              },
+              {
+                "icon": "check",
+                "label": "It is only suspicious because of the amount, not the urgency"
+              }
             ],
             "correctIndex": 0,
             "hint": "The lesson names both an impossible win and a rush to act as separate warning signs."
@@ -106,11 +213,23 @@
           {
             "id": "q2",
             "prompt": "You get a call from someone claiming to be your bank, asking you to confirm your OTP to 'verify your account.' How can you be sure this is not really your bank?",
-            "image": { "icon": "lock", "alt": "A phone call beside a one time password screen" },
+            "image": {
+              "icon": "lock",
+              "alt": "A phone call beside a one time password screen"
+            },
             "options": [
-              { "icon": "cross", "label": "A real bank never asks for your OTP, so this alone proves it is not genuine" },
-              { "icon": "question", "label": "You cannot know unless you check their voice" },
-              { "icon": "check", "label": "It is fine if they already know your account number" }
+              {
+                "icon": "cross",
+                "label": "A real bank never asks for your OTP, so this alone proves it is not genuine"
+              },
+              {
+                "icon": "question",
+                "label": "You cannot know unless you check their voice"
+              },
+              {
+                "icon": "check",
+                "label": "It is fine if they already know your account number"
+              }
             ],
             "correctIndex": 0,
             "hint": "The lesson gives one specific fact that, on its own, is enough to prove a call is fake."
@@ -118,11 +237,23 @@
           {
             "id": "q3",
             "prompt": "An online post offers to turn ₹1,000 into ₹5,000 in one week if you send it to them first. What should you conclude?",
-            "image": { "icon": "warning", "alt": "An online post promising to multiply money quickly" },
+            "image": {
+              "icon": "warning",
+              "alt": "An online post promising to multiply money quickly"
+            },
             "options": [
-              { "icon": "cross", "label": "It is not true - this is exactly the kind of offer the lesson warns is too good to be true" },
-              { "icon": "check", "label": "It could be true if enough people share the post" },
-              { "icon": "coin", "label": "It is safe as long as you only send a small amount first" }
+              {
+                "icon": "cross",
+                "label": "It is not true - this is exactly the kind of offer the lesson warns is too good to be true"
+              },
+              {
+                "icon": "check",
+                "label": "It could be true if enough people share the post"
+              },
+              {
+                "icon": "coin",
+                "label": "It is safe as long as you only send a small amount first"
+              }
             ],
             "correctIndex": 0,
             "hint": "The lesson gives a simple test for offers exactly like this one."
@@ -137,10 +268,33 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
         "durationLabel": "6 minutes",
         "captions": [
-          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
-          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
         ],
-        "signInterpreter": { "src": null, "language": "isl" }
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "story": {
+        "title": "The three rogues and the goat",
+        "source": "From the Panchatantra",
+        "text": [
+          "A man bought a goat at market and set off home with it across his shoulders. Three thieves saw him, wanted the goat, and agreed not to take it by force.",
+          "The first met him on the road. \"Sir - why is a man like you carrying a dog?\" he asked, and walked on before there could be an answer. The man checked. It was plainly a goat.",
+          "Some distance later the second stopped him. \"It is not my business, but a respectable man should not be seen carrying a dead dog.\" The man began to feel unsure.",
+          "When the third said the same thing, the man had now heard it from three people who did not know each other. He put the goat down and hurried off, and the thieves collected it behind him."
+        ],
+        "moral": "Nothing about the goat ever changed - only the number of independent-sounding voices saying otherwise. This is the mechanism of a modern scam: three messages from three numbers, all urging the same thing, are not three confirmations. They are one lie sent three times."
       },
       "summary": [
         "Phishing means a fake message that copies a real company.",
@@ -149,18 +303,37 @@
         "If an app asks for your PIN to give you a refund, it is a scam.",
         "Report fraud in India on the cybercrime helpline number 1930."
       ],
-      "keyWords": ["phishing", "UPI", "fraud", "two factor", "report", "helpline 1930"],
+      "keyWords": [
+        "phishing",
+        "UPI",
+        "fraud",
+        "two factor",
+        "report",
+        "helpline 1930"
+      ],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
             "prompt": "An app message says: 'To receive your ₹500 refund, please enter your UPI PIN now.' Using what you know about when a PIN is genuinely needed, what should you conclude?",
-            "image": { "icon": "phone", "alt": "A refund message asking for a UPI PIN" },
+            "image": {
+              "icon": "phone",
+              "alt": "A refund message asking for a UPI PIN"
+            },
             "options": [
-              { "icon": "warning", "label": "This is a scam - a PIN is only ever needed to SEND money, never to receive it" },
-              { "icon": "check", "label": "It is genuine, since refunds are common" },
-              { "icon": "coin", "label": "It is safe because it mentions an exact amount" }
+              {
+                "icon": "warning",
+                "label": "This is a scam - a PIN is only ever needed to SEND money, never to receive it"
+              },
+              {
+                "icon": "check",
+                "label": "It is genuine, since refunds are common"
+              },
+              {
+                "icon": "coin",
+                "label": "It is safe because it mentions an exact amount"
+              }
             ],
             "correctIndex": 0,
             "hint": "Recall exactly which direction of a UPI transaction ever needs your PIN."
@@ -168,11 +341,23 @@
           {
             "id": "q2",
             "prompt": "You get an email that looks exactly like your bank's, asking you to click a link and log in. Name two separate things the lesson tells you to check before doing anything.",
-            "image": { "icon": "warning", "alt": "An email copying a bank's look, with a sender address and a link" },
+            "image": {
+              "icon": "warning",
+              "alt": "An email copying a bank's look, with a sender address and a link"
+            },
             "options": [
-              { "icon": "warning", "label": "The sender's email address and the web address of the link, both checked closely" },
-              { "icon": "bank", "label": "Only whether the logo looks correct" },
-              { "icon": "check", "label": "Only whether the email uses polite language" }
+              {
+                "icon": "warning",
+                "label": "The sender's email address and the web address of the link, both checked closely"
+              },
+              {
+                "icon": "bank",
+                "label": "Only whether the logo looks correct"
+              },
+              {
+                "icon": "check",
+                "label": "Only whether the email uses polite language"
+              }
             ],
             "correctIndex": 0,
             "hint": "The lesson names two things to check closely, not just one glance at the logo."
@@ -180,11 +365,23 @@
           {
             "id": "q3",
             "prompt": "You receive a phishing message asking you to act within the hour or lose your account, and you clicked the link before realising it was fake. What should you do now?",
-            "image": { "icon": "shield", "alt": "A helpline card beside a clicked phishing link" },
+            "image": {
+              "icon": "shield",
+              "alt": "A helpline card beside a clicked phishing link"
+            },
             "options": [
-              { "icon": "shield", "label": "Report it to the cybercrime helpline 1930 and tell a trusted adult immediately" },
-              { "icon": "question", "label": "Wait and see if anything bad actually happens first" },
-              { "icon": "phone", "label": "Reply to the message asking them to stop" }
+              {
+                "icon": "shield",
+                "label": "Report it to the cybercrime helpline 1930 and tell a trusted adult immediately"
+              },
+              {
+                "icon": "question",
+                "label": "Wait and see if anything bad actually happens first"
+              },
+              {
+                "icon": "phone",
+                "label": "Reply to the message asking them to stop"
+              }
             ],
             "correctIndex": 0,
             "hint": "The lesson gives an exact number to call once fraud has already happened, not just to prevent it."

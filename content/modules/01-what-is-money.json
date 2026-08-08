@@ -19,10 +19,33 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
         "durationLabel": "3 minutes",
         "captions": [
-          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
-          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
         ],
-        "signInterpreter": { "src": null, "language": "isl" }
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "story": {
+        "title": "The old bowl",
+        "source": "A Jataka tale",
+        "text": [
+          "A poor family had an old bowl. It was black with soot. They thought it was worth nothing.",
+          "A trader came to the door. He rubbed the bowl and saw gold under the dirt. He said, \"This is rubbish. I will take it for one coin.\"",
+          "The family said no.",
+          "A second trader came. He saw the same gold. He said, \"This bowl is gold. It is worth more than everything in my cart.\" He paid a fair price and took it."
+        ],
+        "moral": "The bowl was gold the whole time. Only the price changed. Price is what somebody asks for a thing. Value is what it is really worth."
       },
       "summary": [
         "Money is what people use to buy things. In India we use rupees, written ₹.",
@@ -31,18 +54,37 @@
         "After the swap the money is gone. You cannot spend the same ₹20 twice.",
         "Money does not appear on its own. Someone did work to get it."
       ],
-      "keyWords": ["money", "rupee", "coin", "note", "swap", "work"],
+      "keyWords": [
+        "money",
+        "rupee",
+        "coin",
+        "note",
+        "swap",
+        "work"
+      ],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
             "prompt": "You give the shop ₹20 for a toy. What just happened?",
-            "image": { "icon": "shop", "alt": "A toy at a shop counter, money being handed over in return" },
+            "image": {
+              "icon": "shop",
+              "alt": "A toy at a shop counter, money being handed over in return"
+            },
             "options": [
-              { "icon": "handcoin", "label": "A swap - you gave money, you got the toy" },
-              { "icon": "gift", "label": "The shop gave you free money" },
-              { "icon": "cross", "label": "You lost your ₹20 for nothing" }
+              {
+                "icon": "handcoin",
+                "label": "A swap - you gave money, you got the toy"
+              },
+              {
+                "icon": "gift",
+                "label": "The shop gave you free money"
+              },
+              {
+                "icon": "cross",
+                "label": "You lost your ₹20 for nothing"
+              }
             ],
             "correctIndex": 0,
             "hint": "Think about what you received in return."
@@ -50,11 +92,23 @@
           {
             "id": "q2",
             "prompt": "You have ₹50. You buy a book for ₹20 and a pen for ₹10. How much money is left?",
-            "image": { "icon": "book", "alt": "Fifty rupees beside a book and a pen" },
+            "image": {
+              "icon": "book",
+              "alt": "Fifty rupees beside a book and a pen"
+            },
             "options": [
-              { "icon": "coin", "label": "₹20" },
-              { "icon": "coin", "label": "₹30" },
-              { "icon": "coin", "label": "₹40" }
+              {
+                "icon": "coin",
+                "label": "₹20"
+              },
+              {
+                "icon": "coin",
+                "label": "₹30"
+              },
+              {
+                "icon": "coin",
+                "label": "₹40"
+              }
             ],
             "correctIndex": 0,
             "hint": "Take away the book's price, then take away the pen's price too."
@@ -62,11 +116,23 @@
           {
             "id": "q3",
             "prompt": "A shopkeeper says money 'just appears' in his till every day. Is that true?",
-            "image": { "icon": "coin", "alt": "A till full of coins" },
+            "image": {
+              "icon": "coin",
+              "alt": "A till full of coins"
+            },
             "options": [
-              { "icon": "handcoin", "label": "No - every rupee came from someone paying for work or goods" },
-              { "icon": "star", "label": "Yes, money makes itself" },
-              { "icon": "calendar", "label": "Only on festival days" }
+              {
+                "icon": "handcoin",
+                "label": "No - every rupee came from someone paying for work or goods"
+              },
+              {
+                "icon": "star",
+                "label": "Yes, money makes itself"
+              },
+              {
+                "icon": "calendar",
+                "label": "Only on festival days"
+              }
             ],
             "correctIndex": 0,
             "hint": "Trace the rupee back to where it started."
@@ -82,41 +148,83 @@
           "अदला-बदली के बाद पैसा चला जाता है। आप वही ₹20 दोबारा ख़र्च नहीं कर सकते।",
           "पैसा अपने आप नहीं आता। इसे पाने के लिए किसी ने काम किया होता है।"
         ],
-        "keyWords": ["पैसा", "रुपया", "सिक्का", "नोट", "अदला-बदली", "काम"],
+        "keyWords": [
+          "पैसा",
+          "रुपया",
+          "सिक्का",
+          "नोट",
+          "अदला-बदली",
+          "काम"
+        ],
         "quiz": {
           "title": "आप क्या जानते हैं, दिखाइए",
           "questions": [
             {
               "prompt": "आप दुकान को एक खिलौने के लिए ₹20 देते हैं। असल में क्या हुआ?",
-              "image": { "alt": "एक खिलौना दुकान के काउंटर पर, बदले में पैसे दिए जा रहे हैं" },
+              "image": {
+                "alt": "एक खिलौना दुकान के काउंटर पर, बदले में पैसे दिए जा रहे हैं"
+              },
               "options": [
-                { "label": "एक अदला-बदली - आपने पैसा दिया, आपको खिलौना मिला" },
-                { "label": "दुकान ने आपको मुफ़्त पैसा दिया" },
-                { "label": "आपने अपने ₹20 बिना किसी वजह खो दिए" }
+                {
+                  "label": "एक अदला-बदली - आपने पैसा दिया, आपको खिलौना मिला"
+                },
+                {
+                  "label": "दुकान ने आपको मुफ़्त पैसा दिया"
+                },
+                {
+                  "label": "आपने अपने ₹20 बिना किसी वजह खो दिए"
+                }
               ],
               "hint": "सोचिए बदले में आपको क्या मिला।"
             },
             {
               "prompt": "आपके पास ₹50 हैं। आप ₹20 की एक किताब और ₹10 का एक पेन ख़रीदते हैं। कितना पैसा बचा?",
-              "image": { "alt": "पचास रुपये के पास एक किताब और एक पेन" },
+              "image": {
+                "alt": "पचास रुपये के पास एक किताब और एक पेन"
+              },
               "options": [
-                { "label": "₹20" },
-                { "label": "₹30" },
-                { "label": "₹40" }
+                {
+                  "label": "₹20"
+                },
+                {
+                  "label": "₹30"
+                },
+                {
+                  "label": "₹40"
+                }
               ],
               "hint": "पहले किताब की क़ीमत घटाइए, फिर पेन की क़ीमत भी घटाइए।"
             },
             {
               "prompt": "एक दुकानदार कहता है कि पैसा उसके गल्ले में 'अपने आप' हर दिन आ जाता है। क्या यह सच है?",
-              "image": { "alt": "सिक्कों से भरा एक गल्ला" },
+              "image": {
+                "alt": "सिक्कों से भरा एक गल्ला"
+              },
               "options": [
-                { "label": "नहीं - हर रुपया किसी के काम या सामान के भुगतान से आया था" },
-                { "label": "हाँ, पैसा अपने आप बन जाता है" },
-                { "label": "सिर्फ़ त्योहारों के दिन" }
+                {
+                  "label": "नहीं - हर रुपया किसी के काम या सामान के भुगतान से आया था"
+                },
+                {
+                  "label": "हाँ, पैसा अपने आप बन जाता है"
+                },
+                {
+                  "label": "सिर्फ़ त्योहारों के दिन"
+                }
               ],
               "hint": "रुपये को वहाँ तक पीछे ढूँढिए जहाँ से वह शुरू हुआ था।"
             }
           ]
+        },
+        "story": {
+          "title": "पुराना कटोरा",
+          "source": "एक जातक कथा",
+          "text": [
+            "एक ग़रीब परिवार के पास एक पुराना कटोरा था। वह कालिख से काला था। उन्हें लगा कि उसकी कोई क़ीमत नहीं।",
+            "एक व्यापारी आया। उसने कटोरा रगड़ा और नीचे सोना देखा। उसने कहा, \"यह बेकार है। एक सिक्के में मुझे दे दो।\"",
+            "परिवार ने मना कर दिया।",
+            "दूसरा व्यापारी आया। उसने भी वही सोना देखा। उसने कहा, \"यह कटोरा सोने का है। मेरी पूरी गाड़ी से ज़्यादा क़ीमती है।\" उसने पूरा दाम दिया और कटोरा ले गया।"
+          ],
+          "moral": "कटोरा शुरू से सोने का था। सिर्फ़ दाम बदला। दाम वह है जो कोई माँगता है। क़ीमत वह है जो चीज़ सचमुच है।"
         }
       }
     },
@@ -127,10 +235,33 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
         "durationLabel": "4 minutes",
         "captions": [
-          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
-          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
         ],
-        "signInterpreter": { "src": null, "language": "isl" }
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "story": {
+        "title": "The old bowl",
+        "source": "A Jataka tale",
+        "text": [
+          "In a town by the river, a poor family owned a bowl so blackened with soot that nobody looked at it twice. They did not know it was solid gold.",
+          "A trader called at the door. He scratched the rim, saw the metal underneath, and kept his face still. \"Worthless,\" he said. \"But I will take it off your hands for a few coins.\" The family refused, and he left - certain they would accept less once they were hungrier.",
+          "A second trader called later the same day. He tested the bowl and saw exactly what the first man had seen. He told them the truth: the bowl was worth more than everything he was carrying. He gave them all of it, kept only his fare across the river, and left with the bowl.",
+          "The first trader came back that evening and found it gone."
+        ],
+        "moral": "Both traders knew what the bowl was worth. One planned to use that to pay less. The family had only one thing missing, and it was not honesty - it was knowing the price."
       },
       "summary": [
         "Before money, people swapped goods. A farmer with rice had to find someone who had cloth and who also wanted rice. That is two matches, not one.",
@@ -139,18 +270,37 @@
         "Only the Reserve Bank of India may print rupee notes. If anyone could print them, nobody would trust them.",
         "Digital money is the same idea with no object at all. A UPI payment moves a number between two accounts."
       ],
-      "keyWords": ["trade", "barter", "value", "scarce", "Reserve Bank of India", "UPI"],
+      "keyWords": [
+        "trade",
+        "barter",
+        "value",
+        "scarce",
+        "Reserve Bank of India",
+        "UPI"
+      ],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
             "prompt": "A farmer has rice, a tailor has cloth, but the tailor wants rice for someone else, not for himself. Without money, what must happen for a trade to work?",
-            "image": { "icon": "food", "alt": "A bowl of rice next to folded cloth, with mismatched wants" },
+            "image": {
+              "icon": "food",
+              "alt": "A bowl of rice next to folded cloth, with mismatched wants"
+            },
             "options": [
-              { "icon": "question", "label": "Both people's wants must match exactly, at the same time" },
-              { "icon": "growth", "label": "The farmer must grow more rice" },
-              { "icon": "cross", "label": "The tailor must lower his price" }
+              {
+                "icon": "question",
+                "label": "Both people's wants must match exactly, at the same time"
+              },
+              {
+                "icon": "growth",
+                "label": "The farmer must grow more rice"
+              },
+              {
+                "icon": "cross",
+                "label": "The tailor must lower his price"
+              }
             ],
             "correctIndex": 0,
             "hint": "This double matching is exactly the problem money solves."
@@ -158,11 +308,23 @@
           {
             "id": "q2",
             "prompt": "If any bank could print its own rupee notes, what would actually happen to the value of a rupee?",
-            "image": { "icon": "bank", "alt": "Many banks printing notes at once" },
+            "image": {
+              "icon": "bank",
+              "alt": "Many banks printing notes at once"
+            },
             "options": [
-              { "icon": "chart", "label": "It would fall, because there would be far more rupees chasing the same goods" },
-              { "icon": "growth", "label": "It would rise, because there is more money to spend" },
-              { "icon": "check", "label": "Nothing would change" }
+              {
+                "icon": "chart",
+                "label": "It would fall, because there would be far more rupees chasing the same goods"
+              },
+              {
+                "icon": "growth",
+                "label": "It would rise, because there is more money to spend"
+              },
+              {
+                "icon": "check",
+                "label": "Nothing would change"
+              }
             ],
             "correctIndex": 0,
             "hint": "More notes printed without more goods made means each note buys less."
@@ -170,11 +332,23 @@
           {
             "id": "q3",
             "prompt": "You pay ₹200 by UPI, and the shop's account shows +₹200 at the same moment your account shows -₹200. What does this prove?",
-            "image": { "icon": "phone", "alt": "Two accounts changing together on a phone screen" },
+            "image": {
+              "icon": "phone",
+              "alt": "Two accounts changing together on a phone screen"
+            },
             "options": [
-              { "icon": "chart", "label": "No physical money moved - only two account records changed together" },
-              { "icon": "bank", "label": "The bank created ₹200 out of nothing" },
-              { "icon": "note", "label": "The ₹200 note was scanned digitally" }
+              {
+                "icon": "chart",
+                "label": "No physical money moved - only two account records changed together"
+              },
+              {
+                "icon": "bank",
+                "label": "The bank created ₹200 out of nothing"
+              },
+              {
+                "icon": "note",
+                "label": "The ₹200 note was scanned digitally"
+              }
             ],
             "correctIndex": 0,
             "hint": "Look at what changed on both sides at once, not what travelled."
@@ -190,37 +364,68 @@
           "भारत में सिर्फ़ रिज़र्व बैंक ऑफ़ इंडिया रुपये के नोट छाप सकता है। यदि कोई भी छाप सकता, तो कोई उस पर भरोसा नहीं करता।",
           "डिजिटल पैसा यही विचार है, बिना किसी चीज़ के। UPI से भुगतान करने पर दो खातों के बीच सिर्फ़ एक नंबर बदलता है।"
         ],
-        "keyWords": ["व्यापार", "अदला-बदली", "मूल्य", "दुर्लभ", "रिज़र्व बैंक ऑफ़ इंडिया", "UPI"],
+        "keyWords": [
+          "व्यापार",
+          "अदला-बदली",
+          "मूल्य",
+          "दुर्लभ",
+          "रिज़र्व बैंक ऑफ़ इंडिया",
+          "UPI"
+        ],
         "quiz": {
           "title": "आप क्या जानते हैं, दिखाइए",
           "questions": [
             {
               "prompt": "एक किसान के पास चावल है, एक दर्ज़ी के पास कपड़ा है, पर दर्ज़ी को चावल नहीं, किसी और के लिए कपड़ा चाहिए। पैसे के बिना, अदला-बदली के लिए क्या होना ज़रूरी है?",
-              "image": { "alt": "चावल रखने वाला किसान और कपड़ा रखने वाला दर्ज़ी, दोनों की चाहत अलग" },
+              "image": {
+                "alt": "चावल रखने वाला किसान और कपड़ा रखने वाला दर्ज़ी, दोनों की चाहत अलग"
+              },
               "options": [
-                { "label": "दोनों लोगों की चाहत ठीक उसी समय एक-दूसरे से मेल खानी चाहिए" },
-                { "label": "किसान को और चावल उगाना होगा" },
-                { "label": "दर्ज़ी को अपनी क़ीमत कम करनी होगी" }
+                {
+                  "label": "दोनों लोगों की चाहत ठीक उसी समय एक-दूसरे से मेल खानी चाहिए"
+                },
+                {
+                  "label": "किसान को और चावल उगाना होगा"
+                },
+                {
+                  "label": "दर्ज़ी को अपनी क़ीमत कम करनी होगी"
+                }
               ],
               "hint": "यही दोहरा मेल है जिसे पैसा हल करता है।"
             },
             {
               "prompt": "यदि कोई भी बैंक अपने रुपये के नोट छाप सकता, तो रुपये की क़ीमत का असल में क्या होता?",
-              "image": { "alt": "कई बैंक एक साथ नोट छाप रहे हैं" },
+              "image": {
+                "alt": "कई बैंक एक साथ नोट छाप रहे हैं"
+              },
               "options": [
-                { "label": "यह गिर जाती, क्योंकि उतने ही सामान के पीछे कहीं ज़्यादा रुपये होते" },
-                { "label": "यह बढ़ जाती, क्योंकि ख़र्च करने के लिए ज़्यादा पैसा होता" },
-                { "label": "कुछ नहीं बदलता" }
+                {
+                  "label": "यह गिर जाती, क्योंकि उतने ही सामान के पीछे कहीं ज़्यादा रुपये होते"
+                },
+                {
+                  "label": "यह बढ़ जाती, क्योंकि ख़र्च करने के लिए ज़्यादा पैसा होता"
+                },
+                {
+                  "label": "कुछ नहीं बदलता"
+                }
               ],
               "hint": "बिना ज़्यादा सामान बनाए ज़्यादा नोट छापने का मतलब है हर नोट कम ख़रीद पाएगा।"
             },
             {
               "prompt": "आप UPI से ₹200 का भुगतान करते हैं, और उसी पल दुकान के खाते में +₹200 और आपके खाते में -₹200 दिखता है। यह क्या साबित करता है?",
-              "image": { "alt": "एक साथ बदलते दो खाते, एक फ़ोन स्क्रीन पर" },
+              "image": {
+                "alt": "एक साथ बदलते दो खाते, एक फ़ोन स्क्रीन पर"
+              },
               "options": [
-                { "label": "कोई असली पैसा नहीं चला - सिर्फ़ दो खातों के रिकॉर्ड एक साथ बदले" },
-                { "label": "बैंक ने ₹200 कहीं से बना दिए" },
-                { "label": "₹200 का नोट डिजिटल रूप से स्कैन हुआ" }
+                {
+                  "label": "कोई असली पैसा नहीं चला - सिर्फ़ दो खातों के रिकॉर्ड एक साथ बदले"
+                },
+                {
+                  "label": "बैंक ने ₹200 कहीं से बना दिए"
+                },
+                {
+                  "label": "₹200 का नोट डिजिटल रूप से स्कैन हुआ"
+                }
               ],
               "hint": "देखिए दोनों तरफ़ एक साथ क्या बदला, न कि क्या यात्रा करके गया।"
             }
@@ -235,10 +440,33 @@
         "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
         "durationLabel": "5 minutes",
         "captions": [
-          { "src": "/captions/placeholder-en.vtt", "label": "English", "srclang": "en", "default": true },
-          { "src": "/captions/placeholder-simple.vtt", "label": "English (simple words)", "srclang": "en" }
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
         ],
-        "signInterpreter": { "src": null, "language": "isl" }
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "story": {
+        "title": "The old bowl",
+        "source": "A Jataka tale",
+        "text": [
+          "Two traders worked the same road, crossing into the same town on the same day. In one house was a soot-blackened bowl the family used for nothing and valued at nothing. It was solid gold.",
+          "The first trader tested the metal and knew immediately. He told them it was worthless and offered a handful of coins, intending to resell it for a fortune. They turned him down. He walked away unworried, expecting to return when need had softened them.",
+          "The second trader tested the same bowl and reached the same conclusion. He said so out loud. He handed over every coin and every good in his cart, kept back only the fare for the ferry, and carried the bowl away.",
+          "The first trader returned to an empty house and lost his temper at a bargain that had never been his."
+        ],
+        "moral": "The two men had identical information. What differed was whether they let the family have it. This is an information gap, and it is the oldest move in trade - it is not closed by being careful, only by finding out what a thing is worth before you agree a price."
       },
       "summary": [
         "A ₹500 note costs a few rupees to make. The rest of its value is trust - everyone accepts it because everyone else does.",
@@ -248,18 +476,37 @@
         "Keep it ten years at that rate and it buys roughly half of what it buys today. The note never changes; what it commands does.",
         "So saving is not the same as putting notes in a box. The rate your money earns matters as much as the number you can see."
       ],
-      "keyWords": ["trust", "store of value", "unit of account", "inflation", "purchasing power", "legal tender"],
+      "keyWords": [
+        "trust",
+        "store of value",
+        "unit of account",
+        "inflation",
+        "purchasing power",
+        "legal tender"
+      ],
       "quiz": {
         "title": "Show what you know",
         "questions": [
           {
             "id": "q1",
             "prompt": "A ₹500 note costs a few rupees to print, yet it buys ₹500 worth of goods. If people suddenly stopped trusting it, what would happen to its usefulness - even though the paper itself is unchanged?",
-            "image": { "icon": "note", "alt": "A rupee note held in a hand, with trust fading around it" },
+            "image": {
+              "icon": "note",
+              "alt": "A rupee note held in a hand, with trust fading around it"
+            },
             "options": [
-              { "icon": "shield", "label": "It would stop working as money, because trust - not the paper - is what gives it value" },
-              { "icon": "check", "label": "It would still work exactly the same" },
-              { "icon": "star", "label": "The government would have to make it heavier" }
+              {
+                "icon": "shield",
+                "label": "It would stop working as money, because trust - not the paper - is what gives it value"
+              },
+              {
+                "icon": "check",
+                "label": "It would still work exactly the same"
+              },
+              {
+                "icon": "star",
+                "label": "The government would have to make it heavier"
+              }
             ],
             "correctIndex": 0,
             "hint": "The paper never changes. Ask what the paper is not."
@@ -267,11 +514,23 @@
           {
             "id": "q2",
             "prompt": "Money is meant to store value for later AND measure what things are worth. During high inflation, which of these two jobs breaks down first, and why?",
-            "image": { "icon": "growth", "alt": "A line chart rising from left to right, with a savings jar losing value" },
+            "image": {
+              "icon": "growth",
+              "alt": "A line chart rising from left to right, with a savings jar losing value"
+            },
             "options": [
-              { "icon": "piggy", "label": "Storing value - money sitting still loses buying power while measuring still works day to day" },
-              { "icon": "chart", "label": "Measuring value - prices become meaningless" },
-              { "icon": "question", "label": "Both break down at exactly the same speed" }
+              {
+                "icon": "piggy",
+                "label": "Storing value - money sitting still loses buying power while measuring still works day to day"
+              },
+              {
+                "icon": "chart",
+                "label": "Measuring value - prices become meaningless"
+              },
+              {
+                "icon": "question",
+                "label": "Both break down at exactly the same speed"
+              }
             ],
             "correctIndex": 0,
             "hint": "A price still tells you today's worth. What happens to money you are not spending today?"
@@ -279,11 +538,23 @@
           {
             "id": "q3",
             "prompt": "Prices rise about 6% a year. You keep ₹1000 in a drawer for TWO years, not one. Roughly what can it buy at the end of year two?",
-            "image": { "icon": "wallet", "alt": "A thousand rupees in a drawer beside a calendar showing two years" },
+            "image": {
+              "icon": "wallet",
+              "alt": "A thousand rupees in a drawer beside a calendar showing two years"
+            },
             "options": [
-              { "icon": "coin", "label": "About ₹880 of goods" },
-              { "icon": "coin", "label": "About ₹940 of goods" },
-              { "icon": "coin", "label": "About ₹1000 of goods" }
+              {
+                "icon": "coin",
+                "label": "About ₹880 of goods"
+              },
+              {
+                "icon": "coin",
+                "label": "About ₹940 of goods"
+              },
+              {
+                "icon": "coin",
+                "label": "About ₹1000 of goods"
+              }
             ],
             "correctIndex": 0,
             "hint": "The loss in year two applies to an already-shrunk amount, not the original ₹1000."
@@ -300,37 +571,68 @@
           "इसी दर पर दस साल तक रखिए, तो यह आज की तुलना में लगभग आधा ही ख़रीद पाएगा। नोट कभी नहीं बदलता; जो यह ख़रीद सकता है, वह बदल जाता है।",
           "इसलिए बचत करना नोट डिब्बे में रखने जैसा नहीं है। आपका पैसा जितनी दर से बढ़ता है, वह उतनी ही अहम है जितना आँकड़ा आप देख सकते हैं।"
         ],
-        "keyWords": ["भरोसा", "मूल्य का भंडार", "लेखा की इकाई", "महँगाई", "ख़रीद क्षमता", "क़ानूनी मुद्रा"],
+        "keyWords": [
+          "भरोसा",
+          "मूल्य का भंडार",
+          "लेखा की इकाई",
+          "महँगाई",
+          "ख़रीद क्षमता",
+          "क़ानूनी मुद्रा"
+        ],
         "quiz": {
           "title": "आप क्या जानते हैं, दिखाइए",
           "questions": [
             {
               "prompt": "₹500 का नोट छापने में सिर्फ़ कुछ रुपये ख़र्च होते हैं, फिर भी यह ₹500 का सामान ख़रीद पाता है। अगर लोग अचानक इस पर भरोसा करना बंद कर दें, तो इसका काम करना बंद क्यों हो जाएगा - जबकि काग़ज़ बिल्कुल वैसा ही रहता है?",
-              "image": { "alt": "हाथ में पकड़ा एक रुपये का नोट, बदलता हुआ भरोसा" },
+              "image": {
+                "alt": "हाथ में पकड़ा एक रुपये का नोट, बदलता हुआ भरोसा"
+              },
               "options": [
-                { "label": "यह पैसे की तरह काम करना बंद कर देगा, क्योंकि क़ीमत काग़ज़ नहीं, भरोसा देता है" },
-                { "label": "यह ठीक वैसे ही काम करेगा" },
-                { "label": "सरकार को इसे भारी बनाना होगा" }
+                {
+                  "label": "यह पैसे की तरह काम करना बंद कर देगा, क्योंकि क़ीमत काग़ज़ नहीं, भरोसा देता है"
+                },
+                {
+                  "label": "यह ठीक वैसे ही काम करेगा"
+                },
+                {
+                  "label": "सरकार को इसे भारी बनाना होगा"
+                }
               ],
               "hint": "काग़ज़ कभी नहीं बदलता। सोचिए काग़ज़ क्या नहीं है।"
             },
             {
               "prompt": "पैसे को बाद के लिए मूल्य जमा रखना है, और यह भी बताना है कि चीज़ें कितनी क़ीमती हैं। बहुत महँगाई के दौरान, इन दो कामों में से कौन सा पहले टूटता है, और क्यों?",
-              "image": { "alt": "बाईं से दाईं ओर बढ़ता एक लाइन चार्ट, महँगाई के साथ" },
+              "image": {
+                "alt": "बाईं से दाईं ओर बढ़ता एक लाइन चार्ट, महँगाई के साथ"
+              },
               "options": [
-                { "label": "मूल्य जमा रखना - क्योंकि रखा हुआ पैसा ख़रीद क्षमता खोता है, जबकि मापना रोज़ काम करता रहता है" },
-                { "label": "मूल्य मापना - क़ीमतें बेमानी हो जाती हैं" },
-                { "label": "दोनों ठीक एक ही रफ़्तार से टूटते हैं" }
+                {
+                  "label": "मूल्य जमा रखना - क्योंकि रखा हुआ पैसा ख़रीद क्षमता खोता है, जबकि मापना रोज़ काम करता रहता है"
+                },
+                {
+                  "label": "मूल्य मापना - क़ीमतें बेमानी हो जाती हैं"
+                },
+                {
+                  "label": "दोनों ठीक एक ही रफ़्तार से टूटते हैं"
+                }
               ],
               "hint": "क़ीमत आज की क़ीमत बता ही देती है। जो पैसा आज ख़र्च नहीं हो रहा, उसका क्या होता है?"
             },
             {
               "prompt": "क़ीमतें साल में 6% बढ़ती हैं। आप ₹1000 दराज़ में दो साल तक रखते हैं, एक साल नहीं। दूसरे साल के अंत में यह लगभग क्या ख़रीद सकता है?",
-              "image": { "alt": "दराज़ में रखे हज़ार रुपये, कैलेंडर पर दो साल गिने जा रहे" },
+              "image": {
+                "alt": "दराज़ में रखे हज़ार रुपये, कैलेंडर पर दो साल गिने जा रहे"
+              },
               "options": [
-                { "label": "लगभग ₹880 का सामान" },
-                { "label": "लगभग ₹940 का सामान" },
-                { "label": "लगभग ₹1000 का सामान" }
+                {
+                  "label": "लगभग ₹880 का सामान"
+                },
+                {
+                  "label": "लगभग ₹940 का सामान"
+                },
+                {
+                  "label": "लगभग ₹1000 का सामान"
+                }
               ],
               "hint": "दूसरे साल का घटाव पहले से सिकुड़ी हुई रक़म पर लगता है, मूल ₹1000 पर नहीं।"
             }
