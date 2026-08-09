@@ -20,6 +20,7 @@ import { dirname, join } from 'node:path'
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const MODULE_DIR = join(root, 'content', 'modules')
 const DICTIONARY = join(root, 'content', 'dictionary.json')
+const SCHEMES = join(root, 'content', 'schemes.json')
 const ICONS = join(root, 'src', 'components', 'icons', 'ConceptIcon.jsx')
 
 const EXPECTED_LEVELS = ['level-1', 'level-2', 'level-3']
@@ -40,6 +41,27 @@ if (iconNames.size === 0) fail('ConceptIcon.jsx', 'could not read any icon names
 const checkIcon = (where, name) => {
   if (!name) return fail(where, 'missing icon')
   if (!iconNames.has(name)) fail(where, `unknown icon "${name}"`)
+}
+
+// --- shared figures ---------------------------------------------------------
+// A lesson can write {figure.postMatricIncome} and have the value substituted
+// from schemes.json, so a number taught in a lesson and listed on the schemes
+// page cannot quietly disagree. A token with no matching figure would render
+// literally to a child, so it is an error here rather than a surprise there.
+let figureNames = new Set()
+try {
+  figureNames = new Set(Object.keys(JSON.parse(readFileSync(SCHEMES, 'utf8')).figures || {}))
+} catch {
+  fail('schemes.json', 'could not be read for the shared figures')
+}
+
+const checkFigures = (where, text) => {
+  if (typeof text !== 'string') return
+  for (const m of text.matchAll(/\{figure\.(\w+)\}/g)) {
+    if (!figureNames.has(m[1])) {
+      fail(where, `unknown figure "${m[1]}" - add it to "figures" in schemes.json`)
+    }
+  }
 }
 
 // --- modules ---------------------------------------------------------------
@@ -88,6 +110,7 @@ for (const file of files) {
     }
     if (block.summary && !Array.isArray(block.summary)) fail(at, '"summary" is not a list')
     if (Array.isArray(block.summary) && block.summary.length === 0) fail(at, 'empty summary')
+    for (const line of block.summary || []) checkFigures(`${at} summary`, line)
 
     // Stories are optional - the administrative modules deliberately have none
     // - but a half-written one would render as a heading over nothing.
@@ -117,6 +140,9 @@ for (const file of files) {
       else qIds.add(q.id)
 
       if (!q.prompt) fail(qAt, 'missing prompt')
+      checkFigures(qAt, q.prompt)
+      checkFigures(qAt, q.hint)
+      for (const o of q.options || []) checkFigures(qAt, o.label)
       if (q.image) {
         checkIcon(qAt + ' image', q.image.icon)
         if (!q.image.alt) fail(qAt, 'image has no alt text')

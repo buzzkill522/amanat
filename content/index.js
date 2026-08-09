@@ -142,6 +142,48 @@ export function hasTranslation(m, levelId) {
   return Boolean(m.levels[levelId]?.hi)
 }
 
+/**
+ * Replace `{figure.postMatricIncome}` with the value from schemes.json.
+ *
+ * A few numbers are taught in a lesson AND listed on the schemes page - the
+ * income limits, the 80U deductions. Written out twice they eventually
+ * disagree, and the one a family acts on is whichever they happened to read.
+ * Income limits are revised, so this is a matter of time rather than luck.
+ *
+ * The token form matches the `{placeholder}` syntax already used by the UI
+ * strings in i18n/strings.js, so there is one substitution idiom on the site
+ * rather than two.
+ *
+ * An unknown token is left visible rather than blanked, and check-content
+ * fails on it - a lesson that silently renders "an income under a year" is
+ * worse than one that renders an obvious `{figure.typo}` somebody fixes.
+ */
+export function withFigures(text) {
+  if (typeof text !== 'string') return text
+  return text.replace(/\{figure\.(\w+)\}/g, (match, name) => schemes.figures?.[name] ?? match)
+}
+
+function applyFigures(block) {
+  return {
+    ...block,
+    summary: block.summary?.map(withFigures),
+    story: block.story
+      ? { ...block.story, text: block.story.text.map(withFigures), moral: withFigures(block.story.moral) }
+      : block.story,
+    quiz: block.quiz
+      ? {
+          ...block.quiz,
+          questions: block.quiz.questions?.map((q) => ({
+            ...q,
+            prompt: withFigures(q.prompt),
+            hint: withFigures(q.hint),
+            options: q.options?.map((o) => ({ ...o, label: withFigures(o.label) })),
+          })),
+        }
+      : block.quiz,
+  }
+}
+
 /** Every module, in teaching order, with the content for one level merged in. */
 export function getModulesForLevel(levelId, lang = 'en') {
   return modules
@@ -157,7 +199,9 @@ export function getModulesForLevel(levelId, lang = 'en') {
         moduleTitle: meta.title,
         shortTitle: meta.shortTitle,
         translated: hasTranslation(m, levelId),
-        ...localizeLevelBlock(m.levels[levelId], lang),
+        // Figures last, so a Hindi retelling gets the same substitution the
+        // English one does rather than shipping a raw {figure.x} token.
+        ...applyFigures(localizeLevelBlock(m.levels[levelId], lang)),
       }
     })
 }

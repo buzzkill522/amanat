@@ -3,6 +3,15 @@
 
   "checkedOn": "August 2026",
 
+  "_figuresComment": "The handful of figures that appear in BOTH the schemes page and a lesson. Lesson JSON refers to these by token - {figure.postMatricIncome} - and content/index.js substitutes them, so a number that moves is corrected here once instead of in two files that drift apart silently. Only put a figure here if a lesson actually teaches it; everything else lives in the scheme entry that owns it. Deliberately NOT here: the ADIP device ceilings and the NHFDC rate, because neither was confirmed well enough to teach as fact.",
+  "figures": {
+    "benchmarkDisability": "40%",
+    "preMatricIncome": "₹2,50,000",
+    "postMatricIncome": "₹8,00,000",
+    "tax80U": "₹75,000",
+    "tax80USevere": "₹1,25,000"
+  },
+
   "groups": [
     { "id": "start", "label": "Start here", "accent": "clay" },
     { "id": "school", "label": "Money for school and college", "accent": "grow" },
