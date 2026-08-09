@@ -71,11 +71,11 @@
               },
               {
                 "icon": "coin",
-                "label": "₹35"
+                "label": "₹5"
               },
               {
                 "icon": "coin",
-                "label": "₹5"
+                "label": "₹35"
               }
             ],
             "correctIndex": 0,
@@ -90,15 +90,15 @@
             },
             "options": [
               {
-                "icon": "cross",
-                "label": "No - the total is ₹60, which is more than your ₹50"
-              },
-              {
                 "icon": "check",
                 "label": "Yes, exactly enough"
+              },
+              {
+                "icon": "cross",
+                "label": "No - the total is ₹60, which is more than your ₹50"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "Add all three prices before comparing to your money."
           },
           {
@@ -110,19 +110,19 @@
             },
             "options": [
               {
-                "icon": "warning",
-                "label": "The plan was not followed - writing it is not enough, you must stick to it"
+                "icon": "list",
+                "label": "You should have written a longer list"
               },
               {
                 "icon": "cross",
                 "label": "Budgets never actually help"
               },
               {
-                "icon": "list",
-                "label": "You should have written a longer list"
+                "icon": "warning",
+                "label": "The plan was not followed - writing it is not enough, you must stick to it"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "A budget only works if the spending matches the plan."
           }
         ]
@@ -189,7 +189,7 @@
             "options": [
               {
                 "icon": "coin",
-                "label": "₹70"
+                "label": "₹630"
               },
               {
                 "icon": "coin",
@@ -197,10 +197,10 @@
               },
               {
                 "icon": "coin",
-                "label": "₹630"
+                "label": "₹70"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Add both sources of income first, then subtract expenses."
           },
           {
@@ -212,19 +212,19 @@
             },
             "options": [
               {
+                "icon": "coin",
+                "label": "Income must double"
+              },
+              {
                 "icon": "cross",
                 "label": "Expenses must drop by at least ₹40, or income must rise by ₹40"
               },
               {
                 "icon": "check",
                 "label": "Nothing, ₹40 short is fine"
-              },
-              {
-                "icon": "coin",
-                "label": "Income must double"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "Find exactly how far below zero the plan is before deciding the fix."
           },
           {
@@ -236,19 +236,19 @@
             },
             "options": [
               {
-                "icon": "list",
-                "label": "There were expenses you did not write down in the budget"
-              },
-              {
                 "icon": "question",
                 "label": "Money disappears on its own sometimes"
+              },
+              {
+                "icon": "list",
+                "label": "There were expenses you did not write down in the budget"
               },
               {
                 "icon": "warning",
                 "label": "The budget was too generous"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "If the maths says ₹50 but reality says ₹0, something in the plan is missing."
           }
         ]
@@ -316,7 +316,7 @@
             "options": [
               {
                 "icon": "coin",
-                "label": "₹450"
+                "label": "₹300"
               },
               {
                 "icon": "coin",
@@ -324,10 +324,10 @@
               },
               {
                 "icon": "coin",
-                "label": "₹300"
+                "label": "₹450"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Wants get 30 percent. Find 30 percent of 1500."
           },
           {
@@ -339,19 +339,19 @@
             },
             "options": [
               {
-                "icon": "question",
-                "label": "Compare where the extra ₹120 actually went, and adjust either spending or the plan"
+                "icon": "toy",
+                "label": "Increase the wants percentage instead"
               },
               {
                 "icon": "cross",
                 "label": "Ignore it, tracking does not matter"
               },
               {
-                "icon": "toy",
-                "label": "Increase the wants percentage instead"
+                "icon": "question",
+                "label": "Compare where the extra ₹120 actually went, and adjust either spending or the plan"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Tracking exists to catch exactly this kind of gap between plan and reality."
           },
           {
@@ -363,19 +363,19 @@
             },
             "options": [
               {
-                "icon": "chart",
-                "label": "Adjust the percentages to fit their real life - the split is a guide, not a fixed rule"
+                "icon": "house",
+                "label": "They should stop paying rent"
               },
               {
                 "icon": "cross",
                 "label": "They are doing something wrong and must fit exactly 50%"
               },
               {
-                "icon": "house",
-                "label": "They should stop paying rent"
+                "icon": "chart",
+                "label": "Adjust the percentages to fit their real life - the split is a guide, not a fixed rule"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "The lesson says the numbers are a starting guide, not a law."
           }
         ]

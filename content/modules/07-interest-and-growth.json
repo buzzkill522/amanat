@@ -66,19 +66,19 @@
             },
             "options": [
               {
-                "icon": "growth",
-                "label": "Because the bank gets to use your money while it is there, and pays you for that"
-              },
-              {
                 "icon": "gift",
                 "label": "Because banks enjoy giving away money"
               },
               {
                 "icon": "star",
                 "label": "Because the government orders them to give gifts"
+              },
+              {
+                "icon": "growth",
+                "label": "Because the bank gets to use your money while it is there, and pays you for that"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Recall what the bank actually does with money while you are not using it."
           },
           {
@@ -90,19 +90,19 @@
             },
             "options": [
               {
-                "icon": "bank",
-                "label": "The bank account - only it pays interest on top of what you put in"
-              },
-              {
                 "icon": "piggy",
                 "label": "The piggy bank - it is safer so it grows more"
               },
               {
                 "icon": "question",
                 "label": "Both would have exactly ₹200"
+              },
+              {
+                "icon": "bank",
+                "label": "The bank account - only it pays interest on top of what you put in"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Only one of the two options ever adds anything extra."
           },
           {
@@ -114,19 +114,19 @@
             },
             "options": [
               {
-                "icon": "calendar",
-                "label": "The 12-month goal - interest needs time to add up meaningfully"
-              },
-              {
                 "icon": "shop",
                 "label": "The 1-month goal - interest is always the same regardless of time"
+              },
+              {
+                "icon": "calendar",
+                "label": "The 12-month goal - interest needs time to add up meaningfully"
               },
               {
                 "icon": "coin",
                 "label": "Neither - interest only applies to goals over ₹1000"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "Interest is small over a short time and adds up over a long time."
           }
         ]
@@ -198,11 +198,11 @@
               },
               {
                 "icon": "coin",
-                "label": "₹2050"
+                "label": "₹2500"
               },
               {
                 "icon": "coin",
-                "label": "₹2500"
+                "label": "₹2050"
               }
             ],
             "correctIndex": 0,
@@ -217,19 +217,19 @@
             },
             "options": [
               {
-                "icon": "growth",
-                "label": "A should prefer 9% (more earned); B should prefer 3% (less owed)"
-              },
-              {
                 "icon": "check",
                 "label": "Both should prefer 9%, since higher is always better"
               },
               {
                 "icon": "shield",
                 "label": "Both should prefer 3%, since lower is always safer"
+              },
+              {
+                "icon": "growth",
+                "label": "A should prefer 9% (more earned); B should prefer 3% (less owed)"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "A higher rate benefits whoever is receiving interest, and costs whoever is paying it."
           },
           {
@@ -241,19 +241,19 @@
             },
             "options": [
               {
+                "icon": "question",
+                "label": "Both amounts are called principal"
+              },
+              {
                 "icon": "coin",
                 "label": "₹800 is the principal; ₹40 is the interest earned"
               },
               {
                 "icon": "growth",
                 "label": "₹800 is the interest; ₹40 is the principal"
-              },
-              {
-                "icon": "question",
-                "label": "Both amounts are called principal"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "The principal is what you started with, before anything was added."
           }
         ]
@@ -321,19 +321,19 @@
             },
             "options": [
               {
-                "icon": "growth",
-                "label": "You earn 10% of ₹1100, not just of the original ₹1000"
+                "icon": "cross",
+                "label": "No further interest is earned after year one"
               },
               {
                 "icon": "coin",
                 "label": "You earn 10% of ₹1000 again, exactly the same as year one"
               },
               {
-                "icon": "cross",
-                "label": "No further interest is earned after year one"
+                "icon": "growth",
+                "label": "You earn 10% of ₹1100, not just of the original ₹1000"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Compound interest is paid on the new, larger total - not the original amount."
           },
           {
@@ -345,19 +345,19 @@
             },
             "options": [
               {
-                "icon": "calendar",
-                "label": "Person A - the extra 10 years lets compounding work for far longer, even saving less each month"
+                "icon": "question",
+                "label": "They will always end with exactly the same amount"
               },
               {
                 "icon": "coin",
                 "label": "Person B - saving twice as much each month always wins"
               },
               {
-                "icon": "question",
-                "label": "They will always end with exactly the same amount"
+                "icon": "calendar",
+                "label": "Person A - the extra 10 years lets compounding work for far longer, even saving less each month"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Compounding needs TIME above almost everything else, as the lesson stresses."
           },
           {
@@ -373,12 +373,12 @@
                 "label": "It grows faster in the second cycle, because interest is now charged on the first cycle's interest too"
               },
               {
-                "icon": "coin",
-                "label": "It grows by the same fixed amount each cycle"
-              },
-              {
                 "icon": "check",
                 "label": "It stops growing after the first cycle"
+              },
+              {
+                "icon": "coin",
+                "label": "It grows by the same fixed amount each cycle"
               }
             ],
             "correctIndex": 0,

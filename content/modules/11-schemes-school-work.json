@@ -60,12 +60,12 @@
                 "label": "Your cousin must keep repaying the loan; you never have to repay the scholarship"
               },
               {
-                "icon": "cross",
-                "label": "Both of you must repay eventually"
-              },
-              {
                 "icon": "coin",
                 "label": "Neither of you ever has to repay anything"
+              },
+              {
+                "icon": "cross",
+                "label": "Both of you must repay eventually"
               }
             ],
             "correctIndex": 0,
@@ -80,19 +80,19 @@
             },
             "options": [
               {
-                "icon": "check",
-                "label": "No - it is because of being Deaf, not because of exam marks"
+                "icon": "book",
+                "label": "It depends on which subject you are best at"
               },
               {
                 "icon": "star",
                 "label": "Yes, only top students ever qualify"
               },
               {
-                "icon": "book",
-                "label": "It depends on which subject you are best at"
+                "icon": "check",
+                "label": "No - it is because of being Deaf, not because of exam marks"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "The lesson is specific about what qualifies a student, and it is not about being top of the class."
           },
           {
@@ -104,19 +104,19 @@
             },
             "options": [
               {
-                "icon": "shield",
-                "label": "The UDID card"
+                "icon": "gift",
+                "label": "A birthday card"
               },
               {
                 "icon": "book",
                 "label": "A library card"
               },
               {
-                "icon": "gift",
-                "label": "A birthday card"
+                "icon": "shield",
+                "label": "The UDID card"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "It is the same card the previous lesson was entirely about."
           }
         ]
@@ -176,19 +176,19 @@
             },
             "options": [
               {
-                "icon": "check",
-                "label": "Post-Matric - Class XI is past the 'Matric' dividing line"
-              },
-              {
                 "icon": "cross",
                 "label": "They stay in Pre-Matric until Class XII"
+              },
+              {
+                "icon": "check",
+                "label": "Post-Matric - Class XI is past the 'Matric' dividing line"
               },
               {
                 "icon": "question",
                 "label": "Neither applies once you pass Class X"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "The dividing line is exactly between Class X and Class XI."
           },
           {
@@ -204,12 +204,12 @@
                 "label": "Not under the standard rules - all conditions, including income, usually need to be met"
               },
               {
-                "icon": "check",
-                "label": "Yes, disability percentage alone is enough"
-              },
-              {
                 "icon": "shield",
                 "label": "Yes, since they have a UDID card"
+              },
+              {
+                "icon": "check",
+                "label": "Yes, disability percentage alone is enough"
               }
             ],
             "correctIndex": 0,
@@ -228,12 +228,12 @@
                 "label": "PM-DAKSH for training, Free Coaching for the exam, National Fellowship for the PhD"
               },
               {
-                "icon": "check",
-                "label": "All three should apply to PM-DAKSH"
-              },
-              {
                 "icon": "book",
                 "label": "Free Coaching covers all three needs"
+              },
+              {
+                "icon": "check",
+                "label": "All three should apply to PM-DAKSH"
               }
             ],
             "correctIndex": 0,
@@ -294,19 +294,19 @@
             },
             "options": [
               {
-                "icon": "shield",
-                "label": "Money you are owed is meant to be paid into an account you fully control, not one you share - the same point made about bank accounts and funds"
+                "icon": "question",
+                "label": "It is only a problem if the relative is unemployed"
               },
               {
                 "icon": "check",
                 "label": "It is not a problem at all, joint accounts work identically"
               },
               {
-                "icon": "question",
-                "label": "It is only a problem if the relative is unemployed"
+                "icon": "shield",
+                "label": "Money you are owed is meant to be paid into an account you fully control, not one you share - the same point made about bank accounts and funds"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "This connects directly to why the course insisted on your OWN account, several lessons ago."
           },
           {
@@ -318,19 +318,19 @@
             },
             "options": [
               {
+                "icon": "cross",
+                "label": "Neither scheme applies to starting a business"
+              },
+              {
                 "icon": "check",
                 "label": "No - a scholarship is for study; NHFDC's concessional loan is designed for self-employment like this"
               },
               {
                 "icon": "book",
                 "label": "Yes, scholarships also fund businesses"
-              },
-              {
-                "icon": "cross",
-                "label": "Neither scheme applies to starting a business"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "One of the two schemes is specifically about study costs, and the other is about work and self-employment."
           },
           {
@@ -342,19 +342,19 @@
             },
             "options": [
               {
-                "icon": "piggy",
-                "label": "Option B - money that is saved or invested can still exist and possibly grow a year later; fully spent money is gone"
-              },
-              {
                 "icon": "shop",
                 "label": "Option A - spending it all now means you enjoyed it fully"
+              },
+              {
+                "icon": "piggy",
+                "label": "Option B - money that is saved or invested can still exist and possibly grow a year later; fully spent money is gone"
               },
               {
                 "icon": "question",
                 "label": "Both options leave you with exactly the same amount a year later"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "The lesson's very last idea is about what happens to money depending on whether it is spent or kept."
           }
         ]

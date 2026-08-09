@@ -67,19 +67,19 @@
             },
             "options": [
               {
-                "icon": "wallet",
-                "label": "Your friend's - a bank keeps a written record, a school bag does not"
-              },
-              {
                 "icon": "bank",
                 "label": "Yours - banks can lose records too"
               },
               {
                 "icon": "question",
                 "label": "Both are equally at risk"
+              },
+              {
+                "icon": "wallet",
+                "label": "Your friend's - a bank keeps a written record, a school bag does not"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Think about what a bank does that a bag cannot."
           },
           {
@@ -91,19 +91,19 @@
             },
             "options": [
               {
-                "icon": "check",
-                "label": "You can withdraw it - it was always yours, the bank was only keeping it"
+                "icon": "cross",
+                "label": "You must ask the bank's permission every time"
               },
               {
                 "icon": "lock",
                 "label": "You cannot get it back until a year passes"
               },
               {
-                "icon": "cross",
-                "label": "You must ask the bank's permission every time"
+                "icon": "check",
+                "label": "You can withdraw it - it was always yours, the bank was only keeping it"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "The bank keeps your money, but never takes ownership of it."
           },
           {
@@ -115,19 +115,19 @@
             },
             "options": [
               {
-                "icon": "bank",
-                "label": "You do - the bank pays a little extra for keeping your money there"
-              },
-              {
                 "icon": "house",
                 "label": "Your cousin does - boxes are safer"
+              },
+              {
+                "icon": "bank",
+                "label": "You do - the bank pays a little extra for keeping your money there"
               },
               {
                 "icon": "question",
                 "label": "You will have exactly the same amount"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "Only one of the two places pays anything extra at all."
           }
         ]
@@ -195,19 +195,19 @@
             },
             "options": [
               {
-                "icon": "check",
-                "label": "They must wait until they are 10 - that is the earliest age allowed"
-              },
-              {
                 "icon": "cross",
                 "label": "They can open one today, no age limit applies"
+              },
+              {
+                "icon": "check",
+                "label": "They must wait until they are 10 - that is the earliest age allowed"
               },
               {
                 "icon": "house",
                 "label": "Only their parents can ever have an account"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "Recall the exact minimum age given in the lesson."
           },
           {
@@ -219,19 +219,19 @@
             },
             "options": [
               {
+                "icon": "cross",
+                "label": "Neither works with only ₹80"
+              },
+              {
                 "icon": "check",
                 "label": "The basic account - no minimum balance means ₹80 or even ₹0 is fine"
               },
               {
                 "icon": "warning",
                 "label": "The ₹500-minimum one - more rules mean more safety"
-              },
-              {
-                "icon": "cross",
-                "label": "Neither works with only ₹80"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "One of the two options has no floor at all."
           },
           {
@@ -243,19 +243,19 @@
             },
             "options": [
               {
+                "icon": "cross",
+                "label": "Uncles cannot legally hold money for nephews"
+              },
+              {
                 "icon": "shield",
                 "label": "Money in someone else's name is not fully under your control, even if it is meant for you"
               },
               {
                 "icon": "check",
                 "label": "This is not a problem, since the money is still technically yours"
-              },
-              {
-                "icon": "cross",
-                "label": "Uncles cannot legally hold money for nephews"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "Ask who can actually walk into the bank and access the money right now."
           }
         ]
@@ -324,19 +324,19 @@
             },
             "options": [
               {
-                "icon": "warning",
-                "label": "About ₹40 of buying power"
-              },
-              {
                 "icon": "growth",
                 "label": "About ₹120 of buying power gained"
+              },
+              {
+                "icon": "warning",
+                "label": "About ₹40 of buying power"
               },
               {
                 "icon": "check",
                 "label": "No change at all"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "Find the gap between the two percentages, then apply it to ₹2000."
           },
           {
@@ -348,19 +348,19 @@
             },
             "options": [
               {
+                "icon": "cross",
+                "label": "Accept the refusal, since the clerk has final say"
+              },
+              {
                 "icon": "shield",
                 "label": "Ask for the branch manager; if that fails, the bank's grievance officer; if that fails, the RBI ombudsman"
               },
               {
                 "icon": "warning",
                 "label": "Go straight to the RBI ombudsman first"
-              },
-              {
-                "icon": "cross",
-                "label": "Accept the refusal, since the clerk has final say"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "The lesson gives three steps, and they have a specific order - start local, escalate outward."
           },
           {
@@ -372,19 +372,19 @@
             },
             "options": [
               {
-                "icon": "handcoin",
-                "label": "She does not fully control money that is legally hers, the same problem as with a scholarship paid to someone else"
+                "icon": "star",
+                "label": "This is required by law and cannot be changed"
               },
               {
                 "icon": "check",
                 "label": "No risk - pensions are always safe wherever they land"
               },
               {
-                "icon": "star",
-                "label": "This is required by law and cannot be changed"
+                "icon": "handcoin",
+                "label": "She does not fully control money that is legally hers, the same problem as with a scholarship paid to someone else"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Apply the same reasoning used earlier about scholarships and funds needing your own name."
           }
         ]

@@ -165,6 +165,51 @@ for (const file of files) {
   }
 }
 
+// --- where the right answer sits --------------------------------------------
+// Every question on the site once had its answer at index 0 - all 99 of them.
+// A child who clicked the first option every time scored full marks and
+// unlocked the whole course without reading a word, and because finishing the
+// quiz is what opens the next lesson, nothing else caught it.
+//
+// This guards the fix. The floor is deliberately loose: real quizzes cluster a
+// bit by chance, and a check that fires on ordinary variation is one people
+// learn to silence. It fires on a pattern a child could actually exploit.
+{
+  const dist = new Map()
+  let total = 0
+  for (const file of files) {
+    let mod
+    try {
+      mod = JSON.parse(readFileSync(join(MODULE_DIR, file), 'utf8'))
+    } catch {
+      continue
+    }
+    for (const block of Object.values(mod.levels || {})) {
+      for (const q of block?.quiz?.questions || []) {
+        if (typeof q.correctIndex !== 'number') continue
+        dist.set(q.correctIndex, (dist.get(q.correctIndex) || 0) + 1)
+        total++
+      }
+    }
+  }
+  if (total >= 20) {
+    const [topIndex, topCount] = [...dist.entries()].sort((a, b) => b[1] - a[1])[0]
+    const share = topCount / total
+    const spread = [...dist.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .map(([i, n]) => `${i}:${n}`)
+      .join('  ')
+    console.log(`\nAnswer positions across ${total} questions - ${spread}`)
+    if (share > 0.6) {
+      fail(
+        'quiz answers',
+        `${(share * 100).toFixed(0)}% of correct answers sit at index ${topIndex}. ` +
+          'Guessing one position would pass the course - shuffle the options.',
+      )
+    }
+  }
+}
+
 // --- dictionary ------------------------------------------------------------
 let dict
 try {

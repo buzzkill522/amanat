@@ -56,19 +56,19 @@
             },
             "options": [
               {
+                "icon": "cross",
+                "label": "Not being allowed to enrol in a new school at all"
+              },
+              {
                 "icon": "shield",
                 "label": "Having to explain and prove that you are Deaf all over again in the new place"
               },
               {
                 "icon": "coin",
                 "label": "Having to pay extra fees in the new state"
-              },
-              {
-                "icon": "cross",
-                "label": "Not being allowed to enrol in a new school at all"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "The card's whole purpose is to avoid repeating one particular kind of explanation."
           },
           {
@@ -80,19 +80,19 @@
             },
             "options": [
               {
-                "icon": "question",
-                "label": "Because they may not know the card exists at all, so they never apply for it"
-              },
-              {
                 "icon": "coin",
                 "label": "Because the card actually costs too much for most families"
               },
               {
                 "icon": "cross",
                 "label": "Because only certain families are allowed to apply"
+              },
+              {
+                "icon": "question",
+                "label": "Because they may not know the card exists at all, so they never apply for it"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "The lesson names one specific reason many families miss out, and it has nothing to do with cost."
           },
           {
@@ -104,19 +104,19 @@
             },
             "options": [
               {
-                "icon": "warning",
-                "label": "The real process is free, and it requires a government doctor, not a shortcut from a stranger"
-              },
-              {
                 "icon": "check",
                 "label": "Nothing is wrong, fast-tracking is allowed for a fee"
+              },
+              {
+                "icon": "warning",
+                "label": "The real process is free, and it requires a government doctor, not a shortcut from a stranger"
               },
               {
                 "icon": "coin",
                 "label": "Only the fee is suspicious, the no-doctor part is fine"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "hint": "Compare this offer against both the cost and the correct people involved, from the lesson."
           }
         ]
@@ -179,12 +179,12 @@
                 "label": "40% is usually the benchmark needed, so 25% may not qualify them"
               },
               {
-                "icon": "check",
-                "label": "25% is more than enough, since any percentage qualifies"
-              },
-              {
                 "icon": "question",
                 "label": "The percentage does not matter at all for a UDID card"
+              },
+              {
+                "icon": "check",
+                "label": "25% is more than enough, since any percentage qualifies"
               }
             ],
             "correctIndex": 0,
@@ -199,19 +199,19 @@
             },
             "options": [
               {
-                "icon": "medicine",
-                "label": "ADIP covers the hearing aid (equipment); a disability pension covers the monthly amount (ongoing support)"
+                "icon": "bank",
+                "label": "A disability pension pays for equipment, not monthly support"
               },
               {
                 "icon": "check",
                 "label": "ADIP covers both needs entirely on its own"
               },
               {
-                "icon": "bank",
-                "label": "A disability pension pays for equipment, not monthly support"
+                "icon": "medicine",
+                "label": "ADIP covers the hearing aid (equipment); a disability pension covers the monthly amount (ongoing support)"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "One scheme is about a one-time piece of equipment; the other is about a repeating monthly payment."
           },
           {
@@ -223,19 +223,19 @@
             },
             "options": [
               {
-                "icon": "list",
-                "label": "No - qualifying is not enough; someone must actively apply for it to ever arrive"
-              },
-              {
                 "icon": "check",
                 "label": "Yes, the government tracks who qualifies and pays automatically"
               },
               {
                 "icon": "calendar",
                 "label": "Only if they wait exactly one year"
+              },
+              {
+                "icon": "list",
+                "label": "No - qualifying is not enough; someone must actively apply for it to ever arrive"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "The lesson makes a point of saying nothing here happens by itself."
           }
         ]
@@ -295,19 +295,19 @@
             },
             "options": [
               {
-                "icon": "list",
-                "label": "The father's return, under Section 80DD, since he supports a dependant with a disability"
-              },
-              {
                 "icon": "coin",
                 "label": "The daughter's return, under Section 80U, regardless of who supports her"
               },
               {
                 "icon": "check",
                 "label": "Both returns can claim the full deduction separately"
+              },
+              {
+                "icon": "list",
+                "label": "The father's return, under Section 80DD, since he supports a dependant with a disability"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "80U is for the disabled person themselves if they have income; 80DD is for whoever supports a dependant."
           },
           {
@@ -319,19 +319,19 @@
             },
             "options": [
               {
-                "icon": "question",
-                "label": "People likely do not know it exists or forget to claim it - not that it is hard to prove"
-              },
-              {
                 "icon": "list",
                 "label": "It is missed because the paperwork is too difficult"
               },
               {
                 "icon": "warning",
                 "label": "It is missed because receipts get lost"
+              },
+              {
+                "icon": "question",
+                "label": "People likely do not know it exists or forget to claim it - not that it is hard to prove"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "If no receipts are needed, difficulty of proof cannot be the reason it gets missed."
           },
           {
@@ -343,19 +343,19 @@
             },
             "options": [
               {
-                "icon": "warning",
-                "label": "Most disability-linked schemes expect the certificate and UDID first - skipping them is likely to block the application"
+                "icon": "question",
+                "label": "The order does not matter for health schemes specifically"
               },
               {
                 "icon": "check",
                 "label": "Nothing will go wrong, aadhaar alone is always enough"
               },
               {
-                "icon": "question",
-                "label": "The order does not matter for health schemes specifically"
+                "icon": "warning",
+                "label": "Most disability-linked schemes expect the certificate and UDID first - skipping them is likely to block the application"
               }
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "hint": "Recall the exact three-step order the lesson insists on, and what usually comes first."
           }
         ]
