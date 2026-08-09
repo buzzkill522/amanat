@@ -1,22 +1,34 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, BookOpen, EarOff, Hand, Subtitles } from 'lucide-react'
+import Logomark from '@/components/icons/Logomark.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { signLabel, signShort } from '@/config/site.js'
 
 /**
  * The cover of the site: the first screen a child sees.
  *
- * One column, centred, and nothing in it that is not read. Two rules shaped
- * what is left.
+ * Two columns, and the right one is the point. This used to be a single
+ * centred column of text - eyebrow, heading, paragraph, chips, buttons, 650px
+ * of it - on a site whose whole promise is "money lessons you can see". There
+ * was nothing to look at. A page can argue it is visual or it can be visual,
+ * and only one of those survives a glance.
  *
- *   1. Nothing here is carried by sound, and nothing by motion either. The
- *      only animation is a staggered fade-and-lift on each block, which is
- *      decorative - if it never runs the cover reads exactly the same, and
- *      index.css lands reduced-motion readers on the finished state.
- *   2. The colours come from the palette in tailwind.config.js, where each one
- *      carries its measured contrast ratio. This panel is light: ink on a
- *      surface-to-paper gradient at 15.7:1, with rust for the eyebrow at 7.0:1
- *      and the pale accent chips keeping their dark ink.
+ * The mark carries that weight because it already means the right thing: an
+ * eye with a rupee for a pupil, which is the tagline drawn rather than
+ * written. At 32px in the header nobody can read the idea. Large enough and it
+ * reads instantly, in any language, to a child who cannot yet read either.
+ *
+ * Three rules that survived the rebuild:
+ *
+ *   1. Nothing here is carried by sound, and nothing by motion. The entrance
+ *      is one fade on the whole cover rather than five staggered ones - a
+ *      cascade of delays is the house style of generated pages, and it made
+ *      this look like one. If it never runs the cover reads exactly the same,
+ *      and index.css lands reduced-motion readers on the finished state.
+ *   2. Colours come from palette.js, where every pairing carries a measured
+ *      ratio. The mark sits on clay-100 in clay-600, an audited pair.
+ *   3. The heading keeps leading-[1.2]. Devanagari stacks matras above and
+ *      below the line and the two lines collide at anything tighter.
  */
 
 const PROMISES = [
@@ -39,81 +51,76 @@ export default function CoverHero() {
       // wider than the content box when a classic scrollbar is present, which
       // `overflow-x: clip` on <html> absorbs; only the panel is trimmed, never
       // text (WCAG 1.4.10 Reflow).
-      className="relative -mt-8 isolate mx-[calc(50%-50vw)] overflow-hidden border-b border-brand-100 bg-gradient-to-b from-surface via-surface to-paper px-6 pb-16 pt-16 sm:pb-24 sm:pt-24"
+      className="relative -mt-8 isolate mx-[calc(50%-50vw)] animate-riseIn overflow-hidden border-b border-brand-100 bg-gradient-to-b from-surface to-paper px-6 pb-14 pt-14 sm:pb-20 sm:pt-20"
     >
-      {/* A hatch, fading out downwards. The same drawn-on-paper motif as the
-          grain on <body>, just large enough to see. Decorative and inert. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.5]"
-        style={{
-          backgroundImage:
-            // `muted` at 5%, said through the palette variable rather than
-            // copied as an rgba - so the hatch is dark strokes on a light page
-            // and light strokes on a dark one, without a second definition.
-            'repeating-linear-gradient(-45deg, rgb(var(--c-muted) / 0.05) 0 1px, transparent 1px 11px)',
-          maskImage: 'linear-gradient(to bottom, #000 0%, transparent 72%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, #000 0%, transparent 72%)',
-        }}
-      />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
+        {/* ------------------------------------------------------------ words */}
+        <div className="max-w-2xl text-center lg:text-left">
+          <span className="inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.14em] text-clay-600">
+            <Hand className="h-5 w-5" aria-hidden="true" />
+            {t('cover.badge', signVars)}
+          </span>
 
-      <div className="relative mx-auto max-w-3xl text-center">
-        {/* The eyebrow is the one place the accent appears up here - small,
-            rust, and the only saturated thing on the screen. */}
-        <span className="inline-flex animate-riseIn items-center gap-2 text-sm font-extrabold uppercase tracking-[0.14em] text-clay-600">
-          <Hand className="h-5 w-5" aria-hidden="true" />
-          {t('cover.badge', signVars)}
-        </span>
+          <h1
+            id="cover-heading"
+            className="mt-5 text-4xl font-extrabold leading-[1.2] text-ink sm:text-6xl"
+          >
+            <span className="block">{t('cover.title1')}</span>
+            <span className="block">{t('cover.title2')}</span>
+          </h1>
 
-        <h1
-          id="cover-heading"
-          // 1.2 rather than 1.1: Devanagari stacks matras above and below the
-          // line, and at this size the two lines collide without the extra.
-          className="mt-6 text-4xl font-extrabold leading-[1.2] text-ink sm:text-6xl"
-        >
-          <span className="block animate-riseIn [animation-delay:90ms]">{t('cover.title1')}</span>
-          <span className="block animate-riseIn [animation-delay:180ms]">{t('cover.title2')}</span>
-        </h1>
+          <p className="mt-5 text-lg leading-relaxed text-muted sm:text-xl">{t('cover.lead')}</p>
 
-        <p className="mx-auto mt-5 max-w-2xl animate-riseIn text-lg leading-relaxed text-muted [animation-delay:240ms] sm:text-xl">
-          {t('cover.lead')}
-        </p>
-
-        <ul className="mt-7 flex animate-riseIn flex-wrap justify-center gap-2 [animation-delay:300ms]">
-          {PROMISES.map(({ icon: Icon, key, tone }) => (
-            <li
-              key={key}
-              className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-extrabold ${tone}`}
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start">
+            {/* /lessons, not an in-page anchor: the level picker used to live on
+                this page too, which meant the same choice ("which level?") had
+                two different places to make it. One page owns it now. */}
+            <Link to="/lessons" className="btn group bg-ink text-surface hover:bg-brand-700 sm:text-lg">
+              {t('cover.cta.start')}
+              <ArrowRight
+                className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </Link>
+            <Link
+              to="/dictionary"
+              className="btn border border-brand-400 text-ink hover:bg-brand-50 sm:text-lg"
             >
-              <Icon className="h-5 w-5" aria-hidden="true" />
-              {t(key, signVars)}
-            </li>
-          ))}
-        </ul>
+              <BookOpen className="h-5 w-5" aria-hidden="true" />
+              {t('cover.cta.dictionary')}
+            </Link>
+          </div>
+        </div>
 
-        <div className="mt-9 flex animate-riseIn flex-col items-stretch justify-center gap-3 [animation-delay:360ms] sm:flex-row">
-          {/* /lessons, not an in-page anchor: the level picker used to live on
-              this page too, which meant the same choice ("which level?") had
-              two different places to make it. One page owns it now. */}
-          <Link
-            to="/lessons"
-            className="btn group bg-ink text-surface hover:bg-brand-700 sm:text-lg"
-          >
-            {t('cover.cta.start')}
-            <ArrowRight
-              className="h-5 w-5 transition-transform group-hover:translate-x-1"
-              aria-hidden="true"
+        {/* ----------------------------------------------------------- picture */}
+        {/* Ordered first on a narrow screen so the very top of the page is the
+            drawing rather than a wall of type - a child who cannot read the
+            heading still gets something. On a wide screen the grid puts it
+            back on the right, beside the words. */}
+        <div className="order-first lg:order-none">
+          <div className="mx-auto flex aspect-square w-full max-w-[19rem] items-center justify-center rounded-[2.5rem] border-2 border-clay-500 bg-clay-100 p-8 sm:max-w-sm">
+            <Logomark
+              className="h-full w-full text-clay-600"
+              title={t('cover.markAlt')}
             />
-          </Link>
-          <Link
-            to="/dictionary"
-            className="btn border border-brand-400 text-ink hover:bg-brand-50 sm:text-lg"
-          >
-            <BookOpen className="h-5 w-5" aria-hidden="true" />
-            {t('cover.cta.dictionary')}
-          </Link>
+          </div>
         </div>
       </div>
+
+      {/* The three promises, full width under both columns. They are the
+          shortest true statement of what this site is, so they get their own
+          line rather than being tucked into the text column. */}
+      <ul className="relative mx-auto mt-12 flex max-w-6xl flex-wrap justify-center gap-2 lg:justify-start">
+        {PROMISES.map(({ icon: Icon, key, tone }) => (
+          <li
+            key={key}
+            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-extrabold ${tone}`}
+          >
+            <Icon className="h-5 w-5" aria-hidden="true" />
+            {t(key, signVars)}
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
