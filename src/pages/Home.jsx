@@ -48,17 +48,21 @@ const CLAIMS = [
 /**
  * A section's heading block.
  *
- * `align` exists because every section on this page used to be centred with an
- * eyebrow above it, six times in a row. Uniform centring is one of the things
- * that makes a page read as generated rather than designed - the eye finds no
- * rhythm, because every block begins the same way. Left-aligned sections now
- * alternate with centred ones, and `eyebrow` is optional so a section can start
- * on its heading instead.
+ * Left-aligned, always. It used to centre by default, and a later pass left
+ * some sections centred while moving others left, aiming for rhythm. Measured,
+ * that produced three different left edges down one page - 72px for the plain
+ * sections, 296px for every centred heading, and a third for the full-bleed
+ * bands. The effect was not rhythm; it was text that looked like it had landed
+ * at random.
+ *
+ * One edge for every heading now. Variety comes from what a section holds - a
+ * list, a grid, a tinted band - rather than from where its first word starts.
+ * `max-w-2xl` still caps the prose so a line never runs the full column width,
+ * which limits line length without moving the left edge.
  */
-function SectionHead({ eyebrow, heading, lead, id, tone = 'text-clay-600', align = 'center' }) {
-  const centred = align === 'center'
+function SectionHead({ eyebrow, heading, lead, id, tone = 'text-clay-600' }) {
   return (
-    <div className={centred ? 'mx-auto max-w-2xl space-y-3 text-center' : 'max-w-2xl space-y-3'}>
+    <div className="max-w-2xl space-y-3">
       {eyebrow && (
         <p className={`text-sm font-bold uppercase tracking-[0.14em] ${tone}`}>{eyebrow}</p>
       )}
@@ -341,7 +345,7 @@ export default function Home() {
             is the single most recognisable "generated page" gesture, and it
             delays the one thing this section exists to show: the whole course
             at a glance. */}
-        <ol className="mx-auto mt-14 grid max-w-5xl gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-14 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {modules.map((m, i) => {
             const meta = moduleMeta(m, lang)
             return (
@@ -381,9 +385,9 @@ export default function Home() {
           that is for explaining. */}
       <section
         aria-labelledby="claim-heading"
-        className="relative mx-[calc(50%-50vw)] border-y border-brand-100 bg-brand-50 px-6 py-14"
+        className="relative mx-[calc(50%-50vw)] border-y border-brand-100 bg-brand-50 py-14"
       >
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto w-full max-w-6xl px-4">
           <div className="max-w-2xl">
             <h2 id="claim-heading" className="text-2xl font-extrabold leading-tight text-ink">
               {t('home.claim.heading')}
@@ -438,7 +442,6 @@ export default function Home() {
             eyebrow={t('home.words.eyebrow')}
             heading={t('home.words.heading', { count: dictionary.entries.length })}
             lead={t('home.words.lead')}
-            align="start"
           />
           <Link to="/dictionary" className="btn-secondary shrink-0">
             <BookOpen className="h-5 w-5" aria-hidden="true" />
@@ -472,7 +475,7 @@ export default function Home() {
         // than leaving a strip of paper between two dark blocks. It needs the
         // `!` because `space-y-*` on the parent sets margin-bottom:0 on every
         // child at a higher specificity, which silently eats a plain -mb-8.
-        className="relative !-mb-8 mx-[calc(50%-50vw)] overflow-hidden bg-stage-deep px-6 py-20 text-center sm:py-24"
+        className="relative !-mb-8 mx-[calc(50%-50vw)] overflow-hidden bg-stage-deep py-20 text-center sm:py-24"
       >
         {/* A single warm glow off one corner, so the dark band has a light
             source rather than reading as a flat rectangle. Faint enough that
@@ -490,7 +493,7 @@ export default function Home() {
           }}
         />
 
-        <Reveal className="relative mx-auto max-w-2xl space-y-6">
+        <Reveal className="relative mx-auto w-full max-w-2xl space-y-6 px-4">
           <h2 id="cta-heading" className="text-3xl font-extrabold text-stage-ink sm:text-4xl">
             {t('home.cta.heading')}
           </h2>

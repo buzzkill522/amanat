@@ -51,9 +51,14 @@ export default function CoverHero() {
       // wider than the content box when a classic scrollbar is present, which
       // `overflow-x: clip` on <html> absorbs; only the panel is trimmed, never
       // text (WCAG 1.4.10 Reflow).
-      className="relative -mt-8 isolate mx-[calc(50%-50vw)] animate-riseIn overflow-hidden border-b border-brand-100 bg-gradient-to-b from-surface to-paper px-6 pb-14 pt-14 sm:pb-20 sm:pt-20"
+      // No horizontal padding here. A full-bleed band that pads itself and
+      // then centres a max-width box inside lands on a different left edge
+      // from <main>, which pads by 4. The page then has two left margins and
+      // the text reads as misaligned all the way down. Padding lives on the
+      // inner container instead, matching <main> exactly: max-w-6xl px-4.
+      className="relative -mt-8 isolate mx-[calc(50%-50vw)] animate-riseIn overflow-hidden border-b border-brand-100 bg-gradient-to-b from-surface to-paper pb-14 pt-14 sm:pb-20 sm:pt-20"
     >
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
         {/* ------------------------------------------------------------ words */}
         <div className="max-w-2xl text-center lg:text-left">
           <span className="inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.14em] text-clay-600">
@@ -110,7 +115,7 @@ export default function CoverHero() {
       {/* The three promises, full width under both columns. They are the
           shortest true statement of what this site is, so they get their own
           line rather than being tucked into the text column. */}
-      <ul className="relative mx-auto mt-12 flex max-w-6xl flex-wrap justify-center gap-2 lg:justify-start">
+      <ul className="relative mx-auto mt-12 flex w-full max-w-6xl flex-wrap justify-center gap-2 px-4 lg:justify-start">
         {PROMISES.map(({ icon: Icon, key, tone }) => (
           <li
             key={key}
