@@ -357,6 +357,160 @@ const en = {
   'schemes.courseCta': 'Go to the lessons',
   'schemes.disclaimer':
     'Rules and amounts change, and most of these are revised every year. Every figure here was checked in {when} and carries the source it came from - check it against that source before acting on it. Nothing here is financial or legal advice, and nobody who wrote it is a licensed adviser or a lawyer.',
+
+  // ------------------------------------------------------------ teachers page
+  'teachers.pageTitle': 'For parents and teachers',
+  'teachers.heading': 'For parents and teachers',
+  'teachers.lead':
+    '{site} teaches money skills to Deaf and Hard-of-Hearing children. The lessons are sorted by difficulty rather than by age, so place a child by what they can read and reason with, not by the year they were born. There is no sign-up and no login. Nothing a child does here leaves their device.',
+
+  'teachers.use.heading': 'How to use it in a lesson',
+  'teachers.use.step1':
+    'Pick a level from the Lessons tab. The eleven topics stay the same at every level; the wording, the maths and how much is left for the child to work out change. A child who finishes Level 1 can climb, and one who is stuck can drop a level without being told they are in the wrong age group.',
+  'teachers.use.step2':
+    'Play the video with captions on. The transcript beside the video can be projected or printed for the class.',
+  'teachers.use.step3':
+    'Pause after the summary and ask the class to sign back one sentence in their own words.',
+  'teachers.use.step4':
+    'Let each child do the picture quiz on their own device. A wrong answer gives a hint and lets them retry, so nobody is stuck.',
+  'teachers.use.step5':
+    'Finishing the quiz opens the next lesson on that device automatically - there is nothing to click afterwards.',
+
+  'teachers.topics.heading': 'The eleven topics',
+  'teachers.topics.lead': 'Each topic is written three times, once at each level of difficulty.',
+  'teachers.topics.caption': 'Lesson topics and the levels they are written for',
+  'teachers.topics.colTopic': 'Topic',
+  'teachers.topics.available': 'Available',
+  'teachers.topics.notWritten': 'Not written yet',
+
+  'teachers.sign.heading': 'About the {sign} videos',
+  'teachers.sign.reserved':
+    'Every lesson reserves a panel for a signed interpretation, and every dictionary word reserves space for a short signed clip. Where a clip has not been filmed yet, the space says so plainly rather than hiding.',
+  'teachers.sign.regional':
+    'Sign language is regional. These lessons are written for {sign}. If you teach in another sign language, the interpreter clips can be swapped without changing any of the written content.',
+  'teachers.sign.allDone': 'All {total} dictionary words have a signed clip.',
+  'teachers.sign.someDone':
+    '{done} of {total} dictionary words have a signed clip so far. The rest show a labelled space until they are filmed.',
+
+  'teachers.settings.heading': 'Settings on this device',
+  'teachers.settings.unlockTitle': 'Open every lesson',
+  'teachers.settings.unlockText':
+    'Lessons normally open one at a time. Turn this on to jump to any topic.',
+  'teachers.progress.heading': 'Progress on this device',
+  'teachers.progress.line': '{label}: {done} of {total} lessons done',
+  'teachers.progress.save': 'Save progress to a file',
+  'teachers.progress.load': 'Load progress from a file',
+  'teachers.progress.replaceAsk':
+    'Replace progress on this device with {name}? Progress currently on this device will be gone.',
+  'teachers.progress.replaceYes': 'Yes, replace it',
+  'teachers.progress.replaceNo': "No, keep this device's progress",
+  'teachers.progress.errParse': "That file isn't a progress file - it couldn't be read as one at all.",
+  'teachers.progress.errFormat':
+    "That file doesn't match a progress file Amanat recognises. It may be from a much older version, or a different file entirely.",
+  'teachers.progress.dismiss': 'Dismiss',
+  'teachers.progress.eraseAsk': 'Erase all progress on this device?',
+  'teachers.progress.eraseYes': 'Yes, erase it',
+  'teachers.progress.eraseNo': 'No, keep it',
+  'teachers.progress.erase': 'Erase all progress',
+
+  'teachers.privacy.heading': 'Privacy',
+  'teachers.privacy.text':
+    'There are no accounts and no analytics. Progress is stored in the browser on the device itself. Clearing the browser data clears the progress. Nothing is sent anywhere.',
+  'teachers.privacy.link': 'Read the accessibility statement',
+
+  // -------------------------------------------------------- accessibility page
+  // The WCAG criterion references (the "1.4.3 Contrast (Minimum)" strings) are
+  // deliberately NOT translated. They are formal identifiers into an English
+  // standard, quoted the same way in conformance claims worldwide, and an
+  // evaluator checking this page needs the string they can search for.
+  'a11y.pageTitle': 'Accessibility statement',
+  'a11y.heading': 'Accessibility statement',
+  'a11y.lead':
+    '{site} is built for children who are Deaf or Hard of Hearing. It aims to meet WCAG 2.2 Level AA, and follows several Level AAA criteria where they matter most for this audience.',
+  'a11y.reviewed': 'Last reviewed: 1 August 2026.',
+
+  'a11y.sound.group': 'Sound is never the only channel',
+  'a11y.sound.p1':
+    'Every lesson video carries at least one caption track, and a second "simple words" track where the language is harder.',
+  'a11y.sound.p2':
+    'A full written transcript sits beside every video. It can be searched, and clicking a line jumps the video to that moment.',
+  'a11y.sound.p3': 'No video autoplays, so nothing ever starts making sound on its own.',
+  'a11y.sound.p4': 'A panel is reserved on every video for a {sign} interpreter.',
+  'a11y.sound.p5':
+    'Quiz feedback, the completion celebration and every alert are visual. The site plays no sound at all.',
+
+  'a11y.colour.group': 'Not by colour alone',
+  'a11y.colour.p1': 'Locked, open and complete lessons each carry an icon, a word and a colour.',
+  'a11y.colour.p2':
+    'A right answer shows a tick, the word "Right" and green. A wrong answer shows a cross, the word "No" and red.',
+  'a11y.colour.p3':
+    'The line currently playing in the transcript is marked with a thick left border and the word "now".',
+
+  'a11y.contrast.group': 'Contrast and text size',
+  'a11y.contrast.p1':
+    'The page comes in light and dark. You can switch at the top of any page, and the site starts in whichever one your device already asks for.',
+  'a11y.contrast.p2':
+    'Body text is about 16.4:1 in the light theme and 16.6:1 in the dark one. The minimum for AA is 4.5:1.',
+  'a11y.contrast.p3': 'Muted text is about 5.6:1 in the light theme and 7.4:1 in the dark one.',
+  'a11y.contrast.p4':
+    'Every button colour was picked to clear 4.5:1 against its own text, in both themes. 112 colour pairings are measured automatically, and a pairing that fails in either theme stops the site being published.',
+  'a11y.contrast.p5':
+    'Layout is built in relative units, so 200% browser zoom reflows instead of clipping. At 400% the page becomes a single column with no sideways scrolling.',
+
+  'a11y.keyboard.group': 'Keyboard and focus',
+  'a11y.keyboard.p1':
+    'Everything works from the keyboard alone. There is no mouse-only control and no keyboard trap.',
+  'a11y.keyboard.p2':
+    'A thick focus ring in the accent colour is always visible and is never removed. It clears 3:1 against the page in both themes.',
+  'a11y.keyboard.p3':
+    'A "skip to the main part of the page" link is the first thing the keyboard reaches.',
+  'a11y.keyboard.p4':
+    'When the page changes, focus moves to the top of the new page, because a single-page app does not do this on its own.',
+  'a11y.keyboard.p5':
+    'Inside a quiz, focus moves to the next question heading when the child presses Next.',
+
+  'a11y.target.group': 'Target size',
+  'a11y.target.p1':
+    'Every button, link and menu is at least 44 by 44 pixels, well above the 24 by 24 minimum for AA.',
+  'a11y.target.p2':
+    'Checkboxes are 28 pixels, and the whole label row next to them is 44 pixels tall and also toggles them.',
+  'a11y.target.p3': 'The video seek bar is a full 44 pixels tall, so it can be dragged on a tablet.',
+
+  'a11y.motion.group': 'Motion',
+  'a11y.motion.p1':
+    'The system "reduce motion" setting is respected. Animations are cut to almost nothing and the confetti is not drawn at all.',
+  'a11y.motion.p2': 'No animation loops forever and nothing moves without the child starting it.',
+  'a11y.motion.p3':
+    'The celebration message is what carries the meaning. The confetti is decoration on top of it.',
+
+  'a11y.plain.group': 'Plain language',
+  'a11y.plain.p1': 'Sentences are short and hold one idea each.',
+  'a11y.plain.p2':
+    'Idioms and metaphors are avoided throughout, because they are a known barrier for readers whose first language is a sign language.',
+  'a11y.plain.p3': 'New words are listed at the end of each lesson and linked to the signed dictionary.',
+  'a11y.plain.p4': 'Money amounts use rupees and everyday Indian examples.',
+
+  'a11y.structure.group': 'Structure and naming',
+  'a11y.structure.p1':
+    'Real landmarks are used: header, nav, main, footer. Headings run in order with no levels skipped.',
+  'a11y.structure.p2': 'The journey map is a real ordered list, so the order is announced correctly.',
+  'a11y.structure.p3': 'The browser tab title changes with each page.',
+  'a11y.structure.p4':
+    'Quiz results, search result counts and the play state are announced through polite live regions, without stealing focus.',
+  'a11y.structure.p5':
+    'Toggle buttons report their state with aria-pressed, and progress bars report their value.',
+
+  'a11y.gaps.heading': 'What is not finished',
+  'a11y.gaps.p1':
+    'The lesson videos are public-domain placeholders. Their captions and transcripts are placeholder text and do not describe the real content yet.',
+  'a11y.gaps.p2':
+    'No {sign} interpreter clips have been filmed. Every place one belongs is marked so, rather than left blank.',
+  'a11y.gaps.p3':
+    'The site has been checked against the WCAG 2.2 AA criteria listed above by inspection. It has not yet been tested with Deaf children or with a screen reader user, which is the test that matters most.',
+
+  'a11y.feedback.heading': 'Tell us about a problem',
+  'a11y.feedback.text':
+    'If any part of this site is hard to use, that is a fault in the site and not in the reader. Please tell the teacher or the person who gave you this link, and describe what you were trying to do.',
 }
 
 const hi = {
@@ -686,6 +840,153 @@ const hi = {
   'schemes.courseCta': 'पाठों पर जाइए',
   'schemes.disclaimer':
     'नियम और रक़में बदलती रहती हैं, और इनमें से ज़्यादातर हर साल संशोधित होती हैं। यहाँ हर आँकड़ा {when} में जाँचा गया था और अपने स्रोत के साथ है - उस पर क़दम उठाने से पहले स्रोत से मिला लीजिए। यहाँ कुछ भी वित्तीय या क़ानूनी सलाह नहीं है, और इसे लिखने वाला कोई लाइसेंसधारी सलाहकार या वकील नहीं है।',
+
+  // ------------------------------------------------------------ teachers page
+  'teachers.pageTitle': 'माता-पिता और शिक्षकों के लिए',
+  'teachers.heading': 'माता-पिता और शिक्षकों के लिए',
+  'teachers.lead':
+    '{site} बहरे और कम सुनने वाले बच्चों को पैसे की समझ सिखाता है। पाठ उम्र से नहीं, कठिनाई से क्रम में लगे हैं - इसलिए बच्चे को उसकी उम्र से नहीं, बल्कि वह क्या पढ़ और समझ सकता है उससे स्तर दीजिए। कोई साइन-अप नहीं, कोई लॉगिन नहीं। बच्चा यहाँ जो कुछ करता है, वह उसके डिवाइस से बाहर नहीं जाता।',
+
+  'teachers.use.heading': 'कक्षा में इसका उपयोग कैसे करें',
+  'teachers.use.step1':
+    'पाठ टैब से एक स्तर चुनिए। ग्यारह विषय हर स्तर पर वही रहते हैं; शब्द, गणित और बच्चे को कितना ख़ुद सोचना है - यह बदलता है। स्तर 1 पूरा करने वाला बच्चा ऊपर चढ़ सकता है, और जो अटक गया हो वह नीचे आ सकता है, बिना यह सुने कि वह ग़लत उम्र-वर्ग में है।',
+  'teachers.use.step2':
+    'वीडियो कैप्शन चालू करके चलाइए। वीडियो के बगल का लिखित पाठ कक्षा के लिए प्रोजेक्ट या प्रिंट किया जा सकता है।',
+  'teachers.use.step3':
+    'सारांश के बाद रोकिए और कक्षा से कहिए कि एक वाक्य अपने शब्दों में साइन करके बताएँ।',
+  'teachers.use.step4':
+    'हर बच्चे को अपने डिवाइस पर तस्वीर वाली क्विज़ करने दीजिए। ग़लत जवाब पर संकेत मिलता है और दोबारा कोशिश का मौक़ा - कोई अटकता नहीं।',
+  'teachers.use.step5':
+    'क्विज़ पूरी होते ही उस डिवाइस पर अगला पाठ अपने आप खुल जाता है - बाद में कुछ दबाने की ज़रूरत नहीं।',
+
+  'teachers.topics.heading': 'ग्यारह विषय',
+  'teachers.topics.lead': 'हर विषय तीन बार लिखा गया है, हर कठिनाई स्तर के लिए एक बार।',
+  'teachers.topics.caption': 'पाठ के विषय और वे किन स्तरों के लिए लिखे गए हैं',
+  'teachers.topics.colTopic': 'विषय',
+  'teachers.topics.available': 'उपलब्ध',
+  'teachers.topics.notWritten': 'अभी लिखा नहीं गया',
+
+  'teachers.sign.heading': '{sign} वीडियो के बारे में',
+  'teachers.sign.reserved':
+    'हर पाठ में सांकेतिक अनुवाद के लिए एक जगह रखी गई है, और शब्दकोश के हर शब्द के लिए एक छोटी सांकेतिक क्लिप की जगह। जहाँ क्लिप अभी नहीं बनी, वहाँ जगह यह साफ़ कहती है - छिपाती नहीं।',
+  'teachers.sign.regional':
+    'सांकेतिक भाषा क्षेत्र के हिसाब से बदलती है। ये पाठ {sign} के लिए लिखे गए हैं। अगर आप किसी और सांकेतिक भाषा में पढ़ाते हैं, तो लिखित सामग्री बदले बिना अनुवादक की क्लिप बदली जा सकती हैं।',
+  'teachers.sign.allDone': 'शब्दकोश के सभी {total} शब्दों की सांकेतिक क्लिप मौजूद है।',
+  'teachers.sign.someDone':
+    'अब तक शब्दकोश के {total} में से {done} शब्दों की सांकेतिक क्लिप बनी है। बाक़ी में तब तक एक चिह्नित जगह दिखती है जब तक वे बन नहीं जातीं।',
+
+  'teachers.settings.heading': 'इस डिवाइस की सेटिंग',
+  'teachers.settings.unlockTitle': 'हर पाठ खोल दीजिए',
+  'teachers.settings.unlockText':
+    'पाठ आम तौर पर एक-एक करके खुलते हैं। किसी भी विषय पर जाने के लिए इसे चालू कीजिए।',
+  'teachers.progress.heading': 'इस डिवाइस पर प्रगति',
+  'teachers.progress.line': '{label}: {total} में से {done} पाठ पूरे',
+  'teachers.progress.save': 'प्रगति को फ़ाइल में सहेजिए',
+  'teachers.progress.load': 'फ़ाइल से प्रगति लाइए',
+  'teachers.progress.replaceAsk':
+    'क्या इस डिवाइस की प्रगति की जगह {name} रख दें? इस डिवाइस पर अभी जो प्रगति है, वह चली जाएगी।',
+  'teachers.progress.replaceYes': 'हाँ, बदल दीजिए',
+  'teachers.progress.replaceNo': 'नहीं, इस डिवाइस की प्रगति रहने दीजिए',
+  'teachers.progress.errParse': 'यह फ़ाइल प्रगति की फ़ाइल नहीं है - इसे पढ़ा ही नहीं जा सका।',
+  'teachers.progress.errFormat':
+    'यह फ़ाइल किसी ऐसी प्रगति फ़ाइल से मेल नहीं खाती जिसे अमानत पहचानता हो। हो सकता है यह बहुत पुराने संस्करण की हो, या कोई और फ़ाइल हो।',
+  'teachers.progress.dismiss': 'हटाइए',
+  'teachers.progress.eraseAsk': 'क्या इस डिवाइस की सारी प्रगति मिटा दें?',
+  'teachers.progress.eraseYes': 'हाँ, मिटा दीजिए',
+  'teachers.progress.eraseNo': 'नहीं, रहने दीजिए',
+  'teachers.progress.erase': 'सारी प्रगति मिटाइए',
+
+  'teachers.privacy.heading': 'निजता',
+  'teachers.privacy.text':
+    'कोई खाता नहीं, कोई एनालिटिक्स नहीं। प्रगति डिवाइस के ब्राउज़र में ही रखी जाती है। ब्राउज़र का डेटा साफ़ करने पर प्रगति भी मिट जाती है। कुछ भी कहीं नहीं भेजा जाता।',
+  'teachers.privacy.link': 'सुलभता वक्तव्य पढ़िए',
+
+  // -------------------------------------------------------- accessibility page
+  'a11y.pageTitle': 'सुलभता वक्तव्य',
+  'a11y.heading': 'सुलभता वक्तव्य',
+  'a11y.lead':
+    '{site} बहरे और कम सुनने वाले बच्चों के लिए बनाया गया है। इसका लक्ष्य WCAG 2.2 Level AA पूरा करना है, और जहाँ इस पाठक-वर्ग के लिए सबसे ज़्यादा मायने रखता है वहाँ यह Level AAA के कई मानक भी निभाता है।',
+  'a11y.reviewed': 'अंतिम समीक्षा: 1 अगस्त 2026।',
+
+  'a11y.sound.group': 'आवाज़ कभी अकेला माध्यम नहीं',
+  'a11y.sound.p1':
+    'हर पाठ के वीडियो में कम से कम एक कैप्शन ट्रैक है, और जहाँ भाषा कठिन है वहाँ "आसान शब्द" वाला दूसरा ट्रैक भी।',
+  'a11y.sound.p2':
+    'हर वीडियो के बगल में पूरा लिखित पाठ है। उसे खोजा जा सकता है, और किसी पंक्ति पर क्लिक करने से वीडियो उसी जगह पहुँच जाता है।',
+  'a11y.sound.p3': 'कोई वीडियो अपने आप नहीं चलता, इसलिए आवाज़ कभी अपने आप शुरू नहीं होती।',
+  'a11y.sound.p4': 'हर वीडियो में {sign} अनुवादक के लिए एक जगह रखी गई है।',
+  'a11y.sound.p5':
+    'क्विज़ का जवाब, पाठ पूरा होने का जश्न और हर चेतावनी - सब दिखाई देते हैं। साइट कोई आवाज़ नहीं बजाती।',
+
+  'a11y.colour.group': 'सिर्फ़ रंग से नहीं',
+  'a11y.colour.p1': 'बंद, खुले और पूरे हो चुके पाठ - हर एक के साथ एक चिह्न, एक शब्द और एक रंग है।',
+  'a11y.colour.p2':
+    'सही जवाब पर सही का निशान, "सही" शब्द और हरा रंग दिखता है। ग़लत जवाब पर क्रॉस, "नहीं" शब्द और लाल रंग।',
+  'a11y.colour.p3':
+    'लिखित पाठ में जो पंक्ति अभी चल रही है, उसे बाईं ओर मोटी लकीर और "अभी" शब्द से चिह्नित किया जाता है।',
+
+  'a11y.contrast.group': 'रंग-अंतर और अक्षरों का आकार',
+  'a11y.contrast.p1':
+    'पन्ना उजले और गहरे, दोनों रंगों में आता है। आप किसी भी पन्ने के ऊपर से बदल सकते हैं, और साइट उसी रंग में खुलती है जो आपका डिवाइस पहले से माँगता है।',
+  'a11y.contrast.p2':
+    'मुख्य लिखाई का रंग-अंतर उजले रंग में लगभग 16.4:1 और गहरे में 16.6:1 है। AA के लिए कम से कम 4.5:1 चाहिए।',
+  'a11y.contrast.p3': 'हल्की लिखाई उजले में लगभग 5.6:1 और गहरे में 7.4:1 है।',
+  'a11y.contrast.p4':
+    'हर बटन का रंग इस तरह चुना गया है कि अपनी लिखाई के मुक़ाबले 4.5:1 पार करे, दोनों रंग-रूपों में। 112 रंग-जोड़े अपने आप नापे जाते हैं, और किसी भी एक रंग-रूप में फ़ेल होने वाला जोड़ा साइट को प्रकाशित नहीं होने देता।',
+  'a11y.contrast.p5':
+    'लेआउट सापेक्ष इकाइयों में बना है, इसलिए 200% ज़ूम पर लिखाई कटती नहीं, फिर से सज जाती है। 400% पर पन्ना एक ही कॉलम बन जाता है और अगल-बगल स्क्रॉल नहीं करना पड़ता।',
+
+  'a11y.keyboard.group': 'कीबोर्ड और फ़ोकस',
+  'a11y.keyboard.p1':
+    'सब कुछ अकेले कीबोर्ड से चलता है। कोई ऐसा नियंत्रण नहीं जो सिर्फ़ माउस से चले, और कहीं कीबोर्ड फँसता नहीं।',
+  'a11y.keyboard.p2':
+    'ऐक्सेंट रंग का मोटा फ़ोकस घेरा हमेशा दिखता है और कभी हटाया नहीं जाता। यह दोनों रंग-रूपों में पन्ने के मुक़ाबले 3:1 पार करता है।',
+  'a11y.keyboard.p3': '"पन्ने के मुख्य हिस्से पर जाइए" लिंक वह पहली चीज़ है जहाँ कीबोर्ड पहुँचता है।',
+  'a11y.keyboard.p4':
+    'पन्ना बदलने पर फ़ोकस नए पन्ने के ऊपर चला जाता है, क्योंकि सिंगल-पेज ऐप यह अपने आप नहीं करता।',
+  'a11y.keyboard.p5': 'क्विज़ में "आगे" दबाने पर फ़ोकस अगले सवाल के शीर्षक पर चला जाता है।',
+
+  'a11y.target.group': 'दबाने की जगह का आकार',
+  'a11y.target.p1':
+    'हर बटन, लिंक और मेन्यू कम से कम 44 गुणा 44 पिक्सल का है - AA के 24 गुणा 24 के न्यूनतम से काफ़ी ऊपर।',
+  'a11y.target.p2':
+    'चेकबॉक्स 28 पिक्सल के हैं, और उनके बगल की पूरी पंक्ति 44 पिक्सल ऊँची है और उसे दबाने पर भी वे बदलते हैं।',
+  'a11y.target.p3': 'वीडियो की सीक पट्टी पूरे 44 पिक्सल ऊँची है, ताकि टैबलेट पर खींची जा सके।',
+
+  'a11y.motion.group': 'हलचल',
+  'a11y.motion.p1':
+    'सिस्टम की "हलचल कम कीजिए" सेटिंग का पालन होता है। तब हलचल लगभग शून्य हो जाती है और रंगीन कतरनें बनती ही नहीं।',
+  'a11y.motion.p2': 'कोई हलचल हमेशा के लिए नहीं दोहराती, और बच्चे के शुरू किए बिना कुछ नहीं हिलता।',
+  'a11y.motion.p3': 'मतलब जश्न के संदेश से आता है। रंगीन कतरनें उसके ऊपर सिर्फ़ सजावट हैं।',
+
+  'a11y.plain.group': 'सरल भाषा',
+  'a11y.plain.p1': 'वाक्य छोटे हैं और हर वाक्य में एक ही बात है।',
+  'a11y.plain.p2':
+    'मुहावरों और रूपकों से पूरी तरह बचा गया है, क्योंकि जिनकी पहली भाषा सांकेतिक है उनके लिए ये एक जानी-मानी रुकावट हैं।',
+  'a11y.plain.p3': 'नए शब्द हर पाठ के अंत में दिए हैं और सांकेतिक शब्दकोश से जुड़े हैं।',
+  'a11y.plain.p4': 'पैसे की रक़में रुपयों में और रोज़मर्रा के भारतीय उदाहरणों के साथ हैं।',
+
+  'a11y.structure.group': 'ढाँचा और नामकरण',
+  'a11y.structure.p1':
+    'असली लैंडमार्क इस्तेमाल हुए हैं: header, nav, main, footer। शीर्षक क्रम में चलते हैं, कोई स्तर छोड़ा नहीं जाता।',
+  'a11y.structure.p2': 'यात्रा का नक़्शा एक असली क्रमबद्ध सूची है, इसलिए क्रम सही बोला जाता है।',
+  'a11y.structure.p3': 'ब्राउज़र टैब का शीर्षक हर पन्ने के साथ बदलता है।',
+  'a11y.structure.p4':
+    'क्विज़ के नतीजे, खोज के परिणामों की गिनती और चलने की स्थिति - सब विनम्र लाइव रीजन से बोले जाते हैं, फ़ोकस छीने बिना।',
+  'a11y.structure.p5':
+    'टॉगल बटन अपनी स्थिति aria-pressed से बताते हैं, और प्रगति पट्टियाँ अपना मान बताती हैं।',
+
+  'a11y.gaps.heading': 'जो अभी पूरा नहीं हुआ',
+  'a11y.gaps.p1':
+    'पाठ के वीडियो सार्वजनिक-डोमेन की अस्थायी फ़ाइलें हैं। उनके कैप्शन और लिखित पाठ भी अस्थायी हैं और असली सामग्री नहीं बताते।',
+  'a11y.gaps.p2':
+    '{sign} अनुवादक की कोई क्लिप अभी नहीं बनी है। जहाँ-जहाँ वह आनी है, वहाँ खाली छोड़ने के बजाय ऐसा लिखा गया है।',
+  'a11y.gaps.p3':
+    'साइट को ऊपर दिए WCAG 2.2 AA मानकों के विरुद्ध जाँच कर देखा गया है। इसे अभी तक बहरे बच्चों या स्क्रीन रीडर इस्तेमाल करने वाले किसी व्यक्ति के साथ नहीं परखा गया - और यही सबसे ज़रूरी परीक्षा है।',
+
+  'a11y.feedback.heading': 'कोई दिक़्क़त हो तो बताइए',
+  'a11y.feedback.text':
+    'अगर इस साइट का कोई हिस्सा इस्तेमाल करने में कठिन है, तो ग़लती साइट की है, पढ़ने वाले की नहीं। कृपया अपने शिक्षक को या जिसने आपको यह लिंक दिया है उसे बताइए, और यह भी बताइए कि आप क्या करने की कोशिश कर रहे थे।',
 }
 
 export const strings = { en, hi }

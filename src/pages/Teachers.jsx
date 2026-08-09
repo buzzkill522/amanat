@@ -8,9 +8,10 @@ import { levels, signLanguage, site } from '@/config/site.js'
 import { modules, signClipCoverage, moduleMeta } from '@content/index.js'
 
 export default function Teachers() {
-  usePageTitle('For parents and teachers')
+  const { lang, t } = useLanguage()
 
-  const { lang } = useLanguage()
+  usePageTitle(t('teachers.pageTitle'))
+
   const { levelStats, resetAll, importState, settings, setSetting, state } = useProgress()
   const [confirmingReset, setConfirmingReset] = useState(false)
   // Holds the file's own contents and name between "a file was picked" and
@@ -54,28 +55,19 @@ export default function Teachers() {
   return (
     <div className="space-y-10">
       <header>
-        <h1 className="text-4xl font-extrabold text-ink">For parents and teachers</h1>
+        <h1 className="text-4xl font-extrabold text-ink">{t('teachers.heading')}</h1>
         <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted">
-          {site.name} teaches money skills to Deaf and Hard-of-Hearing children. The lessons are
-          sorted by difficulty rather than by age, so place a child by what they can read and
-          reason with, not by the year they were born. There is no sign-up and no login. Nothing a
-          child does here leaves their device.
+          {t('teachers.lead', { site: site.name })}
         </p>
       </header>
 
       {/* ------------------------------------------------------- how to use */}
       <section className="card p-6" aria-labelledby="use-heading">
         <h2 id="use-heading" className="text-2xl font-extrabold text-ink">
-          How to use it in a lesson
+          {t('teachers.use.heading')}
         </h2>
         <ol className="mt-4 space-y-4">
-          {[
-            'Pick a level from the Lessons tab. The eleven topics stay the same at every level; the wording, the maths and how much is left for the child to work out change. A child who finishes Level 1 can climb, and one who is stuck can drop a level without being told they are in the wrong age group.',
-            'Play the video with captions on. The transcript beside the video can be projected or printed for the class.',
-            'Pause after the summary and ask the class to sign back one sentence in their own words.',
-            'Let each child do the picture quiz on their own device. A wrong answer gives a hint and lets them retry, so nobody is stuck.',
-            'Finishing the quiz opens the next lesson on that device automatically - there is nothing to click afterwards.',
-          ].map((step, i) => (
+          {[1, 2, 3, 4, 5].map((n) => t(`teachers.use.step${n}`)).map((step, i) => (
             <li key={i} className="flex gap-4">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-600 font-extrabold text-surface">
                 {i + 1}
@@ -89,24 +81,22 @@ export default function Teachers() {
       {/* --------------------------------------------------------- coverage */}
       <section aria-labelledby="topics-heading">
         <h2 id="topics-heading" className="text-2xl font-extrabold text-ink">
-          The eleven topics
+          {t('teachers.topics.heading')}
         </h2>
-        <p className="mt-2 text-lg text-muted">
-          Each topic is written three times, once at each level of difficulty.
-        </p>
+        <p className="mt-2 text-lg text-muted">{t('teachers.topics.lead')}</p>
         <div className="mt-5 overflow-x-auto">
           <table className="w-full min-w-[36rem] border-collapse text-left">
             <caption className="sr-only">
-              Lesson topics and the levels they are written for
+              {t('teachers.topics.caption')}
             </caption>
             <thead>
               <tr className="border-b-4 border-brand-200">
                 <th scope="col" className="p-3 text-base font-extrabold text-ink">
-                  Topic
+                  {t('teachers.topics.colTopic')}
                 </th>
-                {levels.map((t) => (
-                  <th key={t.id} scope="col" className="p-3 text-base font-extrabold text-ink">
-                    {t.shortLabel}
+                {levels.map((lvl) => (
+                  <th key={lvl.id} scope="col" className="p-3 text-base font-extrabold text-ink">
+                    {lvl.shortLabel}
                   </th>
                 ))}
               </tr>
@@ -117,16 +107,16 @@ export default function Teachers() {
                   <th scope="row" className="p-3 text-base font-bold text-ink">
                     {m.order}. {moduleMeta(m, lang).title}
                   </th>
-                  {levels.map((t) => (
-                    <td key={t.id} className="p-3 text-base text-ink">
-                      {m.levels[t.id] ? (
+                  {levels.map((lvl) => (
+                    <td key={lvl.id} className="p-3 text-base text-ink">
+                      {m.levels[lvl.id] ? (
                         <>
                           <span aria-hidden="true">✓</span>
-                          <span className="sr-only">Available</span>{' '}
-                          <span className="text-muted">{m.levels[t.id].video.durationLabel}</span>
+                          <span className="sr-only">{t('teachers.topics.available')}</span>{' '}
+                          <span className="text-muted">{m.levels[lvl.id].video.durationLabel}</span>
                         </>
                       ) : (
-                        <span className="text-muted">Not written yet</span>
+                        <span className="text-muted">{t('teachers.topics.notWritten')}</span>
                       )}
                     </td>
                   ))}
@@ -140,17 +130,11 @@ export default function Teachers() {
       {/* ---------------------------------------------------------- signing */}
       <section className="card border-4 border-berry-500 p-6" aria-labelledby="sign-heading">
         <h2 id="sign-heading" className="text-2xl font-extrabold text-ink">
-          About the {signLanguage.label} videos
+          {t('teachers.sign.heading', { sign: signLanguage.label })}
         </h2>
+        <p className="mt-3 text-lg leading-relaxed text-ink">{t('teachers.sign.reserved')}</p>
         <p className="mt-3 text-lg leading-relaxed text-ink">
-          Every lesson reserves a panel for a signed interpretation, and every dictionary word
-          reserves space for a short signed clip. Where a clip has not been filmed yet, the space
-          says so plainly rather than hiding.
-        </p>
-        <p className="mt-3 text-lg leading-relaxed text-ink">
-          Sign language is regional. These lessons are written for {signLanguage.label}. If you
-          teach in another sign language, the interpreter clips can be swapped without changing
-          any of the written content.
+          {t('teachers.sign.regional', { sign: signLanguage.label })}
         </p>
 
         {/* The count, not a vague "coming soon" - a teacher deciding whether to
@@ -161,15 +145,15 @@ export default function Teachers() {
           }`}
         >
           {clips.complete
-            ? `All ${clips.total} dictionary words have a signed clip.`
-            : `${clips.done} of ${clips.total} dictionary words have a signed clip so far. The rest show a labelled space until they are filmed.`}
+            ? t('teachers.sign.allDone', { total: clips.total })
+            : t('teachers.sign.someDone', { done: clips.done, total: clips.total })}
         </p>
       </section>
 
       {/* --------------------------------------------------------- settings */}
       <section className="card p-6" aria-labelledby="settings-heading">
         <h2 id="settings-heading" className="text-2xl font-extrabold text-ink">
-          Settings on this device
+          {t('teachers.settings.heading')}
         </h2>
 
         <label className="checkbox-row mt-4 items-start">
@@ -180,22 +164,22 @@ export default function Teachers() {
             className="checkbox-lg mt-1"
           />
           <span>
-            <span className="block text-lg font-bold text-ink">Open every lesson</span>
+            <span className="block text-lg font-bold text-ink">
+              {t('teachers.settings.unlockTitle')}
+            </span>
             <span className="block text-base text-muted">
-              Lessons normally open one at a time. Turn this on to jump to any topic.
+              {t('teachers.settings.unlockText')}
             </span>
           </span>
         </label>
 
         <div className="mt-6 space-y-3">
-          <h3 className="text-lg font-extrabold text-ink">Progress on this device</h3>
+          <h3 className="text-lg font-extrabold text-ink">{t('teachers.progress.heading')}</h3>
           <ul className="space-y-1 text-base text-ink">
-            {levels.map((t) => {
-              const s = levelStats(t.id)
+            {levels.map((lvl) => {
+              const s = levelStats(lvl.id)
               return (
-                <li key={t.id}>
-                  {t.label}: <strong>{s.done}</strong> of {s.total} lessons done
-                </li>
+                <li key={lvl.id}>{t('teachers.progress.line', { label: lvl.label, done: s.done, total: s.total })}</li>
               )
             })}
           </ul>
@@ -203,7 +187,7 @@ export default function Teachers() {
           <div className="flex flex-wrap gap-3 pt-2">
             <button type="button" onClick={downloadProgress} className="btn-secondary">
               <Download className="h-5 w-5" aria-hidden="true" />
-              Save progress to a file
+              {t('teachers.progress.save')}
             </button>
 
             {/* The other half of the button above. On a shared tablet, a
@@ -224,7 +208,7 @@ export default function Teachers() {
               className="btn-secondary"
             >
               <Upload className="h-5 w-5" aria-hidden="true" />
-              Load progress from a file
+              {t('teachers.progress.load')}
             </button>
 
             {pendingImport && (
@@ -234,16 +218,15 @@ export default function Teachers() {
               >
                 <AlertTriangle className="h-6 w-6 shrink-0 text-sun-600" aria-hidden="true" />
                 <p className="font-bold text-ink">
-                  Replace progress on this device with <strong>{pendingImport.name}</strong>?
-                  Progress currently on this device will be gone.
+                  {t('teachers.progress.replaceAsk', { name: pendingImport.name })}
                 </p>
                 <button type="button" onClick={confirmImport} className="btn bg-sun-500 text-white hover:bg-sun-700">
                   <Upload className="h-5 w-5" aria-hidden="true" />
-                  Yes, replace it
+                  {t('teachers.progress.replaceYes')}
                 </button>
                 <button type="button" onClick={() => setPendingImport(null)} className="btn-secondary">
                   <RotateCcw className="h-5 w-5" aria-hidden="true" />
-                  No, keep this device's progress
+                  {t('teachers.progress.replaceNo')}
                 </button>
               </div>
             )}
@@ -256,11 +239,11 @@ export default function Teachers() {
                 <AlertTriangle className="h-6 w-6 shrink-0 text-alert-600" aria-hidden="true" />
                 <p className="font-bold text-ink">
                   {importError === 'parse'
-                    ? "That file isn't a progress file - it couldn't be read as one at all."
-                    : "That file doesn't match a progress file Amanat recognises. It may be from a much older version, or a different file entirely."}
+                    ? t('teachers.progress.errParse')
+                    : t('teachers.progress.errFormat')}
                 </p>
                 <button type="button" onClick={() => setImportError(null)} className="btn-secondary">
-                  Dismiss
+                  {t('teachers.progress.dismiss')}
                 </button>
               </div>
             )}
@@ -268,7 +251,7 @@ export default function Teachers() {
             {confirmingReset ? (
               <div className="flex flex-wrap items-center gap-3 rounded-2xl border-4 border-alert-500 bg-alert-100 p-3">
                 <AlertTriangle className="h-6 w-6 shrink-0 text-alert-600" aria-hidden="true" />
-                <p className="font-bold text-ink">Erase all progress on this device?</p>
+                <p className="font-bold text-ink">{t('teachers.progress.eraseAsk')}</p>
                 <button
                   type="button"
                   onClick={() => {
@@ -278,11 +261,11 @@ export default function Teachers() {
                   className="btn bg-alert-500 text-white hover:bg-alert-700"
                 >
                   <Trash2 className="h-5 w-5" aria-hidden="true" />
-                  Yes, erase it
+                  {t('teachers.progress.eraseYes')}
                 </button>
                 <button type="button" onClick={() => setConfirmingReset(false)} className="btn-secondary">
                   <RotateCcw className="h-5 w-5" aria-hidden="true" />
-                  No, keep it
+                  {t('teachers.progress.eraseNo')}
                 </button>
               </div>
             ) : (
@@ -292,7 +275,7 @@ export default function Teachers() {
                 className="btn border-2 border-alert-500 bg-surface text-alert-600 hover:bg-alert-100"
               >
                 <Trash2 className="h-5 w-5" aria-hidden="true" />
-                Erase all progress
+                {t('teachers.progress.erase')}
               </button>
             )}
           </div>
@@ -302,15 +285,12 @@ export default function Teachers() {
       {/* ---------------------------------------------------------- privacy */}
       <section className="rounded-3xl bg-brand-50 p-6" aria-labelledby="privacy-heading">
         <h2 id="privacy-heading" className="text-xl font-extrabold text-ink">
-          Privacy
+          {t('teachers.privacy.heading')}
         </h2>
-        <p className="mt-2 text-lg leading-relaxed text-ink">
-          There are no accounts and no analytics. Progress is stored in the browser on the device
-          itself. Clearing the browser data clears the progress. Nothing is sent anywhere.
-        </p>
+        <p className="mt-2 text-lg leading-relaxed text-ink">{t('teachers.privacy.text')}</p>
         <p className="mt-3">
           <Link to="/accessibility" className="tap-target font-bold text-brand-700 underline decoration-2 underline-offset-4">
-            Read the accessibility statement
+            {t('teachers.privacy.link')}
           </Link>
         </p>
       </section>
