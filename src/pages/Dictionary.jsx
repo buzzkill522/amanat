@@ -4,9 +4,11 @@ import SignDictionaryEntry from '@/components/SignDictionaryEntry.jsx'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { dictionary } from '@content/index.js'
 import { signLanguage } from '@/config/site.js'
+import { useT } from '@/i18n/LanguageProvider.jsx'
 
 export default function Dictionary() {
-  usePageTitle('Money words dictionary')
+  const t = useT()
+  usePageTitle(t('dict.pageTitle'))
 
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('all')
@@ -32,10 +34,9 @@ export default function Dictionary() {
           <Hand className="h-5 w-5" aria-hidden="true" />
           {signLanguage.label}
         </span>
-        <h1 className="mt-4 text-4xl font-extrabold text-ink">Money words</h1>
+        <h1 className="mt-4 text-4xl font-extrabold text-ink">{t('dict.heading')}</h1>
         <p className="mt-2 max-w-2xl text-lg text-muted">
-          Every word has a picture, a short meaning and an example. The {signLanguage.short} video
-          for each word is added as it is filmed.
+          {t('dict.lead', { signShort: signLanguage.short })}
         </p>
       </header>
 
@@ -44,14 +45,14 @@ export default function Dictionary() {
         <div className="flex items-center gap-3 rounded-2xl border-2 border-brand-200 bg-surface px-4">
           <Search className="h-6 w-6 shrink-0 text-muted" aria-hidden="true" />
           <label htmlFor="dict-search" className="sr-only">
-            Search for a money word
+            {t('dict.searchLabel')}
           </label>
           <input
             id="dict-search"
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Type a word, for example: interest"
+            placeholder={t('dict.searchPlaceholder')}
             className="min-h-tap w-full bg-transparent py-3 text-lg outline-none"
           />
           {query && (
@@ -61,19 +62,19 @@ export default function Dictionary() {
               className="tap-target rounded-xl text-muted hover:bg-brand-50"
             >
               <X className="h-6 w-6" aria-hidden="true" />
-              <span className="sr-only">Clear the search box</span>
+              <span className="sr-only">{t('dict.clearSearch')}</span>
             </button>
           )}
         </div>
 
-        <div role="group" aria-label="Filter words by group" className="flex flex-wrap gap-2">
+        <div role="group" aria-label={t('dict.filterLabel')} className="flex flex-wrap gap-2">
           <button
             type="button"
             onClick={() => setCategory('all')}
             aria-pressed={category === 'all'}
             className={category === 'all' ? 'btn-primary' : 'btn-secondary'}
           >
-            All words
+            {t('dict.allWords')}
           </button>
           {dictionary.categories.map((c) => (
             <button
@@ -93,8 +94,8 @@ export default function Dictionary() {
           changed as they type. */}
       <p role="status" aria-live="polite" className="text-lg font-bold text-ink">
         {results.length === 0
-          ? `No word matches “${query}”. Try a shorter word.`
-          : `${results.length} ${results.length === 1 ? 'word' : 'words'}`}
+          ? t('dict.noMatch', { query })
+          : t(results.length === 1 ? 'dict.countOne' : 'dict.countMany', { n: results.length })}
       </p>
 
       <ul className="space-y-5">

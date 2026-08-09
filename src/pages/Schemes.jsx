@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/Accordion.jsx'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { schemes, schemesByGroup } from '@content/index.js'
+import { useT } from '@/i18n/LanguageProvider.jsx'
 
 /**
  * The schemes directory.
@@ -63,6 +64,7 @@ const ACCENTS = {
 }
 
 function SchemeCard({ scheme, accent }) {
+  const t = useT()
   const tone = ACCENTS[accent] || ACCENTS.brand
 
   return (
@@ -112,8 +114,22 @@ function SchemeCard({ scheme, accent }) {
         )}
 
         <dl className="mt-5 space-y-4">
+        {/* Restored after going missing.
+            The amount used to sit on the collapsed trigger and was moved into
+            the panel when the triggers turned out wildly uneven - but the
+            re-insert silently failed, and for a while this page listed
+            thirteen schemes without saying what any of them was worth. It is
+            first in the panel because "how much" is the question that decides
+            whether the rest is worth reading. */}
         <div>
-          <dt className="text-sm font-extrabold uppercase tracking-[0.14em] text-muted">Who</dt>
+          <dt className="text-sm font-extrabold uppercase tracking-[0.14em] text-muted">
+            {t('schemes.howMuch')}
+          </dt>
+          <dd className="mt-1 text-base leading-relaxed text-ink">{scheme.amount}</dd>
+        </div>
+
+        <div>
+          <dt className="text-sm font-extrabold uppercase tracking-[0.14em] text-muted">{t('schemes.who')}</dt>
           <dd className="mt-1">
             <ul className="space-y-1.5">
               {scheme.who.map((line) => (
@@ -130,7 +146,7 @@ function SchemeCard({ scheme, accent }) {
 
         <div>
           <dt className="text-sm font-extrabold uppercase tracking-[0.14em] text-muted">
-            How to apply
+            {t('schemes.howToApply')}
           </dt>
           <dd className="mt-1 text-base leading-relaxed text-ink">
             <p>{scheme.apply.text}</p>
@@ -147,7 +163,7 @@ function SchemeCard({ scheme, accent }) {
               >
                 {new URL(scheme.apply.url).hostname.replace(/^www\./, '')}
                 <ExternalLink className="h-5 w-5 shrink-0" aria-hidden="true" />
-                <span className="sr-only">(opens in a new tab)</span>
+                <span className="sr-only">{t('schemes.newTab')}</span>
               </a>
             </p>
           </dd>
@@ -160,7 +176,7 @@ function SchemeCard({ scheme, accent }) {
         <div className="mt-5 rounded-2xl border-2 border-sun-500 bg-sun-100 p-4">
           <p className="flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.14em] text-sun-600">
             <AlertTriangle className="h-5 w-5 shrink-0" aria-hidden="true" />
-            Worth knowing
+            {t('schemes.worthKnowing')}
           </p>
           <ul className="mt-2 space-y-2">
             {scheme.caveats.map((c) => (
@@ -177,7 +193,7 @@ function SchemeCard({ scheme, accent }) {
           are tappable at full size like everything else here. */}
       <div className="mt-5 border-t-2 border-brand-100 pt-4">
         <p className="text-sm font-bold text-muted">
-          Checked {schemes.checkedOn}. Check against the source before acting on a figure:
+          {t('schemes.checked', { when: schemes.checkedOn })}
         </p>
         <ul className="mt-1 flex flex-wrap gap-2">
           {scheme.sources.map((s) => (
@@ -189,7 +205,7 @@ function SchemeCard({ scheme, accent }) {
                 className="tap-target rounded-xl px-3 py-2 text-sm text-muted underline decoration-1 underline-offset-2 transition hover:bg-brand-50 hover:text-brand-700"
               >
                 {s.label}
-                <span className="sr-only"> (opens in a new tab)</span>
+                <span className="sr-only"> {t('schemes.newTab')}</span>
               </a>
             </li>
           ))}
@@ -201,7 +217,8 @@ function SchemeCard({ scheme, accent }) {
 }
 
 export default function Schemes() {
-  usePageTitle('Schemes and what you can claim')
+  const t = useT()
+  usePageTitle(t('schemes.pageTitle'))
 
   const groups = schemesByGroup()
 
@@ -209,14 +226,13 @@ export default function Schemes() {
     <div className="space-y-14">
       <header className="mx-auto max-w-2xl space-y-3 text-center">
         <p className="text-sm font-bold uppercase tracking-[0.14em] text-clay-600">
-          Know what you are owed
+          {t('schemes.eyebrow')}
         </p>
         <h1 className="text-4xl font-extrabold leading-tight text-ink">
-          Schemes you may already be entitled to
+          {t('schemes.heading')}
         </h1>
         <p className="text-lg leading-relaxed text-muted">
-          Being Deaf costs money that hearing people never spend. These exist to offset that, not
-          to give anyone an advantage. Most go unclaimed simply because nobody knew about them.
+          {t('schemes.lead')}
         </p>
       </header>
 
@@ -230,11 +246,10 @@ export default function Schemes() {
           className="flex items-center gap-2 text-xl font-extrabold text-clay-600"
         >
           <Info className="h-6 w-6 shrink-0" aria-hidden="true" />
-          Get the UDID card first
+          {t('schemes.firstHeading')}
         </h2>
         <p className="mt-2 text-base leading-relaxed text-ink">
-          Almost every scheme below asks for it. Without it, most of this page is closed; with it,
-          most of it opens. It is free, and it is the single most useful thing on this page.
+          {t('schemes.firstText')}
         </p>
       </section>
 
@@ -260,11 +275,10 @@ export default function Schemes() {
       {/* ------------------------------------------------- deliberately absent */}
       <section aria-labelledby="absent-heading" className="rounded-3xl bg-brand-50 p-6">
         <h2 id="absent-heading" className="text-2xl font-extrabold text-ink">
-          What is not on this page, and why
+          {t('schemes.absentHeading')}
         </h2>
         <p className="mt-2 text-base leading-relaxed text-muted">
-          A list that only says what exists is not much use. These are the things you may read
-          about elsewhere and wonder why they are missing.
+          {t('schemes.absentLead')}
         </p>
         <dl className="mt-5 space-y-5">
           {schemes.notCovered.map((item) => (
@@ -294,15 +308,14 @@ export default function Schemes() {
         className="rounded-3xl border-2 border-brand-200 bg-surface p-6 text-center"
       >
         <h2 id="course-heading" className="text-2xl font-extrabold text-ink">
-          These are taught in the course too
+          {t('schemes.courseHeading')}
         </h2>
         <p className="mx-auto mt-2 max-w-2xl text-base leading-relaxed text-muted">
-          This page is the reference. Lessons 10 and 11 are where the same material is taught
-          properly, at your level, with the reasoning behind it and a quiz at the end.
+          {t('schemes.courseText')}
         </p>
         <p className="mt-5">
           <Link to="/lessons" className="btn-primary">
-            Go to the lessons
+            {t('schemes.courseCta')}
             <ArrowRight className="h-5 w-5" aria-hidden="true" />
           </Link>
         </p>
@@ -310,10 +323,7 @@ export default function Schemes() {
 
       {/* The honesty line the schemes research insists on. */}
       <p className="mx-auto max-w-3xl rounded-2xl border-2 border-brand-200 p-5 text-center text-sm leading-relaxed text-muted">
-        Rules and amounts change, and most of these are revised every year. Every figure here was
-        checked in {schemes.checkedOn} and carries the source it came from - check it against that
-        source before acting on it. Nothing here is financial or legal advice, and nobody who wrote
-        it is a licensed adviser or a lawyer.
+        {t('schemes.disclaimer', { when: schemes.checkedOn })}
       </p>
     </div>
   )

@@ -310,6 +310,53 @@ const en = {
   // ------------------------------------------------------------- celebration
   'celebration.defaultMessage': 'Lesson complete',
   'celebration.nextOpen': 'The next lesson is now open.',
+
+  // ------------------------------------------------------------- not found
+  'notfound.pageTitle': 'Page not found',
+  'notfound.iconAlt': 'A question mark',
+  'notfound.heading': 'This page is not here',
+  'notfound.text':
+    'The link may be old, or a word in it may be spelled differently. Go back to the home page and start again.',
+  'notfound.cta': 'Go to the home page',
+
+  // ------------------------------------------------------------- dictionary
+  'dict.pageTitle': 'Money words dictionary',
+  'dict.heading': 'Money words',
+  'dict.lead':
+    'Every word has a picture, a short meaning and an example. The {signShort} video for each word is added as it is filmed.',
+  'dict.searchLabel': 'Search for a money word',
+  'dict.searchPlaceholder': 'Type a word, for example: interest',
+  'dict.clearSearch': 'Clear the search box',
+  'dict.filterLabel': 'Filter words by group',
+  'dict.allWords': 'All words',
+  'dict.noMatch': 'No word matches “{query}”. Try a shorter word.',
+  'dict.countOne': '{n} word',
+  'dict.countMany': '{n} words',
+
+  // ------------------------------------------------------------- schemes page
+  'schemes.pageTitle': 'Schemes and what you can claim',
+  'schemes.eyebrow': 'Know what you are owed',
+  'schemes.heading': 'Schemes you may already be entitled to',
+  'schemes.lead':
+    'Being Deaf costs money that hearing people never spend. These exist to offset that, not to give anyone an advantage. Most go unclaimed simply because nobody knew about them.',
+  'schemes.firstHeading': 'Get the UDID card first',
+  'schemes.firstText':
+    'Almost every scheme below asks for it. Without it, most of this page is closed; with it, most of it opens. It is free, and it is the single most useful thing on this page.',
+  'schemes.howMuch': 'How much',
+  'schemes.who': 'Who',
+  'schemes.howToApply': 'How to apply',
+  'schemes.worthKnowing': 'Worth knowing',
+  'schemes.newTab': '(opens in a new tab)',
+  'schemes.checked': 'Checked {when}. Check against the source before acting on a figure:',
+  'schemes.absentHeading': 'What is not on this page, and why',
+  'schemes.absentLead':
+    'A list that only says what exists is not much use. These are the things you may read about elsewhere and wonder why they are missing.',
+  'schemes.courseHeading': 'These are taught in the course too',
+  'schemes.courseText':
+    'This page is the reference. Lessons 10 and 11 are where the same material is taught properly, at your level, with the reasoning behind it and a quiz at the end.',
+  'schemes.courseCta': 'Go to the lessons',
+  'schemes.disclaimer':
+    'Rules and amounts change, and most of these are revised every year. Every figure here was checked in {when} and carries the source it came from - check it against that source before acting on it. Nothing here is financial or legal advice, and nobody who wrote it is a licensed adviser or a lawyer.',
 }
 
 const hi = {
@@ -592,6 +639,53 @@ const hi = {
   // ------------------------------------------------------------- celebration
   'celebration.defaultMessage': 'पाठ पूरा हुआ',
   'celebration.nextOpen': 'अगला पाठ अब खुल गया है।',
+
+  // ------------------------------------------------------------- not found
+  'notfound.pageTitle': 'पन्ना नहीं मिला',
+  'notfound.iconAlt': 'एक प्रश्नचिह्न',
+  'notfound.heading': 'यह पन्ना यहाँ नहीं है',
+  'notfound.text':
+    'हो सकता है लिंक पुराना हो, या उसमें कोई शब्द अलग तरह से लिखा हो। होम पन्ने पर वापस जाइए और फिर से शुरू कीजिए।',
+  'notfound.cta': 'होम पन्ने पर जाइए',
+
+  // ------------------------------------------------------------- dictionary
+  'dict.pageTitle': 'पैसे के शब्दों का शब्दकोश',
+  'dict.heading': 'पैसे के शब्द',
+  'dict.lead':
+    'हर शब्द के साथ एक तस्वीर, छोटा अर्थ और एक उदाहरण है। हर शब्द का {signShort} वीडियो बनते ही जोड़ा जाता है।',
+  'dict.searchLabel': 'पैसे का कोई शब्द खोजिए',
+  'dict.searchPlaceholder': 'कोई शब्द लिखिए, जैसे: ब्याज',
+  'dict.clearSearch': 'खोज का ख़ाना ख़ाली कीजिए',
+  'dict.filterLabel': 'शब्दों को समूह से छाँटिए',
+  'dict.allWords': 'सभी शब्द',
+  'dict.noMatch': '“{query}” से कोई शब्द नहीं मिला। छोटा शब्द आज़माइए।',
+  'dict.countOne': '{n} शब्द',
+  'dict.countMany': '{n} शब्द',
+
+  // ------------------------------------------------------------- schemes page
+  'schemes.pageTitle': 'योजनाएँ और आपका हक़',
+  'schemes.eyebrow': 'जो आपका हक़ है, उसे जानिए',
+  'schemes.heading': 'वे योजनाएँ जिन पर शायद पहले से आपका हक़ है',
+  'schemes.lead':
+    'बहरा होने में वह ख़र्च होता है जो सुनने वाले कभी नहीं करते। ये योजनाएँ उसी की भरपाई के लिए हैं, किसी को बढ़त देने के लिए नहीं। ज़्यादातर सिर्फ़ इसलिए बिना माँगे रह जाती हैं क्योंकि किसी को इनके बारे में पता ही नहीं था।',
+  'schemes.firstHeading': 'सबसे पहले UDID कार्ड बनवाइए',
+  'schemes.firstText':
+    'नीचे दी लगभग हर योजना सबसे पहले यही माँगती है। इसके बिना इस पन्ने का ज़्यादातर हिस्सा बंद है; इसके साथ खुल जाता है। यह मुफ़्त है, और इस पन्ने पर सबसे काम की चीज़ यही है।',
+  'schemes.howMuch': 'कितना',
+  'schemes.who': 'किसके लिए',
+  'schemes.howToApply': 'आवेदन कैसे करें',
+  'schemes.worthKnowing': 'जानने लायक़ बात',
+  'schemes.newTab': '(नए टैब में खुलता है)',
+  'schemes.checked': '{when} में जाँचा गया। किसी आँकड़े पर क़दम उठाने से पहले स्रोत से मिला लीजिए:',
+  'schemes.absentHeading': 'इस पन्ने पर क्या नहीं है, और क्यों',
+  'schemes.absentLead':
+    'सिर्फ़ यह बताने वाली सूची कि क्या मौजूद है, बहुत काम की नहीं होती। ये वे चीज़ें हैं जिनके बारे में आप कहीं और पढ़कर सोच सकते हैं कि ये यहाँ क्यों नहीं हैं।',
+  'schemes.courseHeading': 'ये पाठों में भी पढ़ाई जाती हैं',
+  'schemes.courseText':
+    'यह पन्ना जानकारी के लिए है। पाठ 10 और 11 में यही सामग्री आपके स्तर पर, पूरी वजह के साथ और अंत में एक क्विज़ के साथ पढ़ाई जाती है।',
+  'schemes.courseCta': 'पाठों पर जाइए',
+  'schemes.disclaimer':
+    'नियम और रक़में बदलती रहती हैं, और इनमें से ज़्यादातर हर साल संशोधित होती हैं। यहाँ हर आँकड़ा {when} में जाँचा गया था और अपने स्रोत के साथ है - उस पर क़दम उठाने से पहले स्रोत से मिला लीजिए। यहाँ कुछ भी वित्तीय या क़ानूनी सलाह नहीं है, और इसे लिखने वाला कोई लाइसेंसधारी सलाहकार या वकील नहीं है।',
 }
 
 export const strings = { en, hi }
