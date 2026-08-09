@@ -381,38 +381,48 @@ export default function Home() {
           that is for explaining. */}
       <section
         aria-labelledby="claim-heading"
-        className="relative mx-[calc(50%-50vw)] border-y border-brand-100 bg-brand-50 px-6 py-12"
+        className="relative mx-[calc(50%-50vw)] border-y border-brand-100 bg-brand-50 px-6 py-14"
       >
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-xl">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-2xl">
             <h2 id="claim-heading" className="text-2xl font-extrabold leading-tight text-ink">
               {t('home.claim.heading')}
             </h2>
             <p className="mt-2 text-base leading-relaxed text-muted">{t('home.claim.lead')}</p>
-
-            {/* The four names only. Enough to tell a parent there is something
-                here worth their time; the amounts and the rules are one tap
-                away and change too often to repeat in two places. */}
-            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
-              {CLAIMS.map(({ key, icon }) => (
-                <li key={key} className="flex items-center gap-2">
-                  <ConceptIcon name={icon} className="h-6 w-6 shrink-0 text-clay-600" />
-                  <span className="font-bold text-ink">{t(`home.claim.${key}.title`)}</span>
-                </li>
-              ))}
-            </ul>
           </div>
 
-          <div className="shrink-0">
+          {/* Each entitlement keeps its line of explanation.
+              A previous pass cut these down to the four names alone, which
+              turned the band into "UDID card - ADIP - Scholarships - Section
+              80U": four pieces of jargon, useless to the one reader this
+              section exists for, who is a parent that has never heard of any
+              of them. The whole point is that these go unclaimed because
+              nobody knows they exist, and a name nobody recognises does not
+              fix that. The line is what does the work. */}
+          <ul className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+            {CLAIMS.map(({ key, icon }) => (
+              <li key={key} className="flex gap-3">
+                <ConceptIcon name={icon} className="h-8 w-8 shrink-0 text-clay-600" />
+                <div className="min-w-0">
+                  <h3 className="font-extrabold text-ink">{t(`home.claim.${key}.title`)}</h3>
+                  <p className="mt-0.5 text-sm leading-relaxed text-muted">
+                    {t(`home.claim.${key}.text`)}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
             {/* This pointed at lesson 10 of Level 2, which stays locked until
                 the nine before it are done - so the one call to action aimed at
                 families met a padlock. It goes to the open page now. */}
-            <Link to="/schemes" className="btn-primary sm:text-lg">
+            <Link to="/schemes" className="btn-primary shrink-0 sm:text-lg">
               {t('home.claim.cta')}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
             {/* The honesty line the schemes research insists on. */}
-            <p className="mt-3 max-w-xs text-sm text-muted">{t('home.claim.note')}</p>
+            <p className="text-sm leading-relaxed text-muted">{t('home.claim.note')}</p>
           </div>
         </div>
       </section>
