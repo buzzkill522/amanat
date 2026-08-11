@@ -76,9 +76,9 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
               onChange={(e) => setTrackIndex(Number(e.target.value))}
               className="tap-target rounded-xl border-2 border-brand-200 bg-surface px-3 py-2 text-sm font-bold"
             >
-              {tracks.map((t, i) => (
-                <option key={t.src + i} value={i}>
-                  {t.label}
+              {tracks.map((captionTrack, i) => (
+                <option key={captionTrack.src + i} value={i}>
+                  {captionTrack.label}
                 </option>
               ))}
             </select>

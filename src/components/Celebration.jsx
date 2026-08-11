@@ -41,6 +41,13 @@ export default function Celebration({ show, message, onDone }) {
         size: 8 + Math.round(Math.random() * 10),
       })),
     // Regenerated each time the celebration is shown.
+    //
+    // `show` is not read inside the factory, so exhaustive-deps calls it an
+    // unnecessary dependency. It is doing real work: it is the cache key. Drop
+    // it and the 36 pieces are generated once for the life of the component,
+    // so the second lesson a child finishes replays the exact same confetti as
+    // the first. Keeping it is the whole point of the memo.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [show],
   )
 

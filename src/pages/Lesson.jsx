@@ -164,10 +164,10 @@ export default function Lesson() {
           <TranscriptPanel
             tracks={module.video.captions}
             currentTime={currentTime}
-            onSeek={(t) => {
+            onSeek={(seconds) => {
               // A new object each time so the same timestamp can be clicked twice.
-              setSeekRequest({ time: t, nonce: Date.now() })
-              setCurrentTime(t)
+              setSeekRequest({ time: seconds, nonce: Date.now() })
+              setCurrentTime(seconds)
             }}
           />
         </div>

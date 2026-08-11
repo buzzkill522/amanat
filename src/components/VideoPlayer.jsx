@@ -93,7 +93,11 @@ export default function VideoPlayer({
     } else {
       el.pause()
     }
-  }, [])
+    // `t` belongs here. It was an empty array, which pinned this callback to
+    // whichever translate function existed on first render - so after a
+    // language switch a failed play() would have reported the error in the
+    // language the reader had just left.
+  }, [t])
 
   const replay = useCallback(() => {
     const el = videoRef.current
@@ -148,13 +152,13 @@ export default function VideoPlayer({
           onVolumeChange={(e) => setMuted(e.currentTarget.muted)}
         >
           <source src={video.src} type="video/mp4" />
-          {tracks.map((t, i) => (
+          {tracks.map((track, i) => (
             <track
-              key={t.src + i}
+              key={track.src + i}
               kind="captions"
-              src={t.src}
-              srcLang={t.srclang}
-              label={t.label}
+              src={track.src}
+              srcLang={track.srclang}
+              label={track.label}
             />
           ))}
           {t('video.unsupported')}
@@ -221,9 +225,9 @@ export default function VideoPlayer({
               step={0.5}
               value={currentTime}
               onChange={(e) => {
-                const t = Number(e.target.value)
-                setCurrentTime(t)
-                if (videoRef.current) videoRef.current.currentTime = t
+                const nextTime = Number(e.target.value)
+                setCurrentTime(nextTime)
+                if (videoRef.current) videoRef.current.currentTime = nextTime
               }}
               aria-label={t('video.seekAria')}
               aria-valuetext={t('video.seekValueText', {
@@ -302,9 +306,9 @@ export default function VideoPlayer({
                 onChange={(e) => setActiveTrack(Number(e.target.value))}
                 className="tap-target max-w-full rounded-xl border-2 border-brand-200 bg-surface px-3 py-2 font-bold text-ink"
               >
-                {tracks.map((t, i) => (
-                  <option key={t.src + i} value={i}>
-                    {t.label}
+                {tracks.map((track, i) => (
+                  <option key={track.src + i} value={i}>
+                    {track.label}
                   </option>
                 ))}
               </select>
