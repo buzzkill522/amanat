@@ -526,11 +526,11 @@ export default function Home() {
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              // clay-400 and berry-500, through the palette rather than copied
+              // clay-400 and sun-500, through the palette rather than copied
               // as rgba. The band underneath is `stage`, which is dark in both
               // themes, so the glow needs no per-theme adjustment - but saying
               // it in tokens means a palette change reaches it.
-              'radial-gradient(40rem 22rem at 85% -10%, rgb(var(--c-clay-400) / 0.22), transparent 65%), radial-gradient(32rem 20rem at 0% 110%, rgb(var(--c-berry-500) / 0.16), transparent 65%)',
+              'radial-gradient(40rem 22rem at 85% -10%, rgb(var(--c-clay-400) / 0.22), transparent 65%), radial-gradient(32rem 20rem at 0% 110%, rgb(var(--c-sun-500) / 0.16), transparent 65%)',
           }}
         />
 

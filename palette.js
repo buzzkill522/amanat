@@ -105,26 +105,27 @@ const light = {
     muted: '#bcc5d4',
   },
 
-  // The accent. Blue through violet, and the only hue with no state meaning
-  // attached, so it can appear anywhere without implying right, wrong or in
-  // progress.
+  // The accent. Blue, and the only hue with no state meaning attached, so it
+  // can appear anywhere without implying right, wrong or in progress.
   //
-  // This family spans a hue range rather than sitting on one colour, because
-  // the accent's main job now is a gradient: 500 is the blue end, 700 the
-  // violet one, and `from-clay-500 to-clay-700` is the site's signature fill -
-  // the primary button, the logo, the heading accent.
+  // It was violet for one revision and is blue now. Violet is the more
+  // fashionable choice and it is also the one that reads as a brand colour
+  // first and a colour second - on a page a child is meant to read, that is
+  // backwards. Blue is the quieter answer and the more conventional one for
+  // an interface, which is the point: it lets the drawings and the state
+  // colours carry the meaning while the accent just marks what you can press.
+  //
+  // The family still spans a range rather than sitting on one value, because
+  // the accent's main job is a gradient: `from-clay-500 to-clay-700` is the
+  // site's signature fill - the primary button, the active nav pill, the
+  // heading accent. It runs bright blue into a deep one.
   //
   // 500 -> 700 rather than 500 -> 600 for a reason that only shows up in the
-  // other theme. 600 is the *text* step, so it reflects to a light lavender on
-  // a dark page; a gradient ending there would run fill-to-text and the white
+  // other theme. 600 is the *text* step, so it reflects to a pale blue on a
+  // dark page; a gradient ending there would run fill-to-text and the white
   // label on top would fall through the floor halfway across. 500 and 700 are
   // both fills in both themes, so the gradient holds either way.
-  //
-  // One consequence, called out so it does not read as a mistake: 700 is
-  // lighter than 600 here, which is not true of the state families below. 700
-  // is picked for hue (it is the violet the gradient needs) rather than for
-  // depth, and it still darkens against 500, which is all "pressed" requires.
-  clay: { 100: '#e9e8fe', 400: '#8b93f8', 500: '#4f46e5', 600: '#5b21b6', 700: '#6d28d9' },
+  clay: { 100: '#e0edfe', 400: '#7ba8f5', 500: '#1c64d8', 600: '#1550b5', 700: '#123f9e' },
 
   // ------------------------------------------------------------------
   // State colours. One job per step:
@@ -146,7 +147,13 @@ const light = {
   // brightness out of the red is what buys the separation back.
   grow: { 100: '#d6f3e6', 500: '#04806a', 600: '#036654', 700: '#024f41' },
   sun: { 100: '#fdefc9', 500: '#8f6410', 600: '#73500b', 700: '#5c4008' },
-  berry: { 100: '#f8e2f4', 500: '#8f2b80', 600: '#732166', 700: '#5b1a51' },
+  // Rose rather than the magenta this used to be (#8f2b80). That one had
+  // nearly as much blue in it as red, so it read as purple to most people -
+  // and once the accent stopped being violet, it was the last thing on the
+  // page still pulling that way. Taking the blue out leaves a pink that is
+  // unmistakably its own colour and still nothing like `alert` red, which is
+  // the only neighbour it has to stay clear of.
+  berry: { 100: '#fbe3ee', 500: '#a52163', 600: '#84154b', 700: '#68103a' },
   alert: { 100: '#ffe0e0', 500: '#a81523', 600: '#7d0e1a', 700: '#660a15' },
 }
 
@@ -189,17 +196,15 @@ const dark = {
   },
 
   // The accent lifts so it still reads on a dark page - clay-500 is the focus
-  // ring, which is not allowed to be hard to see. The blue-to-violet span is
-  // preserved: 500 stays the blue end and 700 the violet one, both dark enough
-  // to keep a white label at 4.5:1 while clearing 3:1 against the page, so the
-  // gradient reflects instead of being redesigned.
-  // 700 is lifted a little off the obvious violet (#7c3aed) because that one
-  // measured exactly 3.00 against `surface` - passing, but with nothing left.
-  // A rounding change in either direction would have turned a green check into
-  // a red one for no design reason. This sits in the narrow window where the
-  // fill clears 3:1 against the page *and* still holds a white label at 4.5:1;
-  // the two pull opposite ways, which is why it is not a round number.
-  clay: { 100: '#221c4a', 400: '#8b93f8', 500: '#5b5ce0', 600: '#c4b5fd', 700: '#8244f0' },
+  // ring, which is not allowed to be hard to see. The gradient span survives
+  // the reflection: 500 and 700 are both fills, both dark enough to hold a
+  // white label at 4.5:1 while clearing 3:1 against the page.
+  // Those two floors pull in opposite directions on a dark ground - lifting a
+  // fill helps it separate from the page and hurts the white label on top - so
+  // these are narrow-window values rather than round ones. The gradient runs
+  // slightly *lighter* toward 700 here, mirroring the light theme where it
+  // runs darker; the same end-for-end reflection the brand ramp makes.
+  clay: { 100: '#0f2547', 400: '#7ba8f5', 500: '#2563eb', 600: '#9dc0ff', 700: '#3366e0' },
 
   // Tints go dark, text steps go light. The fills keep their hue and their
   // white labels, lifted only as far as a narrow window allows: a fill has to
@@ -209,7 +214,7 @@ const dark = {
   // than round ones.
   grow: { 100: '#0c2a20', 500: '#037a78', 600: '#3fdcc0', 700: '#056156' },
   sun: { 100: '#2c2210', 500: '#8a6316', 600: '#e0b24f', 700: '#6f4f11' },
-  berry: { 100: '#2b1327', 500: '#aa3f93', 600: '#e59ad4', 700: '#78266a' },
+  berry: { 100: '#2d1220', 500: '#ba447a', 600: '#f0a2c2', 700: '#8b2d57' },
   alert: { 100: '#301313', 500: '#c23c39', 600: '#e8756f', 700: '#9c2b28' },
 }
 

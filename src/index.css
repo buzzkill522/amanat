@@ -72,11 +72,16 @@
   /* The wash. Fixed rather than scrolling, so the page feels lit from a
      constant source instead of dragging a gradient down with it.
 
-     Blue at the top, violet to one side, a trace of magenta to the other -
-     the accent's own gradient, spread across the whole page at an alpha where
-     it registers as warmth rather than as colour. Said through the same custom
-     properties every utility class resolves through, so it follows the theme
-     without anyone maintaining a second copy of the palette down here. */
+     Blue at the top, a deeper blue to one side, a trace of amber to the other.
+     The two blues are the accent's own gradient; the amber is there so the
+     page is not lit from a single hue, and it is the warm counterweight to a
+     cool accent rather than a second colour with anything to say. This slot
+     used to be magenta, which spread a faint purple cast over every page -
+     subtle enough to be hard to name and obvious enough to notice.
+
+     Said through the same custom properties every utility class resolves
+     through, so it follows the theme without anyone maintaining a second copy
+     of the palette down here. */
   body::after {
     content: '';
     position: fixed;
@@ -96,7 +101,7 @@
       ),
       radial-gradient(
         40rem 30rem at 0% 55%,
-        rgb(var(--c-berry-500) / calc(0.045 * var(--wash-strength))),
+        rgb(var(--c-sun-500) / calc(0.045 * var(--wash-strength))),
         transparent 70%
       );
   }
@@ -150,9 +155,9 @@
 
   /* A single, always-visible focus style. Never remove the outline without
      replacing it (WCAG 2.4.7 Focus Visible, 2.4.11 Focus Not Obscured). */
-  /* The accent doubles as the focus colour: on a page this quiet, the violet
-     is the most visible thing available, and it clears 3:1 against both paper
-     and the dark panels in either theme (measured, check:a11y). */
+  /* The accent doubles as the focus colour: on a page this quiet, the blue is
+     the most visible thing available, and it clears 3:1 against both paper and
+     the dark panels in either theme (measured, check:a11y). */
   :focus-visible {
     @apply outline-none ring-4 ring-clay-500 ring-offset-2 ring-offset-paper rounded-lg;
   }
@@ -217,11 +222,11 @@
            disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100;
   }
 
-  /* The accent gradient, blue into violet.
+  /* The accent gradient, bright blue into deep blue.
      This used to be near-black, on the reasoning that in a neutral scheme the
      primary action earns its weight by being the darkest thing on the page.
      That held while the page had no accent worth the name; now that it does,
-     a black button next to a violet logo just looks like two unrelated
+     a black button next to a blue logo just looks like two unrelated
      decisions. Both ends of the gradient are audited against a white label,
      so every colour along it clears 4.5:1 - see check-a11y.mjs. */
   .btn-primary {

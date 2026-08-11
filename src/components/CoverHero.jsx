@@ -76,7 +76,7 @@ export default function CoverHero() {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(38rem 22rem at 15% 0%, rgb(var(--c-clay-500) / 0.18), transparent 65%), radial-gradient(30rem 20rem at 100% 15%, rgb(var(--c-clay-700) / 0.15), transparent 65%), radial-gradient(26rem 18rem at 85% 100%, rgb(var(--c-berry-500) / 0.1), transparent 65%)',
+            'radial-gradient(38rem 22rem at 15% 0%, rgb(var(--c-clay-500) / 0.18), transparent 65%), radial-gradient(30rem 20rem at 100% 15%, rgb(var(--c-clay-700) / 0.15), transparent 65%), radial-gradient(26rem 18rem at 85% 100%, rgb(var(--c-sun-500) / 0.1), transparent 65%)',
         }}
       />
 
@@ -96,7 +96,7 @@ export default function CoverHero() {
         >
           <span className="block animate-riseIn [animation-delay:90ms]">{t('cover.title1')}</span>
           {/* The one gradient on the page that carries text. clay-500 into
-              clay-700 - the same blue-to-violet sweep as the logo and the
+              clay-700 - the same bright-to-deep blue sweep as the
               primary button, so the cover states the accent once and the rest
               of the page repeats it. Both ends are audited (check-a11y), and
               every colour between them is a blend of two audited colours. */}
