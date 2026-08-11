@@ -98,11 +98,21 @@ const TEXT = [
   ['stage.ink', 'stage'], ['stage.muted', 'stage'], ['stage.ink', 'stage.deep'],
   ['stage.muted', 'stage.deep'],
 
-  // The accent. clay-500 is not here on purpose: it is the focus ring and the
-  // logo mark, never a background with text on it, so it is graded at 3:1
-  // below rather than given a text pairing it never has to satisfy.
+  // The accent as text.
   ['clay.600', 'paper'], ['clay.600', 'surface'], ['clay.600', 'brand.50'],
   ['clay.600', 'clay.100'],
+
+  // The accent as a fill. clay-500 used to be excluded here on the grounds
+  // that it was only ever the focus ring and the logo mark - never a
+  // background with text on it. That stopped being true when the primary
+  // button became a `from-clay-500 to-clay-700` gradient with a white label,
+  // so both ends are graded at 4.5:1 now.
+  //
+  // Both ends, not just the darker one: a gradient only clears the floor
+  // everywhere along it if it clears at each end, since every intermediate
+  // colour is a blend of the two. White rather than `surface` for the same
+  // reason as the state fills below - this fill does not reflect.
+  ['#ffffff', 'clay.500'], ['#ffffff', 'clay.700'],
 
   // State colours: text step on its own tint, and on the page.
   ['grow.600', 'grow.100'], ['grow.600', 'paper'], ['grow.600', 'surface'],
@@ -131,8 +141,10 @@ const TEXT = [
 // always fails is a check everybody learns to ignore.
 const GRAPHICS = [
   // The accent, which is also the focus ring - the one graphic on the page
-  // that a keyboard user cannot afford to lose.
+  // that a keyboard user cannot afford to lose. clay-700 is the violet end of
+  // the same gradient and turns up as an icon and a border in its own right.
   ['clay.500', 'paper'], ['clay.500', 'surface'],
+  ['clay.700', 'paper'], ['clay.700', 'surface'],
   ['brand.600', 'surface'], ['brand.600', 'paper'],
   // The secondary button's outline - the main cue that it is a button at all.
   ['brand.400', 'surface'], ['brand.400', 'paper'],

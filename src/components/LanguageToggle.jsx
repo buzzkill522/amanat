@@ -29,8 +29,10 @@ export default function LanguageToggle({ className = '' }) {
             lang={l.htmlLang}
             onClick={() => setLang(l.code)}
             aria-pressed={active}
-            className={`tap-target rounded-lg px-3 py-1.5 text-sm font-extrabold transition ${
-              active ? 'bg-ink text-surface' : 'text-ink hover:bg-brand-100'
+            className={`tap-target rounded-full px-3.5 py-1.5 text-sm font-extrabold transition duration-200 ${
+              active
+                ? 'bg-gradient-to-br from-clay-500 to-clay-700 text-white'
+                : 'text-ink hover:bg-brand-100'
             }`}
           >
             {l.label}

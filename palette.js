@@ -32,7 +32,8 @@
 //   text. Bright where it is free, deep where the contrast floor says so.
 //
 // Five hues, one job each, no two doing the same work:
-//   clay   indigo   the accent - eyebrows, the focus ring, the logo mark
+//   clay   blue-violet  the accent - eyebrows, the focus ring, the logo mark,
+//                       and the gradient that carries the primary button
 //   grow   emerald  correct, complete
 //   sun    amber    in progress, careful
 //   berry  magenta  the dictionary, secondary emphasis
@@ -104,9 +105,26 @@ const light = {
     muted: '#bcc5d4',
   },
 
-  // The accent. Indigo, and the only hue with no state meaning attached, so
-  // it can appear anywhere without implying right, wrong or in progress.
-  clay: { 100: '#e3eafe', 400: '#6b86f0', 500: '#3450c8', 600: '#283e9e' },
+  // The accent. Blue through violet, and the only hue with no state meaning
+  // attached, so it can appear anywhere without implying right, wrong or in
+  // progress.
+  //
+  // This family spans a hue range rather than sitting on one colour, because
+  // the accent's main job now is a gradient: 500 is the blue end, 700 the
+  // violet one, and `from-clay-500 to-clay-700` is the site's signature fill -
+  // the primary button, the logo, the heading accent.
+  //
+  // 500 -> 700 rather than 500 -> 600 for a reason that only shows up in the
+  // other theme. 600 is the *text* step, so it reflects to a light lavender on
+  // a dark page; a gradient ending there would run fill-to-text and the white
+  // label on top would fall through the floor halfway across. 500 and 700 are
+  // both fills in both themes, so the gradient holds either way.
+  //
+  // One consequence, called out so it does not read as a mistake: 700 is
+  // lighter than 600 here, which is not true of the state families below. 700
+  // is picked for hue (it is the violet the gradient needs) rather than for
+  // depth, and it still darkens against 500, which is all "pressed" requires.
+  clay: { 100: '#e9e8fe', 400: '#8b93f8', 500: '#4f46e5', 600: '#5b21b6', 700: '#6d28d9' },
 
   // ------------------------------------------------------------------
   // State colours. One job per step:
@@ -171,8 +189,17 @@ const dark = {
   },
 
   // The accent lifts so it still reads on a dark page - clay-500 is the focus
-  // ring, which is not allowed to be hard to see.
-  clay: { 100: '#1c2540', 400: '#6b86f0', 500: '#5c7ae8', 600: '#9db3ff' },
+  // ring, which is not allowed to be hard to see. The blue-to-violet span is
+  // preserved: 500 stays the blue end and 700 the violet one, both dark enough
+  // to keep a white label at 4.5:1 while clearing 3:1 against the page, so the
+  // gradient reflects instead of being redesigned.
+  // 700 is lifted a little off the obvious violet (#7c3aed) because that one
+  // measured exactly 3.00 against `surface` - passing, but with nothing left.
+  // A rounding change in either direction would have turned a green check into
+  // a red one for no design reason. This sits in the narrow window where the
+  // fill clears 3:1 against the page *and* still holds a white label at 4.5:1;
+  // the two pull opposite ways, which is why it is not a round number.
+  clay: { 100: '#221c4a', 400: '#8b93f8', 500: '#5b5ce0', 600: '#c4b5fd', 700: '#8244f0' },
 
   // Tints go dark, text steps go light. The fills keep their hue and their
   // white labels, lifted only as far as a narrow window allows: a fill has to

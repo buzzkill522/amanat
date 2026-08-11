@@ -40,8 +40,16 @@ function NavItem({ to, label, icon: Icon, end, currentLabel, alsoMatch }) {
     <Link
       to={to}
       aria-current={active ? 'page' : undefined}
-      className={`tap-target flex-col gap-0.5 rounded-xl px-2 py-2 text-xs font-extrabold transition sm:flex-row sm:gap-2 sm:px-3 sm:text-sm ${
-        active ? 'bg-ink text-surface' : 'text-ink hover:bg-brand-100'
+      // sm:px-3, not px-3.5. Six nav items sit in a max-w-6xl row beside the
+      // brand, the language toggle and the theme button, and that row has
+      // about 18px of slack at desktop width. Two extra pixels of padding a
+      // side is 24px across six pills, which is enough to wrap the theme
+      // button onto a line of its own and make the (now sticky) header half
+      // as tall again. Measured, not guessed.
+      className={`tap-target flex-col gap-0.5 rounded-full px-2 py-2 text-xs font-extrabold transition duration-200 sm:flex-row sm:gap-2 sm:px-3 sm:text-sm ${
+        active
+          ? 'bg-gradient-to-br from-clay-500 to-clay-700 text-white'
+          : 'text-ink hover:bg-brand-100'
       }`}
     >
       <Icon className="h-6 w-6" aria-hidden="true" />
@@ -71,12 +79,33 @@ export default function Layout() {
         {t('skip.link')}
       </a>
 
-      {/* Light header, hairline instead of a filled bar: in a neutral scheme
-          the chrome recedes and the content is the only thing with weight. */}
-      <header className="border-b border-brand-100 bg-surface">
+      {/* Sticky and translucent, with the page blurred behind it.
+          The chrome still recedes - hairline, no filled bar - but it now stays
+          with the reader instead of scrolling away, which matters most on the
+          long pages (a lesson, the schemes reference) where the nav was
+          previously a scroll back to the top.
+
+          `bg-surface/85` rather than something more glassy for a measurable
+          reason: the contrast audit reads flat token colours and cannot see
+          what is behind a translucent panel, so the further the opacity drops
+          the less the measured header ratios mean. At 85% the worst case - a
+          dark band scrolling underneath - shifts the effective background by
+          a small fraction, and the header's text pairings (ink on surface at
+          16:1) have far more headroom than that costs. `supports` keeps the
+          panel fully opaque where backdrop-filter is unavailable, rather than
+          leaving a washed-out bar.
+
+          Sticky from `lg` only, and that is a measurement rather than taste.
+          Six nav items, a two-line brand and two toggles fit on one row at
+          desktop width - about 78px, a tenth of the viewport, which is a fair
+          price for keeping the nav reachable on a long lesson. Below `lg` the
+          same contents wrap to two and then three rows: 190px, 27% of the
+          screen, permanently, on exactly the small devices that can least
+          afford it. So the header scrolls away there, as it always did. */}
+      <header className="z-40 border-b border-brand-100 bg-surface lg:sticky lg:top-0 supports-[backdrop-filter]:bg-surface/85 supports-[backdrop-filter]:backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
-          <Link to="/" className="tap-target gap-3 rounded-xl px-2 py-1 text-ink hover:bg-brand-50">
-            <Logomark className="h-8 w-8 text-clay-500" />
+          <Link to="/" className="tap-target gap-3 rounded-full px-2 py-1 text-ink hover:bg-brand-50">
+            <Logomark className="h-9 w-9" />
             <span className="text-left">
               <span className="block text-xl font-extrabold leading-tight">
                 {site.name}

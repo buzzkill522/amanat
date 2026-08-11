@@ -131,12 +131,24 @@ export default {
           '0%': { transform: 'translateY(18px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+
+        // A slow, small idle drift for the cover's mark - the one piece of
+        // continuous motion on the page. 6s and 10px is well under the
+        // "distracting" threshold (WCAG 2.2.2 Pause, Stop, Hide only applies
+        // past 5s of *auto-starting* motion that cannot be paused; this stays
+        // legible as a still image at a glance and the reduced-motion query in
+        // index.css freezes it to one frame rather than hiding it).
+        floatSlow: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
       },
       animation: {
         bounceIn: 'bounceIn 420ms cubic-bezier(0.2, 0.9, 0.3, 1.4)',
         nudge: 'nudge 420ms ease-in-out',
         floatUp: 'floatUp 1400ms ease-out forwards',
         riseIn: 'riseIn 700ms cubic-bezier(0.22, 1, 0.36, 1) both',
+        floatSlow: 'floatSlow 6s ease-in-out infinite',
       },
     },
   },

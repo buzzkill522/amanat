@@ -1,8 +1,24 @@
 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <!-- Simplified for tab/home-screen sizes: thicker stroke, solid pupil,
-       no rupee glyph - it disappears below about 24px anyway. Colour is
-       fixed rather than theme-aware; a favicon renders in the browser's own
-       chrome, outside the page's light/dark toggle. -->
-  <path d="M4,24 Q24,6 44,24 Q24,42 4,24 Z" fill="none" stroke="#a8451c" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" />
-  <circle cx="24" cy="24" r="10" fill="#a8451c" />
+  <!-- The gullak mark, simplified for tab and home-screen sizes.
+
+       Two differences from src/components/icons/Logomark.jsx, both forced by
+       where this renders. The gradient is written as literal hexes rather than
+       through the palette's custom properties, because a favicon is painted by
+       the browser's own chrome and never sees the page's stylesheet. And the
+       gloss highlight is dropped - below about 24px it is a smudge rather than
+       a shape.
+
+       The hexes are clay-500 and clay-700 from the LIGHT theme in palette.js.
+       If those change, change these; nothing links them automatically. -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+  </defs>
+  <rect x="14" y="8" width="20" height="5.5" rx="2.75" fill="url(#g)" />
+  <ellipse cx="24" cy="28" rx="18" ry="15" fill="url(#g)" />
+  <circle cx="17.8" cy="26" r="2.4" fill="#ffffff" />
+  <circle cx="30.2" cy="26" r="2.4" fill="#ffffff" />
+  <path d="M18.6 32.8c1.5 1.9 3.2 2.8 5.4 2.8s3.9-.9 5.4-2.8" fill="none" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" />
 </svg>

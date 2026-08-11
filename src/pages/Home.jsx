@@ -48,21 +48,17 @@ const CLAIMS = [
 /**
  * A section's heading block.
  *
- * Left-aligned, always. It used to centre by default, and a later pass left
- * some sections centred while moving others left, aiming for rhythm. Measured,
- * that produced three different left edges down one page - 72px for the plain
- * sections, 296px for every centred heading, and a third for the full-bleed
- * bands. The effect was not rhythm; it was text that looked like it had landed
- * at random.
- *
- * One edge for every heading now. Variety comes from what a section holds - a
- * list, a grid, a tinted band - rather than from where its first word starts.
- * `max-w-2xl` still caps the prose so a line never runs the full column width,
- * which limits line length without moving the left edge.
+ * `align` exists because every section on this page used to be centred with an
+ * eyebrow above it, six times in a row. Uniform centring is one of the things
+ * that makes a page read as generated rather than designed - the eye finds no
+ * rhythm, because every block begins the same way. Left-aligned sections now
+ * alternate with centred ones, and `eyebrow` is optional so a section can start
+ * on its heading instead.
  */
-function SectionHead({ eyebrow, heading, lead, id, tone = 'text-clay-600' }) {
+function SectionHead({ eyebrow, heading, lead, id, tone = 'text-clay-600', align = 'center' }) {
+  const centred = align === 'center'
   return (
-    <div className="max-w-2xl space-y-3">
+    <div className={centred ? 'mx-auto max-w-2xl space-y-3 text-center' : 'max-w-2xl space-y-3'}>
       {eyebrow && (
         <p className={`text-sm font-bold uppercase tracking-[0.14em] ${tone}`}>{eyebrow}</p>
       )}
@@ -101,15 +97,26 @@ export default function Home() {
       {/* The cover carries the <h1>, so this page runs at <h2> from here. */}
       <CoverHero />
 
-      {/* A slow gradient across the whole body of the page: paper at the top,
-          easing toward brand-100 by the time you reach the closing band -
-          one step up the existing warm-stone ramp, not a new colour. Kept
-          deliberately subtle: brand-200, the next step after that, drops
-          muted text below the 4.5:1 floor, so this stops one tier short of
-          costing anything. Pure background-image on a tall wrapper, not a
-          scroll listener - the same visual read, with no JS and nothing to
-          break under prefers-reduced-motion because nothing here moves. */}
-      <div className="space-y-24 bg-gradient-to-b from-paper to-brand-100 sm:space-y-32">
+      {/* Spacing only. This wrapper used to also carry a slow vertical
+          gradient - paper at the top, easing to brand-100 by the closing band.
+
+          It had to go, and the reason is worth writing down because the idea
+          keeps looking attractive. The gradient was painted on a wrapper that
+          lives inside <main>, and <main> is `max-w-6xl`. So on any screen
+          wider than 1152px the gradient stopped at the content column while
+          the page behind it stayed `paper`: measured at 1400px wide, the
+          column ran to #dde4ef at the bottom against #f6f8fc margins, which
+          is a hard vertical seam down both sides of the page, 2305px long and
+          getting worse the further you scrolled. Every horizontal slice of
+          the page had two colours in it.
+
+          A gradient that wants to span the page has to be painted by
+          something that spans the page - the body, or a full-bleed band.
+          Since `body::after` in index.css already lays a wash over the whole
+          viewport, there is nowhere for this one to go that is not doing the
+          same job twice, so the page is simply `paper` throughout now: one
+          colour at every height, edge to edge. */}
+      <div className="space-y-24 sm:space-y-32">
       {/* -------------------------------------------------------------- resume */}
       {/* Only for someone who has actually finished something, and placed
           directly under the cover so it is the first thing a returning
@@ -124,7 +131,10 @@ export default function Home() {
                 className="group flex flex-col gap-5 rounded-3xl border-2 border-grow-500 bg-surface p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:items-center sm:p-8"
               >
                 <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-grow-100">
-                  <ConceptIcon name={resume.next.icon} className="h-10 w-10 text-grow-600" />
+                  <ConceptIcon
+                    name={resume.next.icon}
+                    className="h-10 w-10 text-grow-600 transition-transform duration-300 group-hover:scale-110"
+                  />
                 </span>
 
                 <span className="min-w-0 flex-1">
@@ -198,30 +208,34 @@ export default function Home() {
       {/* Four facts, no container. A single hairline underneath is enough to
           close the band off. */}
       <section aria-label={t('home.topics.eyebrow')} className="-mt-10 sm:-mt-14">
-        <dl className="grid grid-cols-2 gap-x-6 gap-y-10 border-b border-brand-100 pb-12 sm:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <dt className="sr-only">{s.label}</dt>
-              <dd>
-                {/* Printed, not counted up.
-                    These numbers used to animate from zero when they scrolled
-                    into view, via an IntersectionObserver. When that observer
-                    did not fire - a backgrounded tab, a zero-width viewport -
-                    nothing reset the value, so the band sat reading "0 lessons,
-                    0 levels, 0 words" indefinitely while screen readers got the
-                    real figures. A decorative count that can leave the wrong
-                    number on screen is not a trade worth making for content
-                    this page exists to state. */}
-                <span className="block font-display text-5xl font-extrabold text-ink">
-                  {s.value}
-                </span>
-                <span className="mx-auto mt-2 block max-w-[10rem] text-sm leading-snug text-muted">
-                  {s.label}
-                </span>
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <Reveal>
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-10 border-b border-brand-100 pb-12 sm:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="group text-center">
+                <dt className="sr-only">{s.label}</dt>
+                <dd>
+                  {/* Printed, not counted up.
+                      These numbers used to animate from zero when they scrolled
+                      into view, via an IntersectionObserver. When that observer
+                      did not fire - a backgrounded tab, a zero-width viewport -
+                      nothing reset the value, so the band sat reading "0 lessons,
+                      0 levels, 0 words" indefinitely while screen readers got the
+                      real figures. A decorative count that can leave the wrong
+                      number on screen is not a trade worth making for content
+                      this page exists to state. The gradient and the hover scale
+                      are new, the number underneath is not - text-transparent
+                      still reads the real digits to anything that isn't paint. */}
+                  <span className="block bg-gradient-to-br from-clay-500 to-clay-700 bg-clip-text font-display text-5xl font-extrabold text-transparent transition-transform duration-300 group-hover:scale-110">
+                    {s.value}
+                  </span>
+                  <span className="mx-auto mt-2 block max-w-[10rem] text-sm leading-snug text-muted">
+                    {s.label}
+                  </span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </section>
 
       {/* ---------------------------------------------------------- featured */}
@@ -237,7 +251,7 @@ export default function Home() {
             <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-brand-50 transition-colors group-hover:bg-clay-100">
               <ConceptIcon
                 name={featured.icon}
-                className="h-12 w-12 text-brand-600 transition-colors group-hover:text-clay-600"
+                className="h-12 w-12 text-brand-600 transition-all duration-300 group-hover:scale-110 group-hover:text-clay-600"
               />
             </span>
 
@@ -271,35 +285,40 @@ export default function Home() {
 
       {/* ------------------------------------------------------- how it works */}
       <section aria-labelledby="how-heading">
-        <SectionHead
-          id="how-heading"
-          eyebrow={t('home.how.eyebrow')}
-          heading={t('home.how.heading')}
-          lead={t('home.how.lead')}
-        />
+        <Reveal>
+          <SectionHead
+            id="how-heading"
+            eyebrow={t('home.how.eyebrow')}
+            heading={t('home.how.heading')}
+            lead={t('home.how.lead')}
+          />
 
-        {/* Numbered steps read better as a sequence than as three equal cards,
-            so on a wide screen this is one row with the number leading each
-            item rather than a grid of matching tiles. */}
-        <ol className="mt-12 space-y-8 md:grid md:max-w-none md:grid-cols-3 md:gap-10 md:space-y-0">
-          {STEPS.map(({ key, icon: Icon, tone }, i) => (
-            <li key={key} className="flex gap-4 md:block md:space-y-3">
-              <span
-                aria-hidden="true"
-                className="font-display text-4xl font-extrabold leading-none text-brand-200 md:block md:text-5xl"
-              >
-                {i + 1}
-              </span>
-              <div className="min-w-0 space-y-2">
-                <Icon className={`h-8 w-8 ${tone}`} aria-hidden="true" />
-                <h3 className="text-xl font-extrabold text-ink">{t(`home.how.${key}.title`)}</h3>
-                <p className="text-base leading-relaxed text-muted">
-                  {t(`home.how.${key}.text`, { sign: signLabel(lang) })}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ol>
+          {/* Numbered steps read better as a sequence than as three equal cards,
+              so on a wide screen this is one row with the number leading each
+              item rather than a grid of matching tiles. */}
+          <ol className="mt-12 space-y-8 md:grid md:max-w-none md:grid-cols-3 md:gap-10 md:space-y-0">
+            {STEPS.map(({ key, icon: Icon, tone }, i) => (
+              <li key={key} className="group flex gap-4 md:block md:space-y-3">
+                <span
+                  aria-hidden="true"
+                  className="font-display text-4xl font-extrabold leading-none text-brand-200 md:block md:text-5xl"
+                >
+                  {i + 1}
+                </span>
+                <div className="min-w-0 space-y-2">
+                  <Icon
+                    className={`h-8 w-8 transition-transform duration-300 group-hover:scale-110 ${tone}`}
+                    aria-hidden="true"
+                  />
+                  <h3 className="text-xl font-extrabold text-ink">{t(`home.how.${key}.title`)}</h3>
+                  <p className="text-base leading-relaxed text-muted">
+                    {t(`home.how.${key}.text`, { sign: signLabel(lang) })}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </section>
 
       {/* Choosing a level used to happen here too, in a full card grid
@@ -324,51 +343,56 @@ export default function Home() {
 
       {/* --------------------------------------------------------- curriculum */}
       <section aria-labelledby="topics-heading">
-        <SectionHead
-          id="topics-heading"
-          eyebrow={t('home.topics.eyebrow')}
-          heading={t('home.topics.heading', { count: modules.length })}
-          lead={t('home.topics.lead')}
-        />
+        <Reveal>
+          <SectionHead
+            id="topics-heading"
+            eyebrow={t('home.topics.eyebrow')}
+            heading={t('home.topics.heading', { count: modules.length })}
+            lead={t('home.topics.lead')}
+          />
 
-        {/* Said plainly rather than left to be discovered: the lessons
-            themselves have not been translated yet, only the site around them. */}
-        {isHindi && (
-          <p className="mx-auto mt-8 max-w-2xl rounded-2xl bg-sun-100 px-5 py-3 text-center text-base font-bold text-sun-600">
-            {t('lang.lessonNote')}
-          </p>
-        )}
+          {/* Said plainly rather than left to be discovered: the lessons
+              themselves have not been translated yet, only the site around them. */}
+          {isHindi && (
+            <p className="mx-auto mt-8 max-w-2xl rounded-2xl bg-sun-100 px-5 py-3 text-center text-base font-bold text-sun-600">
+              {t('lang.lessonNote')}
+            </p>
+          )}
 
-        {/* The picture is the point: a child who cannot yet read the titles can
-            still see what the course covers. */}
-        {/* No staggered entrance here. Eleven items fading in one after another
-            is the single most recognisable "generated page" gesture, and it
-            delays the one thing this section exists to show: the whole course
-            at a glance. */}
-        <ol className="mt-14 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {modules.map((m, i) => {
-            const meta = moduleMeta(m, lang)
-            return (
-              <li key={m.id} className="group flex items-start gap-4">
-                <ConceptIcon
-                  name={m.icon}
-                  className="h-9 w-9 shrink-0 text-brand-600 transition-colors duration-300 group-hover:text-clay-600"
-                />
-                <div className="min-w-0">
-                  <span
-                    aria-hidden="true"
-                    className="block text-xs font-extrabold uppercase tracking-[0.14em] text-clay-600"
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="mt-1 block font-extrabold leading-snug text-ink">
-                    {meta.title}
-                  </span>
-                </div>
-              </li>
-            )
-          })}
-        </ol>
+          {/* The picture is the point: a child who cannot yet read the titles can
+              still see what the course covers. */}
+          {/* No per-item stagger here. Eleven items fading in one after another
+              is the single most recognisable "generated page" gesture, and it
+              delays the one thing this section exists to show: the whole course
+              at a glance. The whole grid still gets one entrance, from the
+              <Reveal> wrapping this section - the difference is that it moves
+              as one piece, the way the rest of this page's sections now do,
+              rather than counting itself in for the reader. */}
+          <ol className="mx-auto mt-14 grid max-w-5xl gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {modules.map((m, i) => {
+              const meta = moduleMeta(m, lang)
+              return (
+                <li key={m.id} className="group flex items-start gap-4">
+                  <ConceptIcon
+                    name={m.icon}
+                    className="h-9 w-9 shrink-0 text-brand-600 transition-all duration-300 group-hover:scale-110 group-hover:text-clay-600"
+                  />
+                  <div className="min-w-0">
+                    <span
+                      aria-hidden="true"
+                      className="block text-xs font-extrabold uppercase tracking-[0.14em] text-clay-600"
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="mt-1 block font-extrabold leading-snug text-ink">
+                      {meta.title}
+                    </span>
+                  </div>
+                </li>
+              )
+            })}
+          </ol>
+        </Reveal>
       </section>
 
       {/* -------------------------------------------------- what you can claim */}
@@ -385,80 +409,97 @@ export default function Home() {
           that is for explaining. */}
       <section
         aria-labelledby="claim-heading"
-        className="relative mx-[calc(50%-50vw)] border-y border-brand-100 bg-brand-50 py-14"
+        className="relative mx-[calc(50%-50vw)] overflow-hidden border-y border-brand-100 bg-brand-50 px-6 py-12"
       >
-        <div className="mx-auto w-full max-w-6xl px-4">
-          <div className="max-w-2xl">
+        {/* A low-alpha glow on top of the flat brand-50 fill, the same trick
+            as the closing CTA band below - two of the site's own hues, not a
+            new colour. Kept faint on purpose: the contrast audit measured
+            ink/muted against a flat brand-50 with 5.3:1 and 6.4:1 of headroom
+            over the 4.5:1 floor (both themes, npm run check:a11y), and this
+            spends only a sliver of that margin for some warmth in an
+            otherwise flat band. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(34rem 20rem at 8% -20%, rgb(var(--c-clay-500) / 0.08), transparent 65%), radial-gradient(28rem 18rem at 100% 120%, rgb(var(--c-clay-700) / 0.07), transparent 65%)',
+          }}
+        />
+
+        <Reveal className="relative mx-auto flex max-w-6xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-xl">
             <h2 id="claim-heading" className="text-2xl font-extrabold leading-tight text-ink">
               {t('home.claim.heading')}
             </h2>
             <p className="mt-2 text-base leading-relaxed text-muted">{t('home.claim.lead')}</p>
+
+            {/* The four names only. Enough to tell a parent there is something
+                here worth their time; the amounts and the rules are one tap
+                away and change too often to repeat in two places. */}
+            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+              {CLAIMS.map(({ key, icon }) => (
+                <li key={key} className="group flex items-center gap-2">
+                  <ConceptIcon
+                    name={icon}
+                    className="h-6 w-6 shrink-0 text-clay-600 transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <span className="font-bold text-ink">{t(`home.claim.${key}.title`)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Each entitlement keeps its line of explanation.
-              A previous pass cut these down to the four names alone, which
-              turned the band into "UDID card - ADIP - Scholarships - Section
-              80U": four pieces of jargon, useless to the one reader this
-              section exists for, who is a parent that has never heard of any
-              of them. The whole point is that these go unclaimed because
-              nobody knows they exist, and a name nobody recognises does not
-              fix that. The line is what does the work. */}
-          <ul className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2">
-            {CLAIMS.map(({ key, icon }) => (
-              <li key={key} className="flex gap-3">
-                <ConceptIcon name={icon} className="h-8 w-8 shrink-0 text-clay-600" />
-                <div className="min-w-0">
-                  <h3 className="font-extrabold text-ink">{t(`home.claim.${key}.title`)}</h3>
-                  <p className="mt-0.5 text-sm leading-relaxed text-muted">
-                    {t(`home.claim.${key}.text`)}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+          <div className="shrink-0">
             {/* This pointed at lesson 10 of Level 2, which stays locked until
                 the nine before it are done - so the one call to action aimed at
                 families met a padlock. It goes to the open page now. */}
-            <Link to="/schemes" className="btn-primary shrink-0 sm:text-lg">
+            <Link to="/schemes" className="btn-primary sm:text-lg">
               {t('home.claim.cta')}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
             {/* The honesty line the schemes research insists on. */}
-            <p className="text-sm leading-relaxed text-muted">{t('home.claim.note')}</p>
+            <p className="mt-3 max-w-xs text-sm text-muted">{t('home.claim.note')}</p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* -------------------------------------------------- glossary sample */}
       <section aria-labelledby="words-heading">
-        {/* Heading on the left, action on the right - the words themselves
-            then run full width underneath, rather than sitting in another
-            centred column. */}
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHead
-            id="words-heading"
-            eyebrow={t('home.words.eyebrow')}
-            heading={t('home.words.heading', { count: dictionary.entries.length })}
-            lead={t('home.words.lead')}
-          />
-          <Link to="/dictionary" className="btn-secondary shrink-0">
-            <BookOpen className="h-5 w-5" aria-hidden="true" />
-            {t('home.words.cta')}
-          </Link>
-        </div>
+        <Reveal>
+          {/* Heading on the left, action on the right - the words themselves
+              then run full width underneath, rather than sitting in another
+              centred column. */}
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHead
+              id="words-heading"
+              eyebrow={t('home.words.eyebrow')}
+              heading={t('home.words.heading', { count: dictionary.entries.length })}
+              lead={t('home.words.lead')}
+              align="start"
+            />
+            <Link to="/dictionary" className="btn-secondary shrink-0">
+              <BookOpen className="h-5 w-5" aria-hidden="true" />
+              {t('home.words.cta')}
+            </Link>
+          </div>
 
-        <ul className="mt-10 flex flex-wrap gap-3">
-          {sampleWords.map((entry) => (
-            <li key={entry.id}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-surface px-4 py-2">
-                <ConceptIcon name={entry.icon} className="h-5 w-5 text-clay-600" />
-                <span className="text-sm font-bold text-ink">{entry.term}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
+          <ul className="mt-10 flex flex-wrap gap-3">
+            {sampleWords.map((entry) => (
+              <li key={entry.id}>
+                {/* Not a link - one entry out of the full glossary, shown as a
+                    sample. The hover lift is a chip convention (it says "this
+                    is a labelled thing"), not a click promise, so it stays
+                    even though nothing here is a target of its own; the one
+                    actual link in this section is the button above. */}
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-surface px-4 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-clay-400 hover:shadow-sm">
+                  <ConceptIcon name={entry.icon} className="h-5 w-5 text-clay-600" />
+                  <span className="text-sm font-bold text-ink">{entry.term}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </section>
 
       {/* Two cards pointing at Dictionary and Teachers used to sit here. Both
@@ -475,7 +516,7 @@ export default function Home() {
         // than leaving a strip of paper between two dark blocks. It needs the
         // `!` because `space-y-*` on the parent sets margin-bottom:0 on every
         // child at a higher specificity, which silently eats a plain -mb-8.
-        className="relative !-mb-8 mx-[calc(50%-50vw)] overflow-hidden bg-stage-deep py-20 text-center sm:py-24"
+        className="relative !-mb-8 mx-[calc(50%-50vw)] overflow-hidden bg-stage-deep px-6 py-20 text-center sm:py-24"
       >
         {/* A single warm glow off one corner, so the dark band has a light
             source rather than reading as a flat rectangle. Faint enough that
@@ -485,15 +526,15 @@ export default function Home() {
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              // clay-400 and sun-500, through the palette rather than copied as
-              // rgba. The band underneath is `stage`, which is dark in both
+              // clay-400 and berry-500, through the palette rather than copied
+              // as rgba. The band underneath is `stage`, which is dark in both
               // themes, so the glow needs no per-theme adjustment - but saying
               // it in tokens means a palette change reaches it.
-              'radial-gradient(40rem 22rem at 85% -10%, rgb(var(--c-clay-400) / 0.22), transparent 65%), radial-gradient(32rem 20rem at 0% 110%, rgb(var(--c-sun-500) / 0.14), transparent 65%)',
+              'radial-gradient(40rem 22rem at 85% -10%, rgb(var(--c-clay-400) / 0.22), transparent 65%), radial-gradient(32rem 20rem at 0% 110%, rgb(var(--c-berry-500) / 0.16), transparent 65%)',
           }}
         />
 
-        <Reveal className="relative mx-auto w-full max-w-2xl space-y-6 px-4">
+        <Reveal className="relative mx-auto max-w-2xl space-y-6">
           <h2 id="cta-heading" className="text-3xl font-extrabold text-stage-ink sm:text-4xl">
             {t('home.cta.heading')}
           </h2>

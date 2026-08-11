@@ -20,62 +20,62 @@
   }
 
   /* --------------------------------------------------------------------------
-     Background. Two fixed layers behind everything, both pointer-events:none
-     and both deliberately faint - this is paper texture, not decoration
-     competing with the lesson.
+     Background. One fixed layer behind everything, pointer-events:none and
+     deliberately faint.
 
-     They are kept under about 7% alpha for a measurable reason: the contrast
+     It is kept under about 7% alpha for a measurable reason: the contrast
      audit reads computed background *colour*, which cannot see a background
      image, so anything strong enough to shift a ratio would be invisible to
      the check that guards this site. Faint keeps the measured numbers honest.
+
+     There used to be a second layer here: tiled fractal-noise grain, so the
+     page read as paper. It went with the redesign rather than because it was
+     badly made. The whole visual direction moved from "a worksheet, drawn on
+     paper" to something closer to a piece of software, and grain is the one
+     texture that cannot be reconciled with that - it is the single strongest
+     signal a surface is physical. Nothing depended on it; the two variables
+     that drove it (`--grain-filter`) are gone with it.
      -------------------------------------------------------------------------- */
 
-  /* The two texture layers are the only place the page paints a colour that is
-     not a palette token, so they get theme knobs of their own. Both are
-     deliberately faint; see the note above about keeping them under ~7% so the
-     contrast audit's numbers stay honest. */
   :root {
-    --grain-filter: none;
-    /* The washes are barely perceptible over dark brown at the alpha that
-       suits beige, and a wash nobody can see is just bytes. Scaled rather than
+    /* The washes are barely perceptible on a dark page at the alpha that suits
+       a white one, and a wash nobody can see is just bytes. Scaled rather than
        re-specified so there is still one number per wash to reason about. */
     --wash-strength: 1;
+
+    /* Elevation, as a theme knob rather than a Tailwind shadow utility.
+       A shadow is a dark colour, so the same one that reads as a gentle lift
+       on white is invisible on a near-black page - the default `shadow-sm`
+       simply stopped existing in the dark theme. Two layers each: a tight
+       contact shadow and a wide soft one, which is what makes a surface look
+       lifted rather than outlined. */
+    --shadow-card: 0 1px 2px rgb(21 26 35 / 0.04), 0 4px 16px rgb(21 26 35 / 0.06);
+    --shadow-lift: 0 2px 4px rgb(21 26 35 / 0.06), 0 12px 32px rgb(21 26 35 / 0.1);
   }
 
   [data-theme='dark'] {
-    /* The noise is dark specks. On a dark page that is subtraction from
-       something already near the floor - invisible. Inverting makes them light
-       specks, which is what grain on a dark ground has to be. */
-    --grain-filter: invert(1);
     --wash-strength: 2.4;
+    /* Pure black and much stronger: on a dark ground the shadow has to be
+       darker than the page itself to register at all. */
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.45);
+    --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.5), 0 12px 32px rgb(0 0 0 / 0.55);
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      --grain-filter: invert(1);
       --wash-strength: 2.4;
+      --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.45);
+      --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.5), 0 12px 32px rgb(0 0 0 / 0.55);
     }
   }
 
-  /* Grain. Fractal noise, tiled, so the page reads as paper rather than fill. */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    pointer-events: none;
-    opacity: 0.5;
-    filter: var(--grain-filter);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
-    background-size: 160px 160px;
-  }
-
-  /* Warm washes. Fixed rather than scrolling, so the page feels lit from a
+  /* The wash. Fixed rather than scrolling, so the page feels lit from a
      constant source instead of dragging a gradient down with it.
 
-     These used to be three hardcoded rgba() values that happened to equal
-     clay-500, sun-500 and grow-500. They now say so, through the same custom
-     properties every utility class resolves through - so they follow the theme
+     Blue at the top, violet to one side, a trace of magenta to the other -
+     the accent's own gradient, spread across the whole page at an alpha where
+     it registers as warmth rather than as colour. Said through the same custom
+     properties every utility class resolves through, so it follows the theme
      without anyone maintaining a second copy of the palette down here. */
   body::after {
     content: '';
@@ -91,12 +91,12 @@
       ),
       radial-gradient(
         45rem 28rem at 100% 12%,
-        rgb(var(--c-sun-500) / calc(0.055 * var(--wash-strength))),
+        rgb(var(--c-clay-700) / calc(0.06 * var(--wash-strength))),
         transparent 70%
       ),
       radial-gradient(
         40rem 30rem at 0% 55%,
-        rgb(var(--c-grow-500) / calc(0.04 * var(--wash-strength))),
+        rgb(var(--c-berry-500) / calc(0.045 * var(--wash-strength))),
         transparent 70%
       );
   }
@@ -108,16 +108,51 @@
   h2,
   h3 {
     @apply font-display;
-    /* Baloo 2 is drawn with tall Devanagari ascenders in mind, so headings get
-       a little more room than a Latin-only face would need. */
+    /* Anek Devanagari is drawn with tall Devanagari ascenders in mind, so
+       headings get a little more room than a Latin-only face would need. */
     line-height: 1.25;
+  }
+
+  /* Tight tracking on headings - the single cheapest thing that makes display
+     type read as designed rather than as default.
+
+     Scoped to English on purpose. Devanagari is not a script you can simply
+     tighten: matras hang above and below the line and the base characters are
+     joined by a shirorekha, so negative tracking pulls glyphs into their own
+     diacritics and starts breaking the headline bar. `lang` is already on
+     <html> and kept current by LanguageProvider (WCAG 3.1.1), so this costs
+     nothing extra to key off, and Hindi simply keeps the face's natural
+     spacing rather than getting a worse version of an English idea.
+
+     `^=` and not `=`. The values LanguageProvider writes are `en-IN` and
+     `hi-IN`, not bare `en`/`hi`, so an exact-match selector here silently
+     matches nothing at all - the rule was dead on arrival the first time and
+     only turned up because the computed tracking was measured rather than
+     assumed. Prefix matching also means a future `en-GB` keeps working. */
+  html[lang^='en'] :is(h1, h2, h3) {
+    letter-spacing: -0.022em;
+  }
+
+  /* Keep programmatic scrolls clear of the sticky header.
+
+     The header became sticky in the same pass that added this. Several places
+     move focus or scroll to an element mid-page - VisualQuiz focuses the next
+     question's heading so a keyboard user is not stranded, Celebration focuses
+     its panel - and a sticky bar will happily park itself on top of whatever
+     they land on. That is WCAG 2.4.11 Focus Not Obscured, and it is the exact
+     failure the sticky header would otherwise introduce.
+
+     Set here rather than per-component so a new page cannot forget it. 6rem
+     clears the header at its tallest (two rows, once the nav wraps). */
+  :is(h1, h2, h3, [tabindex='-1']) {
+    scroll-margin-top: 6rem;
   }
 
   /* A single, always-visible focus style. Never remove the outline without
      replacing it (WCAG 2.4.7 Focus Visible, 2.4.11 Focus Not Obscured). */
-  /* The accent doubles as the focus colour: on a page this quiet, rust is the
-     most visible thing available, and it clears 3:1 against both paper and the
-     dark panels. */
+  /* The accent doubles as the focus colour: on a page this quiet, the violet
+     is the most visible thing available, and it clears 3:1 against both paper
+     and the dark panels in either theme (measured, check:a11y). */
   :focus-visible {
     @apply outline-none ring-4 ring-clay-500 ring-offset-2 ring-offset-paper rounded-lg;
   }
@@ -125,6 +160,32 @@
   /* Some browsers still paint a thin default ring on mouse click. */
   :focus:not(:focus-visible) {
     @apply outline-none;
+  }
+
+  /* No ring on programmatic focus targets.
+
+     Three places move focus without the reader having pressed anything:
+     Layout focuses <main> on every route change so a keyboard user lands in
+     the new page instead of staying on the old link, VisualQuiz focuses the
+     next question's heading, and Celebration focuses its panel. All three
+     carry tabindex="-1", and none of them is an operable control - they are
+     "you are here now" targets. WCAG 2.4.7 Focus Visible is about keyboard
+     operable components, so none of them owes a focus indicator.
+
+     Left to the rule above they get one anyway, and on <main> that is a
+     disaster rather than a blemish: the box is the entire page, 1152 x 3563px
+     on a desktop home page, so a 4px accent ring renders as a blue line down
+     the full height of both margins - appearing after every navigation, which
+     is exactly when nobody is expecting the page to sprout a border.
+
+     `focus:outline-none` on <main> did not prevent it. That kills the
+     outline; a Tailwind ring is a box-shadow, and the two are different
+     properties. This is the rule that actually stops it.
+
+     Interactive controls are untouched - buttons and links never carry
+     tabindex="-1", so every real focus indicator on the site still shows. */
+  :is(main, [tabindex='-1']):focus-visible {
+    @apply ring-0 ring-offset-0;
   }
 }
 
@@ -135,15 +196,38 @@
     @apply min-h-tap min-w-tap inline-flex items-center justify-center;
   }
 
+  /* The scale is the one piece of feedback every button and link shares: a
+     small lift on hover, a small press on click. Apple's marketing pages lean
+     on exactly this - nothing moves until touched, and everything that can be
+     touched answers immediately. `transform` is the one property GPU
+     compositors animate for free, so this costs nothing on the shared
+     tablets this site runs on, and reduced-motion readers get the instant
+     0.01ms transition set globally below rather than losing the feedback
+     outright - the state still changes, it just does not animate there. */
+  /* Pills. `rounded-full` rather than a fixed radius because these buttons
+     range from a 44px icon square to a wide "See all the schemes" - a fixed
+     radius reads as a different shape at each width, where a pill reads as the
+     same component throughout.
+
+     `tracking-wide` is gone: it fought the tightened headings above and made
+     button labels look like they belonged to a different site. */
   .btn {
-    @apply tap-target gap-2 rounded-2xl px-5 py-3 font-display font-bold tracking-wide transition
-           disabled:cursor-not-allowed disabled:opacity-60;
+    @apply tap-target gap-2 rounded-full px-6 py-3 font-display font-bold
+           transition duration-200 ease-out hover:scale-[1.03] active:scale-[0.97]
+           disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100;
   }
 
-  /* Near-black rather than a brand hue: in a neutral scheme the primary action
-     earns its weight from being the darkest thing on the page. */
+  /* The accent gradient, blue into violet.
+     This used to be near-black, on the reasoning that in a neutral scheme the
+     primary action earns its weight by being the darkest thing on the page.
+     That held while the page had no accent worth the name; now that it does,
+     a black button next to a violet logo just looks like two unrelated
+     decisions. Both ends of the gradient are audited against a white label,
+     so every colour along it clears 4.5:1 - see check-a11y.mjs. */
   .btn-primary {
-    @apply btn bg-ink text-surface hover:bg-brand-700 active:bg-brand-800;
+    @apply btn bg-gradient-to-br from-clay-500 to-clay-700 text-white
+           hover:from-clay-600 hover:to-clay-600;
+    box-shadow: var(--shadow-card);
   }
 
   .btn-secondary {
@@ -157,8 +241,16 @@
     @apply btn bg-grow-500 text-white hover:bg-grow-700;
   }
 
+  /* A hairline plus real elevation, rather than the old 2px border.
+     The page's rule is still "a border means you can click it" - what changed
+     is how loudly a border has to speak to say so. A 2px outline on every card
+     made the page read as a form; a hairline over a soft shadow says the same
+     thing and lets the content sit forward instead of the frame. The shadow is
+     a theme variable, not `shadow-sm`, because a black shadow disappears on a
+     dark page - see the note in the base layer. */
   .card {
-    @apply rounded-3xl border-2 border-brand-100 bg-surface shadow-sm;
+    @apply rounded-3xl border border-brand-100 bg-surface;
+    box-shadow: var(--shadow-card);
   }
 
   /* A native checkbox cannot be padded out to 44px, so the box itself is 28px
