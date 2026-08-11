@@ -105,7 +105,7 @@ export default function Layout() {
       <header className="z-40 border-b border-brand-100 bg-surface lg:sticky lg:top-0 supports-[backdrop-filter]:bg-surface/85 supports-[backdrop-filter]:backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
           <Link to="/" className="tap-target gap-3 rounded-full px-2 py-1 text-ink hover:bg-brand-50">
-            <Logomark className="h-9 w-9" />
+            <Logomark className="h-9 w-9 text-clay-500" />
             <span className="text-left">
               <span className="block text-xl font-extrabold leading-tight">
                 {site.name}

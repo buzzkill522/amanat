@@ -63,7 +63,7 @@ const en = {
   'cover.cta.dictionary': 'See the money signs',
   // The mark is the only picture on the cover, so it is described rather than
   // hidden - it carries the tagline for a reader who cannot yet read it.
-  'cover.markAlt': 'A smiling gullak, the clay pot you save coins in',
+  'cover.markAlt': 'An eye with a rupee sign for a pupil',
 
   // ------------------------------------------------------------------ home
   // home.lessons.* and home.level.* lived here once, for a level-picker
@@ -550,7 +550,7 @@ const hi = {
   'cover.promise.sound': 'सुनने की ज़रूरत नहीं',
   'cover.cta.start': 'सीखना शुरू करें',
   'cover.cta.dictionary': 'पैसे के संकेत देखें',
-  'cover.markAlt': 'मुस्कुराता हुआ गुल्लक, जिसमें आप सिक्के जमा करते हैं',
+  'cover.markAlt': 'एक आँख, जिसकी पुतली रुपये का चिह्न है',
 
   // ------------------------------------------------------------------ home
   'home.more.heading': 'इस साइट पर और भी',
