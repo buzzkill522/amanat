@@ -48,12 +48,43 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
 
   if (!questions.length) return null
 
+  /**
+   * A short buzz on answering, different for right and wrong.
+   *
+   * A hearing child gets a chime here and a Deaf child gets nothing, so this
+   * is the one channel that closes that gap rather than widening it: touch is
+   * the sense actually available. Two short pulses for right, one longer flat
+   * one for wrong - deliberately not a pattern anyone has to learn, just
+   * "something happened, and these two feel different".
+   *
+   * Additive only. It is the fourth signal, after the icon, the word and the
+   * colour, and every one of those still says the same thing on its own -
+   * `navigator.vibrate` does not exist in Safari at all, so on an iPad this
+   * silently does nothing and nothing is lost (WCAG 1.4.1 is satisfied
+   * without it). Wrapped because some browsers expose the method and then
+   * throw when the document has never been interacted with.
+   *
+   * Skipped under prefers-reduced-motion. The spec calls that a motion
+   * setting and a buzz is motion you feel; a reader who asked for less of it
+   * is unlikely to want the tablet shaking in their hands.
+   */
+  function buzz(right) {
+    if (reduceMotion) return
+    if (typeof navigator === 'undefined' || typeof navigator.vibrate !== 'function') return
+    try {
+      navigator.vibrate(right ? [28, 60, 28] : 140)
+    } catch {
+      // Blocked by the UA. Nothing depends on it.
+    }
+  }
+
   function choose(optionIndex) {
     if (isCorrect) return // already solved; ignore further taps
     setPicked(optionIndex)
     const right = optionIndex === question.correctIndex
     if (right && attempts === 0) setFirstTryCount((n) => n + 1)
     if (!right) setAttempts((n) => n + 1)
+    buzz(right)
   }
 
   function next() {
@@ -174,10 +205,16 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
                 aria-pressed={chosen}
                 className={`relative flex min-h-[10rem] flex-col items-center justify-center gap-3 rounded-3xl border-4 p-4 text-center transition ${tone} ${motion} disabled:cursor-not-allowed`}
               >
-                {/* Result badge: icon + colour + text, never colour on its own. */}
+                {/* Result badge: icon + colour + text, never colour on its own.
+
+                    14px rather than 12px. This word is not a caption beside
+                    the colour, it IS the non-colour half of right-and-wrong -
+                    what a colour-blind child reads instead of the green or the
+                    red. Setting the accessibility mechanism in the smallest
+                    type on the site was the wrong way round. */}
                 {chosen && (
                   <span
-                    className={`absolute right-2 top-2 flex items-center gap-1 rounded-full px-2 py-1 text-xs font-extrabold uppercase text-white ${
+                    className={`absolute right-2 top-2 flex items-center gap-1 rounded-full px-2.5 py-1 text-sm font-extrabold uppercase text-white ${
                       chosenRight ? 'bg-grow-500' : 'bg-alert-500'
                     }`}
                   >

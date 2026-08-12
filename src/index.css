@@ -295,6 +295,40 @@
 }
 
 /* ---------------------------------------------------------------------------
+   Captions.
+
+   The single most load-bearing text on this site, and until now the only text
+   nobody had styled. A <track> cue is drawn by the browser, not by the page,
+   and the defaults are not ours to rely on: Chrome paints white on a
+   translucent black that thins over a bright frame, Safari uses its own
+   system-wide caption preferences, and a user-agent setting can change either.
+   For a site whose whole promise is "captions on every lesson", leaving that
+   to chance is the wrong default even though nobody has noticed - every video
+   is still a placeholder, so the first real footage would have been the first
+   time anyone saw it.
+
+   Fully opaque, not translucent. Translucent captions are readable over a dark
+   frame and unreadable over a bright one, and lesson footage is a person
+   signing against a lit background, which is the bad case. Black and white
+   rather than palette tokens on purpose: these sit over video, not over the
+   page, so `paper` and `ink` mean nothing here and the theme must not move
+   them. White on black is 21:1 and cannot be beaten.
+
+   ::cue only accepts a small list of properties - colour, background,
+   font, text-shadow and a few others. Padding and border-radius are not among
+   them, which is why the box is sized by line-height rather than padded.
+   --------------------------------------------------------------------------- */
+video::cue {
+  background-color: #000000;
+  color: #ffffff;
+  /* Matches the body face so a caption does not arrive in Times New Roman. */
+  font-family: 'Mukta', Verdana, 'Noto Sans Devanagari', 'Nirmala UI', sans-serif;
+  font-size: 1.05em;
+  line-height: 1.5;
+  text-shadow: none;
+}
+
+/* ---------------------------------------------------------------------------
    Print. Scroll reveals start at opacity 0 and are un-hidden by an
    IntersectionObserver - which never fires in a print context, so a printed
    page would come out with blank sections where the content should be.

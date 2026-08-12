@@ -112,11 +112,24 @@ export default function Layout() {
                 {/* Both scripts, always. The name is the same word either way,
                     and lang="hi" is what tells a screen reader to switch voice
                     and the browser to reach for the Devanagari face. */}
-                <span lang="hi" className="ml-2 text-base font-bold text-muted">
+                {/* Sized ABOVE the Latin beside it, not below.
+                    Devanagari hangs matras above and below the base line, so
+                    at a matching nominal size it reads visibly smaller than
+                    Latin - and this was set two steps down, 16px against 20px,
+                    which compounded that until the Hindi name looked like a
+                    footnote to the English one. They are the same word. 22px
+                    is the Latin size plus ten percent, the usual correction
+                    when the two scripts sit together; it makes them look equal
+                    rather than measure equal. Weight and colour still keep the
+                    Latin primary. */}
+                <span lang="hi" className="ml-2 text-[1.375rem] font-bold leading-none text-muted">
                   {site.nameDevanagari}
                 </span>
               </span>
-              <span className="block text-xs font-bold text-muted">{t('site.tagline')}</span>
+              {/* 14px, not 12px. Nothing on a page read by children learning to
+                  read should be smaller than this; 12px was the smallest text
+                  on the site. */}
+              <span className="block text-sm font-bold text-muted">{t('site.tagline')}</span>
             </span>
           </Link>
 

@@ -59,7 +59,8 @@ export default function LessonCard({ module, levelId, state = 'open', stepNumber
       </span>
 
       <span
-        className={`flex shrink-0 flex-col items-center gap-1 rounded-2xl px-3 py-2 text-xs font-extrabold uppercase ${
+        // 14px: this word is the non-colour encoding of locked/open/done.
+        className={`flex shrink-0 flex-col items-center gap-1 rounded-2xl px-3 py-2 text-sm font-extrabold uppercase ${
           locked ? 'bg-surface text-muted' : completed ? 'bg-grow-500 text-white' : 'bg-brand-600 text-surface'
         }`}
       >

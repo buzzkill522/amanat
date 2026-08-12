@@ -73,7 +73,8 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
                     {t('progressmap.stopN', { n: i + 1 })}
                   </span>
                   <span
-                    className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-extrabold uppercase ${
+                    // 14px: this word is the non-colour encoding of the state.
+                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-sm font-extrabold uppercase ${
                       locked
                         ? 'bg-brand-100 text-muted'
                         : state === 'completed'
