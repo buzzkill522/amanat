@@ -335,6 +335,15 @@ const en = {
   'dict.noMatch': 'No word matches “{query}”. Try a shorter word.',
   'dict.countOne': '{n} word',
   'dict.countMany': '{n} words',
+  // One entry in the dictionary. These were the last hardcoded English strings
+  // on the site after the translation pass - the entry component was the one
+  // file it missed, so a Hindi reader met five English labels forty times down
+  // the page.
+  'dict.signAria': '{sign} sign for {term}',
+  'dict.clipNotFilmed': '{signShort} clip not filmed yet',
+  'dict.noVideoYet': 'No video yet',
+  'dict.example': 'Example:',
+  'dict.usedIn': 'Used in:',
 
   // ------------------------------------------------------------- schemes page
   'schemes.pageTitle': 'Schemes and what you can claim',
@@ -819,6 +828,11 @@ const hi = {
   'dict.noMatch': '“{query}” से कोई शब्द नहीं मिला। छोटा शब्द आज़माइए।',
   'dict.countOne': '{n} शब्द',
   'dict.countMany': '{n} शब्द',
+  'dict.signAria': '{term} के लिए {sign} संकेत',
+  'dict.clipNotFilmed': '{signShort} क्लिप अभी नहीं बनी',
+  'dict.noVideoYet': 'वीडियो अभी नहीं',
+  'dict.example': 'उदाहरण:',
+  'dict.usedIn': 'इनमें इस्तेमाल:',
 
   // ------------------------------------------------------------- schemes page
   'schemes.pageTitle': 'योजनाएँ और आपका हक़',
