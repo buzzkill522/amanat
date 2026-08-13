@@ -17,8 +17,8 @@
     "check": "npm run check:content && npm run check:a11y"
   },
   "dependencies": {
-    "@fontsource/anek-devanagari": "^5.3.0",
     "@fontsource/mukta": "^5.3.0",
+    "@fontsource/poppins": "^5.3.0",
     "@radix-ui/react-accordion": "^1.2.20",
     "clsx": "^2.1.1",
     "lucide-react": "^0.454.0",

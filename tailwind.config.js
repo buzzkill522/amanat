@@ -97,15 +97,24 @@ export default {
           'system-ui',
           'sans-serif',
         ],
-        // Anek Devanagari: headings and buttons only.
+        // Poppins: headings and buttons only.
         //
-        // This replaced Baloo 2, which was rounded and bubbly and read as
-        // generic - it is the default "friendly" face on a great many
-        // template sites, and using it made an original curriculum look like
-        // one. Anek is by the Indian Type Foundry, drawn for Devanagari and
-        // Latin together like Mukta, so switching to Hindi still changes the
-        // script and not the typeface.
-        display: ['"Anek Devanagari"', 'Mukta', 'Verdana', '"Nirmala UI"', 'sans-serif'],
+        // Third face in this slot. Baloo 2 went first for being the default
+        // "friendly" rounded face on a great many template sites; Anek
+        // followed it. Poppins is the geometric one - circular bowls, even
+        // stroke - which is what the reference design was reaching for.
+        //
+        // It is worth being honest that Poppins carries the same risk that
+        // removed Baloo 2: it is one of the most-used faces on the web, and
+        // ubiquity is exactly what made the old one read as generic. It is
+        // here because it was chosen with that trade-off stated, not because
+        // the trade-off went away.
+        //
+        // What is NOT negotiable is the Devanagari. Poppins ships a
+        // `devanagari` subset alongside `latin` (verified in node_modules),
+        // like Mukta and Anek before it, so a Hindi heading is the same
+        // typeface as an English one rather than an OS fallback.
+        display: ['Poppins', 'Mukta', 'Verdana', '"Nirmala UI"', 'sans-serif'],
       },
       minHeight: { tap: '44px' },
       minWidth: { tap: '44px' },

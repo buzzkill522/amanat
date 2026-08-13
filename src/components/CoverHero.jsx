@@ -100,8 +100,61 @@ export default function CoverHero() {
               primary button, so the cover states the accent once and the rest
               of the page repeats it. Both ends are audited (check-a11y), and
               every colour between them is a blend of two audited colours. */}
-          <span className="block animate-riseIn bg-gradient-to-r from-clay-500 to-clay-700 bg-clip-text text-transparent [animation-delay:180ms]">
-            {t('cover.title2')}
+          {/* Underlined with a drawn curve rather than a rule.
+
+              It cannot be `text-decoration`: `bg-clip-text` clips the gradient
+              to the glyphs and paints the text itself transparent, and an
+              underline drawn by text-decoration is part of the text - so it
+              would be clipped and painted transparent too, and simply never
+              appear. It cannot be a border either, now that it curves.
+
+              So it is an SVG, and it sits OUTSIDE the gradient span rather
+              than inside it. Some WebKit builds drop child content out of an
+              element carrying `-webkit-background-clip: text`; keeping the
+              drawing a sibling of the clipped text avoids betting on that.
+
+              `preserveAspectRatio="none"` lets one 100x12 path stretch to
+              whatever the phrase measures - 297px in English, 470px in Hindi -
+              and `vector-effect="non-scaling-stroke"` is what stops that
+              stretch from thinning the stroke with it. Without the second
+              attribute the line would look markedly lighter under the longer
+              Hindi phrase than under the English one.
+
+              `inline-block` on the wrapper keeps all of this the width of the
+              phrase rather than the width of the column. */}
+          <span className="block">
+            <span className="relative inline-block animate-riseIn pb-4 [animation-delay:180ms]">
+              <span className="bg-gradient-to-r from-clay-500 to-clay-700 bg-clip-text text-transparent">
+                {t('cover.title2')}
+              </span>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 100 12"
+                preserveAspectRatio="none"
+                className="absolute inset-x-0 bottom-0 h-3 w-full text-clay-500"
+              >
+                {/* A single quadratic. A quadratic only reaches halfway to its
+                    control point, so the control sits at y=16 - below the
+                    12-unit box - to land the middle of the curve at y=10.
+                    That is a 6px sag across the phrase, about 1:59 against the
+                    English width: enough to read as a curve at a glance,
+                    shallow enough to still read as an underline rather than a
+                    bowl. The first pass used y=13, which measured 1:79 and was
+                    close to indistinguishable from a straight rule.
+
+                    The stroke is 3px and centred on the path, so at the
+                    lowest point it occupies 8.5-11.5 of the 12 units and
+                    stays inside the box. */}
+                <path
+                  d="M 2 4 Q 50 16 98 4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </svg>
+            </span>
           </span>
         </h1>
 

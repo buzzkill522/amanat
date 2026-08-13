@@ -10,9 +10,15 @@ import '@fontsource/mukta/400.css'
 import '@fontsource/mukta/600.css'
 import '@fontsource/mukta/700.css'
 import '@fontsource/mukta/800.css'
-import '@fontsource/anek-devanagari/600.css'
-import '@fontsource/anek-devanagari/700.css'
-import '@fontsource/anek-devanagari/800.css'
+// Poppins for headings, replacing Anek Devanagari. Also an Indian Type
+// Foundry face, and - the part that decides it - it ships a `devanagari`
+// subset alongside `latin`, so switching the site to Hindi changes the script
+// and not the typeface. A Latin-only display face would have quietly handed
+// every Hindi heading to whatever the OS picked, which is a different design
+// on half the site.
+import '@fontsource/poppins/600.css'
+import '@fontsource/poppins/700.css'
+import '@fontsource/poppins/800.css'
 
 import App from './App.jsx'
 import './index.css'

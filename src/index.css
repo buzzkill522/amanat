@@ -113,8 +113,10 @@
   h2,
   h3 {
     @apply font-display;
-    /* Anek Devanagari is drawn with tall Devanagari ascenders in mind, so
-       headings get a little more room than a Latin-only face would need. */
+    /* Devanagari stacks matras above and below the line, so headings get a
+       little more room than a Latin-only face would need. This matters more
+       under Poppins than it did under Anek: Poppins is a geometric face with
+       a tall x-height, so its Devanagari sits taller in the line box. */
     line-height: 1.25;
   }
 
