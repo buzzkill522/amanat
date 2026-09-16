@@ -29,7 +29,12 @@ import reactHooks from 'eslint-plugin-react-hooks'
 
 export default [
   {
-    ignores: ['dist/**', 'node_modules/**'],
+    // `.monogold` is a git worktree checked out INSIDE the repo - the preview
+    // server only runs from within the project root, so a sibling directory
+    // was not an option. It carries its own node_modules and dist, and
+    // linting a second copy of the whole codebase (plus a minified bundle)
+    // produced 287 errors that were all React's own shipped code.
+    ignores: ['dist/**', 'node_modules/**', '.monogold/**'],
   },
 
   js.configs.recommended,
@@ -57,6 +62,22 @@ export default [
       // whose translate function is also called `t`.
       'no-shadow': 'warn',
       'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    },
+  },
+
+  // The design mockups under design/: plain browser scripts, no modules, no
+  // React. They are not part of the built site - see design/redesign/README -
+  // but they are checked in, so they are linted like anything else.
+  {
+    files: ['design/**/*.js'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'script',
+      globals: globals.browser,
+    },
+    rules: {
+      'no-unused-vars': ['error', { caughtErrors: 'none' }],
+      'no-empty': ['error', { allowEmptyCatch: true }],
     },
   },
 
