@@ -32,8 +32,8 @@ import { dictionary, modules, moduleMeta } from '@content/index.js'
 
 const STEPS = [
   { key: '1', icon: Subtitles, tone: 'text-brand-600' },
-  { key: '2', icon: Hand, tone: 'text-berry-600' },
-  { key: '3', icon: Trophy, tone: 'text-grow-600' },
+  { key: '2', icon: Hand, tone: 'text-brand-700' },
+  { key: '3', icon: Trophy, tone: 'text-brand-700' },
 ]
 
 // Drawn from the site's own picture set rather than a UI icon font: these four
