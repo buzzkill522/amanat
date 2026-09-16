@@ -62,7 +62,7 @@ function SectionHead({ eyebrow, heading, lead, id, tone = 'text-clay-600', align
       {eyebrow && (
         <p className={`text-sm font-bold uppercase tracking-[0.14em] ${tone}`}>{eyebrow}</p>
       )}
-      <h2 id={id} className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+      <h2 id={id} className="text-3xl/tight font-extrabold text-ink sm:text-4xl/tight">
         {heading}
       </h2>
       {lead && <p className="text-lg leading-relaxed text-muted">{lead}</p>}

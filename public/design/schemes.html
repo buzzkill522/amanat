@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schemes · Amanat</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Mukta:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>
+  try { const t = localStorage.getItem('amanat.theme'); if (t) document.documentElement.dataset.theme = t } catch (e) {}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Amanat, home">
+      <svg width="42" height="42" viewBox="0 0 40 40" aria-hidden="true"><path d="M3 20C10 8.5 30 8.5 37 20 30 31.5 10 31.5 3 20Z" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"/><circle cx="20" cy="20" r="8" fill="var(--accent)"/><path d="M16.6 16.4h6.8M16.6 19h6.8M18.4 16.4c3.4 0 3.4 5 0 5h-1.6l4.6 3.6" fill="none" stroke="#161616" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <b>Amanat</b><span>अमानत</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lessons.html">Lessons</a></li>
+        <li><a href="dictionary.html">Dictionary</a></li>
+        <li><a href="schemes.html" aria-current="page">Schemes</a></li>
+        <li><a href="teachers.html">Teachers</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <button class="btn btn-secondary chip-btn lang" type="button" lang="hi">हिंदी</button>
+      <button class="btn btn-secondary chip-btn icon-btn" type="button" id="theme" aria-label="Switch to dark theme">
+        <svg id="theme-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
+      </button>
+      <button class="btn btn-secondary chip-btn icon-btn menu-btn" type="button" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Know what you are owed</p>
+      <h1>Money you may already be entitled to</h1>
+      <p>Being Deaf costs money that hearing people never spend. These exist to offset that - and most go unclaimed simply because nobody knew. Thirteen of them, grouped by what they are for.</p>
+      <p class="note">Rules and amounts change. Every figure here is checked before it is taught, and the official link is always given.</p>
+    </div>
+
+    <div class="chips" style="padding: 24px 0 8px;" role="group" aria-label="Scheme groups">
+      <button class="chip" type="button" aria-pressed="true">All 13</button>
+      <button class="chip" type="button" aria-pressed="false">Start here</button>
+      <button class="chip" type="button" aria-pressed="false">School</button>
+      <button class="chip" type="button" aria-pressed="false">Devices</button>
+      <button class="chip" type="button" aria-pressed="false">Work</button>
+      <button class="chip" type="button" aria-pressed="false">Money</button>
+      <button class="chip" type="button" aria-pressed="false">Travel</button>
+    </div>
+
+    <div class="group-head"><h2>Start here</h2><span>1 scheme</span></div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <article class="card scheme">
+        <div class="top">
+          <div>
+            <h3>UDID card</h3>
+            <p class="one">One free card that proves you are Deaf, anywhere in India.</p>
+          </div>
+          <span class="amount">Free</span>
+        </div>
+        <dl>
+          <dt>Why</dt><dd>Almost every other scheme on this page asks for it first. Getting this is step one, and it is the step most families do not know about.</dd>
+          <dt>Who</dt><dd>Anyone with a disability certificate from a government medical board. For schemes, the certificate normally needs to show 40% disability or more.</dd>
+          <dt>Apply</dt><dd>Apply online at the national UDID portal, then attend the medical board appointment it gives you. <a href="https://www.swavlambancard.gov.in/">swavlambancard.gov.in</a></dd>
+        </dl>
+      </article>
+    </div>
+
+    <div class="group-head"><h2>School and study</h2><span>4 schemes</span></div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <article class="card scheme">
+        <div class="top">
+          <div>
+            <h3>Pre-Matric Scholarship</h3>
+            <p class="one">Money for school, up to Class 10.</p>
+          </div>
+          <span class="amount">Never repaid</span>
+        </div>
+        <dl>
+          <dt>Covers</dt><dd>Fees, a book grant and a maintenance allowance. Exact amounts are set each year.</dd>
+          <dt>Scale</dt><dd>About 46,000 of these are given out a year, and half are kept for girls.</dd>
+        </dl>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div>
+            <h3>Post-Matric Scholarship</h3>
+            <p class="one">Money for study after Class 10.</p>
+          </div>
+          <span class="amount">Never repaid</span>
+        </div>
+        <dl>
+          <dt>Covers</dt><dd>Fees, a book grant and a maintenance allowance.</dd>
+          <dt>Scale</dt><dd>About 17,000 a year, half kept for girls.</dd>
+        </dl>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div>
+            <h3>Top Class Education Scholarship</h3>
+            <p class="one">For studying at a top listed college or institute.</p>
+          </div>
+          <span class="amount">Up to ₹2,00,000 a year</span>
+        </div>
+        <dl>
+          <dt>Covers</dt><dd>Tuition and non-refundable fees up to ₹2,00,000 a year. Plus ₹3,000 a month if living in a hostel, or ₹1,500 a month otherwise. Plus ₹2,000 a month for disability-related help such as a reader or escort, and ₹5,000 a year for books.</dd>
+        </dl>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div>
+            <h3>Fellowship and free coaching</h3>
+            <p class="one">Research funding, and coaching for competitive exams.</p>
+          </div>
+          <span class="amount">Monthly</span>
+        </div>
+        <dl>
+          <dt>Covers</dt><dd>The fellowship pays a monthly amount plus a contingency grant. Free coaching pays the coaching fee, and a stipend in some cases. Amounts are set each year.</dd>
+        </dl>
+      </article>
+    </div>
+
+    <div class="group-head"><h2>Hearing devices</h2><span>2 schemes</span></div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <article class="card scheme">
+        <div class="top">
+          <div>
+            <h3>ADIP · hearing aids</h3>
+            <p class="one">Hearing aids and other devices, free or half price, depending on income.</p>
+          </div>
+          <span class="amount">Free or half</span>
+        </div>
+        <dl>
+          <dt>Covers</dt><dd>Full cost or half the cost of the device, within the scheme's ceiling for that device type.</dd>
+        </dl>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div>
+            <h3>ADIP · cochlear implant</h3>
+            <p class="one">The implant and the surgery, for children who qualify.</p>
+          </div>
+          <span class="amount">Funded</span>
+        </div>
+        <dl>
+          <dt>Note</dt><dd>An implant is a choice, not an obligation. Many Deaf people use sign language and no device at all.</dd>
+        </dl>
+      </article>
+    </div>
+
+    <div class="group-head"><h2>Work, money and travel</h2><span>6 schemes</span></div>
+    <div style="display: flex; flex-direction: column; gap: 16px; padding-bottom: 88px;">
+      <article class="card scheme">
+        <div class="top">
+          <div><h3>1% of government jobs</h3><p class="one">A reserved share of central government posts.</p></div>
+          <span class="amount">Reserved</span>
+        </div>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div><h3>PM-DAKSH</h3><p class="one">Free skills training, with a stipend in some courses.</p></div>
+          <span class="amount">Free</span>
+        </div>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div><h3>NHFDC loan</h3><p class="one">A low-interest loan to start or grow a small business.</p></div>
+          <span class="amount">Low interest</span>
+        </div>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div><h3>Section 80U tax deduction</h3><p class="one">Taken off taxable income. No receipts needed.</p></div>
+          <span class="amount">₹75,000 · ₹1,25,000 if severe</span>
+        </div>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div><h3>Disability pension</h3><p class="one">A monthly payment. The amount depends on the state.</p></div>
+          <span class="amount">Monthly</span>
+        </div>
+      </article>
+      <article class="card scheme">
+        <div class="top">
+          <div><h3>Railway concession</h3><p class="one">A reduced fare, with a card that lasts several years.</p></div>
+          <span class="amount">Reduced fare</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 420px;">
+      <span class="brand"><b style="font-size: 22px;">Amanat</b><span>अमानत</span></span>
+      <p class="muted" style="font-size: 16px;">Amanat is free. It never asks for your name, your school or any money.</p>
+    </div>
+    <ul>
+      <li><a href="lessons.html">Lessons</a></li><li><a href="dictionary.html">Dictionary</a></li><li><a href="schemes.html">Schemes</a></li>
+      <li><a href="teachers.html">For teachers</a></li><li><a href="teachers.html">Accessibility</a></li><li><a href="#" lang="hi">हिंदी</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="theme.js"></script>
+</body>
+</html>
