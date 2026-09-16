@@ -65,11 +65,11 @@ export default [
     },
   },
 
-  // The design mockups under design/: plain browser scripts, no modules, no
-  // React. They are not part of the built site - see design/redesign/README -
-  // but they are checked in, so they are linted like anything else.
+  // The design mockups under public/design: plain browser scripts, no modules,
+  // no React. Vite copies public/ verbatim, so they are served at /design/ -
+  // see their README - and they are linted like anything else.
   {
-    files: ['design/**/*.js'],
+    files: ['public/design/**/*.js'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'script',

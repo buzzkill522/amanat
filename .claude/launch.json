@@ -12,6 +12,18 @@
       "port": 5173
     },
     {
+      "name": "monogold",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": [
+        "node_modules/vite/bin/vite.js",
+        "--port",
+        "5192",
+        "--strictPort"
+      ],
+      "port": 5192,
+      "cwd": ".monogold"
+    },
+    {
       "name": "redesign-friendly",
       "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
       "runtimeArgs": [
