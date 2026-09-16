@@ -76,6 +76,16 @@ export default {
   theme: {
     extend: {
       colors: toVarRefs(themes.light),
+
+      // The two elevations, as utilities rather than as raw CSS. They were
+      // already theme variables in index.css - a dark page needs a heavier
+      // shadow to read at all - and this only makes them reachable from a
+      // component, so both themes keep their own value.
+      boxShadow: {
+        card: 'var(--shadow-card)',
+        lift: 'var(--shadow-lift)',
+      },
+
       borderRadius: {
         xl: '1rem',
         '2xl': '1.5rem',
