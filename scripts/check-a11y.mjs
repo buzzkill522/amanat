@@ -114,6 +114,17 @@ const TEXT = [
   // reason as the state fills below - this fill does not reflect.
   ['#ffffff', 'clay.500'], ['#ffffff', 'clay.700'],
 
+  // Gold, the one chromatic accent. It does NOT reflect between themes, so
+  // the text on it is a literal near-black in both rather than a role token:
+  // `ink` is white in the dark theme and would be unreadable on it (1.28:1).
+  //
+  // Only gold.700 - the darkened step - is graded as a text colour and as a
+  // fill carrying white. The bright 500 clears nothing on a white page
+  // (1.35:1) and is deliberately never asked to: it is decoration on light
+  // grounds and a mark on dark ones. Anything a reader has to see uses 700.
+  ['#161616', 'gold.500'], ['#ffffff', 'gold.700'],
+  ['gold.600', 'paper'], ['gold.600', 'surface'],
+
   // State colours: text step on its own tint, and on the page.
   ['grow.600', 'grow.100'], ['grow.600', 'paper'], ['grow.600', 'surface'],
   ['sun.600', 'sun.100'], ['sun.600', 'paper'], ['sun.600', 'surface'],
@@ -152,6 +163,9 @@ const GRAPHICS = [
   // State borders: these mark a card as done, locked or in progress.
   ['grow.500', 'surface'], ['grow.500', 'paper'],
   ['sun.500', 'surface'], ['berry.500', 'surface'], ['alert.500', 'surface'],
+  // Gold as a mark: on the dark bands, where it is at its strongest, and the
+  // darkened step against the page.
+  ['gold.500', 'stage'], ['gold.700', 'paper'], ['gold.700', 'surface'],
 ]
 
 // The only pairing where one colour has to be told apart from another to know

@@ -5,26 +5,15 @@ import { levels, LEVEL_COUNT } from '@/config/site.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import { useT } from '@/i18n/LanguageProvider.jsx'
 
-const ACCENTS = {
-  grow: {
-    border: 'border-grow-500',
-    icon: 'text-grow-600',
-    bar: 'bg-grow-500',
-    meter: 'bg-grow-500',
-  },
-  brand: {
-    border: 'border-brand-500',
-    icon: 'text-brand-700',
-    bar: 'bg-brand-500',
-    meter: 'bg-brand-500',
-  },
-  berry: {
-    border: 'border-berry-500',
-    icon: 'text-berry-600',
-    bar: 'bg-berry-500',
-    meter: 'bg-berry-500',
-  },
+// Accent names all resolve to one neutral tone in the monochrome scheme. The
+// keys stay because content JSON names them; see LessonCard for the reasoning.
+const NEUTRAL = {
+  border: 'border-brand-500',
+  icon: 'text-brand-700',
+  bar: 'bg-brand-500',
+  meter: 'bg-brand-500',
 }
+const ACCENTS = { grow: NEUTRAL, brand: NEUTRAL, berry: NEUTRAL }
 
 /**
  * How hard this level is, as filled blocks out of three.

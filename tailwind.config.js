@@ -76,6 +76,16 @@ export default {
   theme: {
     extend: {
       colors: toVarRefs(themes.light),
+
+      // The two elevations, as utilities rather than as raw CSS. They were
+      // already theme variables in index.css - a dark page needs a heavier
+      // shadow to read at all - and this only makes them reachable from a
+      // component, so both themes keep their own value.
+      boxShadow: {
+        card: 'var(--shadow-card)',
+        lift: 'var(--shadow-lift)',
+      },
+
       borderRadius: {
         xl: '1rem',
         '2xl': '1.5rem',
@@ -97,7 +107,17 @@ export default {
           'system-ui',
           'sans-serif',
         ],
-        // Poppins: headings and buttons only.
+        // Nunito: headings and buttons only.
+        //
+        // Fourth face in this slot, after Baloo 2, Anek and Poppins. Rounded
+        // terminals and a tall x-height - friendly without being a cartoon
+        // face, which is the register the redesign asked for.
+        //
+        // Nunito ships NO Devanagari, and that is handled rather than
+        // ignored: Mukta follows it in the stack, so a Hindi heading falls
+        // through to Mukta glyph by glyph while English takes Nunito. The two
+        // sit together because both are tall-x-height humanist faces.
+        // Previously-true comment kept below for the trade-off it records.
         //
         // Third face in this slot. Baloo 2 went first for being the default
         // "friendly" rounded face on a great many template sites; Anek
@@ -114,7 +134,7 @@ export default {
         // `devanagari` subset alongside `latin` (verified in node_modules),
         // like Mukta and Anek before it, so a Hindi heading is the same
         // typeface as an English one rather than an OS fallback.
-        display: ['Poppins', 'Mukta', 'Verdana', '"Nirmala UI"', 'sans-serif'],
+        display: ['Nunito', 'Mukta', 'Mukta', 'Verdana', '"Nirmala UI"', 'sans-serif'],
       },
       minHeight: { tap: '44px' },
       minWidth: { tap: '44px' },

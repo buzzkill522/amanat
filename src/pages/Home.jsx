@@ -32,8 +32,8 @@ import { dictionary, modules, moduleMeta } from '@content/index.js'
 
 const STEPS = [
   { key: '1', icon: Subtitles, tone: 'text-brand-600' },
-  { key: '2', icon: Hand, tone: 'text-berry-600' },
-  { key: '3', icon: Trophy, tone: 'text-grow-600' },
+  { key: '2', icon: Hand, tone: 'text-brand-700' },
+  { key: '3', icon: Trophy, tone: 'text-brand-700' },
 ]
 
 // Drawn from the site's own picture set rather than a UI icon font: these four
@@ -225,7 +225,7 @@ export default function Home() {
                       this page exists to state. The gradient and the hover scale
                       are new, the number underneath is not - text-transparent
                       still reads the real digits to anything that isn't paint. */}
-                  <span className="block bg-gradient-to-br from-clay-500 to-clay-700 bg-clip-text font-display text-5xl font-extrabold text-transparent transition-transform duration-300 group-hover:scale-110">
+                  <span className="block font-display text-5xl font-extrabold text-ink transition-transform duration-300 group-hover:scale-110">
                     {s.value}
                   </span>
                   <span className="mx-auto mt-2 block max-w-[10rem] text-sm leading-snug text-muted">

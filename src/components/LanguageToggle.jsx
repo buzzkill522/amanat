@@ -31,7 +31,7 @@ export default function LanguageToggle({ className = '' }) {
             aria-pressed={active}
             className={`tap-target rounded-full px-3.5 py-1.5 text-sm font-extrabold transition duration-200 ${
               active
-                ? 'bg-gradient-to-br from-clay-500 to-clay-700 text-white'
+                ? 'bg-clay-500 text-white'
                 : 'text-ink hover:bg-brand-100'
             }`}
           >

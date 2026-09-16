@@ -51,7 +51,7 @@ function NavItem({ to, label, icon: Icon, end, currentLabel, alsoMatch }) {
       // Measured, not guessed; see the header comment below.
       className={`tap-target flex-col gap-0.5 rounded-full px-2 py-2 text-xs font-extrabold transition duration-200 sm:flex-row sm:gap-2 sm:px-2.5 sm:text-sm ${
         active
-          ? 'bg-gradient-to-br from-clay-500 to-clay-700 text-white'
+          ? 'bg-clay-500 text-white'
           : 'text-ink hover:bg-brand-100'
       }`}
     >
@@ -125,7 +125,7 @@ export default function Layout() {
             top of the viewport. */}
         <div
           aria-hidden="true"
-          className="h-1 w-full bg-gradient-to-r from-clay-500 to-clay-700"
+          className="h-1 w-full bg-gold-500"
         />
 
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">

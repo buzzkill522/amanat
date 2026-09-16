@@ -74,24 +74,24 @@
 const light = {
   // The page and the cards. paper is a hair off white so that a white card
   // has something to sit on; surface is pure white.
-  paper: '#f6f8fc',
+  paper: '#f7f7f5',
   surface: '#ffffff',
   // Text. Near-black with a trace of blue, to sit with the cool neutrals.
-  ink: '#151a23',
-  muted: '#5b6472',
+  ink: '#161616',
+  muted: '#5b5b58',
 
   // The neutral ramp: hairlines, borders, chips, the primary button.
   brand: {
-    50: '#eef2f8',
-    100: '#dde4ef', //  hairlines and dividers
-    200: '#c3cddd',
-    300: '#9aa7bd',
-    400: '#71809a', //  the secondary button's outline - owes 3:1
-    500: '#55637c',
-    600: '#414d63',
-    700: '#313b4c',
-    800: '#232a37',
-    900: '#161b24',
+    50: '#f0f0ed',
+    100: '#e3e3df', //  hairlines and dividers
+    200: '#cbcbc6',
+    300: '#adada7',
+    400: '#7e7e77', //  the secondary button's outline - owes 3:1
+    500: '#6b6b65',
+    600: '#545450',
+    700: '#40403c',
+    800: '#2b2b28',
+    900: '#1a1a18',
   },
 
   // Bands and grounds that are dark on purpose, in either theme. The signing
@@ -99,10 +99,10 @@ const light = {
   // use the same token so a reader never meets a bright slab after choosing
   // dark.
   stage: {
-    DEFAULT: '#232a37',
-    deep: '#12161d', //  the ground a signer is filmed against
-    ink: '#e9edf4',
-    muted: '#bcc5d4',
+    DEFAULT: '#232320',
+    deep: '#0d0d0c', //  the ground a signer is filmed against
+    ink: '#f0f0ed',
+    muted: '#c2c2bc',
   },
 
   // The accent. Blue, and the only hue with no state meaning attached, so it
@@ -125,7 +125,20 @@ const light = {
   // dark page; a gradient ending there would run fill-to-text and the white
   // label on top would fall through the floor halfway across. 500 and 700 are
   // both fills in both themes, so the gradient holds either way.
-  clay: { 100: '#e0edfe', 400: '#7ba8f5', 500: '#1c64d8', 600: '#1550b5', 700: '#123f9e' },
+  clay: { 100: '#eeeeeb', 400: '#7a7a74', 500: '#2b2b28', 600: '#3a3a35', 700: '#161615' },
+
+  // The one chromatic accent, and the only colour on the page with no state
+  // meaning: rupee gold. It is used sparingly and deliberately - the ledge
+  // under a pressed button, the underline under the cover's phrase, the
+  // logo's iris, the marker on the lesson you are on.
+  //
+  // Two steps, because one cannot do both jobs. 500 is the bright gold, and
+  // it is bright enough that white text on it is unreadable and it barely
+  // separates from a white page (1.35:1) - so it is only ever a fill carrying
+  // near-black text, or a mark on a dark ground. 700 is the darkened gold
+  // that survives on paper and carries a white label. The bright step never
+  // carries meaning on a light page; anything a reader must see uses 700.
+  gold: { 100: '#fff4c7', 500: '#ffd23f', 600: '#7d6820', 700: '#8c7423' },
 
   // ------------------------------------------------------------------
   // State colours. One job per step:
@@ -166,33 +179,33 @@ const light = {
  * paragraphs are the case that suffers most.
  */
 const dark = {
-  paper: '#0e1218',
-  surface: '#161c25', //  a half-step lighter, same relationship as the light theme
-  ink: '#eef1f7',
-  muted: '#98a3b4',
+  paper: '#111111',
+  surface: '#1b1b1b', //  a half-step lighter, same relationship as the light theme
+  ink: '#f1f1ee',
+  muted: '#a9a9a4',
 
   // The slate ramp, reflected end for end.
   brand: {
-    50: '#1a2029',
-    100: '#242c37', //  hairlines and dividers
-    200: '#333d4b',
-    300: '#485465',
-    400: '#6d7b8f', //  still the secondary button's outline, still owes 3:1
-    500: '#8b98ab',
-    600: '#a9b4c4',
-    700: '#c5cddb',
-    800: '#dbe2ec',
-    900: '#edf1f7',
+    50: '#1e1e1c',
+    100: '#2e2e2b', //  hairlines and dividers
+    200: '#3d3d39',
+    300: '#55554f',
+    400: '#7c7c75', //  still the secondary button's outline, still owes 3:1
+    500: '#96968f',
+    600: '#b4b4ad',
+    700: '#cfcfc9',
+    800: '#e3e3de',
+    900: '#f2f2ef',
   },
 
   // Barely moved: dark in both themes by definition. `stage` lifts a little
   // so a band still separates from a dark page, and `deep` drops below the
   // page so the signer's ground stays the darkest thing on screen.
   stage: {
-    DEFAULT: '#1a212b',
-    deep: '#080b0f',
+    DEFAULT: '#1c1c1a',
+    deep: '#0a0a09',
     ink: '#e9edf4',
-    muted: '#c3ccda',
+    muted: '#c8c8c2',
   },
 
   // The accent lifts so it still reads on a dark page - clay-500 is the focus
@@ -204,7 +217,15 @@ const dark = {
   // these are narrow-window values rather than round ones. The gradient runs
   // slightly *lighter* toward 700 here, mirroring the light theme where it
   // runs darker; the same end-for-end reflection the brand ramp makes.
-  clay: { 100: '#0f2547', 400: '#7ba8f5', 500: '#2563eb', 600: '#9dc0ff', 700: '#3366e0' },
+  // The accent reflects to a mid grey rather than going pale: it is still a
+  // FILL carrying a white label, so it cannot be light. These are narrow
+  // values - 500 and 700 each have to clear 3:1 against this page while still
+  // holding white text at 4.5:1, and those pull opposite ways.
+  clay: { 100: '#242422', 400: '#9a9a94', 500: '#74746e', 600: '#dcdcd6', 700: '#6a6a64' },
+
+  // Gold does not reflect. The bright step is the same hex in both themes -
+  // it is a mark on dark ground here, where it is at its strongest (13:1).
+  gold: { 100: '#332b10', 500: '#ffd23f', 600: '#e8bc46', 700: '#8c7423' },
 
   // Tints go dark, text steps go light. The fills keep their hue and their
   // white labels, lifted only as far as a narrow window allows: a fill has to

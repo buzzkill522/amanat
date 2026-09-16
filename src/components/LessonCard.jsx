@@ -3,12 +3,18 @@ import { CheckCircle2, Lock, PlayCircle } from 'lucide-react'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
 import { useT } from '@/i18n/LanguageProvider.jsx'
 
-const ACCENTS = {
-  grow: { ring: 'border-grow-500', chip: 'bg-grow-100 text-grow-600', icon: 'text-grow-600' },
-  brand: { ring: 'border-brand-500', chip: 'bg-brand-100 text-brand-700', icon: 'text-brand-600' },
-  sun: { ring: 'border-sun-500', chip: 'bg-sun-100 text-sun-600', icon: 'text-sun-600' },
-  berry: { ring: 'border-berry-500', chip: 'bg-berry-100 text-berry-600', icon: 'text-berry-600' },
-}
+// Every accent name resolves to the same neutral tone.
+//
+// The keys are kept because they are a content API - modules, levels,
+// dictionary categories and schemes all name an accent in their JSON, and
+// dropping the names would mean editing content to change a colour. In the
+// monochrome scheme they simply all land on the neutral ramp: hue is no
+// longer how one lesson is told from another, the icon and the title are.
+//
+// What did NOT move: grow and alert wherever they mean right and wrong, and
+// the done/locked states. Those carry meaning and keep their colour.
+const NEUTRAL = { ring: 'border-brand-500', chip: 'bg-brand-100 text-brand-700', icon: 'text-brand-600' }
+const ACCENTS = { grow: NEUTRAL, brand: NEUTRAL, sun: NEUTRAL, berry: NEUTRAL }
 
 /**
  * One lesson, shown as a card.

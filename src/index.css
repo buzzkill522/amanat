@@ -91,17 +91,17 @@
     background-image:
       radial-gradient(
         60rem 32rem at 50% -8%,
-        rgb(var(--c-clay-500) / calc(0.07 * var(--wash-strength))),
+        rgb(var(--c-gold-500) / calc(0.10 * var(--wash-strength))),
         transparent 68%
       ),
       radial-gradient(
         45rem 28rem at 100% 12%,
-        rgb(var(--c-clay-700) / calc(0.06 * var(--wash-strength))),
+        rgb(var(--c-gold-500) / calc(0.07 * var(--wash-strength))),
         transparent 70%
       ),
       radial-gradient(
         40rem 30rem at 0% 55%,
-        rgb(var(--c-sun-500) / calc(0.045 * var(--wash-strength))),
+        rgb(var(--c-muted) / calc(0.05 * var(--wash-strength))),
         transparent 70%
       );
   }
@@ -219,9 +219,9 @@
      `tracking-wide` is gone: it fought the tightened headings above and made
      button labels look like they belonged to a different site. */
   .btn {
-    @apply tap-target gap-2 rounded-full px-6 py-3 font-display font-bold
-           transition duration-200 ease-out hover:scale-[1.03] active:scale-[0.97]
-           disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100;
+    @apply tap-target gap-2 rounded-2xl px-6 py-3 font-display font-extrabold
+           transition-[transform,box-shadow] duration-100 ease-out
+           disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   /* The accent gradient, bright blue into deep blue.
@@ -231,17 +231,37 @@
      a black button next to a blue logo just looks like two unrelated
      decisions. Both ends of the gradient are audited against a white label,
      so every colour along it clears 4.5:1 - see check-a11y.mjs. */
+  /* One flat near-black fill with a gold ledge under it, and the button sinks
+     onto that ledge when pressed. The press is the whole feedback: it reads
+     as a physical key rather than a rectangle that changes colour, which is
+     the friendliest thing available that costs no colour on a page this
+     monochrome. The gradient it replaces ran blue into blue and is gone with
+     the blue.
+
+     The ledge is decoration - it carries no meaning and no text - which is
+     why bright gold is allowed here and is not asked to clear 3:1 against the
+     page. The fill under the white label is, and does: both ends audited. */
   .btn-primary {
-    @apply btn bg-gradient-to-br from-clay-500 to-clay-700 text-white
-           hover:from-clay-600 hover:to-clay-600;
-    box-shadow: var(--shadow-card);
+    @apply btn bg-clay-500 text-white hover:bg-clay-700;
+    box-shadow: 0 5px 0 rgb(var(--c-gold-500));
+  }
+
+  .btn-primary:active {
+    box-shadow: 0 1px 0 rgb(var(--c-gold-500));
+    transform: translateY(4px);
+  }
+
+  .btn-secondary:active {
+    box-shadow: 0 1px 0 rgb(var(--c-brand-200));
+    transform: translateY(4px);
   }
 
   .btn-secondary {
     /* brand-400, not 300: this border is the main thing marking the button out
        from the page, so it is a UI boundary and owes 3:1 (WCAG 1.4.11).
        brand-300 measured 2.56:1 against surface. */
-    @apply btn border border-brand-400 bg-surface text-ink hover:bg-brand-50;
+    @apply btn border-2 border-brand-400 bg-surface text-ink hover:bg-brand-50;
+    box-shadow: 0 5px 0 rgb(var(--c-brand-200));
   }
 
   .btn-success {
