@@ -411,22 +411,9 @@ export default function Home() {
         aria-labelledby="claim-heading"
         className="relative mx-[calc(50%-50vw)] overflow-hidden border-y border-brand-100 bg-brand-50 px-6 py-12"
       >
-        {/* A low-alpha glow on top of the flat brand-50 fill, the same trick
-            as the closing CTA band below - two of the site's own hues, not a
-            new colour. Kept faint on purpose: the contrast audit measured
-            ink/muted against a flat brand-50 with 5.3:1 and 6.4:1 of headroom
-            over the 4.5:1 floor (both themes, npm run check:a11y), and this
-            spends only a sliver of that margin for some warmth in an
-            otherwise flat band. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              'radial-gradient(34rem 20rem at 8% -20%, rgb(var(--c-clay-500) / 0.08), transparent 65%), radial-gradient(28rem 18rem at 100% 120%, rgb(var(--c-clay-700) / 0.07), transparent 65%)',
-          }}
-        />
-
+        {/* The band is a flat `brand-50` fill. It carried two low-alpha glows
+            for warmth; they are gone with every other gradient on the site,
+            which is now one flat colour per surface. */}
         <Reveal className="relative mx-auto flex max-w-6xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
             <h2 id="claim-heading" className="text-2xl font-extrabold leading-tight text-ink">
@@ -518,21 +505,9 @@ export default function Home() {
         // child at a higher specificity, which silently eats a plain -mb-8.
         className="relative !-mb-8 mx-[calc(50%-50vw)] overflow-hidden bg-stage-deep px-6 py-20 text-center sm:py-24"
       >
-        {/* A single warm glow off one corner, so the dark band has a light
-            source rather than reading as a flat rectangle. Faint enough that
-            white text on it stays at the measured 18:1. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              // clay-400 and sun-500, through the palette rather than copied
-              // as rgba. The band underneath is `stage`, which is dark in both
-              // themes, so the glow needs no per-theme adjustment - but saying
-              // it in tokens means a palette change reaches it.
-              'radial-gradient(40rem 22rem at 85% -10%, rgb(var(--c-clay-400) / 0.22), transparent 65%), radial-gradient(32rem 20rem at 0% 110%, rgb(var(--c-sun-500) / 0.16), transparent 65%)',
-          }}
-        />
+        {/* The band is flat `stage-deep`. It used to carry a warm corner glow
+            so it read as lit rather than as a rectangle; the whole site is one
+            flat colour per surface now, and this was the last gradient. */}
 
         <Reveal className="relative mx-auto max-w-2xl space-y-6">
           <h2 id="cta-heading" className="text-3xl font-extrabold text-stage-ink sm:text-4xl">

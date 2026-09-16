@@ -118,11 +118,11 @@ export default function Layout() {
       <header className="z-40 border-b border-brand-100 bg-surface xl:sticky xl:top-0 supports-[backdrop-filter]:bg-surface/85 supports-[backdrop-filter]:backdrop-blur-xl">
         {/* A thin accent rule across the very top of the page.
             Decorative, so it is hidden from assistive tech - it says nothing
-            a screen reader needs. It is the accent's own blue-to-violet
-            gradient rather than a flat colour, which is the one place on the
-            page where that gradient reads as a line rather than as a fill, and
-            it gives the header an edge to sit under when it is stuck to the
-            top of the viewport. */}
+            a screen reader needs. Flat gold: at 4px tall the accent reads as a
+            line rather than as a fill, which is the one shape bright gold can
+            take on a light page without being asked to carry meaning. It also
+            gives the header an edge to sit under when it is stuck to the top
+            of the viewport. */}
         <div
           aria-hidden="true"
           className="h-1 w-full bg-gold-500"

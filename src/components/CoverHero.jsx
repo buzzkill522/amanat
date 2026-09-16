@@ -79,18 +79,6 @@ export default function CoverHero() {
       // text (WCAG 1.4.10 Reflow).
       className="relative -mt-8 isolate mx-[calc(50%-50vw)] overflow-hidden border-b border-brand-100 bg-surface px-6 pb-16 pt-14 sm:pb-24 sm:pt-20"
     >
-      {/* A wash of the one accent, low enough to stay under the 7% ceiling the
-          audit cannot see past. Static, so it costs nothing under reduced
-          motion. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            'radial-gradient(38rem 22rem at 12% 0%, rgb(var(--c-gold-500) / 0.20), transparent 65%), radial-gradient(30rem 20rem at 100% 10%, rgb(var(--c-gold-500) / 0.10), transparent 65%)',
-        }}
-      />
-
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
         <div className="flex flex-col items-start gap-6">
           <span className="inline-flex animate-bounceIn items-center gap-2 rounded-full bg-clay-100 px-4 py-1.5 text-sm font-extrabold text-clay-600">

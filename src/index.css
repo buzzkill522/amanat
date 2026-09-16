@@ -38,11 +38,6 @@
      -------------------------------------------------------------------------- */
 
   :root {
-    /* The washes are barely perceptible on a dark page at the alpha that suits
-       a white one, and a wash nobody can see is just bytes. Scaled rather than
-       re-specified so there is still one number per wash to reason about. */
-    --wash-strength: 1;
-
     /* Elevation, as a theme knob rather than a Tailwind shadow utility.
        A shadow is a dark colour, so the same one that reads as a gentle lift
        on white is invisible on a near-black page - the default `shadow-sm`
@@ -54,7 +49,6 @@
   }
 
   [data-theme='dark'] {
-    --wash-strength: 2.4;
     /* Pure black and much stronger: on a dark ground the shadow has to be
        darker than the page itself to register at all. */
     --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.45);
@@ -63,48 +57,22 @@
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      --wash-strength: 2.4;
       --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.45);
       --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.5), 0 12px 32px rgb(0 0 0 / 0.55);
     }
   }
 
-  /* The wash. Fixed rather than scrolling, so the page feels lit from a
-     constant source instead of dragging a gradient down with it.
+  /* The page is one flat colour.
 
-     Blue at the top, a deeper blue to one side, a trace of amber to the other.
-     The two blues are the accent's own gradient; the amber is there so the
-     page is not lit from a single hue, and it is the warm counterweight to a
-     cool accent rather than a second colour with anything to say. This slot
-     used to be magenta, which spread a faint purple cast over every page -
-     subtle enough to be hard to name and obvious enough to notice.
+     There used to be a fixed wash here - three radial gradients in the accent,
+     scaled up on a dark page where the same alpha is invisible. It is gone,
+     along with the hero's brighter copy of it. The scheme carries its weight
+     with one accent used in a few deliberate places; a tint spread across the
+     whole page is the opposite of that, and it made the ground a different
+     colour at the top of the screen than at the bottom.
 
-     Said through the same custom properties every utility class resolves
-     through, so it follows the theme without anyone maintaining a second copy
-     of the palette down here. */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      radial-gradient(
-        60rem 32rem at 50% -8%,
-        rgb(var(--c-gold-500) / calc(0.10 * var(--wash-strength))),
-        transparent 68%
-      ),
-      radial-gradient(
-        45rem 28rem at 100% 12%,
-        rgb(var(--c-gold-500) / calc(0.07 * var(--wash-strength))),
-        transparent 70%
-      ),
-      radial-gradient(
-        40rem 30rem at 0% 55%,
-        rgb(var(--c-muted) / calc(0.05 * var(--wash-strength))),
-        transparent 70%
-      );
-  }
+     `paper` on <body> is the only thing painting the page now, and it comes
+     from the palette, so it follows the theme like everything else. */
 
   /* Headings carry the display face; everything else stays in Mukta, which is
      the one meant to be read in quantity. Set here rather than on each
@@ -224,13 +192,6 @@
            disabled:cursor-not-allowed disabled:opacity-60;
   }
 
-  /* The accent gradient, bright blue into deep blue.
-     This used to be near-black, on the reasoning that in a neutral scheme the
-     primary action earns its weight by being the darkest thing on the page.
-     That held while the page had no accent worth the name; now that it does,
-     a black button next to a blue logo just looks like two unrelated
-     decisions. Both ends of the gradient are audited against a white label,
-     so every colour along it clears 4.5:1 - see check-a11y.mjs. */
   /* One flat near-black fill with a gold ledge under it, and the button sinks
      onto that ledge when pressed. The press is the whole feedback: it reads
      as a physical key rather than a rectangle that changes colour, which is
