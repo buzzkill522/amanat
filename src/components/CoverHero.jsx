@@ -28,11 +28,11 @@ import { signLabel, signShort } from '@/config/site.js'
  */
 
 const PROMISES = [
-  { icon: Hand, key: 'cover.promise.sign', tone: 'bg-berry-100 text-berry-600' },
-  { icon: Subtitles, key: 'cover.promise.captions', tone: 'bg-grow-100 text-grow-600' },
+  { icon: Hand, key: 'cover.promise.sign', tone: 'bg-brand-100 text-brand-700' },
+  { icon: Subtitles, key: 'cover.promise.captions', tone: 'bg-brand-100 text-brand-700' },
   // A crossed-out ear, not a crossed-out speaker: the claim is that nothing
   // here needs hearing, which is about the reader, not about the audio.
-  { icon: EarOff, key: 'cover.promise.sound', tone: 'bg-sun-100 text-sun-600' },
+  { icon: EarOff, key: 'cover.promise.sound', tone: 'bg-brand-100 text-brand-700' },
 ]
 
 export default function CoverHero() {
@@ -76,7 +76,7 @@ export default function CoverHero() {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(38rem 22rem at 15% 0%, rgb(var(--c-clay-500) / 0.18), transparent 65%), radial-gradient(30rem 20rem at 100% 15%, rgb(var(--c-clay-700) / 0.15), transparent 65%), radial-gradient(26rem 18rem at 85% 100%, rgb(var(--c-sun-500) / 0.1), transparent 65%)',
+            'radial-gradient(38rem 22rem at 15% 0%, rgb(var(--c-gold-500) / 0.22), transparent 65%), radial-gradient(30rem 20rem at 100% 15%, rgb(var(--c-gold-500) / 0.14), transparent 65%), radial-gradient(26rem 18rem at 85% 100%, rgb(var(--c-muted) / 0.07), transparent 65%)',
         }}
       />
 
@@ -95,11 +95,13 @@ export default function CoverHero() {
           className="mt-6 text-4xl font-extrabold leading-[1.2] text-ink sm:text-6xl"
         >
           <span className="block animate-riseIn [animation-delay:90ms]">{t('cover.title1')}</span>
-          {/* The one gradient on the page that carries text. clay-500 into
-              clay-700 - the same bright-to-deep blue sweep as the
-              primary button, so the cover states the accent once and the rest
-              of the page repeats it. Both ends are audited (check-a11y), and
-              every colour between them is a blend of two audited colours. */}
+          {/* Plain ink, underlined in gold.
+
+              This used to be a blue gradient clipped to the glyphs. In a
+              monochrome scheme the emphasis moves off the text and onto the
+              mark beneath it: the text stays the most readable thing on the
+              page (15.5:1) and the one chromatic thing in the hero is the
+              curve, which carries no meaning and so is free to be bright. */}
           {/* Underlined with a drawn curve rather than a rule.
 
               It cannot be `text-decoration`: `bg-clip-text` clips the gradient
@@ -124,14 +126,14 @@ export default function CoverHero() {
               phrase rather than the width of the column. */}
           <span className="block">
             <span className="relative inline-block animate-riseIn pb-4 [animation-delay:180ms]">
-              <span className="bg-gradient-to-r from-clay-500 to-clay-700 bg-clip-text text-transparent">
+              <span className="text-ink">
                 {t('cover.title2')}
               </span>
               <svg
                 aria-hidden="true"
                 viewBox="0 0 100 12"
                 preserveAspectRatio="none"
-                className="absolute inset-x-0 bottom-0 h-3 w-full text-clay-500"
+                className="absolute inset-x-0 bottom-0 h-3 w-full text-gold-500"
               >
                 {/* A single quadratic. A quadratic only reaches halfway to its
                     control point, so the control sits at y=16 - below the

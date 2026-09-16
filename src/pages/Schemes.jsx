@@ -40,28 +40,13 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
  *      and is not.
  */
 
-const ACCENTS = {
-  clay: {
-    chip: 'border-clay-500 bg-clay-100 text-clay-600',
-    icon: 'text-clay-600',
-  },
-  grow: {
-    chip: 'border-grow-500 bg-grow-100 text-grow-600',
-    icon: 'text-grow-600',
-  },
-  berry: {
-    chip: 'border-berry-500 bg-berry-100 text-berry-600',
-    icon: 'text-berry-600',
-  },
-  sun: {
-    chip: 'border-sun-500 bg-sun-100 text-sun-600',
-    icon: 'text-sun-600',
-  },
-  brand: {
-    chip: 'border-brand-500 bg-brand-100 text-brand-700',
-    icon: 'text-brand-600',
-  },
+// Accent names all resolve to one neutral tone in the monochrome scheme. The
+// keys stay because content JSON names them; see LessonCard for the reasoning.
+const NEUTRAL = {
+  chip: 'border-brand-500 bg-brand-100 text-brand-700',
+  icon: 'text-brand-600',
 }
+const ACCENTS = { clay: NEUTRAL, grow: NEUTRAL, berry: NEUTRAL, sun: NEUTRAL, brand: NEUTRAL }
 
 function SchemeCard({ scheme, accent }) {
   const t = useT()

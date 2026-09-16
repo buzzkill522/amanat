@@ -7,12 +7,10 @@ import { levels, signLabel, signShort } from '@/config/site.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 
-const ACCENTS = {
-  grow: 'border-grow-500 bg-grow-100 text-grow-600',
-  brand: 'border-brand-500 bg-brand-100 text-brand-700',
-  sun: 'border-sun-500 bg-sun-100 text-sun-600',
-  berry: 'border-berry-500 bg-berry-100 text-berry-600',
-}
+// Accent names all resolve to one neutral tone in the monochrome scheme. The
+// keys stay because content JSON names them; see LessonCard for the reasoning.
+const NEUTRAL = 'border-brand-500 bg-brand-100 text-brand-700'
+const ACCENTS = { grow: NEUTRAL, brand: NEUTRAL, sun: NEUTRAL, berry: NEUTRAL }
 
 /**
  * Where a "used in" link should actually go.

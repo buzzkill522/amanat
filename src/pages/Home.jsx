@@ -225,7 +225,7 @@ export default function Home() {
                       this page exists to state. The gradient and the hover scale
                       are new, the number underneath is not - text-transparent
                       still reads the real digits to anything that isn't paint. */}
-                  <span className="block bg-gradient-to-br from-clay-500 to-clay-700 bg-clip-text font-display text-5xl font-extrabold text-transparent transition-transform duration-300 group-hover:scale-110">
+                  <span className="block font-display text-5xl font-extrabold text-ink transition-transform duration-300 group-hover:scale-110">
                     {s.value}
                   </span>
                   <span className="mx-auto mt-2 block max-w-[10rem] text-sm leading-snug text-muted">
