@@ -122,7 +122,7 @@ export default function Lesson() {
             <p className="text-sm font-extrabold uppercase tracking-wide text-muted">
               {t('lesson.eyebrow', { n: module.index + 1, level: levelName })}
             </p>
-            <h1 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+            <h1 className="text-3xl/tight font-extrabold text-ink sm:text-4xl/tight">
               {module.title}
             </h1>
           </div>

@@ -427,7 +427,7 @@ const en = {
 
   'teachers.privacy.heading': 'Privacy',
   'teachers.privacy.text':
-    'There are no accounts and no analytics. Progress is stored in the browser on the device itself. Clearing the browser data clears the progress. Nothing is sent anywhere.',
+    'There are no accounts and no analytics, and nothing about a child is ever sent anywhere. Progress is stored in the browser on the device itself, and clearing the browser data clears it. One exception, until the real lesson videos are filmed: the placeholder videos are streamed from an outside host, so opening a lesson does fetch a file from it.',
   'teachers.privacy.link': 'Read the accessibility statement',
 
   // -------------------------------------------------------- accessibility page
@@ -916,7 +916,7 @@ const hi = {
 
   'teachers.privacy.heading': 'निजता',
   'teachers.privacy.text':
-    'कोई खाता नहीं, कोई एनालिटिक्स नहीं। प्रगति डिवाइस के ब्राउज़र में ही रखी जाती है। ब्राउज़र का डेटा साफ़ करने पर प्रगति भी मिट जाती है। कुछ भी कहीं नहीं भेजा जाता।',
+    'कोई खाता नहीं, कोई एनालिटिक्स नहीं, और बच्चे के बारे में कुछ भी कहीं नहीं भेजा जाता। प्रगति डिवाइस के ब्राउज़र में ही रखी जाती है, और ब्राउज़र का डेटा साफ़ करने पर वह मिट जाती है। असली वीडियो बनने तक एक अपवाद है: पाठ के अस्थायी वीडियो बाहर के सर्वर से आते हैं, इसलिए पाठ खोलने पर वहाँ से एक फ़ाइल मँगाई जाती है।',
   'teachers.privacy.link': 'सुलभता वक्तव्य पढ़िए',
 
   // -------------------------------------------------------- accessibility page

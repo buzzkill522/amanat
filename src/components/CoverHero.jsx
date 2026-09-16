@@ -15,16 +15,15 @@ import { signLabel, signShort } from '@/config/site.js'
  *      index.css lands reduced-motion readers on the finished state.
  *   2. The colours come from the palette in tailwind.config.js, where each one
  *      carries its measured contrast ratio. This panel is light: ink on a
- *      surface-to-paper gradient at 15.7:1, with rust for the eyebrow at 7.0:1
- *      and the pale accent chips keeping their dark ink.
+ *      surface-to-paper gradient at 15.7:1, with the accent for the eyebrow and
+ *      the pale accent chips keeping their dark ink.
  *
  * The glow behind the eyebrow and the gradient on the second heading line are
  * later additions, aimed at a page that felt flat rather than calm. Neither
  * changes what a screen reader hears or what a reduced-motion reader sees at
  * rest - the glow is a fixed radial gradient, not an animation, and the
  * heading gradient is still solid, readable text; `bg-clip-text` swaps the
- * paint, not the contrast. clay-600 and berry-600 each clear 8:1 on paper
- * alone, so every point of the blend between them does too.
+ * paint, not the contrast.
  */
 
 const PROMISES = [
@@ -82,7 +81,7 @@ export default function CoverHero() {
 
       <div className="relative mx-auto max-w-3xl text-center">
         {/* The eyebrow is the one place the accent appears up here - small,
-            rust, and the only saturated thing on the screen. */}
+            and the only saturated thing on the screen. */}
         <span className="inline-flex animate-bounceIn items-center gap-2 rounded-full bg-clay-100 px-4 py-1.5 text-sm font-extrabold uppercase tracking-[0.14em] text-clay-600">
           <Hand className="h-5 w-5" aria-hidden="true" />
           {t('cover.badge', signVars)}
@@ -92,7 +91,11 @@ export default function CoverHero() {
           id="cover-heading"
           // 1.2 rather than 1.1: Devanagari stacks matras above and below the
           // line, and at this size the two lines collide without the extra.
-          className="mt-6 text-4xl font-extrabold leading-[1.2] text-ink sm:text-6xl"
+          // Written as `text-*/[1.2]`, not a separate `leading-*`: each
+          // `text-*` size carries its own line-height, so a responsive size
+          // silently overrides a bare leading class (sm:text-6xl reset this to
+          // 1.0 above 640px). The modifier keeps size and leading together.
+          className="mt-6 text-4xl/[1.2] font-extrabold text-ink sm:text-6xl/[1.2]"
         >
           <span className="block animate-riseIn [animation-delay:90ms]">{t('cover.title1')}</span>
           {/* The one gradient on the page that carries text. clay-500 into
@@ -158,7 +161,7 @@ export default function CoverHero() {
           </span>
         </h1>
 
-        <p className="mx-auto mt-5 max-w-2xl animate-riseIn text-lg leading-relaxed text-muted [animation-delay:240ms] sm:text-xl">
+        <p className="mx-auto mt-5 max-w-2xl animate-riseIn text-lg/relaxed text-muted [animation-delay:240ms] sm:text-xl/relaxed">
           {t('cover.lead')}
         </p>
 

@@ -5,11 +5,6 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
 
 // The site's own colours, through the palette variables, so the confetti
 // follows the theme instead of staying at light-theme darkness on a dark page.
-//
-// These were five hardcoded hexes, one of which (#2a63ad) was a blue - in a
-// palette whose one standing rule is that it contains no blue and no grey. It
-// predates the beige scheme and was never revisited; the accent and the four
-// state colours are the honest set.
 const COLORS = [
   'rgb(var(--c-clay-500))',
   'rgb(var(--c-sun-500))',
@@ -51,12 +46,23 @@ export default function Celebration({ show, message, onDone }) {
     [show],
   )
 
+  // The latest `onDone`, held in a ref rather than listed as a dependency.
+  // Callers pass inline arrows, and a dependency on one re-ran the effect below
+  // on every render: the dismiss timer restarted from zero (a playing video
+  // re-renders several times a second) and focus was pulled back to the panel
+  // each time - a keyboard trap (WCAG 2.1.2).
+  const onDoneRef = useRef(onDone)
+  useEffect(() => {
+    onDoneRef.current = onDone
+  }, [onDone])
+
+  // Once per appearance, not once per render.
   useEffect(() => {
     if (!show) return undefined
     panelRef.current?.focus()
-    const timer = window.setTimeout(() => onDone?.(), reduceMotion ? 2500 : 4000)
+    const timer = window.setTimeout(() => onDoneRef.current?.(), reduceMotion ? 2500 : 4000)
     return () => window.clearTimeout(timer)
-  }, [show, reduceMotion, onDone])
+  }, [show, reduceMotion])
 
   if (!show) return null
 
