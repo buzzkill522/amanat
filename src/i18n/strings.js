@@ -310,6 +310,20 @@ const en = {
   'lesson.celebrationMessage': '{title} complete',
   'lesson.pageTitleFallback': 'Lesson',
 
+  // The lesson is three steps, one screen each. Named with the same verbs the
+  // home page promises (home.how.*), so the promise and the page agree.
+  'lesson.steps.label': 'Lesson steps',
+  'lesson.steps.status': 'Step {n} of {total}',
+  'lesson.step.watch': 'Watch',
+  'lesson.step.read': 'Read',
+  'lesson.step.answer': 'Answer',
+  'lesson.step.next': 'Next: {step}',
+  'lesson.step.back': 'Back: {step}',
+  'lesson.step.skip': 'Skip to questions',
+  'lesson.step.hint.watch': 'Watch to the end, or move on whenever you are ready.',
+  'lesson.step.hint.read': 'Read the story and the new words, then answer the questions.',
+  'lesson.step.hint.answer': 'Finish the questions and the next lesson opens.',
+
   // ------------------------------------------------------------- celebration
   'celebration.defaultMessage': 'Lesson complete',
   'celebration.nextOpen': 'The next lesson is now open.',
@@ -802,6 +816,18 @@ const hi = {
   'lesson.navLabel': 'पाठों के बीच जाएँ',
   'lesson.celebrationMessage': '{title} पूरा हुआ',
   'lesson.pageTitleFallback': 'पाठ',
+
+  'lesson.steps.label': 'पाठ के चरण',
+  'lesson.steps.status': 'चरण {n}, {total} में से',
+  'lesson.step.watch': 'देखिए',
+  'lesson.step.read': 'पढ़िए',
+  'lesson.step.answer': 'जवाब दीजिए',
+  'lesson.step.next': 'आगे: {step}',
+  'lesson.step.back': 'पीछे: {step}',
+  'lesson.step.skip': 'सीधे सवालों पर जाइए',
+  'lesson.step.hint.watch': 'पूरा वीडियो देखिए, या जब तैयार हों तब आगे बढ़िए।',
+  'lesson.step.hint.read': 'कहानी और नए शब्द पढ़िए, फिर सवालों के जवाब दीजिए।',
+  'lesson.step.hint.answer': 'सवाल पूरे कीजिए और अगला पाठ खुल जाएगा।',
 
   // ------------------------------------------------------------- celebration
   'celebration.defaultMessage': 'पाठ पूरा हुआ',
