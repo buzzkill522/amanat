@@ -13,122 +13,6 @@
   },
   "levels": {
     "level-1": {
-      "title": "Saving and spending",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "summary": [
-        "Spending means you use money now.",
-        "Saving means you keep money for later.",
-        "You can put saved money in a piggy bank.",
-        "If you save ₹10 every week, you will have ₹40 after four weeks.",
-        "Saving helps you buy something bigger later."
-      ],
-      "keyWords": [
-        "save",
-        "spend",
-        "piggy bank",
-        "later",
-        "goal"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "You save ₹5 every day for a week (7 days). How much will you have?",
-            "image": {
-              "icon": "piggy",
-              "alt": "A piggy bank with a week of coins beside it"
-            },
-            "options": [
-              {
-                "icon": "coin",
-                "label": "₹35"
-              },
-              {
-                "icon": "coin",
-                "label": "₹57"
-              },
-              {
-                "icon": "coin",
-                "label": "₹12"
-              }
-            ],
-            "correctIndex": 0,
-            "hint": "Multiply 5 by how many days are in a week."
-          },
-          {
-            "id": "q2",
-            "prompt": "You save ₹10 every week. After how many weeks will you have enough for a ₹90 toy?",
-            "image": {
-              "icon": "calendar",
-              "alt": "A calendar with several weeks marked"
-            },
-            "options": [
-              {
-                "icon": "calendar",
-                "label": "4 weeks"
-              },
-              {
-                "icon": "calendar",
-                "label": "40 weeks"
-              },
-              {
-                "icon": "calendar",
-                "label": "9 weeks"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "Divide the toy's price by how much you save each week."
-          },
-          {
-            "id": "q3",
-            "prompt": "A cricket ball costs ₹150. You have ₹50 and get ₹20 pocket money each week. In how many weeks can you afford it?",
-            "image": {
-              "icon": "cricket",
-              "alt": "A cricket ball beside a savings jar"
-            },
-            "options": [
-              {
-                "icon": "calendar",
-                "label": "2 weeks"
-              },
-              {
-                "icon": "calendar",
-                "label": "5 weeks"
-              },
-              {
-                "icon": "calendar",
-                "label": "10 weeks"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "First find out how much more you need, then divide by your weekly pocket money."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "Choosing to save or to spend",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
@@ -244,7 +128,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Saving, spending and opportunity cost",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
@@ -355,6 +239,124 @@
             ],
             "correctIndex": 0,
             "hint": "An emergency fund is for problems you did not choose, not things you wish for."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Saving with a goal and a date",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Saving works best with a goal, an amount and a date. \"Save more\" is a wish. \"₹3,000 by Diwali\" is a plan.",
+        "Divide the goal by the months you have. ₹3,000 in 6 months is ₹500 a month.",
+        "A big cost that comes once a year, like school fees or a festival, can be saved for a little every month. This is called a sinking fund.",
+        "An emergency fund should cover about three to six months of basic costs, not just one surprise.",
+        "Lifestyle creep is when spending rises every time income rises, so saving never grows. When you get more, raise your saving first.",
+        "Waiting for a reward is hard. A plan with a date makes it easier, because you can see the finish line."
+      ],
+      "keyWords": [
+        "goal",
+        "sinking fund",
+        "emergency fund",
+        "lifestyle creep",
+        "timeline",
+        "saving rate"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "You want a ₹4,800 bicycle in 8 months. How much must you save each month?",
+            "image": {
+              "icon": "bicycle",
+              "alt": "A bicycle with a price tag beside a calendar"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹400"
+              },
+              {
+                "icon": "coin",
+                "label": "₹600"
+              },
+              {
+                "icon": "coin",
+                "label": "₹800"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Divide the total price by the number of months."
+          },
+          {
+            "id": "q2",
+            "prompt": "School fees of ₹6,000 are due every June. What is the smartest way to be ready?",
+            "image": {
+              "icon": "calendar",
+              "alt": "A calendar with June circled and a fee bill"
+            },
+            "options": [
+              {
+                "icon": "warning",
+                "label": "Borrow the full amount from a friend in June"
+              },
+              {
+                "icon": "cross",
+                "label": "Hope for a gift before June"
+              },
+              {
+                "icon": "calendar",
+                "label": "Set aside ₹500 every month, so it is ready by June"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "Think about splitting one big cost into twelve small ones."
+          },
+          {
+            "id": "q3",
+            "prompt": "Your monthly income rises from ₹2,000 to ₹3,000. You now spend ₹2,900 a month, up from ₹1,900. What has happened?",
+            "image": {
+              "icon": "growth",
+              "alt": "Income and spending both rising by the same amount"
+            },
+            "options": [
+              {
+                "icon": "growth",
+                "label": "Lifestyle creep: your spending grew as fast as your income"
+              },
+              {
+                "icon": "piggy",
+                "label": "Your saving grew by ₹1,000"
+              },
+              {
+                "icon": "check",
+                "label": "Nothing - more income always means more saving"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Work out how much is left over, before and after."
           }
         ]
       }

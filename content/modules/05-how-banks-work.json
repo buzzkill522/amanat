@@ -7,133 +7,6 @@
   "shortTitle": "Banks",
   "levels": {
     "level-1": {
-      "title": "What a bank does with your money",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "story": {
-        "title": "The mice that ate the iron",
-        "source": "From the Panchatantra",
-        "text": [
-          "A trader had a heavy iron balance. He was going away, so he left it with a friend to keep safe.",
-          "When he came back, he asked for it. The friend said, \"I am very sorry. Mice ate the iron.\"",
-          "The trader said nothing. Later he took the friend's son to the river, and came back alone.",
-          "\"Where is my son?\" cried the friend. \"A hawk carried him away,\" said the trader. \"That is impossible!\" said the friend. \"If mice can eat iron,\" said the trader, \"a hawk can carry a boy.\""
-        ],
-        "moral": "The friend kept no record, so it came down to who was believed. A bank writes down what is yours, in your name, so nobody has to be believed."
-      },
-      "summary": [
-        "A bank is a safe place to keep money. Safer than a pocket, a box, or under a bed.",
-        "Money in a pocket can be lost or taken. Money in a bank cannot.",
-        "The bank writes down every rupee that is yours. That written record is your account.",
-        "You can put money in and take money out when you need it. It stays yours the whole time.",
-        "The bank pays you a small extra amount for keeping your money there. A box pays you nothing."
-      ],
-      "keyWords": [
-        "bank",
-        "account",
-        "safe",
-        "deposit",
-        "record"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "Your friend keeps ₹500 loose in a school bag. You keep ₹500 in a bank account. Whose money is more at risk of being lost or taken, and why?",
-            "image": {
-              "icon": "bank",
-              "alt": "A school bag beside a bank building"
-            },
-            "options": [
-              {
-                "icon": "bank",
-                "label": "Yours - banks can lose records too"
-              },
-              {
-                "icon": "question",
-                "label": "Both are equally at risk"
-              },
-              {
-                "icon": "wallet",
-                "label": "Your friend's - a bank keeps a written record, a school bag does not"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "Think about what a bank does that a bag cannot."
-          },
-          {
-            "id": "q2",
-            "prompt": "You deposit ₹200 in the bank on Monday. On Friday you want it back. What happens?",
-            "image": {
-              "icon": "handcoin",
-              "alt": "A hand placing money at a bank counter on a calendar"
-            },
-            "options": [
-              {
-                "icon": "cross",
-                "label": "You must ask the bank's permission every time"
-              },
-              {
-                "icon": "lock",
-                "label": "You cannot get it back until a year passes"
-              },
-              {
-                "icon": "check",
-                "label": "You can withdraw it - it was always yours, the bank was only keeping it"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "The bank keeps your money, but never takes ownership of it."
-          },
-          {
-            "id": "q3",
-            "prompt": "Your cousin keeps ₹100 in a box for a year. You keep ₹100 in a bank for a year, and neither of you adds or removes money. Who ends the year with more, and why?",
-            "image": {
-              "icon": "growth",
-              "alt": "A box beside a bank, with a small plant growing from the bank"
-            },
-            "options": [
-              {
-                "icon": "house",
-                "label": "Your cousin does - boxes are safer"
-              },
-              {
-                "icon": "bank",
-                "label": "You do - the bank pays a little extra for keeping your money there"
-              },
-              {
-                "icon": "question",
-                "label": "You will have exactly the same amount"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "Only one of the two places pays anything extra at all."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "Opening an account in your own name",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
@@ -261,7 +134,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "The account as a foundation, and your right to one",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
@@ -386,6 +259,124 @@
             ],
             "correctIndex": 2,
             "hint": "Apply the same reasoning used earlier about scholarships and funds needing your own name."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "How banks earn, and how your money is protected",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "A bank does not keep your money in a box. It lends most of it to other people and businesses.",
+        "It pays you a lower rate on savings and charges borrowers a higher rate on loans. The gap between the two is how the bank earns.",
+        "Your deposits are insured by DICGC, a body under the RBI, up to ₹5 lakh per person in each bank.",
+        "A fixed deposit locks money for a set time at a better rate. A recurring deposit takes a fixed amount every month.",
+        "KYC - Know Your Customer - is how a bank checks who you are, usually with Aadhaar and PAN. It stops someone opening an account in your name.",
+        "Never share your PIN, OTP or password with anyone, even someone who says they are from the bank. A real bank will never ask."
+      ],
+      "keyWords": [
+        "loan",
+        "interest spread",
+        "deposit insurance",
+        "fixed deposit",
+        "recurring deposit",
+        "KYC"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A bank pays savers 4% a year and charges borrowers 10% a year. Where does the bank’s profit mainly come from?",
+            "image": {
+              "icon": "bank",
+              "alt": "A bank between a saver and a borrower"
+            },
+            "options": [
+              {
+                "icon": "cross",
+                "label": "From printing extra money"
+              },
+              {
+                "icon": "growth",
+                "label": "From the gap between the 10% it charges and the 4% it pays"
+              },
+              {
+                "icon": "shield",
+                "label": "From keeping all the savings locked in a vault"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Compare what the bank earns from loans with what it pays on savings."
+          },
+          {
+            "id": "q2",
+            "prompt": "You have ₹7 lakh in one bank, and the bank fails. Up to how much is protected by deposit insurance?",
+            "image": {
+              "icon": "shield",
+              "alt": "A shield over a bank"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "All ₹7 lakh"
+              },
+              {
+                "icon": "coin",
+                "label": "Nothing at all"
+              },
+              {
+                "icon": "coin",
+                "label": "Up to ₹5 lakh"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "Deposit insurance has a limit for each person in each bank."
+          },
+          {
+            "id": "q3",
+            "prompt": "You want to save ₹500 every month for two years, at a better rate than a savings account. Which account fits?",
+            "image": {
+              "icon": "calendar",
+              "alt": "A calendar with the same amount saved each month"
+            },
+            "options": [
+              {
+                "icon": "calendar",
+                "label": "A recurring deposit"
+              },
+              {
+                "icon": "bank",
+                "label": "A current account"
+              },
+              {
+                "icon": "lock",
+                "label": "A fixed deposit of ₹500, made once"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Which account takes a fixed amount every month?"
           }
         ]
       }

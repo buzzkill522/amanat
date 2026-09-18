@@ -7,132 +7,6 @@
   "shortTitle": "Interest",
   "levels": {
     "level-1": {
-      "title": "Money that grows",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "story": {
-        "title": "The golden swan",
-        "source": "A Jataka tale",
-        "text": [
-          "A swan with golden feathers began visiting a poor family. Each time it came, it left behind one golden feather.",
-          "The family sold each feather. There was always enough to eat.",
-          "One day the mother said, \"Why wait for one at a time? Let us take them all now.\"",
-          "She caught the swan and pulled out every feather. But the feathers came away as ordinary white ones. The swan flew off, and it never came back."
-        ],
-        "moral": "One feather at a time was the extra. The swan itself was the money. She took the swan, and lost both."
-      },
-      "summary": [
-        "When you keep money in a bank, the bank pays you extra money.",
-        "This extra money is called interest.",
-        "The bank pays you because it can use your money for a while.",
-        "The longer you leave it, the more interest you get.",
-        "Money in a piggy bank does not grow. Money in a bank does."
-      ],
-      "keyWords": [
-        "interest",
-        "grow",
-        "bank",
-        "wait"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "Why does a bank pay you interest just for keeping your money there?",
-            "image": {
-              "icon": "growth",
-              "alt": "A small plant growing from a coin inside a bank"
-            },
-            "options": [
-              {
-                "icon": "gift",
-                "label": "Because banks enjoy giving away money"
-              },
-              {
-                "icon": "star",
-                "label": "Because the government orders them to give gifts"
-              },
-              {
-                "icon": "growth",
-                "label": "Because the bank gets to use your money while it is there, and pays you for that"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "Recall what the bank actually does with money while you are not using it."
-          },
-          {
-            "id": "q2",
-            "prompt": "You have ₹200. Keeping it in a piggy bank for a year, or in a bank account for a year - in which case would you have MORE than ₹200 after that year, and why?",
-            "image": {
-              "icon": "question",
-              "alt": "A piggy bank next to a bank building, both holding two hundred rupees"
-            },
-            "options": [
-              {
-                "icon": "piggy",
-                "label": "The piggy bank - it is safer so it grows more"
-              },
-              {
-                "icon": "question",
-                "label": "Both would have exactly ₹200"
-              },
-              {
-                "icon": "bank",
-                "label": "The bank account - only it pays interest on top of what you put in"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "Only one of the two options ever adds anything extra."
-          },
-          {
-            "id": "q3",
-            "prompt": "You could save toward a goal that needs the money back in 1 month, or a goal in 12 months, both using a bank account. In which case will interest matter more to your final total, and why?",
-            "image": {
-              "icon": "calendar",
-              "alt": "A calendar showing one month and twelve months side by side"
-            },
-            "options": [
-              {
-                "icon": "shop",
-                "label": "The 1-month goal - interest is always the same regardless of time"
-              },
-              {
-                "icon": "calendar",
-                "label": "The 12-month goal - interest needs time to add up meaningfully"
-              },
-              {
-                "icon": "coin",
-                "label": "Neither - interest only applies to goals over ₹1000"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "Interest is small over a short time and adds up over a long time."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "How interest is worked out",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
@@ -259,7 +133,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Compound interest and time",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
@@ -383,6 +257,124 @@
             ],
             "correctIndex": 0,
             "hint": "Just like savings, compound interest builds on the previous total - but here that total is a debt."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Loans, EMIs and the Rule of 72",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "A loan is interest working against you. The same compounding that grows savings also grows a debt.",
+        "An EMI is an equal monthly payment that repays the loan and its interest together.",
+        "Total cost of a loan = EMI × number of months. The difference from what you borrowed is what the loan really costs.",
+        "A \"flat\" rate charges interest on the full amount for the whole loan, even as you pay it down. It costs far more than the same rate on a reducing balance.",
+        "The Rule of 72: divide 72 by the yearly rate to find roughly how many years money takes to double. At 8%, about 9 years.",
+        "It works for debt too. A loan at 24% a year that is never paid doubles in about 3 years."
+      ],
+      "keyWords": [
+        "EMI",
+        "total cost",
+        "flat rate",
+        "reducing balance",
+        "Rule of 72",
+        "debt"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "You borrow ₹10,000 and pay an EMI of ₹950 for 12 months. How much does the loan cost you in interest?",
+            "image": {
+              "icon": "handcoin",
+              "alt": "Monthly payments stacked up beside the amount borrowed"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹950"
+              },
+              {
+                "icon": "coin",
+                "label": "₹1,400"
+              },
+              {
+                "icon": "coin",
+                "label": "₹11,400"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Multiply the EMI by the months, then take away what you borrowed."
+          },
+          {
+            "id": "q2",
+            "prompt": "Using the Rule of 72, about how long does money take to double at 6% a year?",
+            "image": {
+              "icon": "growth",
+              "alt": "A pile of money doubling over time"
+            },
+            "options": [
+              {
+                "icon": "calendar",
+                "label": "About 6 years"
+              },
+              {
+                "icon": "calendar",
+                "label": "About 72 years"
+              },
+              {
+                "icon": "calendar",
+                "label": "About 12 years"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "Divide 72 by the yearly rate."
+          },
+          {
+            "id": "q3",
+            "prompt": "Two loans both say 12% a year. One charges it on the full amount the whole time (flat). The other charges only on what you still owe (reducing). Which costs more?",
+            "image": {
+              "icon": "warning",
+              "alt": "Two loan offers with the same rate printed on them"
+            },
+            "options": [
+              {
+                "icon": "warning",
+                "label": "The flat-rate loan, because you pay interest on money you have already paid back"
+              },
+              {
+                "icon": "check",
+                "label": "They cost the same, because the rate is the same"
+              },
+              {
+                "icon": "cross",
+                "label": "The reducing-balance loan"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "On which loan does the interest shrink as you pay it off?"
           }
         ]
       }

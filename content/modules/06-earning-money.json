@@ -7,118 +7,6 @@
   "shortTitle": "Earning",
   "levels": {
     "level-1": {
-      "title": "Where money comes from",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "summary": [
-        "People earn money by doing work.",
-        "A teacher teaches. A farmer grows food. A driver drives a bus.",
-        "The money paid for work is called pay.",
-        "Money does not appear on its own. Someone worked for every rupee.",
-        "Children can earn small amounts by helping at home."
-      ],
-      "keyWords": [
-        "work",
-        "job",
-        "earn",
-        "pay",
-        "help"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "Your neighbour pays you ₹50 for washing their car. Is this earning money, and why?",
-            "image": {
-              "icon": "handcoin",
-              "alt": "A hand giving money for washing a car"
-            },
-            "options": [
-              {
-                "icon": "bank",
-                "label": "No - money only comes from banks"
-              },
-              {
-                "icon": "handcoin",
-                "label": "Yes - you did work and were paid for it"
-              },
-              {
-                "icon": "cross",
-                "label": "No - only adults with real jobs earn money"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "Check whether work happened and whether payment followed it."
-          },
-          {
-            "id": "q2",
-            "prompt": "You play cricket for fun every day. Your friend delivers newspapers every morning and is paid for it. Which one is a job, and why?",
-            "image": {
-              "icon": "cricket",
-              "alt": "A cricket bat beside a bundle of newspapers"
-            },
-            "options": [
-              {
-                "icon": "handcoin",
-                "label": "Delivering newspapers - someone pays for that work; playing cricket for fun is not paid work"
-              },
-              {
-                "icon": "cross",
-                "label": "Neither is a job unless you are an adult"
-              },
-              {
-                "icon": "check",
-                "label": "Both are jobs, since both take effort"
-              }
-            ],
-            "correctIndex": 0,
-            "hint": "A job is specifically work that is paid for, not just effort."
-          },
-          {
-            "id": "q3",
-            "prompt": "Your parent gives you ₹20 for tidying your own room, and separately ₹20 for painting a fence. Are both of these examples of a child earning money?",
-            "image": {
-              "icon": "house",
-              "alt": "A tidy room beside a freshly painted fence"
-            },
-            "options": [
-              {
-                "icon": "cross",
-                "label": "No - only big tasks like painting count as earning"
-              },
-              {
-                "icon": "check",
-                "label": "Yes - both involve doing a task and receiving payment, even if the tasks differ in size"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "Size of the task does not decide whether it counts as earning; payment for work does."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "Ways people earn",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
@@ -234,7 +122,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Earning, taxes and take-home pay",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
@@ -347,6 +235,124 @@
             ],
             "correctIndex": 0,
             "hint": "Think about which one you could plan a fixed monthly budget around more easily."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "How tax works, and what a job really pays",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Income tax in India is charged in slabs. Each slice of income has its own rate, and the rates rise as income rises.",
+        "A higher rate applies only to the slice above the line, not to all your income. Moving into a new slab never leaves you with less.",
+        "Your average tax rate is total tax divided by total income. It is always lower than the rate on your top slab.",
+        "Provident fund (PF) keeps back part of your salary, and your employer adds its own share. It is saving you get later, not money lost.",
+        "A job’s real value is salary plus benefits - PF, health insurance, paid leave. Compare these, not just the salary number.",
+        "Freelancers and gig workers must set aside their own tax, because no employer takes it out for them."
+      ],
+      "keyWords": [
+        "tax slab",
+        "average tax rate",
+        "provident fund",
+        "benefits",
+        "gross pay",
+        "self-employed"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "In a made-up tax system, the first ₹3 lakh is taxed at 0% and everything above it at 10%. Riya earns ₹5 lakh. How much tax does she pay?",
+            "image": {
+              "icon": "list",
+              "alt": "Income split into two slices, with different rates"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹50,000"
+              },
+              {
+                "icon": "coin",
+                "label": "₹20,000"
+              },
+              {
+                "icon": "coin",
+                "label": "₹30,000"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Only the part above ₹3 lakh is taxed at 10%."
+          },
+          {
+            "id": "q2",
+            "prompt": "A friend says: \"Don’t take the raise - it will push you into a higher slab and you’ll take home less.\" Is this true?",
+            "image": {
+              "icon": "question",
+              "alt": "Two people talking about a pay rise"
+            },
+            "options": [
+              {
+                "icon": "check",
+                "label": "No - only the extra slice is taxed higher, so you still take home more"
+              },
+              {
+                "icon": "cross",
+                "label": "Yes - all your income gets the higher rate"
+              },
+              {
+                "icon": "warning",
+                "label": "Yes, but only for freelancers"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Remember which part of your income a higher slab applies to."
+          },
+          {
+            "id": "q3",
+            "prompt": "Job A pays ₹25,000 with no PF or health cover. Job B pays ₹23,000 plus PF and health insurance for your family. What is the best way to compare them?",
+            "image": {
+              "icon": "target",
+              "alt": "Two job offers side by side"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "Pick Job A, because the salary is higher"
+              },
+              {
+                "icon": "coin",
+                "label": "Pick Job B, because the salary is lower"
+              },
+              {
+                "icon": "list",
+                "label": "Add up salary and benefits, then compare the full value"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "A job pays you in more ways than the salary number."
           }
         ]
       }

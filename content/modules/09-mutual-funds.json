@@ -7,122 +7,6 @@
   "shortTitle": "Funds",
   "levels": {
     "level-1": {
-      "title": "Money can grow in different places",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "summary": [
-        "Money in a box stays the same. Money in a bank grows a little.",
-        "There are other places money can go where it may grow more.",
-        "But those places can also go down. Some months your money is worth less.",
-        "Safe places grow slowly and never fall. Risky places may grow fast or fall.",
-        "Nobody can promise you what will happen. Anyone who promises is not telling the truth."
-      ],
-      "keyWords": [
-        "grow",
-        "safe",
-        "risk",
-        "up",
-        "down"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "You put ₹100 in a box and your friend puts ₹100 in a risky place, for one year. Whose amount is CERTAIN to still be ₹100 or more, and whose is not?",
-            "image": {
-              "icon": "chart",
-              "alt": "A box beside a wiggly risky chart, both starting at a hundred rupees"
-            },
-            "options": [
-              {
-                "icon": "growth",
-                "label": "Both are certain to grow"
-              },
-              {
-                "icon": "question",
-                "label": "Both could go up or down equally"
-              },
-              {
-                "icon": "shield",
-                "label": "Yours (the box) is certain to stay ₹100; your friend's could be more OR less"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "Only one of the two options can ever fall below what was put in."
-          },
-          {
-            "id": "q2",
-            "prompt": "A poster says: 'Invest ₹500 today, guaranteed ₹2000 by next month - no risk at all!' What single lesson rule tells you this cannot be trusted?",
-            "image": {
-              "icon": "warning",
-              "alt": "A poster promising a guaranteed quick return"
-            },
-            "options": [
-              {
-                "icon": "check",
-                "label": "It is trustworthy because it gives an exact date"
-              },
-              {
-                "icon": "warning",
-                "label": "Nobody can promise what will happen with money that is meant to grow - a guarantee like this is a warning sign"
-              },
-              {
-                "icon": "coin",
-                "label": "It is safe since the amount is small"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "The lesson gives one clear rule about promises and growing money."
-          },
-          {
-            "id": "q3",
-            "prompt": "Of a piggy bank, a savings account, and a risky investment, which ONE is capable of ending the year with LESS money than you started with, and why?",
-            "image": {
-              "icon": "chart",
-              "alt": "Three places for money, one shown falling"
-            },
-            "options": [
-              {
-                "icon": "bank",
-                "label": "The savings account, because banks can lose money too"
-              },
-              {
-                "icon": "piggy",
-                "label": "All three can lose money equally"
-              },
-              {
-                "icon": "chart",
-                "label": "Only the risky investment - it can grow fast or fall, unlike the other two"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "Two of the three never fall below what was put in. Only one can."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "What a mutual fund actually is",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
@@ -240,7 +124,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Risk, time and a fund in your own name",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
@@ -355,6 +239,125 @@
             ],
             "correctIndex": 1,
             "hint": "Recall the exact three-step order given at the end of the lesson, and what has to exist before a fund can work at all."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Spreading risk, and what a fund costs",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Diversification means not putting all your money in one place. If one company fails, the others still stand.",
+        "A mutual fund already spreads money across many companies. An index fund simply buys every company in a market index.",
+        "NAV - net asset value - is the price of one unit of the fund on a given day.",
+        "Every fund charges a yearly fee called the expense ratio. A 1% fee sounds small, but it is taken every year, on everything you hold.",
+        "Past returns do not promise future returns. A fund that did well last year can fall this year.",
+        "Match the risk to the time. Money needed within a year belongs somewhere safe; money for ten years away can take more risk for more growth.",
+        "Anyone who promises fixed, high returns from a market-linked fund is not being honest. Market-linked means it can go down."
+      ],
+      "keyWords": [
+        "diversification",
+        "index fund",
+        "NAV",
+        "expense ratio",
+        "time horizon",
+        "market risk"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Ravi puts all ₹10,000 into one company’s shares. Meena puts ₹10,000 into a fund spread across 50 companies. If one company collapses, who is hurt more?",
+            "image": {
+              "icon": "chart",
+              "alt": "One basket with all the eggs, and many baskets with a few each"
+            },
+            "options": [
+              {
+                "icon": "chart",
+                "label": "Meena, because her fund is bigger"
+              },
+              {
+                "icon": "warning",
+                "label": "Ravi, because all his money was in that one company"
+              },
+              {
+                "icon": "check",
+                "label": "Both lose exactly the same"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "What happens when all your eggs are in one basket?"
+          },
+          {
+            "id": "q2",
+            "prompt": "You will need ₹20,000 for college fees in 8 months. Where should that money be?",
+            "image": {
+              "icon": "calendar",
+              "alt": "A calendar with college fees due soon"
+            },
+            "options": [
+              {
+                "icon": "lock",
+                "label": "Somewhere safe and easy to reach, like a savings account or a short deposit"
+              },
+              {
+                "icon": "chart",
+                "label": "In a high-risk fund, for the biggest growth"
+              },
+              {
+                "icon": "growth",
+                "label": "In shares of one company a friend recommends"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Can you afford a fall in value just before you need the money?"
+          },
+          {
+            "id": "q3",
+            "prompt": "An agent says: \"This fund is market-linked, but I guarantee 20% a year.\" What should you think?",
+            "image": {
+              "icon": "warning",
+              "alt": "An agent making a promise"
+            },
+            "options": [
+              {
+                "icon": "check",
+                "label": "Great - a guarantee means there is no risk"
+              },
+              {
+                "icon": "list",
+                "label": "Ask for the guarantee in writing, then invest"
+              },
+              {
+                "icon": "warning",
+                "label": "Be wary - a market-linked fund cannot promise fixed returns"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "What does \"market-linked\" mean for the returns?"
           }
         ]
       }

@@ -9,7 +9,7 @@ that line, and the later ones only work because the earlier ones happened.
 
 | # | Module | What it is for |
 | --- | --- | --- |
-| 1 | What is Money? | The foundation. Money as a swap, and what gives it value. |
+| 1 | What is Money? | The foundation. Why money works, what gives it value, and who controls how much of it there is. |
 | 2 | Saving vs Spending | Why keeping some back beats spending it all. |
 | 3 | Needs vs Wants | The judgement that makes saving possible. |
 | 4 | Making a Budget | Turning that judgement into a plan. |
@@ -41,8 +41,10 @@ number with no cost attached.
 Module 10 covers the **money and the card**: UDID as the gateway, benchmark
 disability at 40%, ADIP for hearing aids and cochlear implants, state disability
 pensions, IGNDPS for BPL households, travel concessions, Ayushman Bharat, and -
-at Level 3 - Sections 80U and 80DD, which are among the most-missed entitlements
-of all because they need no receipts.
+at Level 2 - Sections 80U and 80DD, which are among the most-missed entitlements
+of all because they need no receipts. Level 3 is about keeping all of that
+working: challenging a wrong percentage, renewals, reasonable accommodation, and
+never paying an agent for something the official portal does free.
 
 Module 11 covers **study and work**: Pre-Matric and Post-Matric scholarships,
 the National Fellowship for M.Phil. and Ph.D., the Free Coaching Scheme,
@@ -50,9 +52,37 @@ PM-DAKSH vocational training, the 4% job reservation with 1% held for deaf and
 hard-of-hearing candidates alone, NHFDC loans for self-employment, and the state
 schemes that vary too much to list.
 
-Module 11's Level 3 is where the course lands: a scholarship treated as spending
+Module 11's Level 2 is where the course lands: a scholarship treated as spending
 money disappears, and treated as savings becomes the start of something. Budget
-it, bank it, grow it, and know what you are owed.
+it, bank it, grow it, and know what you are owed. Its Level 3 is the practical
+end of that: deadlines, fixing a rejected application, and keeping the reference
+number that proves you applied.
+
+## The three levels
+
+Each level is the same eleven topics at a different depth, sorted by difficulty
+rather than age, because reading level and age come apart often among Deaf and
+Hard-of-Hearing children.
+
+The levels were raised one notch after the first version was judged too basic.
+What had been Level 2 became Level 1, what had been Level 3 became Level 2, and
+a new Level 3 was written on top - so nothing already reviewed was rewritten,
+and only the new tier is new. The old Level 1 was retired.
+
+| Level | What it covers |
+| --- | --- |
+| 1 · Start | Planning money across a month: banks, income, trade-offs, simple interest. |
+| 2 · Build | Percentages, compounding, inflation, opportunity cost, reading the risk. |
+| 3 · Stretch | How the system works: the RBI and inflation, loans and EMIs, tax slabs, how sellers and scammers exploit trust, diversification and fund costs, keeping your entitlements working. |
+
+The new Level 3 uses no real tax slab figures. Where a question needs one it
+says it is a made-up system, because slabs change and a remembered wrong number
+is worse than a reasoned right one. Its one hard figure is deposit insurance -
+₹5 lakh per person per bank under DICGC - which should be checked with the rest
+before teaching.
+
+Only Module 1 is translated into Hindi, at all three levels. The other ten show
+their English text under a notice saying so.
 
 ## Two rules the content must keep
 

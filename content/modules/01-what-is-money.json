@@ -13,222 +13,6 @@
   },
   "levels": {
     "level-1": {
-      "title": "What money is",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "story": {
-        "title": "The old bowl",
-        "source": "A Jataka tale",
-        "text": [
-          "A poor family had an old bowl. It was black with soot. They thought it was worth nothing.",
-          "A trader came to the door. He rubbed the bowl and saw gold under the dirt. He said, \"This is rubbish. I will take it for one coin.\"",
-          "The family said no.",
-          "A second trader came. He saw the same gold. He said, \"This bowl is gold. It is worth more than everything in my cart.\" He paid a fair price and took it."
-        ],
-        "moral": "The bowl was gold the whole time. Only the price changed. Price is what somebody asks for a thing. Value is what it is really worth."
-      },
-      "summary": [
-        "Money is what people use to buy things. In India we use rupees, written ₹.",
-        "Money can be a metal coin, a paper note, or a number on a phone.",
-        "You give money to the shop. The shop gives you the thing. This is a swap.",
-        "After the swap the money is gone. You cannot spend the same ₹20 twice.",
-        "Money does not appear on its own. Someone did work to get it."
-      ],
-      "keyWords": [
-        "money",
-        "rupee",
-        "coin",
-        "note",
-        "swap",
-        "work"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "You give the shop ₹20 for a toy. What just happened?",
-            "image": {
-              "icon": "shop",
-              "alt": "A toy at a shop counter, money being handed over in return"
-            },
-            "options": [
-              {
-                "icon": "cross",
-                "label": "You lost your ₹20 for nothing"
-              },
-              {
-                "icon": "gift",
-                "label": "The shop gave you free money"
-              },
-              {
-                "icon": "handcoin",
-                "label": "A swap - you gave money, you got the toy"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "Think about what you received in return."
-          },
-          {
-            "id": "q2",
-            "prompt": "You have ₹50. You buy a book for ₹20 and a pen for ₹10. How much money is left?",
-            "image": {
-              "icon": "book",
-              "alt": "Fifty rupees beside a book and a pen"
-            },
-            "options": [
-              {
-                "icon": "coin",
-                "label": "₹20"
-              },
-              {
-                "icon": "coin",
-                "label": "₹40"
-              },
-              {
-                "icon": "coin",
-                "label": "₹30"
-              }
-            ],
-            "correctIndex": 0,
-            "hint": "Take away the book's price, then take away the pen's price too."
-          },
-          {
-            "id": "q3",
-            "prompt": "A shopkeeper says money 'just appears' in his till every day. Is that true?",
-            "image": {
-              "icon": "coin",
-              "alt": "A till full of coins"
-            },
-            "options": [
-              {
-                "icon": "handcoin",
-                "label": "No - every rupee came from someone paying for work or goods"
-              },
-              {
-                "icon": "calendar",
-                "label": "Only on festival days"
-              },
-              {
-                "icon": "star",
-                "label": "Yes, money makes itself"
-              }
-            ],
-            "correctIndex": 0,
-            "hint": "Trace the rupee back to where it started."
-          }
-        ]
-      },
-      "hi": {
-        "title": "पैसा क्या होता है",
-        "summary": [
-          "पैसा वह चीज़ है जिससे लोग सामान ख़रीदते हैं। भारत में हम रुपये इस्तेमाल करते हैं, जिसे ₹ लिखा जाता है।",
-          "पैसा धातु का सिक्का, काग़ज़ का नोट, या फ़ोन पर एक नंबर हो सकता है।",
-          "आप दुकान को पैसा देते हैं। दुकान आपको चीज़ देती है। यह एक अदला-बदली है।",
-          "अदला-बदली के बाद पैसा चला जाता है। आप वही ₹20 दोबारा ख़र्च नहीं कर सकते।",
-          "पैसा अपने आप नहीं आता। इसे पाने के लिए किसी ने काम किया होता है।"
-        ],
-        "keyWords": [
-          "पैसा",
-          "रुपया",
-          "सिक्का",
-          "नोट",
-          "अदला-बदली",
-          "काम"
-        ],
-        "quiz": {
-          "title": "आप क्या जानते हैं, दिखाइए",
-          "questions": [
-            {
-              "prompt": "आप दुकान को एक खिलौने के लिए ₹20 देते हैं। असल में क्या हुआ?",
-              "image": {
-                "alt": "एक खिलौना दुकान के काउंटर पर, बदले में पैसे दिए जा रहे हैं"
-              },
-              "options": [
-                {
-                  "label": "आपने अपने ₹20 बिना किसी वजह खो दिए"
-                },
-                {
-                  "label": "दुकान ने आपको मुफ़्त पैसा दिया"
-                },
-                {
-                  "label": "एक अदला-बदली - आपने पैसा दिया, आपको खिलौना मिला"
-                }
-              ],
-              "hint": "सोचिए बदले में आपको क्या मिला।"
-            },
-            {
-              "prompt": "आपके पास ₹50 हैं। आप ₹20 की एक किताब और ₹10 का एक पेन ख़रीदते हैं। कितना पैसा बचा?",
-              "image": {
-                "alt": "पचास रुपये के पास एक किताब और एक पेन"
-              },
-              "options": [
-                {
-                  "label": "₹20"
-                },
-                {
-                  "label": "₹40"
-                },
-                {
-                  "label": "₹30"
-                }
-              ],
-              "hint": "पहले किताब की क़ीमत घटाइए, फिर पेन की क़ीमत भी घटाइए।"
-            },
-            {
-              "prompt": "एक दुकानदार कहता है कि पैसा उसके गल्ले में 'अपने आप' हर दिन आ जाता है। क्या यह सच है?",
-              "image": {
-                "alt": "सिक्कों से भरा एक गल्ला"
-              },
-              "options": [
-                {
-                  "label": "नहीं - हर रुपया किसी के काम या सामान के भुगतान से आया था"
-                },
-                {
-                  "label": "सिर्फ़ त्योहारों के दिन"
-                },
-                {
-                  "label": "हाँ, पैसा अपने आप बन जाता है"
-                }
-              ],
-              "hint": "रुपये को वहाँ तक पीछे ढूँढिए जहाँ से वह शुरू हुआ था।"
-            }
-          ]
-        },
-        "story": {
-          "title": "पुराना कटोरा",
-          "source": "एक जातक कथा",
-          "text": [
-            "एक ग़रीब परिवार के पास एक पुराना कटोरा था। वह कालिख से काला था। उन्हें लगा कि उसकी कोई क़ीमत नहीं।",
-            "एक व्यापारी आया। उसने कटोरा रगड़ा और नीचे सोना देखा। उसने कहा, \"यह बेकार है। एक सिक्के में मुझे दे दो।\"",
-            "परिवार ने मना कर दिया।",
-            "दूसरा व्यापारी आया। उसने भी वही सोना देखा। उसने कहा, \"यह कटोरा सोने का है। मेरी पूरी गाड़ी से ज़्यादा क़ीमती है।\" उसने पूरा दाम दिया और कटोरा ले गया।"
-          ],
-          "moral": "कटोरा शुरू से सोने का था। सिर्फ़ दाम बदला। दाम वह है जो कोई माँगता है। क़ीमत वह है जो चीज़ सचमुच है।"
-        }
-      }
-    },
-    "level-2": {
       "title": "Why money works at all",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
@@ -433,7 +217,7 @@
         }
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "What gives money its value",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
@@ -635,6 +419,204 @@
                 }
               ],
               "hint": "दूसरे साल का घटाव पहले से सिकुड़ी हुई रक़म पर लगता है, मूल ₹1000 पर नहीं।"
+            }
+          ]
+        }
+      }
+    },
+    "level-3": {
+      "title": "Who decides how much money there is",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "The Reserve Bank of India (RBI) is the country’s central bank. It issues every rupee note.",
+        "The RBI cannot print money freely. If it did, there would be more money but the same amount of goods to buy.",
+        "More money chasing the same goods pushes prices up. That rise in prices is inflation.",
+        "The RBI tries to keep inflation near 4% a year. Its main tool is the repo rate - the interest it charges banks.",
+        "Nominal value is the number on the note. Real value is what that note can actually buy.",
+        "A salary that rises 5% while prices rise 7% has gone up in number but down in real value.",
+        "The rupee also has a price against other countries’ money. When it weakens, things bought from abroad, like phones and fuel, cost more."
+      ],
+      "keyWords": [
+        "RBI",
+        "inflation",
+        "nominal value",
+        "real value",
+        "exchange rate",
+        "repo rate"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A country prints twice as much money, but farms and factories make the same amount of goods. What will most likely happen to prices?",
+            "image": {
+              "icon": "chart",
+              "alt": "Stacks of notes growing beside the same small pile of goods"
+            },
+            "options": [
+              {
+                "icon": "growth",
+                "label": "Prices rise, because more money is chasing the same goods"
+              },
+              {
+                "icon": "cross",
+                "label": "Prices fall, because everyone is richer"
+              },
+              {
+                "icon": "list",
+                "label": "Nothing changes, because the goods are the same"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Think about what happens when many people have more money to spend on the same few things."
+          },
+          {
+            "id": "q2",
+            "prompt": "Your pocket money goes up from ₹500 to ₹525 (5% more). Prices go up 8% in the same year. What happened to your real pocket money?",
+            "image": {
+              "icon": "wallet",
+              "alt": "A wallet with a slightly bigger number, next to prices going up more"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "It grew by ₹25, so you are better off"
+              },
+              {
+                "icon": "chart",
+                "label": "It went down, because prices rose faster than your money"
+              },
+              {
+                "icon": "check",
+                "label": "It stayed exactly the same"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Compare how fast your money grew with how fast prices grew."
+          },
+          {
+            "id": "q3",
+            "prompt": "The rupee weakens against the US dollar. Which of these is most likely to become more expensive in India?",
+            "image": {
+              "icon": "phone",
+              "alt": "A phone made abroad, with a price tag"
+            },
+            "options": [
+              {
+                "icon": "food",
+                "label": "Rice grown and sold in your own village"
+              },
+              {
+                "icon": "bus",
+                "label": "A local bus ticket with a fare set by the state"
+              },
+              {
+                "icon": "phone",
+                "label": "A phone made abroad and imported into India"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "Which of these has to be paid for in another country’s money?"
+          }
+        ]
+      },
+      "hi": {
+        "title": "पैसा कितना होगा, यह कौन तय करता है",
+        "summary": [
+          "भारतीय रिज़र्व बैंक (RBI) देश का केंद्रीय बैंक है। हर रुपये का नोट वही जारी करता है।",
+          "RBI अपनी मर्ज़ी से पैसा नहीं छाप सकता। ऐसा करने पर पैसा ज़्यादा हो जाएगा, पर ख़रीदने की चीज़ें उतनी ही रहेंगी।",
+          "जब उतनी ही चीज़ों के पीछे ज़्यादा पैसा भागता है, तो दाम बढ़ते हैं। दामों का यह बढ़ना महँगाई है।",
+          "RBI कोशिश करता है कि महँगाई साल में लगभग 4% के आसपास रहे। इसका मुख्य तरीक़ा रेपो रेट है - वह ब्याज जो वह बैंकों से लेता है।",
+          "नोट पर लिखी संख्या उसकी नाममात्र क़ीमत है। वह नोट असल में जितना ख़रीद सकता है, वह उसकी असली क़ीमत है।",
+          "अगर तनख़्वाह 5% बढ़े और दाम 7% बढ़ें, तो संख्या तो बढ़ी है पर असली क़ीमत घटी है।",
+          "दूसरे देशों के पैसे के मुक़ाबले रुपये का भी एक भाव होता है। जब रुपया कमज़ोर होता है, तो बाहर से आने वाली चीज़ें, जैसे फ़ोन और तेल, महँगी हो जाती हैं।"
+        ],
+        "keyWords": [
+          "RBI",
+          "महँगाई",
+          "नाममात्र क़ीमत",
+          "असली क़ीमत",
+          "विनिमय दर",
+          "रेपो रेट"
+        ],
+        "quiz": {
+          "title": "आप क्या जानते हैं, दिखाइए",
+          "questions": [
+            {
+              "prompt": "एक देश दोगुना पैसा छापता है, पर खेत और कारख़ाने उतना ही सामान बनाते हैं। दामों का सबसे ज़्यादा क्या होगा?",
+              "image": {
+                "alt": "नोटों के बढ़ते ढेर के बगल में सामान का वही छोटा ढेर"
+              },
+              "options": [
+                {
+                  "label": "दाम बढ़ेंगे, क्योंकि उतने ही सामान के पीछे ज़्यादा पैसा है"
+                },
+                {
+                  "label": "दाम घटेंगे, क्योंकि सब अमीर हो गए"
+                },
+                {
+                  "label": "कुछ नहीं बदलेगा, क्योंकि सामान उतना ही है"
+                }
+              ],
+              "hint": "सोचिए, जब बहुत लोगों के पास उन्हीं कुछ चीज़ों पर ख़र्च करने के लिए ज़्यादा पैसा हो, तो क्या होता है।"
+            },
+            {
+              "prompt": "आपका जेब ख़र्च ₹500 से बढ़कर ₹525 हो जाता है (5% ज़्यादा)। उसी साल दाम 8% बढ़ते हैं। आपके जेब ख़र्च की असली क़ीमत का क्या हुआ?",
+              "image": {
+                "alt": "थोड़ी बड़ी संख्या वाला बटुआ, और उससे ज़्यादा बढ़ते दाम"
+              },
+              "options": [
+                {
+                  "label": "₹25 बढ़ी, इसलिए आप फ़ायदे में हैं"
+                },
+                {
+                  "label": "घट गई, क्योंकि दाम आपके पैसे से तेज़ी से बढ़े"
+                },
+                {
+                  "label": "बिल्कुल उतनी ही रही"
+                }
+              ],
+              "hint": "देखिए आपका पैसा कितनी तेज़ी से बढ़ा, और दाम कितनी तेज़ी से।"
+            },
+            {
+              "prompt": "अमेरिकी डॉलर के मुक़ाबले रुपया कमज़ोर होता है। भारत में इनमें से क्या सबसे ज़्यादा महँगा होने की संभावना है?",
+              "image": {
+                "alt": "विदेश में बना एक फ़ोन, दाम की पर्ची के साथ"
+              },
+              "options": [
+                {
+                  "label": "आपके अपने गाँव में उगाया और बेचा गया चावल"
+                },
+                {
+                  "label": "राज्य सरकार के तय किराए वाला लोकल बस टिकट"
+                },
+                {
+                  "label": "विदेश में बना और भारत में मँगाया गया फ़ोन"
+                }
+              ],
+              "hint": "इनमें से किसके लिए दूसरे देश के पैसे में भुगतान करना पड़ता है?"
             }
           ]
         }

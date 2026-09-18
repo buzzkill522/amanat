@@ -7,133 +7,6 @@
   "shortTitle": "Safety",
   "levels": {
     "level-1": {
-      "title": "Keeping your money safe",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "story": {
-        "title": "The blue jackal",
-        "source": "From the Panchatantra",
-        "text": [
-          "A jackal was running through a village and fell into a pot of blue dye. When he climbed out, he was bright blue all over.",
-          "The other animals had never seen a blue animal before. They thought he must be someone very important. They made him their king.",
-          "One night he heard other jackals howling far off. Without thinking, he lifted his head and howled back.",
-          "And then everybody knew exactly what he was."
-        ],
-        "moral": "He looked like a king, so he was treated like one. Looking official is not the same as being official."
-      },
-      "summary": [
-        "Keep your money in one safe place.",
-        "Do not show your money to people you do not know.",
-        "If a stranger asks for your money, say no and find a trusted adult.",
-        "Nobody should ever ask you to keep a money secret from your parents.",
-        "It is always alright to ask an adult for help."
-      ],
-      "keyWords": [
-        "safe",
-        "stranger",
-        "trusted adult",
-        "secret",
-        "help"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "You are holding ₹200 clearly in your hand at a bus stop, and a stranger notices and starts walking toward you. What two things from the lesson should guide what you do?",
-            "image": {
-              "icon": "warning",
-              "alt": "A stranger noticing money held in a hand at a bus stop"
-            },
-            "options": [
-              {
-                "icon": "cross",
-                "label": "Run away without telling anyone"
-              },
-              {
-                "icon": "handcoin",
-                "label": "Offer them some money to be polite"
-              },
-              {
-                "icon": "shield",
-                "label": "Do not show money to strangers, and if asked for it, say no and find a trusted adult"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "Two separate lesson rules both apply to this exact moment."
-          },
-          {
-            "id": "q2",
-            "prompt": "An adult you don't know well gives you ₹100 and says 'don't tell your parents about this.' What does the lesson say about this exact combination?",
-            "image": {
-              "icon": "lock",
-              "alt": "Money being handed over with a finger held to lips"
-            },
-            "options": [
-              {
-                "icon": "warning",
-                "label": "This is a warning sign - no one should ask a child to keep money secret from parents"
-              },
-              {
-                "icon": "coin",
-                "label": "It is only a problem if the amount is large"
-              },
-              {
-                "icon": "gift",
-                "label": "It is fine, since they gave you the money as a gift"
-              }
-            ],
-            "correctIndex": 0,
-            "hint": "The secrecy request is the warning sign, not the amount of money."
-          },
-          {
-            "id": "q3",
-            "prompt": "You have ₹300. Which is safest: carrying it loose in your hand all day, leaving it on a desk at school, or keeping it in a safe place at home or a bank?",
-            "image": {
-              "icon": "shield",
-              "alt": "Three ways to keep money, one clearly locked away"
-            },
-            "options": [
-              {
-                "icon": "handcoin",
-                "label": "Carrying it loose all day, since it's with you"
-              },
-              {
-                "icon": "bank",
-                "label": "A safe place at home or a bank"
-              },
-              {
-                "icon": "house",
-                "label": "Leaving it on a desk, since no one usually looks"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "Compare all three for how easily each one could be lost or taken."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "Spotting money tricks",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
@@ -261,7 +134,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Online money safety",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
@@ -385,6 +258,125 @@
             ],
             "correctIndex": 2,
             "hint": "The lesson gives an exact number to call once fraud has already happened, not just to prevent it."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Scams that use your trust",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "The most dangerous scams do not break into your phone. They trick you into doing it yourself.",
+        "Fake customer-care numbers appear in search results. Take a helpline number only from the official app or website.",
+        "If someone asks you to install a screen-sharing app, they can see everything on your screen - including your OTP.",
+        "In a \"digital arrest\" scam, someone in a fake uniform on a video call says you are under arrest and must pay. Real police never arrest anyone or collect money over a video call.",
+        "SIM swap: if your phone suddenly loses network, criminals may have moved your number to their SIM to receive your OTPs. Contact your mobile operator at once, by chat or at a store.",
+        "Pressure and secrecy are the warning signs. Scammers say \"act now\" and \"don’t tell anyone\". Stop, and tell a trusted adult.",
+        "If money is taken, report it fast at cybercrime.gov.in or on the 1930 helpline. The first hours matter most for getting it back."
+      ],
+      "keyWords": [
+        "social engineering",
+        "screen sharing",
+        "digital arrest",
+        "SIM swap",
+        "OTP",
+        "1930"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "You search online for your bank’s helpline and contact the first number. The \"agent\" asks you to install an app so they can \"help\". What should you do?",
+            "image": {
+              "icon": "phone",
+              "alt": "A phone showing a search result and an app to install"
+            },
+            "options": [
+              {
+                "icon": "phone",
+                "label": "Install it, because you contacted them"
+              },
+              {
+                "icon": "warning",
+                "label": "Stop - get the number only from the bank’s official app or website"
+              },
+              {
+                "icon": "check",
+                "label": "Install it, but close it afterwards"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Where did the phone number come from?"
+          },
+          {
+            "id": "q2",
+            "prompt": "On a video call, a man in a police uniform says you are under \"digital arrest\" and must transfer money to clear your name. What is true?",
+            "image": {
+              "icon": "shield",
+              "alt": "A video call with a person in uniform"
+            },
+            "options": [
+              {
+                "icon": "cross",
+                "label": "You must pay quickly to avoid jail"
+              },
+              {
+                "icon": "list",
+                "label": "You should pay half and ask for a receipt"
+              },
+              {
+                "icon": "shield",
+                "label": "It is a scam - police never arrest or collect money over video calls"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "Would real police ever do this over a video call?"
+          },
+          {
+            "id": "q3",
+            "prompt": "Your phone suddenly shows \"no network\" for hours, though other phones nearby have signal. What could be happening?",
+            "image": {
+              "icon": "warning",
+              "alt": "A phone with no signal bars"
+            },
+            "options": [
+              {
+                "icon": "warning",
+                "label": "A SIM swap - someone may have moved your number to get your OTPs"
+              },
+              {
+                "icon": "check",
+                "label": "Nothing - networks go down sometimes"
+              },
+              {
+                "icon": "phone",
+                "label": "Your phone needs a new cover"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Who else would want your number, to receive your one-time codes?"
           }
         ]
       }

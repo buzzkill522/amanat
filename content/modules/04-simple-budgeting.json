@@ -7,128 +7,6 @@
   "shortTitle": "Budgeting",
   "levels": {
     "level-1": {
-      "title": "Making a money plan",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "story": {
-        "title": "The pot of flour",
-        "source": "From the Panchatantra",
-        "text": [
-          "A man was given a pot of flour. He hung it on a hook above his bed and lay down to rest.",
-          "He began to dream. \"I will sell this flour. I will buy a goat. The goat will have kids. Then I will buy a cow. Then I will be rich.\"",
-          "He got so excited that he kicked his legs in the air.",
-          "His foot hit the pot. It fell and broke. The flour spilled across the floor."
-        ],
-        "moral": "He spent the flour many times over in his head, and he still had only one pot. A plan starts with what is in your hand today."
-      },
-      "summary": [
-        "A budget is a plan for your money.",
-        "First write down how much money you have.",
-        "Then write down what you want to buy and the price.",
-        "Add the prices. If the total is more than your money, take one thing off the list.",
-        "A budget stops you running out of money."
-      ],
-      "keyWords": [
-        "budget",
-        "plan",
-        "total",
-        "left over"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "You have ₹50. A snack is ₹15 and a pen is ₹15. If you buy both, how much money is left?",
-            "image": {
-              "icon": "wallet",
-              "alt": "A wallet with fifty rupees beside a snack and a pen"
-            },
-            "options": [
-              {
-                "icon": "coin",
-                "label": "₹20"
-              },
-              {
-                "icon": "coin",
-                "label": "₹5"
-              },
-              {
-                "icon": "coin",
-                "label": "₹35"
-              }
-            ],
-            "correctIndex": 0,
-            "hint": "Add the snack and pen prices together first, then subtract from ₹50."
-          },
-          {
-            "id": "q2",
-            "prompt": "You have ₹50. You want a snack (₹20), a pen (₹20), and a comic (₹20). Can you buy all three?",
-            "image": {
-              "icon": "list",
-              "alt": "A list of three items with prices, beside fifty rupees"
-            },
-            "options": [
-              {
-                "icon": "check",
-                "label": "Yes, exactly enough"
-              },
-              {
-                "icon": "cross",
-                "label": "No - the total is ₹60, which is more than your ₹50"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "Add all three prices before comparing to your money."
-          },
-          {
-            "id": "q3",
-            "prompt": "You wrote a budget but did not follow it, and ran out of money before the month ended. What went wrong?",
-            "image": {
-              "icon": "warning",
-              "alt": "A written budget sheet beside an empty wallet"
-            },
-            "options": [
-              {
-                "icon": "list",
-                "label": "You should have written a longer list"
-              },
-              {
-                "icon": "cross",
-                "label": "Budgets never actually help"
-              },
-              {
-                "icon": "warning",
-                "label": "The plan was not followed - writing it is not enough, you must stick to it"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "A budget only works if the spending matches the plan."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "Building your first budget",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
@@ -254,7 +132,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Budgeting with the 50-30-20 plan",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
@@ -377,6 +255,124 @@
             ],
             "correctIndex": 2,
             "hint": "The lesson says the numbers are a starting guide, not a law."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Budgeting when income changes",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Many families do not earn the same amount every month. Farming, shop work and gig work rise and fall.",
+        "With changing income, build the budget on your lowest normal month, not your best one.",
+        "In a good month, put the extra into a buffer. In a thin month, the buffer fills the gap.",
+        "Zero-based budgeting gives every rupee a job before the month starts - needs, savings, wants - until nothing is left unplanned.",
+        "Yearly costs, like school fees or festivals, should be split into monthly set-asides so they never arrive as a shock.",
+        "Each month, compare the plan with what really happened. The difference between them is where you learn."
+      ],
+      "keyWords": [
+        "irregular income",
+        "buffer",
+        "zero-based budget",
+        "set-aside",
+        "variance",
+        "baseline"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "A tailor earns ₹9,000 in a slow month and up to ₹15,000 in a busy one. Which income should the monthly budget be built on?",
+            "image": {
+              "icon": "calendar",
+              "alt": "A calendar with income going up and down month to month"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹15,000, the best month"
+              },
+              {
+                "icon": "coin",
+                "label": "₹12,000, the average"
+              },
+              {
+                "icon": "coin",
+                "label": "₹9,000, the lowest normal month"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "Which number can the family still count on in a bad month?"
+          },
+          {
+            "id": "q2",
+            "prompt": "You are using zero-based budgeting. You have ₹4,000 and have planned ₹3,600 for needs, savings and wants. What must you do?",
+            "image": {
+              "icon": "list",
+              "alt": "A budget list with some money not yet given a job"
+            },
+            "options": [
+              {
+                "icon": "list",
+                "label": "Give the last ₹400 a job too, like savings or a buffer"
+              },
+              {
+                "icon": "check",
+                "label": "Nothing - ₹400 left unplanned is fine"
+              },
+              {
+                "icon": "cross",
+                "label": "Spend the ₹400 at once so it is not wasted"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "In this method, every rupee is planned before the month starts."
+          },
+          {
+            "id": "q3",
+            "prompt": "Diwali costs your family about ₹6,000 every year. How much should be set aside each month so it is not a shock?",
+            "image": {
+              "icon": "calendar",
+              "alt": "A festival date on a calendar with savings building up"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹300"
+              },
+              {
+                "icon": "coin",
+                "label": "₹500"
+              },
+              {
+                "icon": "coin",
+                "label": "₹1,000"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Split one yearly cost across twelve months."
           }
         ]
       }

@@ -7,122 +7,6 @@
   "shortTitle": "UDID",
   "levels": {
     "level-1": {
-      "title": "A card that helps",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "summary": [
-        "There is a special card for Deaf and hard-of-hearing people in India. It is called a UDID card.",
-        "It shows, anywhere in India, that you are Deaf. You do not have to explain again and again.",
-        "The card helps your family get money for school books, hearing aids and travel.",
-        "It is free to ask for one. A trusted adult and a government doctor help you get it.",
-        "Ask a grown-up at home if you have a UDID card. Many families do not know about it."
-      ],
-      "keyWords": [
-        "UDID",
-        "card",
-        "help",
-        "school",
-        "hearing aid"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "Your family moves to a new state. Without a UDID card, what problem might you face at a new school that the card is specifically designed to solve?",
-            "image": {
-              "icon": "shield",
-              "alt": "A family moving between two states with a school in the new one"
-            },
-            "options": [
-              {
-                "icon": "cross",
-                "label": "Not being allowed to enrol in a new school at all"
-              },
-              {
-                "icon": "shield",
-                "label": "Having to explain and prove that you are Deaf all over again in the new place"
-              },
-              {
-                "icon": "coin",
-                "label": "Having to pay extra fees in the new state"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "The card's whole purpose is to avoid repeating one particular kind of explanation."
-          },
-          {
-            "id": "q2",
-            "prompt": "If the UDID card is free and helps get money for books and hearing aids, why might a family still be missing out on this help?",
-            "image": {
-              "icon": "question",
-              "alt": "A family who has never heard of the card"
-            },
-            "options": [
-              {
-                "icon": "coin",
-                "label": "Because the card actually costs too much for most families"
-              },
-              {
-                "icon": "cross",
-                "label": "Because only certain families are allowed to apply"
-              },
-              {
-                "icon": "question",
-                "label": "Because they may not know the card exists at all, so they never apply for it"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "The lesson names one specific reason many families miss out, and it has nothing to do with cost."
-          },
-          {
-            "id": "q3",
-            "prompt": "Someone messages your family claiming they can 'fast-track' your UDID card for a fee, skipping the doctor. What TWO things about this claim contradict the lesson?",
-            "image": {
-              "icon": "warning",
-              "alt": "A suspicious message offering a paid shortcut, skipping a doctor"
-            },
-            "options": [
-              {
-                "icon": "check",
-                "label": "Nothing is wrong, fast-tracking is allowed for a fee"
-              },
-              {
-                "icon": "warning",
-                "label": "The real process is free, and it requires a government doctor, not a shortcut from a stranger"
-              },
-              {
-                "icon": "coin",
-                "label": "Only the fee is suspicious, the no-doctor part is fine"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "Compare this offer against both the cost and the correct people involved, from the lesson."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "The card, the hearing aid and the pension",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
@@ -241,7 +125,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Claiming it: tax, health and the paperwork",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
@@ -357,6 +241,125 @@
             ],
             "correctIndex": 2,
             "hint": "Recall the exact three-step order the lesson insists on, and what usually comes first."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Keeping your certificate and your rights working",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "A disability certificate states a percentage. That number decides which schemes you qualify for, so check it is right.",
+        "If you think the percentage is wrong, you can ask for a reassessment, or appeal to the appellate authority your state has set up. You do not have to simply accept it.",
+        "Some certificates are temporary and must be renewed. Note the expiry date on both the certificate and the UDID card.",
+        "Keep copies of every document - certificate, UDID card, income certificate, bank passbook - in one folder, plus a safe digital copy.",
+        "In exams and at work you can ask for reasonable accommodations, like an interpreter or written instructions. The Rights of Persons with Disabilities Act, 2016 is behind you.",
+        "You do not need an agent who charges a fee to \"get\" your UDID. Applying on the official portal is free.",
+        "Each scheme checks different papers. One missing document can hold up money for months, so prepare before you apply."
+      ],
+      "keyWords": [
+        "percentage",
+        "reassessment",
+        "appeal",
+        "renewal",
+        "reasonable accommodation",
+        "documents"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Your disability certificate says 35%, but a doctor you trust says it should be higher. Many schemes need 40%. What can you do?",
+            "image": {
+              "icon": "list",
+              "alt": "A certificate with a percentage on it"
+            },
+            "options": [
+              {
+                "icon": "cross",
+                "label": "Nothing - the certificate is final"
+              },
+              {
+                "icon": "list",
+                "label": "Ask for a reassessment, or appeal to your state’s appellate authority"
+              },
+              {
+                "icon": "warning",
+                "label": "Pay an agent to change the number"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "The number decides what you can claim, so the law lets you challenge it."
+          },
+          {
+            "id": "q2",
+            "prompt": "Someone offers to \"fast-track\" your UDID card for ₹2,000. What should you know?",
+            "image": {
+              "icon": "warning",
+              "alt": "A person asking for money to get a card"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "This is the normal fee"
+              },
+              {
+                "icon": "check",
+                "label": "It is worth paying to save time"
+              },
+              {
+                "icon": "warning",
+                "label": "Applying on the official portal is free - you do not need to pay an agent"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "What does the official portal charge?"
+          },
+          {
+            "id": "q3",
+            "prompt": "You are Deaf, and in a written exam the instructions are only given by speaking. What can you ask for?",
+            "image": {
+              "icon": "hands",
+              "alt": "A student in an exam hall"
+            },
+            "options": [
+              {
+                "icon": "hands",
+                "label": "A reasonable accommodation, like written instructions or an interpreter"
+              },
+              {
+                "icon": "cross",
+                "label": "Nothing - everyone must be treated exactly the same"
+              },
+              {
+                "icon": "warning",
+                "label": "To skip the exam"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "The law says services must be made accessible to you."
           }
         ]
       }

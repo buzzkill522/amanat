@@ -7,122 +7,6 @@
   "shortTitle": "Study & Work",
   "levels": {
     "level-1": {
-      "title": "Help with school things",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "summary": [
-        "School costs money. Books, uniforms, bus fare and hostel fees all cost money.",
-        "The government gives money to Deaf students to help pay for these things.",
-        "This money is called a scholarship. It is not a loan. You never pay it back.",
-        "You do not have to be top of the class. It is because you are Deaf, not because of marks.",
-        "A trusted adult applies for it with you, using your UDID card."
-      ],
-      "keyWords": [
-        "school",
-        "scholarship",
-        "books",
-        "help",
-        "free"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "Your cousin took a bank loan for a laptop and now repays some money every month. You received a scholarship for your school books. What is the key difference in what happens next?",
-            "image": {
-              "icon": "book",
-              "alt": "A loan repayment beside a scholarship for books"
-            },
-            "options": [
-              {
-                "icon": "check",
-                "label": "Your cousin must keep repaying the loan; you never have to repay the scholarship"
-              },
-              {
-                "icon": "coin",
-                "label": "Neither of you ever has to repay anything"
-              },
-              {
-                "icon": "cross",
-                "label": "Both of you must repay eventually"
-              }
-            ],
-            "correctIndex": 0,
-            "hint": "Only one of the two - a loan or a scholarship - is ever paid back."
-          },
-          {
-            "id": "q2",
-            "prompt": "A classmate says 'you only got the scholarship because you're the top student.' Based on the lesson, is this true?",
-            "image": {
-              "icon": "question",
-              "alt": "A classmate comparing exam marks to a scholarship letter"
-            },
-            "options": [
-              {
-                "icon": "book",
-                "label": "It depends on which subject you are best at"
-              },
-              {
-                "icon": "star",
-                "label": "Yes, only top students ever qualify"
-              },
-              {
-                "icon": "check",
-                "label": "No - it is because of being Deaf, not because of exam marks"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "The lesson is specific about what qualifies a student, and it is not about being top of the class."
-          },
-          {
-            "id": "q3",
-            "prompt": "A trusted adult is helping you apply for the school scholarship, but they cannot find your ID card anywhere. Which specific card do they need to find first?",
-            "image": {
-              "icon": "shield",
-              "alt": "An adult searching for a specific identity card"
-            },
-            "options": [
-              {
-                "icon": "gift",
-                "label": "A birthday card"
-              },
-              {
-                "icon": "book",
-                "label": "A library card"
-              },
-              {
-                "icon": "shield",
-                "label": "The UDID card"
-              }
-            ],
-            "correctIndex": 2,
-            "hint": "It is the same card the previous lesson was entirely about."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "Scholarships, training and a job",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
@@ -242,7 +126,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Turning entitlements into income",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
@@ -356,6 +240,125 @@
             ],
             "correctIndex": 1,
             "hint": "The lesson's very last idea is about what happens to money depending on whether it is spent or kept."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "Applying well: deadlines, rejections and agents",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+        "durationLabel": "6 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "A scheme is only worth something if the application succeeds. Most failures are paperwork, not eligibility.",
+        "National scholarships are applied for on the National Scholarship Portal. Each has an opening and closing date, and late forms are not accepted.",
+        "Make a checklist before you start: income certificate, disability certificate, UDID, marksheets, Aadhaar, and bank details in your own name.",
+        "If an application is rejected, read the reason. Many can be corrected and sent again, or raised through the portal’s grievance system.",
+        "Applying for government scholarships is free. Anyone asking for money to apply, or to \"guarantee\" approval, is not genuine.",
+        "Compare options by their total value over time, not the first number you see. A smaller yearly scholarship for four years can beat a larger one-time grant.",
+        "Keep a record of each application - the date, the reference number and the status. It is your proof if something goes missing."
+      ],
+      "keyWords": [
+        "application",
+        "deadline",
+        "checklist",
+        "rejection",
+        "grievance",
+        "reference number"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Scholarship A pays ₹12,000 once. Scholarship B pays ₹5,000 a year for 4 years. Which is worth more in total?",
+            "image": {
+              "icon": "book",
+              "alt": "Two scholarship letters side by side"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "Scholarship A, because ₹12,000 is bigger"
+              },
+              {
+                "icon": "coin",
+                "label": "Scholarship B, at ₹20,000 over four years"
+              },
+              {
+                "icon": "check",
+                "label": "They are worth the same"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Multiply the yearly amount by the number of years."
+          },
+          {
+            "id": "q2",
+            "prompt": "Your scholarship application is rejected because the income certificate was missing. What is the best next step?",
+            "image": {
+              "icon": "list",
+              "alt": "An application form marked as rejected"
+            },
+            "options": [
+              {
+                "icon": "cross",
+                "label": "Give up - rejected means you are not eligible"
+              },
+              {
+                "icon": "warning",
+                "label": "Pay an agent to apply again for you"
+              },
+              {
+                "icon": "list",
+                "label": "Get the certificate, then correct or raise the application before the deadline"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "Was the problem your eligibility, or a missing paper?"
+          },
+          {
+            "id": "q3",
+            "prompt": "Why should you write down the reference number of every application you send?",
+            "image": {
+              "icon": "list",
+              "alt": "A notebook with application numbers written in it"
+            },
+            "options": [
+              {
+                "icon": "list",
+                "label": "It is your proof, and lets you track or chase the application later"
+              },
+              {
+                "icon": "cross",
+                "label": "Only the office needs it, not you"
+              },
+              {
+                "icon": "coin",
+                "label": "It makes the scholarship bigger"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "What would you show if the office says it never received your form?"
           }
         ]
       }

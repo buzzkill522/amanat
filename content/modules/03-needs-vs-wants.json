@@ -7,114 +7,6 @@
   "shortTitle": "Needs & Wants",
   "levels": {
     "level-1": {
-      "title": "Needs and wants",
-      "video": {
-        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
-        "durationLabel": "3 minutes",
-        "captions": [
-          {
-            "src": "/captions/placeholder-en.vtt",
-            "label": "English",
-            "srclang": "en",
-            "default": true
-          },
-          {
-            "src": "/captions/placeholder-simple.vtt",
-            "label": "English (simple words)",
-            "srclang": "en"
-          }
-        ],
-        "signInterpreter": {
-          "src": null,
-          "language": "isl"
-        }
-      },
-      "summary": [
-        "A need is something you must have to stay well.",
-        "Food, water, clothes and a home are needs.",
-        "A want is something nice to have. You can live without it.",
-        "Toys, sweets and games are wants.",
-        "Pay for your needs first. Then use the money that is left for wants."
-      ],
-      "keyWords": [
-        "need",
-        "want",
-        "food",
-        "home",
-        "toy"
-      ],
-      "quiz": {
-        "title": "Show what you know",
-        "questions": [
-          {
-            "id": "q1",
-            "prompt": "You already have shoes that fit and are not broken. A new pair you just like the look of is a...",
-            "image": {
-              "icon": "question",
-              "alt": "An old pair of shoes beside a new pair"
-            },
-            "options": [
-              {
-                "icon": "shirt",
-                "label": "Need - you must always have new shoes"
-              },
-              {
-                "icon": "star",
-                "label": "Want - your current shoes already meet the need"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "Ask whether the OLD shoes still do the job."
-          },
-          {
-            "id": "q2",
-            "prompt": "You have ₹100. Lunch costs ₹60 and a comic costs ₹60. You cannot buy both. What should you do?",
-            "image": {
-              "icon": "wallet",
-              "alt": "A wallet with a hundred rupee note, beside lunch and a comic"
-            },
-            "options": [
-              {
-                "icon": "food",
-                "label": "Buy lunch, skip the comic - needs come before wants"
-              },
-              {
-                "icon": "question",
-                "label": "Buy half of each"
-              },
-              {
-                "icon": "book",
-                "label": "Buy the comic, skip lunch"
-              }
-            ],
-            "correctIndex": 0,
-            "hint": "Which one keeps you well if you skip it versus if you don't?"
-          },
-          {
-            "id": "q3",
-            "prompt": "Your friend says: 'Water is boring, buy juice instead - you still get to drink something.' Is juice a fair swap for water as a need?",
-            "image": {
-              "icon": "water",
-              "alt": "A glass of water beside a bottle of juice"
-            },
-            "options": [
-              {
-                "icon": "gift",
-                "label": "Yes, any drink meets the need"
-              },
-              {
-                "icon": "water",
-                "label": "No - plain water meets the need; juice is the want version of it"
-              }
-            ],
-            "correctIndex": 1,
-            "hint": "A need can usually be met simply and cheaply. Ask what the cheapest way to meet it is."
-          }
-        ]
-      }
-    },
-    "level-2": {
       "title": "Sorting needs from wants",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
@@ -226,7 +118,7 @@
         ]
       }
     },
-    "level-3": {
+    "level-2": {
       "title": "Needs, wants and spending priorities",
       "video": {
         "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
@@ -338,6 +230,124 @@
             ],
             "correctIndex": 0,
             "hint": "Check the rule's exact price cutoff from the lesson."
+          }
+        ]
+      }
+    },
+    "level-3": {
+      "title": "How sellers get you to spend",
+      "video": {
+        "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+        "durationLabel": "5 minutes",
+        "captions": [
+          {
+            "src": "/captions/placeholder-en.vtt",
+            "label": "English",
+            "srclang": "en",
+            "default": true
+          },
+          {
+            "src": "/captions/placeholder-simple.vtt",
+            "label": "English (simple words)",
+            "srclang": "en"
+          }
+        ],
+        "signInterpreter": {
+          "src": null,
+          "language": "isl"
+        }
+      },
+      "summary": [
+        "Sellers study how people decide, and design offers to make you buy more.",
+        "An \"original price\" crossed out makes a discount look bigger. Compare the price with other shops, not with the crossed-out number.",
+        "\"Buy now, pay later\" and small EMIs make a big price feel small. Add up every payment to see the real cost.",
+        "Subscriptions take a little every month and are easy to forget. Twelve small payments add up to one large one.",
+        "Cost per use is a smarter test. A ₹1,000 pair of shoes worn 200 times costs ₹5 per use.",
+        "Seeing friends buy something makes it feel like a need. Ask whether you would still want it if nobody else had it."
+      ],
+      "keyWords": [
+        "discount",
+        "EMI",
+        "subscription",
+        "cost per use",
+        "peer pressure",
+        "impulse buying"
+      ],
+      "quiz": {
+        "title": "Show what you know",
+        "questions": [
+          {
+            "id": "q1",
+            "prompt": "Phone A costs ₹12,000 in one payment. Phone B is \"only ₹1,100 a month\" for 12 months. Which costs more in total?",
+            "image": {
+              "icon": "phone",
+              "alt": "Two phones, one with a single price and one with a monthly price"
+            },
+            "options": [
+              {
+                "icon": "phone",
+                "label": "Phone A, because ₹12,000 is a bigger number"
+              },
+              {
+                "icon": "phone",
+                "label": "Phone B, because 12 × ₹1,100 is ₹13,200"
+              },
+              {
+                "icon": "check",
+                "label": "They cost exactly the same"
+              }
+            ],
+            "correctIndex": 1,
+            "hint": "Multiply the monthly payment by the number of months."
+          },
+          {
+            "id": "q2",
+            "prompt": "You pay for a ₹150-a-month music app, a ₹99-a-month game pass and a ₹199-a-month video app. How much do they cost in one year?",
+            "image": {
+              "icon": "calendar",
+              "alt": "Three small monthly charges on a calendar"
+            },
+            "options": [
+              {
+                "icon": "coin",
+                "label": "₹448"
+              },
+              {
+                "icon": "coin",
+                "label": "₹2,688"
+              },
+              {
+                "icon": "coin",
+                "label": "₹5,376"
+              }
+            ],
+            "correctIndex": 2,
+            "hint": "Add the three monthly amounts, then multiply by 12."
+          },
+          {
+            "id": "q3",
+            "prompt": "Shoes X cost ₹600 and last 50 wears. Shoes Y cost ₹1,500 and last 300 wears. Which is cheaper per use?",
+            "image": {
+              "icon": "target",
+              "alt": "Two pairs of shoes with their prices"
+            },
+            "options": [
+              {
+                "icon": "check",
+                "label": "Shoes Y, at ₹5 a wear against ₹12"
+              },
+              {
+                "icon": "cross",
+                "label": "Shoes X, because ₹600 is less than ₹1,500"
+              },
+              {
+                "icon": "list",
+                "label": "Both cost the same per wear"
+              }
+            ],
+            "correctIndex": 0,
+            "hint": "Divide each price by how many times you can use it."
           }
         ]
       }

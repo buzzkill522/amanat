@@ -145,7 +145,7 @@ const en = {
   'home.featured.eyebrow': 'Start here',
   'home.featured.heading': 'Lesson 1 · What is Money?',
   'home.featured.text':
-    'Money as a swap: you give it, the shop gives you the thing, and it is gone. By Level 3 the same lesson asks what a ₹500 note is actually made of, and why it buys less each year.',
+    'Why money works at all: what trading was like before it, and what really moves when you pay by UPI. By Level 3 the same lesson asks who decides how much money exists, and why prices keep rising.',
   'home.featured.cta': 'Open the first lesson',
   'home.featured.meta': 'Written three times · one for each level',
 
@@ -182,9 +182,9 @@ const en = {
   'level.level-1.name': 'Start',
   'level.level-2.name': 'Build',
   'level.level-3.name': 'Stretch',
-  'level.level-1.blurb': 'What money is, and what happens when you spend it.',
-  'level.level-2.blurb': 'Plan money across a month. Banks, income and trade-offs.',
-  'level.level-3.blurb': 'Percentages, compounding, inflation and reading the risk.',
+  'level.level-1.blurb': 'Plan money across a month. Banks, income and trade-offs.',
+  'level.level-2.blurb': 'Percentages, compounding, inflation and reading the risk.',
+  'level.level-3.blurb': 'How the system works: the RBI, loans, tax, scams and your rights.',
   'level.start': 'Start here',
   'level.keepGoing': 'Keep going',
   'level.doneOf': '{done} of {total} done',
@@ -651,7 +651,7 @@ const hi = {
   'home.featured.eyebrow': 'यहाँ से शुरू करें',
   'home.featured.heading': 'पाठ 1 · पैसा क्या है?',
   'home.featured.text':
-    'पैसा एक अदला-बदली है: आप देते हैं, दुकान चीज़ देती है, और पैसा चला जाता है। स्तर 3 पर यही पाठ पूछता है कि ₹500 के नोट की असली क़ीमत किस चीज़ से बनती है, और हर साल वह कम क्यों ख़रीद पाता है।',
+    'पैसा काम क्यों करता है: उससे पहले लेन-देन कैसे होता था, और UPI से भुगतान करने पर असल में क्या आगे बढ़ता है। स्तर 3 पर यही पाठ पूछता है कि कितना पैसा होगा यह कौन तय करता है, और दाम बढ़ते क्यों रहते हैं।',
   'home.featured.cta': 'पहला पाठ खोलिए',
   'home.featured.meta': 'तीन बार लिखा गया · हर स्तर के लिए एक',
 
@@ -688,9 +688,9 @@ const hi = {
   'level.level-1.name': 'शुरुआत',
   'level.level-2.name': 'अभ्यास',
   'level.level-3.name': 'गहराई',
-  'level.level-1.blurb': 'पैसा क्या है, और ख़र्च करने पर क्या होता है।',
-  'level.level-2.blurb': 'महीने भर के पैसे की योजना। बैंक, कमाई और चुनाव।',
-  'level.level-3.blurb': 'प्रतिशत, चक्रवृद्धि ब्याज, महँगाई और ख़तरे को पहचानना।',
+  'level.level-1.blurb': 'महीने भर के पैसे की योजना। बैंक, कमाई और चुनाव।',
+  'level.level-2.blurb': 'प्रतिशत, चक्रवृद्धि ब्याज, महँगाई और ख़तरे को पहचानना।',
+  'level.level-3.blurb': 'पूरी व्यवस्था कैसे चलती है: RBI, क़र्ज़, टैक्स, धोखाधड़ी और आपके अधिकार।',
   'level.start': 'यहाँ से शुरू करें',
   'level.keepGoing': 'आगे बढ़ें',
   'level.doneOf': '{total} में से {done} पूरे',
