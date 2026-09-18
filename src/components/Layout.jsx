@@ -130,7 +130,7 @@ export default function Layout() {
 
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
           <Link to="/" className="tap-target gap-3 rounded-full px-2 py-1 text-ink hover:bg-brand-50">
-            <Logomark className="h-9 w-9 text-clay-500" />
+            <Logomark className="h-9 w-9 text-ink" />
             <span className="text-left">
               <span className="block text-xl font-extrabold leading-tight">
                 {site.name}

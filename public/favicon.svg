@@ -1,15 +1,21 @@
 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <!-- Simplified for tab/home-screen sizes: thicker stroke, solid pupil,
-       no rupee glyph - it disappears below about 24px anyway. Colour is
-       fixed rather than theme-aware; a favicon renders in the browser's own
-       chrome, outside the page's light/dark toggle.
+  <!-- The header mark, simplified for tab and home-screen sizes: a thicker
+       outline, and a solid pupil instead of the rupee glyph, which disappears
+       below about 24px anyway.
 
-       The fixed colour is clay-500 from the LIGHT theme in palette.js. It is
-       written out as a literal here because nothing in this file can read a
-       custom property, so if the accent changes this hex has to be changed by
-       hand - it is the one copy of a palette value the project keeps.
-       It was #a8451c for a while, left over from the retired terracotta
-       scheme, which put a rust eye in the tab beside a violet site. -->
-  <path d="M4,24 Q24,6 44,24 Q24,42 4,24 Z" fill="none" stroke="#4f46e5" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" />
-  <circle cx="24" cy="24" r="10" fill="#4f46e5" />
+       Colours are literals because a favicon renders in the browser's own
+       chrome, outside the page's light/dark toggle, and nothing in this file
+       can read a custom property. They are the palette's values: ink #161616
+       and gold-500 #ffd23f. If either changes in palette.js, change it here by
+       hand - this is the one copy of palette values the project keeps.
+
+       The white of the eye is filled on purpose. A tab bar can be light or
+       dark; a black outline alone vanishes on a dark one, but a white eye with
+       a black edge and a gold iris reads on both.
+
+       It was violet (#4f46e5) until this redraw - left over from a scheme two
+       palettes ago, so the tab showed a colour the site no longer used. -->
+  <path d="M3,24 Q24,6 45,24 Q24,42 3,24 Z" fill="#ffffff" stroke="#161616" stroke-width="4" stroke-linejoin="round" />
+  <circle cx="24" cy="24" r="10" fill="#ffd23f" stroke="#161616" stroke-width="3" />
+  <circle cx="24" cy="24" r="3.6" fill="#161616" />
 </svg>
