@@ -124,6 +124,7 @@ const TEXT = [
   // grounds and a mark on dark ones. Anything a reader has to see uses 700.
   ['#161616', 'gold.500'], ['#ffffff', 'gold.700'],
   ['gold.600', 'paper'], ['gold.600', 'surface'],
+  ['gold.600', 'gold.100'], ['ink', 'gold.100'],
 
   // State colours: text step on its own tint, and on the page.
   ['grow.600', 'grow.100'], ['grow.600', 'paper'], ['grow.600', 'surface'],
@@ -166,11 +167,14 @@ const GRAPHICS = [
   // Gold as a mark: on the dark bands, where it is at its strongest, and the
   // darkened step against the page.
   ['gold.500', 'stage'], ['gold.700', 'paper'], ['gold.700', 'surface'],
+  ['gold.700', 'gold.100'],
 ]
 
 // The only pairing where one colour has to be told apart from another to know
 // whether an answer was right. 20 is conservative.
 const CVD_CRITICAL = [
+  // Current quiz badges: gold with dark text for correct, red for retry.
+  ['gold.500', 'alert.500', 20],
   ['grow.500', 'alert.500', 20],
   ['grow.600', 'alert.600', 20],
 ]

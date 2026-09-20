@@ -6,7 +6,7 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
 const NODE_TONE = {
   locked: 'border-brand-200 bg-brand-50 text-muted',
   open: 'border-brand-600 bg-surface text-brand-700 hover:bg-brand-50',
-  completed: 'border-grow-500 bg-grow-100 text-grow-600 hover:bg-grow-100',
+  completed: 'border-gold-700 bg-gold-100 text-gold-600 hover:bg-gold-100',
 }
 
 /**
@@ -38,7 +38,7 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
             aria-valuetext={doneOfTotal}
           >
             <div
-              className="h-full rounded-full bg-grow-500 transition-all"
+              className="h-full rounded-full bg-gold-700 transition-all"
               style={{ width: `${stats.percent}%` }}
             />
           </div>
@@ -78,7 +78,7 @@ export default function ProgressMap({ modules, levelId, stateOf, stats }) {
                       locked
                         ? 'bg-brand-100 text-muted'
                         : state === 'completed'
-                          ? 'bg-grow-500 text-white'
+                          ? 'bg-gold-500 text-[#161616]'
                           : 'bg-brand-600 text-surface'
                     }`}
                   >

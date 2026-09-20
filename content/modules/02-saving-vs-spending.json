@@ -103,27 +103,47 @@
           },
           {
             "id": "q3",
-            "prompt": "You want to save ₹4000 for a bicycle by June, but you also plan to buy a ₹500 game every month until then. What happens to your savings goal?",
-            "image": {
-              "icon": "target",
-              "alt": "A savings target with a game purchase cutting into it"
-            },
+            "scenario": "Meena has ₹600 for a school bag needed in two months. The bag costs ₹1,000. She can save ₹200 each month. A game she wants costs ₹300.",
+            "prompt": "Which plan gets Meena the bag on time?",
             "options": [
               {
-                "icon": "warning",
-                "label": "It will take much longer, or fail, because the game spending eats into the same money"
+                "icon": "target",
+                "label": "Keep the ₹600 and save ₹200 each month",
+                "consequence": "After two months, Meena has ₹1,000 for the bag. She can plan for the game afterwards."
               },
               {
                 "icon": "gift",
-                "label": "The bicycle will become cheaper"
+                "label": "Buy the game and keep saving ₹200 a month",
+                "consequence": "After buying the game, ₹300 remains. Two more deposits bring the total to ₹700, leaving a ₹300 gap."
               },
               {
-                "icon": "check",
-                "label": "Nothing changes, they are unrelated"
+                "icon": "coin",
+                "label": "Buy the game and save ₹100 a month",
+                "consequence": "Meena ends with ₹500. Reducing the monthly saving makes the gap larger."
               }
             ],
             "correctIndex": 0,
-            "hint": "Every rupee spent on the game is a rupee that cannot go toward the bicycle."
+            "hint": "Start with what remains after the purchase. Then add two months of saving.",
+            "reasoning": {
+              "prompt": "Why does keeping the ₹600 work for this goal?",
+              "options": [
+                {
+                  "icon": "question",
+                  "label": "Buying a game is always a bad use of money."
+                },
+                {
+                  "icon": "question",
+                  "label": "The money already saved plus two deposits covers the price by the deadline."
+                },
+                {
+                  "icon": "question",
+                  "label": "The bag will probably cost less in two months."
+                }
+              ],
+              "correctIndex": 1,
+              "hint": "Use the stated price and date, without assuming a discount.",
+              "explanation": "₹600 + ₹200 + ₹200 = ₹1,000. The issue is the deadline and the available money, not whether games are good or bad."
+            }
           }
         ]
       }
@@ -218,27 +238,47 @@
           },
           {
             "id": "q3",
-            "prompt": "Your phone screen cracks and repair costs ₹800. You also want a new game worth ₹800. Which one should the emergency fund pay for, and why?",
-            "image": {
-              "icon": "shield",
-              "alt": "A shield protecting a stack of coins, beside a cracked phone and a game"
-            },
+            "scenario": "Arjun has ₹800 in emergency savings and ₹400 saved for a game. His phone breaks and he needs it repaired before tomorrow’s schoolwork. Repair costs ₹800. The game is on sale for ₹400 today.",
+            "prompt": "How should Arjun handle these two costs?",
             "options": [
               {
-                "icon": "shield",
-                "label": "The phone repair - it is an unplanned problem, not a want you chose"
+                "icon": "gift",
+                "label": "Buy the game first and leave the repair until later",
+                "consequence": "The sale ends today, but buying the game leaves the school communication problem unresolved."
               },
               {
                 "icon": "coin",
-                "label": "Both, since they cost the same"
+                "label": "Use ₹400 of emergency savings for the game and postpone the repair",
+                "consequence": "Only ₹800 remains across both pots. Using emergency money for the game also delays a needed repair."
               },
               {
-                "icon": "gift",
-                "label": "The game - because you want it more"
+                "icon": "shield",
+                "label": "Pay for the repair from the emergency pot, then plan to refill it",
+                "consequence": "The phone works again. The ₹400 game savings remain, but the emergency pot now needs rebuilding."
               }
             ],
-            "correctIndex": 0,
-            "hint": "An emergency fund is for problems you did not choose, not things you wish for."
+            "correctIndex": 2,
+            "hint": "Which cost is an unexpected problem that affects school? Which cost can wait?",
+            "reasoning": {
+              "prompt": "Why use the emergency pot for the repair?",
+              "options": [
+                {
+                  "icon": "question",
+                  "label": "It is an unexpected necessary cost; the sale does not make the game an emergency."
+                },
+                {
+                  "icon": "question",
+                  "label": "Anything priced at ₹800 counts as an emergency."
+                },
+                {
+                  "icon": "question",
+                  "label": "Using emergency savings means there is no need to save again."
+                }
+              ],
+              "correctIndex": 0,
+              "hint": "Look at what the money is for, rather than just the price.",
+              "explanation": "The repair restores access to school messages. After using the buffer, Arjun should plan how to rebuild it. What he does with his game savings is a separate choice."
+            }
           }
         ]
       }
@@ -336,27 +376,47 @@
           },
           {
             "id": "q3",
-            "prompt": "Your monthly income rises from ₹2,000 to ₹3,000. You now spend ₹2,900 a month, up from ₹1,900. What has happened?",
-            "image": {
-              "icon": "growth",
-              "alt": "Income and spending both rising by the same amount"
-            },
+            "scenario": "A family has ₹1,000 left after this month’s essentials. A known school cost of ₹3,000 is due in six months. Its emergency pot was recently emptied. There are no savings yet for the school cost.",
+            "prompt": "Which plan starts both savings pots this month and meets the school goal with equal monthly deposits?",
             "options": [
               {
-                "icon": "growth",
-                "label": "Lifestyle creep: your spending grew as fast as your income"
+                "icon": "shield",
+                "label": "Save all ₹1,000 for emergencies and start school saving next month",
+                "consequence": "The buffer grows faster now, but the school goal will need ₹600 a month over the five remaining months."
               },
               {
-                "icon": "piggy",
-                "label": "Your saving grew by ₹1,000"
+                "icon": "calendar",
+                "label": "Set aside ₹500 for school and ₹500 for emergencies",
+                "consequence": "The school goal gets one of six planned ₹500 deposits, and the emergency buffer starts growing too."
               },
               {
-                "icon": "check",
-                "label": "Nothing - more income always means more saving"
+                "icon": "shop",
+                "label": "Spend ₹500 on extras and put ₹500 into emergencies",
+                "consequence": "The buffer starts growing, but nothing is reserved for the known school bill this month."
               }
             ],
-            "correctIndex": 0,
-            "hint": "Work out how much is left over, before and after."
+            "correctIndex": 1,
+            "hint": "Split the known bill across six months, then see what remains for surprises.",
+            "reasoning": {
+              "prompt": "Why keep the school savings separate from the emergency pot?",
+              "options": [
+                {
+                  "icon": "question",
+                    "label": "Saving for school can wait because the emergency pot will cover any bill."
+                },
+                {
+                  "icon": "question",
+                    "label": "An equal split will keep working even if the price or deadline changes."
+                },
+                {
+                  "icon": "question",
+                  "label": "A dated school bill is predictable; the emergency pot is for costs not already planned."
+                }
+              ],
+              "correctIndex": 2,
+              "hint": "Compare a cost with a known date to a surprise cost.",
+              "explanation": "₹3,000 over six months needs ₹500 a month. Separate purposes make it easier to see whether both goals are funded. The equal split fits this example, not every family."
+            }
           }
         ]
       }

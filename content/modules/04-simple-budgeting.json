@@ -107,27 +107,47 @@
           },
           {
             "id": "q3",
-            "prompt": "Your budget says income ₹300, expenses ₹250, so ₹50 should be left. But at month's end you have ₹0. What is the most likely explanation?",
-            "image": {
-              "icon": "question",
-              "alt": "A budget sheet that does not match an empty wallet"
-            },
+            "scenario": "Riya receives ₹500 this week. Her plan is ₹200 for travel, ₹150 for lunch, ₹100 for savings and ₹50 for snacks. She then remembers a required ₹50 workbook.",
+            "prompt": "How can Riya include the workbook without spending more than ₹500?",
             "options": [
               {
-                "icon": "question",
-                "label": "Money disappears on its own sometimes"
+                "icon": "coin",
+                "label": "Keep everything and add ₹50 for the workbook",
+                "consequence": "The plan now costs ₹550. The extra ₹50 has no source."
               },
               {
                 "icon": "list",
-                "label": "There were expenses you did not write down in the budget"
+                "label": "Use the ₹50 snack money for the workbook",
+                "consequence": "The total stays ₹500. Travel, lunch and the savings goal remain covered."
               },
               {
-                "icon": "warning",
-                "label": "The budget was too generous"
+                "icon": "bus",
+                "label": "Put ₹150 for travel in the budget, though the fare is still ₹200",
+                "consequence": "The sheet adds up, but Riya is ₹50 short when she needs to travel."
               }
             ],
             "correctIndex": 1,
-            "hint": "If the maths says ₹50 but reality says ₹0, something in the plan is missing."
+            "hint": "A new cost needs money from somewhere. Look for a purchase that can wait.",
+            "reasoning": {
+              "prompt": "Why does moving the snack money solve the problem?",
+              "options": [
+                {
+                  "icon": "question",
+                  "label": "Putting something in a budget makes it cost less."
+                },
+                {
+                  "icon": "question",
+                  "label": "Savings must never change, even during an emergency."
+                },
+                {
+                  "icon": "question",
+                  "label": "It gives the same ₹50 a new job instead of counting it twice."
+                }
+              ],
+              "correctIndex": 2,
+              "hint": "Follow the ₹50 from the old plan to the new one.",
+              "explanation": "Adding an expense does not add income. Here, moving the snack money covers the new cost while preserving the existing school needs and saving goal."
+            }
           }
         ]
       }
@@ -234,27 +254,47 @@
           },
           {
             "id": "q3",
-            "prompt": "Someone with very high rent needs to spend 65% on needs, not 50%. According to the lesson, what should they do?",
-            "image": {
-              "icon": "house",
-              "alt": "A budget split diagram with the needs slice enlarged"
-            },
+            "scenario": "For this exercise, a household has ₹10,000 this month. Its essential costs cannot be reduced below ₹6,500 right now. It wants to set aside ₹1,000 for an upcoming school cost. A sample 50-30-20 plan suggests ₹5,000 needs, ₹3,000 wants and ₹2,000 savings.",
+            "prompt": "Which budget fits this household’s actual needs this month?",
             "options": [
               {
-                "icon": "house",
-                "label": "They should stop paying rent"
-              },
-              {
-                "icon": "cross",
-                "label": "They are doing something wrong and must fit exactly 50%"
-              },
-              {
                 "icon": "chart",
-                "label": "Adjust the percentages to fit their real life - the split is a guide, not a fixed rule"
+                "label": "Use the sample split exactly",
+                "consequence": "Only ₹5,000 is assigned to essentials that cost ₹6,500, leaving a ₹1,500 gap."
+              },
+              {
+                "icon": "coin",
+                "label": "Budget ₹6,500 needs, ₹3,000 wants and ₹1,000 savings",
+                "consequence": "The goals are named, but the plan totals ₹10,500 against ₹10,000 income."
+              },
+              {
+                "icon": "list",
+                "label": "Budget ₹6,500 needs, ₹2,500 wants and ₹1,000 savings",
+                "consequence": "All ₹10,000 has a job, essentials are covered and the planned school saving is included."
               }
             ],
             "correctIndex": 2,
-            "hint": "The lesson says the numbers are a starting guide, not a law."
+            "hint": "First cover actual essentials and the stated school goal. Then find what remains.",
+            "reasoning": {
+              "prompt": "Why adjust the sample percentages?",
+              "options": [
+                {
+                  "icon": "question",
+                  "label": "They are a starting guide; a usable budget must fit real costs and income."
+                },
+                {
+                  "icon": "question",
+                  "label": "Needs must always be 65% of every household’s income."
+                },
+                {
+                  "icon": "question",
+                  "label": "A budget is only valid when wants exceed savings."
+                }
+              ],
+              "correctIndex": 0,
+              "hint": "A guide cannot make actual bills smaller.",
+              "explanation": "The revised plan meets the facts given here. Different households need different splits, and the plan should be reviewed when income or costs change."
+            }
           }
         ]
       }
@@ -352,27 +392,47 @@
           },
           {
             "id": "q3",
-            "prompt": "Diwali costs your family about ₹6,000 every year. How much should be set aside each month so it is not a shock?",
-            "image": {
-              "icon": "calendar",
-              "alt": "A festival date on a calendar with savings building up"
-            },
+            "scenario": "A family usually earns between ₹8,000 and ₹12,000 a month. Essentials cost ₹7,000. A known yearly school cost needs ₹500 set aside each month. This month’s income is ₹12,000 and there is no buffer yet.",
+            "prompt": "Which plan uses this good month to prepare for a lower-income month?",
             "options": [
               {
-                "icon": "coin",
-                "label": "₹300"
+                "icon": "shop",
+                "label": "Commit to spending ₹12,000 every month",
+                "consequence": "The plan works this month, but could exceed a normal ₹8,000 month by ₹4,000."
               },
               {
-                "icon": "coin",
-                "label": "₹500"
+                "icon": "shield",
+                "label": "Plan regular spending and saving within ₹8,000; put this month’s extra ₹4,000 into a buffer",
+                "consequence": "₹7,000 essentials and ₹500 school savings fit within the base plan. The extra builds protection for lean months."
               },
               {
-                "icon": "coin",
-                "label": "₹1,000"
+                "icon": "gift",
+                "label": "Put all ₹5,000 above essentials into flexible spending",
+                "consequence": "Nothing goes to the school saving goal or the buffer, despite this being a good month."
               }
             ],
             "correctIndex": 1,
-            "hint": "Split one yearly cost across twelve months."
+            "hint": "Decide which amount can support recurring commitments in a normal low month.",
+            "reasoning": {
+              "prompt": "Why avoid building recurring spending around ₹12,000?",
+              "options": [
+                {
+                  "icon": "question",
+                    "label": "This month’s income is the best amount to promise for every future month."
+                },
+                {
+                  "icon": "question",
+                    "label": "Covering this month’s essentials means the extra has no future job."
+                },
+                {
+                  "icon": "question",
+                  "label": "A good month is not guaranteed every month; the buffer helps cover future gaps."
+                }
+              ],
+              "correctIndex": 2,
+              "hint": "Separate reliable commitments from income that changes.",
+              "explanation": "An ₹8,000 base allows ₹7,000 essentials, ₹500 school savings and ₹500 for other priorities. The ₹4,000 extra becomes a buffer, not a promise of higher income next month."
+            }
           }
         ]
       }

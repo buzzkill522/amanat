@@ -1,5 +1,4 @@
 import { Check, CircleDot } from 'lucide-react'
-import usePageTitle from '@/hooks/usePageTitle.js'
 import { site, signLanguage } from '@/config/site.js'
 import { useT } from '@/i18n/LanguageProvider.jsx'
 
@@ -28,16 +27,15 @@ const MET = [
   { key: 'structure', points: 5, criteria: '1.3.1 Info and Relationships, 2.4.2 Page Titled, 4.1.2 Name Role Value, 4.1.3 Status Messages' },
 ]
 
-export default function Accessibility() {
+export default function AccessibilityStatement() {
   const t = useT()
-  usePageTitle(t('a11y.pageTitle'))
 
   const sign = signLanguage.label
 
   return (
-    <div className="space-y-10">
+    <section className="space-y-6" aria-labelledby="accessibility">
       <header>
-        <h1 className="text-4xl font-extrabold text-ink">{t('a11y.heading')}</h1>
+        <h2 id="accessibility" tabIndex={-1} className="text-3xl font-extrabold text-ink">{t('a11y.heading')}</h2>
         <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted">
           {t('a11y.lead', { site: site.name })}
         </p>
@@ -45,30 +43,30 @@ export default function Accessibility() {
       </header>
 
       {MET.map(({ key, points, criteria }) => (
-        <section key={key} className="card p-6" aria-labelledby={`a11y-${key}`}>
-          <h2 id={`a11y-${key}`} className="text-2xl font-extrabold text-ink">
-            {t(`a11y.${key}.group`)}
-          </h2>
+        <details key={key} className="card p-5 sm:p-6">
+          <summary className="min-h-11 cursor-pointer rounded-lg text-xl font-extrabold text-ink">
+            <h3 className="inline">{t(`a11y.${key}.group`)}</h3>
+          </summary>
           <p className="mt-1 text-sm font-bold uppercase tracking-wide text-brand-700">
             {criteria}
           </p>
           <ul className="mt-4 space-y-3">
             {Array.from({ length: points }, (_, i) => (
               <li key={i} className="flex gap-3 text-lg leading-relaxed text-ink">
-                <Check className="mt-1 h-6 w-6 shrink-0 text-grow-600" aria-hidden="true" />
+                <Check className="mt-1 h-6 w-6 shrink-0 text-gold-600" aria-hidden="true" />
                 {t(`a11y.${key}.p${i + 1}`, { sign })}
               </li>
             ))}
           </ul>
-        </section>
+        </details>
       ))}
 
       {/* Being honest about what is not done yet is part of the standard
           (WCAG conformance claims require listing known limitations). */}
       <section className="card border-4 border-sun-500 p-6" aria-labelledby="gaps-heading">
-        <h2 id="gaps-heading" className="text-2xl font-extrabold text-ink">
+        <h3 id="gaps-heading" className="text-2xl font-extrabold text-ink">
           {t('a11y.gaps.heading')}
-        </h2>
+        </h3>
         <ul className="mt-4 space-y-3">
           {[1, 2, 3].map((n) => (
             <li key={n} className="flex gap-3 text-lg leading-relaxed text-ink">
@@ -80,11 +78,11 @@ export default function Accessibility() {
       </section>
 
       <section className="rounded-3xl bg-brand-50 p-6" aria-labelledby="feedback-heading">
-        <h2 id="feedback-heading" className="text-xl font-extrabold text-ink">
+        <h3 id="feedback-heading" className="text-xl font-extrabold text-ink">
           {t('a11y.feedback.heading')}
-        </h2>
+        </h3>
         <p className="mt-2 text-lg leading-relaxed text-ink">{t('a11y.feedback.text')}</p>
       </section>
-    </div>
+    </section>
   )
 }

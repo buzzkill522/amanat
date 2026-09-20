@@ -28,13 +28,17 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
   const [attempts, setAttempts] = useState(0)
   const [firstTryCount, setFirstTryCount] = useState(0)
   const [done, setDone] = useState(false)
+  const [reasoning, setReasoning] = useState(false)
+  const focusAfterChange = useRef(false)
   const feedbackRef = useRef(null)
   const headingRef = useRef(null)
   const reduceMotion = usePrefersReducedMotion()
   const promptId = useId()
 
   const question = questions[index]
-  const isCorrect = picked !== null && picked === question?.correctIndex
+  const activeQuestion = reasoning ? question?.reasoning : question
+  const isCorrect = picked !== null && picked === activeQuestion?.correctIndex
+  const scenarioId = `${promptId}-scenario`
 
   // Headings must not skip a level, and the quiz can appear at different depths.
   const Heading = `h${Math.min(headingLevel, 6)}`
@@ -43,8 +47,11 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
   // Move focus to the new question so a keyboard or screen reader user is not
   // left at the bottom of the page after pressing "Next".
   useEffect(() => {
-    if (!done && index > 0) headingRef.current?.focus()
-  }, [index, done])
+    if (!done && focusAfterChange.current) {
+      headingRef.current?.focus()
+      focusAfterChange.current = false
+    }
+  }, [index, done, reasoning])
 
   if (!questions.length) return null
 
@@ -81,17 +88,29 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
   function choose(optionIndex) {
     if (isCorrect) return // already solved; ignore further taps
     setPicked(optionIndex)
-    const right = optionIndex === question.correctIndex
-    if (right && attempts === 0) setFirstTryCount((n) => n + 1)
+    const right = optionIndex === activeQuestion.correctIndex
+    // A scenario earns one first-try point only when BOTH stages were right
+    // first time. Retries in either stage still allow lesson completion.
+    if (right && attempts === 0 && (reasoning || !question.reasoning)) {
+      setFirstTryCount((n) => n + 1)
+    }
     if (!right) setAttempts((n) => n + 1)
     buzz(right)
   }
 
   function next() {
+    if (!isCorrect) return
+    focusAfterChange.current = true
+    if (question.reasoning && !reasoning) {
+      setReasoning(true)
+      setPicked(null)
+      return
+    }
     if (index + 1 < questions.length) {
       setIndex(index + 1)
       setPicked(null)
       setAttempts(0)
+      setReasoning(false)
     } else {
       setDone(true)
       onFinish?.({ score: firstTryCount, total: questions.length })
@@ -99,11 +118,13 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
   }
 
   function restart() {
+    focusAfterChange.current = true
     setIndex(0)
     setPicked(null)
     setAttempts(0)
     setFirstTryCount(0)
     setDone(false)
+    setReasoning(false)
   }
 
   // ---------------------------------------------------------------- finished
@@ -114,7 +135,7 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
         <div className={`mx-auto mb-4 w-fit ${reduceMotion ? '' : 'animate-bounceIn'}`}>
           <ConceptIcon
             name={allFirstTry ? 'trophy' : 'star'}
-            className="h-20 w-20 text-grow-600"
+            className="h-20 w-20 text-gold-600"
             title={allFirstTry ? 'A trophy' : 'A star'}
           />
         </div>
@@ -151,44 +172,64 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
           <li
             key={q.id}
             className={`h-3 flex-1 rounded-full ${
-              i < index ? 'bg-grow-500' : i === index ? 'bg-brand-500' : 'bg-brand-100'
+              i < index ? 'bg-gold-700' : i === index ? 'bg-brand-500' : 'bg-brand-100'
             }`}
           />
         ))}
       </ol>
 
       <div className="p-5">
+        {question.reasoning && (
+          <p className="mb-2 text-sm font-bold text-muted">
+            {reasoning ? t('quiz.reasoningStep') : t('quiz.decisionStep')}
+          </p>
+        )}
         <SubHeading
           ref={headingRef}
           tabIndex={-1}
           id={promptId}
-          className="text-center text-2xl font-extrabold leading-snug text-ink"
+          aria-describedby={question.scenario ? scenarioId : undefined}
+          className={`${question.scenario ? '' : 'text-center'} text-2xl font-extrabold leading-snug text-ink`}
         >
-          {question.prompt}
+          {activeQuestion.prompt}
         </SubHeading>
 
-        {question.image && (
+        {question.scenario && (
+          <div id={scenarioId} className="mt-4 rounded-2xl bg-brand-50 p-5">
+            <p className="mb-2 text-sm font-extrabold text-muted">{t('quiz.scenario')}</p>
+            <p className="text-lg leading-relaxed text-ink">{question.scenario}</p>
+          </div>
+        )}
+
+        {reasoning && (
+          <p className="mt-3 rounded-xl border-2 border-brand-200 p-4 text-base leading-relaxed text-ink">
+            <span className="font-bold">{t('quiz.yourDecision')} </span>
+            {question.options[question.correctIndex].label}
+          </p>
+        )}
+
+        {activeQuestion.image && (
           <div className="my-5 flex justify-center">
             <div className="rounded-3xl bg-brand-50 p-6">
               <ConceptIcon
-                name={question.image.icon}
+                name={activeQuestion.image.icon}
                 className="h-28 w-28 text-brand-700"
-                title={question.image.alt}
+                title={activeQuestion.image.alt}
               />
             </div>
           </div>
         )}
 
         {/* Options */}
-        <div role="group" aria-labelledby={promptId} className="grid gap-4 sm:grid-cols-3">
-          {question.options.map((option, i) => {
+        <div role="group" aria-labelledby={promptId} aria-describedby={question.scenario ? scenarioId : undefined} className={`mt-5 grid gap-4 ${question.scenario ? '' : 'sm:grid-cols-3'}`}>
+          {activeQuestion.options.map((option, i) => {
             const chosen = picked === i
-            const chosenRight = chosen && i === question.correctIndex
-            const chosenWrong = chosen && i !== question.correctIndex
+            const chosenRight = chosen && i === activeQuestion.correctIndex
+            const chosenWrong = chosen && i !== activeQuestion.correctIndex
             const settled = isCorrect
 
             let tone = 'border-brand-200 bg-surface hover:border-brand-500 hover:bg-brand-50'
-            if (chosenRight) tone = 'border-grow-500 bg-grow-100'
+            if (chosenRight) tone = 'border-gold-700 bg-gold-100'
             else if (chosenWrong) tone = 'border-alert-500 bg-alert-100'
             else if (settled) tone = 'border-brand-100 bg-surface opacity-60'
 
@@ -198,12 +239,12 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
 
             return (
               <button
-                key={`${question.id}-${i}`}
+                key={`${question.id}-${reasoning}-${i}`}
                 type="button"
                 onClick={() => choose(i)}
                 disabled={settled && !chosenRight}
                 aria-pressed={chosen}
-                className={`relative flex min-h-[10rem] flex-col items-center justify-center gap-3 rounded-3xl border-4 p-4 text-center transition ${tone} ${motion} disabled:cursor-not-allowed`}
+                className={`relative flex gap-3 rounded-3xl border-4 p-4 transition ${question.scenario ? 'min-h-24 flex-wrap items-center text-left' : 'min-h-[10rem] flex-col items-center justify-center pt-12 text-center'} ${tone} ${motion} disabled:cursor-not-allowed`}
               >
                 {/* Result badge: icon + colour + text, never colour on its own.
 
@@ -214,8 +255,8 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
                     type on the site was the wrong way round. */}
                 {chosen && (
                   <span
-                    className={`absolute right-2 top-2 flex items-center gap-1 rounded-full px-2.5 py-1 text-sm font-extrabold uppercase text-white ${
-                      chosenRight ? 'bg-grow-500' : 'bg-alert-500'
+                    className={`${question.scenario ? 'order-last' : 'absolute right-2 top-2'} flex items-center gap-1 rounded-full px-2.5 py-1 text-sm font-extrabold uppercase ${
+                      chosenRight ? 'bg-gold-500 text-[#161616]' : 'bg-alert-500 text-white'
                     }`}
                   >
                     {chosenRight ? (
@@ -226,8 +267,8 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
                     {chosenRight ? t('quiz.badgeRight') : t('quiz.badgeNo')}
                   </span>
                 )}
-                <ConceptIcon name={option.icon} className="h-16 w-16 text-brand-700" />
-                <span className="text-lg font-bold leading-tight text-ink">{option.label}</span>
+                <ConceptIcon name={option.icon} className={`${question.scenario ? 'h-9 w-9 shrink-0' : 'h-16 w-16'} text-brand-700`} />
+                <span className={`${question.scenario ? 'min-w-0 flex-1 basis-40' : ''} text-lg font-bold leading-relaxed text-ink`}>{option.label}</span>
               </button>
             )
           })}
@@ -236,11 +277,19 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
         {/* Feedback. role="status" so it is read out without stealing focus. */}
         <div ref={feedbackRef} role="status" aria-live="polite" className="mt-5">
           {isCorrect && (
-            <div className="flex items-start gap-3 rounded-2xl border-2 border-grow-500 bg-grow-100 p-4">
-              <Check className="mt-0.5 h-7 w-7 shrink-0 text-grow-600" aria-hidden="true" />
-              <p className="text-lg font-bold text-ink">
-                {attempts > 0 ? t('quiz.correctRetry') : t('quiz.correctFirstTry')}
-              </p>
+            <div className="flex items-start gap-3 rounded-2xl border-2 border-gold-700 bg-gold-100 p-4">
+              <Check className="mt-0.5 h-7 w-7 shrink-0 text-ink" aria-hidden="true" />
+              <div>
+                <p className="text-lg font-bold text-ink">
+                  {attempts > 0 ? t('quiz.correctRetry') : t('quiz.correctFirstTry')}
+                </p>
+                {activeQuestion.options[picked]?.consequence && (
+                  <p className="mt-2 text-lg leading-relaxed text-ink">{activeQuestion.options[picked].consequence}</p>
+                )}
+                {activeQuestion.explanation && (
+                  <p className="mt-2 text-lg leading-relaxed text-ink">{activeQuestion.explanation}</p>
+                )}
+              </div>
             </div>
           )}
 
@@ -249,10 +298,13 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
               <X className="mt-0.5 h-7 w-7 shrink-0 text-alert-600" aria-hidden="true" />
               <div>
                 <p className="text-lg font-bold text-ink">{t('quiz.incorrect')}</p>
-                {question.hint && (
+                {activeQuestion.options[picked]?.consequence && (
+                  <p className="mt-2 text-lg leading-relaxed text-ink">{activeQuestion.options[picked].consequence}</p>
+                )}
+                {activeQuestion.hint && (
                   <p className="mt-1 flex items-start gap-2 text-base text-ink">
                     <Lightbulb className="mt-1 h-5 w-5 shrink-0 text-sun-600" aria-hidden="true" />
-                    <span>{question.hint}</span>
+                    <span>{activeQuestion.hint}</span>
                   </p>
                 )}
               </div>
@@ -263,7 +315,9 @@ export default function VisualQuiz({ questions = [], onFinish, title, headingLev
         {isCorrect && (
           <div className="mt-5 flex justify-end">
             <button type="button" onClick={next} className="btn-primary text-lg">
-              {index + 1 < questions.length ? t('quiz.nextQuestion') : t('quiz.finishQuiz')}
+              {question.reasoning && !reasoning
+                ? t('quiz.explainChoice')
+                : index + 1 < questions.length ? t('quiz.nextQuestion') : t('quiz.finishQuiz')}
               <ArrowRight className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>

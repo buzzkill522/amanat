@@ -136,7 +136,7 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
                     aria-current={isActive ? 'true' : undefined}
                     className={`flex w-full min-h-tap gap-3 rounded-xl border-l-8 p-3 text-left transition ${
                       isActive
-                        ? 'border-grow-500 bg-grow-100 font-bold text-ink'
+                        ? 'border-gold-700 bg-gold-100 font-bold text-ink'
                         : 'border-transparent hover:bg-brand-50'
                     }`}
                   >
@@ -145,7 +145,7 @@ export default function TranscriptPanel({ tracks = [], currentTime = 0, onSeek }
                     </span>
                     <span className="flex-1 whitespace-pre-line">{cue.text}</span>
                     {isActive && (
-                      <span className="shrink-0 rounded-lg bg-grow-500 px-2 py-0.5 text-xs font-extrabold uppercase text-white">
+                      <span className="shrink-0 rounded-lg bg-gold-500 px-2 py-0.5 text-xs font-extrabold uppercase text-[#161616]">
                         {t('transcript.now')}
                       </span>
                     )}

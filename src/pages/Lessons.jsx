@@ -42,13 +42,13 @@ export default function Lessons() {
       {resume?.next && resumeLevel && (
         <Link
           to={`/path/${resume.levelId}/lesson/${resume.next.id}`}
-          className="group mx-auto flex max-w-3xl items-center gap-4 rounded-3xl border-2 border-grow-500 bg-surface p-5 transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
+          className="group mx-auto flex max-w-3xl items-center gap-4 rounded-3xl border-2 border-gold-700 bg-surface p-5 transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
         >
-          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-grow-100">
-            <ConceptIcon name={resume.next.icon} className="h-9 w-9 text-grow-600" />
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gold-100">
+            <ConceptIcon name={resume.next.icon} className="h-9 w-9 text-gold-600" />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block text-sm font-bold uppercase tracking-[0.14em] text-grow-600">
+            <span className="block text-sm font-bold uppercase tracking-[0.14em] text-gold-600">
               {t('home.resume.eyebrow')}
             </span>
             <span className="mt-1 block text-lg font-extrabold text-ink">
@@ -66,7 +66,7 @@ export default function Lessons() {
             </span>
           </span>
           <ArrowRight
-            className="h-6 w-6 shrink-0 text-grow-600 transition-transform group-hover:translate-x-1"
+            className="h-6 w-6 shrink-0 text-gold-600 transition-transform group-hover:translate-x-1"
             aria-hidden="true"
           />
         </Link>

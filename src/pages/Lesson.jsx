@@ -250,7 +250,7 @@ export default function Lesson() {
               {module.title}
             </h1>
             {completed && (
-              <span className="inline-flex items-center gap-2 rounded-full bg-grow-500 px-3 py-1 text-sm font-extrabold text-white">
+              <span className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-3 py-1 text-sm font-extrabold text-[#161616]">
                 <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
                 {t('lessoncard.complete')}
               </span>
@@ -259,16 +259,16 @@ export default function Lesson() {
         </div>
 
         <nav aria-label={t('lesson.steps.label')}>
-          <ol className="flex items-center gap-2 sm:gap-3">
+          <ol className="grid grid-cols-3 items-start gap-2 sm:flex sm:items-center sm:gap-3">
             {STEPS.map((s, i) => {
               const current = s === step
               const done = i < stepIndex
               return (
-                <li key={s} className="flex items-center gap-2 sm:gap-3">
+                <li key={s} className="flex min-w-0 items-center justify-center gap-2 sm:gap-3">
                   {i > 0 && (
                     <span
                       aria-hidden="true"
-                      className={`h-0 w-6 border-t-[3px] sm:w-12 ${
+                      className={`hidden h-0 w-12 border-t-[3px] sm:block ${
                         done || current ? 'border-solid border-ink' : 'border-dotted border-brand-300'
                       }`}
                     />
@@ -277,7 +277,7 @@ export default function Lesson() {
                     type="button"
                     onClick={() => goTo(s)}
                     aria-current={current ? 'step' : undefined}
-                    className="tap-target gap-2 rounded-full pr-2 font-extrabold"
+                    className="tap-target w-full flex-col gap-2 rounded-2xl p-1 text-center font-extrabold sm:w-auto sm:flex-row sm:rounded-full sm:pr-2"
                   >
                     <span
                       className={`grid h-11 w-11 shrink-0 place-items-center rounded-full text-lg ${
@@ -461,12 +461,12 @@ export default function Lesson() {
           // The quiz already marked this done - this is a confirmation, not a
           // gate, and only appears once there is something to confirm.
           completed && (
-            <section className="card border-4 border-grow-500 p-6 text-center" aria-labelledby="complete-heading">
+            <section className="card border-4 border-gold-700 p-6 text-center" aria-labelledby="complete-heading">
               <h3
                 id="complete-heading"
                 className="flex items-center justify-center gap-2 text-2xl font-extrabold text-ink"
               >
-                <CheckCircle2 className="h-7 w-7 text-grow-600" aria-hidden="true" />
+                <CheckCircle2 className="h-7 w-7 text-gold-600" aria-hidden="true" />
                 {t('lesson.completeHeading')}
               </h3>
               <p className="mt-2 text-lg text-muted">{t('lesson.completeText')}</p>
@@ -480,7 +480,7 @@ export default function Lesson() {
         ) : (
           // Fallback for a module with no quiz questions. None exist today, but
           // if one ever did, nothing else would ever mark it complete.
-          <section className="card border-4 border-grow-500 p-6 text-center" aria-labelledby="complete-heading">
+          <section className="card border-4 border-gold-700 p-6 text-center" aria-labelledby="complete-heading">
             <h3 id="complete-heading" className="text-2xl font-extrabold text-ink">
               {t('lesson.finishedHeading')}
             </h3>

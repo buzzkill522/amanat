@@ -6,11 +6,10 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
 // The site's own colours, through the palette variables, so the confetti
 // follows the theme instead of staying at light-theme darkness on a dark page.
 const COLORS = [
-  'rgb(var(--c-clay-500))',
-  'rgb(var(--c-sun-500))',
-  'rgb(var(--c-grow-500))',
-  'rgb(var(--c-berry-500))',
-  'rgb(var(--c-alert-500))',
+  'rgb(var(--c-gold-500))',
+  'rgb(var(--c-gold-600))',
+  'rgb(var(--c-ink))',
+  'rgb(var(--c-brand-400))',
 ]
 
 /**
@@ -90,11 +89,11 @@ export default function Celebration({ show, message, onDone }) {
         ref={panelRef}
         tabIndex={-1}
         role="status"
-        className={`fixed inset-x-4 bottom-6 z-50 mx-auto flex max-w-md items-center gap-4 rounded-3xl border-4 border-grow-500 bg-surface p-5 shadow-2xl ${
+        className={`fixed inset-x-4 bottom-6 z-50 mx-auto flex max-w-md items-center gap-4 rounded-3xl border-4 border-gold-700 bg-surface p-5 shadow-2xl ${
           reduceMotion ? '' : 'animate-bounceIn'
         }`}
       >
-        <PartyPopper className="h-12 w-12 shrink-0 text-grow-600" aria-hidden="true" />
+        <PartyPopper className="h-12 w-12 shrink-0 text-gold-600" aria-hidden="true" />
         <div>
           <p className="text-xl font-extrabold text-ink">{shownMessage}</p>
           <p className="text-base text-muted">{t('celebration.nextOpen')}</p>

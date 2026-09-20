@@ -128,17 +128,17 @@ export default function Home() {
             {resume.next ? (
               <Link
                 to={`/path/${resume.levelId}/lesson/${resume.next.id}`}
-                className="group flex flex-col gap-5 rounded-3xl border-2 border-grow-500 bg-surface p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:items-center sm:p-8"
+                className="group flex flex-col gap-5 rounded-3xl border-2 border-gold-700 bg-surface p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:items-center sm:p-8"
               >
-                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-grow-100">
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gold-100">
                   <ConceptIcon
                     name={resume.next.icon}
-                    className="h-10 w-10 text-grow-600 transition-transform duration-300 group-hover:scale-110"
+                    className="h-10 w-10 text-gold-600 transition-transform duration-300 group-hover:scale-110"
                   />
                 </span>
 
                 <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-bold uppercase tracking-[0.14em] text-grow-600">
+                  <span className="block text-sm font-bold uppercase tracking-[0.14em] text-gold-600">
                     {t('home.resume.eyebrow')}
                   </span>
                   <h2 id="resume-heading" className="mt-1 text-2xl font-extrabold text-ink">
@@ -165,7 +165,7 @@ export default function Home() {
                     className="mt-3 block h-2 w-full overflow-hidden rounded-full bg-brand-100"
                   >
                     <span
-                      className="block h-full rounded-full bg-grow-500"
+                      className="block h-full rounded-full bg-gold-700"
                       style={{ width: `${Math.round((resume.done / resume.total) * 100)}%` }}
                     />
                   </span>
@@ -182,8 +182,8 @@ export default function Home() {
             ) : (
               // Every lesson in that level is done - congratulate, and point
               // back rather than leaving a card with nowhere to go.
-              <div className="rounded-3xl border-2 border-grow-500 bg-surface p-6 text-center sm:p-8">
-                <ConceptIcon name="trophy" className="mx-auto h-12 w-12 text-grow-600" />
+              <div className="rounded-3xl border-2 border-gold-700 bg-surface p-6 text-center sm:p-8">
+                <ConceptIcon name="trophy" className="mx-auto h-12 w-12 text-gold-600" />
                 <h2 id="resume-heading" className="mt-3 text-2xl font-extrabold text-ink">
                   {t('home.resume.done.heading', {
                     level: `${resumeLevel.label} - ${resumeLevel.name}`,

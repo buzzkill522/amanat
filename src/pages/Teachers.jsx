@@ -6,6 +6,7 @@ import { useProgress } from '@/hooks/useProgress.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { levels, signLanguage, site } from '@/config/site.js'
 import { modules, signClipCoverage, moduleMeta } from '@content/index.js'
+import AccessibilityStatement from '@/components/AccessibilityStatement.jsx'
 
 export default function Teachers() {
   const { lang, t } = useLanguage()
@@ -57,13 +58,23 @@ export default function Teachers() {
       <header>
         <h1 className="text-4xl font-extrabold text-ink">{t('teachers.heading')}</h1>
         <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted">
-          {t('teachers.lead', { site: site.name })}
+          {t('teachers.combinedLead', { site: site.name })}
         </p>
       </header>
 
+      <nav aria-label={t('teachers.onThisPage')} className="flex flex-wrap gap-3">
+        {[
+          ['use-heading', 'teachers.guide'],
+          ['settings-heading', 'teachers.settings.heading'],
+          ['accessibility', 'a11y.heading'],
+        ].map(([id, key]) => (
+          <Link key={id} to={`#${id}`} className="btn-secondary">{t(key)}</Link>
+        ))}
+      </nav>
+
       {/* ------------------------------------------------------- how to use */}
       <section className="card p-6" aria-labelledby="use-heading">
-        <h2 id="use-heading" className="text-2xl font-extrabold text-ink">
+        <h2 id="use-heading" tabIndex={-1} className="text-2xl font-extrabold text-ink">
           {t('teachers.use.heading')}
         </h2>
         <ol className="mt-4 space-y-4">
@@ -84,7 +95,7 @@ export default function Teachers() {
           {t('teachers.topics.heading')}
         </h2>
         <p className="mt-2 text-lg text-muted">{t('teachers.topics.lead')}</p>
-        <div className="mt-5 overflow-x-auto">
+        <div className="relative mt-5 overflow-x-auto" role="region" aria-labelledby="topics-heading" tabIndex={0}>
           <table className="w-full min-w-[36rem] border-collapse text-left">
             <caption className="sr-only">
               {t('teachers.topics.caption')}
@@ -141,7 +152,7 @@ export default function Teachers() {
             use this with a class needs to know exactly how much is filmed. */}
         <p
           className={`mt-4 rounded-2xl p-4 text-lg font-bold ${
-            clips.complete ? 'bg-grow-100 text-grow-600' : 'bg-sun-100 text-sun-600'
+            clips.complete ? 'bg-gold-100 text-gold-600' : 'bg-sun-100 text-sun-600'
           }`}
         >
           {clips.complete
@@ -152,7 +163,7 @@ export default function Teachers() {
 
       {/* --------------------------------------------------------- settings */}
       <section className="card p-6" aria-labelledby="settings-heading">
-        <h2 id="settings-heading" className="text-2xl font-extrabold text-ink">
+        <h2 id="settings-heading" tabIndex={-1} className="text-2xl font-extrabold text-ink">
           {t('teachers.settings.heading')}
         </h2>
 
@@ -289,11 +300,12 @@ export default function Teachers() {
         </h2>
         <p className="mt-2 text-lg leading-relaxed text-ink">{t('teachers.privacy.text')}</p>
         <p className="mt-3">
-          <Link to="/accessibility" className="tap-target font-bold text-brand-700 underline decoration-2 underline-offset-4">
+          <Link to="#accessibility" className="tap-target font-bold text-brand-700 underline decoration-2 underline-offset-4">
             {t('teachers.privacy.link')}
           </Link>
         </p>
       </section>
+      <AccessibilityStatement />
     </div>
   )
 }

@@ -234,7 +234,7 @@ export default function VideoPlayer({
                 current: formatTime(currentTime),
                 duration: formatTime(duration),
               })}
-              className="h-11 w-full cursor-pointer accent-brand-600"
+              className="h-11 w-full cursor-pointer accent-gold-700"
             />
             <div
               aria-hidden="true"
@@ -283,7 +283,7 @@ export default function VideoPlayer({
             aria-pressed={captionsOn}
             className={
               captionsOn
-                ? 'btn bg-grow-500 text-white hover:bg-grow-700'
+                ? 'btn bg-gold-700 text-white hover:bg-gold-700'
                 : 'btn border-2 border-muted bg-surface text-ink hover:bg-brand-50'
             }
           >

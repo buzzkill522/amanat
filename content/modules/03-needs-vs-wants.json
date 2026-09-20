@@ -93,27 +93,47 @@
           },
           {
             "id": "q3",
-            "prompt": "An advertisement says 'Buy these shoes now, offer ends today!' and you already have shoes that fit well. What is really happening?",
-            "image": {
-              "icon": "warning",
-              "alt": "A bright advertisement board with a countdown"
-            },
+            "scenario": "Sana has ₹700. Her only school shoes are torn and let in water. A suitable replacement costs ₹600. Her current backpack still works. A backpack she likes is on sale for ₹500, today only.",
+            "prompt": "What should Sana buy first?",
             "options": [
               {
+                "icon": "shop",
+                "label": "The backpack, because its offer ends today",
+                "consequence": "Only ₹200 remains, which is not enough to replace the shoes she needs for school."
+              },
+              {
                 "icon": "check",
-                "label": "It genuinely is a need because the offer will end"
+                "label": "The school shoes, keeping ₹100 left over",
+                "consequence": "Sana can get to school with suitable shoes. The backpack can wait while the current one works."
               },
               {
-                "icon": "warning",
-                "label": "The ad is using urgency to turn a want into a fake emergency"
-              },
-              {
-                "icon": "calendar",
-                "label": "You must decide within the hour"
+                "icon": "piggy",
+                "label": "Nothing, because saving is always better than spending",
+                "consequence": "The ₹700 stays saved, but Sana still has torn shoes that let in water."
               }
             ],
             "correctIndex": 1,
-            "hint": "A real need does not depend on a shop's clock."
+            "hint": "Ask what happens if each purchase is delayed.",
+            "reasoning": {
+              "prompt": "What makes the shoes the priority in this situation?",
+              "options": [
+                {
+                  "icon": "question",
+                  "label": "Every pair of shoes is a need, and every backpack is a want."
+                },
+                {
+                  "icon": "question",
+                  "label": "A need is always the more expensive item."
+                },
+                {
+                  "icon": "question",
+                  "label": "The shoes solve a current problem; the existing backpack still does its job."
+                }
+              ],
+              "correctIndex": 2,
+              "hint": "The same item can be a need or a want depending on what someone already has.",
+              "explanation": "Needs depend on the situation. If the backpack were unusable too, Sana would need a different plan. A sale deadline does not change what she needs for school."
+            }
           }
         ]
       }
@@ -209,27 +229,47 @@
           },
           {
             "id": "q3",
-            "prompt": "You see a ₹450 want and a ₹600 want on the same day. To which one does the 24 hour rule apply?",
-            "image": {
-              "icon": "calendar",
-              "alt": "Two price tags, one below and one above five hundred rupees"
-            },
+            "scenario": "Kabir has ₹1,000 left for this month. His school bus pass costs ₹600. He planned ₹250 for outings and ₹150 for mobile data. The minimum data he needs for school costs ₹100. A required workbook now costs another ₹100.",
+            "prompt": "Which adjustment covers the workbook and protects school travel and data?",
             "options": [
               {
-                "icon": "calendar",
-                "label": "Only the ₹600 one - the rule is for wants over ₹500"
+                "icon": "list",
+                "label": "Keep the bus pass, reduce outings to ₹200 and data to ₹100",
+                "consequence": "₹600 + ₹200 + ₹100 + ₹100 = ₹1,000. The workbook, bus pass and minimum school data are covered."
               },
               {
-                "icon": "food",
-                "label": "Neither, the rule is only for needs"
+                "icon": "bus",
+                "label": "Spend ₹500 on the bus pass and keep everything else",
+                "consequence": "The bus pass costs ₹600, so reserving ₹500 does not buy it. A balanced sum alone is not a workable plan."
               },
               {
-                "icon": "shop",
-                "label": "Both, the rule applies to every purchase"
+                "icon": "coin",
+                "label": "Keep the original plan and add the workbook",
+                "consequence": "The total becomes ₹1,100, which is ₹100 more than Kabir has."
               }
             ],
             "correctIndex": 0,
-            "hint": "Check the rule's exact price cutoff from the lesson."
+            "hint": "Some costs can be reduced; others must be paid in full to get what is needed.",
+            "reasoning": {
+              "prompt": "Why is the revised plan workable?",
+              "options": [
+                {
+                  "icon": "question",
+                  "label": "It reduces flexible spending while still paying for each school need."
+                },
+                {
+                  "icon": "question",
+                  "label": "Mobile data is always a want and should always be removed."
+                },
+                {
+                  "icon": "question",
+                  "label": "Writing a lower bus cost makes the pass cheaper."
+                }
+              ],
+              "correctIndex": 0,
+              "hint": "Consider what each payment actually provides.",
+              "explanation": "Budget changes need to work in real life. Kabir can reduce outings and extra data, but he cannot buy a ₹600 pass by putting ₹500 on his budget sheet."
+            }
           }
         ]
       }
@@ -327,27 +367,47 @@
           },
           {
             "id": "q3",
-            "prompt": "Shoes X cost ₹600 and last 50 wears. Shoes Y cost ₹1,500 and last 300 wears. Which is cheaper per use?",
-            "image": {
-              "icon": "target",
-              "alt": "Two pairs of shoes with their prices"
-            },
+            "scenario": "A family needs a replacement phone and has ₹6,500 available after essentials. The same phone costs ₹6,000 paid now, or six payments of ₹1,100 with no other fees. The instalment offer advertises “only ₹1,100 today”.",
+            "prompt": "Which option has the lower total price and fits the money available?",
             "options": [
               {
-                "icon": "check",
-                "label": "Shoes Y, at ₹5 a wear against ₹12"
+                "icon": "calendar",
+                "label": "Choose the instalments because today’s payment is smaller",
+                "consequence": "Six payments total ₹6,600. The smaller first payment hides a ₹600 higher total price."
               },
               {
-                "icon": "cross",
-                "label": "Shoes X, because ₹600 is less than ₹1,500"
+                "icon": "shop",
+                "label": "Buy a ₹6,500 model because it uses the whole budget",
+                "consequence": "This fits the budget, but costs ₹500 more than the phone that already meets the need."
               },
               {
-                "icon": "list",
-                "label": "Both cost the same per wear"
+                "icon": "coin",
+                "label": "Pay ₹6,000 now and keep ₹500 available",
+                "consequence": "The needed phone is paid for, ₹500 remains, and there are no future payments for it."
               }
             ],
-            "correctIndex": 0,
-            "hint": "Divide each price by how many times you can use it."
+            "correctIndex": 2,
+            "hint": "Compare the sum of all payments, not only today’s payment.",
+            "reasoning": {
+              "prompt": "What is the useful lesson from comparing these offers?",
+              "options": [
+                {
+                  "icon": "question",
+                    "label": "Instalments cost the same as paying now when there are no extra fees."
+                },
+                {
+                  "icon": "question",
+                  "label": "Compare total cost and whether payments fit the household’s cash needs."
+                },
+                {
+                  "icon": "question",
+                    "label": "Compare only this month’s payment because later payments use future income."
+                }
+              ],
+              "correctIndex": 1,
+              "hint": "A payment plan can change timing without lowering the price.",
+              "explanation": "Here, six times ₹1,100 is ₹6,600, compared with ₹6,000 now. In another situation, paying now might leave too little for essentials. Both total cost and affordability matter."
+            }
           }
         ]
       }

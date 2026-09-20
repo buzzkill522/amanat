@@ -125,11 +125,18 @@
 
   /* A single, always-visible focus style. Never remove the outline without
      replacing it (WCAG 2.4.7 Focus Visible, 2.4.11 Focus Not Obscured). */
-  /* The accent doubles as the focus colour: on a page this quiet, the blue is
-     the most visible thing available, and it clears 3:1 against both paper and
-     the dark panels in either theme (measured, check:a11y). */
+  /* Dark gold keeps keyboard focus visible against either page theme. */
   :focus-visible {
-    @apply outline-none ring-4 ring-clay-500 ring-offset-2 ring-offset-paper rounded-lg;
+    @apply outline-none ring-4 ring-gold-700 ring-offset-2 ring-offset-paper rounded-lg;
+  }
+
+  ::selection {
+    background: rgb(var(--c-gold-500));
+    color: #161616;
+  }
+
+  input[type="checkbox"], input[type="radio"], input[type="range"] {
+    accent-color: rgb(var(--c-gold-700));
   }
 
   /* Some browsers still paint a thin default ring on mouse click. */
@@ -226,7 +233,7 @@
   }
 
   .btn-success {
-    @apply btn bg-grow-500 text-white hover:bg-grow-700;
+    @apply btn border-2 border-gold-700 bg-gold-500 text-[#161616] hover:bg-gold-500;
   }
 
   /* A hairline plus real elevation, rather than the old 2px border.

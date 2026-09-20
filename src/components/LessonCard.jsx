@@ -11,8 +11,7 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
 // monochrome scheme they simply all land on the neutral ramp: hue is no
 // longer how one lesson is told from another, the icon and the title are.
 //
-// What did NOT move: grow and alert wherever they mean right and wrong, and
-// the done/locked states. Those carry meaning and keep their colour.
+// Completed lessons use gold, a tick and a written status label.
 const NEUTRAL = { ring: 'border-brand-500', chip: 'bg-brand-100 text-brand-700', icon: 'text-brand-600' }
 const ACCENTS = { grow: NEUTRAL, brand: NEUTRAL, sun: NEUTRAL, berry: NEUTRAL }
 
@@ -23,7 +22,7 @@ const ACCENTS = { grow: NEUTRAL, brand: NEUTRAL, sun: NEUTRAL, berry: NEUTRAL }
  * colour - so no child depends on being able to tell the colours apart:
  *   locked    padlock icon   + "Locked"    + grey
  *   open      play icon      + "Start"     + accent colour
- *   completed tick icon      + "Complete"  + green
+ *   completed tick icon      + "Complete"  + gold
  */
 export default function LessonCard({ module, levelId, state = 'open', stepNumber }) {
   const t = useT()
@@ -38,7 +37,7 @@ export default function LessonCard({ module, levelId, state = 'open', stepNumber
     locked
       ? 'cursor-not-allowed border-brand-100 bg-brand-50'
       : completed
-        ? 'border-grow-500 bg-surface hover:bg-grow-100'
+        ? 'border-gold-700 bg-surface hover:bg-gold-100'
         : `${accent.ring} bg-surface hover:-translate-y-0.5 hover:shadow-lg`
   }`
 
@@ -46,7 +45,7 @@ export default function LessonCard({ module, levelId, state = 'open', stepNumber
     <>
       <span
         className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl ${
-          locked ? 'bg-surface text-muted' : completed ? 'bg-grow-100 text-grow-600' : accent.chip
+          locked ? 'bg-surface text-muted' : completed ? 'bg-gold-100 text-gold-600' : accent.chip
         }`}
       >
         <ConceptIcon name={module.icon} className="h-10 w-10" />
@@ -67,7 +66,7 @@ export default function LessonCard({ module, levelId, state = 'open', stepNumber
       <span
         // 14px: this word is the non-colour encoding of locked/open/done.
         className={`flex shrink-0 flex-col items-center gap-1 rounded-2xl px-3 py-2 text-sm font-extrabold uppercase ${
-          locked ? 'bg-surface text-muted' : completed ? 'bg-grow-500 text-white' : 'bg-brand-600 text-surface'
+          locked ? 'bg-surface text-muted' : completed ? 'bg-gold-500 text-[#161616]' : 'bg-brand-600 text-surface'
         }`}
       >
         <StatusIcon className="h-6 w-6" aria-hidden="true" />

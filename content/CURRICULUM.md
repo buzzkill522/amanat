@@ -1,5 +1,32 @@
 # The lesson plan
 
+## Decision scenarios
+
+Saving vs Spending, Needs vs Wants and Simple Budgeting each end with a
+two-part scenario at all three levels (nine scenarios total). The other two
+questions remain as foundation checks, so each quiz still has three questions.
+
+The learner chooses an action, sees its specific consequence, then chooses
+the reason for the workable action. Both stages allow retries. A scenario
+counts as one first-try answer only when both stages are answered correctly
+on the first attempt. The lesson completes after the reasoning stage too.
+
+Level 1 uses a stated amount and a concrete need. Level 2 introduces competing
+priorities and the difference between a budget that adds up and one that works.
+Level 3 uses deadlines, changing income and payment timing. All amounts are
+fictional teaching examples, not product offers or recommended household budgets.
+
+Scenario text is English for now, matching these lessons' existing language
+coverage. The controls are English/Hindi, and the existing Hindi notice remains.
+The content loader supports translating `scenario`, option `consequence`, and
+the nested `reasoning` prompt, options, hint and explanation through a lesson's
+`hi.quiz.questions` entries. Correct option indexes stay shared across languages.
+
+For content editors: keep each action's `consequence` specific, include a
+`reasoning` question with `correctIndex`, `hint` and `explanation`, and state
+enough context for one answer to be defensible. Avoid implying that wants are
+bad, that saving always outranks essentials, or that one percentage fits everyone.
+
 Eleven modules, each written three times - once at each level of difficulty.
 The course has one spine: **earn or receive money → keep it somewhere safe →
 make it grow → know what you are already owed.** Every module is a step along

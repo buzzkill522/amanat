@@ -142,6 +142,8 @@ for (const file of files) {
       if (!q.prompt) fail(qAt, 'missing prompt')
       checkFigures(qAt, q.prompt)
       checkFigures(qAt, q.hint)
+      checkFigures(qAt, q.scenario)
+      checkFigures(qAt, q.explanation)
       for (const o of q.options || []) checkFigures(qAt, o.label)
       if (q.image) {
         checkIcon(qAt + ' image', q.image.icon)
@@ -154,13 +156,42 @@ for (const file of files) {
       q.options.forEach((o, oi) => {
         checkIcon(`${qAt} option ${oi + 1}`, o.icon)
         if (!o.label) fail(qAt, `option ${oi + 1} has no label`)
+        checkFigures(qAt, o.consequence)
+        if (q.scenario && (typeof o.consequence !== 'string' || !o.consequence.trim())) {
+          fail(qAt, `scenario option ${oi + 1} has no consequence`)
+        }
       })
       // The one that silently breaks a lesson: an answer that is not an answer.
-      if (typeof q.correctIndex !== 'number') fail(qAt, 'correctIndex is not a number')
+      if (!Number.isInteger(q.correctIndex)) fail(qAt, 'correctIndex is not an integer')
       else if (q.correctIndex < 0 || q.correctIndex >= q.options.length) {
         fail(qAt, `correctIndex ${q.correctIndex} is outside 0..${q.options.length - 1}`)
       }
       if (!q.hint) warn(qAt, 'no hint - a wrong answer will have nothing to offer')
+      if ('scenario' in q && (typeof q.scenario !== 'string' || !q.scenario.trim())) {
+        fail(qAt, 'scenario must be non-empty text')
+      }
+      if (q.scenario && !q.reasoning) fail(qAt, 'scenario needs a reasoning question')
+      if (q.reasoning) {
+        const r = q.reasoning
+        if (!q.scenario) fail(qAt, 'reasoning question needs a scenario')
+        for (const field of ['prompt', 'hint', 'explanation']) {
+          if (typeof r[field] !== 'string' || !r[field].trim()) fail(qAt, `reasoning missing ${field}`)
+          checkFigures(`${qAt} reasoning`, r[field])
+        }
+        if (!Array.isArray(r.options) || r.options.length < 2) {
+          fail(qAt, 'reasoning needs at least two options')
+        } else {
+          r.options.forEach((o, oi) => {
+            checkIcon(`${qAt} reasoning option ${oi + 1}`, o.icon)
+            if (!o.label) fail(qAt, `reasoning option ${oi + 1} has no label`)
+            checkFigures(`${qAt} reasoning`, o.label)
+          })
+        }
+        if (!Number.isInteger(r.correctIndex) || r.correctIndex < 0 || r.correctIndex >= (r.options?.length || 0)) {
+          fail(qAt, 'reasoning correctIndex is outside its options')
+        }
+        if (r.reasoning) fail(qAt, 'only one reasoning stage is supported')
+      }
     })
   }
 }

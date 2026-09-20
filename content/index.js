@@ -94,20 +94,31 @@ export function signClipCoverage() {
  * renders in English under a Hindi interface - see `hasTranslation` below,
  * which is how the reader is told that plainly instead of silently.
  */
+function localizeQuestion(q, hq) {
+  if (!hq) return q
+  return {
+    ...q,
+    prompt: hq.prompt ?? q.prompt,
+    hint: hq.hint ?? q.hint,
+    scenario: hq.scenario ?? q.scenario,
+    explanation: hq.explanation ?? q.explanation,
+    image: q.image ? { ...q.image, alt: hq.image?.alt ?? q.image.alt } : q.image,
+    options: q.options.map((o, oi) => ({
+      ...o,
+      label: hq.options?.[oi]?.label ?? o.label,
+      consequence: hq.options?.[oi]?.consequence ?? o.consequence,
+    })),
+    reasoning: q.reasoning ? localizeQuestion(q.reasoning, hq.reasoning) : undefined,
+  }
+}
+
 function localizeLevelBlock(block, lang) {
   const hi = lang === 'hi' ? block?.hi : null
   if (!hi) return block
 
   const questions = block.quiz?.questions?.map((q, i) => {
     const hq = hi.quiz?.questions?.[i]
-    if (!hq) return q
-    return {
-      ...q,
-      prompt: hq.prompt ?? q.prompt,
-      hint: hq.hint ?? q.hint,
-      image: q.image ? { ...q.image, alt: hq.image?.alt ?? q.image.alt } : q.image,
-      options: q.options.map((o, oi) => ({ ...o, label: hq.options?.[oi]?.label ?? o.label })),
-    }
+    return localizeQuestion(q, hq)
   })
 
   return {
@@ -163,6 +174,22 @@ export function withFigures(text) {
   return text.replace(/\{figure\.(\w+)\}/g, (match, name) => schemes.figures?.[name] ?? match)
 }
 
+function applyQuestionFigures(q) {
+  return {
+    ...q,
+    prompt: withFigures(q.prompt),
+    hint: withFigures(q.hint),
+    scenario: withFigures(q.scenario),
+    explanation: withFigures(q.explanation),
+    options: q.options?.map((o) => ({
+      ...o,
+      label: withFigures(o.label),
+      consequence: withFigures(o.consequence),
+    })),
+    reasoning: q.reasoning ? applyQuestionFigures(q.reasoning) : undefined,
+  }
+}
+
 function applyFigures(block) {
   return {
     ...block,
@@ -173,12 +200,7 @@ function applyFigures(block) {
     quiz: block.quiz
       ? {
           ...block.quiz,
-          questions: block.quiz.questions?.map((q) => ({
-            ...q,
-            prompt: withFigures(q.prompt),
-            hint: withFigures(q.hint),
-            options: q.options?.map((o) => ({ ...o, label: withFigures(o.label) })),
-          })),
+          questions: block.quiz.questions?.map(applyQuestionFigures),
         }
       : block.quiz,
   }

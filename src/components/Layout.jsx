@@ -21,7 +21,7 @@ const NAV = [
   // entitlement nobody claims is worth nothing.
   { to: '/schemes', labelKey: 'nav.schemes', icon: BadgeIndianRupee },
   { to: '/teachers', labelKey: 'nav.teachers', icon: Users },
-  { to: '/accessibility', labelKey: 'nav.access', icon: Info },
+  { to: '/our-mission', labelKey: 'nav.mission', icon: Info },
 ]
 
 // A plain Link rather than NavLink, because NavLink insists on deriving
@@ -49,13 +49,13 @@ function NavItem({ to, label, icon: Icon, end, currentLabel, alsoMatch }) {
       // `tap-target` still holds the 44px minimum, so the target does not
       // shrink with the padding - only the pill's drawn width does.
       // Measured, not guessed; see the header comment below.
-      className={`tap-target flex-col gap-0.5 rounded-full px-2 py-2 text-xs font-extrabold transition duration-200 sm:flex-row sm:gap-2 sm:px-2.5 sm:text-sm ${
+      className={`tap-target flex-col gap-0.5 rounded-full px-2 py-2 text-xs font-extrabold transition duration-200 sm:flex-row sm:gap-1.5 sm:px-2.5 sm:text-sm ${
         active
           ? 'bg-clay-500 text-white'
           : 'text-ink hover:bg-brand-100'
       }`}
     >
-      <Icon className="h-6 w-6" aria-hidden="true" />
+      <Icon className="h-5 w-5" aria-hidden="true" />
       <span>{label}</span>
       {/* Current page is marked in text as well as by colour. */}
       {active && <span className="sr-only">{currentLabel}</span>}
@@ -75,6 +75,19 @@ export default function Layout() {
     mainRef.current?.focus()
     window.scrollTo(0, 0)
   }, [location.pathname])
+
+  // Teacher resources share one page. Run after route focus so bookmarked
+  // section links land on their heading without changing lesson hash behavior.
+  useEffect(() => {
+    if (location.pathname !== '/teachers' || !location.hash) return undefined
+    const frame = window.requestAnimationFrame(() => {
+      const target = document.getElementById(location.hash.slice(1))
+      if (!target || !mainRef.current?.contains(target)) return
+      target.focus({ preventScroll: true })
+      target.scrollIntoView({ block: 'start' })
+    })
+    return () => window.cancelAnimationFrame(frame)
+  }, [location.pathname, location.hash, location.key])
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -220,7 +233,7 @@ export default function Layout() {
             <p className="text-sm">{t('footer.blurb')}</p>
             <ul className="flex flex-wrap gap-4 text-sm font-bold">
               <li>
-                <Link to="/accessibility" className="tap-target underline decoration-2 underline-offset-4 hover:text-white">
+                <Link to="/teachers#accessibility" className="tap-target underline decoration-2 underline-offset-4 hover:text-white">
                   {t('footer.accessibility')}
                 </Link>
               </li>

@@ -11,7 +11,7 @@ import Lesson from '@/pages/Lesson.jsx'
 import Dictionary from '@/pages/Dictionary.jsx'
 import Schemes from '@/pages/Schemes.jsx'
 import Teachers from '@/pages/Teachers.jsx'
-import Accessibility from '@/pages/Accessibility.jsx'
+import Mission from '@/pages/Mission.jsx'
 import NotFound from '@/pages/NotFound.jsx'
 
 export default function App() {
@@ -35,7 +35,8 @@ export default function App() {
                     birthday cannot be asked to finish nine lessons first. */}
                 <Route path="/schemes" element={<Schemes />} />
                 <Route path="/teachers" element={<Teachers />} />
-                <Route path="/accessibility" element={<Accessibility />} />
+                <Route path="/accessibility" element={<Navigate to="/teachers#accessibility" replace />} />
+                <Route path="/our-mission" element={<Mission />} />
                 {/* Old shape kept working in case a teacher bookmarked it. */}
                 <Route path="/lesson/:moduleId" element={<Navigate to="/" replace />} />
                 <Route path="*" element={<NotFound />} />

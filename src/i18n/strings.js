@@ -26,7 +26,29 @@ const en = {
   'nav.dictionary': 'Dictionary',
   'nav.schemes': 'Schemes',
   'nav.teachers': 'Teachers',
-  'nav.access': 'Access',
+  'nav.mission': 'Our mission',
+  'teachers.onThisPage': 'On this page',
+  'teachers.guide': 'Teaching guide',
+  'teachers.combinedLead': 'Guidance for using {site}, settings for this device, and accessibility information, together in one place.',
+  'mission.heading': 'Money skills. More independence.',
+  'mission.lead': 'We want Deaf and Hard-of-Hearing learners to understand money, ask questions, and make everyday choices with confidence.',
+  'mission.image.alt': 'Illustration of a child with a notebook and pencil at a classroom desk.',
+  'mission.image.caption': 'AI-generated illustration, not a photograph of a real learner or Amanat beneficiary.',
+  'mission.opportunity': 'Financial education alone cannot end poverty. Our aim is to be one part of a wider path: helping learners understand their choices, find support they may be entitled to, and build greater independence alongside access to education and work.',
+  'mission.why.heading': 'Helping break the cycle of poverty.',
+  'mission.why.text': 'Amanat aims to support Deaf and Hard-of-Hearing children in India, especially those growing up in low-income families. We want to help them build money skills and open up possibilities for a future less constrained by poverty. Understanding money should not depend on hearing or on what a family can afford.',
+  'mission.principles': 'What guides us',
+  'mission.access.heading': 'Access comes first',
+  'mission.access.text': 'Our goal is Indian Sign Language alongside captions, written explanations, and clear visuals. English and Hindi interface options help more families find their way.',
+  'mission.practice.heading': 'Decisions, not just definitions',
+  'mission.practice.text': 'Stories and everyday situations turn rupees, saving, budgeting, and staying safe into choices learners can think through. Getting an answer wrong is a chance to try again.',
+  'mission.pace.heading': 'A pace of your own',
+  'mission.pace.text': 'Levels follow difficulty, not age. Learners can revisit ideas, build confidence, and explore with support from a parent or teacher.',
+  'mission.progress.heading': 'Still being built, openly',
+  'mission.progress.text': 'The learning activities are available, but lesson videos and captions are still placeholders, ISL dictionary clips still need recording, and some content still needs Hindi translation. Review by Deaf learners and educators is also still needed. These are unfinished parts of our mission, not promises already fulfilled.',
+  'mission.progress.link': 'Read our accessibility information and known gaps',
+  'mission.lessons': 'Explore the lessons',
+  'mission.teachers': 'For families and teachers',
   'nav.label': 'Main',
   'nav.current': '(current page)',
   'skip.link': 'Skip to the main part of the page',
@@ -251,6 +273,11 @@ const en = {
   'quiz.finishQuiz': 'Finish quiz',
   'quiz.badgeRight': 'Right',
   'quiz.badgeNo': 'No',
+  'quiz.scenario': 'Imagine this',
+  'quiz.decisionStep': 'Part 1 of 2: Make a decision',
+  'quiz.reasoningStep': 'Part 2 of 2: Explain your choice',
+  'quiz.yourDecision': 'Your decision:',
+  'quiz.explainChoice': 'Explain my choice',
 
   // ---------------------------------------------------------- lesson picker
   'path.backHome': 'Back to home',
@@ -468,7 +495,7 @@ const en = {
   'a11y.colour.group': 'Not by colour alone',
   'a11y.colour.p1': 'Locked, open and complete lessons each carry an icon, a word and a colour.',
   'a11y.colour.p2':
-    'A right answer shows a tick, the word "Right" and green. A wrong answer shows a cross, the word "No" and red.',
+    'A right answer shows a tick, the word "Right" and gold. A wrong answer shows a cross, the word "No" and red.',
   'a11y.colour.p3':
     'The line currently playing in the transcript is marked with a thick left border and the word "now".',
 
@@ -479,7 +506,7 @@ const en = {
     'Body text is about 16.4:1 in the light theme and 16.6:1 in the dark one. The minimum for AA is 4.5:1.',
   'a11y.contrast.p3': 'Muted text is about 5.6:1 in the light theme and 7.4:1 in the dark one.',
   'a11y.contrast.p4':
-    'Every button colour was picked to clear 4.5:1 against its own text, in both themes. 112 colour pairings are measured automatically, and a pairing that fails in either theme stops the site being published.',
+    'Every button colour was picked to clear 4.5:1 against its own text, in both themes. Text and graphic colour pairings are measured automatically, and a pairing that fails in either theme stops the site being published.',
   'a11y.contrast.p5':
     'Layout is built in relative units, so 200% browser zoom reflows instead of clipping. At 400% the page becomes a single column with no sideways scrolling.',
 
@@ -546,7 +573,29 @@ const hi = {
   'nav.dictionary': 'शब्दकोश',
   'nav.schemes': 'योजनाएँ',
   'nav.teachers': 'शिक्षक',
-  'nav.access': 'सुलभता',
+  'nav.mission': 'हमारा उद्देश्य',
+  'teachers.onThisPage': 'इस पेज पर',
+  'teachers.guide': 'पढ़ाने की मार्गदर्शिका',
+  'teachers.combinedLead': '{site} इस्तेमाल करने की सलाह, इस डिवाइस की सेटिंग और सुलभता की जानकारी, सब एक ही जगह।',
+  'mission.heading': 'पैसे की समझ। अपने फैसले खुद।',
+  'mission.lead': 'हम चाहते हैं कि बधिर और कम सुनने वाले विद्यार्थी पैसे को समझें, सवाल पूछें और रोज़मर्रा के फैसले भरोसे के साथ ले सकें।',
+  'mission.image.alt': 'कक्षा की मेज़ पर कॉपी और पेंसिल के साथ बैठे बच्चे का चित्र।',
+  'mission.image.caption': 'एआई से बनाया गया चित्र। यह किसी वास्तविक विद्यार्थी या अमानत के लाभार्थी की तस्वीर नहीं है।',
+  'mission.opportunity': 'सिर्फ़ पैसे की शिक्षा से गरीबी खत्म नहीं होती। हमारा उद्देश्य एक बड़े प्रयास का हिस्सा बनना है: विद्यार्थियों को अपने विकल्प समझने, पात्रता के अनुसार सहायता ढूँढने और शिक्षा व काम के अवसरों के साथ अधिक आत्मनिर्भर बनने में मदद करना।',
+  'mission.why.heading': 'गरीबी के चक्र को तोड़ने में मदद।',
+  'mission.why.text': 'अमानत भारत के बधिर और कम सुनने वाले बच्चों की मदद करना चाहता है, खासकर कम आय वाले परिवारों के बच्चों की। हम चाहते हैं कि वे पैसे की समझ बढ़ाएँ और ऐसे भविष्य की ओर बढ़ सकें जिसमें गरीबी उनके अवसरों को सीमित न करे। पैसे को समझना सुनने की क्षमता या परिवार की आर्थिक स्थिति पर निर्भर नहीं होना चाहिए।',
+  'mission.principles': 'हमारी सोच',
+  'mission.access.heading': 'पहले सबकी पहुँच',
+  'mission.access.text': 'हमारा लक्ष्य है भारतीय सांकेतिक भाषा के साथ कैप्शन, लिखित समझाइश और साफ़ चित्र देना। अंग्रेज़ी और हिन्दी में मेन्यू और बटन अधिक परिवारों को वेबसाइट इस्तेमाल करने में मदद करते हैं।',
+  'mission.practice.heading': 'सिर्फ़ परिभाषाएँ नहीं, फैसले भी',
+  'mission.practice.text': 'कहानियों और रोज़मर्रा की स्थितियों से विद्यार्थी रुपये, बचत, बजट और सुरक्षा से जुड़े फैसलों पर सोच सकते हैं। गलत जवाब सीखने और फिर कोशिश करने का मौका है।',
+  'mission.pace.heading': 'अपनी रफ़्तार से सीखें',
+  'mission.pace.text': 'स्तर कठिनाई के हिसाब से हैं, उम्र के हिसाब से नहीं। विद्यार्थी बातों को दोहरा सकते हैं, भरोसा बढ़ा सकते हैं और माता-पिता या शिक्षक की मदद से सीख सकते हैं।',
+  'mission.progress.heading': 'काम जारी है, जानकारी साफ़ है',
+  'mission.progress.text': 'सीखने की गतिविधियाँ उपलब्ध हैं, लेकिन पाठों के वीडियो और कैप्शन अभी नमूने हैं। सांकेतिक शब्दकोश के वीडियो रिकॉर्ड होने बाकी हैं और कुछ सामग्री का हिन्दी अनुवाद भी बाकी है। बधिर विद्यार्थियों और शिक्षकों से समीक्षा करवाना भी अभी बाकी है। ये हमारे उद्देश्य के अधूरे हिस्से हैं, पूरे हो चुके वादे नहीं।',
+  'mission.progress.link': 'सुलभता और बाकी काम के बारे में पढ़ें',
+  'mission.lessons': 'पाठ देखें',
+  'mission.teachers': 'परिवारों और शिक्षकों के लिए',
   'nav.label': 'मुख्य',
   'nav.current': '(यही पन्ना खुला है)',
   'skip.link': 'सीधे पन्ने के मुख्य भाग पर जाएँ',
@@ -758,6 +807,11 @@ const hi = {
   'quiz.finishQuiz': 'क्विज़ पूरी करें',
   'quiz.badgeRight': 'सही',
   'quiz.badgeNo': 'नहीं',
+  'quiz.scenario': 'इस स्थिति के बारे में सोचिए',
+  'quiz.decisionStep': 'भाग 1 / 2: फ़ैसला कीजिए',
+  'quiz.reasoningStep': 'भाग 2 / 2: अपने फ़ैसले की वजह बताइए',
+  'quiz.yourDecision': 'आपका फ़ैसला:',
+  'quiz.explainChoice': 'अपने फ़ैसले की वजह बताऊँ',
 
   // ---------------------------------------------------------- lesson picker
   'path.backHome': 'होम पर वापस जाएँ',
@@ -965,7 +1019,7 @@ const hi = {
   'a11y.colour.group': 'सिर्फ़ रंग से नहीं',
   'a11y.colour.p1': 'बंद, खुले और पूरे हो चुके पाठ - हर एक के साथ एक चिह्न, एक शब्द और एक रंग है।',
   'a11y.colour.p2':
-    'सही जवाब पर सही का निशान, "सही" शब्द और हरा रंग दिखता है। ग़लत जवाब पर क्रॉस, "नहीं" शब्द और लाल रंग।',
+    'सही जवाब पर सही का निशान, "सही" शब्द और सुनहरा रंग दिखता है। ग़लत जवाब पर क्रॉस, "नहीं" शब्द और लाल रंग।',
   'a11y.colour.p3':
     'लिखित पाठ में जो पंक्ति अभी चल रही है, उसे बाईं ओर मोटी लकीर और "अभी" शब्द से चिह्नित किया जाता है।',
 
@@ -976,7 +1030,7 @@ const hi = {
     'मुख्य लिखाई का रंग-अंतर उजले रंग में लगभग 16.4:1 और गहरे में 16.6:1 है। AA के लिए कम से कम 4.5:1 चाहिए।',
   'a11y.contrast.p3': 'हल्की लिखाई उजले में लगभग 5.6:1 और गहरे में 7.4:1 है।',
   'a11y.contrast.p4':
-    'हर बटन का रंग इस तरह चुना गया है कि अपनी लिखाई के मुक़ाबले 4.5:1 पार करे, दोनों रंग-रूपों में। 112 रंग-जोड़े अपने आप नापे जाते हैं, और किसी भी एक रंग-रूप में फ़ेल होने वाला जोड़ा साइट को प्रकाशित नहीं होने देता।',
+    'हर बटन का रंग इस तरह चुना गया है कि अपनी लिखाई के मुक़ाबले 4.5:1 पार करे, दोनों रंग-रूपों में। लिखाई और दृश्य संकेतों के रंग-जोड़े अपने आप नापे जाते हैं, और किसी भी एक रंग-रूप में फ़ेल होने वाला जोड़ा साइट को प्रकाशित नहीं होने देता।',
   'a11y.contrast.p5':
     'लेआउट सापेक्ष इकाइयों में बना है, इसलिए 200% ज़ूम पर लिखाई कटती नहीं, फिर से सज जाती है। 400% पर पन्ना एक ही कॉलम बन जाता है और अगल-बगल स्क्रॉल नहीं करना पड़ता।',
 
