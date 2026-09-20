@@ -25,7 +25,7 @@ export default function Mission() {
         </h1>
         <p className="text-xl leading-relaxed text-muted">{t('mission.lead')}</p>
       </header>
-      <figure className="min-w-0 space-y-3">
+      <figure className="min-w-0">
         <img
           src="/mission-learning.jpg"
           alt={t('mission.image.alt')}
@@ -34,7 +34,6 @@ export default function Mission() {
           decoding="async"
           className="h-auto w-full rounded-3xl"
         />
-        <figcaption className="text-sm leading-relaxed text-muted">{t('mission.image.caption')}</figcaption>
       </figure>
       </div>
 
