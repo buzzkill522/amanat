@@ -13,7 +13,6 @@ import { getLevel, LEGACY_TIER_IDS } from '@/config/site.js'
 import {
   getModule,
   getNeighbours,
-  getDictionaryEntriesForModule,
   SCHEME_MODULE_IDS,
 } from '@content/index.js'
 
@@ -109,7 +108,7 @@ export default function Lesson() {
   const level = getLevel(levelId)
   const module = level ? getModule(levelId, moduleId, lang) : null
 
-  const { settings, setSetting, markComplete, isCompleted, isUnlocked } = useProgress()
+  const { settings, setSetting, markComplete, isCompleted, isUnlocked, recordVisit } = useProgress()
   const [currentTime, setCurrentTime] = useState(0)
   const [seekRequest, setSeekRequest] = useState(null)
   const [quizResult, setQuizResult] = useState(null)
@@ -118,6 +117,10 @@ export default function Lesson() {
   const hashStep = location.hash.slice(1)
   const step = STEPS.includes(hashStep) ? hashStep : 'watch'
   const stepIndex = STEPS.indexOf(step)
+  const canOpen = Boolean(module && isUnlocked(levelId, moduleId))
+  useEffect(() => {
+    if (canOpen) recordVisit(levelId, moduleId, step)
+  }, [canOpen, levelId, moduleId, step, recordVisit])
 
   const rootRef = useRef(null)
   const stepperRef = useRef(null)
@@ -152,7 +155,6 @@ export default function Lesson() {
 
   const { previous, next } = getNeighbours(levelId, moduleId, lang)
   const completed = isCompleted(levelId, moduleId)
-  const words = getDictionaryEntriesForModule(moduleId)
   const levelName = `${t('level.label', { n: level.step })} - ${t(`level.${level.id}.name`)}`
 
   // A locked lesson is not hidden - the child is told plainly why, and given
@@ -179,6 +181,7 @@ export default function Lesson() {
           </p>
         )}
         <p className="text-base text-muted">{t('lesson.lockedNote')}</p>
+        <Link to="/lessons" className="btn-secondary">{t('locked.next')}</Link>
         {previous && (
           <Link to={`/path/${levelId}/lesson/${previous.id}`} className="btn-primary">
             {t('lesson.goTo', { title: previous.moduleTitle })}
@@ -223,6 +226,7 @@ export default function Lesson() {
 
   return (
     <div ref={rootRef} className="space-y-8">
+      <Link to="/help" className="tap-target text-sm font-bold underline underline-offset-4">{t('help.open')}</Link>
       <Celebration
         show={celebrating}
         message={t('lesson.celebrationMessage', { title: module.moduleTitle })}
@@ -404,31 +408,6 @@ export default function Lesson() {
           </section>
         </div>
 
-        {module.keyWords?.length > 0 && (
-          <section className="space-y-4" aria-labelledby="words-heading">
-            <h3 id="words-heading" className="text-2xl font-extrabold text-ink">
-              {t('lesson.newWords')}
-            </h3>
-            <ul className="flex flex-wrap gap-3">
-              {module.keyWords.map((word) => (
-                <li
-                  key={word}
-                  className="rounded-2xl border-2 border-brand-100 bg-surface px-5 py-3 text-lg font-extrabold text-ink"
-                >
-                  {word}
-                </li>
-              ))}
-            </ul>
-            {words.length > 0 && (
-              <p>
-                <Link to="/dictionary" className="tap-target font-bold text-ink underline decoration-2 underline-offset-4">
-                  {t('lesson.seeWordsSigned')}
-                </Link>
-              </p>
-            )}
-          </section>
-        )}
-
         {/* The two schemes lessons point at the reference page, which lists
             every figure with its source and is open without unlocking. */}
         {SCHEME_MODULE_IDS.includes(module.id) && (
@@ -438,6 +417,19 @@ export default function Lesson() {
             <p className="mt-4">
               <Link to="/schemes" className="btn-primary">
                 {t('lesson.schemesCta')}
+                <ArrowRight className="h-5 w-5" aria-hidden="true" />
+              </Link>
+            </p>
+          </div>
+        )}
+
+        {(module.id === 'earning-money' || module.id === 'schemes-school-work') && (
+          <div className="card p-6">
+            <h3 className="text-lg font-extrabold text-ink">{t('lesson.careersHeading')}</h3>
+            <p className="mt-1 text-base leading-relaxed text-ink">{t('lesson.careersText')}</p>
+            <p className="mt-4">
+              <Link to="/careers" className="btn-secondary">
+                {t('lesson.careersCta')}
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </Link>
             </p>

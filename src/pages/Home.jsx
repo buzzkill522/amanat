@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpen, Hand, Subtitles, Trophy } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, Hand, Subtitles, Trophy } from 'lucide-react'
 import CoverHero from '@/components/CoverHero.jsx'
 import Reveal from '@/components/Reveal.jsx'
 import ConceptIcon from '@/components/icons/ConceptIcon.jsx'
@@ -7,14 +7,14 @@ import usePageTitle from '@/hooks/usePageTitle.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { getLevel, levels, signLabel } from '@/config/site.js'
-import { dictionary, modules, moduleMeta } from '@content/index.js'
+import { modules, moduleMeta } from '@content/index.js'
 
 /**
  * The home page.
  *
  * The page is full, but it is filled with the course rather than with
  * decoration - a featured first lesson, the eleven topics, the entitlements
- * the curriculum teaches, and a sample of the glossary. Mayer's coherence
+ * the curriculum teaches, and practical paths towards work. Mayer's coherence
  * principle (extraneous material removed beats extraneous material added, in
  * 23 of 23 tests) is about material that does no work; real content that helps
  * someone decide whether this site is for them is not that.
@@ -77,25 +77,21 @@ export default function Home() {
 
   // null on a first visit, which is the whole point - a resume card with
   // nothing to resume is worse than no card.
-  const resume = resumePoint()
+  const resume = resumePoint(lang)
   const resumeLevel = resume ? getLevel(resume.levelId) : null
 
   const featured = modules[0]
-  // A sample of the glossary, not the whole thing - enough to show what an
-  // entry looks like without turning the home page into the dictionary.
-  const sampleWords = dictionary.entries.slice(0, 12)
-
   const stats = [
     { value: String(modules.length), label: t('home.stat.lessons') },
     { value: String(levels.length), label: t('home.stat.levels') },
-    { value: String(dictionary.entries.length), label: t('home.stat.words') },
+    { value: '4', label: t('home.stat.careers') },
     { value: t('home.stat.free'), label: t('home.stat.cost') },
   ]
 
   return (
     <div className="space-y-24 sm:space-y-32">
       {/* The cover carries the <h1>, so this page runs at <h2> from here. */}
-      <CoverHero />
+      <CoverHero resume={resume} />
 
       {/* Spacing only. This wrapper used to also carry a slow vertical
           gradient - paper at the top, easing to brand-100 by the closing band.
@@ -127,7 +123,7 @@ export default function Home() {
           <Reveal>
             {resume.next ? (
               <Link
-                to={`/path/${resume.levelId}/lesson/${resume.next.id}`}
+                to={`/path/${resume.levelId}/lesson/${resume.next.id}${resume.step === 'watch' ? '' : `#${resume.step}`}`}
                 className="group flex flex-col gap-5 rounded-3xl border-2 border-gold-700 bg-surface p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:items-center sm:p-8"
               >
                 <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gold-100">
@@ -154,10 +150,12 @@ export default function Home() {
                     {t('home.resume.progress', {
                       done: resume.done,
                       total: resume.total,
-                      level: `${resumeLevel.label} - ${resumeLevel.name}`,
+                      level: `${t('level.label', { n: resumeLevel.step })} - ${t(`level.${resumeLevel.id}.name`)}`,
                     })}
                   </span>
 
+                  <span className="mt-2 block text-sm text-muted">{t('resume.step', { step: t(`lesson.step.${resume.step}`) })}</span>
+                  <span className="mt-1 block text-sm text-muted">{t('resume.note')}</span>
                   {/* Progress is stated in words just above, so this bar is
                       decoration and hidden from assistive tech. */}
                   <span
@@ -445,54 +443,42 @@ export default function Home() {
               {t('home.claim.cta')}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
+            <p className="mt-3"><Link to="/help" className="tap-target font-bold underline underline-offset-4">{t('help.open')}</Link></p>
             {/* The honesty line the schemes research insists on. */}
             <p className="mt-3 max-w-xs text-sm text-muted">{t('home.claim.note')}</p>
           </div>
         </Reveal>
       </section>
 
-      {/* -------------------------------------------------- glossary sample */}
-      <section aria-labelledby="words-heading">
+      {/* ---------------------------------------------------- career paths */}
+      <section aria-labelledby="careers-heading">
         <Reveal>
-          {/* Heading on the left, action on the right - the words themselves
-              then run full width underneath, rather than sitting in another
-              centred column. */}
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHead
-              id="words-heading"
-              eyebrow={t('home.words.eyebrow')}
-              heading={t('home.words.heading', { count: dictionary.entries.length })}
-              lead={t('home.words.lead')}
+              id="careers-heading"
+              eyebrow={t('home.careers.eyebrow')}
+              heading={t('home.careers.heading')}
+              lead={t('home.careers.lead')}
               align="start"
             />
-            <Link to="/dictionary" className="btn-secondary shrink-0">
-              <BookOpen className="h-5 w-5" aria-hidden="true" />
-              {t('home.words.cta')}
+            <Link to="/careers" className="btn-secondary shrink-0">
+              <BriefcaseBusiness className="h-5 w-5" aria-hidden="true" />
+              {t('home.careers.cta')}
             </Link>
           </div>
-
-          <ul className="mt-10 flex flex-wrap gap-3">
-            {sampleWords.map((entry) => (
-              <li key={entry.id}>
-                {/* Not a link - one entry out of the full glossary, shown as a
-                    sample. The hover lift is a chip convention (it says "this
-                    is a labelled thing"), not a click promise, so it stays
-                    even though nothing here is a target of its own; the one
-                    actual link in this section is the button above. */}
-                <span className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-surface px-4 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-clay-400 hover:shadow-sm">
-                  <ConceptIcon name={entry.icon} className="h-5 w-5 text-clay-600" />
-                  <span className="text-sm font-bold text-ink">{entry.term}</span>
-                </span>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+            {['semiconductor', 'electronics', 'energy', 'service'].map((key) => (
+              <li key={key} className="border-l-4 border-gold-500 pl-4">
+                <h3 className="text-xl font-extrabold text-ink">{t(`careers.${key}.title`)}</h3>
+                <p className="mt-1 text-base leading-relaxed text-muted">{t(`careers.${key}.short`)}</p>
               </li>
             ))}
           </ul>
         </Reveal>
       </section>
 
-      {/* Two cards pointing at Dictionary and Teachers used to sit here. Both
-          are tabs in the header on every page, so this was a third route to a
-          place already reachable twice - and the same redundancy the level
-          picker was removed for. */}
+      {/* Career details stay on their own page; this is a preview, not a second
+          version of that page. */}
       </div>
 
       {/* ------------------------------------------------------- closing ask */}

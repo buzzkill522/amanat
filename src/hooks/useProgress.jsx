@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { getModulesForLevel } from '@content/index.js'
-import { LEGACY_TIER_IDS } from '@/config/site.js'
+import { emptyState, normalizeProgress, previewProgress } from '@/lib/progress-file.js'
 
 const STORAGE_KEY = 'amanat.progress.v1'
 
@@ -10,45 +10,6 @@ const STORAGE_KEY = 'amanat.progress.v1'
 // wipe of somebody's work.
 const LEGACY_STORAGE_KEY = 'paisa-path.progress.v1'
 
-const emptyState = {
-  version: 2,
-  levels: {},
-  settings: {
-    // When on, every lesson is reachable straight away. Useful for a teacher
-    // who wants to jump to one topic in class.
-    unlockAll: false,
-    captionsOn: true,
-    playbackRate: 1,
-  },
-}
-
-/**
- * v1 stored progress under age-band keys (`tiers: { "7-9": … }`). Those bands
- * are now difficulty levels, so a returning child would otherwise open the site
- * to an empty map and have to redo eight lessons. Carry it across instead.
- */
-function migrateV1(parsed) {
-  const levels = {}
-  for (const [oldId, record] of Object.entries(parsed.tiers || {})) {
-    const newId = LEGACY_TIER_IDS[oldId]
-    if (newId) levels[newId] = record
-  }
-  return { ...emptyState, levels, settings: { ...emptyState.settings, ...parsed.settings } }
-}
-
-/**
- * Turn a parsed JSON value into a valid progress state, or `null` if it isn't
- * one. Shared by `read()` (localStorage) and `importState()` (a file a teacher
- * hands back to the device) so the two paths cannot silently drift apart -
- * whatever `read()` is willing to trust off disk, an imported file is trusted
- * to exactly the same degree, no more and no less.
- */
-function normalize(parsed) {
-  if (parsed?.version === 1) return migrateV1(parsed)
-  if (parsed?.version !== 2) return null
-  return { ...emptyState, ...parsed, settings: { ...emptyState.settings, ...parsed.settings } }
-}
-
 function read() {
   try {
     // Current key first; only fall back to the pre-rename one, so a device that
@@ -57,7 +18,7 @@ function read() {
       window.localStorage.getItem(STORAGE_KEY) ||
       window.localStorage.getItem(LEGACY_STORAGE_KEY)
     if (!raw) return emptyState
-    return normalize(JSON.parse(raw)) ?? emptyState
+    return normalizeProgress(JSON.parse(raw)) ?? emptyState
   } catch {
     // Private browsing, a full disk, or hand-edited JSON. Losing progress is
     // annoying but must never stop the lesson from loading.
@@ -79,6 +40,13 @@ const ProgressContext = createContext(null)
 export function ProgressProvider({ children }) {
   const [state, setState] = useState(read)
   const [storageBlocked, setStorageBlocked] = useState(false)
+  const recordVisit = useCallback((levelId, moduleId, step) => {
+    setState(prev => {
+      const last = prev.lastVisited
+      if (last?.levelId === levelId && last.moduleId === moduleId && last.step === step) return prev
+      return { ...prev, lastVisited: { levelId, moduleId, step, at: new Date().toISOString() } }
+    })
+  }, [])
 
   useEffect(() => {
     if (!write(state)) setStorageBlocked(true)
@@ -141,15 +109,9 @@ export function ProgressProvider({ children }) {
    * developer who can read a stack trace.
    */
   const importState = useCallback((raw) => {
-    let parsed
-    try {
-      parsed = JSON.parse(raw)
-    } catch {
-      return { ok: false, reason: 'parse' }
-    }
-    const normalized = normalize(parsed)
-    if (!normalized) return { ok: false, reason: 'format' }
-    setState(normalized)
+    const result = previewProgress(raw)
+    if (!result.ok) return result
+    setState(result.state)
     return { ok: true }
   }, [])
 
@@ -168,6 +130,7 @@ export function ProgressProvider({ children }) {
       resetAll,
       importState,
       setSetting,
+      recordVisit,
 
       isCompleted: (levelId, moduleId) => Boolean(state.levels[levelId]?.[moduleId]?.completed),
 
@@ -211,7 +174,7 @@ export function ProgressProvider({ children }) {
        * honest answer for a first visit, and the caller shows the normal
        * "start here" path instead of an empty resume card.
        */
-      resumePoint: () => {
+      resumePoint: (lang = 'en') => {
         let levelId = null
         let latest = null
 
@@ -223,24 +186,31 @@ export function ProgressProvider({ children }) {
             }
           }
         }
+        const visit = state.lastVisited
+        const visitedList = visit ? getModulesForLevel(visit.levelId, lang) : []
+        const visitedIndex = visitedList.findIndex(m => m.id === visit?.moduleId)
+        const visitAllowed = visitedIndex >= 0 && (visitedIndex === 0 || state.settings.unlockAll || state.levels[visit.levelId]?.[visitedList[visitedIndex - 1].id]?.completed)
+        if (visitAllowed && visit.at >= (latest ?? '')) levelId = visit.levelId
         if (!levelId) return null
 
-        const list = getModulesForLevel(levelId)
+        const list = getModulesForLevel(levelId, lang)
         const done = list.filter((m) => state.levels[levelId]?.[m.id]?.completed).length
         // The first unfinished lesson, which is also the only unlocked one.
-        const nextIndex = list.findIndex((m) => !state.levels[levelId]?.[m.id]?.completed)
+        const resumeVisit = visitAllowed && visit.levelId === levelId && visit.at >= (latest ?? '') && !state.levels[levelId]?.[visit.moduleId]?.completed
+        const nextIndex = resumeVisit ? visitedIndex : list.findIndex((m) => !state.levels[levelId]?.[m.id]?.completed)
 
         return {
           levelId,
           completedAt: latest,
           done,
           total: list.length,
+          step: resumeVisit ? visit.step : 'watch',
           // null once every lesson in this level is finished.
           next: nextIndex === -1 ? null : { ...list[nextIndex], number: nextIndex + 1 },
         }
       },
     }),
-    [state, storageBlocked, markComplete, clearModule, resetLevel, resetAll, importState, setSetting],
+    [state, storageBlocked, markComplete, clearModule, resetLevel, resetAll, importState, setSetting, recordVisit],
   )
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>

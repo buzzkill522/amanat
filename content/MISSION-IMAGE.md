@@ -3,7 +3,7 @@
 - Website asset: `public/mission-learning.jpg` (1536 × 1024, JPEG quality 85).
 - Created with the built-in image-generation tool, not a stock photograph.
 - The people depicted are fictional. Do not describe them as actual learners, beneficiaries, or as evidence of anyone's disability or financial circumstances.
-- Keep the visible AI-generated caption in both interface languages. No beneficiary story, name, or testimonial accompanies this image.
+- The visible caption was removed at the user's request. Alt text identifies it as an illustration. No beneficiary story, name, or testimonial accompanies this image.
 - Original generation was converted to JPEG without cropping or retouching for a smaller download.
 
 ## Final generation prompt

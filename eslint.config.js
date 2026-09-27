@@ -38,6 +38,7 @@ export default [
   },
 
   js.configs.recommended,
+  { files: ['scripts/sw-template.js'], languageOptions: { globals: globals.serviceworker } },
 
   // Browser code: everything under src/.
   {

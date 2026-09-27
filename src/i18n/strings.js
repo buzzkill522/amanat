@@ -12,6 +12,8 @@
 // the first language on this site and does not change with this setting.
 // ---------------------------------------------------------------------------
 
+import { experienceEn, experienceHi } from './experience.js'
+
 export const LANGUAGES = [
   { code: 'en', label: 'English', short: 'EN', htmlLang: 'en-IN' },
   { code: 'hi', label: 'हिन्दी', short: 'हि', htmlLang: 'hi-IN' },
@@ -23,7 +25,7 @@ const en = {
   // ---------------------------------------------------------------- chrome
   'nav.home': 'Home',
   'nav.lessons': 'Lessons',
-  'nav.dictionary': 'Dictionary',
+  'nav.careers': 'Career paths',
   'nav.schemes': 'Schemes',
   'nav.teachers': 'Teachers',
   'nav.mission': 'Our mission',
@@ -33,7 +35,6 @@ const en = {
   'mission.heading': 'Money skills. More independence.',
   'mission.lead': 'We want Deaf and Hard-of-Hearing learners to understand money, ask questions, and make everyday choices with confidence.',
   'mission.image.alt': 'Illustration of a child with a notebook and pencil at a classroom desk.',
-  'mission.image.caption': 'AI-generated illustration, not a photograph of a real learner or Amanat beneficiary.',
   'mission.opportunity': 'Financial education alone cannot end poverty. Our aim is to be one part of a wider path: helping learners understand their choices, find support they may be entitled to, and build greater independence alongside access to education and work.',
   'mission.why.heading': 'Helping break the cycle of poverty.',
   'mission.why.text': 'Amanat aims to support Deaf and Hard-of-Hearing children in India, especially those growing up in low-income families. We want to help them build money skills and open up possibilities for a future less constrained by poverty. Understanding money should not depend on hearing or on what a family can afford.',
@@ -45,16 +46,13 @@ const en = {
   'mission.pace.heading': 'A pace of your own',
   'mission.pace.text': 'Levels follow difficulty, not age. Learners can revisit ideas, build confidence, and explore with support from a parent or teacher.',
   'mission.progress.heading': 'Still being built, openly',
-  'mission.progress.text': 'The learning activities are available, but lesson videos and captions are still placeholders, ISL dictionary clips still need recording, and some content still needs Hindi translation. Review by Deaf learners and educators is also still needed. These are unfinished parts of our mission, not promises already fulfilled.',
+  'mission.progress.text': 'The learning activities are available, but lesson videos and captions are still placeholders, signed lesson videos still need recording, and some content still needs Hindi translation. Review by Deaf learners and educators is also still needed. These are unfinished parts of our mission, not promises already fulfilled.',
   'mission.progress.link': 'Read our accessibility information and known gaps',
   'mission.lessons': 'Explore the lessons',
   'mission.teachers': 'For families and teachers',
   'nav.label': 'Main',
   'nav.current': '(current page)',
   'skip.link': 'Skip to the main part of the page',
-  'lang.switchTo': 'Read this site in Hindi',
-  'lang.switchToEnglish': 'Read this site in English',
-  'lang.name': 'हिन्दी',
   // Named as an action rather than a state. The button is a single icon, so
   // this sentence is its whole accessible name and its tooltip - "Dark" alone
   // would be read by some people as where they are and by others as where the
@@ -65,12 +63,12 @@ const en = {
   'footer.blurb': 'Amanat - free money lessons for Deaf and Hard-of-Hearing children.',
   'footer.accessibility': 'Accessibility statement',
   'footer.teachers': 'For parents and teachers',
-  'site.tagline': 'Money lessons you can see',
+  'site.tagline': 'Money, in your hands',
 
   // ----------------------------------------------------------------- cover
   'cover.badge': 'Made with {sign} first',
-  'cover.title1': 'Money lessons',
-  'cover.title2': 'you can see',
+  'cover.title1': 'Money,',
+  'cover.title2': 'in your hands',
   // No age number here on purpose - see the levels array in config/site.js.
   // Sorted by difficulty and not by age for the same reason: reading level and
   // age come apart often among Deaf and Hard-of-Hearing children, and a number
@@ -82,27 +80,21 @@ const en = {
   'cover.promise.captions': 'Captions on every lesson',
   'cover.promise.sound': 'No sound needed',
   'cover.cta.start': 'Start learning',
-  'cover.cta.dictionary': 'See the money signs',
+  'cover.cta.careers': 'Explore career paths',
   // The mark is the only picture on the cover, so it is described rather than
   // hidden - it carries the tagline for a reader who cannot yet read it.
-  'cover.markAlt': 'An eye with a rupee sign for a pupil',
 
   // ------------------------------------------------------------------ home
   // home.lessons.* and home.level.* lived here once, for a level-picker
   // section this page no longer has - see the note above the CTA band in
   // Home.jsx. Removed rather than left unused, so nobody translates or edits
   // a string that nothing reads.
-  'home.more.heading': 'More on this site',
-  'home.more.dictionary.title': 'Money words',
-  'home.more.dictionary.text': 'Look up a word. See the sign and a picture.',
-  'home.more.teachers.title': 'For grown-ups',
-  'home.more.teachers.text': 'How parents and teachers can use this site.',
   'home.free': 'Amanat is free. It never asks for your name, your school or any money.',
 
   // ------------------------------------------------------------ stats band
   'home.stat.lessons': 'lessons',
   'home.stat.levels': 'levels of difficulty',
-  'home.stat.words': 'money words with signs',
+  'home.stat.careers': 'career paths to explore',
   'home.stat.cost': 'cost, for ever',
   'home.stat.free': 'Free',
 
@@ -121,20 +113,6 @@ const en = {
     'Finish a lesson and the next one opens. Your place is kept on this device.',
 
   // -------------------------------------------------------------- built for
-  'home.built.eyebrow': 'Built this way on purpose',
-  'home.built.heading': 'Nothing here needs you to hear',
-  'home.built.sign.title': '{signShort} comes first',
-  'home.built.sign.text':
-    'Every lesson and every dictionary word holds a space for a signed clip, in the exact place it will appear.',
-  'home.built.captions.title': 'Captions and a transcript',
-  'home.built.captions.text':
-    'Read along, or search the transcript and jump straight to that moment in the video.',
-  'home.built.pictures.title': 'Pictures carry the meaning',
-  'home.built.pictures.text':
-    'Line drawings, not photographs, so they stay clear at any size and at 400% zoom.',
-  'home.built.private.title': 'Nothing leaves the device',
-  'home.built.private.text':
-    'No sign-up, no login, no analytics. Your progress is saved on this device and nowhere else.',
 
   // ------------------------------------------------------------- curriculum
   'home.topics.eyebrow': 'The curriculum',
@@ -187,12 +165,52 @@ const en = {
   'home.claim.cta': 'See all the schemes',
   'home.claim.note': 'Rules and amounts change. Every figure is checked before it is taught.',
 
-  // ------------------------------------------------------- dictionary teaser
-  'home.words.eyebrow': 'Money words',
-  'home.words.heading': '{count} words, each with a space for its sign',
-  'home.words.lead':
-    'Look up a word and see the picture, a plain definition, and a real example in rupees.',
-  'home.words.cta': 'Open the dictionary',
+  'home.careers.eyebrow': 'Beyond the classroom',
+  'home.careers.heading': 'Where could your skills take you?',
+  'home.careers.lead': 'Explore real types of work, from chip production and energy to electronics and service. Compare the training, conditions and costs before you choose a path.',
+  'home.careers.cta': 'Explore career paths',
+
+  // ------------------------------------------------------------- careers
+  'careers.pageTitle': 'Career paths',
+  'careers.eyebrow': 'Work and income',
+  'careers.heading': 'Explore a path to work',
+  'careers.lead': 'These are examples of industries and roles, not job offers. Find out what each role involves, what training it asks for, and whether the workplace is accessible to you.',
+  'careers.pathsHeading': 'Four paths to investigate',
+  'careers.rolesLabel': 'Example roles',
+  'careers.startLabel': 'First step',
+  'careers.source': 'Explore {name}',
+  'careers.newTab': '(opens in a new tab)',
+  'careers.semiconductor.title': 'Semiconductor manufacturing',
+  'careers.semiconductor.short': 'Making, packaging and testing the chips used in electronics.',
+  'careers.semiconductor.roles': 'Packaging, testing, cleanroom and equipment roles. A chip factory and an electronics assembly line are different workplaces with different entry requirements.',
+  'careers.semiconductor.start': 'Check a specific role and its qualification first. Ask the college placement cell about real openings and training partners; some roles require technical education.',
+  'careers.electronics.title': 'Electronics and battery plants',
+  'careers.electronics.short': 'Assembly, inspection and maintenance across electronics and batteries.',
+  'careers.electronics.roles': 'Assembly operator, battery-system assembly, quality inspection or machine maintenance.',
+  'careers.electronics.start': 'Look at the Electronics Sector Skills Council apprenticeship roles and compare their entry requirements with your qualifications.',
+  'careers.energy.title': 'Solar and wind energy',
+  'careers.energy.short': 'Installing, operating and maintaining renewable-energy equipment.',
+  'careers.energy.roles': 'Solar PV technician and wind-power technician are examples. Some jobs involve electrical work, heights or outdoor sites.',
+  'careers.energy.start': 'Check Suryamitra or Vayumitra training requirements and whether a centre is currently taking applications. Suryamitra normally requires Class 10 plus a relevant ITI trade.',
+  'careers.service.title': 'Service and office work',
+  'careers.service.short': 'Work in hospitality, records, purchasing and other operations.',
+  'careers.service.roles': 'Record keeping, purchasing, housekeeping and other hotel operations are among the roles the Jaipur college has explored with employers.',
+  'careers.service.start': 'Ask the college Employment or Placement Cell about current workshops, employers and application support. A past job fair is evidence of a route, not a promise of a vacancy today.',
+  'careers.compareHeading': 'Compare the actual offer, not just the job title',
+  'careers.compareLead': 'A promising industry is only useful if the job fits your needs and pays enough after the costs of taking it.',
+  'careers.compare1': 'What is the take-home pay after deductions, travel, meals and housing?',
+  'careers.compare2': 'What training, certificate, equipment or relocation does it require, and who pays?',
+  'careers.compare3': 'Are instructions, alarms and emergency procedures accessible without hearing?',
+  'careers.compare4': 'What are the shifts, contract terms and chances to learn or progress?',
+  'careers.payCaution': 'Semiconductor or energy work may pay well in a particular offer, but no industry guarantees the highest pay or a job. Compare dated offers for the same place and experience level.',
+  'careers.nextHeading': 'Turn interest into a next step',
+  'careers.nextLead': 'Speak with your college placement cell, explore the government training and employment portal, and check which support schemes you may qualify for. For a business idea, test demand and repayment ability before considering a loan.',
+  'careers.daksh': 'Explore PM-DAKSH',
+  'careers.schemes': 'Check support schemes',
+  'careers.dateNote': 'Training batches, vacancies, pay and scheme rules change. Check the official source before applying. External sites need an internet connection.',
+  'lesson.careersHeading': 'What could this lead to?',
+  'lesson.careersText': 'Explore work in semiconductor, electronics, energy and service roles. Compare the training, take-home pay and workplace conditions before you apply.',
+  'lesson.careersCta': 'Explore career paths',
 
   // ------------------------------------------------------------ closing CTA
   'home.cta.heading': 'Start with the first lesson',
@@ -319,8 +337,6 @@ const en = {
   'lesson.backToAllLessons': 'Back to all lessons',
   'lesson.eyebrow': 'Lesson {n} · {level}',
   'lesson.whatThisSays': 'What this lesson says',
-  'lesson.newWords': 'New words in this lesson',
-  'lesson.seeWordsSigned': 'See these words signed in the dictionary',
   'lesson.schemesHeading': 'Every scheme, with the details',
   'lesson.schemesText':
     'Amounts, income limits, where to apply and what to watch out for - all on one page, with the source for every figure.',
@@ -348,7 +364,7 @@ const en = {
   'lesson.step.back': 'Back: {step}',
   'lesson.step.skip': 'Skip to questions',
   'lesson.step.hint.watch': 'Watch to the end, or move on whenever you are ready.',
-  'lesson.step.hint.read': 'Read the story and the new words, then answer the questions.',
+  'lesson.step.hint.read': 'Read the story and examples, then answer the questions.',
   'lesson.step.hint.answer': 'Finish the questions and the next lesson opens.',
 
   // ------------------------------------------------------------- celebration
@@ -362,29 +378,6 @@ const en = {
   'notfound.text':
     'The link may be old, or a word in it may be spelled differently. Go back to the home page and start again.',
   'notfound.cta': 'Go to the home page',
-
-  // ------------------------------------------------------------- dictionary
-  'dict.pageTitle': 'Money words dictionary',
-  'dict.heading': 'Money words',
-  'dict.lead':
-    'Every word has a picture, a short meaning and an example. The {signShort} video for each word is added as it is filmed.',
-  'dict.searchLabel': 'Search for a money word',
-  'dict.searchPlaceholder': 'Type a word, for example: interest',
-  'dict.clearSearch': 'Clear the search box',
-  'dict.filterLabel': 'Filter words by group',
-  'dict.allWords': 'All words',
-  'dict.noMatch': 'No word matches “{query}”. Try a shorter word.',
-  'dict.countOne': '{n} word',
-  'dict.countMany': '{n} words',
-  // One entry in the dictionary. These were the last hardcoded English strings
-  // on the site after the translation pass - the entry component was the one
-  // file it missed, so a Hindi reader met five English labels forty times down
-  // the page.
-  'dict.signAria': '{sign} sign for {term}',
-  'dict.clipNotFilmed': '{signShort} clip not filmed yet',
-  'dict.noVideoYet': 'No video yet',
-  'dict.example': 'Example:',
-  'dict.usedIn': 'Used in:',
 
   // ------------------------------------------------------------- schemes page
   'schemes.pageTitle': 'Schemes and what you can claim',
@@ -438,12 +431,10 @@ const en = {
 
   'teachers.sign.heading': 'About the {sign} videos',
   'teachers.sign.reserved':
-    'Every lesson reserves a panel for a signed interpretation, and every dictionary word reserves space for a short signed clip. Where a clip has not been filmed yet, the space says so plainly rather than hiding.',
+    'Every lesson reserves a panel for signed interpretation. Where a lesson clip has not been filmed yet, the space says so plainly rather than hiding.',
   'teachers.sign.regional':
     'Sign language is regional. These lessons are written for {sign}. If you teach in another sign language, the interpreter clips can be swapped without changing any of the written content.',
-  'teachers.sign.allDone': 'All {total} dictionary words have a signed clip.',
-  'teachers.sign.someDone':
-    '{done} of {total} dictionary words have a signed clip so far. The rest show a labelled space until they are filmed.',
+  'teachers.sign.pending': 'Signed lesson videos have not been recorded yet. Do not present the sample videos as signed lessons.',
 
   'teachers.settings.heading': 'Settings on this device',
   'teachers.settings.unlockTitle': 'Open every lesson',
@@ -501,7 +492,7 @@ const en = {
 
   'a11y.contrast.group': 'Contrast and text size',
   'a11y.contrast.p1':
-    'The page comes in light and dark. You can switch at the top of any page, and the site starts in whichever one your device already asks for.',
+    'The page comes in light and dark. It starts in light appearance. You can switch at the top of any page, and your choice is remembered on this device.',
   'a11y.contrast.p2':
     'Body text is about 16.4:1 in the light theme and 16.6:1 in the dark one. The minimum for AA is 4.5:1.',
   'a11y.contrast.p3': 'Muted text is about 5.6:1 in the light theme and 7.4:1 in the dark one.',
@@ -540,7 +531,7 @@ const en = {
   'a11y.plain.p1': 'Sentences are short and hold one idea each.',
   'a11y.plain.p2':
     'Idioms and metaphors are avoided throughout, because they are a known barrier for readers whose first language is a sign language.',
-  'a11y.plain.p3': 'New words are listed at the end of each lesson and linked to the signed dictionary.',
+  'a11y.plain.p3': 'Stories and examples explain money ideas in context; learners can revisit a lesson whenever they need to.',
   'a11y.plain.p4': 'Money amounts use rupees and everyday Indian examples.',
 
   'a11y.structure.group': 'Structure and naming',
@@ -570,7 +561,7 @@ const hi = {
   // ---------------------------------------------------------------- chrome
   'nav.home': 'होम',
   'nav.lessons': 'पाठ',
-  'nav.dictionary': 'शब्दकोश',
+  'nav.careers': 'करियर के रास्ते',
   'nav.schemes': 'योजनाएँ',
   'nav.teachers': 'शिक्षक',
   'nav.mission': 'हमारा उद्देश्य',
@@ -580,7 +571,6 @@ const hi = {
   'mission.heading': 'पैसे की समझ। अपने फैसले खुद।',
   'mission.lead': 'हम चाहते हैं कि बधिर और कम सुनने वाले विद्यार्थी पैसे को समझें, सवाल पूछें और रोज़मर्रा के फैसले भरोसे के साथ ले सकें।',
   'mission.image.alt': 'कक्षा की मेज़ पर कॉपी और पेंसिल के साथ बैठे बच्चे का चित्र।',
-  'mission.image.caption': 'एआई से बनाया गया चित्र। यह किसी वास्तविक विद्यार्थी या अमानत के लाभार्थी की तस्वीर नहीं है।',
   'mission.opportunity': 'सिर्फ़ पैसे की शिक्षा से गरीबी खत्म नहीं होती। हमारा उद्देश्य एक बड़े प्रयास का हिस्सा बनना है: विद्यार्थियों को अपने विकल्प समझने, पात्रता के अनुसार सहायता ढूँढने और शिक्षा व काम के अवसरों के साथ अधिक आत्मनिर्भर बनने में मदद करना।',
   'mission.why.heading': 'गरीबी के चक्र को तोड़ने में मदद।',
   'mission.why.text': 'अमानत भारत के बधिर और कम सुनने वाले बच्चों की मदद करना चाहता है, खासकर कम आय वाले परिवारों के बच्चों की। हम चाहते हैं कि वे पैसे की समझ बढ़ाएँ और ऐसे भविष्य की ओर बढ़ सकें जिसमें गरीबी उनके अवसरों को सीमित न करे। पैसे को समझना सुनने की क्षमता या परिवार की आर्थिक स्थिति पर निर्भर नहीं होना चाहिए।',
@@ -592,16 +582,13 @@ const hi = {
   'mission.pace.heading': 'अपनी रफ़्तार से सीखें',
   'mission.pace.text': 'स्तर कठिनाई के हिसाब से हैं, उम्र के हिसाब से नहीं। विद्यार्थी बातों को दोहरा सकते हैं, भरोसा बढ़ा सकते हैं और माता-पिता या शिक्षक की मदद से सीख सकते हैं।',
   'mission.progress.heading': 'काम जारी है, जानकारी साफ़ है',
-  'mission.progress.text': 'सीखने की गतिविधियाँ उपलब्ध हैं, लेकिन पाठों के वीडियो और कैप्शन अभी नमूने हैं। सांकेतिक शब्दकोश के वीडियो रिकॉर्ड होने बाकी हैं और कुछ सामग्री का हिन्दी अनुवाद भी बाकी है। बधिर विद्यार्थियों और शिक्षकों से समीक्षा करवाना भी अभी बाकी है। ये हमारे उद्देश्य के अधूरे हिस्से हैं, पूरे हो चुके वादे नहीं।',
+  'mission.progress.text': 'सीखने की गतिविधियाँ उपलब्ध हैं, लेकिन पाठों के वीडियो और कैप्शन अभी नमूने हैं। पाठों के सांकेतिक वीडियो रिकॉर्ड होने बाकी हैं और कुछ सामग्री का हिन्दी अनुवाद भी बाकी है। बधिर विद्यार्थियों और शिक्षकों से समीक्षा करवाना भी अभी बाकी है। ये हमारे उद्देश्य के अधूरे हिस्से हैं, पूरे हो चुके वादे नहीं।',
   'mission.progress.link': 'सुलभता और बाकी काम के बारे में पढ़ें',
   'mission.lessons': 'पाठ देखें',
   'mission.teachers': 'परिवारों और शिक्षकों के लिए',
   'nav.label': 'मुख्य',
   'nav.current': '(यही पन्ना खुला है)',
   'skip.link': 'सीधे पन्ने के मुख्य भाग पर जाएँ',
-  'lang.switchTo': 'इस साइट को हिन्दी में पढ़ें',
-  'lang.switchToEnglish': 'इस साइट को अंग्रेज़ी में पढ़ें',
-  'lang.name': 'English',
   'theme.toDark': 'पन्ने के रंग गहरे कीजिए',
   'theme.toLight': 'पन्ने के रंग उजले कीजिए',
   'storage.blocked':
@@ -609,33 +596,27 @@ const hi = {
   'footer.blurb': 'अमानत - बहरे और कम सुनने वाले बच्चों के लिए मुफ़्त पैसे के पाठ।',
   'footer.accessibility': 'सुलभता वक्तव्य',
   'footer.teachers': 'माता-पिता और शिक्षकों के लिए',
-  'site.tagline': 'पैसे के पाठ, जो आप देख सकते हैं',
+  'site.tagline': 'पैसा, आपके हाथों में',
 
   // ----------------------------------------------------------------- cover
   'cover.badge': 'सबसे पहले {sign} में बना',
-  'cover.title1': 'पैसे के पाठ,',
-  'cover.title2': 'जो आप देख सकते हैं',
+  'cover.title1': 'पैसा,',
+  'cover.title2': 'आपके हाथों में',
   'cover.lead':
     'देखिए। पढ़िए। तस्वीर वाले सवालों के जवाब दीजिए। अमानत बहरे और कम सुनने वाले बच्चों को सिखाता है कि पैसा कैसे काम करता है - हर पाठ में सांकेतिक भाषा, कैप्शन और तस्वीरें। अपने स्तर से शुरू कीजिए, और जब तैयार हों तब आगे बढ़िए।',
   'cover.promise.sign': '{signShort} वीडियो',
   'cover.promise.captions': 'हर पाठ में कैप्शन',
   'cover.promise.sound': 'सुनने की ज़रूरत नहीं',
   'cover.cta.start': 'सीखना शुरू करें',
-  'cover.cta.dictionary': 'पैसे के संकेत देखें',
-  'cover.markAlt': 'एक आँख, जिसकी पुतली रुपये का चिह्न है',
+  'cover.cta.careers': 'करियर के रास्ते देखें',
 
   // ------------------------------------------------------------------ home
-  'home.more.heading': 'इस साइट पर और भी',
-  'home.more.dictionary.title': 'पैसे के शब्द',
-  'home.more.dictionary.text': 'कोई शब्द ढूँढिए। उसका संकेत और तस्वीर देखिए।',
-  'home.more.teachers.title': 'बड़ों के लिए',
-  'home.more.teachers.text': 'माता-पिता और शिक्षक इस साइट का उपयोग कैसे करें।',
   'home.free': 'अमानत मुफ़्त है। यह कभी आपका नाम, आपका स्कूल या पैसे नहीं माँगता।',
 
   // ------------------------------------------------------------ stats band
   'home.stat.lessons': 'पाठ',
   'home.stat.levels': 'कठिनाई के स्तर',
-  'home.stat.words': 'पैसे के शब्द, संकेत के साथ',
+  'home.stat.careers': 'करियर के रास्ते',
   'home.stat.cost': 'ख़र्च, हमेशा',
   'home.stat.free': 'मुफ़्त',
 
@@ -654,20 +635,6 @@ const hi = {
     'एक पाठ पूरा कीजिए और अगला खुल जाएगा। आपकी जगह इसी डिवाइस पर सहेजी जाती है।',
 
   // -------------------------------------------------------------- built for
-  'home.built.eyebrow': 'सोच-समझकर ऐसे बनाया गया',
-  'home.built.heading': 'यहाँ कुछ भी सुनने की ज़रूरत नहीं',
-  'home.built.sign.title': 'सबसे पहले {signShort}',
-  'home.built.sign.text':
-    'हर पाठ और हर शब्द में संकेत वाली क्लिप के लिए जगह है, ठीक उसी स्थान पर जहाँ वह दिखेगी।',
-  'home.built.captions.title': 'कैप्शन और लिखित पाठ',
-  'home.built.captions.text':
-    'साथ-साथ पढ़िए, या लिखे हुए पाठ में ढूँढकर सीधे वीडियो के उसी हिस्से पर पहुँच जाइए।',
-  'home.built.pictures.title': 'मतलब तस्वीरें बताती हैं',
-  'home.built.pictures.text':
-    'रेखा-चित्र, फ़ोटो नहीं - इसलिए हर आकार में और 400% ज़ूम पर भी साफ़ दिखते हैं।',
-  'home.built.private.title': 'कुछ भी डिवाइस से बाहर नहीं जाता',
-  'home.built.private.text':
-    'कोई खाता नहीं, कोई लॉगिन नहीं, कोई निगरानी नहीं। आपकी प्रगति सिर्फ़ इसी डिवाइस पर रहती है।',
 
   // ------------------------------------------------------------- curriculum
   'home.topics.eyebrow': 'पाठ्यक्रम',
@@ -720,12 +687,52 @@ const hi = {
   'home.claim.cta': 'सभी योजनाएँ देखिए',
   'home.claim.note': 'नियम और रक़में बदलती रहती हैं। हर आँकड़ा पढ़ाने से पहले जाँचा जाता है।',
 
-  // ------------------------------------------------------- dictionary teaser
-  'home.words.eyebrow': 'पैसे के शब्द',
-  'home.words.heading': '{count} शब्द, हर एक के संकेत के लिए जगह',
-  'home.words.lead':
-    'कोई शब्द ढूँढिए और देखिए - तस्वीर, आसान अर्थ, और रुपयों में एक असली उदाहरण।',
-  'home.words.cta': 'शब्दकोश खोलिए',
+  'home.careers.eyebrow': 'कक्षा के आगे',
+  'home.careers.heading': 'आपका हुनर आपको कहाँ ले जा सकता है?',
+  'home.careers.lead': 'चिप उत्पादन, ऊर्जा, इलेक्ट्रॉनिक्स और सेवा क्षेत्र में काम के रास्ते देखिए। रास्ता चुनने से पहले प्रशिक्षण, काम की शर्तें और खर्च समझिए।',
+  'home.careers.cta': 'करियर के रास्ते देखें',
+
+  // ------------------------------------------------------------- careers
+  'careers.pageTitle': 'करियर के रास्ते',
+  'careers.eyebrow': 'काम और कमाई',
+  'careers.heading': 'काम तक पहुँचने के रास्ते',
+  'careers.lead': 'ये उद्योगों और काम के उदाहरण हैं, नौकरी के प्रस्ताव नहीं। जानिए हर काम में क्या करना होता है, किस प्रशिक्षण की ज़रूरत है और कार्यस्थल आपके लिए सुलभ है या नहीं।',
+  'careers.pathsHeading': 'जाँचने के लिए चार रास्ते',
+  'careers.rolesLabel': 'काम के उदाहरण',
+  'careers.startLabel': 'पहला कदम',
+  'careers.source': '{name} पर जानकारी देखें',
+  'careers.newTab': '(नया टैब खुलेगा)',
+  'careers.semiconductor.title': 'सेमीकंडक्टर निर्माण',
+  'careers.semiconductor.short': 'इलेक्ट्रॉनिक्स में इस्तेमाल होने वाली चिप बनाना, पैक करना और जाँचना।',
+  'careers.semiconductor.roles': 'पैकेजिंग, जाँच, क्लीनरूम और मशीनों से जुड़े काम। चिप फैक्टरी और इलेक्ट्रॉनिक्स असेंबली लाइन अलग जगहें हैं; योग्यता भी अलग हो सकती है।',
+  'careers.semiconductor.start': 'पहले किसी खास पद और उसकी योग्यता को जाँचिए। असली रिक्तियों और प्रशिक्षण के बारे में कॉलेज के प्लेसमेंट सेल से पूछिए; कुछ पदों के लिए तकनीकी शिक्षा चाहिए।',
+  'careers.electronics.title': 'इलेक्ट्रॉनिक्स और बैटरी संयंत्र',
+  'careers.electronics.short': 'इलेक्ट्रॉनिक्स और बैटरी से जुड़ी असेंबली, जाँच और मशीनों का रखरखाव।',
+  'careers.electronics.roles': 'असेंबली ऑपरेटर, बैटरी सिस्टम असेंबली, गुणवत्ता जाँच या मशीन रखरखाव।',
+  'careers.electronics.start': 'इलेक्ट्रॉनिक्स सेक्टर स्किल्स काउंसिल के अप्रेंटिसशिप पद देखिए और उनकी योग्यता से अपनी पढ़ाई की तुलना कीजिए।',
+  'careers.energy.title': 'सौर और पवन ऊर्जा',
+  'careers.energy.short': 'नवीकरणीय ऊर्जा के उपकरण लगाना, चलाना और उनका रखरखाव करना।',
+  'careers.energy.roles': 'सोलर पीवी तकनीशियन और पवन ऊर्जा तकनीशियन उदाहरण हैं। कुछ काम बिजली, ऊँचाई या खुले कार्यस्थल से जुड़े होते हैं।',
+  'careers.energy.start': 'सूर्यमित्र या वायुमित्र प्रशिक्षण की योग्यता और मौजूदा बैच जाँचिए। सूर्यमित्र के लिए आम तौर पर दसवीं और संबंधित आईटीआई ट्रेड चाहिए।',
+  'careers.service.title': 'सेवा और कार्यालय का काम',
+  'careers.service.short': 'होटल, रिकॉर्ड, खरीद और दूसरे संचालन में काम।',
+  'careers.service.roles': 'रिकॉर्ड रखना, खरीद, हाउसकीपिंग और होटल के दूसरे काम उन पदों में हैं जिनके बारे में जयपुर कॉलेज ने नियोक्ताओं के साथ जानकारी ली है।',
+  'careers.service.start': 'मौजूदा कार्यशालाओं, नियोक्ताओं और आवेदन में मदद के लिए कॉलेज के रोज़गार या प्लेसमेंट सेल से पूछिए। पुराना जॉब फेयर आज नौकरी मिलने की गारंटी नहीं है।',
+  'careers.compareHeading': 'सिर्फ़ पद नहीं, असली प्रस्ताव की तुलना करें',
+  'careers.compareLead': 'कोई उद्योग तभी आपके काम का है जब नौकरी आपकी ज़रूरतों के अनुकूल हो और खर्च निकालने के बाद पर्याप्त कमाई दे।',
+  'careers.compare1': 'कटौतियों, यात्रा, भोजन और रहने का खर्च निकालने के बाद कितना पैसा बचेगा?',
+  'careers.compare2': 'कौन-सा प्रशिक्षण, प्रमाणपत्र, उपकरण या दूसरे शहर जाना ज़रूरी है, और खर्च कौन देगा?',
+  'careers.compare3': 'क्या निर्देश, चेतावनी और आपातकालीन प्रक्रिया सुनने के बिना भी समझ में आएँगे?',
+  'careers.compare4': 'काम की पाली, अनुबंध की शर्तें और आगे सीखने या बढ़ने के अवसर क्या हैं?',
+  'careers.payCaution': 'किसी खास नौकरी में सेमीकंडक्टर या ऊर्जा क्षेत्र की कमाई अच्छी हो सकती है, लेकिन कोई भी उद्योग सबसे ज़्यादा वेतन या नौकरी की गारंटी नहीं देता। एक ही जगह और अनुभव स्तर के मौजूदा प्रस्तावों की तुलना करें।',
+  'careers.nextHeading': 'अब अगला कदम तय करें',
+  'careers.nextLead': 'कॉलेज के प्लेसमेंट सेल से बात कीजिए, सरकारी प्रशिक्षण और रोज़गार पोर्टल देखिए और जाँचिए कि कौन-सी सहायता योजना आपके लिए है। व्यवसाय के लिए कर्ज लेने से पहले ग्राहक और किस्त चुकाने की क्षमता जाँचिए।',
+  'careers.daksh': 'पीएम-दक्ष देखें',
+  'careers.schemes': 'सहायता योजनाएँ देखें',
+  'careers.dateNote': 'प्रशिक्षण बैच, रिक्तियाँ, वेतन और योजनाओं के नियम बदलते हैं। आवेदन से पहले आधिकारिक स्रोत जाँचिए। बाहरी वेबसाइटों के लिए इंटरनेट चाहिए।',
+  'lesson.careersHeading': 'यह आगे किस काम आ सकता है?',
+  'lesson.careersText': 'सेमीकंडक्टर, इलेक्ट्रॉनिक्स, ऊर्जा और सेवा क्षेत्र के काम देखें। आवेदन से पहले प्रशिक्षण, हाथ में आने वाला वेतन और काम की शर्तें जाँचिए।',
+  'lesson.careersCta': 'करियर के रास्ते देखें',
 
   // ------------------------------------------------------------ closing CTA
   'home.cta.heading': 'पहले पाठ से शुरू कीजिए',
@@ -853,8 +860,6 @@ const hi = {
   'lesson.backToAllLessons': 'सभी पाठों पर वापस जाएँ',
   'lesson.eyebrow': 'पाठ {n} · {level}',
   'lesson.whatThisSays': 'यह पाठ क्या कहता है',
-  'lesson.newWords': 'इस पाठ के नए शब्द',
-  'lesson.seeWordsSigned': 'शब्दकोश में इन शब्दों के संकेत देखिए',
   'lesson.schemesHeading': 'हर योजना, पूरी जानकारी के साथ',
   'lesson.schemesText':
     'रक़में, आय की सीमाएँ, आवेदन कहाँ करें और किन बातों का ध्यान रखें - सब एक ही पन्ने पर, हर आँकड़े के स्रोत के साथ।',
@@ -880,7 +885,7 @@ const hi = {
   'lesson.step.back': 'पीछे: {step}',
   'lesson.step.skip': 'सीधे सवालों पर जाइए',
   'lesson.step.hint.watch': 'पूरा वीडियो देखिए, या जब तैयार हों तब आगे बढ़िए।',
-  'lesson.step.hint.read': 'कहानी और नए शब्द पढ़िए, फिर सवालों के जवाब दीजिए।',
+  'lesson.step.hint.read': 'कहानी और उदाहरण पढ़िए, फिर सवालों के जवाब दीजिए।',
   'lesson.step.hint.answer': 'सवाल पूरे कीजिए और अगला पाठ खुल जाएगा।',
 
   // ------------------------------------------------------------- celebration
@@ -894,25 +899,6 @@ const hi = {
   'notfound.text':
     'हो सकता है लिंक पुराना हो, या उसमें कोई शब्द अलग तरह से लिखा हो। होम पन्ने पर वापस जाइए और फिर से शुरू कीजिए।',
   'notfound.cta': 'होम पन्ने पर जाइए',
-
-  // ------------------------------------------------------------- dictionary
-  'dict.pageTitle': 'पैसे के शब्दों का शब्दकोश',
-  'dict.heading': 'पैसे के शब्द',
-  'dict.lead':
-    'हर शब्द के साथ एक तस्वीर, छोटा अर्थ और एक उदाहरण है। हर शब्द का {signShort} वीडियो बनते ही जोड़ा जाता है।',
-  'dict.searchLabel': 'पैसे का कोई शब्द खोजिए',
-  'dict.searchPlaceholder': 'कोई शब्द लिखिए, जैसे: ब्याज',
-  'dict.clearSearch': 'खोज का ख़ाना ख़ाली कीजिए',
-  'dict.filterLabel': 'शब्दों को समूह से छाँटिए',
-  'dict.allWords': 'सभी शब्द',
-  'dict.noMatch': '“{query}” से कोई शब्द नहीं मिला। छोटा शब्द आज़माइए।',
-  'dict.countOne': '{n} शब्द',
-  'dict.countMany': '{n} शब्द',
-  'dict.signAria': '{term} के लिए {sign} संकेत',
-  'dict.clipNotFilmed': '{signShort} क्लिप अभी नहीं बनी',
-  'dict.noVideoYet': 'वीडियो अभी नहीं',
-  'dict.example': 'उदाहरण:',
-  'dict.usedIn': 'इनमें इस्तेमाल:',
 
   // ------------------------------------------------------------- schemes page
   'schemes.pageTitle': 'योजनाएँ और आपका हक़',
@@ -966,12 +952,10 @@ const hi = {
 
   'teachers.sign.heading': '{sign} वीडियो के बारे में',
   'teachers.sign.reserved':
-    'हर पाठ में सांकेतिक अनुवाद के लिए एक जगह रखी गई है, और शब्दकोश के हर शब्द के लिए एक छोटी सांकेतिक क्लिप की जगह। जहाँ क्लिप अभी नहीं बनी, वहाँ जगह यह साफ़ कहती है - छिपाती नहीं।',
+    'हर पाठ में सांकेतिक अनुवाद के लिए एक जगह रखी गई है। जहाँ पाठ की क्लिप अभी नहीं बनी, वहाँ यह साफ़ बताया जाता है।',
   'teachers.sign.regional':
     'सांकेतिक भाषा क्षेत्र के हिसाब से बदलती है। ये पाठ {sign} के लिए लिखे गए हैं। अगर आप किसी और सांकेतिक भाषा में पढ़ाते हैं, तो लिखित सामग्री बदले बिना अनुवादक की क्लिप बदली जा सकती हैं।',
-  'teachers.sign.allDone': 'शब्दकोश के सभी {total} शब्दों की सांकेतिक क्लिप मौजूद है।',
-  'teachers.sign.someDone':
-    'अब तक शब्दकोश के {total} में से {done} शब्दों की सांकेतिक क्लिप बनी है। बाक़ी में तब तक एक चिह्नित जगह दिखती है जब तक वे बन नहीं जातीं।',
+  'teachers.sign.pending': 'पाठों के सांकेतिक वीडियो अभी रिकॉर्ड नहीं हुए हैं। नमूने वाले वीडियो को सांकेतिक पाठ बताकर न दिखाएँ।',
 
   'teachers.settings.heading': 'इस डिवाइस की सेटिंग',
   'teachers.settings.unlockTitle': 'हर पाठ खोल दीजिए',
@@ -1025,7 +1009,7 @@ const hi = {
 
   'a11y.contrast.group': 'रंग-अंतर और अक्षरों का आकार',
   'a11y.contrast.p1':
-    'पन्ना उजले और गहरे, दोनों रंगों में आता है। आप किसी भी पन्ने के ऊपर से बदल सकते हैं, और साइट उसी रंग में खुलती है जो आपका डिवाइस पहले से माँगता है।',
+    'पन्ना उजले और गहरे, दोनों रंगों में आता है। पहली बार साइट उजले रंग में खुलती है। आप किसी भी पन्ने के ऊपर से रंग बदल सकते हैं, और आपकी पसंद इस डिवाइस पर याद रखी जाती है।',
   'a11y.contrast.p2':
     'मुख्य लिखाई का रंग-अंतर उजले रंग में लगभग 16.4:1 और गहरे में 16.6:1 है। AA के लिए कम से कम 4.5:1 चाहिए।',
   'a11y.contrast.p3': 'हल्की लिखाई उजले में लगभग 5.6:1 और गहरे में 7.4:1 है।',
@@ -1061,7 +1045,7 @@ const hi = {
   'a11y.plain.p1': 'वाक्य छोटे हैं और हर वाक्य में एक ही बात है।',
   'a11y.plain.p2':
     'मुहावरों और रूपकों से पूरी तरह बचा गया है, क्योंकि जिनकी पहली भाषा सांकेतिक है उनके लिए ये एक जानी-मानी रुकावट हैं।',
-  'a11y.plain.p3': 'नए शब्द हर पाठ के अंत में दिए हैं और सांकेतिक शब्दकोश से जुड़े हैं।',
+  'a11y.plain.p3': 'कहानियाँ और उदाहरण पैसे की बातें संदर्भ के साथ समझाते हैं; ज़रूरत हो तो विद्यार्थी पाठ दोबारा देख सकते हैं।',
   'a11y.plain.p4': 'पैसे की रक़में रुपयों में और रोज़मर्रा के भारतीय उदाहरणों के साथ हैं।',
 
   'a11y.structure.group': 'ढाँचा और नामकरण',
@@ -1087,4 +1071,4 @@ const hi = {
     'अगर इस साइट का कोई हिस्सा इस्तेमाल करने में कठिन है, तो ग़लती साइट की है, पढ़ने वाले की नहीं। कृपया अपने शिक्षक को या जिसने आपको यह लिंक दिया है उसे बताइए, और यह भी बताइए कि आप क्या करने की कोशिश कर रहे थे।',
 }
 
-export const strings = { en, hi }
+export const strings = { en: { ...en, ...experienceEn }, hi: { ...hi, ...experienceHi } }

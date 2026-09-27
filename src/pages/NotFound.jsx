@@ -19,6 +19,7 @@ export default function NotFound() {
       <Link to="/" className="btn-primary">
         {t('notfound.cta')}
       </Link>
+      <p><Link to="/lessons" className="btn-secondary">{t('notfound.lessons')}</Link></p>
     </div>
   )
 }

@@ -15,7 +15,9 @@
          drift apart. -->
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Amanat - Money lessons you can see</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <title>Amanat - Money, in your hands</title>
 
     <!--
       Set the theme before the first paint.
@@ -28,24 +30,21 @@
 
       Inline and synchronous on purpose: an external file could be fetched
       after the first paint, which would defeat it. It reads the same key
-      ThemeProvider writes, and falls back to the device preference.
+      ThemeProvider writes, and falls back to light appearance.
     -->
     <script>
       (function () {
+        var theme = 'light'
         try {
           var saved = localStorage.getItem('amanat.theme.v1')
-          var theme =
+          theme =
             saved === 'light' || saved === 'dark'
               ? saved
-              : window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light'
-          document.documentElement.setAttribute('data-theme', theme)
+              : 'light'
         } catch (e) {
-          // Storage blocked or matchMedia missing. The stylesheet's own
-          // prefers-color-scheme rule still gets it right; only the stored
-          // override is lost.
+          // Storage blocked: retain the light default.
         }
+        document.documentElement.setAttribute('data-theme', theme)
       })()
     </script>
   </head>

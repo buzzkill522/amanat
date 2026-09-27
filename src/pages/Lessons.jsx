@@ -24,7 +24,7 @@ export default function Lessons() {
 
   usePageTitle(t('lessons.title'))
 
-  const resume = resumePoint()
+  const resume = resumePoint(lang)
   const resumeLevel = resume ? getLevel(resume.levelId) : null
 
   return (
@@ -41,7 +41,7 @@ export default function Lessons() {
           choose a level they have already chosen. */}
       {resume?.next && resumeLevel && (
         <Link
-          to={`/path/${resume.levelId}/lesson/${resume.next.id}`}
+          to={`/path/${resume.levelId}/lesson/${resume.next.id}${resume.step === 'watch' ? '' : `#${resume.step}`}`}
           className="group mx-auto flex max-w-3xl items-center gap-4 rounded-3xl border-2 border-gold-700 bg-surface p-5 transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
         >
           <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gold-100">
@@ -61,7 +61,7 @@ export default function Lessons() {
               {t('home.resume.progress', {
                 done: resume.done,
                 total: resume.total,
-                level: `${resumeLevel.label} - ${resumeLevel.name}`,
+                level: `${t('level.label', { n: resumeLevel.step })} - ${t(`level.${resumeLevel.id}.name`)}`,
               })}
             </span>
           </span>
@@ -73,6 +73,7 @@ export default function Lessons() {
       )}
 
       {/* ------------------------------------------------------ level chooser */}
+      <p className="text-center"><Link className="tap-target font-bold underline" to="/start">{t('start.again')}</Link></p>
       <section aria-labelledby="levels-heading">
         <h2 id="levels-heading" className="mb-2 text-center text-2xl font-extrabold text-ink">
           {t('lessons.levels.heading')}

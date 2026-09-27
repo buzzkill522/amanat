@@ -5,8 +5,11 @@ import usePageTitle from '@/hooks/usePageTitle.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { levels, signLanguage, site } from '@/config/site.js'
-import { modules, signClipCoverage, moduleMeta } from '@content/index.js'
+import { modules, moduleMeta } from '@content/index.js'
 import AccessibilityStatement from '@/components/AccessibilityStatement.jsx'
+import OfflineTools from '@/components/OfflineTools.jsx'
+import { previewProgress } from '@/lib/progress-file.js'
+import { downloadText } from '@/lib/download.js'
 
 export default function Teachers() {
   const { lang, t } = useLanguage()
@@ -21,17 +24,11 @@ export default function Teachers() {
   // by accident costs nothing.
   const [pendingImport, setPendingImport] = useState(null)
   const [importError, setImportError] = useState(null)
+  const [restored, setRestored] = useState(false)
   const fileInputRef = useRef(null)
-  const clips = signClipCoverage()
 
   function downloadProgress() {
-    const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'amanat-progress.json'
-    a.click()
-    URL.revokeObjectURL(url)
+    downloadText(JSON.stringify(state, null, 2), `amanat-progress-${new Date().toISOString().slice(0, 10)}.json`, 'application/json')
   }
 
   function handleFilePicked(e) {
@@ -41,8 +38,15 @@ export default function Teachers() {
     e.target.value = ''
     if (!file) return
     setImportError(null)
+    setPendingImport(null)
+    setRestored(false)
+    if (file.size > 1024 * 1024) { setImportError('large'); return }
     const reader = new FileReader()
-    reader.onload = () => setPendingImport({ raw: reader.result, name: file.name })
+    reader.onload = () => {
+      const preview = previewProgress(reader.result)
+      if (!preview.ok) { setImportError(preview.reason); return }
+      setPendingImport({ raw: reader.result, name: file.name, done: preview.done, levels: preview.levels })
+    }
     reader.onerror = () => setImportError('read')
     reader.readAsText(file)
   }
@@ -51,6 +55,7 @@ export default function Teachers() {
     const result = importState(pendingImport.raw)
     setPendingImport(null)
     if (!result.ok) setImportError(result.reason)
+    else setRestored(true)
   }
 
   return (
@@ -66,11 +71,13 @@ export default function Teachers() {
         {[
           ['use-heading', 'teachers.guide'],
           ['settings-heading', 'teachers.settings.heading'],
+          ['offline-heading', 'offline.heading'],
           ['accessibility', 'a11y.heading'],
         ].map(([id, key]) => (
           <Link key={id} to={`#${id}`} className="btn-secondary">{t(key)}</Link>
         ))}
       </nav>
+      <Link to="/teachers/guide" className="btn-secondary">{t('guide.link')}</Link>
 
       {/* ------------------------------------------------------- how to use */}
       <section className="card p-6" aria-labelledby="use-heading">
@@ -148,16 +155,8 @@ export default function Teachers() {
           {t('teachers.sign.regional', { sign: signLanguage.label })}
         </p>
 
-        {/* The count, not a vague "coming soon" - a teacher deciding whether to
-            use this with a class needs to know exactly how much is filmed. */}
-        <p
-          className={`mt-4 rounded-2xl p-4 text-lg font-bold ${
-            clips.complete ? 'bg-gold-100 text-gold-600' : 'bg-sun-100 text-sun-600'
-          }`}
-        >
-          {clips.complete
-            ? t('teachers.sign.allDone', { total: clips.total })
-            : t('teachers.sign.someDone', { done: clips.done, total: clips.total })}
+        <p className="mt-4 rounded-2xl bg-sun-100 p-4 text-lg font-bold text-sun-600">
+          {t('teachers.sign.pending')}
         </p>
       </section>
 
@@ -186,6 +185,8 @@ export default function Teachers() {
 
         <div className="mt-6 space-y-3">
           <h3 className="text-lg font-extrabold text-ink">{t('teachers.progress.heading')}</h3>
+          <p className="text-base text-muted">{t('progress.instructions')}</p>
+          {restored && <p role="status" className="rounded-xl bg-gold-100 p-3 text-gold-600">{t('progress.success')}</p>}
           <ul className="space-y-1 text-base text-ink">
             {levels.map((lvl) => {
               const s = levelStats(lvl.id)
@@ -219,7 +220,7 @@ export default function Teachers() {
               className="btn-secondary"
             >
               <Upload className="h-5 w-5" aria-hidden="true" />
-              {t('teachers.progress.load')}
+              {t('progress.restore')}
             </button>
 
             {pendingImport && (
@@ -231,6 +232,9 @@ export default function Teachers() {
                 <p className="font-bold text-ink">
                   {t('teachers.progress.replaceAsk', { name: pendingImport.name })}
                 </p>
+                <p className="w-full text-ink">{t('progress.preview', pendingImport)}</p>
+                <p className="w-full text-ink">{t('progress.backup')}</p>
+                <button type="button" onClick={downloadProgress} className="btn-secondary">{t('progress.saveFirst')}</button>
                 <button type="button" onClick={confirmImport} className="btn bg-sun-500 text-white hover:bg-sun-700">
                   <Upload className="h-5 w-5" aria-hidden="true" />
                   {t('teachers.progress.replaceYes')}
@@ -249,7 +253,7 @@ export default function Teachers() {
               >
                 <AlertTriangle className="h-6 w-6 shrink-0 text-alert-600" aria-hidden="true" />
                 <p className="font-bold text-ink">
-                  {importError === 'parse'
+                  {importError === 'read' ? t('progress.readError') : importError === 'large' ? t('progress.largeError') : importError === 'parse'
                     ? t('teachers.progress.errParse')
                     : t('teachers.progress.errFormat')}
                 </p>
@@ -305,6 +309,7 @@ export default function Teachers() {
           </Link>
         </p>
       </section>
+      <OfflineTools />
       <AccessibilityStatement />
     </div>
   )

@@ -56,7 +56,17 @@ export default function Mission() {
         </div>
       </section>
 
-      <section aria-labelledby="mission-progress" className="card p-6 sm:p-8">
+      <section aria-labelledby="mission-timeline" className="space-y-6">
+        <h2 id="mission-timeline" className="text-3xl font-extrabold">{t('mission.timeline')}</h2>
+        <ol className="space-y-6 border-l-2 border-gold-700 pl-6 sm:pl-8">
+          {['now', 'next', 'review'].map((key, index) => <li key={key} className="relative">
+            <span aria-hidden="true" className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full border-2 border-gold-700 bg-gold-500 font-bold text-[#161616] sm:-left-12">{index + 1}</span>
+            <h3 className="text-xl font-extrabold">{t(`mission.${key}`)}</h3>
+            <p className="mt-2 max-w-2xl text-lg text-muted">{t(`mission.${key}Text`)}</p>
+          </li>)}
+        </ol>
+      </section>
+      <section aria-labelledby="mission-progress" className="rounded-3xl bg-brand-50 p-6 sm:p-8">
         <h2 id="mission-progress" className="text-2xl font-extrabold text-ink">{t('mission.progress.heading')}</h2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{t('mission.progress.text')}</p>
         <Link to="/teachers#accessibility" className="tap-target mt-4 font-bold text-ink underline decoration-2 underline-offset-4">

@@ -1,12 +1,31 @@
-import { useEffect, useRef } from 'react'
+import { Suspense, useEffect, useRef } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { BadgeIndianRupee, BookOpen, GraduationCap, Home, Info, Users } from 'lucide-react'
+import { BadgeIndianRupee, BriefcaseBusiness, GraduationCap, Home, Info, Users } from 'lucide-react'
 import { site } from '@/config/site.js'
 import { useProgress } from '@/hooks/useProgress.jsx'
 import LanguageToggle from '@/components/LanguageToggle.jsx'
 import ThemeToggle from '@/components/ThemeToggle.jsx'
 import Logomark from '@/components/icons/Logomark.jsx'
 import { useT } from '@/i18n/LanguageProvider.jsx'
+import { OfflineNotice } from '@/components/OfflineTools.jsx'
+import ErrorBoundary from '@/components/ErrorBoundary.jsx'
+
+// Runs after a lazy route renders, when its section headings exist.
+function PageContent() {
+  const location = useLocation()
+  const previous = useRef(null)
+  useEffect(() => {
+    const changed = previous.current !== location.pathname
+    previous.current = location.pathname
+    const main = document.getElementById('main')
+    if (location.pathname === '/teachers' && location.hash) {
+      const target = document.getElementById(location.hash.slice(1))
+      if (target && main?.contains(target)) { target.focus({ preventScroll: true }); target.scrollIntoView({ block: 'start' }); return }
+    }
+    if (changed) { main?.focus(); window.scrollTo(0, 0) }
+  }, [location.pathname, location.hash, location.key])
+  return <Outlet />
+}
 
 // `alsoMatch` keeps a tab lit while the reader is deeper inside that section.
 // Lessons themselves live under /path/:levelId, so without it the Lessons tab
@@ -15,7 +34,7 @@ import { useT } from '@/i18n/LanguageProvider.jsx'
 const NAV = [
   { to: '/', labelKey: 'nav.home', icon: Home, end: true },
   { to: '/lessons', labelKey: 'nav.lessons', icon: GraduationCap, alsoMatch: '/path' },
-  { to: '/dictionary', labelKey: 'nav.dictionary', icon: BookOpen },
+  { to: '/careers', labelKey: 'nav.careers', icon: BriefcaseBusiness },
   // In the main nav rather than inside the course, because the people who most
   // need it are families who have not started the course and may never - an
   // entitlement nobody claims is worth nothing.
@@ -69,25 +88,6 @@ export default function Layout() {
   const { storageBlocked } = useProgress()
   const t = useT()
 
-  // On a single-page app the browser does not move focus when the URL changes.
-  // Without this, a keyboard user stays parked on the old link.
-  useEffect(() => {
-    mainRef.current?.focus()
-    window.scrollTo(0, 0)
-  }, [location.pathname])
-
-  // Teacher resources share one page. Run after route focus so bookmarked
-  // section links land on their heading without changing lesson hash behavior.
-  useEffect(() => {
-    if (location.pathname !== '/teachers' || !location.hash) return undefined
-    const frame = window.requestAnimationFrame(() => {
-      const target = document.getElementById(location.hash.slice(1))
-      if (!target || !mainRef.current?.contains(target)) return
-      target.focus({ preventScroll: true })
-      target.scrollIntoView({ block: 'start' })
-    })
-    return () => window.cancelAnimationFrame(frame)
-  }, [location.pathname, location.hash, location.key])
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -209,6 +209,7 @@ export default function Layout() {
         </div>
       </header>
 
+      <OfflineNotice />
       {storageBlocked && (
         <p role="alert" className="bg-sun-100 px-4 py-3 text-center text-sm font-bold text-sun-600">
           {t('storage.blocked')}
@@ -221,7 +222,9 @@ export default function Layout() {
         tabIndex={-1}
         className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 focus:outline-none"
       >
-        <Outlet />
+        <Suspense fallback={<p role="status" className="py-12 text-center text-lg text-muted">{t('loading.page')}</p>}>
+          <ErrorBoundary key={location.pathname}><PageContent /></ErrorBoundary>
+        </Suspense>
       </main>
 
       {/* No top margin: a page that ends in a full-bleed dark band butts
@@ -232,6 +235,8 @@ export default function Layout() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm">{t('footer.blurb')}</p>
             <ul className="flex flex-wrap gap-4 text-sm font-bold">
+              <li><Link to="/help" className="tap-target underline underline-offset-4">{t('help.heading')}</Link></li>
+              <li><Link to="/feedback" state={{ from: location.pathname }} className="tap-target underline underline-offset-4">{t('feedback.link')}</Link></li>
               <li>
                 <Link to="/teachers#accessibility" className="tap-target underline decoration-2 underline-offset-4 hover:text-white">
                   {t('footer.accessibility')}

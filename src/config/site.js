@@ -9,7 +9,7 @@ export const site = {
   // word for anything precious placed in your care.
   name: 'Amanat',
   nameDevanagari: 'अमानत',
-  tagline: 'Money lessons you can see',
+  tagline: 'Money, in your hands',
 }
 
 export const currency = {
@@ -32,7 +32,7 @@ export function formatMoney(amount) {
   return `${currency.symbol}${new Intl.NumberFormat('en-IN').format(amount)}`
 }
 
-// The signed track shown by default in videos and in the dictionary.
+// The signed track planned for lesson videos.
 export const signLanguage = {
   code: 'isl',
   label: 'Indian Sign Language',

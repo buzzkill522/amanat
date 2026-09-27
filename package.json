@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
+    "test": "node --test scripts/*.test.mjs",
     "sign:sync": "node scripts/sign-clips.mjs",
     "sign:check": "node scripts/sign-clips.mjs --check",
     "sign:links": "node scripts/sign-clips.mjs --links",
@@ -20,7 +21,6 @@
   "dependencies": {
     "@fontsource/mukta": "^5.3.0",
     "@fontsource/nunito": "^5.3.0",
-    "@fontsource/poppins": "^5.3.0",
     "@radix-ui/react-accordion": "^1.2.20",
     "clsx": "^2.1.1",
     "lucide-react": "^0.454.0",

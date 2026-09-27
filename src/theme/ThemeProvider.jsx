@@ -6,51 +6,18 @@ export const THEMES = ['light', 'dark']
 
 const ThemeContext = createContext(null)
 
-/**
- * What the device asks for, when nobody has chosen.
- *
- * Read rather than assumed: a child handed a tablet that is already in dark
- * mode should not have to find a control to stop the page glaring at them, and
- * a teacher who has never thought about it should get the light page the site
- * was designed in.
- */
-export function systemTheme() {
-  try {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  } catch {
-    return 'light'
-  }
-}
-
 function readStored() {
   try {
     const saved = window.localStorage.getItem(STORAGE_KEY)
-    if (THEMES.includes(saved)) return { theme: saved, followSystem: false }
+    if (THEMES.includes(saved)) return saved
   } catch {
-    // Private browsing, or storage switched off. Following the device is fine.
+    // Storage unavailable: use the light default.
   }
-  return { theme: systemTheme(), followSystem: true }
+  return 'light'
 }
 
 export function ThemeProvider({ children }) {
-  const [state, setState] = useState(readStored)
-  const { theme, followSystem } = state
-
-  // Keep following the device until the reader overrides it. Someone whose
-  // phone switches to dark at sunset should see this page switch too, without
-  // having had to predict that in advance.
-  useEffect(() => {
-    if (!followSystem) return undefined
-    let mq
-    try {
-      mq = window.matchMedia('(prefers-color-scheme: dark)')
-    } catch {
-      return undefined
-    }
-    const onChange = (e) => setState({ theme: e.matches ? 'dark' : 'light', followSystem: true })
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
-  }, [followSystem])
+  const [theme, setThemeState] = useState(readStored)
 
   useEffect(() => {
     const root = document.documentElement
@@ -87,7 +54,7 @@ export function ThemeProvider({ children }) {
 
   const setTheme = useCallback((next) => {
     if (!THEMES.includes(next)) return
-    setState({ theme: next, followSystem: false })
+    setThemeState(next)
     try {
       window.localStorage.setItem(STORAGE_KEY, next)
     } catch {
@@ -97,8 +64,8 @@ export function ThemeProvider({ children }) {
   }, [])
 
   const value = useMemo(
-    () => ({ theme, setTheme, followSystem, isDark: theme === 'dark' }),
-    [theme, setTheme, followSystem],
+    () => ({ theme, setTheme, isDark: theme === 'dark' }),
+    [theme, setTheme],
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

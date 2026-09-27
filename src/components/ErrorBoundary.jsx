@@ -45,20 +45,21 @@ export default class ErrorBoundary extends Component {
         <div className="space-y-2">
           <h1 className="text-3xl font-extrabold text-ink">This page did not open</h1>
           <p className="text-lg text-muted">
-            Nothing you did caused this, and nothing you have finished is lost.
+            Try reloading this page. If you are offline, reconnect and try again. Reloading keeps completed lessons saved on this device.
           </p>
         </div>
 
         <div lang="hi" className="space-y-2 border-t border-brand-100 pt-6">
           <p className="text-2xl font-extrabold text-ink">यह पन्ना नहीं खुला</p>
           <p className="text-lg text-muted">
-            यह आपकी ग़लती नहीं है। आपने जो पूरा किया है, वह सुरक्षित है।
+            पेज दोबारा खोलें। ऑफ़लाइन हैं तो इंटरनेट से जुड़कर कोशिश करें। दोबारा खोलने पर इस डिवाइस पर सहेजे हुए पूरे पाठ बने रहते हैं।
           </p>
         </div>
 
         {/* A full page load, not a router link: whatever broke is still in
             memory, and only a reload is guaranteed to clear it. */}
         <p>
+          <button className="btn-secondary mb-4" onClick={() => window.location.reload()}>Reload this page · पेज दोबारा खोलें</button>
           <a href="/" className="btn-primary">
             Go to the start · शुरुआत पर जाइए
           </a>

@@ -184,27 +184,11 @@ export default {
   plugins: [
     plugin(({ addBase }) => {
       addBase({
-        // The light theme is the default, so it needs no attribute. A reader
-        // who has never touched the control, on a device with no preference,
-        // gets the page the site was designed in.
+        // Light is the default, including before JavaScript runs.
         ':root': toVarBlock(themes.light, 'light'),
 
-        // Honoured before any JavaScript runs and without anybody choosing:
-        // a device set to dark opens dark. `:not([data-theme])` is what makes
-        // an explicit choice win over the system - once the reader has picked,
-        // the attribute is present and this rule stops applying.
-        //
-        // This is also the whole no-JavaScript story. The themes are CSS
-        // custom properties, so a reader with scripting off still gets the
-        // theme their device asks for; only the manual toggle needs JS.
-        '@media (prefers-color-scheme: dark)': {
-          ':root:not([data-theme])': toVarBlock(themes.dark, 'dark'),
-        },
-
         '[data-theme="dark"]': toVarBlock(themes.dark, 'dark'),
-        // Spelled out rather than left to the default, so that switching back
-        // to light on a dark-set device actually returns to light instead of
-        // falling through to the media query above.
+        // Explicit choices override the default.
         '[data-theme="light"]': toVarBlock(themes.light, 'light'),
       })
     }),

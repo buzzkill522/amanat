@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpen, Check, EarOff, Hand, Subtitles } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, Check, EarOff, Hand, Subtitles } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageProvider.jsx'
 import { signLabel, signShort } from '@/config/site.js'
 import { getModule, modules } from '@content/index.js'
@@ -56,7 +56,7 @@ function SignerFrame({ className = '' }) {
   )
 }
 
-export default function CoverHero() {
+export default function CoverHero({ resume }) {
   const { t, lang } = useLanguage()
   const signVars = { sign: signLabel(lang), signShort: signShort(lang) }
 
@@ -145,16 +145,16 @@ export default function CoverHero() {
             {/* /lessons, not an in-page anchor: the level picker used to live
                 on this page too, which meant the same choice ("which level?")
                 had two different places to make it. One page owns it now. */}
-            <Link to="/lessons" className="btn-primary group sm:text-lg">
-              {t('cover.cta.start')}
+            <Link to={resume?.next ? `/path/${resume.levelId}/lesson/${resume.next.id}${resume.step === 'watch' ? '' : `#${resume.step}`}` : '/start'} className="btn-primary group sm:text-lg">
+              {t(resume?.next ? 'home.resume.cta' : 'cover.cta.start')}
               <ArrowRight
                 className="h-5 w-5 transition-transform group-hover:translate-x-1"
                 aria-hidden="true"
               />
             </Link>
-            <Link to="/dictionary" className="btn-secondary sm:text-lg">
-              <BookOpen className="h-5 w-5" aria-hidden="true" />
-              {t('cover.cta.dictionary')}
+            <Link to="/careers" className="btn-secondary sm:text-lg">
+              <BriefcaseBusiness className="h-5 w-5" aria-hidden="true" />
+              {t('cover.cta.careers')}
             </Link>
           </div>
 

@@ -7,18 +7,11 @@ import { BrowserRouter } from 'react-router-dom'
 // see `teachers.privacy.text`.) Each file carries a
 // `unicode-range` per script, so a reader in English never downloads the
 // Devanagari and a reader in Hindi never downloads the Vietnamese.
-import '@fontsource/mukta/400.css'
-import '@fontsource/mukta/600.css'
-import '@fontsource/mukta/700.css'
-import '@fontsource/mukta/800.css'
+import './fonts.css'
 // Nunito for headings, replacing Poppins. Unlike the faces before it this one
 // has no Devanagari at all, so the stack in tailwind.config.js puts Mukta
 // directly behind it: English headings take Nunito, Hindi headings fall
 // through to Mukta rather than to whatever the OS would have picked.
-import '@fontsource/nunito/600.css'
-import '@fontsource/nunito/700.css'
-import '@fontsource/nunito/800.css'
-import '@fontsource/nunito/900.css'
 
 import App from './App.jsx'
 import './index.css'

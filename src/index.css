@@ -55,13 +55,6 @@
     --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.5), 0 12px 32px rgb(0 0 0 / 0.55);
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-      --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.45);
-      --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.5), 0 12px 32px rgb(0 0 0 / 0.55);
-    }
-  }
-
   /* The page is one flat colour.
 
      There used to be a fixed wash here - three radial gradients in the accent,
@@ -325,6 +318,14 @@ video::cue {
    Teachers print these pages for class, so force everything visible.
    --------------------------------------------------------------------------- */
 @media print {
+  body:has(.teacher-guide) > #root header:not(.teacher-guide header),
+  body:has(.teacher-guide) footer,
+  body:has(.teacher-guide) .skip-link,
+  .print-hide { display: none !important; }
+  body:has(.teacher-guide), .teacher-guide, .teacher-guide * { color: #161616 !important; background: white !important; box-shadow: none !important; }
+  .teacher-guide { font-size: 12pt; }
+  .teacher-guide h2, .teacher-guide h3 { break-after: avoid; }
+  .teacher-guide li { break-inside: avoid; }
   *,
   *::before,
   *::after {
