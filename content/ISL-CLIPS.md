@@ -275,4 +275,5 @@ You can add a `"poster"` there too, for the still frame shown before play.
 Separate job, not covered here. Each lesson in `content/modules/` has a
 `video.signInterpreter.src` for a full-lesson interpreter track. Those are long
 clips of the whole lesson, not single words, so they are filmed differently -
-see the README.
+see the README. The script for each one is in
+[VIDEO-SCRIPTS.md](VIDEO-SCRIPTS.md).

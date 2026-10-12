@@ -85,6 +85,10 @@ player can be tested. For each lesson:
    the player shows a labelled "ISL video coming soon" panel in the exact place
    the clip will appear, so the layout does not shift later.
 
+A speaking script for every lesson video - all three levels of all eleven
+lessons - is in **[content/VIDEO-SCRIPTS.md](content/VIDEO-SCRIPTS.md)**. Hand
+it to the interpreter recording the lessons.
+
 ## The ISL dictionary clips
 
 Thirty terms. **[content/ISL-CLIPS.md](content/ISL-CLIPS.md)** covers all three
