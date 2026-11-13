@@ -1,10 +1,20 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, BatteryCharging, BriefcaseBusiness, ExternalLink, Factory, Sun } from 'lucide-react'
+import { ArrowRight, BatteryCharging, BookOpen, BriefcaseBusiness, CheckCircle2, ExternalLink, Factory, Sparkles, Star, Sun, Warehouse } from 'lucide-react'
 import usePageTitle from '@/hooks/usePageTitle.js'
 import { useT } from '@/i18n/LanguageProvider.jsx'
 
 // Sources describe training and occupations, not current vacancies or pay.
 // Never turn these examples into a promise of placement or a salary ranking.
+// The featured path is shown first and in full, with the reasons it leads the list
+// and how Amanat prepares a learner for it.
+const FEATURED = { id: 'logistics', icon: Warehouse, source: 'https://lsc-india.com/', sourceName: 'Logistics Sector Skill Council' }
+const FEATURED_LESSONS = ['how-banks-work', 'earning-money', 'simple-budgeting', 'staying-safe', 'udid-and-benefits']
+const FEATURED_SECTIONS = [
+  { key: 'why', icon: Star, count: 4 },
+  { key: 'enable', icon: Sparkles, count: 4 },
+  { key: 'learn', icon: BookOpen, count: 0 },
+]
+
 const PATHS = [
   { id: 'semiconductor', icon: Factory, source: 'https://essc-india.org/semicon/', sourceName: 'ESSCI' },
   { id: 'electronics', icon: BatteryCharging, source: 'https://essc-india.org/naps.php', sourceName: 'ESSCI' },
@@ -15,6 +25,7 @@ const PATHS = [
 export default function Careers() {
   const t = useT()
   usePageTitle(t('careers.pageTitle'))
+  const FeaturedIcon = FEATURED.icon
 
   return (
     <div className="space-y-12 pb-8">
@@ -26,6 +37,72 @@ export default function Careers() {
 
       <section aria-labelledby="paths-heading" className="space-y-5">
         <h2 id="paths-heading" className="text-2xl font-extrabold text-ink">{t('careers.pathsHeading')}</h2>
+        <article aria-labelledby="featured-title" className="card border-2 border-gold-500 p-6 sm:p-8">
+          <p className="inline-flex items-center gap-2 rounded-full bg-gold-100 px-3 py-1 text-sm font-extrabold uppercase tracking-[0.1em] text-ink">
+            <Star className="h-4 w-4 text-gold-700" aria-hidden="true" />
+            {t('careers.featuredBadge')}
+          </p>
+          <div className="mt-4 flex items-start gap-4">
+            <FeaturedIcon className="h-10 w-10 shrink-0 text-gold-600" aria-hidden="true" />
+            <div>
+              <h3 id="featured-title" className="text-3xl font-extrabold text-ink">{t('careers.logistics.title')}</h3>
+              <p className="mt-2 text-lg leading-relaxed text-muted">{t('careers.logistics.short')}</p>
+            </div>
+          </div>
+
+          <dl className="mt-6 grid gap-4 md:grid-cols-2">
+            <div>
+              <dt className="font-extrabold text-ink">{t('careers.rolesLabel')}</dt>
+              <dd className="mt-1 leading-relaxed text-muted">{t('careers.logistics.roles')}</dd>
+            </div>
+            <div>
+              <dt className="font-extrabold text-ink">{t('careers.startLabel')}</dt>
+              <dd className="mt-1 leading-relaxed text-muted">{t('careers.logistics.start')}</dd>
+            </div>
+          </dl>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {FEATURED_SECTIONS.map(({ key, icon: Icon, count }) => (
+              <section key={key} aria-labelledby={`featured-${key}`} className="rounded-2xl bg-brand-50 p-5">
+                <h4 id={`featured-${key}`} className="flex items-center gap-2 text-xl font-extrabold text-ink">
+                  <Icon className="h-5 w-5 shrink-0 text-gold-600" aria-hidden="true" />
+                  {t(`careers.logistics.${key}Heading`)}
+                </h4>
+                {count > 0 ? (
+                  <ul className="mt-3 space-y-3">
+                    {Array.from({ length: count }, (_, i) => i + 1).map((n) => (
+                      <li key={n} className="flex gap-2 leading-relaxed text-ink">
+                        <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-gold-600" aria-hidden="true" />
+                        <span>{t(`careers.logistics.${key}${n}`)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <>
+                    <p className="mt-3 leading-relaxed text-muted">{t('careers.logistics.learnLead')}</p>
+                    <ul className="mt-3 space-y-1">
+                      {FEATURED_LESSONS.map((id) => (
+                        <li key={id}>
+                          <Link to={`/path/level-1/lesson/${id}`} className="tap-target gap-2 font-extrabold text-ink underline decoration-2 underline-offset-4">
+                            {t(`careers.logistics.lesson.${id}`)}
+                            <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </section>
+            ))}
+          </div>
+
+          <a href={FEATURED.source} target="_blank" rel="noopener noreferrer" className="tap-target mt-6 gap-2 font-extrabold text-ink underline decoration-2 underline-offset-4">
+            {t('careers.source', { name: FEATURED.sourceName })}
+            <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className="sr-only">{t('careers.newTab')}</span>
+          </a>
+        </article>
+
         <div className="grid gap-5 md:grid-cols-2">
           {PATHS.map(({ id, icon: Icon, source, sourceName }) => (
             <article key={id} className="card flex h-full flex-col p-6">

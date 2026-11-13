@@ -84,7 +84,7 @@ export default function Home() {
   const stats = [
     { value: String(modules.length), label: t('home.stat.lessons') },
     { value: String(levels.length), label: t('home.stat.levels') },
-    { value: '4', label: t('home.stat.careers') },
+    { value: '5', label: t('home.stat.careers') },
     { value: t('home.stat.free'), label: t('home.stat.cost') },
   ]
 
@@ -467,7 +467,7 @@ export default function Home() {
             </Link>
           </div>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {['semiconductor', 'electronics', 'energy', 'service'].map((key) => (
+            {['logistics', 'semiconductor', 'electronics', 'energy', 'service'].map((key) => (
               <li key={key} className="border-l-4 border-gold-500 pl-4">
                 <h3 className="text-xl font-extrabold text-ink">{t(`careers.${key}.title`)}</h3>
                 <p className="mt-1 text-base leading-relaxed text-muted">{t(`careers.${key}.short`)}</p>
